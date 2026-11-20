@@ -1,0 +1,204 @@
+[
+  {
+    "id": "C1",
+    "name": "图谱特征随机置换",
+    "method": "每个切分内置换可用历史值，保留覆盖位",
+    "status": "EXECUTED",
+    "limitation": "不能保证每个种子都恶化；统计波动照报",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C1_permuted_graph",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 62.75334407244103,
+        "RMSE": 123.07411888554323,
+        "graph_coverage": 0.92
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.978318718095025,
+        "RMSE": 40.66095591228174,
+        "graph_coverage": 0.92
+      }
+    ]
+  },
+  {
+    "id": "C2",
+    "name": "错误身份合并",
+    "method": "20%错误值替换UNSAFE与已知错误拒绝GUARDED；另有实际图谱错误断言探针",
+    "status": "EXECUTED",
+    "limitation": "无额外真值无法识别有效格式的错误关系；GUARDED不表示自动发现",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C2_wrong_merge_UNSAFE",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 46.423334511918554,
+        "RMSE": 94.38606289596744,
+        "graph_coverage": 0.92
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.752299111907014,
+        "RMSE": 39.95366176883901,
+        "graph_coverage": 0.92
+      }
+    ]
+  },
+  {
+    "id": "C3",
+    "name": "关系置信度变化",
+    "method": "0.2/0.6/0.99候选均不激活；全拒绝模型与M1等价",
+    "status": "EXECUTED",
+    "limitation": "未校准score不是匹配概率；不主张概率匹配增益",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C3_candidates_rejected",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 65.7846964123789,
+        "RMSE": 127.40338146098725,
+        "graph_coverage": 0.0
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.623447875729376,
+        "RMSE": 40.05637406450098,
+        "graph_coverage": 0.0
+      }
+    ]
+  },
+  {
+    "id": "C4",
+    "name": "关系撤销",
+    "method": "实际MVP撤销使旧bundle失效、新查询不可用；全拒绝输入回退",
+    "status": "EXECUTED",
+    "limitation": "生命周期探针与整批输入消融分开记录",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C4_relation_revoked",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 65.7846964123789,
+        "RMSE": 127.40338146098725,
+        "graph_coverage": 0.0
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.623447875729376,
+        "RMSE": 40.05637406450098,
+        "graph_coverage": 0.0
+      }
+    ]
+  },
+  {
+    "id": "C5",
+    "name": "删除后特征失效",
+    "method": "实际MVP删除传播与旧bundle拒绝；全删除输入回退",
+    "status": "EXECUTED",
+    "limitation": "保留的合成审计快照不是真实数据删除实现",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C5_deleted_history",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 65.7846964123789,
+        "RMSE": 127.40338146098725,
+        "graph_coverage": 0.0
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.623447875729376,
+        "RMSE": 40.05637406450098,
+        "graph_coverage": 0.0
+      }
+    ]
+  },
+  {
+    "id": "C6",
+    "name": "时间泄漏注入及拦截",
+    "method": "未来标签注入在设计矩阵前拒绝；晚可用探针拒绝",
+    "status": "EXECUTED",
+    "limitation": "未训练故意泄漏模型；不存在泄漏收益数字",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": null
+  },
+  {
+    "id": "C7",
+    "name": "标签成熟不足",
+    "method": "训练标签延后到验证开始后，准入必须STOP",
+    "status": "EXECUTED",
+    "limitation": "STOP不是训练失败，不填造模型结果",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": null
+  },
+  {
+    "id": "C8",
+    "name": "图谱覆盖下降",
+    "method": "独立随机mask到原可用样本的50%/20%，保留缺失标志",
+    "status": "EXECUTED",
+    "limitation": "不是总体覆盖强制等于20%；重训而非固定模型漂移",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C8_coverage20",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 63.95923206881185,
+        "RMSE": 124.2980784058601,
+        "graph_coverage": 0.18222222222222223
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.74128866113927,
+        "RMSE": 40.70067710159788,
+        "graph_coverage": 0.18222222222222223
+      }
+    ]
+  },
+  {
+    "id": "C9",
+    "name": "共享设备歧义",
+    "method": "两个账号的原始设备汇总存在；适配器拒绝账号级解释；UNSAFE另示",
+    "status": "EXECUTED",
+    "limitation": "不能只凭设备关系认定自然人",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "C9_shared_device_UNSAFE",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 36.702092403496586,
+        "RMSE": 80.19875067527241,
+        "graph_coverage": 1.0
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.59868102585979,
+        "RMSE": 40.18538157719183,
+        "graph_coverage": 1.0
+      }
+    ]
+  },
+  {
+    "id": "C10",
+    "name": "无图谱真实增益世界",
+    "method": "响应生成系数中历史latent项严格为0；同协议全流程",
+    "status": "EXECUTED",
+    "limitation": "有限样本差值不保证0；不把偶然负差认作真实增益",
+    "evidence": "ENGINE_PROBES.json / CONTROL_EQUIVALENCE.json / data/",
+    "variant": "M2",
+    "D30_results": [
+      {
+        "world": "history_informative",
+        "MAE": 39.947605176152834,
+        "RMSE": 85.13048645052088,
+        "graph_coverage": 0.92
+      },
+      {
+        "world": "no_graph_information",
+        "MAE": 22.50226272913137,
+        "RMSE": 39.1925467589778,
+        "graph_coverage": 0.92
+      }
+    ]
+  }
+]

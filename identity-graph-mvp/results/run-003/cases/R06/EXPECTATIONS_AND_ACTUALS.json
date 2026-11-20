@@ -1,0 +1,30 @@
+[
+  {
+    "assertion": "float timestamp refused",
+    "input_refs": "operation trace",
+    "expected": "INVALID_UTC_SECOND",
+    "actual": "INVALID_UTC_SECOND",
+    "passed": true
+  },
+  {
+    "assertion": "future event refused",
+    "input_refs": "operation trace",
+    "expected": "EVENT_TIME_INVALID",
+    "actual": "EVENT_TIME_INVALID",
+    "passed": true
+  },
+  {
+    "assertion": "future-available economic row not leaked",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "becomes visible only at declared availability",
+    "input_refs": "operation trace",
+    "expected": 100,
+    "actual": 100,
+    "passed": true
+  }
+]

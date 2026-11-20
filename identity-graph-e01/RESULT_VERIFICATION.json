@@ -1,0 +1,31 @@
+{
+  "run": "runs/20261120T102947736135Z",
+  "executed_artifacts_verified": 196,
+  "executed_source_hashes_match": true,
+  "audit_rows": 53,
+  "permission_time_source_rows_pass": true,
+  "counterexamples": [
+    {
+      "case_id": "C27_mutant_account",
+      "detected": true,
+      "violations": "SOURCE_AMOUNT_MISMATCH;AUDIT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "evidence": "runs/20261120T102947736135Z/C27_mutant_account/CASE.json"
+    },
+    {
+      "case_id": "C28_mutant_partition",
+      "detected": true,
+      "violations": "SOURCE_AMOUNT_MISMATCH;AUDIT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "evidence": "runs/20261120T102947736135Z/C28_mutant_partition/CASE.json"
+    },
+    {
+      "case_id": "C29_mutant_late",
+      "detected": true,
+      "violations": "SOURCE_AMOUNT_MISMATCH;AUDIT_RECONCILIATION_FAILED",
+      "status": "PASS",
+      "evidence": "runs/20261120T102947736135Z/C29_mutant_late/CASE.json"
+    }
+  ],
+  "audit_scope": "artifact integrity and fixture provenance checks; NOT independent external attestation"
+}

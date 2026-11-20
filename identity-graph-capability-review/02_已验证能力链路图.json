@@ -1,0 +1,352 @@
+{
+  "scope": "Existing isolated paths; not integrated vendor or production architecture",
+  "nodes": [
+    {
+      "id": "I",
+      "label": "Synthetic identity input",
+      "capability_refs": [
+        "C01"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-mvp/identity_mvp/system.py",
+      "code_sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+      "line": 127,
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "evidence_reference": "REF017",
+      "subject_and_permission_scope": "typed namespaces, not real PII",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "只验证合成 namespace 契约；不是广告ID真实跨App可读证明；哈希不自动匿名"
+      ]
+    },
+    {
+      "id": "R",
+      "label": "Account and explicit device relations",
+      "capability_refs": [
+        "C02",
+        "C03"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-mvp/identity_mvp/system.py",
+      "code_sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+      "line": 345,
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "evidence_reference": "REF017",
+      "subject_and_permission_scope": "account not person; fixture auth only",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "不是生产 SSO/OIDC，也不验证同一自然人；公开 fixture 密钥不用于真实账号",
+        "没有训练概率 resolver、真实校准或自动识别所有错误关系；合法格式的错误声明仍可污染特征"
+      ]
+    },
+    {
+      "id": "E",
+      "label": "Events and economic revisions",
+      "capability_refs": [
+        "C04"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-mvp/identity_mvp/system.py",
+      "code_sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+      "line": 374,
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "evidence_reference": "REF017",
+      "subject_and_permission_scope": "original event and ledger rules",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "完整性由合成 coverage 声明，不能据此证明现实观察无缺失；没有真实上游时钟/到达水位保证"
+      ]
+    },
+    {
+      "id": "P",
+      "label": "Original privacy and time gates",
+      "capability_refs": [
+        "C04",
+        "C05"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-mvp/identity_mvp/system.py",
+      "code_sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+      "line": 170,
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "evidence_reference": "REF017",
+      "subject_and_permission_scope": "independent privacy authority and original policy",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "完整性由合成 coverage 声明，不能据此证明现实观察无缺失；没有真实上游时钟/到达水位保证",
+        "不保证磁盘擦除、所有备份、外部删除或模型遗忘；双库不是分布式事务；原始合成测试记录为复核而保留"
+      ]
+    },
+    {
+      "id": "F",
+      "label": "Graph features and lineage",
+      "capability_refs": [
+        "C04",
+        "C05"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-mvp/identity_mvp/system.py",
+      "code_sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+      "line": 454,
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "evidence_reference": "REF017",
+      "subject_and_permission_scope": "account/device/app queries; original purpose",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "完整性由合成 coverage 声明，不能据此证明现实观察无缺失；没有真实上游时钟/到达水位保证",
+        "不保证磁盘擦除、所有备份、外部删除或模型遗忘；双库不是分布式事务；原始合成测试记录为复核而保留"
+      ]
+    },
+    {
+      "id": "LD",
+      "label": "Lab device adapter",
+      "capability_refs": [
+        "C08"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-ltv-lab/lab/adapter.py",
+      "code_sha256": "9644cbac69dfab4f4399174f3a63203dd75d725e2188856eb1a3c13c61e6959d",
+      "line": 6,
+      "evidence_path": "identity-graph-ltv-lab/results/run-002/TIME_PERMISSION_AUDIT.csv",
+      "evidence_reference": "REF025",
+      "subject_and_permission_scope": "device-not-person; shared account ambiguity denied",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "仅合成 IAP/退款 D1/D7/D30；device-not-person；不是 E01 account 分区或 E02 异步交接后的模型消费；M2多输入维度，不是完全同容量的身份独立增益消融"
+      ]
+    },
+    {
+      "id": "LP",
+      "label": "Synthetic LTV model",
+      "capability_refs": [
+        "C08"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-ltv-lab/lab/model.py",
+      "code_sha256": "a6d2f7f50ee8c480c2fd70f36346097294360e94ab9fc90e9585cc4b8839e397",
+      "line": 22,
+      "evidence_path": "identity-graph-ltv-lab/results/run-002/MODEL_SELECTION_AND_PARAMETERS.json",
+      "evidence_reference": "REF022",
+      "subject_and_permission_scope": "synthetic mature income labels only",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "仅合成 IAP/退款 D1/D7/D30；device-not-person；不是 E01 account 分区或 E02 异步交接后的模型消费；M2多输入维度，不是完全同容量的身份独立增益消融"
+      ]
+    },
+    {
+      "id": "A",
+      "label": "E01 account task partition",
+      "capability_refs": [
+        "C06"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-e01/adapter.py",
+      "code_sha256": "9138d4615c1ffae2cb5c25f53d7f4aca37f368c0fcf185341407edce15a2adb1",
+      "line": 47,
+      "evidence_path": "identity-graph-e01/runs/20261120T102947736135Z/SUMMARY.json",
+      "evidence_reference": "REF027",
+      "subject_and_permission_scope": "receipt and account-approved sources only",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "只验证本地账号任务及产品命名空间分区，不推断 person；未接入 lab 的模型输入；回执不是可面向不可信远程调用者使用的凭证产品"
+      ]
+    },
+    {
+      "id": "Q",
+      "label": "E02 async revalidation",
+      "capability_refs": [
+        "C07"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-e02/machine.py",
+      "code_sha256": "d58b95bd766322fe722ccb92a827b8097f84cdf76016f8a538800ab2ca82fc0b",
+      "line": 69,
+      "evidence_path": "identity-graph-e02/runs/20261120T104157989849Z/SUMMARY.json",
+      "evidence_reference": "REF032",
+      "subject_and_permission_scope": "original current purpose/deletion/relationships",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "只限可信单线程、受控时钟、两库写锁覆盖的内存接收点；五类 ATOMIC_HANDOFF_UNPROVEN；不含持久恢复、外部接收、多进程一致性"
+      ]
+    },
+    {
+      "id": "S",
+      "label": "E02 memory sink",
+      "capability_refs": [
+        "C07"
+      ],
+      "status": "IMPLEMENTED_AND_TESTED",
+      "code_path": "identity-graph-e02/machine.py",
+      "code_sha256": "d58b95bd766322fe722ccb92a827b8097f84cdf76016f8a538800ab2ca82fc0b",
+      "line": 57,
+      "evidence_path": "identity-graph-e02/runs/20261120T104157989849Z/SUMMARY.json",
+      "evidence_reference": "REF032",
+      "subject_and_permission_scope": "single process local receipt, not third party ACK",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "只限可信单线程、受控时钟、两库写锁覆盖的内存接收点；五类 ATOMIC_HANDOFF_UNPROVEN；不含持久恢复、外部接收、多进程一致性"
+      ]
+    },
+    {
+      "id": "V",
+      "label": "Opportunity valuation",
+      "capability_refs": [
+        "C09"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "code_path": null,
+      "code_sha256": null,
+      "line": null,
+      "evidence_path": null,
+      "evidence_reference": null,
+      "subject_and_permission_scope": "not implemented; no opportunity/economic contract",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "没有自主机会级增量价值估值器、拍卖/价格接口、预算/出价控制器或实际 bid trace；预测收入不等于单次广告机会价值或出价"
+      ]
+    },
+    {
+      "id": "B",
+      "label": "Bid and budget control",
+      "capability_refs": [
+        "C09"
+      ],
+      "status": "NOT_IMPLEMENTED",
+      "code_path": null,
+      "code_sha256": null,
+      "line": null,
+      "evidence_path": null,
+      "evidence_reference": null,
+      "subject_and_permission_scope": "not implemented; no production ad authorization",
+      "real_data_used": false,
+      "new_execution": false,
+      "boundaries": [
+        "没有自主机会级增量价值估值器、拍卖/价格接口、预算/出价控制器或实际 bid trace；预测收入不等于单次广告机会价值或出价"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "I",
+      "target": "R",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "MVP run-003",
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "real_data_used": false
+    },
+    {
+      "source": "R",
+      "target": "P",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "MVP run-003",
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "real_data_used": false
+    },
+    {
+      "source": "E",
+      "target": "P",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "MVP run-003",
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "real_data_used": false
+    },
+    {
+      "source": "P",
+      "target": "F",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "MVP run-003",
+      "evidence_path": "identity-graph-mvp/results/run-003/ALL_CASE_RESULTS.json",
+      "real_data_used": false
+    },
+    {
+      "source": "F",
+      "target": "LD",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "lab run-002",
+      "evidence_path": "identity-graph-ltv-lab/results/run-002/TIME_PERMISSION_AUDIT.csv",
+      "real_data_used": false
+    },
+    {
+      "source": "LD",
+      "target": "LP",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "lab run-002",
+      "evidence_path": "identity-graph-ltv-lab/results/run-002/MODEL_SELECTION_AND_PARAMETERS.json",
+      "real_data_used": false
+    },
+    {
+      "source": "F",
+      "target": "A",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "E01 formal run",
+      "evidence_path": "identity-graph-e01/runs/20261120T102947736135Z/SUMMARY.json",
+      "real_data_used": false
+    },
+    {
+      "source": "A",
+      "target": "Q",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "E02 imports E01; no lab integration",
+      "evidence_path": "identity-graph-e02/runs/20261120T104157989849Z/SUMMARY.json",
+      "real_data_used": false
+    },
+    {
+      "source": "Q",
+      "target": "S",
+      "status": "IMPLEMENTED_AND_TESTED",
+      "execution_scope": "E02 local boundary only",
+      "evidence_path": "identity-graph-e02/runs/20261120T104157989849Z/SUMMARY.json",
+      "real_data_used": false
+    },
+    {
+      "source": "A",
+      "target": "LP",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "account partitions not used by current device lab",
+      "evidence_path": null,
+      "real_data_used": false
+    },
+    {
+      "source": "S",
+      "target": "LP",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "memory receipts do not invoke lab",
+      "evidence_path": null,
+      "real_data_used": false
+    },
+    {
+      "source": "LP",
+      "target": "V",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "no opportunity valuation implementation",
+      "evidence_path": null,
+      "real_data_used": false
+    },
+    {
+      "source": "V",
+      "target": "B",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "no bid controller implementation",
+      "evidence_path": null,
+      "real_data_used": false
+    }
+  ],
+  "integrated_E01_E02_LTV_acceptance": "NOT_IMPLEMENTED",
+  "full_autonomous_goal": "PARTIAL",
+  "excluded_equivalence": "MVP checksum decision_ref is not LTV inference, opportunity valuation or bid",
+  "C_graph_Axon": "UNKNOWN",
+  "C_graph_Vector": "UNKNOWN",
+  "D": "UNKNOWN",
+  "production_forensics": "STOP"
+}

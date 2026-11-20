@@ -1,0 +1,1401 @@
+{
+  "status": "PASS",
+  "reviewed_utc": "2026-11-20T04:56:31.032236+00:00",
+  "checks": [
+    {
+      "name": "historical_numbered_files_byte_preserved",
+      "passed": true,
+      "detail": {
+        "count": 99,
+        "changed": []
+      }
+    },
+    {
+      "name": "historical_prefix_nodes",
+      "passed": true,
+      "detail": {
+        "before": 176,
+        "after": 195
+      }
+    },
+    {
+      "name": "historical_prefix_edges",
+      "passed": true,
+      "detail": {
+        "before": 213,
+        "after": 233
+      }
+    },
+    {
+      "name": "historical_prefix_sources",
+      "passed": true,
+      "detail": {
+        "before": 479,
+        "after": 513
+      }
+    },
+    {
+      "name": "historical_prefix_unknown_breakpoints",
+      "passed": true,
+      "detail": {
+        "before": 16,
+        "after": 21
+      }
+    },
+    {
+      "name": "historical_prefix_excluded_claims",
+      "passed": true,
+      "detail": {
+        "before": 14,
+        "after": 19
+      }
+    },
+    {
+      "name": "historical_metadata_schema_version",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_reviewed_utc",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_scope",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_levels",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_production_semantics",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_cross_sdk_extension",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_core_insights_extension",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_client_growth_extension",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_model_architecture_round60",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_revenue_bid_round61_63",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_cross_game_cold_start_round62",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_final_causal_round64",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_public_evidence_round65",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_public_history_retail_round66",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_independent_retail_time_round67",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_public_data_round68",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_original_source_round69",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_game_industry_round69",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "historical_metadata_closed_loop_round70",
+      "passed": true,
+      "detail": "Old graph section retained"
+    },
+    {
+      "name": "index_append_only",
+      "passed": true,
+      "detail": "Original text retained"
+    },
+    {
+      "name": "after_snapshot_matches",
+      "passed": true,
+      "detail": "Current graph"
+    },
+    {
+      "name": "unique_ids_nodes",
+      "passed": true,
+      "detail": 195
+    },
+    {
+      "name": "unique_ids_edges",
+      "passed": true,
+      "detail": 233
+    },
+    {
+      "name": "unique_ids_sources",
+      "passed": true,
+      "detail": 513
+    },
+    {
+      "name": "edge_refs_L71E01",
+      "passed": true,
+      "detail": "conditional_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E01",
+      "passed": true,
+      "detail": "Final server-supplied overlay/schema,actual subscriber,production send"
+    },
+    {
+      "name": "edge_refs_L71E02",
+      "passed": true,
+      "detail": "conditional_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E02",
+      "passed": true,
+      "detail": "Actual target-game flags;exactly-once economic event"
+    },
+    {
+      "name": "edge_refs_L71E03",
+      "passed": true,
+      "detail": "interface_and_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E03",
+      "passed": true,
+      "detail": "Target-game configuration and actual send/receipt;serve ID/precision not in official example"
+    },
+    {
+      "name": "edge_refs_L71E04",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E04",
+      "passed": true,
+      "detail": "Concrete subscribed MMP/version + id mapping + receiver/dedup contract"
+    },
+    {
+      "name": "edge_refs_L71E05",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E05",
+      "passed": true,
+      "detail": "Authoritative versioned cross-interface ID mapping"
+    },
+    {
+      "name": "edge_refs_L71E06",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "no_production_upgrade_L71E06",
+      "passed": true,
+      "detail": "Account activation,actual received ledger,duplicates/reversals and SDK/S2S reconciliation"
+    },
+    {
+      "name": "edge_refs_L71E07",
+      "passed": true,
+      "detail": "interface_and_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E07",
+      "passed": true,
+      "detail": "Actual account/partner enabled;parameter acceptance and receipt"
+    },
+    {
+      "name": "edge_refs_L71E08",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "no_production_upgrade_L71E08",
+      "passed": true,
+      "detail": "Game backend mappings and preservation of serve ID/precision;real receipt"
+    },
+    {
+      "name": "edge_refs_L71E09",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "no_production_upgrade_L71E09",
+      "passed": true,
+      "detail": "Actual configuration,callback received and field transformations"
+    },
+    {
+      "name": "edge_refs_L71E10",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "no_production_upgrade_L71E10",
+      "passed": true,
+      "detail": "Actual per-game enabled/received;economic ID and event-time/dedup rules"
+    },
+    {
+      "name": "edge_refs_L71E11",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E11",
+      "passed": true,
+      "detail": "Source->received row->dedup->mature label/feature->model-version lineage"
+    },
+    {
+      "name": "edge_refs_L71E12",
+      "passed": true,
+      "detail": "official_use_categories"
+    },
+    {
+      "name": "no_production_upgrade_L71E12",
+      "passed": true,
+      "detail": "Physical columns,sampling,mature windows,refund/dedup,privacy,model version and real game delivery"
+    },
+    {
+      "name": "edge_refs_L71E13",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E13",
+      "passed": true,
+      "detail": "Server mapping contract,cardinality,refresh/reload semantics"
+    },
+    {
+      "name": "edge_refs_L71E14",
+      "passed": true,
+      "detail": "conditional_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E14",
+      "passed": true,
+      "detail": "Concurrent ordering,actual emission;not real income semantics"
+    },
+    {
+      "name": "edge_refs_L71E15",
+      "passed": true,
+      "detail": "conditional_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E15",
+      "passed": true,
+      "detail": "DROP_OLDEST/lifecycle/storage/TTL can lose events;no delivery guarantee"
+    },
+    {
+      "name": "edge_refs_L71E16",
+      "passed": true,
+      "detail": "conditional_code"
+    },
+    {
+      "name": "no_production_upgrade_L71E16",
+      "passed": true,
+      "detail": "Actual network send and ingest confirmation"
+    },
+    {
+      "name": "edge_refs_L71E17",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E17",
+      "passed": true,
+      "detail": "Opaque payload schema,ingest-to-income/label mapping and training use"
+    },
+    {
+      "name": "edge_refs_L71E18",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E18",
+      "passed": true,
+      "detail": "Authorized complete game cohort plus training lineage;not SDK presence"
+    },
+    {
+      "name": "edge_refs_L71E19",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E19",
+      "passed": true,
+      "detail": "Authorized received ledger and label-generation schema"
+    },
+    {
+      "name": "edge_refs_L71E20",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "no_production_upgrade_L71E20",
+      "passed": true,
+      "detail": "Applicant facts,explicit dispatch authorization,rights-holder response,NDA/licence,files and observation semantics"
+    },
+    {
+      "name": "source_hashes_SOURCE_EVIDENCE.json",
+      "passed": true,
+      "detail": {
+        "count": 12,
+        "bad": []
+      }
+    },
+    {
+      "name": "excerpt_L71S01",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/max-mmp-api.txt",
+        "lines": [
+          13,
+          67
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S01",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S01",
+      "passed": true,
+      "detail": "9f3f81bafb2cc32a1c93963a6a09e2ab1889cad8bb7145265eab0c7f2939b754"
+    },
+    {
+      "name": "excerpt_L71S02",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/max-s2s-impression.txt",
+        "lines": [
+          20,
+          204
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S02",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S02",
+      "passed": true,
+      "detail": "ad7fc7bcdaa00ed346198110f0290e5a9d120344ea77d7e9e671d371de05852d"
+    },
+    {
+      "name": "excerpt_L71S03",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/adjust-max-integration.article.txt",
+        "lines": [
+          5,
+          66
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S03",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S03",
+      "passed": true,
+      "detail": "0131eb1ccd852d0e2879a48b181050638989c8a0a7b8eb6973bdac05566ed14b"
+    },
+    {
+      "name": "excerpt_L71S04",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/adjust-ad-revenue.article.txt",
+        "lines": [
+          421,
+          520
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S04",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S04",
+      "passed": true,
+      "detail": "2b494a0d224dd5335013bb6acce6357c9b4c7bed6dff025110dc3ffe4dc9a299"
+    },
+    {
+      "name": "excerpt_L71S05",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/adjust-event.article.txt",
+        "lines": [
+          507,
+          570
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S05",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S05",
+      "passed": true,
+      "detail": "eac486fa145567a7c355b758e1b888ac2ff7361d2ed1a17ff70f1f51a98f5feb"
+    },
+    {
+      "name": "excerpt_L71S06",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/af-ad-revenue-v6.article.txt",
+        "lines": [
+          6,
+          66
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S06",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S06",
+      "passed": true,
+      "detail": "2daed6f9aa4e0d22e51fe0101694b33ef6d450bbbb80c2e21a003e2dc254ebba"
+    },
+    {
+      "name": "excerpt_L71S07",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/af-dedup.article.txt",
+        "lines": [
+          235,
+          251
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S07",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S07",
+      "passed": true,
+      "detail": "213312741f7dd02a68d7f8aec9ad448329d52984121837fc3e17ed058c3e0e7b"
+    },
+    {
+      "name": "excerpt_L71S08",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/unity-post-events-canonical.raw",
+        "lines": [
+          12,
+          59
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S08",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S08",
+      "passed": true,
+      "detail": "564f82f5abf3dd24c303e0cd80b78e3d460dc15a5471c784fbe36d0095c4098f"
+    },
+    {
+      "name": "excerpt_L71S09",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/max-user-api.txt",
+        "lines": [
+          107,
+          163
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S09",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S09",
+      "passed": true,
+      "detail": "aff812d110d1688ca4e398fed2abadbc5788c3b567f590c2fb0ae71c9529b964"
+    },
+    {
+      "name": "excerpt_L71S10",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/adjust-s2s-revenue.article.txt",
+        "lines": [
+          17,
+          127
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S10",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S10",
+      "passed": true,
+      "detail": "b12de2232c3844560a6926b56b75d4ad2a0892ab81c989c61418621745613e48"
+    },
+    {
+      "name": "excerpt_L71S11",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/sources/max-ilrd.txt",
+        "lines": [
+          124,
+          200
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71S11",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71S11",
+      "passed": true,
+      "detail": "88d70373c4e41820707dfdf08debf124f57453c427ff827c506480fde97e0bfe"
+    },
+    {
+      "name": "excerpt_L71D01",
+      "passed": true,
+      "detail": {
+        "path": "axon/adjust-applovin.txt",
+        "lines": [
+          165,
+          249
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71D01",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "extracted_text_hash_L71D01",
+      "passed": true,
+      "detail": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+    },
+    {
+      "name": "source_hashes_CODE_EVIDENCE.json",
+      "passed": true,
+      "detail": {
+        "count": 22,
+        "bad": []
+      }
+    },
+    {
+      "name": "excerpt_L71C01",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+        "lines": [
+          284,
+          317
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C01",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C01",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C01",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C02",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+        "lines": [
+          177,
+          183
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C02",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C02",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C02",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C03",
+      "passed": true,
+      "detail": {
+        "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/c3.java",
+        "lines": [
+          172,
+          198
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C03",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C03",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C03",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C04",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+        "lines": [
+          274,
+          277
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C04",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C04",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C04",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C05",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAd.java",
+        "lines": [
+          63,
+          80
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C05",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C05",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C05",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C06",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAdWaterfallInfo.java",
+        "lines": [
+          10,
+          35
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C06",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C06",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C06",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C07",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustAdRevenue.java",
+        "lines": [
+          6,
+          76
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C07",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C07",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C07",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C08",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java",
+        "lines": [
+          180,
+          191
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C08",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C08",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C08",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C09",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java",
+        "lines": [
+          880,
+          946
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C09",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C09",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C09",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C10",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+        "lines": [
+          3161,
+          3176
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C10",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C10",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C10",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C11",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+        "lines": [
+          2066,
+          2075
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C11",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C11",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C11",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C12",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+        "lines": [
+          3503,
+          3516
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C12",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C12",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C12",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C13",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityState.java",
+        "lines": [
+          185,
+          210
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C13",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C13",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C13",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C14",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustEvent.java",
+        "lines": [
+          6,
+          75
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C14",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C14",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C14",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C15",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/AdObject.kt",
+        "lines": [
+          23,
+          43
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C15",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C15",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C15",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C16",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventRequest.kt",
+        "lines": [
+          21,
+          42
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C16",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C16",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C16",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C17",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/OperativeEventRepository.kt",
+        "lines": [
+          11,
+          21
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C17",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C17",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C17",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C18",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/OperativeEventObserver.kt",
+        "lines": [
+          37,
+          55
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C18",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C18",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C18",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C19",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/work/UniversalRequestJob.kt",
+        "lines": [
+          25,
+          43
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C19",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C19",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C19",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C20",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/ShowEvent.kt",
+        "lines": [
+          5,
+          12
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C20",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C20",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C20",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C21",
+      "passed": true,
+      "detail": {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventApi.kt",
+        "lines": [
+          14,
+          46
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C21",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C21",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C21",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "excerpt_L71C22",
+      "passed": true,
+      "detail": {
+        "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+        "lines": [
+          206,
+          210
+        ]
+      }
+    },
+    {
+      "name": "source_matches_graph_L71C22",
+      "passed": true,
+      "detail": "Full record"
+    },
+    {
+      "name": "original_package_hash_L71C22",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "code_layer_status_L71C22",
+      "passed": true,
+      "detail": "No runtime evidence inferred"
+    },
+    {
+      "name": "source_hashes_REUSED_EVIDENCE.json",
+      "passed": true,
+      "detail": {
+        "count": 59,
+        "bad": []
+      }
+    },
+    {
+      "name": "fetch_unique",
+      "passed": true,
+      "detail": 13
+    },
+    {
+      "name": "fetch_response_hashes",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "failed_fetches_not_source_evidence",
+      "passed": true,
+      "detail": "404/failed redirect excluded"
+    },
+    {
+      "name": "single_class_original_jar",
+      "passed": true,
+      "detail": "ThirdPartySDKs/AppLovin/MAX/13.6.4/classes.jar"
+    },
+    {
+      "name": "targeted_analysis_exit",
+      "passed": true,
+      "detail": "com.applovin.impl.sdk.k"
+    },
+    {
+      "name": "targeted_bytecode_hash",
+      "passed": true,
+      "detail": "lineage71/max-k.javap.txt"
+    },
+    {
+      "name": "sdk_getter_signature",
+      "passed": true,
+      "detail": "public com.applovin.impl.sdk.k u();"
+    },
+    {
+      "name": "bytecode_identity_overlay_publish_anchors",
+      "passed": true,
+      "detail": "Original bytecode cross-check,not runtime SDK test"
+    },
+    {
+      "name": "eight_deliveries",
+      "passed": true,
+      "detail": 8
+    },
+    {
+      "name": "delivery_71_MAX经济展示与收入关联.md",
+      "passed": true,
+      "detail": 6652
+    },
+    {
+      "name": "delivery_71_Unity机会ID与事件关联.md",
+      "passed": true,
+      "detail": 5939
+    },
+    {
+      "name": "delivery_71_MMP到广告平台数据血缘.md",
+      "passed": true,
+      "detail": 7045
+    },
+    {
+      "name": "delivery_71_Axon训练数据字段证据.md",
+      "passed": true,
+      "detail": 4532
+    },
+    {
+      "name": "delivery_71_Vector训练数据字段证据.md",
+      "passed": true,
+      "detail": 5138
+    },
+    {
+      "name": "delivery_71_Uken数据授权最终申请包.md",
+      "passed": true,
+      "detail": 4800
+    },
+    {
+      "name": "delivery_71_端到端训练反馈关系图.json",
+      "passed": true,
+      "detail": 237069
+    },
+    {
+      "name": "delivery_71_下一阶段突破建议.md",
+      "passed": true,
+      "detail": 4658
+    },
+    {
+      "name": "local_graph_edges_match",
+      "passed": true,
+      "detail": 20
+    },
+    {
+      "name": "local_graph_nodes_match",
+      "passed": true,
+      "detail": 19
+    },
+    {
+      "name": "local_graph_sources_match",
+      "passed": true,
+      "detail": 62
+    },
+    {
+      "name": "local_graph_source_refs",
+      "passed": true,
+      "detail": "Self-contained source references"
+    },
+    {
+      "name": "field_csv_exact_roundtrip",
+      "passed": true,
+      "detail": 22
+    },
+    {
+      "name": "field_matrix_evidence_refs",
+      "passed": true,
+      "detail": "Each row cites original sources"
+    },
+    {
+      "name": "field_matrix_no_training_or_receipt_upgrade",
+      "passed": true,
+      "detail": "22 rows retain boundaries"
+    },
+    {
+      "name": "application_package_present",
+      "passed": true,
+      "detail": [
+        "APPLICANT_INFORMATION.md",
+        "UKEN_REVIEW_EMAIL.md",
+        "SFU_REVIEW_EMAIL.md",
+        "ACCESS_OPTIONS_AND_MINIMUM_SCHEMA.md"
+      ]
+    },
+    {
+      "name": "contacts_unsent_unlicensed",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "applicant_placeholders_explicit",
+      "passed": true,
+      "detail": "No applicant affiliation invented"
+    },
+    {
+      "name": "local_links_resolve",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "new_reports_utf8_no_replacement",
+      "passed": true,
+      "detail": "Original source pages may have their own encoding;new reports checked"
+    },
+    {
+      "name": "no_training_data_or_production_experiment",
+      "passed": true,
+      "detail": "Metadata and generated artifacts only;not a traffic audit"
+    },
+    {
+      "name": "round_csv_is_metadata_only",
+      "passed": true,
+      "detail": "No downloaded player rows"
+    }
+  ],
+  "counts": {
+    "historical_numbered_files": 99,
+    "deliveries": 8,
+    "new_code_excerpts": 22,
+    "new_source_records": 12,
+    "reused_records": 59,
+    "field_rows": 22,
+    "graph_nodes": 195,
+    "graph_edges": 233,
+    "graph_sources": 513,
+    "applications_sent": 0,
+    "models_trained": 0
+  },
+  "limits": [
+    "Static evidence integrity,not SDK runtime/delivery/accounting verification",
+    "Final MAX broadcast id can be overridden;S2S ID mapping unknown",
+    "No observed partner receipt or physical training columns",
+    "Current Uken rights-holder/data licence/files unknown;no training"
+  ]
+}

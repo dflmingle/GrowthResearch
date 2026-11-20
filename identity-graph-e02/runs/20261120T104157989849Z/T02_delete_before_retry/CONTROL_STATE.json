@@ -1,0 +1,111 @@
+{
+  "policies": [
+    {
+      "epoch": 1,
+      "entity_ref": "entity_000002",
+      "purpose": "synthetic-value-research",
+      "state": "GRANTED",
+      "effective_at": 1767225600,
+      "observed_at": 1767225600,
+      "source_ref": "synth:consent"
+    },
+    {
+      "epoch": 2,
+      "entity_ref": "entity_000004",
+      "purpose": "synthetic-value-research",
+      "state": "GRANTED",
+      "effective_at": 1767225600,
+      "observed_at": 1767225600,
+      "source_ref": "synth:consent"
+    },
+    {
+      "epoch": 3,
+      "entity_ref": "entity_000006",
+      "purpose": "synthetic-value-research",
+      "state": "GRANTED",
+      "effective_at": 1767225600,
+      "observed_at": 1767225600,
+      "source_ref": "synth:consent"
+    }
+  ],
+  "deletions": [
+    {
+      "id": "delete_000004",
+      "entity_ref": "entity_000004",
+      "requested_at": 1767225600,
+      "effective_at": 1767225600,
+      "epoch": 4,
+      "source_ref": "synth:delete",
+      "training_disposition": "NO_MODEL_TRAINED",
+      "state": "ACK_PENDING"
+    }
+  ],
+  "erased_entities": [
+    {
+      "entity_ref": "entity_000004",
+      "case_ref": "delete_000004",
+      "erased_at": 1767225600
+    }
+  ],
+  "auth_nonces": [
+    {
+      "nonce": "synth:nonce:780241:1",
+      "used_at": 1767225600,
+      "app_ref": "entity_000006",
+      "account_ref": "entity_000004",
+      "purpose": "synthetic-value-research",
+      "assertion_hash": "7a941c347ceffba911d2807d4361380b43cc5ca0f29826f1d83f204c79927f10"
+    }
+  ],
+  "deletion_sinks": [
+    {
+      "case_ref": "delete_000004",
+      "sink": "identity",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "graph",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "events",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "outbox",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "features",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "coverage",
+      "status": "ACK",
+      "acknowledged_at": 1767225600,
+      "source_ref": "synth:local-purge"
+    },
+    {
+      "case_ref": "delete_000004",
+      "sink": "synthetic:e02-memory",
+      "status": "PENDING",
+      "acknowledged_at": null,
+      "source_ref": null
+    }
+  ]
+}

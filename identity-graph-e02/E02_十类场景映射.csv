@@ -1,0 +1,11 @@
+﻿scenario,cases,passed,total,result
+1,T01_revoke_after_enqueue,1,1,PASS
+2,T02_delete_before_retry;T25_delete_after_claim,2,2,PASS
+3,T03_scheduled_revoke_no_write;T15_final_check_scheduled_revoke,2,2,PASS
+4,T04_policy_between_prepare_and_commit;T16_final_check_delete,2,2,PASS
+5,T05_restore_old_state_keep_control,1,1,PASS
+6,T06_repeated_economic_retries,1,1,PASS
+7,T07_relation_expiry;T14_final_check_relation_expiry,2,2,PASS
+8,T08_wrong_purpose,1,1,PASS
+9,T09_ack_loss_retry;T18_ack_loss_then_revoke,2,2,PASS
+10,T10_unproven_external_boundary;T19_state_lock_busy;T20_control_lock_busy;T21_pending_transaction;T28_unsupported_durable_restart,5,5,PASS

@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "source snapshot blocked",
+    "input_refs": "operation trace",
+    "expected": "BLOCKED_DELETED_SOURCE",
+    "actual": "BLOCKED_DELETED_SOURCE",
+    "passed": true
+  },
+  {
+    "assertion": "no fake model unlearning confirmation",
+    "input_refs": "operation trace",
+    "expected": "MODEL_ERASURE_UNKNOWN",
+    "actual": "MODEL_ERASURE_UNKNOWN",
+    "passed": true
+  },
+  {
+    "assertion": "scope not declared wholly erased",
+    "input_refs": "operation trace",
+    "expected": "EXCEPTION_OR_UNKNOWN",
+    "actual": "EXCEPTION_OR_UNKNOWN",
+    "passed": true
+  }
+]

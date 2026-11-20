@@ -1,0 +1,81 @@
+unittest.case.FunctionTestCase (test)
+C01_three_routes — A rejects shared device; B account total=10; C source=7,target=3,B99 excluded ... ok
+unittest.case.FunctionTestCase (test)
+C02_missing_receipt — DENIED without accepted resolver receipt ... ok
+unittest.case.FunctionTestCase (test)
+C03_bare_account — DENIED bare account_ref input ... ok
+unittest.case.FunctionTestCase (test)
+C04_wrong_receipt_app — DENIED receipt from source installation ... ok
+unittest.case.FunctionTestCase (test)
+C05_other_account_receipt — DENIED unrelated account receipt ... ok
+unittest.case.FunctionTestCase (test)
+C06_namespace_collision — different namespaces same token stay separate; source=7 ... ok
+unittest.case.FunctionTestCase (test)
+C07_bad_signature — original resolver rejects altered signature ... ok
+unittest.case.FunctionTestCase (test)
+C08_expired_assertion — original resolver rejects expired login proof ... ok
+unittest.case.FunctionTestCase (test)
+C09_revoke_source — old snapshot denied; fresh source unobserved ... ok
+unittest.case.FunctionTestCase (test)
+C10_revoke_target — old snapshot and new request denied ... ok
+unittest.case.FunctionTestCase (test)
+C11_revoke_consent — old snapshot denied; fresh excludes revoked source ... ok
+unittest.case.FunctionTestCase (test)
+C12_delete_source — old snapshot denied; fresh excludes deleted source ... ok
+unittest.case.FunctionTestCase (test)
+C13_expiry_no_write — at valid_to with no graph/epoch change old snapshot denied; fresh excludes source ... ok
+unittest.case.FunctionTestCase (test)
+C14_scheduled_revoke_no_write — at effective_at with no subsequent write old snapshot denied; source excluded ... ok
+unittest.case.FunctionTestCase (test)
+C15_late_event — future-available 41 excluded at prediction; source=7 ... ok
+unittest.case.FunctionTestCase (test)
+C16_late_relation — future-available login excluded; no source history ... ok
+unittest.case.FunctionTestCase (test)
+C17_negative_amount — source=-7 preserved; target=3 ... ok
+unittest.case.FunctionTestCase (test)
+C18_missing_observation — no source rows and MISSING coverage != complete zero ... ok
+unittest.case.FunctionTestCase (test)
+C19_complete_zero — no source rows and COMPLETE coverage = known zero ... ok
+unittest.case.FunctionTestCase (test)
+C20_missing_lineage — UNSUPPORTED_PARTITION; no fallback ... ok
+unittest.case.FunctionTestCase (test)
+C21_lineage_disagreement — UNSUPPORTED_PARTITION; no fallback ... ok
+unittest.case.FunctionTestCase (test)
+C22_source_policy_exclusion — approved source refs never include revoked source ... ok
+unittest.case.FunctionTestCase (test)
+C23_wrong_purpose — DENIED purpose mismatch ... ok
+unittest.case.FunctionTestCase (test)
+C24_wrong_context — DENIED environment mismatch ... ok
+unittest.case.FunctionTestCase (test)
+C25_backdated_prediction — DENIED late feature materialization/backdated task ... ok
+unittest.case.FunctionTestCase (test)
+C26_future_prediction — DENIED future task ... ok
+unittest.case.FunctionTestCase (test)
+C27_mutant_account — deliberately faulty account adapter detected ... ok
+unittest.case.FunctionTestCase (test)
+C28_mutant_partition — deliberately faulty mixed-app adapter detected ... ok
+unittest.case.FunctionTestCase (test)
+C29_mutant_late — deliberately faulty late-information adapter detected ... ok
+unittest.case.FunctionTestCase (test)
+C30_target_reinstall — same product reinstall remains target history; source=7,target=5 ... ok
+unittest.case.FunctionTestCase (test)
+C31_reset_target_device — reset blocks old and current target task ... ok
+unittest.case.FunctionTestCase (test)
+C32_receipt_after_assertion_ttl — accepted receipt not incorrectly treated as expired login proof ... ok
+unittest.case.FunctionTestCase (test)
+C33_delete_account — old snapshot and current task denied ... ok
+unittest.case.FunctionTestCase (test)
+C34_missing_account_values — UNSUPPORTED_PARTITION on incomplete original API schema ... ok
+unittest.case.FunctionTestCase (test)
+C35_multi_currency — no implicit currency conversion; signed amounts partitioned by currency ... ok
+unittest.case.FunctionTestCase (test)
+C36_only_approved_pk_reads — partition SQL reads exact approved primary keys only ... ok
+unittest.case.FunctionTestCase (test)
+C37_expired_target_relation — target relation expiry rejects current and old read ... ok
+unittest.case.FunctionTestCase (test)
+C38_no_target_auth_fallback — revoked target auth cannot fall back to shared-device identity ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 95.757s
+
+OK

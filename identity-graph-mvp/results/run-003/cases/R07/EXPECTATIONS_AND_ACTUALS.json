@@ -1,0 +1,16 @@
+[
+  {
+    "assertion": "identity IDs never reused after state rollback",
+    "input_refs": "operation trace",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "assertion": "deleted subject authority survives rollback",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  }
+]

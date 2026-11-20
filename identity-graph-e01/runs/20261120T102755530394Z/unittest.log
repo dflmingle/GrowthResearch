@@ -1,0 +1,497 @@
+unittest.case.FunctionTestCase (test)
+C01_three_routes — A rejects shared device; B account total=10; C source=7,target=3,B99 excluded ... FAIL
+unittest.case.FunctionTestCase (test)
+C02_missing_receipt — DENIED without accepted resolver receipt ... ok
+unittest.case.FunctionTestCase (test)
+C03_bare_account — DENIED bare account_ref input ... ok
+unittest.case.FunctionTestCase (test)
+C04_wrong_receipt_app — DENIED receipt from source installation ... ok
+unittest.case.FunctionTestCase (test)
+C05_other_account_receipt — DENIED unrelated account receipt ... ok
+unittest.case.FunctionTestCase (test)
+C06_namespace_collision — different namespaces same token stay separate; source=7 ... ERROR
+unittest.case.FunctionTestCase (test)
+C07_bad_signature — original resolver rejects altered signature ... ok
+unittest.case.FunctionTestCase (test)
+C08_expired_assertion — original resolver rejects expired login proof ... ok
+unittest.case.FunctionTestCase (test)
+C09_revoke_source — old snapshot denied; fresh source unobserved ... FAIL
+unittest.case.FunctionTestCase (test)
+C10_revoke_target — old snapshot and new request denied ... FAIL
+unittest.case.FunctionTestCase (test)
+C11_revoke_consent — old snapshot denied; fresh excludes revoked source ... FAIL
+unittest.case.FunctionTestCase (test)
+C12_delete_source — old snapshot denied; fresh excludes deleted source ... FAIL
+unittest.case.FunctionTestCase (test)
+C13_expiry_no_write — at valid_to with no graph/epoch change old snapshot denied; fresh excludes source ... FAIL
+unittest.case.FunctionTestCase (test)
+C14_scheduled_revoke_no_write — at effective_at with no subsequent write old snapshot denied; source excluded ... FAIL
+unittest.case.FunctionTestCase (test)
+C15_late_event — future-available 41 excluded at prediction; source=7 ... FAIL
+unittest.case.FunctionTestCase (test)
+C16_late_relation — future-available login excluded; no source history ... FAIL
+unittest.case.FunctionTestCase (test)
+C17_negative_amount — source=-7 preserved; target=3 ... FAIL
+unittest.case.FunctionTestCase (test)
+C18_missing_observation — no source rows and MISSING coverage != complete zero ... FAIL
+unittest.case.FunctionTestCase (test)
+C19_complete_zero — no source rows and COMPLETE coverage = known zero ... FAIL
+unittest.case.FunctionTestCase (test)
+C20_missing_lineage — UNSUPPORTED_PARTITION; no fallback ... ok
+unittest.case.FunctionTestCase (test)
+C21_lineage_disagreement — UNSUPPORTED_PARTITION; no fallback ... ok
+unittest.case.FunctionTestCase (test)
+C22_source_policy_exclusion — approved source refs never include revoked source ... FAIL
+unittest.case.FunctionTestCase (test)
+C23_wrong_purpose — DENIED purpose mismatch ... ok
+unittest.case.FunctionTestCase (test)
+C24_wrong_context — DENIED environment mismatch ... ok
+unittest.case.FunctionTestCase (test)
+C25_backdated_prediction — DENIED late feature materialization/backdated task ... ok
+unittest.case.FunctionTestCase (test)
+C26_future_prediction — DENIED future task ... ok
+unittest.case.FunctionTestCase (test)
+C27_mutant_account — deliberately faulty account adapter detected ... FAIL
+unittest.case.FunctionTestCase (test)
+C28_mutant_partition — deliberately faulty mixed-app adapter detected ... FAIL
+unittest.case.FunctionTestCase (test)
+C29_mutant_late — deliberately faulty late-information adapter detected ... FAIL
+unittest.case.FunctionTestCase (test)
+C30_target_reinstall — same product reinstall remains target history; source=7,target=5 ... FAIL
+unittest.case.FunctionTestCase (test)
+C31_reset_target_device — reset blocks old and current target task ... FAIL
+unittest.case.FunctionTestCase (test)
+C32_receipt_after_assertion_ttl — accepted receipt not incorrectly treated as expired login proof ... FAIL
+unittest.case.FunctionTestCase (test)
+C33_delete_account — old snapshot and current task denied ... FAIL
+unittest.case.FunctionTestCase (test)
+C34_missing_account_values — UNSUPPORTED_PARTITION on incomplete original API schema ... ok
+unittest.case.FunctionTestCase (test)
+C35_multi_currency — no implicit currency conversion; signed amounts partitioned by currency ... FAIL
+unittest.case.FunctionTestCase (test)
+C36_only_approved_pk_reads — partition SQL reads exact approved primary keys only ... ERROR
+unittest.case.FunctionTestCase (test)
+C37_expired_target_relation — target relation expiry rejects current and old read ... FAIL
+unittest.case.FunctionTestCase (test)
+C38_no_target_auth_fallback — revoked target auth cannot fall back to shared-device identity ... FAIL
+
+======================================================================
+ERROR: unittest.case.FunctionTestCase (test)
+C06_namespace_collision — different namespaces same token stay separate; source=7
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 106, in execute
+    equal(s.namespaces.compare(f.a,stranger)['same_identity'],False)
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+======================================================================
+ERROR: unittest.case.FunctionTestCase (test)
+C36_only_approved_pk_reads — partition SQL reads exact approved primary keys only
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 216, in execute
+    try:parts=adapter._partition(req,binding,bundle,read)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\adapter.py", line 71, in _partition
+    if read.get('lineage')!=lineage:raise Rejected('UNSUPPORTED_PARTITION:READ_LINEAGE_MISMATCH')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+identity_mvp.system.Rejected: UNSUPPORTED_PARTITION:READ_LINEAGE_MISMATCH
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C01_three_routes — A rejects shared device; B account total=10; C source=7,target=3,B99 excluded
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 83, in execute
+    equal(b['read']['values']['observed_revenue_micros'],10_000_000);approved(c)
+                                                                     ^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C09_revoke_source — old snapshot denied; fresh source unobserved
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C10_revoke_target — old snapshot and new request denied
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C11_revoke_consent — old snapshot denied; fresh excludes revoked source
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C12_delete_source — old snapshot denied; fresh excludes deleted source
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C13_expiry_no_write — at valid_to with no graph/epoch change old snapshot denied; fresh excludes source
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C14_scheduled_revoke_no_write — at effective_at with no subsequent write old snapshot denied; source excluded
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C15_late_event — future-available 41 excluded at prediction; source=7
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 159, in execute
+    approved(result,source=0 if name.startswith('C16') else 7_000_000)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C16_late_relation — future-available login excluded; no source history
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 159, in execute
+    approved(result,source=0 if name.startswith('C16') else 7_000_000)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C17_negative_amount — source=-7 preserved; target=3
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 167, in execute
+    result=adapter.extract(req);record['actual']=result;approved(result,source=-7_000_000)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C18_missing_observation — no source rows and MISSING coverage != complete zero
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 170, in execute
+    result=adapter.extract(req);record['actual']=result;approved(result,source=0)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C19_complete_zero — no source rows and COMPLETE coverage = known zero
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 170, in execute
+    result=adapter.extract(req);record['actual']=result;approved(result,source=0)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C22_source_policy_exclusion — approved source refs never include revoked source
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C27_mutant_account — deliberately faulty account adapter detected
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 191, in execute
+    result=adapter.extract(req);approved(result)
+                                ^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C28_mutant_partition — deliberately faulty mixed-app adapter detected
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 191, in execute
+    result=adapter.extract(req);approved(result)
+                                ^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C29_mutant_late — deliberately faulty late-information adapter detected
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 159, in execute
+    approved(result,source=0 if name.startswith('C16') else 7_000_000)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C30_target_reinstall — same product reinstall remains target history; source=7,target=5
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 200, in execute
+    result=adapter.extract(req);record['actual']=result;approved(result,target=5_000_000)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C31_reset_target_device — reset blocks old and current target task
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C32_receipt_after_assertion_ttl — accepted receipt not incorrectly treated as expired login proof
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 204, in execute
+    result=adapter.extract(f.request());record['actual']=result;approved(result);return
+                                                                ^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C33_delete_account — old snapshot and current task denied
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C35_multi_currency — no implicit currency conversion; signed amounts partitioned by currency
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 208, in execute
+    result=adapter.extract(req);record['actual']=result;status(result,'OK')
+                                                        ^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 20, in status
+    def status(result,value):equal(result.get('status'),value)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected 'OK', got 'UNSUPPORTED_PARTITION'
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C37_expired_target_relation — target relation expiry rejects current and old read
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+C38_no_target_auth_fallback — revoked target auth cannot fall back to shared-device identity
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 253, in test
+    execute(name,f,rec)
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 125, in execute
+    prior=adapter.extract(req);approved(prior)
+                               ^^^^^^^^^^^^^^^
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 23, in approved
+    equal(partition_violations(result,source=source,target=target),[])
+  File "D:\GrowthResearch\identity-graph-e01\run.py", line 18, in equal
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']
+
+----------------------------------------------------------------------
+Ran 38 tests in 94.467s
+
+FAILED (failures=23, errors=2)

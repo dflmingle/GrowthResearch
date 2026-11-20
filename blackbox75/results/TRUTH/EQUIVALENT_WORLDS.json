@@ -1,0 +1,23 @@
+[
+  {
+    "pair": "H0_vs_H3_same_frozen_mapping",
+    "truth_A": "target/context parameters",
+    "truth_B": "cross-game learned parameters;identical mapping",
+    "identical_observations": true,
+    "discriminator": "source-training provenance"
+  },
+  {
+    "pair": "H1_vs_H3_unobserved_context_mediator",
+    "truth_A": "online individual cross-app route",
+    "truth_B": "no history lookup;current cohort/context encodes intervention",
+    "identical_observations": true,
+    "discriminator": "causal exclusion/context-path audit"
+  },
+  {
+    "pair": "H2_history_vs_account_audience",
+    "truth_A": "cross-device history feature read",
+    "truth_B": "account audience eligibility rule;not value model",
+    "identical_observations": true,
+    "discriminator": "recipient feature-group consumption and audience/selector audit"
+  }
+]

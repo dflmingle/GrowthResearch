@@ -1,0 +1,48 @@
+{
+  "data_type": "SYNTHETIC_ONLY",
+  "seeds": [
+    731,
+    732,
+    733
+  ],
+  "scenarios": [
+    "individual_signal",
+    "group_sufficient",
+    "source_shift"
+  ],
+  "history_counts": [
+    1,
+    8
+  ],
+  "target_train_sizes": [
+    2000,
+    150
+  ],
+  "source_train_size": 6000,
+  "validation_size": 500,
+  "test_size": 3000,
+  "rates": [
+    0,
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "estimator": "StandardScaler + Ridge(alpha=10), log1p target",
+  "test_users_disjoint": true,
+  "real_data_used": false,
+  "training_rates": "correct peer at train;perturbed peer only at test",
+  "history_before_prediction": true,
+  "label_after_prediction": true,
+  "t0_roles": {
+    "train": 0,
+    "validation": 30,
+    "test": 60
+  },
+  "notes": [
+    "E_shared has extra source training rows;not an equal-data-budget proof",
+    "Group-only priors use mature synthetic source-training labels only",
+    "No user/device/app ID used directly as feature",
+    "Metrics are generated units,not monetary ROAS"
+  ]
+}

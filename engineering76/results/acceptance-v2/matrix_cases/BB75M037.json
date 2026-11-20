@@ -1,0 +1,82 @@
+{
+  "case": {
+    "case_id": "BB75M037",
+    "original_row": {
+      "row_id": "BB75M037",
+      "hypothesis": "H2_account",
+      "training_scope": "T0 or T1",
+      "online_link_scope": "D2: cross-device account-linked history;D1 optional",
+      "observation_id": "O5_match",
+      "observation": "获授权匹配成功/失败状态",
+      "controllable_input": "Authorized sandbox known mapping/derived/no-match controls;partner translation permissions",
+      "observable_output": "Maintained/derived/status/namespace/granularity/quality flags;no raw identity",
+      "expected_difference": "History-by-link interaction may appear across devices;link main effect alone does not identify transfer;account is not a person. Service-specific matching may be established;no inference about consuming platform without receipt",
+      "major_confounders": "Derived fallback,multiple candidates,stale/deleted result,partner encoding,account sharing",
+      "additional_evidence_required": "Authorized service result truth plus target-platform actual receipt and purpose",
+      "identifiability": "条件识别服务关联；不自动识别人或模型",
+      "identifying_assumptions": "Random assignment/positivity;no source->target context leakage;frozen aggregate/model/stock/caps;no interference or cluster it;known delivery latency;purpose-valid consent;valid denominator and observed receipt.",
+      "entity_claim_boundary": "Account-level link and source->target use;not natural-person identity",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74S01;IV74S02;IV74S04;IV74S05;IV74S09;IG72S05;MA60S17"
+    },
+    "fixture_route": "D1",
+    "observation_level": "match",
+    "expected_status": "BOUNDED_PROVIDER_STATUS",
+    "required_claims": [
+      "provider_maintained_status"
+    ],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "match",
+    "match": {
+      "scope_attested": true,
+      "namespace": "mock-provider",
+      "entity_granularity": "account",
+      "result_type": "maintained",
+      "matchConfidence": "cascade-step-8"
+    }
+  },
+  "verdict": {
+    "status": "BOUNDED_PROVIDER_STATUS",
+    "claims": [
+      "provider_maintained_status"
+    ],
+    "result_type": "maintained",
+    "limit": "Derived is not existing match;maintained not independent person truth;confidence not probability"
+  },
+  "hypothesis_observed": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+  "weakened_input": {
+    "observation_level": "match",
+    "match": {
+      "scope_attested": false,
+      "namespace": "mock-provider",
+      "entity_granularity": "account",
+      "result_type": "maintained",
+      "matchConfidence": "cascade-step-8"
+    }
+  },
+  "weakened_verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "No authorized scoped match state"
+  },
+  "derived_variant_verdict": {
+    "status": "BOUNDED_PROVIDER_STATUS",
+    "claims": [],
+    "result_type": "derived",
+    "limit": "Derived is not existing match;maintained not independent person truth;confidence not probability"
+  },
+  "passed": true
+}

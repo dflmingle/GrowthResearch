@@ -1,0 +1,1272 @@
+[
+  {
+    "database": "state.sqlite",
+    "table": "audit_log",
+    "sql": "CREATE TABLE audit_log(\n seq INTEGER PRIMARY KEY AUTOINCREMENT,at INTEGER NOT NULL,kind TEXT NOT NULL,\n payload_json TEXT NOT NULL,previous_hash TEXT NOT NULL,hash TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "seq",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "kind",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "payload_json",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "previous_hash",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "hash",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "coverage",
+    "sql": "CREATE TABLE coverage(\n id TEXT PRIMARY KEY, app_ref TEXT NOT NULL REFERENCES entities(id),\n start_at INTEGER NOT NULL,end_at INTEGER NOT NULL,status TEXT NOT NULL,\n observed_at INTEGER NOT NULL,available_at INTEGER NOT NULL,source_ref TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "app_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "start_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "end_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "available_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "edge_revisions",
+    "sql": "CREATE TABLE edge_revisions(\n id TEXT NOT NULL, revision INTEGER NOT NULL, src TEXT NOT NULL REFERENCES entities(id),\n dst TEXT NOT NULL REFERENCES entities(id), kind TEXT NOT NULL,\n grain TEXT NOT NULL, source_ref TEXT NOT NULL, scope TEXT NOT NULL,\n confidence REAL, quality_kind TEXT NOT NULL, quality_scope TEXT NOT NULL,\n method_version TEXT NOT NULL, status TEXT NOT NULL,\n valid_from INTEGER NOT NULL, valid_to INTEGER, observed_at INTEGER NOT NULL,\n available_at INTEGER NOT NULL, revoked_at INTEGER, purpose TEXT NOT NULL,\n policy_epoch INTEGER NOT NULL, graph_version INTEGER NOT NULL,\n PRIMARY KEY(id,revision))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "revision",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 2
+      },
+      {
+        "cid": 2,
+        "name": "src",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "dst",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "kind",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "grain",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "scope",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 8,
+        "name": "confidence",
+        "type": "REAL",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 9,
+        "name": "quality_kind",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 10,
+        "name": "quality_scope",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 11,
+        "name": "method_version",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 12,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 13,
+        "name": "valid_from",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 14,
+        "name": "valid_to",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 15,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 16,
+        "name": "available_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 17,
+        "name": "revoked_at",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 18,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 19,
+        "name": "policy_epoch",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 20,
+        "name": "graph_version",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "entities",
+    "sql": "CREATE TABLE entities(\n id TEXT PRIMARY KEY, namespace_id TEXT NOT NULL REFERENCES namespaces(id), token TEXT,\n entity_type TEXT NOT NULL, created_at INTEGER NOT NULL, deleted INTEGER NOT NULL DEFAULT 0,\n UNIQUE(namespace_id,token))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "namespace_id",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "token",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "entity_type",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "created_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "deleted",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": "0",
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "events",
+    "sql": "CREATE TABLE events(\n id TEXT PRIMARY KEY, tenant TEXT NOT NULL, app_ref TEXT NOT NULL REFERENCES entities(id),\n source TEXT NOT NULL, source_event_id TEXT NOT NULL, revision INTEGER NOT NULL,\n event_type TEXT NOT NULL, account_ref TEXT REFERENCES entities(id),\n occurred_at INTEGER NOT NULL, received_at INTEGER NOT NULL, observed_at INTEGER NOT NULL,\n available_at INTEGER NOT NULL, source_ref TEXT NOT NULL, purpose TEXT NOT NULL,\n policy_epoch INTEGER NOT NULL, payload_hash TEXT NOT NULL, payload_json TEXT,\n deleted INTEGER NOT NULL DEFAULT 0,\n UNIQUE(tenant,app_ref,source,source_event_id,revision))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "tenant",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "app_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "source",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "source_event_id",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "revision",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "event_type",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "account_ref",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 8,
+        "name": "occurred_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 9,
+        "name": "received_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 10,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 11,
+        "name": "available_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 12,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 13,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 14,
+        "name": "policy_epoch",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 15,
+        "name": "payload_hash",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 16,
+        "name": "payload_json",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 17,
+        "name": "deleted",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": "0",
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "feature_bundles",
+    "sql": "CREATE TABLE feature_bundles(\n id TEXT PRIMARY KEY,subject_ref TEXT NOT NULL,purpose TEXT NOT NULL,as_of INTEGER NOT NULL,\n since_at INTEGER NOT NULL,materialized_at INTEGER NOT NULL,available_at INTEGER NOT NULL,\n graph_version INTEGER NOT NULL,policy_epoch INTEGER NOT NULL,\n lineage_json TEXT NOT NULL,values_json TEXT,status TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "subject_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "as_of",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "since_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "materialized_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "available_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "graph_version",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 8,
+        "name": "policy_epoch",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 9,
+        "name": "lineage_json",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 10,
+        "name": "values_json",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 11,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "ledger",
+    "sql": "CREATE TABLE ledger(\n id TEXT PRIMARY KEY, event_ref TEXT NOT NULL REFERENCES events(id),\n app_ref TEXT NOT NULL REFERENCES entities(id), account_ref TEXT REFERENCES entities(id),\n source TEXT NOT NULL, economic_key TEXT NOT NULL, revision INTEGER NOT NULL,\n amount_micros INTEGER, currency TEXT NOT NULL, economic_kind TEXT NOT NULL,\n economic_at INTEGER NOT NULL, occurred_at INTEGER NOT NULL, observed_at INTEGER NOT NULL,\n available_at INTEGER NOT NULL, correction_of TEXT REFERENCES ledger(id),\n semantic_hash TEXT NOT NULL, deleted INTEGER NOT NULL DEFAULT 0,\n UNIQUE(app_ref,source,economic_key,revision))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "event_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "app_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "account_ref",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "source",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "economic_key",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "revision",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "amount_micros",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 8,
+        "name": "currency",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 9,
+        "name": "economic_kind",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 10,
+        "name": "economic_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 11,
+        "name": "occurred_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 12,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 13,
+        "name": "available_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 14,
+        "name": "correction_of",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 15,
+        "name": "semantic_hash",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 16,
+        "name": "deleted",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": "0",
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "meta",
+    "sql": "CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "key",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "value",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "namespace_mappings",
+    "sql": "CREATE TABLE namespace_mappings(\n a TEXT NOT NULL REFERENCES namespaces(id), b TEXT NOT NULL REFERENCES namespaces(id),\n purpose TEXT NOT NULL, evidence TEXT NOT NULL, observed_at INTEGER NOT NULL,\n PRIMARY KEY(a,b,purpose))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "a",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "b",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 2
+      },
+      {
+        "cid": 2,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 3
+      },
+      {
+        "cid": 3,
+        "name": "evidence",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "namespaces",
+    "sql": "CREATE TABLE namespaces(\n id TEXT PRIMARY KEY, tenant TEXT NOT NULL, issuer TEXT NOT NULL, app TEXT NOT NULL,\n sector TEXT NOT NULL, entity_type TEXT NOT NULL CHECK(entity_type IN('person','account','device','app_instance','household')),\n scope TEXT NOT NULL, version TEXT NOT NULL, evidence TEXT NOT NULL,\n UNIQUE(tenant,issuer,app,sector,entity_type,scope,version))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "tenant",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "issuer",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "app",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "sector",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "entity_type",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "scope",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "version",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 8,
+        "name": "evidence",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "outbox",
+    "sql": "CREATE TABLE outbox(id TEXT PRIMARY KEY,event_ref TEXT NOT NULL,payload_json TEXT,status TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "event_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "payload_json",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "state.sqlite",
+    "table": "training_snapshots",
+    "sql": "CREATE TABLE training_snapshots(\n id TEXT PRIMARY KEY,entity_refs_json TEXT NOT NULL,trained_model INTEGER NOT NULL,status TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "entity_refs_json",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "trained_model",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "auth_nonces",
+    "sql": "CREATE TABLE auth_nonces(nonce TEXT PRIMARY KEY,used_at INTEGER NOT NULL,\n app_ref TEXT NOT NULL,account_ref TEXT NOT NULL,purpose TEXT NOT NULL,assertion_hash TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "nonce",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "used_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "app_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "account_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "assertion_hash",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "control_meta",
+    "sql": "CREATE TABLE control_meta(key TEXT PRIMARY KEY,value TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "key",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "value",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "deletion_sinks",
+    "sql": "CREATE TABLE deletion_sinks(\n case_ref TEXT NOT NULL REFERENCES deletions(id),sink TEXT NOT NULL,status TEXT NOT NULL,\n acknowledged_at INTEGER,source_ref TEXT,PRIMARY KEY(case_ref,sink))",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "case_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "sink",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 2
+      },
+      {
+        "cid": 2,
+        "name": "status",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "acknowledged_at",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "deletions",
+    "sql": "CREATE TABLE deletions(\n id TEXT PRIMARY KEY,entity_ref TEXT NOT NULL,requested_at INTEGER NOT NULL,effective_at INTEGER NOT NULL,\n epoch INTEGER NOT NULL,source_ref TEXT NOT NULL,training_disposition TEXT NOT NULL,state TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "id",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "entity_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "requested_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "effective_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "epoch",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "training_disposition",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 7,
+        "name": "state",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "erased_entities",
+    "sql": "CREATE TABLE erased_entities(entity_ref TEXT PRIMARY KEY,case_ref TEXT NOT NULL,erased_at INTEGER NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "entity_ref",
+        "type": "TEXT",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "case_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "erased_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  },
+  {
+    "database": "privacy.sqlite",
+    "table": "policies",
+    "sql": "CREATE TABLE policies(\n epoch INTEGER PRIMARY KEY,entity_ref TEXT NOT NULL,purpose TEXT NOT NULL,state TEXT NOT NULL,\n effective_at INTEGER NOT NULL,observed_at INTEGER NOT NULL,source_ref TEXT NOT NULL)",
+    "columns": [
+      {
+        "cid": 0,
+        "name": "epoch",
+        "type": "INTEGER",
+        "not_null": false,
+        "default": null,
+        "primary_key_order": 1
+      },
+      {
+        "cid": 1,
+        "name": "entity_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 2,
+        "name": "purpose",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 3,
+        "name": "state",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 4,
+        "name": "effective_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 5,
+        "name": "observed_at",
+        "type": "INTEGER",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      },
+      {
+        "cid": 6,
+        "name": "source_ref",
+        "type": "TEXT",
+        "not_null": true,
+        "default": null,
+        "primary_key_order": 0
+      }
+    ]
+  }
+]

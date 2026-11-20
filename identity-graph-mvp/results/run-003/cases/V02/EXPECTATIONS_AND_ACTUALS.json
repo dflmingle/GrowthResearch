@@ -1,0 +1,37 @@
+[
+  {
+    "assertion": "different sectors cannot implicitly map",
+    "input_refs": "operation trace",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "assertion": "explicit scoped permission recorded",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "assertion": "permission is not proof of same subject",
+    "input_refs": "operation trace",
+    "expected": "DIFFERENT_NAMESPACE",
+    "actual": "DIFFERENT_NAMESPACE",
+    "passed": true
+  },
+  {
+    "assertion": "same namespace exact key reused",
+    "input_refs": "operation trace",
+    "expected": "entity_000002",
+    "actual": "entity_000002",
+    "passed": true
+  },
+  {
+    "assertion": "no person records generated",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  }
+]

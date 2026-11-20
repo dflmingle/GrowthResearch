@@ -1,0 +1,799 @@
+{
+  "id": "C12_delete_source",
+  "seed": 780241,
+  "expected": "old snapshot denied; fresh excludes deleted source",
+  "options": {},
+  "status": "PASS",
+  "input": {
+    "task": {
+      "task_ref": "synth:task:E01:A:Y",
+      "target_install_ref": "entity_000013",
+      "subject_type": "account",
+      "auth_receipt": "synth:nonce:780241:3",
+      "prediction_at": 1767225600,
+      "since_at": 1767225600,
+      "purpose": "synthetic-value-research",
+      "authorization_context": {
+        "environment": "LOCAL_SYNTHETIC_ONLY",
+        "purpose": "synthetic-value-research",
+        "source_app_allowlist": [
+          "synthetic-X"
+        ]
+      }
+    },
+    "fixture": {
+      "fixture": {
+        "seed": 780241,
+        "environment": "LOCAL_SYNTHETIC_ONLY",
+        "start_utc_epoch": 1767225600,
+        "entities": {
+          "D1": "entity_000002",
+          "D2": "entity_000003",
+          "A": "entity_000005",
+          "B": "entity_000006",
+          "X_A": "entity_000008",
+          "X_B": "entity_000010",
+          "Y_A": "entity_000013"
+        }
+      },
+      "calls": [
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-X",
+              "account": "entity_000005",
+              "app_instance": "entity_000008",
+              "device": "entity_000002",
+              "nonce": "synth:nonce:780241:1",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "7b16bac526d0ed99655ae2d09ed8f332334331430db717c1b18454a39919b5ac"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000015",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-X",
+              "account": "entity_000006",
+              "app_instance": "entity_000010",
+              "device": "entity_000002",
+              "nonce": "synth:nonce:780241:2",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "32f4eff8e8c4b49d50726d651d32b879e200c7797eb3b15e347db4dbe8da1326"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000016",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-Y",
+              "account": "entity_000005",
+              "app_instance": "entity_000013",
+              "device": "entity_000003",
+              "nonce": "synth:nonce:780241:3",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "c60082db3779aa326e7f1126eed6dfdaf5c582ee4909b1add52925616420c543"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000017",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000008",
+            "account": "entity_000005",
+            "amount_micros": 7000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000018",
+            "ledger_ref": "ledger_000020"
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000010",
+            "account": "entity_000006",
+            "amount_micros": 99000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000021",
+            "ledger_ref": "ledger_000023"
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000013",
+            "account": "entity_000005",
+            "amount_micros": 3000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000024",
+            "ledger_ref": "ledger_000026"
+          }
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000008",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000027"
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000010",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000028"
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000013",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000029"
+        }
+      ],
+      "login_refs": {
+        "xa": "edge_000015",
+        "xb": "edge_000016",
+        "y": "edge_000017"
+      },
+      "receipts": {
+        "xa": "synth:nonce:780241:1",
+        "xb": "synth:nonce:780241:2",
+        "y": "synth:nonce:780241:3"
+      },
+      "shared_device_accounts": [
+        "entity_000005",
+        "entity_000006"
+      ],
+      "source_app": "synthetic-X",
+      "target_app": "synthetic-Y"
+    }
+  },
+  "intervention": {
+    "api": "policy.delete",
+    "entity": "entity_000008",
+    "receipt": {
+      "id": "delete_000008",
+      "entity_ref": "entity_000008",
+      "requested_at": 1767225600,
+      "effective_at": 1767225600,
+      "epoch": 8,
+      "source_ref": "synth:delete",
+      "training_disposition": "NO_MODEL_TRAINED",
+      "state": "COMPLETE_FOR_DECLARED_SCOPE",
+      "sinks": [
+        {
+          "case_ref": "delete_000008",
+          "sink": "coverage",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        },
+        {
+          "case_ref": "delete_000008",
+          "sink": "events",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        },
+        {
+          "case_ref": "delete_000008",
+          "sink": "features",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        },
+        {
+          "case_ref": "delete_000008",
+          "sink": "graph",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        },
+        {
+          "case_ref": "delete_000008",
+          "sink": "identity",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        },
+        {
+          "case_ref": "delete_000008",
+          "sink": "outbox",
+          "status": "ACK",
+          "acknowledged_at": 1767225600,
+          "source_ref": "synth:local-purge"
+        }
+      ],
+      "pending_sinks": []
+    }
+  },
+  "actual": {
+    "prior": {
+      "cross_app_history": {
+        "observed_amount_by_currency_micros": {
+          "USD": 7000000
+        },
+        "complete_amount_by_currency_micros": {
+          "USD": 7000000
+        },
+        "observation_status": "OBSERVED_COMPLETE",
+        "app_instance_refs": [
+          "entity_000008"
+        ],
+        "ledger_refs": [
+          "ledger_000020"
+        ],
+        "event_refs": [
+          "event_000018"
+        ],
+        "coverage_refs": [
+          "coverage_000027"
+        ],
+        "missing_reasons": []
+      },
+      "target_app_history": {
+        "observed_amount_by_currency_micros": {
+          "USD": 3000000
+        },
+        "complete_amount_by_currency_micros": {
+          "USD": 3000000
+        },
+        "observation_status": "OBSERVED_COMPLETE",
+        "app_instance_refs": [
+          "entity_000013"
+        ],
+        "ledger_refs": [
+          "ledger_000026"
+        ],
+        "event_refs": [
+          "event_000024"
+        ],
+        "coverage_refs": [
+          "coverage_000029"
+        ],
+        "missing_reasons": []
+      },
+      "out_of_task_scope": {
+        "observed_amount_by_currency_micros": {},
+        "complete_amount_by_currency_micros": null,
+        "observation_status": "UNOBSERVED",
+        "app_instance_refs": [],
+        "ledger_refs": [],
+        "event_refs": [],
+        "coverage_refs": [],
+        "missing_reasons": [
+          "NO_APPROVED_APP_OBSERVATION"
+        ]
+      },
+      "observation_status": "OBSERVED_COMPLETE",
+      "partition_audit": [
+        {
+          "ledger_ref": "ledger_000020",
+          "event_ref": "event_000018",
+          "app_ref": "entity_000008",
+          "app_namespace": {
+            "app": "synthetic-X",
+            "namespace_ref": "ns_000007"
+          },
+          "partition": "cross_app_history",
+          "amount_micros": 7000000,
+          "currency": "USD",
+          "account_ref": "entity_000005",
+          "occurred_at": 1767225600,
+          "observed_at": 1767225600,
+          "available_at": 1767225600,
+          "event_occurred_at": 1767225600,
+          "event_observed_at": 1767225600,
+          "event_available_at": 1767225600
+        },
+        {
+          "ledger_ref": "ledger_000026",
+          "event_ref": "event_000024",
+          "app_ref": "entity_000013",
+          "app_namespace": {
+            "app": "synthetic-Y",
+            "namespace_ref": "ns_000012"
+          },
+          "partition": "target_app_history",
+          "amount_micros": 3000000,
+          "currency": "USD",
+          "account_ref": "entity_000005",
+          "occurred_at": 1767225600,
+          "observed_at": 1767225600,
+          "available_at": 1767225600,
+          "event_occurred_at": 1767225600,
+          "event_observed_at": 1767225600,
+          "event_available_at": 1767225600
+        }
+      ],
+      "authorization_audit": {
+        "receipt_nonce": "synth:nonce:780241:3",
+        "receipt_app": "entity_000013",
+        "receipt_account": "entity_000005",
+        "target_login_refs": [
+          [
+            "edge_000017",
+            1
+          ]
+        ],
+        "purpose": "synthetic-value-research",
+        "policy_epoch": 7,
+        "source_allowlist_scope": "RESTRICTS_ORIGINAL_POLICY_ONLY_NOT_A_GRANT"
+      },
+      "status": "OK",
+      "reason": "ACCOUNT_TASK_NOT_PERSON",
+      "task_ref": "synth:task:E01:A:Y",
+      "subject_type": "account",
+      "account_ref": "entity_000005",
+      "person_inferred": false,
+      "available_at": 1767225600,
+      "prediction_at": 1767225600,
+      "bundle_ref": "bundle_000030",
+      "feature_read_ref": "read_000031",
+      "relation_refs": [
+        [
+          "edge_000009",
+          1
+        ],
+        [
+          "edge_000014",
+          1
+        ],
+        [
+          "edge_000015",
+          1
+        ],
+        [
+          "edge_000017",
+          1
+        ]
+      ],
+      "ledger_refs": [
+        "ledger_000020",
+        "ledger_000026"
+      ],
+      "original_lineage": {
+        "entity_refs": [
+          "entity_000002",
+          "entity_000003",
+          "entity_000005",
+          "entity_000008",
+          "entity_000013"
+        ],
+        "edge_revisions": [
+          [
+            "edge_000009",
+            1
+          ],
+          [
+            "edge_000014",
+            1
+          ],
+          [
+            "edge_000015",
+            1
+          ],
+          [
+            "edge_000017",
+            1
+          ]
+        ],
+        "event_refs": [
+          "event_000018",
+          "event_000024"
+        ],
+        "ledger_refs": [
+          "ledger_000020",
+          "ledger_000026"
+        ],
+        "coverage_refs": [
+          "coverage_000027",
+          "coverage_000029"
+        ],
+        "incomplete_reasons": [],
+        "feature_group": "observed-economic-history-v1",
+        "environment": "LOCAL_SYNTHETIC_ONLY"
+      },
+      "original_account_values": {
+        "app_instance_count": 2,
+        "currency": "USD",
+        "observation_status": "OBSERVED_COMPLETE",
+        "observed_ledger_count": 2,
+        "observed_revenue_micros": 10000000,
+        "person_inferred": false,
+        "revenue_by_currency_micros": {
+          "USD": 10000000
+        },
+        "revenue_micros": 10000000
+      },
+      "graph_version": 12,
+      "policy_epoch": 7
+    },
+    "reread": {
+      "status": "DENIED",
+      "reason": "BUNDLE_INVALIDATED_OR_DELETED"
+    },
+    "fresh": {
+      "cross_app_history": {
+        "observed_amount_by_currency_micros": {},
+        "complete_amount_by_currency_micros": null,
+        "observation_status": "UNOBSERVED",
+        "app_instance_refs": [],
+        "ledger_refs": [],
+        "event_refs": [],
+        "coverage_refs": [],
+        "missing_reasons": [
+          "NO_APPROVED_APP_OBSERVATION"
+        ]
+      },
+      "target_app_history": {
+        "observed_amount_by_currency_micros": {
+          "USD": 3000000
+        },
+        "complete_amount_by_currency_micros": {
+          "USD": 3000000
+        },
+        "observation_status": "OBSERVED_COMPLETE",
+        "app_instance_refs": [
+          "entity_000013"
+        ],
+        "ledger_refs": [
+          "ledger_000026"
+        ],
+        "event_refs": [
+          "event_000024"
+        ],
+        "coverage_refs": [
+          "coverage_000029"
+        ],
+        "missing_reasons": []
+      },
+      "out_of_task_scope": {
+        "observed_amount_by_currency_micros": {},
+        "complete_amount_by_currency_micros": null,
+        "observation_status": "UNOBSERVED",
+        "app_instance_refs": [],
+        "ledger_refs": [],
+        "event_refs": [],
+        "coverage_refs": [],
+        "missing_reasons": [
+          "NO_APPROVED_APP_OBSERVATION"
+        ]
+      },
+      "observation_status": "OBSERVED_COMPLETE",
+      "partition_audit": [
+        {
+          "ledger_ref": "ledger_000026",
+          "event_ref": "event_000024",
+          "app_ref": "entity_000013",
+          "app_namespace": {
+            "app": "synthetic-Y",
+            "namespace_ref": "ns_000012"
+          },
+          "partition": "target_app_history",
+          "amount_micros": 3000000,
+          "currency": "USD",
+          "account_ref": "entity_000005",
+          "occurred_at": 1767225600,
+          "observed_at": 1767225600,
+          "available_at": 1767225600,
+          "event_occurred_at": 1767225600,
+          "event_observed_at": 1767225600,
+          "event_available_at": 1767225600
+        }
+      ],
+      "authorization_audit": {
+        "receipt_nonce": "synth:nonce:780241:3",
+        "receipt_app": "entity_000013",
+        "receipt_account": "entity_000005",
+        "target_login_refs": [
+          [
+            "edge_000017",
+            1
+          ]
+        ],
+        "purpose": "synthetic-value-research",
+        "policy_epoch": 8,
+        "source_allowlist_scope": "RESTRICTS_ORIGINAL_POLICY_ONLY_NOT_A_GRANT"
+      },
+      "status": "OK",
+      "reason": "ACCOUNT_TASK_NOT_PERSON",
+      "task_ref": "synth:task:E01:A:Y",
+      "subject_type": "account",
+      "account_ref": "entity_000005",
+      "person_inferred": false,
+      "available_at": 1767225600,
+      "prediction_at": 1767225600,
+      "bundle_ref": "bundle_000032",
+      "feature_read_ref": "read_000033",
+      "relation_refs": [
+        [
+          "edge_000014",
+          1
+        ],
+        [
+          "edge_000017",
+          1
+        ]
+      ],
+      "ledger_refs": [
+        "ledger_000026"
+      ],
+      "original_lineage": {
+        "entity_refs": [
+          "entity_000003",
+          "entity_000005",
+          "entity_000013"
+        ],
+        "edge_revisions": [
+          [
+            "edge_000014",
+            1
+          ],
+          [
+            "edge_000017",
+            1
+          ]
+        ],
+        "event_refs": [
+          "event_000024"
+        ],
+        "ledger_refs": [
+          "ledger_000026"
+        ],
+        "coverage_refs": [
+          "coverage_000029"
+        ],
+        "incomplete_reasons": [],
+        "feature_group": "observed-economic-history-v1",
+        "environment": "LOCAL_SYNTHETIC_ONLY"
+      },
+      "original_account_values": {
+        "app_instance_count": 1,
+        "currency": "USD",
+        "observation_status": "OBSERVED_COMPLETE",
+        "observed_ledger_count": 1,
+        "observed_revenue_micros": 3000000,
+        "person_inferred": false,
+        "revenue_by_currency_micros": {
+          "USD": 3000000
+        },
+        "revenue_micros": 3000000
+      },
+      "graph_version": 13,
+      "policy_epoch": 8
+    },
+    "versions_before": {
+      "graph": 12,
+      "epoch": 7
+    },
+    "versions_after": {
+      "graph": 13,
+      "epoch": 8
+    }
+  },
+  "final_fixture": {
+    "fixture": {
+      "seed": 780241,
+      "environment": "LOCAL_SYNTHETIC_ONLY",
+      "start_utc_epoch": 1767225600,
+      "entities": {
+        "D1": "entity_000002",
+        "D2": "entity_000003",
+        "A": "entity_000005",
+        "B": "entity_000006",
+        "X_A": "entity_000008",
+        "X_B": "entity_000010",
+        "Y_A": "entity_000013"
+      }
+    },
+    "calls": [
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-X",
+            "account": "entity_000005",
+            "app_instance": "entity_000008",
+            "device": "entity_000002",
+            "nonce": "synth:nonce:780241:1",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "7b16bac526d0ed99655ae2d09ed8f332334331430db717c1b18454a39919b5ac"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000015",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-X",
+            "account": "entity_000006",
+            "app_instance": "entity_000010",
+            "device": "entity_000002",
+            "nonce": "synth:nonce:780241:2",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "32f4eff8e8c4b49d50726d651d32b879e200c7797eb3b15e347db4dbe8da1326"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000016",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-Y",
+            "account": "entity_000005",
+            "app_instance": "entity_000013",
+            "device": "entity_000003",
+            "nonce": "synth:nonce:780241:3",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "c60082db3779aa326e7f1126eed6dfdaf5c582ee4909b1add52925616420c543"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000017",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000008",
+          "account": "entity_000005",
+          "amount_micros": 7000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000018",
+          "ledger_ref": "ledger_000020"
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000010",
+          "account": "entity_000006",
+          "amount_micros": 99000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000021",
+          "ledger_ref": "ledger_000023"
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000013",
+          "account": "entity_000005",
+          "amount_micros": 3000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000024",
+          "ledger_ref": "ledger_000026"
+        }
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000008",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000027"
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000010",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000028"
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000013",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000029"
+      }
+    ],
+    "login_refs": {
+      "xa": "edge_000015",
+      "xb": "edge_000016",
+      "y": "edge_000017"
+    },
+    "receipts": {
+      "xa": "synth:nonce:780241:1",
+      "xb": "synth:nonce:780241:2",
+      "y": "synth:nonce:780241:3"
+    },
+    "shared_device_accounts": [
+      "entity_000005",
+      "entity_000006"
+    ],
+    "source_app": "synthetic-X",
+    "target_app": "synthetic-Y"
+  }
+}

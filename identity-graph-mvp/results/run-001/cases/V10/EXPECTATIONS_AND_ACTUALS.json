@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "duplicate economic callback suppressed",
+    "input_refs": "operation trace",
+    "expected": "DUPLICATE_LEDGER",
+    "actual": "DUPLICATE_LEDGER",
+    "passed": true
+  },
+  {
+    "assertion": "loads/candidates do not become money",
+    "input_refs": "operation trace",
+    "expected": 300,
+    "actual": 300,
+    "passed": true
+  },
+  {
+    "assertion": "one economic impression entry",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  }
+]

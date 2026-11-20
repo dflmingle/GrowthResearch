@@ -1,0 +1,13 @@
+﻿identifier,finding,issuer,scope,creation_and_cache,reset_and_lifetime,privacy_and_unknown,reference_design
+android_uuid,AM01,ActivityState / Util.createUuid,应用私有SDK状态（非物理设备/个人）,新建/缺失字段时生成；会话重置不轮换,状态文件清除可重建；卸载/备份由OS决定,构包可携带；真实接收UNKNOWN,不得跨应用按本地UUID合并
+gps_adid,AM02,OS广告服务/Reflection,OS广告标识；非跨设备账号,默认重读；read-once当前对象可缓存,OS重置由外部服务提供新值；未见自动清历史链,读取门控、儿童限制；不是删除回执,存namespace/有效时间，不恢复已退出标识
+android_id,AM03,Settings.Secure,OS版本/用户/签名范围；本轮未核实完整外部契约,条件回退；单次读取缓存,重置/作用域由OS；客户端不签发,无Google/Fire参数时才回退且需门控,不可当全局设备主键
+google_app_set_id,AM04,Google AppSet服务,scope由外部返回；本路径未读取getScope,DeviceInfo初始化门控读取,外部签发/重置规则未在客户端实现,儿童/开关门控；缓存不是接收证据,缺scope禁止任意App等值合并
+fb_id,AM05,Facebook官方签名Provider aid,外部Provider作用域UNKNOWN,构造读取，失败空值,本客户端不定义其重置/实体范围,5.7新增显式开关；Provider前提仍必要,外部标识只建有来源候选边
+external_device_id,AM06,开发者输入,开发者自定义；不自带认证/全局命名空间,配置或首会话延迟更新,变更没有账户解绑完整契约,客户端构包；partner/图谱用途UNKNOWN,验证账号所有权、租户与用途后才建边
+adid,AM14,服务器响应JSON,Adjust服务端定义；本轮无实体范围契约,非空变化后写本地ActivityState,重签发/旧新ID合并由服务端UNKNOWN,响应解析不是观测到实际下发,必须保留issuer与响应来源；不等于GAID
+event_token / seq,AM08,事件配置 / EventMetadata,事件类型 / 本地每类型序号,每接受事件递增；独立文件持久化,本地metadata清除重建,构包带seq，不提供全局唯一事件契约,分离事件类型与事件实例ID
+deduplication_id / order_id,AM09,开发者输入,前者本地共享列表；后者订单声明,前者默认仅保留10个，可设0；两setter独立,淘汰/本地丢失允许重复；非服务器去重,没有跨系统经济事件唯一契约,业务幂等账本按租户/事件实例，保留退款
+session_count / subsession_count,AM07,ActivityState,当前SDK状态内计数,默认30min/1s间隔更新，可覆盖,新会话不重置实例UUID/adid,非session UUID或新安装证据,会话与安装实例分层
+referrer详情,AM13,安装referrer提供者,来源API+触点详情,本地详情比较抑制重复；成功/重试分支需区分,服务端归因/多触点规则UNKNOWN,sdk_click独立队列；不是主队列持久化保证,保留原始触点及返回结果的独立血缘
+forgotten / enabled / offline,AM15/16,开发者调用 / 响应 / 内部状态,本地控制面,忘记、禁用、离线各自门控；非同义,optout flush主队列；GDPR本身排队；本地teardown另列,不证明服务器/伙伴/特征删除,授权epoch与删除传播覆盖所有派生缓存

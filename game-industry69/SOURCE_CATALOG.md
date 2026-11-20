@@ -1,0 +1,27 @@
+# 69游戏行业专项原始来源索引
+
+审查时间：2026-11-20T04:02:42.001339+00:00。内容哈希以原始响应字节为准；HTTP200不等于有效数据下载。搜索失败、无关结果、404、挑战页均在FETCH_MANIFEST.json保留，不用来证明数据不存在。
+
+| ID | 原始URL | 本地原件 | SHA256 | 原始位置/证明边界 |
+|---|---|---|---|---|
+| GI69S_unity_paper | https://osf.io/download/hxk8u/ | game-industry69/sources/unity-full-paper.pdf | `24e89a65624536dcda43877b3a3020dddf96e1326b2e92b996459d4a2c39c4d5` | Sections 2.1/2.2/2.4/2.5; extracted lines 815-825,979-1066,1548-1563；Real iOS IAP research; data not public; within-game keys only |
+| GI69S_unity_osf | https://api.osf.io/v2/nodes/du4kr/files/osfstorage/ | game-industry69/sources/unity-osf-files.html | `a4bc6af3e20f61d8981c080c3f49e0040dd7accb9fff7f8ca72203caac3d28bc` | data[].attributes/name,extra.hashes; links.next=null；Two public supplement files, neither a raw transaction dataset |
+| GI69S_unity_code | https://osf.io/download/fnz8t/ | game-industry69/sources/unity-analysis-code.html | `6a9a3a0fa95b914f12e728a87e95de7e4d1d3c6072f2980c9f21216c7f4feb38` | raw lines containing generate synthetic metadata / generate synthetic spending data；Code uses synthetic spending placeholder; not real game training data |
+| GI69S_unity_appendix | https://osf.io/download/wr5zg/ | game-industry69/sources/unity-technical-appendix.html | `4f7f219a4184a3163115ec1de184aee05d56afacddb5116ec1e341eb4f428357` | word/document.xml; extracted paragraph 3；Wasserstein distribution clustering; not Axon/Vector production architecture |
+| GI69S_unity_preprint | https://api.osf.io/v2/preprints/mwrva/ | game-industry69/sources/unity-osf.html | `0a60a8ac5d85d7f04c4e4b53138968472fd4b8e30ed6b0eac7add4495ae2c0bd` | attributes.description; has_data_links=no；69,144,363 spenders,2873 games,624 days; paper license is not data access |
+| GI69S_unity_research_route | https://unity.com/academia-research | game-industry69/sources/unity-research.html | `e238b654ea5449580fbe1df517137cb9931fa832e10f5e822014840d59b6fc08` | redirect final_url unity.com/learn；Paper historical research URL currently redirects; no automatic data application entitlement |
+| GI69S_uken_participant | https://raw.githubusercontent.com/nathanesau-academic/ukencompetition/master/README.md | game-industry69/sources/uken-case2-readme.html | `e7862729aa4fff5509a150bb8b4e3475c5a96b9c5cc72cb0d4213d8290279be3` | Dataset; target variables;44-column dictionary; Details；300000 rows;250000 labeled/50000 unlabeled; explicitly no permission to upload raw data |
+| GI69S_uken_poster | https://raw.githubusercontent.com/nathanesau-academic/ukencompetition/master/Poster/poster.tex | game-industry69/sources/uken-poster-source.html | `9588f3c91ea33bd888d6ecda31bda6c12d2561f0810c9eb2855438b1000b4927` | lines 73,136,139-143,210-228；D30 retention definition; reported analysis is not independently replicated |
+| GI69S_uken_code | https://raw.githubusercontent.com/nathanesau-academic/ukencompetition/master/R/analysis.R | game-industry69/sources/uken-analysis-source.html | `f4c754123eab228338134bbd57779aec1ec86439aac458b25a07ee240dfdc1e2` | header; data read; feature transformations; training code；Raw Data/user_stats file absent; no replay attempted |
+| GI69S_uken_tree | https://api.github.com/repos/nathanesau-academic/ukencompetition/git/trees/master?recursive=1 | game-industry69/sources/uken-case2-tree.html | `7043993a9f41f2b67ea735e380a87ecb9389698a9b29ddc740c01c4e7ef2482e` | tree[].path/size；No original training dataset in returned tree; predictions.csv not downloaded |
+| GI69S_uken_synthetic | https://raw.githubusercontent.com/JayDS22/Game-Monetization-LiveOps-Analytics/main/README.md | game-industry69/sources/uken-modern-readme.html | `1ef46b2016a6e22ac28076314ee69e936cb9222ce46e4f43f9298244d32287c5` | Datasets section; lines94/208-214；310K project explicitly synthetic and inspired by Uken; excluded |
+| GI69S_apple_aa | https://developer.apple.com/documentation/adattributionkit.md | game-industry69/sources/apple-adattribution-markdown.html | `078b464e2cd4cbfa2a04f5c8bfc19a31358866d7f40ac215931f2adc0b54eb6e` | Overview/three participants/postback data tier/user- or device-specific data；Signed conversion attribution; not individual revenue ledger or runtime training ACK |
+| GI69S_apple_sk | https://developer.apple.com/documentation/storekit/skadnetwork.md | game-industry69/sources/apple-skan-markdown.html | `847837a3981c2edc350d7a725ed5300332051c2e7e961d96598951be6dfec81d` | Overview/advertised app conversion value/postback；Separate attribution feedback from pre-ad request context |
+| GI69S_ageishtaria | https://arxiv.org/pdf/1811.12799 | game-industry69/sources/ltv-deep-paper.pdf | `e206e85dd8a59895935c973a578a2f7be339c578428c174bd22d618adb9058c5` | Dataset section; lines309-355 of extraction；Real game research,32 months; no verified raw download or data reuse permission |
+| GI69S_mag_site | https://www.maginteractive.com/?s=research | game-industry69/sources/mag-corporate-research.html | `a16ffe4ee49cd4fdf0a63ed4c2758a32b1731e7669de28ada477f3ff99cc8b36` | page body; research query returned corporate homepage；Establishes company only; does not identify alleged five-game dataset |
+
+新代码片段：CODE_EVIDENCE.json。复用来源逐对象保存在REUSED_EVIDENCE.json，含原路径、类/方法、行号与本轮重算哈希；原包对应cross-sdk/SDK_MATRIX.json与各provenance.json。
+
+未下载Uken的predictions.csv；预测输出不是原始玩家账本，也未确认可再用许可。Unity Code for Publication.R只做静态阅读，未执行合成生成或训练。
+
+MAG相关候选Incentivized Actions in Freemium Games (10.1287/msom.2020.0925)只有书目/摘要、发布页403，尚未证明与任务所指五款游戏数据一致，因此未登记为MAG数据源。

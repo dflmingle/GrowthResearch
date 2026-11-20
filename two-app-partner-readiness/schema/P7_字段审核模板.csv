@@ -1,0 +1,7 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P7.purpose_legal_basis_policy_version,object,生命周期的用途和合法依据版本,历史采集及当前训练都需覆盖,"{""purpose"":""syn:purpose"",""basis"":""syn:basis:UNCONFIRMED"",""version"":""syn:v1""}"
+P7.permission_effective_intervals,array<object>,同意或其他合法基础的生效/观察区间,不能只给当前同意boolean；后补不回填,"[{""state"":""UNKNOWN"",""effective_from"":null,""effective_to"":null,""observed_at"":""2035-01-01T00:00:00Z""}]"
+P7.revocation_deletion_request_effective,object,请求与禁止继续使用生效时间,请求、法定/合同生效、传播完成分别记录,"{""requested_at"":null,""use_prohibited_at"":null,""knowledge"":""UNKNOWN""}"
+P7.reset_expiry_epoch,object,身份重置/到期/代次,不绕过退出、重置重新关联,"{""reset_at"":null,""expires_at"":null,""epoch"":0}"
+P7.sink_acknowledgements,array<object>,图/特征/缓存/快照/训练产物逐sink验收,未确认要明示；删除服务在线状态不等于模型遗忘,"[{""sink"":""syn:training-snapshot"",""status"":""UNCONFIRMED"",""confirmed_at"":null}]"
+P7.retention_exception_and_responsibility_ref,string,保留期限、例外、备份到期及执行/验收责任,不允许无限保留；责任人角色需签认,syn:retention-responsibility:UNCONFIRMED

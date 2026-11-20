@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "same bare value is not same scoped identity",
+    "input_refs": "operation trace",
+    "expected": "DIFFERENT_NAMESPACE",
+    "actual": "DIFFERENT_NAMESPACE",
+    "passed": true
+  },
+  {
+    "assertion": "separate records",
+    "input_refs": "operation trace",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "assertion": "unknown scope abstains",
+    "input_refs": "operation trace",
+    "expected": "UNKNOWN_SCOPE",
+    "actual": "UNKNOWN_SCOPE",
+    "passed": true
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "assertion": "single account spans its two devices",
+    "input_refs": "operation trace",
+    "expected": 300,
+    "actual": 300,
+    "passed": true
+  },
+  {
+    "assertion": "shared device does not mix account B with A",
+    "input_refs": "operation trace",
+    "expected": 700,
+    "actual": 700,
+    "passed": true
+  },
+  {
+    "assertion": "no person identity inferred",
+    "input_refs": "operation trace",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "assertion": "account nodes never union",
+    "input_refs": "operation trace",
+    "expected": [
+      "entity_000007"
+    ],
+    "actual": [
+      "entity_000007"
+    ],
+    "passed": true
+  }
+]

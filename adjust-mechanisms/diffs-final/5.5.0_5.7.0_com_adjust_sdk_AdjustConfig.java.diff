@@ -1,0 +1,103 @@
+--- 5.5.0/com/adjust/sdk/AdjustConfig.java
++++ 5.7.0/com/adjust/sdk/AdjustConfig.java
+@@ -20,11 +20,13 @@
+     String sdkPrefix;
+     String defaultTracker;
+     OnAttributionChangedListener onAttributionChangedListener;
++    OnThirdPartySharingSettingsChangedListener onThirdPartySharingSettingsChangedListener;
+     OnEventTrackingSucceededListener onEventTrackingSucceededListener;
+     OnEventTrackingFailedListener onEventTrackingFailedListener;
+     OnSessionTrackingSucceededListener onSessionTrackingSucceededListener;
+     OnSessionTrackingFailedListener onSessionTrackingFailedListener;
+     OnDeferredDeeplinkResponseListener onDeferredDeeplinkResponseListener;
++    OnRemoteTriggerListener onRemoteTriggerListener;
+     boolean isSendingInBackgroundEnabled;
+     AdjustInstance.PreLaunchActions preLaunchActions;
+     ILogger logger;
+@@ -48,9 +50,11 @@
+     Integer eventDeduplicationIdsMaxSize;
+     ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+     ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
++    ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacks = new ArrayList<>();
+     boolean isFirstSessionDelayEnabled;
+     AdjustStoreInfo storeInfo;
+     boolean isAppSetIdReadingEnabled;
++    boolean isFbIdReadingEnabled;
+ 
+     public static final String ENVIRONMENT_SANDBOX = "sandbox";
+     public static final String ENVIRONMENT_PRODUCTION = "production";
+@@ -90,6 +94,7 @@
+         this.playStoreKidsComplianceEnabled = false;
+         this.isFirstSessionDelayEnabled = false;
+         this.isAppSetIdReadingEnabled = true;
++        this.isFbIdReadingEnabled = true;
+     }
+ 
+     public void setLogLevel(LogLevel logLevel) {
+@@ -174,6 +179,10 @@
+         this.onAttributionChangedListener = onAttributionChangedListener;
+     }
+ 
++    public void setOnThirdPartySharingSettingsChangedListener(OnThirdPartySharingSettingsChangedListener onThirdPartySharingSettingsChangedListener) {
++        this.onThirdPartySharingSettingsChangedListener = onThirdPartySharingSettingsChangedListener;
++    }
++
+     public void setOnEventTrackingSucceededListener(OnEventTrackingSucceededListener onEventTrackingSucceededListener) {
+         this.onEventTrackingSucceededListener = onEventTrackingSucceededListener;
+     }
+@@ -194,10 +203,18 @@
+         this.onDeferredDeeplinkResponseListener = onDeferredDeeplinkResponseListener;
+     }
+ 
++    public void setOnRemoteTriggerListener(OnRemoteTriggerListener onRemoteTriggerListener) {
++        this.onRemoteTriggerListener = onRemoteTriggerListener;
++    }
++
+     public void disableAppSetIdReading() {
+         this.isAppSetIdReadingEnabled = false;
+     }
+ 
++    public void disableFbIdReading() {
++        this.isFbIdReadingEnabled = false;
++    }
++
+     public Context getContext() {
+         return context;
+     }
+@@ -274,6 +291,10 @@
+         return onAttributionChangedListener;
+     }
+ 
++    public OnThirdPartySharingSettingsChangedListener getOnThirdPartySharingSettingsChangedListener() {
++        return onThirdPartySharingSettingsChangedListener;
++    }
++
+     public OnEventTrackingSucceededListener getOnEventTrackingSucceededListener() {
+         return onEventTrackingSucceededListener;
+     }
+@@ -294,12 +315,20 @@
+         return onDeferredDeeplinkResponseListener;
+     }
+ 
++    public OnRemoteTriggerListener getOnRemoteTriggerListener() {
++        return onRemoteTriggerListener;
++    }
++
+     public ILogger getLogger() {
+         return logger;
+     }
+ 
+     public boolean isAppSetIdReadingEnabled() {
+         return isAppSetIdReadingEnabled;
++    }
++
++    public boolean isFbIdReadingEnabled() {
++        return isFbIdReadingEnabled;
+     }
+ 
+     private boolean checkContext(Context context) {
+@@ -366,4 +395,4 @@
+         }
+         return true;
+     }
+-}+}

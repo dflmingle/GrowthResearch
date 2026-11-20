@@ -1,0 +1,189 @@
+{
+  "view": "complete_local_audit",
+  "records": [
+    {
+      "data": {
+        "aggregate_version": "frozen-v1",
+        "environment": "offline-mock",
+        "inventory_version": "fixed-v1",
+        "model_version": "mock-model-v1",
+        "namespace": "mock76",
+        "no_network": true,
+        "seed": 760031
+      },
+      "hash": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+      "kind": "run_open",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "seq": 1,
+      "time": 0
+    },
+    {
+      "data": {
+        "allow": true,
+        "app": "source-app",
+        "device": "mock-device-A",
+        "effective_at": 0,
+        "purpose": "mock-research",
+        "version": 1
+      },
+      "hash": "26bb2aa64a4b373ab4c13a74fd026a7db9fe7accbe978da4c1e112f4808e0563",
+      "kind": "permission_changed",
+      "prev": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+      "seq": 2,
+      "time": 0
+    },
+    {
+      "data": {
+        "allow": true,
+        "app": "target-app",
+        "device": "mock-device-A",
+        "effective_at": 0,
+        "purpose": "mock-research",
+        "version": 2
+      },
+      "hash": "7076af3bbbdfdb10080531abb23f7cca372d75fc1b85bd178744cde30ff4d35b",
+      "kind": "permission_changed",
+      "prev": "26bb2aa64a4b373ab4c13a74fd026a7db9fe7accbe978da4c1e112f4808e0563",
+      "seq": 3,
+      "time": 0
+    },
+    {
+      "data": {
+        "available_at": 20,
+        "category": 1,
+        "device": "mock-device-A",
+        "epoch": 0,
+        "event_id": "mock-event-1",
+        "event_time": 10,
+        "installation": "mock-install-S1",
+        "purpose": "mock-research",
+        "received_at": 12,
+        "source_app": "source-app"
+      },
+      "hash": "b2fc38d4fa859dd31be92e4b00fe0b9a2dd9e503762171d222044fce5d0acc07",
+      "kind": "event_received",
+      "prev": "7076af3bbbdfdb10080531abb23f7cca372d75fc1b85bd178744cde30ff4d35b",
+      "seq": 4,
+      "time": 12
+    },
+    {
+      "data": {
+        "device": "mock-device-A",
+        "epoch": 1,
+        "purged_events": [
+          "mock-event-1"
+        ],
+        "relink_attempted": false
+      },
+      "hash": "cbe81cf1ecc594a8267abf54996824025a83c5d7584dacc7104cd6f2512d93c2",
+      "kind": "scope_reset",
+      "prev": "b2fc38d4fa859dd31be92e4b00fe0b9a2dd9e503762171d222044fce5d0acc07",
+      "seq": 5,
+      "time": 15
+    },
+    {
+      "data": {
+        "context": {
+          "country": "MOCK",
+          "model": "mock-device",
+          "placement": "mock-slot"
+        },
+        "device": "mock-device-A",
+        "epoch": 1,
+        "installation": "mock-install-T1",
+        "prediction_time": 30,
+        "purpose": "mock-research",
+        "request_id": "mock-request-1"
+      },
+      "hash": "aeb321f5c3b1d16dcaf027f47037d7927146c5f3ed00a3abce091f715b7555dc",
+      "kind": "request_received",
+      "prev": "cbe81cf1ecc594a8267abf54996824025a83c5d7584dacc7104cd6f2512d93c2",
+      "seq": 6,
+      "time": 30
+    },
+    {
+      "data": {
+        "allow": true,
+        "device": "mock-device-A",
+        "purpose": "mock-research",
+        "request_id": "mock-request-1"
+      },
+      "hash": "282193028743d4abe85d779c131dc9ad692ac7d78d8802e7a778b0764e157eb1",
+      "kind": "use_gate",
+      "prev": "aeb321f5c3b1d16dcaf027f47037d7927146c5f3ed00a3abce091f715b7555dc",
+      "seq": 7,
+      "time": 30
+    },
+    {
+      "data": {
+        "device": "mock-device-A",
+        "purpose": "mock-research",
+        "request_id": "mock-request-1",
+        "scope": "same-device"
+      },
+      "hash": "61cb396d7ee20431bd0c847b6710547cb4596b352daca2c9bed10e81dc18f7dd",
+      "kind": "lookup_attempt",
+      "prev": "282193028743d4abe85d779c131dc9ad692ac7d78d8802e7a778b0764e157eb1",
+      "seq": 8,
+      "time": 30
+    },
+    {
+      "data": {
+        "reason": "NO_AVAILABLE_HISTORY",
+        "request_id": "mock-request-1"
+      },
+      "hash": "4fad26aa6c34a1b0c56f2b6543bcec252f2d4aa84ca1aa518cd93acdffd2e01a",
+      "kind": "lookup_empty",
+      "prev": "61cb396d7ee20431bd0c847b6710547cb4596b352daca2c9bed10e81dc18f7dd",
+      "seq": 9,
+      "time": 30
+    },
+    {
+      "data": {
+        "cap_version": "fixed-v1",
+        "feature_receipts": [],
+        "gate_receipt": 7,
+        "inventory_version": "fixed-v1",
+        "model_version": "mock-model-v1",
+        "request_id": "mock-request-1",
+        "request_receipt": 6,
+        "response": {
+          "creative": "mock-creative-base",
+          "filled": true,
+          "model_version": "mock-model-v1",
+          "request_id": "mock-request-1",
+          "score": 0.2
+        }
+      },
+      "hash": "ef5ad557e033110101f2eff5f0e21eac5d00512eb03dc14d6cf48e4e0bff0a47",
+      "kind": "decision",
+      "prev": "4fad26aa6c34a1b0c56f2b6543bcec252f2d4aa84ca1aa518cd93acdffd2e01a",
+      "seq": 10,
+      "time": 30
+    },
+    {
+      "data": {
+        "decision_receipt": 10,
+        "feature_log_complete": true,
+        "request_id": "mock-request-1"
+      },
+      "hash": "82f86b6e1dd3fe8bece54a626b7ae3bbf1390baf9c6ed37b501446a2685e664f",
+      "kind": "request_closed",
+      "prev": "ef5ad557e033110101f2eff5f0e21eac5d00512eb03dc14d6cf48e4e0bff0a47",
+      "seq": 11,
+      "time": 30
+    },
+    {
+      "data": {
+        "complete": true,
+        "events": 0,
+        "requests": 1
+      },
+      "hash": "9768923dcfa2860d15a707857de888955f882ff2cb66bf8db806863263b4f526",
+      "kind": "run_closed",
+      "prev": "82f86b6e1dd3fe8bece54a626b7ae3bbf1390baf9c6ed37b501446a2685e664f",
+      "seq": 12,
+      "time": 31
+    }
+  ]
+}

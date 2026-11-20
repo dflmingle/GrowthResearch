@@ -1,0 +1,16 @@
+[
+  {
+    "assertion": "grant valid before scheduled revoke",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "assertion": "time gate denies unchanged cache when revoke becomes effective",
+    "input_refs": "operation trace",
+    "expected": "CONSENT_DENIED_OR_UNKNOWN",
+    "actual": "CONSENT_DENIED_OR_UNKNOWN",
+    "passed": true
+  }
+]

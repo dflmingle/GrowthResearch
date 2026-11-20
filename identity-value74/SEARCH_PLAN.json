@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-11-20T05:38:28.319505+00:00",
+  "queries": [
+    [
+      "search-al-partner",
+      "site:applovin.com identity matching LiveRamp device graph"
+    ],
+    [
+      "search-wurl-partner",
+      "site:wurl.com UID2 identity Experian household"
+    ],
+    [
+      "search-unity-partner",
+      "site:unity.com RampID Vector identity matching"
+    ],
+    [
+      "search-unity-contract",
+      "site:docs.unity.com exchange identity eids RampID"
+    ],
+    [
+      "search-ramp-partner",
+      "site:liveramp.com Unity AppLovin identity"
+    ],
+    [
+      "search-model-ablation",
+      "Axon Vector identity features ablation cross app user representation"
+    ]
+  ],
+  "scope": "Targeted primary identity partner/feature-ablation evidence;no SDK scanning,dataset retries or production API calls",
+  "stopping": "One initial search batch plus primary contract links;if no new C/D evidence retain UNKNOWN and stop public reverse engineering"
+}

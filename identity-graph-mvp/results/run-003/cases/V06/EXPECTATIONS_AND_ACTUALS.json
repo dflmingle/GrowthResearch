@@ -1,0 +1,22 @@
+[
+  {
+    "assertion": "bridge violating cannot-link quarantined",
+    "input_refs": "operation trace",
+    "expected": "CONFLICT",
+    "actual": "CONFLICT",
+    "passed": true
+  },
+  {
+    "assertion": "A/B component excludes C",
+    "input_refs": "operation trace",
+    "expected": [
+      "entity_000002",
+      "entity_000003"
+    ],
+    "actual": [
+      "entity_000002",
+      "entity_000003"
+    ],
+    "passed": true
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "scope": "E01_LOCAL_SYNTHETIC_ONLY",
+  "seed": 780241,
+  "frozen_utc": "2026-11-20T10:24:51.392804+00:00",
+  "comparison": [
+    "A_existing_device_adapter",
+    "B_original_account_API",
+    "C_task_aware_adapter"
+  ],
+  "baseline_micros": {
+    "account_A_source_X": 7000000,
+    "account_A_target_Y": 3000000,
+    "account_B_source_X": 99000000
+  },
+  "receipt_semantics": "Durable original resolver nonce receipt binds target installation/account/purpose; not raw account ID; assertion TTL is login-time proof, not invented session expiry",
+  "partition_semantics": "Only read original account bundle approved ledger/event/edge/coverage refs by primary key; reconcile totals before partition; no all-ledger fallback",
+  "target_scope": "Target App product namespace, not just target installation; same-product reinstalls stay target history",
+  "prediction_semantics": "Current clock only; no backdated active feature availability",
+  "no_E02_E03": true,
+  "no_model_training": true,
+  "no_real_data": true,
+  "no_SDK": true,
+  "no_network": true,
+  "C_graph_Axon": "UNKNOWN",
+  "C_graph_Vector": "UNKNOWN",
+  "D": "UNKNOWN",
+  "production_forensics": "STOP"
+}

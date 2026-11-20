@@ -1,0 +1,626 @@
+[
+  {
+    "path": "identity-graph-mvp/identity_mvp/system.py",
+    "sha256": "6542948df47ebc8dfb976bff1090d893ea3565a26089b9c650c6e4856bc5684a",
+    "symbols": [
+      {
+        "symbol": "canonical",
+        "line": 12
+      },
+      {
+        "symbol": "digest",
+        "line": 13
+      },
+      {
+        "symbol": "timestamp",
+        "line": 14
+      },
+      {
+        "symbol": "source",
+        "line": 17
+      },
+      {
+        "symbol": "Rejected",
+        "line": 20
+      },
+      {
+        "symbol": "ManualClock",
+        "line": 21
+      },
+      {
+        "symbol": "ManualClock.__init__",
+        "line": 22
+      },
+      {
+        "symbol": "ManualClock.advance",
+        "line": 23
+      },
+      {
+        "symbol": "Store",
+        "line": 27
+      },
+      {
+        "symbol": "Store.__init__",
+        "line": 28
+      },
+      {
+        "symbol": "Store.connect",
+        "line": 40
+      },
+      {
+        "symbol": "Store.id",
+        "line": 42
+      },
+      {
+        "symbol": "Store.graph_version",
+        "line": 51
+      },
+      {
+        "symbol": "Store.epoch",
+        "line": 53
+      },
+      {
+        "symbol": "Store.bump_graph",
+        "line": 54
+      },
+      {
+        "symbol": "Store.entity",
+        "line": 57
+      },
+      {
+        "symbol": "Store.close",
+        "line": 61
+      },
+      {
+        "symbol": "ProvenanceAuditLog",
+        "line": 63
+      },
+      {
+        "symbol": "ProvenanceAuditLog.__init__",
+        "line": 64
+      },
+      {
+        "symbol": "ProvenanceAuditLog.append",
+        "line": 65
+      },
+      {
+        "symbol": "ProvenanceAuditLog.verify",
+        "line": 72
+      },
+      {
+        "symbol": "ProvenanceAuditLog.records",
+        "line": 79
+      },
+      {
+        "symbol": "ProvenanceAuditLog.assess_chain",
+        "line": 81
+      },
+      {
+        "symbol": "ProvenanceAuditLog._assess_chain",
+        "line": 87
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry",
+        "line": 127
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.__init__",
+        "line": 128
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.register",
+        "line": 129
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.create",
+        "line": 140
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.compare",
+        "line": 155
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.authorize_mapping",
+        "line": 159
+      },
+      {
+        "symbol": "IdentityNamespaceRegistry.mapping_allowed",
+        "line": 167
+      },
+      {
+        "symbol": "ConsentAndDeletionManager",
+        "line": 170
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.__init__",
+        "line": 172
+      },
+      {
+        "symbol": "ConsentAndDeletionManager._next_epoch",
+        "line": 173
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.set",
+        "line": 175
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.deleted",
+        "line": 185
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.allowed",
+        "line": 187
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.require",
+        "line": 196
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.delete",
+        "line": 198
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.reconcile",
+        "line": 208
+      },
+      {
+        "symbol": "ConsentAndDeletionManager._refresh_case",
+        "line": 246
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.acknowledge",
+        "line": 251
+      },
+      {
+        "symbol": "ConsentAndDeletionManager.case",
+        "line": 258
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph",
+        "line": 264
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.__init__",
+        "line": 266
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.active",
+        "line": 267
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.component",
+        "line": 276
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.add",
+        "line": 285
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.revoke",
+        "line": 327
+      },
+      {
+        "symbol": "ConfidenceAwareRelationshipGraph.reset_device",
+        "line": 338
+      },
+      {
+        "symbol": "DeterministicIdentityResolver",
+        "line": 345
+      },
+      {
+        "symbol": "DeterministicIdentityResolver.__init__",
+        "line": 346
+      },
+      {
+        "symbol": "DeterministicIdentityResolver.login",
+        "line": 348
+      },
+      {
+        "symbol": "TemporalEventLinker",
+        "line": 374
+      },
+      {
+        "symbol": "TemporalEventLinker.__init__",
+        "line": 375
+      },
+      {
+        "symbol": "TemporalEventLinker.ingest",
+        "line": 376
+      },
+      {
+        "symbol": "TemporalEventLinker.coverage",
+        "line": 435
+      },
+      {
+        "symbol": "TemporalEventLinker.visible_ledger",
+        "line": 445
+      },
+      {
+        "symbol": "GraphFeatureService",
+        "line": 454
+      },
+      {
+        "symbol": "GraphFeatureService.__init__",
+        "line": 455
+      },
+      {
+        "symbol": "GraphFeatureService.admit_backend",
+        "line": 457
+      },
+      {
+        "symbol": "GraphFeatureService.compute",
+        "line": 462
+      },
+      {
+        "symbol": "GraphFeatureService.read",
+        "line": 527
+      },
+      {
+        "symbol": "GraphFeatureService.consume_local",
+        "line": 540
+      },
+      {
+        "symbol": "IdentitySystem",
+        "line": 564
+      },
+      {
+        "symbol": "IdentitySystem.__init__",
+        "line": 566
+      },
+      {
+        "symbol": "IdentitySystem.backup_state",
+        "line": 577
+      },
+      {
+        "symbol": "IdentitySystem.restore_state",
+        "line": 582
+      },
+      {
+        "symbol": "IdentitySystem.training_snapshot",
+        "line": 593
+      },
+      {
+        "symbol": "IdentitySystem.ltv_admission",
+        "line": 600
+      },
+      {
+        "symbol": "IdentitySystem.close",
+        "line": 605
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-mvp/identity_mvp/fixtures.py",
+    "sha256": "ae48cac1e6ecc404acb555dbfe8b2ac900ff12848260c9cc22e5223826de70c2",
+    "symbols": [
+      {
+        "symbol": "SyntheticWorld",
+        "line": 4
+      },
+      {
+        "symbol": "SyntheticWorld.__init__",
+        "line": 5
+      },
+      {
+        "symbol": "SyntheticWorld.entity",
+        "line": 9
+      },
+      {
+        "symbol": "SyntheticWorld.install",
+        "line": 13
+      },
+      {
+        "symbol": "SyntheticWorld.assertion",
+        "line": 17
+      },
+      {
+        "symbol": "SyntheticWorld.login",
+        "line": 25
+      },
+      {
+        "symbol": "SyntheticWorld.revenue",
+        "line": 26
+      },
+      {
+        "symbol": "SyntheticWorld.pair",
+        "line": 31
+      },
+      {
+        "symbol": "SyntheticWorld.manifest",
+        "line": 34
+      },
+      {
+        "symbol": "SyntheticWorld.close",
+        "line": 35
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-mvp/identity_mvp/schema.sql",
+    "sha256": "0a47c63367f293b021079f5b1f467086bf85c34e984f74bad96824eae7882790",
+    "symbols": []
+  },
+  {
+    "path": "identity-graph-mvp/identity_mvp/control_schema.sql",
+    "sha256": "840fa8791e25839caa2c21c7fff8a9ca91f835313e7311af0a5c85429fcf27de",
+    "symbols": []
+  },
+  {
+    "path": "identity-graph-ltv-lab/lab/adapter.py",
+    "sha256": "9644cbac69dfab4f4399174f3a63203dd75d725e2188856eb1a3c13c61e6959d",
+    "symbols": [
+      {
+        "symbol": "GraphAdapter",
+        "line": 4
+      },
+      {
+        "symbol": "GraphAdapter.__init__",
+        "line": 5
+      },
+      {
+        "symbol": "GraphAdapter.extract",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-ltv-lab/lab/extraction.py",
+    "sha256": "84778d18238aff49c19573baed452a00fd004ad1f5c986aa2d0093212f615ecc",
+    "symbols": [
+      {
+        "symbol": "schedule_actions",
+        "line": 5
+      },
+      {
+        "symbol": "extract",
+        "line": 9
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-ltv-lab/lab/model.py",
+    "sha256": "a6d2f7f50ee8c480c2fd70f36346097294360e94ab9fc90e9585cc4b8839e397",
+    "symbols": [
+      {
+        "symbol": "matrix",
+        "line": 3
+      },
+      {
+        "symbol": "scale_fit",
+        "line": 14
+      },
+      {
+        "symbol": "scale",
+        "line": 20
+      },
+      {
+        "symbol": "fit_predict",
+        "line": 22
+      },
+      {
+        "symbol": "metrics",
+        "line": 36
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-ltv-lab/lab/generator.py",
+    "sha256": "20933e1881ac244db98691d2e2916373eebc2690406023872d7e404e36267a17",
+    "symbols": [
+      {
+        "symbol": "generate",
+        "line": 4
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-ltv-lab/run_experiment.py",
+    "sha256": "cc40db779925d5a74aeb9c0228ef2cc913b283decc58891cb8dc317227f7210c",
+    "symbols": [
+      {
+        "symbol": "code_hashes",
+        "line": 14
+      },
+      {
+        "symbol": "execute",
+        "line": 16
+      },
+      {
+        "symbol": "main",
+        "line": 131
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-e01/adapter.py",
+    "sha256": "9138d4615c1ffae2cb5c25f53d7f4aca37f368c0fcf185341407edce15a2adb1",
+    "symbols": [
+      {
+        "symbol": "TaskAwareAdapter",
+        "line": 5
+      },
+      {
+        "symbol": "TaskAwareAdapter.__init__",
+        "line": 6
+      },
+      {
+        "symbol": "TaskAwareAdapter._binding",
+        "line": 8
+      },
+      {
+        "symbol": "TaskAwareAdapter.extract",
+        "line": 47
+      },
+      {
+        "symbol": "TaskAwareAdapter._partition",
+        "line": 67
+      },
+      {
+        "symbol": "TaskAwareAdapter.reread",
+        "line": 148
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-e02/machine.py",
+    "sha256": "d58b95bd766322fe722ccb92a827b8097f84cdf76016f8a538800ab2ca82fc0b",
+    "symbols": [
+      {
+        "symbol": "Audit",
+        "line": 11
+      },
+      {
+        "symbol": "Audit.__init__",
+        "line": 12
+      },
+      {
+        "symbol": "Audit.emit",
+        "line": 13
+      },
+      {
+        "symbol": "Audit.verify",
+        "line": 20
+      },
+      {
+        "symbol": "Job",
+        "line": 29
+      },
+      {
+        "symbol": "MemorySink",
+        "line": 49
+      },
+      {
+        "symbol": "MemorySink.__init__",
+        "line": 56
+      },
+      {
+        "symbol": "MemorySink.accept",
+        "line": 57
+      },
+      {
+        "symbol": "HandoffMachine",
+        "line": 69
+      },
+      {
+        "symbol": "HandoffMachine.__init__",
+        "line": 77
+      },
+      {
+        "symbol": "HandoffMachine._transition",
+        "line": 85
+      },
+      {
+        "symbol": "HandoffMachine._cancel",
+        "line": 91
+      },
+      {
+        "symbol": "HandoffMachine._current_request",
+        "line": 95
+      },
+      {
+        "symbol": "HandoffMachine.enqueue",
+        "line": 100
+      },
+      {
+        "symbol": "HandoffMachine._inspect",
+        "line": 126
+      },
+      {
+        "symbol": "HandoffMachine._revalidate",
+        "line": 200
+      },
+      {
+        "symbol": "HandoffMachine.claim",
+        "line": 211
+      },
+      {
+        "symbol": "HandoffMachine._atomic_accept",
+        "line": 219
+      },
+      {
+        "symbol": "HandoffMachine.deliver",
+        "line": 254
+      },
+      {
+        "symbol": "HandoffMachine.run",
+        "line": 281
+      },
+      {
+        "symbol": "HandoffMachine.export",
+        "line": 285
+      },
+      {
+        "symbol": "json_payload",
+        "line": 291
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-e02/counterexamples.py",
+    "sha256": "654cca0e9a38a9b1adbf16e49dafcd4814d13fda5ad33cce42f204be018a1696",
+    "symbols": [
+      {
+        "symbol": "EnqueueOnly",
+        "line": 8
+      },
+      {
+        "symbol": "EnqueueOnly.__init__",
+        "line": 9
+      },
+      {
+        "symbol": "EnqueueOnly.attempt",
+        "line": 14
+      },
+      {
+        "symbol": "StaleRetryEpoch",
+        "line": 22
+      },
+      {
+        "symbol": "StaleRetryEpoch.first_failure",
+        "line": 23
+      },
+      {
+        "symbol": "StaleRetryEpoch.attempt",
+        "line": 26
+      },
+      {
+        "symbol": "CheckThenRevoke",
+        "line": 32
+      },
+      {
+        "symbol": "CheckThenRevoke.attempt",
+        "line": 33
+      },
+      {
+        "symbol": "observe_acceptance",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "path": "identity-graph-e02/run.py",
+    "sha256": "71d3c2072ffe7e606a9b978f5935d1f2e87bbec642bb2943bbe2622d7726705d",
+    "symbols": [
+      {
+        "symbol": "offline_guard",
+        "line": 12
+      },
+      {
+        "symbol": "eq",
+        "line": 16
+      },
+      {
+        "symbol": "cancelled",
+        "line": 19
+      },
+      {
+        "symbol": "execute",
+        "line": 56
+      },
+      {
+        "symbol": "main",
+        "line": 193
+      }
+    ]
+  }
+]

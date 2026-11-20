@@ -1,0 +1,526 @@
+{
+  "test_id": "V12",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {
+      "d": "entity_000002",
+      "zero": "entity_000004",
+      "missing": "entity_000006",
+      "exit": "entity_000008"
+    }
+  },
+  "operations": [
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "d",
+        "device"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "device",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000001"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000001",
+        "syn:d:0c704012ee15"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000002",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 1
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "zero",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "zero",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000004"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:zero:fa66b470cb95"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 2
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000005",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "missing",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000006"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "missing",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000006"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:missing:c5c6bb3b6248"
+      ],
+      "kwargs": {},
+      "returned": "entity_000006"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000006",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 3
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000006",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000007",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "exit",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000008"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "exit",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000008"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:exit:435ecc106b9f"
+      ],
+      "kwargs": {},
+      "returned": "entity_000008"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000008",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 4
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000008",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000009",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "coverage",
+      "at": 1767225600,
+      "args": [
+        "entity_000004"
+      ],
+      "kwargs": {
+        "start_at": 1767225600,
+        "end_at": 1767225600,
+        "status": "COMPLETE"
+      },
+      "returned": "coverage_000010"
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "coverage",
+      "at": 1767225600,
+      "args": [
+        "entity_000006"
+      ],
+      "kwargs": {
+        "start_at": 1767225600,
+        "end_at": 1767225600,
+        "status": "MISSING"
+      },
+      "returned": "coverage_000011"
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "coverage",
+      "at": 1767225600,
+      "args": [
+        "entity_000008"
+      ],
+      "kwargs": {
+        "start_at": 1767225600,
+        "end_at": 1767225600,
+        "status": "EXITED"
+      },
+      "returned": "coverage_000012"
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225600,
+      "args": [
+        "entity_000004"
+      ],
+      "kwargs": {
+        "since_at": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000013",
+        "as_of": 1767225600,
+        "consumer_available_at": 1767225600,
+        "values": {
+          "observed_revenue_micros": 0,
+          "revenue_micros": 0,
+          "observed_ledger_count": 0,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {},
+          "observation_status": "KNOWN_ZERO",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000004"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000005",
+              1
+            ]
+          ],
+          "event_refs": [],
+          "ledger_refs": [],
+          "coverage_refs": [
+            "coverage_000010"
+          ],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 6,
+        "policy_epoch": 4
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225600,
+      "args": [
+        1767225600
+      ],
+      "kwargs": {},
+      "returned": []
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225600,
+      "args": [
+        "entity_000006"
+      ],
+      "kwargs": {
+        "since_at": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000014",
+        "as_of": 1767225600,
+        "consumer_available_at": 1767225600,
+        "values": {
+          "observed_revenue_micros": 0,
+          "revenue_micros": null,
+          "observed_ledger_count": 0,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {},
+          "observation_status": "MISSING_OBSERVATION",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000006"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000007",
+              1
+            ]
+          ],
+          "event_refs": [],
+          "ledger_refs": [],
+          "coverage_refs": [
+            "coverage_000011"
+          ],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 6,
+        "policy_epoch": 4
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225600,
+      "args": [
+        1767225600
+      ],
+      "kwargs": {},
+      "returned": []
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225600,
+      "args": [
+        "entity_000008"
+      ],
+      "kwargs": {
+        "since_at": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000015",
+        "as_of": 1767225600,
+        "consumer_available_at": 1767225600,
+        "values": {
+          "observed_revenue_micros": 0,
+          "revenue_micros": null,
+          "observed_ledger_count": 0,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {},
+          "observation_status": "EXITED_OBSERVATION",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000008"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000009",
+              1
+            ]
+          ],
+          "event_refs": [],
+          "ledger_refs": [],
+          "coverage_refs": [
+            "coverage_000012"
+          ],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 6,
+        "policy_epoch": 4
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225600,
+      "args": [
+        1767225600
+      ],
+      "kwargs": {},
+      "returned": []
+    }
+  ]
+}

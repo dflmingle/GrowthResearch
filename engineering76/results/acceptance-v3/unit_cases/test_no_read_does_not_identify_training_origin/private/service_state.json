@@ -1,0 +1,43 @@
+{
+  "clock": 31,
+  "route": "D0",
+  "seed": 760031,
+  "permissions": [
+    {
+      "app": "source-app",
+      "device": "mock-device-A",
+      "allow": true,
+      "effective_at": 0,
+      "purpose": "mock-research",
+      "version": 1
+    },
+    {
+      "app": "target-app",
+      "device": "mock-device-A",
+      "allow": true,
+      "effective_at": 0,
+      "purpose": "mock-research",
+      "version": 2
+    }
+  ],
+  "events": [
+    {
+      "event_id": "mock-event-1",
+      "device": "mock-device-A",
+      "installation": "mock-install-S",
+      "event_time": 10,
+      "available_at": 20,
+      "category": 1,
+      "purpose": "mock-research",
+      "epoch": 0,
+      "receipt": 4
+    }
+  ],
+  "epoch": {},
+  "seen": [
+    "mock-event-1"
+  ],
+  "requests": [
+    "mock-request-1"
+  ]
+}

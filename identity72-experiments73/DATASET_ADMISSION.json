@@ -1,0 +1,54 @@
+[
+  {
+    "id": "TalkingData",
+    "publisher": "TalkingData/Kaggle official competition",
+    "url": "https://www.kaggle.com/competitions/talkingdata-mobile-user-demographics/data",
+    "license": "UNVERIFIED:rules shell only",
+    "real_or_synthetic": "NOT_FILE_VERIFIED",
+    "download_integrity": "HTML only;no data archive",
+    "identity_scope": "NOT_VERIFIED;must not assume natural person",
+    "time_coverage": "NOT_VERIFIED",
+    "label": "Age/gender task described by title;labels not acquired",
+    "admission": "STOP",
+    "experiment": "A"
+  },
+  {
+    "id": "Criteo",
+    "publisher": "Criteo AI Lab",
+    "url": "https://ailab.criteo.com/criteo-attribution-modeling-bidding-dataset/",
+    "license": "CC BY-NC-SA4.0;project eligibility not established",
+    "real_or_synthetic": "Official sampled anonymized live displayed impressions",
+    "download_integrity": "No row data downloaded;official size not locally verified",
+    "identity_scope": "Dataset uid,not proven cross-device/person",
+    "time_coverage": "30days impressions;conversion label30days after impression",
+    "label": "Binary conversion and attribution,not income;cost/cpo transformed costs",
+    "admission": "STOP",
+    "experiment": "C"
+  },
+  {
+    "id": "BPID",
+    "publisher": "Amazon Web Services Inc./Amazon Science",
+    "url": "https://zenodo.org/records/13932202",
+    "license": "Apache2.0 in publisher metadata",
+    "real_or_synthetic": "SYNTHETIC profiles,trained annotators pair labels",
+    "download_integrity": "Full ZIP58115842 bytes;published MD5+ZIP CRC passed",
+    "identity_scope": "Synthetic profiles only;no linkage to any real person",
+    "time_coverage": "No event timestamps;not longitudinal",
+    "label": "10k match/nonmatch pairs;1M blocking profiles unlabeled",
+    "admission": "GO_SYNTHETIC_ONLY",
+    "experiment": "B"
+  },
+  {
+    "id": "IndependentD",
+    "publisher": "GrowthResearch independent generator",
+    "url": "local src/synthetic_value.py",
+    "license": "Local study code;no third-party personal dataset",
+    "real_or_synthetic": "SYNTHETIC_ONLY",
+    "download_integrity": "Local seeded generator,360 result rows",
+    "identity_scope": "Generated user/device/app only",
+    "time_coverage": "Structural past vs future28days;not actual logs",
+    "label": "Generated future value units,not IAA/IAP/currency",
+    "admission": "GO_SYNTHETIC_ONLY",
+    "experiment": "D"
+  }
+]

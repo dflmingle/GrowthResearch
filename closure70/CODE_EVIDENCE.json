@@ -1,0 +1,1256 @@
+[
+  {
+    "id": "CL70C01",
+    "path": "cross-sdk/java/max-unity-418/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+    "sha256": "185fb359ddedf6c2bc29ac9c69beadfe41d7c31ad4f9b2c995ebcf923b46b555",
+    "sdk": "AppLovin/Adapter-unityads-adapter",
+    "version": "4.18.1.0",
+    "class_or_method": "collectSignal/loadInterstitialAd/loadRewardedAd/createAdLoadOptions/createAdShowOptions",
+    "start_line": 101,
+    "end_line": 173,
+    "excerpt": "101:     public void collectSignal(MaxAdapterSignalCollectionParameters parameters, @Nullable Activity activity, MaxSignalCollectionListener callback) {\n102:         log(\"Collecting signal...\");\n103:         updatePrivacyConsent(parameters, getContext(activity));\n104:         AdFormat unityFormat = toUnityAdFormat(parameters);\n105:         UnityAds.getToken(new TokenConfiguration(unityFormat), token -> {\n106:             log(\"Collected signal\");\n107:             callback.onSignalCollected(token);\n108:         });\n109:     }\n110: \n111:     public void loadInterstitialAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxInterstitialAdapterListener listener) {\n112:         String placementId = parameters.getThirdPartyAdPlacementId();\n113:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + \"interstitial ad for placement \\\"\" + placementId + \"\\\"...\");\n114:         updatePrivacyConsent(parameters, getContext(activity));\n115:         this.biddingAdId = UUID.randomUUID().toString();\n116:         UnityAds.load(placementId, createAdLoadOptions(parameters), new UnityAdsMediationAdapter$2(this, listener));\n117:     }\n118: \n119:     public void showInterstitialAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxInterstitialAdapterListener listener) {\n120:         String placementId = parameters.getThirdPartyAdPlacementId();\n121:         log(\"Showing interstitial ad for placement \\\"\" + placementId + \"\\\"...\");\n122:         UnityAds.show(activity, placementId, createAdShowOptions(), new UnityAdsMediationAdapter$3(this, listener));\n123:     }\n124: \n125:     public void loadRewardedAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxRewardedAdapterListener listener) {\n126:         String placementId = parameters.getThirdPartyAdPlacementId();\n127:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + \"rewarded ad for placement \\\"\" + placementId + \"\\\"...\");\n128:         updatePrivacyConsent(parameters, getContext(activity));\n129:         this.biddingAdId = UUID.randomUUID().toString();\n130:         UnityAds.load(placementId, createAdLoadOptions(parameters), new UnityAdsMediationAdapter$4(this, listener));\n131:     }\n132: \n133:     public void showRewardedAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxRewardedAdapterListener listener) {\n134:         String placementId = parameters.getThirdPartyAdPlacementId();\n135:         log(\"Showing rewarded ad for placement \\\"\" + placementId + \"\\\"...\");\n136:         configureReward(parameters);\n137:         UnityAds.show(activity, placementId, createAdShowOptions(), new UnityAdsMediationAdapter$5(this, listener));\n138:     }\n139: \n140:     public void loadAdViewAd(MaxAdapterResponseParameters parameters, MaxAdFormat adFormat, @Nullable Activity activity, MaxAdViewAdapterListener listener) {\n141:         String placementId = parameters.getThirdPartyAdPlacementId();\n142:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + adFormat.getLabel() + \" ad for placement \\\"\" + placementId + \"\\\"...\");\n143:         if (activity == null) {\n144:             log(adFormat.getLabel() + \" ad placement \\\"\" + placementId + \"\\\" load failed: Activity is null\");\n145:             MaxAdapterError error = MaxAdapterError.MISSING_ACTIVITY;\n146:             listener.onAdViewAdLoadFailed(error);\n147:         } else {\n148:             updatePrivacyConsent(parameters, getContext(activity));\n149:             this.biddingAdId = UUID.randomUUID().toString();\n150:             this.bannerView = new BannerView(activity, placementId, toUnityBannerSize(adFormat));\n151:             this.bannerView.setListener(new UnityAdsMediationAdapter$6(this, adFormat, placementId, listener));\n152:             this.bannerView.load(createAdLoadOptions(parameters));\n153:         }\n154:     }\n155: \n156:     private UnityAdsLoadOptions createAdLoadOptions(MaxAdapterResponseParameters parameters) {\n157:         UnityAdsLoadOptions options = new UnityAdsLoadOptions();\n158:         String bidResponse = parameters.getBidResponse();\n159:         if (AppLovinSdkUtils.isValidString(bidResponse)) {\n160:             options.setAdMarkup(bidResponse);\n161:         }\n162:         if (AppLovinSdkUtils.isValidString(this.biddingAdId)) {\n163:             options.setObjectId(this.biddingAdId);\n164:         }\n165:         return options;\n166:     }\n167: \n168:     private UnityAdsShowOptions createAdShowOptions() {\n169:         UnityAdsShowOptions options = new UnityAdsShowOptions();\n170:         if (AppLovinSdkUtils.isValidString(this.biddingAdId)) {\n171:             options.setObjectId(this.biddingAdId);\n172:         }\n173:         return options;",
+    "claim": "fresh biddingAdId generated at load,shared between load/show options;adMarkup from MAX bid response",
+    "trigger_and_privacy": "network load/show calls after signal stage;app configuration/consent forwarded",
+    "limits": "MAX-to-Unity object correlation;no tokenId or MAX event_id equality assignment",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+        "sha256": "f0c7f2474b214a75315b97ce360711db3e06fe3402e54a344cba8f34a71ee275",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+        "http_last_modified": "Fri, 29 May 2026 01:06:57 GMT",
+        "bytes": 16110
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C02",
+    "path": "closure70/java/adapter-417/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+    "sha256": "185fb359ddedf6c2bc29ac9c69beadfe41d7c31ad4f9b2c995ebcf923b46b555",
+    "sdk": "AppLovin/Adapter-unityads-adapter",
+    "version": "4.17.0.0",
+    "class_or_method": "load/createAdLoadOptions/createAdShowOptions",
+    "start_line": 101,
+    "end_line": 173,
+    "excerpt": "101:     public void collectSignal(MaxAdapterSignalCollectionParameters parameters, @Nullable Activity activity, MaxSignalCollectionListener callback) {\n102:         log(\"Collecting signal...\");\n103:         updatePrivacyConsent(parameters, getContext(activity));\n104:         AdFormat unityFormat = toUnityAdFormat(parameters);\n105:         UnityAds.getToken(new TokenConfiguration(unityFormat), token -> {\n106:             log(\"Collected signal\");\n107:             callback.onSignalCollected(token);\n108:         });\n109:     }\n110: \n111:     public void loadInterstitialAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxInterstitialAdapterListener listener) {\n112:         String placementId = parameters.getThirdPartyAdPlacementId();\n113:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + \"interstitial ad for placement \\\"\" + placementId + \"\\\"...\");\n114:         updatePrivacyConsent(parameters, getContext(activity));\n115:         this.biddingAdId = UUID.randomUUID().toString();\n116:         UnityAds.load(placementId, createAdLoadOptions(parameters), new UnityAdsMediationAdapter$2(this, listener));\n117:     }\n118: \n119:     public void showInterstitialAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxInterstitialAdapterListener listener) {\n120:         String placementId = parameters.getThirdPartyAdPlacementId();\n121:         log(\"Showing interstitial ad for placement \\\"\" + placementId + \"\\\"...\");\n122:         UnityAds.show(activity, placementId, createAdShowOptions(), new UnityAdsMediationAdapter$3(this, listener));\n123:     }\n124: \n125:     public void loadRewardedAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxRewardedAdapterListener listener) {\n126:         String placementId = parameters.getThirdPartyAdPlacementId();\n127:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + \"rewarded ad for placement \\\"\" + placementId + \"\\\"...\");\n128:         updatePrivacyConsent(parameters, getContext(activity));\n129:         this.biddingAdId = UUID.randomUUID().toString();\n130:         UnityAds.load(placementId, createAdLoadOptions(parameters), new UnityAdsMediationAdapter$4(this, listener));\n131:     }\n132: \n133:     public void showRewardedAd(MaxAdapterResponseParameters parameters, @Nullable Activity activity, MaxRewardedAdapterListener listener) {\n134:         String placementId = parameters.getThirdPartyAdPlacementId();\n135:         log(\"Showing rewarded ad for placement \\\"\" + placementId + \"\\\"...\");\n136:         configureReward(parameters);\n137:         UnityAds.show(activity, placementId, createAdShowOptions(), new UnityAdsMediationAdapter$5(this, listener));\n138:     }\n139: \n140:     public void loadAdViewAd(MaxAdapterResponseParameters parameters, MaxAdFormat adFormat, @Nullable Activity activity, MaxAdViewAdapterListener listener) {\n141:         String placementId = parameters.getThirdPartyAdPlacementId();\n142:         log(\"Loading \" + (AppLovinSdkUtils.isValidString(parameters.getBidResponse()) ? \"bidding \" : \"\") + adFormat.getLabel() + \" ad for placement \\\"\" + placementId + \"\\\"...\");\n143:         if (activity == null) {\n144:             log(adFormat.getLabel() + \" ad placement \\\"\" + placementId + \"\\\" load failed: Activity is null\");\n145:             MaxAdapterError error = MaxAdapterError.MISSING_ACTIVITY;\n146:             listener.onAdViewAdLoadFailed(error);\n147:         } else {\n148:             updatePrivacyConsent(parameters, getContext(activity));\n149:             this.biddingAdId = UUID.randomUUID().toString();\n150:             this.bannerView = new BannerView(activity, placementId, toUnityBannerSize(adFormat));\n151:             this.bannerView.setListener(new UnityAdsMediationAdapter$6(this, adFormat, placementId, listener));\n152:             this.bannerView.load(createAdLoadOptions(parameters));\n153:         }\n154:     }\n155: \n156:     private UnityAdsLoadOptions createAdLoadOptions(MaxAdapterResponseParameters parameters) {\n157:         UnityAdsLoadOptions options = new UnityAdsLoadOptions();\n158:         String bidResponse = parameters.getBidResponse();\n159:         if (AppLovinSdkUtils.isValidString(bidResponse)) {\n160:             options.setAdMarkup(bidResponse);\n161:         }\n162:         if (AppLovinSdkUtils.isValidString(this.biddingAdId)) {\n163:             options.setObjectId(this.biddingAdId);\n164:         }\n165:         return options;\n166:     }\n167: \n168:     private UnityAdsShowOptions createAdShowOptions() {\n169:         UnityAdsShowOptions options = new UnityAdsShowOptions();\n170:         if (AppLovinSdkUtils.isValidString(this.biddingAdId)) {\n171:             options.setObjectId(this.biddingAdId);\n172:         }\n173:         return options;",
+    "claim": "same fresh UUID and load/show option bridge in adapter4.17.0.0",
+    "trigger_and_privacy": "matching Unity4.17 source branch available",
+    "limits": "versions individually audited;not whole SDK equivalence",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.17.0.0/unityads-adapter-4.17.0.0.aar",
+        "sha256": "70e4ab619ee4047d0f84fabbfb8af99cae8346e849418348109ac662047fa692",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.17.0.0/unityads-adapter-4.17.0.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 22:06:23 GMT",
+        "bytes": 16110
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C03",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/UnityAdsBaseOptions.java",
+    "sha256": "b897ad66a04e8166fbbf8ba5e66059f74a634bf1f04d8f9d3860381e5cf4c0f0",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "UnityAdsBaseOptions.setObjectId/getData",
+    "start_line": 8,
+    "end_line": 40,
+    "excerpt": "8: public class UnityAdsBaseOptions {\n9: \tprivate JSONObject _data;\n10: \tprivate String OBJECT_ID = \"objectId\";\n11: \n12: \tpublic UnityAdsBaseOptions() {\n13: \t\t_data = new JSONObject();\n14: \t}\n15: \n16: \tpublic void set(String key, String value) {\n17: \t\tif(key != null && value != null) {\n18: \t\t\ttry {\n19: \t\t\t\t_data.put(key, value);\n20: \t\t\t} catch (JSONException e) {\n21: \t\t\t\tDeviceLog.exception(\"Failed to set Unity Ads options\", e);\n22: \t\t\t}\n23: \t\t}\n24: \t}\n25: \n26: \tpublic void setObjectId(String objectId) {\n27: \t\tset(OBJECT_ID, objectId);\n28: \t}\n29: \n30: \tpublic String getObjectId() {\n31: \t\ttry {\n32: \t\t\treturn _data.getString(OBJECT_ID);\n33: \t\t} catch (JSONException e) {\n34: \t\t\treturn null;\n35: \t\t}\n36: \t}\n37: \n38: \tpublic JSONObject getData() {\n39: \t\treturn _data;\n40: \t}",
+    "claim": "objectId written under exact JSON key",
+    "trigger_and_privacy": "non-null key/value",
+    "limits": "actual shared-key contract,not name similarity",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C04",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/LegacyLoadUseCase.kt",
+    "sha256": "46488369b319e49ce37d4152e5cdcf24b6934457236324b34760ff4057e60615",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "LegacyLoadUseCase.invoke",
+    "start_line": 80,
+    "end_line": 124,
+    "excerpt": "80:     ) {\n81: \n82:         // Use opportunityId from load options if available and if not, generate one\n83:         val opportunityId = getOpportunityId(loadOptions)\n84:             ?: UUID.randomUUID().toString()\n85: \n86:         logger.info(\"Load invoked for placement: $placement with instance id: $opportunityId\")\n87: \n88:         val timeoutMillis = sessionRepository.nativeConfiguration.adOperations.loadTimeoutMs.toLong()\n89:         val gatewayBannerSize = getBannerSize(bannerSize)\n90: \n91:         this.loadOptions = loadOptions\n92:         this.adMarkup = getAdMarkup(loadOptions)\n93: \n94:         this.isHeaderBidding = !adMarkup.isNullOrBlank()\n95:         this.isBanner = bannerSize != null\n96:         this.listener = unityLoadListener\n97:         this.placement = placement\n98: \n99:         this.startTime = loadStart(opportunityId)\n100: \n101:         try {\n102:             val loadResult = withTimeoutOrNull(timeoutMillis) {\n103: \n104:                 val opportunityIdByteString = UUID.fromString(opportunityId).toByteString()\n105:                 opportunity = opportunityIdByteString\n106:                 if (adRepository.hasOpportunityId(opportunityIdByteString)) {\n107:                     LoadResult.Failure(\n108:                         error = PUBLIC_ERROR_CODE_UNSPECIFIED,\n109:                         message = MSG_OPPORTUNITY_ID_USED,\n110:                         reason = REASON_OPPORTUNITY_USED,\n111:                     )\n112:                 }\n113: \n114:                 // For header bidding, the ad markup is passed in the load options and contains the adData\n115:                 val headerBiddingAdMarkup = getHeaderBiddingAdMarkup(adMarkup)\n116:                     ?: return@withTimeoutOrNull LoadResult.Failure(\n117:                         error = PUBLIC_ERROR_CODE_LOAD_ADVIEWER,\n118:                         message = PUBLIC_ERROR_CODE_LOAD_ADVIEWER.getLoadErrorMsg(),\n119:                         reason = REASON_AD_MARKUP_PARSE\n120:                     )\n121: \n122:                 when(getInitializationState()) {\n123:                     INITIALIZED -> load(context, placement ?: \"\", opportunityIdByteString, headerBiddingAdMarkup, gatewayBannerSize, loadOptions)\n124:                     NOT_INITIALIZED -> return@withTimeoutOrNull LoadResult.Failure(",
+    "claim": "load option objectId or generated UUID -> UUID ByteString -> Load",
+    "trigger_and_privacy": "init state and valid UUID;duplicate opportunity check",
+    "limits": "load ID is not necessarily token collection ID",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C05",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/LegacyLoadUseCase.kt",
+    "sha256": "46488369b319e49ce37d4152e5cdcf24b6934457236324b34760ff4057e60615",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "LegacyLoadUseCase.getOpportunityId/getAdMarkup",
+    "start_line": 200,
+    "end_line": 209,
+    "excerpt": "200:         }\n201:     }\n202: \n203:     private fun getOpportunityId(unityAdsLoadOptions: UnityAdsLoadOptions): String? {\n204:         return unityAdsLoadOptions.data?.opt(KEY_OBJECT_ID)?.toString()\n205:     }\n206: \n207:     private fun getAdMarkup(unityAdsLoadOptions: UnityAdsLoadOptions): String? {\n208:         return unityAdsLoadOptions.data?.opt(KEY_AD_MARKUP)?.toString()\n209:     }",
+    "claim": "exact objectId/adMarkup option getter",
+    "trigger_and_privacy": "option present",
+    "limits": "explicit mapping into opportunity,not user identity",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C06",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidLoad.kt",
+    "sha256": "8e9f3e1e86f6a6d235db3ea5eb9e90b6941578af82879317321a023a050061d2",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidLoad.invoke waterfall/header bidding branches",
+    "start_line": 80,
+    "end_line": 154,
+    "excerpt": "80: \n81:             loadOptions.loadConfiguration?.let {\n82:                 validateExtrasSize(it.extras, SOURCE_LOAD_API, tmpAdObject)\n83:             }\n84: \n85:             val response = if (!isHeaderBidding) {\n86:                 // waterfall\n87:                 incrementLoadRequestCount(isBanner)\n88:                 val loadAdRequest = getAdRequest(placement, opportunityId, bannerSize, loadOptions.loadConfiguration)\n89:                 val requestPolicy = getRequestPolicy()\n90:                 val gatewayAdResponse = measureTimedValue {\n91:                     runCatching {\n92:                         gatewayClient.request(\n93:                             request = loadAdRequest,\n94:                             requestPolicy = requestPolicy,\n95:                             operationType = OperationType.LOAD\n96:                         )\n97:                     }\n98:                 }.also { (result, duration) ->\n99:                     sendDiagnosticEvent(\n100:                         if (result.isSuccess) LOAD_CONFIG_SUCCESS_TIME else LOAD_CONFIG_FAILURE_TIME,\n101:                         duration.toDouble(DurationUnit.MILLISECONDS),\n102:                         adObject = tmpAdObject,\n103:                     )\n104:                 }.value.getOrThrow()\n105:                 gatewayAdResponse.payload.adResponse\n106:             } else {\n107:                 // header bidding\n108:                 incrementLoadRequestAdmCount(isBanner)\n109:                 val adPlayerConfigRequest = getAdPlayerConfigRequest(placement, opportunityId, headerBiddingAdMarkup.configurationToken, bannerSize?.let { AdFormat.AD_FORMAT_BANNER }, loadOptions.loadConfiguration)\n110:                 val requestPolicy = getRequestPolicy()\n111:                 val gatewayAdPlayerConfigResponse = measureTimedValue {\n112:                     runCatching {\n113:                         gatewayClient.request(\n114:                             request = adPlayerConfigRequest,\n115:                             requestPolicy = requestPolicy,\n116:                             operationType = OperationType.LOAD_HEADER_BIDDING\n117:                         )\n118:                     }\n119:                 }.also { (result, duration) ->\n120:                     sendDiagnosticEvent(\n121:                         if (result.isSuccess) LOAD_CONFIG_SUCCESS_TIME else LOAD_CONFIG_FAILURE_TIME,\n122:                         duration.toDouble(DurationUnit.MILLISECONDS),\n123:                         adObject = tmpAdObject,\n124:                     )\n125:                 }.value.getOrThrow()\n126:                 if (gatewayAdPlayerConfigResponse.hasError()) {\n127:                     return@withContext LoadResult.Failure(\n128:                         error = gatewayAdPlayerConfigResponse.error.errorCode,\n129:                         message = gatewayAdPlayerConfigResponse.error.errorCode?.getLoadErrorMsg() ?: MSG_INTERNAL_ERROR,\n130:                         reason = REASON_GATEWAY,\n131:                         reasonDebug = gatewayAdPlayerConfigResponse.error.errorText)\n132:                 }\n133:                 val response = gatewayAdPlayerConfigResponse.payload.adPlayerConfigResponse\n134:                 adResponse {\n135:                     adData = headerBiddingAdMarkup.adData\n136:                     adDataVersion = headerBiddingAdMarkup.adDataVersion\n137:                     trackingToken = response.trackingToken\n138:                     impressionConfiguration = response.impressionConfiguration\n139:                     impressionConfigurationVersion = response.impressionConfigurationVersion\n140:                     webviewConfiguration = response.webviewConfiguration\n141:                     adDataRefreshToken = response.adDataRefreshToken\n142:                     if (response.hasError()) {\n143:                         error = response.error\n144:                     }\n145:                     if (response.adData.isNotEmpty()) {\n146:                         adData = response.adData\n147:                         adDataVersion = response.adDataVersion\n148:                     }\n149:                 }\n150:             }\n151: \n152:             val adLoadResponse = handleGatewayAdResponse(loadOptions, opportunityId, response, context, placement, adType, isHeaderBidding)\n153:             when (adLoadResponse) {\n154:                 is LoadResult.Success -> {",
+    "claim": "same opportunityId passed into request or HB config request;HB response trackingToken materialized into response",
+    "trigger_and_privacy": "headerBiddingAdMarkup.adData nonempty selects HB;else waterfall",
+    "limits": "HB config call happens at load after markup;not original auction feature request",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C07",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetAdPlayerConfigRequest.kt",
+    "sha256": "60897b13974ff9fce78aea34a547a9197288372ba8bfb8cfc0041b881d603816",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidGetAdPlayerConfigRequest.invoke",
+    "start_line": 16,
+    "end_line": 44,
+    "excerpt": "16:     override suspend fun invoke(\n17:         placement: String,\n18:         opportunityId: ByteString,\n19:         configToken: ByteString,\n20:         adFormat: AdFormat?,\n21:         loadConfiguration: LoadConfigurationInternal?\n22:     ): UniversalRequest {\n23:         val request = adPlayerConfigRequest {\n24:             configurationToken = configToken\n25:             placementId = placement\n26:             // webviewVersion\n27:             impressionOpportunityId = opportunityId\n28:             adFormat?.let { this.adFormat = it }\n29:             loadConfiguration?.let {\n30:                 it.mediationAdUnitId?.let(::mediationAdUnitId::set)\n31:                 it.mediationInfo?.let { mediationInfoData ->\n32:                     mediationInfo = mediationInfoConverter(mediationInfoData)\n33:                 }\n34:                 extras.putAll(it.extras)\n35:             }\n36:         }\n37: \n38:         val payload = payload {\n39:             adPlayerConfigRequest = request\n40:         }\n41: \n42:         return getUniversalRequestForPayLoad(payload)\n43:     }\n44: }",
+    "claim": "configurationToken + impressionOpportunityId + placement -> UniversalRequest",
+    "trigger_and_privacy": "HB configuration load",
+    "limits": "configurationToken not decoded;no equality with tokenId",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C08",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayAdResponse.kt",
+    "sha256": "2cb92915be7308bc51c85e1ac71d2652563a8179456cfd2e977e420af8e4b59d",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidHandleGatewayAdResponse.invoke",
+    "start_line": 100,
+    "end_line": 114,
+    "excerpt": "100:                 receivedVersion = response.webviewConfiguration.version,\n101:                 receivedAdditionalFiles = response.webviewConfiguration.additionalFilesList,\n102:                 receivedType = response.webviewConfiguration.type,\n103:             )\n104: \n105:             val tmpAdObject = AdObject(\n106:                 opportunityId = opportunityId,\n107:                 placementId = placementId,\n108:                 trackingToken = response.trackingToken,\n109:                 loadOptions = loadOptions,\n110:                 adType = adType,\n111:                 isHeaderBidding = isHeaderBidding\n112:             )\n113: \n114:             // Cache the webview assets (entry point and additional files)",
+    "claim": "AdObject gets caller opportunityId and response trackingToken",
+    "trigger_and_privacy": "nonempty response adData and valid view configuration",
+    "limits": "response context combines with local opportunity",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C09",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayAdResponse.kt",
+    "sha256": "2cb92915be7308bc51c85e1ac71d2652563a8179456cfd2e977e420af8e4b59d",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AdObject viewer binding and repository insertion",
+    "start_line": 148,
+    "end_line": 218,
+    "excerpt": "148:                 sendDiagnosticEvent(\n149:                     if (result.isSuccess) LOAD_WEBVIEW_SUCCESS else LOAD_WEBVIEW_FAILURE,\n150:                     duration.toDouble(DurationUnit.MILLISECONDS),\n151:                     adObject = tmpAdObject\n152:                 )\n153:             }\n154:             val webviewContainer = webviewContainerResult.value.getOrThrow()\n155:             val webviewBridge = getWebViewBridge(webviewContainer, adPlayerScope)\n156:             adPlayer = getAdPlayer(webviewBridge, webviewContainer, opportunityId, adType)\n157: \n158:             val adObject = tmpAdObject.copy(\n159:                 adPlayer = adPlayer,\n160:             )\n161: \n162:             deviceInfoRepository.allowedPii\n163:                 .onEach { adPlayer.onAllowedPiiChange(it.toByteArray()) }\n164:                 .launchIn(adPlayer.scope)\n165: \n166:             val loadAdViewerStartedTime = TimeSource.Monotonic.markNow()\n167:             sendDiagnosticEvent(event = SendDiagnosticEvent.LOAD_STARTED_AD_VIEWER, adObject = adObject)\n168: \n169:             getHandleInvocationsFromAdViewer(\n170:                 onInvocations = webviewBridge.onInvocation,\n171:                 adData = response.adData.toBase64(),\n172:                 impressionConfig = base64ImpressionConfiguration,\n173:                 adDataRefreshToken = response.adDataRefreshToken.toBase64(),\n174:                 adObject = adObject,\n175:                 onSubscription = {\n176:                     measureTimedValue {\n177:                         runCatching { webviewContainer.loadUrl(webViewUrl) }\n178:                     }.also { (result, duration) ->\n179:                         sendDiagnosticEvent(\n180:                             if (result.isSuccess) LOAD_FILE_SUCCESS_TIME else LOAD_FILE_FAILURE_TIME,\n181:                             duration.toDouble(DurationUnit.MILLISECONDS),\n182:                             adObject = tmpAdObject\n183:                         )\n184:                         result.getOrThrow()\n185:                     }\n186:                 },\n187:             ).launchIn(adPlayer.scope)\n188: \n189:             val loadEvent = adPlayer.onLoadEvent.single()\n190: \n191:             if (loadEvent is LoadEvent.Error) {\n192:                 sendDiagnosticEvent(LOAD_CREATE_AD_OBJECT_FAILURE, loadAdViewerStartedTime.elapsedMillis(), adObject = adObject)\n193:                 withContext(NonCancellable) {\n194:                     cleanup(Error(loadEvent.message), opportunityId, response, adPlayer)\n195:                 }\n196:                 return LoadResult.Failure(\n197:                     error = ErrorOuterClass.PublicErrorCode.PUBLIC_ERROR_CODE_UNSPECIFIED,\n198:                     message = MSG_INTERNAL_ERROR,\n199:                     reason = REASON_AD_VIEWER,\n200:                     reasonDebug = loadEvent.message,\n201:                     isScarAd = adObject.isScarAd // This is the only time we can know if it was a SCAR ad that got parsed.\n202:                 )\n203:             } else {\n204:                 sendDiagnosticEvent(\n205:                     event = SendDiagnosticEvent.LOAD_CREATE_AD_OBJECT_SUCCESS,\n206:                     value = loadAdViewerStartedTime.elapsedMillis(),\n207:                     adObject = adObject\n208:                 )\n209:             }\n210: \n211:             campaignRepository.setLoadTimestamp(opportunityId)\n212:             adRepository.addAd(opportunityId, adObject)\n213:             if (loadOptions.objectId.isNullOrBlank() && loadOptions.data?.has(KEY_AD_MARKUP) == false) {\n214:                 adRepository.enqueueOpportunityForPlacement(placementId, opportunityId)\n215:             }\n216: \n217:             return LoadResult.Success(adObject)\n218:         } catch (t: CancellationException) {",
+    "claim": "same adObject passed to viewer invocations;repository keyed by opportunity;load timestamp set",
+    "trigger_and_privacy": "viewer load success;error branch separately handled",
+    "limits": "object lineage;load timestamp not exact display time",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C10",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/LegacyShowUseCase.kt",
+    "sha256": "f06a98aa2a49a7375c1e4b556dd15cf06af933d7c4e8763cf74371f1544c1db0",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "LegacyShowUseCase.invoke",
+    "start_line": 85,
+    "end_line": 115,
+    "excerpt": "85:         var placementNotLoaded = false\n86: \n87:         val opportunityId = runCatching {\n88:             // First check in the show options for a valid opportunityId\n89:             unityAdsShowOptions?.let(::getOpportunityId)\n90:         }.getOrElse {\n91:             // If the opportunityId provided is not in proper format, send an error\n92:             isWrongObjectIdFormat = true\n93:             // Generate a UUID if invalid\n94:             UUID.randomUUID().toString()\n95:         } ?: run {\n96:             // If the opportunityId is not found in the show options, check if the placement is loaded\n97:             if (placement != null) {\n98:                 val opportunityIdForPlacement = adRepository.pollOpportunityIdForPlacement(placement)?.toUUID()?.toString()\n99:                 if (opportunityIdForPlacement == null) {\n100:                     placementNotLoaded = true\n101:                     UUID.randomUUID().toString()\n102:                 } else {\n103:                     opportunityIdForPlacement\n104:                 }\n105:             } else {\n106:                 // If no placement is provided, generate a new UUID\n107:                 UUID.randomUUID().toString()\n108:             }\n109: \n110:         }\n111: \n112:         showStart(\n113:             opportunityId = opportunityId,\n114:             showOptions = unityAdsShowOptions\n115:         )",
+    "claim": "show options objectId selected;fallback placement repository poll",
+    "trigger_and_privacy": "valid ID;fallback absent id;error paths",
+    "limits": "shared load/show ID only on matching options;invalid ID does not establish join",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C11",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidShow.kt",
+    "sha256": "33fc1761022ced791f904fd6463a5d0d731cc773481d267ccab30b3328441698",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidShow.invoke",
+    "start_line": 23,
+    "end_line": 61,
+    "excerpt": "23:     override fun invoke(adObject: AdObject, showOptions: UnityAdsShowOptions?): Flow<ShowEvent> = flow {\n24:         require(!adObject.opportunityId.isEmpty) { \"No opportunityId\" }\n25: \n26:         val opportunityId = adObject.opportunityId\n27: \n28:         val ad = adRepository.getAd(opportunityId) ?: throw IllegalStateException(\"No ad associated with opportunityId\")\n29: \n30:         showOptions?.showConfiguration?.let {\n31:             validateExtrasSize(it.extras, SendDiagnosticEvent.SOURCE_SHOW_API, adObject)\n32:         }\n33: \n34:         sendDiagnosticEvent(event = SendDiagnosticEvent.SHOW_STARTED_AD_VIEWER, adObject = adObject)\n35: \n36:         val adPlayer = ad.adPlayer ?: throw IllegalStateException(\"No adPlayer associated with ad\")\n37: \n38:         adPlayer.onShowEvent\n39:             .onStart {\n40:                 // TODO: When supporting only new Public API, delete this line entirely\n41:                 ad.playerServerId = gameServerIdReader.readAndDelete(ad.playerServerId)\n42:                 adObject.state.value = AdObjectState.SHOWING\n43:                 ad.adPlayer.show(\n44:                     AndroidShowOptions(\n45:                         showOptions?.data?.toBuiltInMap(),\n46:                         isScarAd = ad.isScarAd,\n47:                         scarAdString = ad.scarAdString,\n48:                         scarQueryId = ad.scarQueryId,\n49:                         scarAdUnitId = ad.scarAdUnitId,\n50:                         isOfferwallAd = ad.isOfferwallAd,\n51:                         offerwallPlacementName = ad.offerwallPlacementName,\n52:                         placementId = ad.placementId)\n53:                     )\n54:             }\n55:             .onCompletion {\n56:                 adObject.state.value = AdObjectState.COMPLETED\n57:                 adRepository.removeAd(opportunityId)\n58:             }\n59:             .transformWhile {\n60:                 emit(it)\n61:                 it !is ShowEvent.Completed && it !is ShowEvent.Error",
+    "claim": "lookup by opportunity -> show same ad -> remove on completion",
+    "trigger_and_privacy": "ad and player exist",
+    "limits": "per-ad lifecycle;not persistent person graph",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C12",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+    "sha256": "7390d29e2c8c0291344a32ef70b4564790814cdbda31ba4b6070883df4fd5caf",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "sendOperativeEvent",
+    "start_line": 156,
+    "end_line": 163,
+    "excerpt": "156: internal fun sendOperativeEvent(getOperativeEventApi: GetOperativeEventApi, adObject: AdObject) = ExposedFunction {\n157:     getOperativeEventApi(\n158:         adObject = adObject,\n159:         operativeEventType = OperativeEventRequestOuterClass.OperativeEventType.OPERATIVE_EVENT_TYPE_SPECIFIED_BY_AD_PLAYER,\n160:         additionalEventData = Base64.decode(it[0] as String, Base64.NO_WRAP).toByteString()\n161:     )\n162: }\n163: ",
+    "claim": "viewer invocation passes same adObject and base64 additionalData to event API",
+    "trigger_and_privacy": "SEND_OPERATIVE_EVENT bridge invoked",
+    "limits": "event type specified by ad player;payload opaque,not proven cash or exact click type",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C13",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventApi.kt",
+    "sha256": "16f947cc89f84df471722e4e43477568edb28b41e4ccf00c4013d489eba0c8d3",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "GetOperativeEventApi.invoke overloads",
+    "start_line": 14,
+    "end_line": 47,
+    "excerpt": "14:     suspend operator fun invoke(\n15:         operativeEventType: OperativeEventType,\n16:         opportunityId: ByteString,\n17:         trackingToken: ByteString,\n18:         additionalEventData: ByteString,\n19:         playerServerId: String? = null,\n20:         adFormat: AdFormat? = null) {\n21:         val operativeEvent = operativeEventRequest(\n22:             operativeEventType = operativeEventType,\n23:             opportunityId = opportunityId,\n24:             additionalEventData = additionalEventData,\n25:             loadTrackingToken = trackingToken,\n26:             playerServerId = playerServerId,\n27:             adFormat = adFormat\n28:         )\n29:         // Adds the event to the operative event flow\n30:         operativeEventRepository.addOperativeEvent(operativeEvent)\n31:     }\n32: \n33:     suspend operator fun invoke(\n34:         operativeEventType: OperativeEventType,\n35:         adObject: AdObject,\n36:         additionalEventData: ByteString\n37:     ) {\n38:         invoke(\n39:             operativeEventType = operativeEventType,\n40:             opportunityId = adObject.opportunityId,\n41:             trackingToken = adObject.trackingToken,\n42:             additionalEventData = additionalEventData,\n43:             playerServerId = adObject.playerServerId,\n44:             adFormat = takeIf { adObject.adType == DiagnosticAdType.DIAGNOSTIC_AD_TYPE_BANNER }\n45:                 ?.let { AdFormat.AD_FORMAT_BANNER }\n46:         )\n47:     }",
+    "claim": "adObject.opportunityId/trackingToken/playerServerId -> request builder -> repository flow",
+    "trigger_and_privacy": "API event invoked",
+    "limits": "current token read;eventId is generated separately",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C14",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+    "sha256": "7390d29e2c8c0291344a32ef70b4564790814cdbda31ba4b6070883df4fd5caf",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "updateTrackingToken",
+    "start_line": 298,
+    "end_line": 306,
+    "excerpt": "298: internal fun updateTrackingToken(adObject: AdObject) = ExposedFunction {\n299:     val updateTrackingToken = it[0] as JSONObject\n300:     val token = updateTrackingToken.optString(\"trackingToken\")\n301: \n302:     if (!token.isNullOrEmpty()) {\n303:         adObject.trackingToken = token.fromBase64()\n304:     }\n305: }\n306: ",
+    "claim": "nonempty base64 trackingToken overwrites adObject.trackingToken",
+    "trigger_and_privacy": "viewer update invocation",
+    "limits": "not immutable join key;pair with opportunity and token version/time",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C15",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetUniversalRequestSharedData.kt",
+    "sha256": "5ce651e16abe5ee48065e6f9e104e62a397ed33e6d67529cac49f7945392f806",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidGetUniversalRequestSharedData.invoke",
+    "start_line": 19,
+    "end_line": 35,
+    "excerpt": "19:         return sharedData {\n20:             val sToken = sessionRepository.sessionToken\n21:             if (!sToken.isEmpty) {\n22:                 sessionToken = sToken\n23:             } else {\n24:                 limitedSessionToken = getLimitedSessionToken()\n25:             }\n26:             timestamps = getSharedDataTimestamps()\n27:             // UTC timestamp when application called initialize method in milliseconds\n28:             sdkStartTime = fromMillis(SdkProperties.getInitializationTimeEpoch())\n29:             // UTC timestamp when application started in milliseconds\n30:             appStartTime = fromMillis(SdkProperties.getAppInitializationTimeSinceEpoch())\n31:             developerConsent = developerConsentRepository.developerConsent\n32:             pii = deviceInfoRepository.piiData\n33:         }\n34:     }\n35: }",
+    "claim": "timestamps + session/limited token + consent/PII context",
+    "trigger_and_privacy": "payload envelope build;PII policy independent",
+    "limits": "timestamp is client build time,not server receive/bid time",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C16",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetSharedDataTimestamps.kt",
+    "sha256": "75510f4a4ca191c08c1faec6284129ad50f280184b78e3cc8af9cf1f809e1968",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AndroidGetSharedDataTimestamps.invoke",
+    "start_line": 12,
+    "end_line": 20,
+    "excerpt": "12:     override fun invoke(): Timestamps {\n13:         return timestamps {\n14:            // Current UTC timestamp in milliseconds\n15:            timestamp = fromMillis(System.currentTimeMillis())\n16:            // Milliseconds since SDK was initialized using monotonic timer\n17:            sessionTimestamp = SystemClock.elapsedRealtime() - SdkProperties.getInitializationTime()\n18:        }\n19:     }\n20: }",
+    "claim": "wall UTC and monotonic elapsed since SDK init",
+    "trigger_and_privacy": "builder call",
+    "limits": "wall/monotonic meanings not interchangeable",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C17",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/UniversalRequestEventSender.kt",
+    "sha256": "4d9bf53d210a0cd13d386d90e51dbe675e73ac54d818faf52a67e967c39b744e",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "UniversalRequestEventSender.invoke",
+    "start_line": 16,
+    "end_line": 40,
+    "excerpt": "16:     suspend operator fun invoke(universalRequest: UniversalRequest, requestPolicy: RequestPolicy) {\n17:         // If the universal request is expired, we should not send it.\n18:         if (!universalRequestTtlValidator(universalRequest, requestPolicy)) {\n19:             return\n20:         }\n21: \n22:         val result = runCatching {\n23:             gatewayClient.request(\n24:                 request = universalRequest,\n25:                 requestPolicy = requestPolicy,\n26:                 operationType = operationType\n27:             )\n28:         }\n29: \n30:         // If gateway client receives an error_text error, it will throw an GatewayException.\n31:         // However, the job should succeed since the gateway is telling us to stop sending the request.\n32:         if (result.exceptionOrNull() is GatewayException) {\n33:             return\n34:         }\n35: \n36:         // If the gateway client receives a response, we should handle it.\n37:         handleGatewayEventResponse(result.getOrThrow())\n38: \n39:     }\n40: }",
+    "claim": "TTL drop;GatewayException stop;otherwise handle response",
+    "trigger_and_privacy": "event sender/job policy",
+    "limits": "job completion need not mean delivery;no observed production ACK",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C18",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/l6.java",
+    "sha256": "eed4bcd683e4929e6fa12d1a1a76b2d086cfdee59a7941f3ba43be03548ba142",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "l6 constructor",
+    "start_line": 40,
+    "end_line": 55,
+    "excerpt": "40:     public l6(e3 e3Var, JSONObject jSONObject, Context context, com.applovin.impl.sdk.l lVar, a$a a_a) {\n41:         super(\"TaskProcessMediationWaterfallV2\", lVar, e3Var.b());\n42:         this.g = e3Var;\n43:         this.h = jSONObject;\n44:         this.j = a_a;\n45:         this.k = new WeakReference(context);\n46:         this.l = JsonUtils.getString(jSONObject, \"mcode\", MaxReward.DEFAULT_LABEL);\n47:         JSONArray jSONArray = JsonUtils.getJSONArray(jSONObject, \"ads\", new JSONArray());\n48:         this.i = new ArrayList(jSONArray.length());\n49:         for (int i = 0; i < jSONArray.length(); i++) {\n50:             this.i.add(c3.a(e3Var, JsonUtils.getJSONObject(jSONArray, i, (JSONObject) null), jSONObject, lVar));\n51:         }\n52:         this.n = new ArrayList(this.i.size());\n53:     }\n54: \n55:     static /* synthetic */ String a(l6 l6Var) {",
+    "claim": "full response passed to each ad object",
+    "trigger_and_privacy": "V2 waterfall selected",
+    "limits": "event_id scope shared full-response context;not necessarily unique per impression",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C19",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/c3.java",
+    "sha256": "eaa49f0cfbe01dcc2a2041afa6f2a1cefb5fea80102c3fcb51d3d7ddadadd9fa",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "c3.S/R/T",
+    "start_line": 186,
+    "end_line": 199,
+    "excerpt": "186:     public JSONObject S() {\n187:         m5 m5Var = this.h;\n188:         return m5Var != null ? (JSONObject) m5Var.a(m5Var2 -> {\n189:             return JsonUtils.deepCopy(m5Var2.a(\"revenue_parameters\", new JSONObject()));\n190:         }) : a(\"revenue_parameters\", new JSONObject());\n191:     }\n192: \n193:     public String R() {\n194:         return JsonUtils.getString(S(), \"revenue_event\", MaxReward.DEFAULT_LABEL);\n195:     }\n196: \n197:     public String T() {\n198:         return b(\"event_id\", MaxReward.DEFAULT_LABEL);\n199:     }",
+    "claim": "revenue_event from per-ad revenue_parameters;T reads full-response event_id via b",
+    "trigger_and_privacy": "response field exists else default",
+    "limits": "revenue callback phase configurable;event_id not natural-person ID",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C20",
+    "path": "closure70/java/max-1364/com/applovin/impl/o3.java",
+    "sha256": "425e4c96e6e2cbd2709356fb0802fda213ed60b3e1930a97132f8eb7b0138b0d",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "o3 constructor",
+    "start_line": 30,
+    "end_line": 57,
+    "excerpt": "30:         if (lVar == null) {\n31:             throw new IllegalArgumentException(\"No sdk specified\");\n32:         }\n33:         if (jSONObject2 == null) {\n34:             throw new IllegalArgumentException(\"No full response specified\");\n35:         }\n36:         if (jSONObject == null) {\n37:             throw new IllegalArgumentException(\"No ad object specified\");\n38:         }\n39:         this.a = lVar;\n40:         if (((Boolean) lVar.a(c5.N6)).booleanValue()) {\n41:             this.g = new m5(jSONObject2);\n42:             this.h = new m5(jSONObject);\n43:             this.b = null;\n44:             this.d = null;\n45:         } else {\n46:             this.b = jSONObject2;\n47:             this.d = jSONObject;\n48:             this.g = null;\n49:             this.h = null;\n50:         }\n51:         this.f = map;\n52:     }\n53: \n54:     private int j() {\n55:         return a(\"mute_state\", b(\"mute_state\", ((Integer) this.a.a(v3.r8)).intValue()));\n56:     }\n57: ",
+    "claim": "full response vs ad JSON stored separately;feature-flag wrapper branch",
+    "trigger_and_privacy": "N6 storage flag",
+    "limits": "critical to full-response vs per-ad ID scope",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C21",
+    "path": "closure70/java/max-1364/com/applovin/impl/o3.java",
+    "sha256": "425e4c96e6e2cbd2709356fb0802fda213ed60b3e1930a97132f8eb7b0138b0d",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "o3.b(String,String)",
+    "start_line": 469,
+    "end_line": 485,
+    "excerpt": "469:     protected String b(String str, String str2) {\n470:         m5 m5Var = this.g;\n471:         if (m5Var != null) {\n472:             return m5Var.a(str, str2);\n473:         }\n474:         ?? string = this;\n475:         synchronized (string.c) {\n476:             try {\n477:                 string = JsonUtils.getString(string.b, str, str2);\n478:             } catch (Throwable th) {\n479:                 throw string;\n480:             }\n481:         }\n482:         return string;\n483:     }\n484: \n485:     /* JADX WARN: Multi-variable type inference failed */",
+    "claim": "read full response .g or .b",
+    "trigger_and_privacy": "wrapper or synchronized branch",
+    "limits": "decompiler monitor syntax unreliable;bytecode checked",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C22",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/l6.java",
+    "sha256": "eed4bcd683e4929e6fa12d1a1a76b2d086cfdee59a7941f3ba43be03548ba142",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "l6.a(c3,int)",
+    "start_line": 173,
+    "end_line": 184,
+    "excerpt": "173:     private void a(c3 c3Var, int i) {\n174:         this.a.c0().c(c3Var);\n175:         long jElapsedRealtime = SystemClock.elapsedRealtime() - this.m;\n176:         if (com.applovin.impl.sdk.p.a()) {\n177:             this.c.d(this.b, \"Waterfall loaded in \" + jElapsedRealtime + \"ms from \" + c3Var.c() + \" for \" + this.g.a().getLabel() + \" ad unit \" + this.g.b());\n178:         }\n179:         c3Var.a(new MaxAdWaterfallInfoImpl(c3Var, jElapsedRealtime, this.n, this.l));\n180:         x2.f(this.j, c3Var);\n181:         if (((Boolean) this.a.a(v3.T8)).booleanValue() && c3Var.getFormat().isFullscreenAd() && !a4.b(c3Var)) {\n182:             a(i);\n183:         }\n184:     }",
+    "claim": "winner tracker stores same c3 and constructs MaxAdWaterfallInfo",
+    "trigger_and_privacy": "successful waterfall load",
+    "limits": "winner load is not billed impression",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C23",
+    "path": "closure70/java/max-1364/com/applovin/impl/sdk/q.java",
+    "sha256": "8f13cfba5d9e8de697d47e72f9e1156611f13fe5e58e429ecee17d04a5cb81e3",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MediationWaterfallWinnerTracker.c/b/a/b",
+    "start_line": 20,
+    "end_line": 45,
+    "excerpt": "20:     /* JADX WARN: Type inference failed for: r0v1, types: [java.lang.Object, java.lang.Throwable] */\n21:     public void c(c3 c3Var) {\n22:         ?? r0 = this.c;\n23:         synchronized (r0) {\n24:             try {\n25:                 if (p.a()) {\n26:                     this.a.a(\"MediationWaterfallWinnerTracker\", \"Tracking winning ad: \" + c3Var);\n27:                 }\n28:                 this.b.put(c3Var.getAdUnitId(), new q$a(c3Var.C(), c3Var.c(), c3Var.getNetworkName()));\n29:             } catch (Throwable unused) {\n30:                 throw r0;\n31:             }\n32:         }\n33:         this.e.put(c3Var.getAdUnitId(), c3Var.T());\n34:     }\n35: \n36:     public void b(c3 c3Var) {\n37:         this.d.put(c3Var.getAdUnitId(), c3Var.T());\n38:     }\n39: \n40:     public String a(String str) {\n41:         return (String) this.e.get(str);\n42:     }\n43: \n44:     public String b(String str) {\n45:         return (String) this.d.get(str);",
+    "claim": "c stores event_id by ad unit in map e;getter a returns it;separate d map for prior request",
+    "trigger_and_privacy": "tracker invoked after successful load",
+    "limits": "request history scoped ad unit,not user global history",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C24",
+    "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+    "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "a6.f(JSONObject)",
+    "start_line": 221,
+    "end_line": 253,
+    "excerpt": "221:     private void f(JSONObject jSONObject) throws JSONException {\n222:         String strB = this.g.b();\n223:         JSONObject jSONObject2 = new JSONObject();\n224:         jSONObject2.put(\"ad_unit_id\", strB);\n225:         jSONObject2.put(\"ad_format\", this.g.a().getLabel());\n226:         Map map = CollectionUtils.map(this.g.d());\n227:         com.applovin.impl.sdk.q qVarC0 = this.a.c0();\n228:         CollectionUtils.putStringIfValid(\"previous_request_id\", qVarC0.b(strB), map);\n229:         CollectionUtils.putStringIfValid(\"previous_loaded_request_id\", qVarC0.a(strB), map);\n230:         com.applovin.impl.sdk.q$a q_aC = qVarC0.c(strB);\n231:         if (q_aC != null) {\n232:             if (Boolean.parseBoolean(this.a.p0().getExtraParameters().get(\"esc\"))) {\n233:                 map.put(\"previous_winning_network\", \"APPLOVIN_NETWORK\");\n234:                 map.put(\"previous_winning_network_name\", \"AppLovin\");\n235:             } else {\n236:                 map.put(\"previous_winning_network\", q_aC.a());\n237:                 map.put(\"previous_winning_network_name\", q_aC.c());\n238:             }\n239:             if (this.a.T() != null) {\n240:                 Queue<c3> queueC = this.a.T().c(strB);\n241:                 ArrayList arrayList = new ArrayList();\n242:                 ArrayList arrayList2 = new ArrayList();\n243:                 for (c3 c3Var : queueC) {\n244:                     arrayList.add(c3Var.c());\n245:                     arrayList2.add(c3Var.getNetworkName());\n246:                 }\n247:                 CollectionUtils.putStringIfValid(\"queued_ad_networks\", String.join(\",\", arrayList), map);\n248:                 CollectionUtils.putStringIfValid(\"queued_ad_network_names\", String.join(\",\", arrayList2), map);\n249:             }\n250:         }\n251:         jSONObject2.put(\"extra_parameters\", CollectionUtils.toJson(map));\n252:         jSONObject.put(\"ad_info\", jSONObject2);\n253:     }",
+    "claim": "q.a(ad_unit)->previous_loaded_request_id in next request;winner network same tracker",
+    "trigger_and_privacy": "next mediation request on same ad unit",
+    "limits": "explicit prior-response->next-request ID;not equal to current request ID",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C25",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MaxAdWaterfallInfoImpl.java",
+    "sha256": "0adda5277c5d60271b6a194ed447b530f803d5d859f873af05785bab4f143c9e",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MaxAdWaterfallInfoImpl constructor",
+    "start_line": 24,
+    "end_line": 27,
+    "excerpt": "24:     public MaxAdWaterfallInfoImpl(c3 c3Var, long j, List<MaxNetworkResponseInfo> list, String str) {\n25:         this(c3Var, c3Var.X(), c3Var.Y(), j, list, c3Var.Q(), c3Var.W(), str, c3Var.T());\n26:     }\n27: ",
+    "claim": "c3.T passed to waterfall eventId",
+    "trigger_and_privacy": "loaded c3",
+    "limits": "same ID copied,not independently generated",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C26",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MaxAdWaterfallInfoImpl.java",
+    "sha256": "0adda5277c5d60271b6a194ed447b530f803d5d859f873af05785bab4f143c9e",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "getEventId/full constructor",
+    "start_line": 65,
+    "end_line": 85,
+    "excerpt": "65: \n66:     public String getMCode() {\n67:         return this.h;\n68:     }\n69: \n70:     public String getEventId() {\n71:         return this.i;\n72:     }\n73: \n74:     public MaxAdWaterfallInfoImpl(@Nullable c3 c3Var, String str, String str2, long j, List<MaxNetworkResponseInfo> list, e3 e3Var, List<String> list2, String str3, String str4) {\n75:         this.a = c3Var;\n76:         this.b = str;\n77:         this.c = str2;\n78:         this.e = j;\n79:         this.d = list;\n80:         this.f = e3Var;\n81:         this.g = list2;\n82:         this.h = str3;\n83:         this.i = str4;\n84:     }\n85: }",
+    "claim": "event ID stored and returned",
+    "trigger_and_privacy": "object created",
+    "limits": "full constructor last argument persists",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C27",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MediationServiceImpl.java",
+    "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "processWaterfallInfoPostback",
+    "start_line": 322,
+    "end_line": 377,
+    "excerpt": "322:     public void processWaterfallInfoPostback(MaxAdWaterfallInfoImpl maxAdWaterfallInfoImpl, @Nullable MaxError maxError, long j, long j2) {\n323:         e3 requestParameters = maxAdWaterfallInfoImpl.getRequestParameters();\n324:         String strB = requestParameters.b();\n325:         MaxAdFormat maxAdFormatA = requestParameters.a();\n326:         HashMap map = new HashMap();\n327:         CollectionUtils.putStringIfValid(\"ad_format\", maxAdFormatA.getLabel(), map);\n328:         CollectionUtils.putStringIfValid(\"ad_unit_id\", strB, map);\n329:         CollectionUtils.putStringIfValid(\"duration_ms\", String.valueOf(j2), map);\n330:         CollectionUtils.putStringIfValid(\"ad_event_id\", maxAdWaterfallInfoImpl.getEventId(), map);\n331:         if (((Boolean) this.a.a(c5.N)).booleanValue()) {\n332:             Object obj = requestParameters.c().get(\"era\");\n333:             Object obj2 = obj;\n334:             if (obj == null) {\n335:                 obj2 = 0;\n336:             }\n337:             CollectionUtils.putObjectToStringIfValid(\"attempt_number\", obj2, map);\n338:             CollectionUtils.putStringIfValid(\"details\", \"consecutiveAdLoadFailuresCount = \" + (this.a.T() != null ? this.a.T().b(strB) : this.a.S().b(strB)), map);\n339:         }\n340:         if (maxError != null) {\n341:             map.putAll(j2.a(maxError));\n342:         }\n343:         this.a.R().d(h2.r0, map);\n344:         if (CollectionUtils.isEmpty(maxAdWaterfallInfoImpl.getPostbackUrls())) {\n345:             return;\n346:         }\n347:         HashMap map2 = new HashMap(8);\n348:         CollectionUtils.putStringIfValid(\"mcode\", maxAdWaterfallInfoImpl.getMCode(), map2);\n349:         CollectionUtils.putStringIfValid(\"ad_unit_id\", strB, map2);\n350:         CollectionUtils.putStringIfValid(\"ad_format\", maxAdFormatA.getLabel(), map2);\n351:         CollectionUtils.putStringIfValid(\"name\", maxAdWaterfallInfoImpl.getName(), map2);\n352:         CollectionUtils.putLongIfValid(\"request_latency_ms\", Long.valueOf(j2), map2);\n353:         CollectionUtils.putLongIfValid(\"request_start_timestamp_ms\", Long.valueOf(j), map2);\n354:         CollectionUtils.putLongIfValid(\"wf_latency_ms\", Long.valueOf(maxAdWaterfallInfoImpl.getLatencyMillis()), map2);\n355:         map2.put(\"arn_info\", requestParameters.f().e());\n356:         List<MaxNetworkResponseInfo> networkResponses = maxAdWaterfallInfoImpl.getNetworkResponses();\n357:         ArrayList arrayList = new ArrayList(networkResponses.size());\n358:         for (MaxNetworkResponseInfo maxNetworkResponseInfo : networkResponses) {\n359:             MaxMediatedNetworkInfo mediatedNetwork = maxNetworkResponseInfo.getMediatedNetwork();\n360:             HashMap map3 = new HashMap(5);\n361:             CollectionUtils.putStringIfValid(\"bcode\", ((MaxNetworkResponseInfoImpl) maxNetworkResponseInfo).getBCode(), map3);\n362:             map3.put(\"name\", mediatedNetwork.getName());\n363:             CollectionUtils.putLongIfValid(\"latency_ms\", Long.valueOf(maxNetworkResponseInfo.getLatencyMillis()), map3);\n364:             map3.put(\"load_state\", Integer.valueOf(maxNetworkResponseInfo.getAdLoadState().ordinal()));\n365:             MaxErrorImpl maxErrorImpl = (MaxErrorImpl) maxNetworkResponseInfo.getError();\n366:             if (maxErrorImpl != null) {\n367:                 HashMap map4 = new HashMap(4);\n368:                 map4.put(\"error_code\", Integer.valueOf(maxErrorImpl.getCode()));\n369:                 map4.put(\"error_message\", maxErrorImpl.getMessage());\n370:                 map4.put(\"third_party_sdk_error_code\", Integer.valueOf(maxErrorImpl.getMediatedNetworkErrorCode()));\n371:                 map4.put(\"third_party_sdk_error_message\", maxErrorImpl.getMediatedNetworkErrorMessage());\n372:                 map3.put(\"error_info\", map4);\n373:             }\n374:             arrayList.add(map3);\n375:         }\n376:         map2.put(\"ads_info\", arrayList);\n377:         a(\"mwf_info\", maxAdWaterfallInfoImpl.getPostbackUrls(), Collections.EMPTY_MAP, map2, null, null, false);",
+    "claim": "ad_event_id to SDK telemetry;latency/start timestamp/network diagnostics to separate mwf_info payload",
+    "trigger_and_privacy": "postback URLs may be empty;config gates",
+    "limits": "ad_event_id not necessarily present in mwf_info POST body;do not conflate two destinations",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C28",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MediationServiceImpl.java",
+    "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "processRawAdImpression/processViewabilityAdImpressionPostback/processCallbackAdImpressionPostback",
+    "start_line": 409,
+    "end_line": 465,
+    "excerpt": "409:     public void processRawAdImpression(c3 c3Var, com.applovin.impl.mediation.ads.a$a a_a) {\n410:         this.a.u().b(c3Var, \"WILL_DISPLAY\");\n411:         if (c3Var.R().endsWith(\"mimp\")) {\n412:             this.a.u().b(c3Var);\n413:             x2.a((MaxAdRevenueListener) a_a, (MaxAd) c3Var);\n414:         }\n415:         if (((Boolean) this.a.a(c5.Z4)).booleanValue()) {\n416:             this.a.a0().a(w3.g, x3.a(c3Var), Long.valueOf(System.currentTimeMillis() - this.a.M()));\n417:         }\n418:         HashMap map = new HashMap(3);\n419:         if (c3Var instanceof g3) {\n420:             g3 g3Var = (g3) c3Var;\n421:             map.put(\"{TIME_TO_SHOW_MS}\", String.valueOf(g3Var.s0()));\n422:             map.put(\"{PREVIOUS_FAILED_NETWORK_NAME}\", StringUtils.emptyIfNull(g3Var.x0()));\n423:         }\n424:         String strEmptyIfNull = StringUtils.emptyIfNull(this.a.z0().e());\n425:         if (!((Boolean) this.a.a(c5.R3)).booleanValue()) {\n426:             strEmptyIfNull = MaxReward.DEFAULT_LABEL;\n427:         }\n428:         map.put(\"{CUID}\", strEmptyIfNull);\n429:         a(\"mimp\", map, c3Var);\n430:         this.a.R().a(h2.u0, c3Var);\n431:     }\n432: \n433:     public void processViewabilityAdImpressionPostback(l3 l3Var, long j, com.applovin.impl.mediation.ads.a$a a_a) {\n434:         if (l3Var.R().endsWith(\"vimp\")) {\n435:             this.a.u().b(l3Var);\n436:             x2.a((MaxAdRevenueListener) a_a, (MaxAd) l3Var);\n437:         }\n438:         HashMap map = new HashMap(3);\n439:         map.put(\"{VIEWABILITY_FLAGS}\", String.valueOf(j));\n440:         map.put(\"{USED_VIEWABILITY_TIMER}\", String.valueOf(l3Var.t0()));\n441:         String strEmptyIfNull = StringUtils.emptyIfNull(this.a.z0().e());\n442:         if (!((Boolean) this.a.a(c5.R3)).booleanValue()) {\n443:             strEmptyIfNull = MaxReward.DEFAULT_LABEL;\n444:         }\n445:         map.put(\"{CUID}\", strEmptyIfNull);\n446:         a(\"mvimp\", map, l3Var);\n447:         this.a.R().a(h2.w0, l3Var);\n448:     }\n449: \n450:     public void processCallbackAdImpressionPostback(c3 c3Var, com.applovin.impl.mediation.ads.a$a a_a) {\n451:         if (c3Var.R().endsWith(\"cimp\")) {\n452:             this.a.u().b(c3Var);\n453:             x2.a((MaxAdRevenueListener) a_a, (MaxAd) c3Var);\n454:         }\n455:         HashMap map = new HashMap(2);\n456:         if (c3Var instanceof g3) {\n457:             map.put(\"{PREVIOUS_FAILED_NETWORK_NAME}\", StringUtils.emptyIfNull(((g3) c3Var).x0()));\n458:         }\n459:         String strEmptyIfNull = StringUtils.emptyIfNull(this.a.z0().e());\n460:         if (!((Boolean) this.a.a(c5.R3)).booleanValue()) {\n461:             strEmptyIfNull = MaxReward.DEFAULT_LABEL;\n462:         }\n463:         map.put(\"{CUID}\", strEmptyIfNull);\n464:         a(\"mcimp\", map, c3Var);\n465:         this.a.R().a(h2.v0, c3Var);",
+    "claim": "revenue_event suffix mimp/vimp/cimp selects onAdRevenuePaid with same c3;impression postback separately scheduled",
+    "trigger_and_privacy": "callback listener and configured suffix;CUID gate",
+    "limits": "three notification stages not three amounts;no generic dedup proof",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C29",
+    "path": "closure70/java/max-1364/com/applovin/impl/x2.java",
+    "sha256": "612092fdc416277bc03f3ba1aa1888d4195f4b2517af8ed045a71ea57acbf9a5",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "x2.a(MaxAdRevenueListener,MaxAd,boolean)",
+    "start_line": 466,
+    "end_line": 488,
+    "excerpt": "466: \n467:     public static void a(MaxAdRevenueListener maxAdRevenueListener, MaxAd maxAd) {\n468:         a(maxAdRevenueListener, maxAd, false);\n469:     }\n470: \n471:     public static void a(MaxAdRevenueListener maxAdRevenueListener, MaxAd maxAd, boolean z) {\n472:         if (maxAd == null || maxAdRevenueListener == null) {\n473:             return;\n474:         }\n475:         AppLovinSdkUtils.runOnUiThread(z, () -> {\n476:             if (c(z)) {\n477:                 try {\n478:                     maxAdRevenueListener.onAdRevenuePaid(maxAd);\n479:                     return;\n480:                 } catch (Throwable th) {\n481:                     a(\"onAdRevenuePaid\", th, z);\n482:                     b(\"maxAdPaidRevenue\", th, z);\n483:                     return;\n484:                 }\n485:             }\n486:             maxAdRevenueListener.onAdRevenuePaid(maxAd);\n487:         });\n488:     }",
+    "claim": "same MaxAd forwarded on UI thread;null guard",
+    "trigger_and_privacy": "listener/ad not null",
+    "limits": "callback does not itself certify settlement or MMP forwarding",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C30",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MediationServiceImpl.java",
+    "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "Mediation postback scheduler a(...)",
+    "start_line": 726,
+    "end_line": 746,
+    "excerpt": "726:     private void a(String str, Map map, o3 o3Var) {\n727:         a(str, map, (MaxError) null, o3Var);\n728:     }\n729: \n730:     private void a(String str, Map map, MaxError maxError, o3 o3Var) {\n731:         a(str, map, maxError, o3Var, true);\n732:     }\n733: \n734:     private void a(String str, Map map, MaxError maxError, o3 o3Var, boolean z) {\n735:         Map map2 = CollectionUtils.map(map);\n736:         map2.put(\"{PLACEMENT}\", z ? StringUtils.emptyIfNull(o3Var.getPlacement()) : MaxReward.DEFAULT_LABEL);\n737:         map2.put(\"{CUSTOM_DATA}\", z ? StringUtils.emptyIfNull(o3Var.e()) : MaxReward.DEFAULT_LABEL);\n738:         if (o3Var instanceof c3) {\n739:             map2.put(\"{CREATIVE_ID}\", z ? StringUtils.emptyIfNull(((c3) o3Var).getCreativeId()) : MaxReward.DEFAULT_LABEL);\n740:         }\n741:         a(str, null, map2, null, maxError, o3Var, z);\n742:     }\n743: \n744:     private void a(String str, List list, Map map, Map map2, MaxError maxError, o3 o3Var, boolean z) {\n745:         this.a.s0().a((n5) new g6(str, list, map, map2, maxError, o3Var, this.a, z), i6$b.OTHER);\n746:     }",
+    "claim": "event name,ad object and macros -> g6 task",
+    "trigger_and_privacy": "event fired and data available",
+    "limits": "CUID/creative optional,not mandatory person join",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C31",
+    "path": "closure70/java/max-1364/com/applovin/impl/g6.java",
+    "sha256": "ae9d350ec71f70b76c3b9c64f51b7fe648a64819e992aef08ec8f5d3bc218f4f",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "g6 constructor/f/a",
+    "start_line": 31,
+    "end_line": 94,
+    "excerpt": "31:         MaxError maxError2;\n32:         super(\"TaskFireMediationPostbacks\", lVar);\n33:         this.g = str + \"_urls\";\n34:         this.h = list;\n35:         this.j = u7.a(map, lVar);\n36:         if (map2 == null) {\n37:             map2 = map;\n38:             HashMap map3 = new HashMap();\n39:         }\n40:         this.k = map2;\n41:         if (maxError != null) {\n42:             maxError2 = maxError;\n43:         } else {\n44:             maxError2 = maxErrorImpl;\n45:             MaxErrorImpl maxErrorImpl = new MaxErrorImpl(-1);\n46:         }\n47:         this.m = maxError2;\n48:         this.i = o3Var;\n49:         HashMap map4 = new HashMap(7);\n50:         map4.put(\"AppLovin-Event-Type\", str);\n51:         if (z && o3Var != null) {\n52:             map4.put(\"AppLovin-Ad-Network-Name\", o3Var.c());\n53:         }\n54:         if (o3Var instanceof c3) {\n55:             c3 c3Var = (c3) o3Var;\n56:             map4.put(\"AppLovin-Ad-Unit-Id\", c3Var.getAdUnitId());\n57:             map4.put(\"AppLovin-Ad-Format\", c3Var.getFormat().getLabel());\n58:             if (z) {\n59:                 map4.put(\"AppLovin-Third-Party-Ad-Placement-Id\", c3Var.U());\n60:             }\n61:         }\n62:         if (maxError != null) {\n63:             map4.put(\"AppLovin-Error-Code\", String.valueOf(maxError.getCode()));\n64:             map4.put(\"AppLovin-Error-Message\", maxError.getMessage());\n65:         }\n66:         this.l = map4;\n67:     }\n68: \n69:     private void a(String str, Map map) {\n70:         b().h0().e(com.applovin.impl.sdk.network.d.b().d(str).c(\"POST\").a(this.l).a(false).c(map).c(((Boolean) this.a.a(v3.P8)).booleanValue()).a());\n71:     }\n72: \n73:     private List f() {\n74:         List list = this.h;\n75:         if (list != null) {\n76:             return list;\n77:         }\n78:         o3 o3Var = this.i;\n79:         if (o3Var != null) {\n80:             return o3Var.b(this.g);\n81:         }\n82:         return null;\n83:     }\n84: \n85:     private Map e() {\n86:         try {\n87:             return JsonUtils.toStringMap(new JSONObject((String) this.a.a(v3.L7)));\n88:         } catch (JSONException unused) {\n89:             return Collections.EMPTY_MAP;\n90:         }\n91:     }\n92: \n93:     private String b(String str, Map map) {\n94:         for (String str2 : map.keySet()) {",
+    "claim": "event type -> *_urls on same ad;event/network/unit/format headers;POST builder dispatch",
+    "trigger_and_privacy": "URL list nonempty",
+    "limits": "server-provided URL templates opaque;do not assume every URL has clear event_id",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C32",
+    "path": "closure70/java/max-1364/com/applovin/impl/g6.java",
+    "sha256": "ae9d350ec71f70b76c3b9c64f51b7fe648a64819e992aef08ec8f5d3bc218f4f",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "g6.run",
+    "start_line": 111,
+    "end_line": 146,
+    "excerpt": "111:     @Override // java.lang.Runnable\n112:     public void run() {\n113:         List listF = f();\n114:         if (CollectionUtils.isEmpty(listF)) {\n115:             return;\n116:         }\n117:         Map mapE = e();\n118:         Iterator it = listF.iterator();\n119:         while (it.hasNext()) {\n120:             Uri uri = Uri.parse(a(b((String) it.next(), this.j), this.m));\n121:             Uri$Builder uri$BuilderClearQuery = uri.buildUpon().clearQuery();\n122:             HashMap map = new HashMap(this.k);\n123:             for (String str : uri.getQueryParameterNames()) {\n124:                 String queryParameter = uri.getQueryParameter(str);\n125:                 if (mapE.containsKey(queryParameter)) {\n126:                     o3 o3Var = this.i;\n127:                     if (o3Var != null) {\n128:                         map.put(str, o3Var.a((String) mapE.get(queryParameter)));\n129:                     }\n130:                 } else {\n131:                     uri$BuilderClearQuery.appendQueryParameter(str, queryParameter);\n132:                 }\n133:             }\n134:             Map mapE2 = this.a.B().e();\n135:             for (String str2 : mapE2.keySet()) {\n136:                 if (map.containsKey(str2)) {\n137:                     map.put(str2, mapE2.get(str2));\n138:                 }\n139:             }\n140:             h hVarG = g();\n141:             if (hVarG != null) {\n142:                 map.put(\"arn_info\", hVarG.e());\n143:             }\n144:             a(uri$BuilderClearQuery.build().toString(), map);\n145:         }\n146:     }",
+    "claim": "URL macro/query substitution/config mappings;arn_info;POST dispatch",
+    "trigger_and_privacy": "valid nonempty list and configuration",
+    "limits": "request construction only;no production send/ACK",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C33",
+    "path": "closure70/java/max-1364/com/applovin/impl/j2.java",
+    "sha256": "ce76123131fa59630fdc995b997758def7b483862e8087dc41e8249ba48d176a",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "j2.a(c3)",
+    "start_line": 90,
+    "end_line": 101,
+    "excerpt": "90:     public static Map a(c3 c3Var) {\n91:         Map mapA = a((o3) c3Var);\n92:         CollectionUtils.putStringIfValid(\"bcode\", c3Var.C(), mapA);\n93:         CollectionUtils.putStringIfValid(\"creative_id\", c3Var.getCreativeId(), mapA);\n94:         CollectionUtils.putStringIfValid(\"ad_unit_id\", c3Var.getAdUnitId(), mapA);\n95:         CollectionUtils.putStringIfValid(\"ad_event_id\", c3Var.T(), mapA);\n96:         CollectionUtils.putStringIfValid(\"ad_format\", c3Var.getFormat().getLabel(), mapA);\n97:         CollectionUtils.putStringIfValid(\"dsp_id\", c3Var.getDspId(), mapA);\n98:         CollectionUtils.putStringIfValid(\"dsp_name\", c3Var.getDspName(), mapA);\n99:         return mapA;\n100:     }\n101: ",
+    "claim": "ad_event_id from same c3.T plus bcode/creative/unit/format/DSP",
+    "trigger_and_privacy": "SDK telemetry helper caller",
+    "limits": "not proof of payload sent to Axon training",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C34",
+    "path": "closure70/java/unity-4181/com/unity3d/ads/core/domain/LegacyLoadUseCase.java",
+    "sha256": "3e56b3dbe1e4a163f3f05be9ed7f1d5a1379762635d82cc49aeed99dd61cddc7",
+    "sdk": "Unity/Ads",
+    "version": "4.18.1",
+    "class_or_method": "getOpportunityId/getAdMarkup",
+    "start_line": 310,
+    "end_line": 318,
+    "excerpt": "310:     private final String getOpportunityId(UnityAdsLoadOptions unityAdsLoadOptions) {\n311:         JSONObject data = unityAdsLoadOptions.getData();\n312:         if (data != null) {\n313:             Object objOpt = data.opt(\"objectId\");\n314:             if (objOpt != null) {\n315:                 return objOpt.toString();\n316:             }\n317:         }\n318:         return null;",
+    "claim": "objectId/adMarkup read from options also in4.18.1",
+    "trigger_and_privacy": "selected version check",
+    "limits": "selected getter comparison only",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.18.1/unity-ads-4.18.1.aar",
+        "sha256": "1762b92a0825ff26104310dbb0f4137a176fd8170f422418c7cd0959df617a45",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.18.1/unity-ads-4.18.1.aar",
+        "http_last_modified": "Thu, 28 May 2026 23:26:35 GMT",
+        "bytes": 4561540
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C35",
+    "path": "closure70/java/unity-4181/com/unity3d/ads/core/domain/AndroidGetAdPlayerConfigRequest.java",
+    "sha256": "23cc96cc512c9223cf985e97955a21ba3ca5a04332866053c22ad2c698d8b79c",
+    "sdk": "Unity/Ads",
+    "version": "4.18.1",
+    "class_or_method": "invoke",
+    "start_line": 43,
+    "end_line": 75,
+    "excerpt": "43: \n44:     @Override // com.unity3d.ads.core.domain.GetAdPlayerConfigRequest\n45:     @Nullable\n46:     public Object invoke(@NotNull String placement, @NotNull ByteString opportunityId, @NotNull ByteString configToken, @Nullable AdFormatOuterClass$AdFormat adFormat, @Nullable LoadConfigurationInternal loadConfiguration, @NotNull Continuation<? super UniversalRequestOuterClass$UniversalRequest> continuation) {\n47:         AdPlayerConfigRequestKt$Dsl$Companion adPlayerConfigRequestKt$Dsl$Companion = AdPlayerConfigRequestKt$Dsl.Companion;\n48:         AdPlayerConfigRequestOuterClass$AdPlayerConfigRequest$Builder adPlayerConfigRequestOuterClass$AdPlayerConfigRequest$BuilderNewBuilder = AdPlayerConfigRequestOuterClass$AdPlayerConfigRequest.newBuilder();\n49:         Intrinsics.checkNotNullExpressionValue(adPlayerConfigRequestOuterClass$AdPlayerConfigRequest$BuilderNewBuilder, \"newBuilder()\");\n50:         AdPlayerConfigRequestKt$Dsl $this$adPlayerConfigRequest_u24lambda_u240$iv = adPlayerConfigRequestKt$Dsl$Companion._create(adPlayerConfigRequestOuterClass$AdPlayerConfigRequest$BuilderNewBuilder);\n51:         $this$adPlayerConfigRequest_u24lambda_u240$iv.setConfigurationToken(configToken);\n52:         $this$adPlayerConfigRequest_u24lambda_u240$iv.setPlacementId(placement);\n53:         $this$adPlayerConfigRequest_u24lambda_u240$iv.setImpressionOpportunityId(opportunityId);\n54:         if (adFormat != null) {\n55:             $this$adPlayerConfigRequest_u24lambda_u240$iv.setAdFormat(adFormat);\n56:         }\n57:         if (loadConfiguration != null) {\n58:             String p0 = loadConfiguration.getMediationAdUnitId();\n59:             if (p0 != null) {\n60:                 new AndroidGetAdPlayerConfigRequest$invoke$request$1$2$2($this$adPlayerConfigRequest_u24lambda_u240$iv).set(p0);\n61:             }\n62:             MediationInfo mediationInfoData = loadConfiguration.getMediationInfo();\n63:             if (mediationInfoData != null) {\n64:                 $this$adPlayerConfigRequest_u24lambda_u240$iv.setMediationInfo(this.mediationInfoConverter.invoke(mediationInfoData));\n65:             }\n66:             $this$adPlayerConfigRequest_u24lambda_u240$iv.putAllExtras($this$adPlayerConfigRequest_u24lambda_u240$iv.getExtrasMap(), loadConfiguration.getExtras());\n67:         }\n68:         AdPlayerConfigRequestOuterClass$AdPlayerConfigRequest request = $this$adPlayerConfigRequest_u24lambda_u240$iv._build();\n69:         UniversalRequestKt universalRequestKt = UniversalRequestKt.INSTANCE;\n70:         UniversalRequestKt$PayloadKt$Dsl$Companion universalRequestKt$PayloadKt$Dsl$Companion = UniversalRequestKt$PayloadKt$Dsl.Companion;\n71:         UniversalRequestOuterClass$UniversalRequest$Payload$Builder universalRequestOuterClass$UniversalRequest$Payload$BuilderNewBuilder = UniversalRequestOuterClass$UniversalRequest$Payload.newBuilder();\n72:         Intrinsics.checkNotNullExpressionValue(universalRequestOuterClass$UniversalRequest$Payload$BuilderNewBuilder, \"newBuilder()\");\n73:         UniversalRequestKt$PayloadKt$Dsl $this$payload_u24lambda_u241$iv = universalRequestKt$PayloadKt$Dsl$Companion._create(universalRequestOuterClass$UniversalRequest$Payload$BuilderNewBuilder);\n74:         $this$payload_u24lambda_u241$iv.setAdPlayerConfigRequest(request);\n75:         UniversalRequestOuterClass$UniversalRequest$Payload payload = $this$payload_u24lambda_u241$iv._build();",
+    "claim": "configurationToken and impressionOpportunityId setters also present",
+    "trigger_and_privacy": "HB load config branch",
+    "limits": "not full equivalent protocol proof",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.18.1/unity-ads-4.18.1.aar",
+        "sha256": "1762b92a0825ff26104310dbb0f4137a176fd8170f422418c7cd0959df617a45",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.18.1/unity-ads-4.18.1.aar",
+        "http_last_modified": "Thu, 28 May 2026 23:26:35 GMT",
+        "bytes": 4561540
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C36",
+    "path": "closure70/java/unity-4181/com/unity3d/ads/core/domain/events/GetOperativeEventApi.java",
+    "sha256": "f19370b356bf5126326353360a2b5fbb92f782157b2e2d3f2297baa1a88b55ed",
+    "sdk": "Unity/Ads",
+    "version": "4.18.1",
+    "class_or_method": "invoke(adObject)",
+    "start_line": 89,
+    "end_line": 105,
+    "excerpt": "89:     }\n90: \n91:     @Nullable\n92:     public final Object invoke(@NotNull OperativeEventRequestOuterClass$OperativeEventType operativeEventType, @NotNull AdObject adObject, @NotNull ByteString additionalEventData, @NotNull Continuation<? super Unit> continuation) {\n93:         AdFormatOuterClass$AdFormat adFormatOuterClass$AdFormat;\n94:         ByteString opportunityId = adObject.getOpportunityId();\n95:         ByteString trackingToken = adObject.getTrackingToken();\n96:         GetOperativeEventApi getOperativeEventApi = this;\n97:         OperativeEventRequestOuterClass$OperativeEventType operativeEventRequestOuterClass$OperativeEventType = operativeEventType;\n98:         ByteString byteString = opportunityId;\n99:         ByteString byteString2 = trackingToken;\n100:         ByteString byteString3 = additionalEventData;\n101:         String playerServerId = adObject.getPlayerServerId();\n102:         if ((adObject.getAdType() == DiagnosticEventRequestOuterClass$DiagnosticAdType.DIAGNOSTIC_AD_TYPE_BANNER ? this : null) != null) {\n103:             getOperativeEventApi = getOperativeEventApi;\n104:             operativeEventRequestOuterClass$OperativeEventType = operativeEventRequestOuterClass$OperativeEventType;\n105:             byteString = byteString;",
+    "claim": "opportunity/tracking token read from object also present",
+    "trigger_and_privacy": "operative event call",
+    "limits": "selected consumer check only",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.18.1/unity-ads-4.18.1.aar",
+        "sha256": "1762b92a0825ff26104310dbb0f4137a176fd8170f422418c7cd0959df617a45",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.18.1/unity-ads-4.18.1.aar",
+        "http_last_modified": "Thu, 28 May 2026 23:26:35 GMT",
+        "bytes": 4561540
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C37",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MediationServiceImpl.java",
+    "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "b(c3) load processing",
+    "start_line": 596,
+    "end_line": 614,
+    "excerpt": "596:     /* JADX WARN: Multi-variable type inference failed */\n597:     private void b(c3 c3Var) {\n598:         this.a.u().b(c3Var, \"DID_LOAD\");\n599:         if (c3Var.R().endsWith(\"load\")) {\n600:             this.a.u().b(c3Var);\n601:         }\n602:         HashMap map = new HashMap(3);\n603:         map.put(\"{LOAD_TIME_MS}\", String.valueOf(c3Var.I()));\n604:         if (c3Var.getFormat().isFullscreenAd()) {\n605:             o$a o_aB = this.a.J().b(c3Var.getAdUnitId());\n606:             map.put(\"{SHOW_ATTEMPT_COUNT}\", String.valueOf(o_aB.a()));\n607:             map.put(\"{SHOW_ATTEMPT_TIMESTAMP_MS}\", String.valueOf(o_aB.b()));\n608:             map.put(\"{FAILOVER_LOAD}\", String.valueOf(((g3) c3Var).z0()));\n609:         }\n610:         a(\"load\", map, c3Var);\n611:         Map mapA = j2.a(c3Var);\n612:         mapA.put(\"duration_ms\", String.valueOf((long) c3Var));\n613:         mapA.put(\"details\", \"sdk_initialized=\" + this.a.E0());\n614:         this.a.R().d(h2.p0, mapA);",
+    "claim": "revenue_event endsWith(load) invokes internal processing at load;separate load postback",
+    "trigger_and_privacy": "DID_LOAD branch;configured suffix",
+    "limits": "no developer onAdRevenuePaid visible inside this method;do not claim early public ILRD",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  },
+  {
+    "id": "CL70C38",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/mediation/MediationServiceImpl.java",
+    "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "a(c3,a$a) click processing",
+    "start_line": 683,
+    "end_line": 697,
+    "excerpt": "683:     private void a(c3 c3Var, com.applovin.impl.mediation.ads.a$a a_a) {\n684:         this.a.u().b(c3Var, \"DID_CLICKED\");\n685:         this.a.u().b(c3Var, \"DID_CLICK\");\n686:         if (c3Var.R().endsWith(\"click\")) {\n687:             this.a.u().b(c3Var);\n688:             x2.a((MaxAdRevenueListener) a_a, (MaxAd) c3Var);\n689:         }\n690:         HashMap map = new HashMap(1);\n691:         String strEmptyIfNull = StringUtils.emptyIfNull(this.a.z0().e());\n692:         if (!((Boolean) this.a.a(c5.R3)).booleanValue()) {\n693:             strEmptyIfNull = MaxReward.DEFAULT_LABEL;\n694:         }\n695:         map.put(\"{CUID}\", strEmptyIfNull);\n696:         a(\"mclick\", map, c3Var);\n697:     }",
+    "claim": "revenue_event endsWith(click) invokes same-object developer revenue callback and mclick task",
+    "trigger_and_privacy": "click and configured suffix;CUID flag separately",
+    "limits": "public revenue callback is not restricted to the three impression branches;target configuration unknown",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:33:25.081125+00:00",
+    "evidence_level": "【SDK代码证实】",
+    "evidence_status": {
+      "sdk_capability": true,
+      "actual_target_game_call": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "model_training": false
+    }
+  }
+]

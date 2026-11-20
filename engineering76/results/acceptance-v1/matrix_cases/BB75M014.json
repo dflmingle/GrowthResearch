@@ -1,0 +1,213 @@
+{
+  "case": {
+    "case_id": "BB75M014",
+    "original_row": {
+      "row_id": "BB75M014",
+      "hypothesis": "H3_cohort",
+      "training_scope": "T1: multi-product aggregate cohort knowledge",
+      "online_link_scope": "D0: no individual source-app history query",
+      "observation_id": "O6_feature",
+      "observation": "获授权匿名化特征消费记录",
+      "controllable_input": "Same shadow request with allowed individual feature family on/off;fixed graph/model state",
+      "observable_output": "Non-null source-app history lineage,feature group/version/time,consumer and decision trace",
+      "expected_difference": "Fixed aggregate/shared model should not respond to an isolated source bit without a permitted aggregate update or current-context path;training origin invisible from mapping alone. Can identify that the specified recipient model read the matched feature;not its benefit",
+      "major_confounders": "Logged-but-not-read flags,zero/imputed features,selection-only use,future availability",
+      "additional_evidence_required": "Attested actual non-null read,source lineage,entity scope and feature-version-to-model map",
+      "identifiability": "条件识别指定模型消费；收益仍未知",
+      "identifying_assumptions": "Random assignment/positivity;no source->target context leakage;frozen aggregate/model/stock/caps;no interference or cluster it;known delivery latency;purpose-valid consent;valid denominator and observed receipt.",
+      "entity_claim_boundary": "Aggregate tables fixed during primary window;small-cell or dynamic cohort leakage must be audited",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74S01;IV74S02;IV74S04;IV74S05;IV74S09;IG72S05;MA60S17"
+    },
+    "fixture_route": "D0",
+    "observation_level": "feature",
+    "expected_status": "BOUNDED_LOCAL_CHAIN",
+    "required_claims": [],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "feature",
+    "audit_packet": {
+      "view": "complete_local_audit",
+      "records": [
+        {
+          "data": {
+            "aggregate_version": "frozen-v1",
+            "environment": "offline-mock",
+            "inventory_version": "fixed-v1",
+            "model_version": "mock-model-v1",
+            "namespace": "mock76",
+            "no_network": true,
+            "seed": 760031
+          },
+          "hash": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+          "kind": "run_open",
+          "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+          "seq": 1,
+          "time": 0
+        },
+        {
+          "data": {
+            "allow": true,
+            "app": "source-app",
+            "device": "mock-device-A",
+            "effective_at": 0,
+            "purpose": "mock-research",
+            "version": 1
+          },
+          "hash": "26bb2aa64a4b373ab4c13a74fd026a7db9fe7accbe978da4c1e112f4808e0563",
+          "kind": "permission_changed",
+          "prev": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+          "seq": 2,
+          "time": 0
+        },
+        {
+          "data": {
+            "allow": true,
+            "app": "target-app",
+            "device": "mock-device-A",
+            "effective_at": 0,
+            "purpose": "mock-research",
+            "version": 2
+          },
+          "hash": "7076af3bbbdfdb10080531abb23f7cca372d75fc1b85bd178744cde30ff4d35b",
+          "kind": "permission_changed",
+          "prev": "26bb2aa64a4b373ab4c13a74fd026a7db9fe7accbe978da4c1e112f4808e0563",
+          "seq": 3,
+          "time": 0
+        },
+        {
+          "data": {
+            "available_at": 20,
+            "category": 1,
+            "device": "mock-device-A",
+            "epoch": 0,
+            "event_id": "mock-event-1",
+            "event_time": 10,
+            "installation": "mock-install-S1",
+            "purpose": "mock-research",
+            "received_at": 12,
+            "source_app": "source-app"
+          },
+          "hash": "b2fc38d4fa859dd31be92e4b00fe0b9a2dd9e503762171d222044fce5d0acc07",
+          "kind": "event_received",
+          "prev": "7076af3bbbdfdb10080531abb23f7cca372d75fc1b85bd178744cde30ff4d35b",
+          "seq": 4,
+          "time": 12
+        },
+        {
+          "data": {
+            "context": {
+              "country": "MOCK",
+              "model": "mock-device",
+              "placement": "mock-slot"
+            },
+            "device": "mock-device-A",
+            "epoch": 0,
+            "installation": "mock-install-T1",
+            "prediction_time": 30,
+            "purpose": "mock-research",
+            "request_id": "mock-request-1"
+          },
+          "hash": "e09bebfb2c42c4dda7336110853534d84b60d7140e57f6b1d6a6d1452a1ce5b6",
+          "kind": "request_received",
+          "prev": "b2fc38d4fa859dd31be92e4b00fe0b9a2dd9e503762171d222044fce5d0acc07",
+          "seq": 5,
+          "time": 30
+        },
+        {
+          "data": {
+            "allow": true,
+            "device": "mock-device-A",
+            "purpose": "mock-research",
+            "request_id": "mock-request-1"
+          },
+          "hash": "a9e5ce075fa290d0225ba396fdb24f048e86b5a1c0d613175900c39c6fd16faf",
+          "kind": "use_gate",
+          "prev": "e09bebfb2c42c4dda7336110853534d84b60d7140e57f6b1d6a6d1452a1ce5b6",
+          "seq": 6,
+          "time": 30
+        },
+        {
+          "data": {
+            "cap_version": "fixed-v1",
+            "feature_receipts": [],
+            "gate_receipt": 6,
+            "inventory_version": "fixed-v1",
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "request_receipt": 5,
+            "response": {
+              "creative": "mock-creative-base",
+              "filled": true,
+              "model_version": "mock-model-v1",
+              "request_id": "mock-request-1",
+              "score": 0.2
+            }
+          },
+          "hash": "01da674bc0156960b5ec52b3b3e71febcba4d8a6bd4a3b382d2667f78653f6c6",
+          "kind": "decision",
+          "prev": "a9e5ce075fa290d0225ba396fdb24f048e86b5a1c0d613175900c39c6fd16faf",
+          "seq": 7,
+          "time": 30
+        },
+        {
+          "data": {
+            "decision_receipt": 7,
+            "feature_log_complete": true,
+            "request_id": "mock-request-1"
+          },
+          "hash": "f428cab7e97b219668ef2508da8fee60b32526468f872b25afd5ec716b8a2849",
+          "kind": "request_closed",
+          "prev": "01da674bc0156960b5ec52b3b3e71febcba4d8a6bd4a3b382d2667f78653f6c6",
+          "seq": 8,
+          "time": 30
+        },
+        {
+          "data": {
+            "complete": true,
+            "events": 1,
+            "requests": 1
+          },
+          "hash": "4c7caa1988351d7a7189cb22bf7ef1e96b69081617943d1a5557ab47c8ffaef3",
+          "kind": "run_closed",
+          "prev": "f428cab7e97b219668ef2508da8fee60b32526468f872b25afd5ec716b8a2849",
+          "seq": 9,
+          "time": 31
+        }
+      ]
+    }
+  },
+  "verdict": {
+    "status": "BOUNDED_LOCAL_CHAIN",
+    "claims": [],
+    "limit": "Local chain only;no natural person,vendor consumption,training origin or benefit",
+    "routes": [
+      "NO_INDIVIDUAL_HISTORY_READ_OBSERVED"
+    ]
+  },
+  "weakened_input": {
+    "observation_level": "feature",
+    "audit_packet": {
+      "view": "redacted",
+      "observations": []
+    }
+  },
+  "weakened_verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Actual-read lineage missing"
+  },
+  "passed": true
+}

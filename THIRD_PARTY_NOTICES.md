@@ -10,6 +10,8 @@ AppLovin SDK EULA, Unity terms/Companion Package License, Google/Meta/TikTok SDK
 
 ## Documents and evidence
 
+The later official-samples-audit documents version-specific permission gates and corrections. In particular, a 404 response once labeled as an AppLovin adapter license is not a valid license. The limited Adjust 5.5.0 / 5.7.0 / 5.8.1 source extracts and diffs in adjust-mechanisms retain the original MIT LICENSE files and attribution. This permission does not extend to MAX, LevelPlay, or other dependencies.
+
 Excerpts and source catalogs are retained for technical analysis and attribution. Original publishers retain their rights. Complete web caches and advertising creative media are not mirrored.
 
 ## Datasets

@@ -2,7 +2,7 @@
 
 AppLovin Axon / MAX、Unity Vector / LevelPlay 与休闲游戏获客、归因、身份及价值反馈机制研究。
 
-本仓库整理截至 **2026-11-20、第67号研究**的报告、证据关系图、SDK发行包、静态分析工具和离线实验。完整目录见 [REPORTS.md](REPORTS.md)。
+本仓库整理截至 **2026-11-20、第78号研究及后续自主身份图谱工程**的报告、证据关系图、SDK发行包、静态分析工具和离线实验。最新入口：[自主能力阶段总览](identity-graph-capability-review/README.md)。完整编号目录见 [REPORTS.md](REPORTS.md)。
 
 ## 阅读入口
 
@@ -12,7 +12,11 @@ AppLovin Axon / MAX、Unity Vector / LevelPlay 与休闲游戏获客、归因、
 | 架构证据与竞争性假设 | [模型研究入口](model-architecture/README.md)、[主张矩阵](model-architecture/CLAIM_MATRIX.csv) |
 | 原始证据定位 | [证据索引](EVIDENCE_INDEX.md)、[机器可读证据图](prediction-system/EVIDENCE_GRAPH.json) |
 | 扩量与数据可用性 | [65号审计](65_公开扩量证据与模型实验可行性审计.md)、[游戏身份表](public-evidence/GAME_IDENTITY_REGISTRY.csv) |
-| 最新独立时间验证 | [67号报告](67_用户价值预测独立时间验证.md)、[拟合前协议](67_独立实验协议.md)、[结果](67_模型对照结果.csv) |
+| 自主能力、链路与关键缺口 | [能力总览](identity-graph-capability-review/README.md)、[能力矩阵](identity-graph-capability-review/01_自主复制能力矩阵.md)、[链路图](identity-graph-capability-review/02_已验证能力链路图.md) |
+| 自主身份图谱与合成模型 | [MVP](identity-graph-mvp/README.md)、[LTV lab](identity-graph-ltv-lab/README.md)、[真实数据准入](identity-graph-real-data-audit/README.md) |
+| 账号任务与异步权限交接 | [E01](identity-graph-e01/README.md)、[E02](identity-graph-e02/README.md)、[E02原子性边界](identity-graph-e02/TOCTOU_与原子性交接分析.md) |
+| 厂商消费证据停止条件 | [78号停止条件](78_最小行动方案与停止条件.md)、[六层机制对照](axon-vector-mechanism-gap/01_Axon_Vector机制差异矩阵.md) |
+| 历史独立时间验证 | [67号报告](67_用户价值预测独立时间验证.md)、[拟合前协议](67_独立实验协议.md)、[结果](67_模型对照结果.csv) |
 | SDK原件、版本、来源与哈希 | [SDK导航](ThirdPartySDKs/README.md)、[发行包清单](publication/SDK_ARTIFACTS.csv) |
 | 复现与发布范围 | [复现说明](REPRODUCING.md)、[发布范围](publication/README.md) |
 
@@ -22,6 +26,8 @@ AppLovin Axon / MAX、Unity Vector / LevelPlay 与休闲游戏获客、归因、
 - MAX/LevelPlay变现接入、广告网络需求与AppDiscovery/Vector获客投放分别判断。四款游戏真实预算、成熟净收益及增长归因仍缺授权运营证据。
 - 官方资料支持收入反馈、ROAS优化等产品能力；没有恢复Axon或Vector闭源模型、权重或真实报价公式。
 - 第67号在新时段复现原M2相对历史日均基线的MAE优势；两阶段及校准没有全面胜出的统计支持。UCI零售发票销售额不是手游IAA/IAP，不能换算真实买量ROAS。
+- 自主MVP、合成LTV lab、E01、E02各有实际本地执行证据；E01/E02与lab尚无统一端到端验收，完整自主链路为PARTIAL，广告机会估值与出价未实现。
+- C_graph.Axon、C_graph.Vector、D保持UNKNOWN；真实身份质量与独立真实预测增益未测，原生产取证STOP。本地合成结果不证明平台架构或商业收益。
 
 ## 研究分组
 
@@ -33,12 +39,15 @@ AppLovin Axon / MAX、Unity Vector / LevelPlay 与休闲游戏获客、归因、
 | 47—59 | 跨SDK版本、Unity Core/Insights身份与价值血缘 |
 | 60—64 | 架构、收入标签、跨游戏迁移、价值出价、最终因果边界 |
 | 65—67 | 公开扩量、数据准入、零售消费独立时间验证 |
+| 68—74 | 新数据源、游戏数据获取、身份与训练血缘、可识别性边界 |
+| 75—78 | 黑盒设计、本地工程审计、生产证据缺口与取证门槛 |
+| 后续独立目录 | 官方样本/许可、Adjust限定源码、服务端参考架构、MVP、LTV lab、E01/E02、能力收敛 |
 
 对象包括Car Race、Meowdoku、Rotate Rings、Jewel Coloring；精确包名以[身份登记](public-evidence/GAME_IDENTITY_REGISTRY.csv)为准。Amaze GO!缺少可验证样本时保持未知。
 
 ## 目录
 
-- 根目录：00—67报告、汇总CSV、证据索引与清单。
+- 根目录：00—78报告、汇总CSV、证据索引与清单。
 - model-architecture/、prediction-system/：主张、竞争性解释、证据图及停止条件。
 - ThirdPartySDKs/：官方AAR/JAR/POM、公开源码归档、历史版本及适配器。
 - cross-sdk/packages/、core-insights/sdk/、identity-graph/sdk/：Unity Services、IAP、Analytics、Authentication及Singular官方包。
@@ -46,6 +55,9 @@ AppLovin Axon / MAX、Unity Vector / LevelPlay 与休闲游戏获客、归因、
 - prediction-validation/：数据契约、收入会计与时点门控测试。
 - public-evidence/、public-experiments/：公开来源台账、协议、66/67代码及汇总统计。
 - publication/：发布清单、SDK来源/许可信息与校验结果。
+- identity-graph-capability-review/：六项阶段交付、逐文件版本与证据边界。
+- identity-graph-mvp/、identity-graph-ltv-lab/、identity-graph-e01/、identity-graph-e02/：源码、合成fixture、参数、测试记录、数据库及日志，含保留的失败运行。
+- official-samples-audit/、adjust-mechanisms/、server-identity-reference/：样本许可核验、MIT源码机制与自主参考设计，不是厂商生产证据。
 
 ## 证据边界
 

@@ -1,0 +1,70 @@
+{
+  "case": {
+    "case_id": "BB75M024",
+    "original_row": {
+      "row_id": "BB75M024",
+      "hypothesis": "H3_shared",
+      "training_scope": "T1: multi-product shared parameters/representations",
+      "online_link_scope": "D0: no individual source-app history query",
+      "observation_id": "O8_increment",
+      "observation": "固定条件身份增益消融",
+      "controllable_input": "M4 vs M3: same samples,capacity,time,source data,policy and accurate authorized links",
+      "observable_output": "Independent mature real value labels/calibration/ranking;paired uncertainty",
+      "expected_difference": "Fixed aggregate/shared model should not respond to an isolated source bit without a permitted aggregate update or current-context path;training origin invisible from mapping alone. Distinguishes incremental predictive benefit in data scope;not vendor deployment without provenance",
+      "major_confounders": "Extra data/parameters,coverage selection,identity leakage,label maturity,policy changes",
+      "additional_evidence_required": "74 protocol gates plus model lineage and independent test;causal UA needs separate authorized trial",
+      "identifiability": "条件识别预测独立增益；本轮STOP真实实验",
+      "identifying_assumptions": "Real authorized mature labels;fixed effective training samples and model budget;time/entity-disjoint tests;no extra coverage/label leakage;predeclared effect and multiplicity control.",
+      "entity_claim_boundary": "Training provenance differs from H0;frozen prediction mapping can be identical",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74R01;EX73R07;EX73R08"
+    },
+    "fixture_route": "D0",
+    "observation_level": "increment",
+    "expected_status": "STOP_REAL_LABELS_NOT_AVAILABLE",
+    "required_claims": [],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "increment",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "verdict": {
+    "status": "STOP_REAL_LABELS_NOT_AVAILABLE",
+    "claims": [],
+    "limit": "No real mature values or equal-budget independent effect evidence"
+  },
+  "weakened_input": {
+    "observation_level": "increment",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "weakened_verdict": {
+    "status": "STOP_REAL_LABELS_NOT_AVAILABLE",
+    "claims": [],
+    "limit": "No real mature values or equal-budget independent effect evidence"
+  },
+  "passed": true
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "old cache denied after revoke",
+    "input_refs": "operation trace",
+    "expected": "BUNDLE_INVALIDATED_OR_DELETED",
+    "actual": "BUNDLE_INVALIDATED_OR_DELETED",
+    "passed": true
+  },
+  {
+    "assertion": "new feature query denied",
+    "input_refs": "operation trace",
+    "expected": "CONSENT_DENIED_OR_UNKNOWN",
+    "actual": "CONSENT_DENIED_OR_UNKNOWN",
+    "passed": true
+  },
+  {
+    "assertion": "old values removed from persistent cache",
+    "input_refs": "operation trace",
+    "expected": null,
+    "actual": null,
+    "passed": true
+  }
+]

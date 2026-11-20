@@ -1,0 +1,462 @@
+{
+  "test_id": "V03",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {
+      "d": "entity_000002",
+      "i": "entity_000004",
+      "a": "entity_000007"
+    }
+  },
+  "operations": [
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "d",
+        "device"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "device",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000001"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000001",
+        "syn:d:0c704012ee15"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000002",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 1
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "i",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "i",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000004"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:i:fa66b470cb95"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 2
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000005",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "a",
+        "account"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "account",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000006"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000006",
+        "syn:a:c5c6bb3b6248"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 3
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "assertion",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ]
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ACCOUNT_RELATION_ESTABLISHED",
+        "edge_ref": "edge_000008",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000007",
+        "logged_in_as"
+      ],
+      "kwargs": {
+        "source_ref": "synth:fixture-auth",
+        "confidence": 1.0,
+        "quality_kind": "authenticated_account_control",
+        "quality_scope": "local-synthetic-credential-control-only",
+        "purpose": "synthetic-value-research"
+      },
+      "returned": {
+        "edge_ref": "edge_000008",
+        "status": "ACTIVE",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ],
+      "kwargs": {},
+      "raised": {
+        "type": "Rejected",
+        "message": "AUTH_REPLAY"
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {
+        "audience": "other-app"
+      },
+      "raised": {
+        "type": "Rejected",
+        "message": "AUTH_ISSUER_OR_AUDIENCE"
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "assertion",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {
+        "audience": "other-app"
+      },
+      "returned": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "other-app",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:2",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "a551bff6607121893094a18eb76d7170e54a5982bff249e879422a5dcb49cebd"
+      ]
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "other-app",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:2",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "a551bff6607121893094a18eb76d7170e54a5982bff249e879422a5dcb49cebd"
+      ],
+      "kwargs": {},
+      "raised": {
+        "type": "Rejected",
+        "message": "AUTH_ISSUER_OR_AUDIENCE"
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {
+        "expires_at": 1767225600
+      },
+      "raised": {
+        "type": "Rejected",
+        "message": "AUTH_TIME_INVALID"
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "assertion",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {
+        "expires_at": 1767225600
+      },
+      "returned": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:3",
+          "issued_at": 1767225600,
+          "expires_at": 1767225600,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "78b60eb2b5cd2b65b0723589ce3289528896d5e023ef1d4403639f4b28b7cdea"
+      ]
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:3",
+          "issued_at": 1767225600,
+          "expires_at": 1767225600,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "78b60eb2b5cd2b65b0723589ce3289528896d5e023ef1d4403639f4b28b7cdea"
+      ],
+      "kwargs": {},
+      "raised": {
+        "type": "Rejected",
+        "message": "AUTH_TIME_INVALID"
+      }
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "invalid"
+      ],
+      "kwargs": {},
+      "raised": {
+        "type": "Rejected",
+        "message": "BAD_FIXTURE_SIGNATURE"
+      }
+    }
+  ]
+}

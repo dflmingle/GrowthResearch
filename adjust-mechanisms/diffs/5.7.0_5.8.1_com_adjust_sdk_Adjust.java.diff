@@ -1,0 +1,11 @@
+--- 5.7.0/com/adjust/sdk/Adjust.java
++++ 5.8.1/com/adjust/sdk/Adjust.java
+@@ -31,7 +31,7 @@
+      */
+     public static synchronized AdjustInstance getDefaultInstance() {
+         @SuppressWarnings("unused")
+-        String VERSION = "!SDK-VERSION-STRING!:com.adjust.sdk:adjust-android:5.7.0";
++        String VERSION = "!SDK-VERSION-STRING!:com.adjust.sdk:adjust-android:5.8.1";
+ 
+         if (defaultInstance == null) {
+             defaultInstance = new AdjustInstance();

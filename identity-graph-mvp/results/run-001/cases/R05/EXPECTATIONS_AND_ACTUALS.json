@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "same economic revision cannot change amount",
+    "input_refs": "operation trace",
+    "expected": "ECONOMIC_REVISION_CONFLICT",
+    "actual": "ECONOMIC_REVISION_CONFLICT",
+    "passed": true
+  },
+  {
+    "assertion": "no orphan revision",
+    "input_refs": "operation trace",
+    "expected": "CORRECTION_CHAIN_REQUIRED",
+    "actual": "CORRECTION_CHAIN_REQUIRED",
+    "passed": true
+  },
+  {
+    "assertion": "failed mutations do not add economic entries",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  }
+]

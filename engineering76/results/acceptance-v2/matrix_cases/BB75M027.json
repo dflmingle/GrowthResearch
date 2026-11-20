@@ -1,0 +1,72 @@
+{
+  "case": {
+    "case_id": "BB75M027",
+    "original_row": {
+      "row_id": "BB75M027",
+      "hypothesis": "H1",
+      "training_scope": "T0 or T1",
+      "online_link_scope": "D1: same-device source-app history;D2 absent",
+      "observation_id": "O3_advertiser_category",
+      "observation": "广告主或类别变化",
+      "controllable_input": "Random source-history assignment with fixed target context and model/stock",
+      "observable_output": "Authorized advertiser/category mix;all candidates only if permitted",
+      "expected_difference": "Same-device transfer may respond when consent and lookup work;cross-device transfer absent by definition;caps/audiences can mimic ads. Compositional shift is compatible with history use,cohort,policy or stock shift",
+      "major_confounders": "New advertisers,country/daypart,auction price,reporting classification",
+      "additional_evidence_required": "Randomized provenance-positive receiver audit,stock and policy frozen",
+      "identifiability": "条件支持跨App因果影响；不唯一识别图谱",
+      "identifying_assumptions": "Random assignment/positivity;no source->target context leakage;frozen aggregate/model/stock/caps;no interference or cluster it;known delivery latency;purpose-valid consent;valid denominator and observed receipt.",
+      "entity_claim_boundary": "Cross-app device relation,not cross-device or person identity",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74R01;EX73R07;EX73R08"
+    },
+    "fixture_route": "D1",
+    "observation_level": "advertiser_category",
+    "expected_status": "UNIDENTIFIABLE",
+    "required_claims": [],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "advertiser_category",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Response cannot identify history route,person or model benefit"
+  },
+  "hypothesis_observed": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+  "weakened_input": {
+    "observation_level": "advertiser_category",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "weakened_verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Response cannot identify history route,person or model benefit"
+  },
+  "derived_variant_verdict": null,
+  "passed": true
+}

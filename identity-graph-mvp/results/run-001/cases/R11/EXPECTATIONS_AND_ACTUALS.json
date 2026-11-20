@@ -1,0 +1,16 @@
+[
+  {
+    "assertion": "deleting account A does not erase distinct account B business event",
+    "input_refs": "operation trace",
+    "expected": 200,
+    "actual": 200,
+    "passed": true
+  },
+  {
+    "assertion": "only A-owned economic row erased",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  }
+]

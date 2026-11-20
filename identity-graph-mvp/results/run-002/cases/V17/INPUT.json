@@ -1,0 +1,374 @@
+{
+  "test_id": "V17",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {
+      "device-a": "entity_000002",
+      "app-a": "entity_000004",
+      "account-a": "entity_000007"
+    }
+  },
+  "operations": [
+    {
+      "component": "SyntheticWorld",
+      "operation": "pair",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {},
+      "returned": [
+        "entity_000002",
+        "entity_000004",
+        "entity_000007"
+      ]
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "device-a",
+        "device"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "device",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000001"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000001",
+        "syn:device-a:0c704012ee15"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000002",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 1
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "app-a",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "app-a",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000004"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:app-a:fa66b470cb95"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 2
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000005",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "account-a",
+        "account"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "account",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000006"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000006",
+        "syn:account-a:c5c6bb3b6248"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 3
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ACCOUNT_RELATION_ESTABLISHED",
+        "edge_ref": "edge_000008",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "assertion",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ]
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ACCOUNT_RELATION_ESTABLISHED",
+        "edge_ref": "edge_000008",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000007",
+        "logged_in_as"
+      ],
+      "kwargs": {
+        "source_ref": "synth:fixture-auth",
+        "confidence": 1.0,
+        "quality_kind": "authenticated_account_control",
+        "quality_scope": "local-synthetic-credential-control-only",
+        "purpose": "synthetic-value-research",
+        "auth_receipt": "synth:nonce:760078:1"
+      },
+      "returned": {
+        "edge_ref": "edge_000008",
+        "status": "ACTIVE",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "delete",
+      "at": 1767225600,
+      "args": [
+        "entity_000007"
+      ],
+      "kwargs": {},
+      "returned": {
+        "id": "delete_000004",
+        "entity_ref": "entity_000007",
+        "requested_at": 1767225600,
+        "effective_at": 1767225600,
+        "epoch": 4,
+        "source_ref": "synth:delete",
+        "training_disposition": "MODEL_ERASURE_UNKNOWN",
+        "state": "EXCEPTION_OR_UNKNOWN",
+        "sinks": [
+          {
+            "case_ref": "delete_000004",
+            "sink": "coverage",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          },
+          {
+            "case_ref": "delete_000004",
+            "sink": "events",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          },
+          {
+            "case_ref": "delete_000004",
+            "sink": "features",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          },
+          {
+            "case_ref": "delete_000004",
+            "sink": "graph",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          },
+          {
+            "case_ref": "delete_000004",
+            "sink": "identity",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          },
+          {
+            "case_ref": "delete_000004",
+            "sink": "outbox",
+            "status": "ACK",
+            "acknowledged_at": 1767225600,
+            "source_ref": "synth:local-purge"
+          }
+        ],
+        "pending_sinks": []
+      }
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "reconcile",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {},
+      "returned": null
+    }
+  ]
+}

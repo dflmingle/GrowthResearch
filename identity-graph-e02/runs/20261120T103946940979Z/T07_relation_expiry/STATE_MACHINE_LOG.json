@@ -1,0 +1,138 @@
+[
+  {
+    "seq": 1,
+    "kind": "transition",
+    "at": 1767225600,
+    "epoch": 3,
+    "graph_version": 5,
+    "job_ref": "synth:e02:job:1",
+    "state": "QUEUED",
+    "event_ref": "event_000010",
+    "outbox_ref": "outbox_000011",
+    "details": {
+      "from_state": null,
+      "to_state": "QUEUED",
+      "reason": "ORIGINAL_OUTBOX_COLLECTION_APPROVED",
+      "gates": {
+        "collection": "APPROVED_AT_ENQUEUE_BY_ORIGINAL_API",
+        "transmission": true,
+        "purpose": "synthetic-value-research",
+        "delete": "CHECKED_BY_ORIGINAL_API"
+      },
+      "policy_epoch": 3,
+      "graph_version": 5,
+      "dependencies": {
+        "entity_refs": [
+          "entity_000002",
+          "entity_000004",
+          "entity_000006"
+        ],
+        "edge_revisions": [
+          [
+            "edge_000007",
+            1
+          ],
+          [
+            "edge_000009",
+            1
+          ]
+        ],
+        "event_refs": [
+          "event_000010"
+        ],
+        "ledger_refs": [
+          "ledger_000012"
+        ],
+        "coverage_refs": [],
+        "incomplete_reasons": [],
+        "feature_group": "observed-economic-history-v1",
+        "environment": "LOCAL_SYNTHETIC_ONLY"
+      },
+      "bundle_ref": "bundle_000013",
+      "payload_persisted_in_shadow_queue": false
+    },
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "eb53cf49ad788662eb141fc77431e202380099d94856012be98af12348e39d34"
+  },
+  {
+    "seq": 2,
+    "kind": "permission_check",
+    "at": 1767225605,
+    "epoch": 3,
+    "graph_version": 5,
+    "job_ref": "synth:e02:job:1",
+    "state": "QUEUED",
+    "event_ref": "event_000010",
+    "outbox_ref": "outbox_000011",
+    "details": {
+      "phase": "claim",
+      "ok": false,
+      "reason": "TARGET_AUTH_RELATION_NOT_ACTIVE",
+      "details": {
+        "gates": {
+          "collection": "APPROVED_AT_ENQUEUE",
+          "transmission": "ALLOW",
+          "purpose": "BOUND_TO_ORIGINAL_TASK",
+          "delete": "NOT_DELETED_AT_READ",
+          "policy": "ORIGINAL_POLICY_ALLOWED_NOW_AND_COLLECTION_TIME",
+          "relationships": "CHECKING",
+          "sources": "CHECKING"
+        },
+        "policy_observation_at": 1767225605,
+        "dependencies": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000004",
+            "entity_000006"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000007",
+              1
+            ],
+            [
+              "edge_000009",
+              1
+            ]
+          ],
+          "event_refs": [
+            "event_000010"
+          ],
+          "ledger_refs": [
+            "ledger_000012"
+          ],
+          "coverage_refs": [],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "policy_results": {
+          "entity_000002": true,
+          "entity_000004": true,
+          "entity_000006": true
+        }
+      }
+    },
+    "previous_hash": "eb53cf49ad788662eb141fc77431e202380099d94856012be98af12348e39d34",
+    "hash": "299762bb652d560c79f33eb9a1c59c9f9ac2b8bcef87291a160bbf3473ed89ad"
+  },
+  {
+    "seq": 3,
+    "kind": "transition",
+    "at": 1767225605,
+    "epoch": 3,
+    "graph_version": 5,
+    "job_ref": "synth:e02:job:1",
+    "state": "CANCELLED",
+    "event_ref": "event_000010",
+    "outbox_ref": "outbox_000011",
+    "details": {
+      "from_state": "QUEUED",
+      "to_state": "CANCELLED",
+      "reason": "TARGET_AUTH_RELATION_NOT_ACTIVE",
+      "phase": "claim"
+    },
+    "previous_hash": "299762bb652d560c79f33eb9a1c59c9f9ac2b8bcef87291a160bbf3473ed89ad",
+    "hash": "689d8780f944fbe90f8a20543f1bb764c65734ad5397c356a94b0f30b4204111"
+  }
+]

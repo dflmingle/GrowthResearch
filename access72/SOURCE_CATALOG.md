@@ -1,0 +1,26 @@
+# 72号一手材料与搜索边界
+
+核验UTC：2026-11-20T05:04:04.584392+00:00。没有扫描SDK；仅读取官网公开文档和主页引用的公开JS联系组件。
+
+| ID | 原始URL | 时间 | 原始位置 | SHA256 | 支持及限制 |
+|---|---|---|---|---|---|
+| L72S01 | https://support.appsflyer.com/hc/en-us/articles/217490046-ROI360-guide-ad-revenue-attribution | 2026-11-19 09:45 as displayed,timezone unspecified | access72/sources/af-revenue-roi360.txt:5 | `393d70bd428ca77098f2ace36c0a592673f5275c9480bfb14a72c7108d746f71` | Integration granularity,SDK freshness/device accuracy and hybrid replacement;not per-impression exactly-once |
+| L72S02 | https://support.appsflyer.com/hc/en-us/articles/217490046-ROI360-guide-ad-revenue-attribution | 2026-11-19 09:45 as displayed,timezone unspecified | access72/sources/af-revenue-roi360.txt:171 | `393d70bd428ca77098f2ace36c0a592673f5275c9480bfb14a72c7108d746f71` | Cross-reference dedup checkbox scope/exceptions;aggregate eRPA is allocated value,not observed individual impression income |
+| L72S03 | https://support.appsflyer.com/hc/en-us/articles/217490046-ROI360-guide-ad-revenue-attribution | 2026-11-19 09:45 as displayed,timezone unspecified | access72/sources/af-revenue-roi360.txt:419 | `393d70bd428ca77098f2ace36c0a592673f5275c9480bfb14a72c7108d746f71` | Impression input can become device-level export;conversion context copied into attributed revenue reports;not physical training columns |
+| L72S04 | https://support.appsflyer.com/hc/en-us/articles/217490046-ROI360-guide-ad-revenue-attribution | 2026-11-19 09:45 as displayed,timezone unspecified | access72/sources/af-revenue-roi360.txt:573 | `393d70bd428ca77098f2ace36c0a592673f5275c9480bfb14a72c7108d746f71` | Integration start boundary,report freshness and revisions;raw export/Pull API not revised like dashboards/Data Locker |
+| L72S05 | https://support.appsflyer.com/hc/en-us/articles/24100803679761-Share-ad-revenue-data-with-partners | 2026-09-15 11:11 as displayed,timezone unspecified | access72/sources/af-share-revenue.txt:1 | `30e3382e75bc68bbdb53e2cd478746d830b79e8dab08cd2abaff3661fb57e870` | Daily UA signals vs realtime SDK postbacks;ROI360 Advanced and partner permissions;other-source attribution redacted |
+| L72S06 | https://support.appsflyer.com/hc/en-us/articles/24100803679761-Share-ad-revenue-data-with-partners | 2026-09-15 11:11 as displayed,timezone unspecified | access72/sources/af-share-revenue.txt:93 | `30e3382e75bc68bbdb53e2cd478746d830b79e8dab08cd2abaff3661fb57e870` | af_ad_revenue explicitly mapped to Unity ad_revenue;select-all excludes it;mediation source list not receiver list |
+| L72S07 | https://support.appsflyer.com/hc/en-us/articles/24100803679761-Share-ad-revenue-data-with-partners | 2026-09-15 11:11 as displayed,timezone unspecified | access72/sources/af-share-revenue.txt:191 | `30e3382e75bc68bbdb53e2cd478746d830b79e8dab08cd2abaff3661fb57e870` | Receiver table lists Unity Ads for both channels;AppLovin/Axon absent from this table snapshot,not proof universally unsupported |
+| L72S08 | https://support.appsflyer.com/hc/en-us/articles/208387843-Raw-data-field-dictionary | 2026-11-18 13:51 as displayed,timezone unspecified | access72/sources/af-raw-dictionary.txt:743 | `f34a6bbb136e70da279588f8622e9a48d3786ccc9bef9e3d68ea5edffd37093b` | AppsFlyer install-scoped attribution identity semantics;not person-level cross-game identity |
+| L72S09 | https://support.appsflyer.com/hc/en-us/articles/208387843-Raw-data-field-dictionary | 2026-11-18 13:51 as displayed,timezone unspecified | access72/sources/af-raw-dictionary.txt:1413 | `f34a6bbb136e70da279588f8622e9a48d3786ccc9bef9e3d68ea5edffd37093b` | Event time depends on source/report;device/original time is not information available_at |
+| L72S10 | https://support.appsflyer.com/hc/en-us/articles/115005600889 | 2025-12-18 00:01 as displayed,timezone unspecified | access72/sources/af-ltv-activity.txt:23 | `72fa5944f5367b97275f35e66b1acb7c3add0936de5dbedebddf6acc5bdb20d2` | Install-cohort LTV vs event-date activity;raw activity is not mature D28 cohort by itself |
+| L72S11 | https://help.adjust.com/en/article/ad-revenue-sdk | not stated;2026-11-20 snapshot | access72/sources/adjust-sdk-revenue.txt:39 | `5964b5ef8bf379b614e2843684f241119c0de92106fc05a75af4526f129f7f7b` | SDK/API overlap and account-level API pulls;Ad Revenue Sources filter applies to reporting,partner sharing and conversion mapping;not economic ID dedup guarantee |
+| L72S12 | https://www.yokozunadata.com/static/js/main.1816450e.js | not stated;2026-11-20 snapshot | access72/sources/yokozuna-public-bundle.raw@1547719 | `83be528c215f01c36a4ee54b9f5a46ab750d186f7aad589ad909a8dd8aa56d23` | Public contact component names info@yokozunadata.com;paper authors affiliated to same company;not confirmed current Age-of-Ishtaria custodian or licence channel |
+
+同一原件的多个片段不算多项独立突破。SOURCE_EVIDENCE.json保存精确摘录和文本哈希；REUSED_EVIDENCE.json仅复用已核验对象。所有取得材料均为公开契约/模式说明，**不是运营方授权的实收日志、后台导出或模型训练表**。
+
+搜索边界：Uken沿71号官方路由与未发送申请包；Age仅原论文、现行公司公开联系组件；Unity原论文/OSF明确不共享，未重复下载补充文件。原raw-data-export文档路径404不作有效接口证据，未继续猜测路径。
+
+MMP仅官方收入集成、共享渠道、去重适用范围、时间与cohort字典。没有访问报表、Data Locker、生产归因/竞价端点或广告账户。官方示例报表链接不等于许可明确的真实游戏数据，本轮未下载示例行。
+
+public bundle中的contact组件只用于核验业务邮箱；未执行其中应用代码、登录或访问数据路由。随机字符串中的NDA匹配不是协议证据，已排除。SFU/Uken当前职能与历史论文机构不能证明2015现行数据保管权。

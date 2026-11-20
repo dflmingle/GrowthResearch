@@ -1,0 +1,16 @@
+[
+  {
+    "assertion": "untampered chain valid",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "assertion": "tampering invalidates chain",
+    "input_refs": "operation trace",
+    "expected": false,
+    "actual": false,
+    "passed": true
+  }
+]

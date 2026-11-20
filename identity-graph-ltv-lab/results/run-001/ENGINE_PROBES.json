@@ -1,0 +1,200 @@
+[
+  {
+    "name": "candidate_0.2",
+    "inputs": {
+      "confidence": 0.2,
+      "edge": {
+        "edge_ref": "edge_000010",
+        "status": "CANDIDATE",
+        "grain": "device",
+        "person_inference": false
+      }
+    },
+    "expected": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "actual": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "passed": true
+  },
+  {
+    "name": "candidate_0.6",
+    "inputs": {
+      "confidence": 0.6,
+      "edge": {
+        "edge_ref": "edge_000013",
+        "status": "CANDIDATE",
+        "grain": "device",
+        "person_inference": false
+      }
+    },
+    "expected": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "actual": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "passed": true
+  },
+  {
+    "name": "candidate_0.99",
+    "inputs": {
+      "confidence": 0.99,
+      "edge": {
+        "edge_ref": "edge_000016",
+        "status": "CANDIDATE",
+        "grain": "device",
+        "person_inference": false
+      }
+    },
+    "expected": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "actual": {
+      "status": "CANDIDATE",
+      "eligible": false
+    },
+    "passed": true
+  },
+  {
+    "name": "wrong_attestation_can_contaminate_without_truth",
+    "inputs": {
+      "injected_false_relation": true,
+      "claim": "NOT_DETECTABLE_WITHOUT_EXTRA_EVIDENCE"
+    },
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "name": "explicit_counterevidence_breaks_bad_component",
+    "inputs": {
+      "cannot_link": true
+    },
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "name": "revoke_before_eligible",
+    "inputs": {
+      "bundle_ref": "bundle_000011"
+    },
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "name": "revoke_old_bundle_denied",
+    "inputs": {
+      "action": "revoke",
+      "effective_at": 1767225601
+    },
+    "expected": "BUNDLE_INVALIDATED_OR_DELETED",
+    "actual": "BUNDLE_INVALIDATED_OR_DELETED",
+    "passed": true
+  },
+  {
+    "name": "revoke_new_query_denied_or_missing",
+    "inputs": {
+      "action": "revoke"
+    },
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "name": "delete_before_eligible",
+    "inputs": {
+      "bundle_ref": "bundle_000011"
+    },
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "name": "delete_old_bundle_denied",
+    "inputs": {
+      "action": "delete",
+      "effective_at": 1767225601
+    },
+    "expected": "BUNDLE_INVALIDATED_OR_DELETED",
+    "actual": "BUNDLE_INVALIDATED_OR_DELETED",
+    "passed": true
+  },
+  {
+    "name": "delete_new_query_denied_or_missing",
+    "inputs": {
+      "action": "delete"
+    },
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "name": "consent_before_eligible",
+    "inputs": {
+      "bundle_ref": "bundle_000011"
+    },
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "name": "consent_old_bundle_denied",
+    "inputs": {
+      "action": "consent",
+      "effective_at": 1767225601
+    },
+    "expected": "BUNDLE_INVALIDATED_OR_DELETED",
+    "actual": "BUNDLE_INVALIDATED_OR_DELETED",
+    "passed": true
+  },
+  {
+    "name": "consent_new_query_denied_or_missing",
+    "inputs": {
+      "action": "consent"
+    },
+    "expected": false,
+    "actual": false,
+    "passed": true
+  },
+  {
+    "name": "shared_device_account_ambiguity",
+    "inputs": {
+      "account_count": 2,
+      "raw_device_observed_micros": 10000000
+    },
+    "expected": "SHARED_DEVICE_ACCOUNT_AMBIGUITY",
+    "actual": "SHARED_DEVICE_ACCOUNT_AMBIGUITY",
+    "passed": true
+  },
+  {
+    "name": "future_observed",
+    "inputs": {
+      "observed_at": 1767225601,
+      "available_at": 1767225601,
+      "prediction_at": 1767225600
+    },
+    "expected": "FUTURE_INFORMATION_BLOCKED",
+    "actual": "FUTURE_INFORMATION_BLOCKED",
+    "passed": true
+  },
+  {
+    "name": "late_available",
+    "inputs": {
+      "observed_at": 1767225599,
+      "available_at": 1767225601,
+      "prediction_at": 1767225600
+    },
+    "expected": "FUTURE_INFORMATION_BLOCKED",
+    "actual": "FUTURE_INFORMATION_BLOCKED",
+    "passed": true
+  }
+]

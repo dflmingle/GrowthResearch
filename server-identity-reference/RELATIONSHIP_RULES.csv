@@ -1,0 +1,15 @@
+﻿rule_id,trigger,condition,decision,basis,kind
+R01,作用域缺失,namespace/issuer/grain不明,ABSTAIN_UNKNOWN_SCOPE；不比较/不自动合并,SIR14/15；AM01–06,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R02,认证账号,认证签名/issuer/aud/有效期/replay及用途有效,只建logged_in_as/account-device；不建person equivalence,SIR14/15；IG72S02/03,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R03,外部解析返回非空,只收到ID，无结果类型/匹配状态,UNKNOWN；derived新键不能称已有图实体匹配,IV74S01/06,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R04,分数与阈值,有评分但无代表性校准/权利或在未知scope,保留候选，不物化个人；阈值待验证，不能固定拍数,SIR01/02/03/06,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R05,多跳桥接,A–B/B–C通过但A–C cannot-link或粒度冲突,CONFLICT隔离；不闭包强并；记录触发边和solver版本,SIR04/07/08；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R06,共享账号/设备,多账号/多设备共享不违反事实但不证明同人,保留多对多typed关系；任务基数约束须有产品契约，不默认一对一,SIR14/15；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R07,账号登出/设备转让/标识重置,收到合法生命周期事件,结束相应活跃关系/epoch；不恢复旧ID追踪；旧历史使用依授权另审,AM02/15/16；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R08,关系拆分,错连/证据撤销/冲突修正,保留原边修订，受影响子图重算；旧簇不可继续作为现行特征键,SIR17；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R09,迟到与更正,发生早但received/available晚，或更正版本晚,不倒灌早期决策；离线重放用当时已知版本；标签修订另版,SIR11/12；EC78S01,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R10,权限撤销,purpose或subject scope的撤销effective,先阻断读、deny epoch/watermark；再异步清派生，未确认不得serve旧缓存,AM15–20；EC78S01；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R11,删除传播,删除范围和权利已核对,遍历事件/图/feature/outbox/导出/备份策略，逐sink回执；不能仅设TTL,SIR17只提供表达；执行规则为独立设计,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R12,训练材料与已训模型,被删源进入训练快照/参数,标记快照禁用并评估重训/机器遗忘/例外；没有验证不能声称参数已忘记,78号边界；研究者规则,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R13,审计与个人数据删除冲突,append-only日志可能有敏感值/可连回token,最小审计元数据，身份映射受控移除/适用加密擦除；例外范围/期限明示,SIR17表达血缘；执行策略独立,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT
+R14,跨系统证据不足,发送日志有而接收/非空模型读取/trace缺失,PARTIAL/NOT_IDENTIFIABLE；无生产消费升级,EC78S01/04,REFERENCE_POLICY_NOT_VENDOR_DEPLOYMENT

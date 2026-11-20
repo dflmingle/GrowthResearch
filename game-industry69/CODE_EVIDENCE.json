@@ -1,0 +1,160 @@
+[
+  {
+    "id": "GI69C01",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventRequest.kt",
+    "sha256": "e57d204b45101f18a4ce1defb25ab76124955489a1d0725ad57283a78e036c19",
+    "start_line": 20,
+    "end_line": 45,
+    "version": "4.17.0",
+    "class_or_method": "GetOperativeEventRequest.invoke",
+    "meaning": "Callers provide opportunityId/tracking token/type; event creates new eventId and serializes context",
+    "excerpt": "20: \n21:     suspend operator fun invoke(\n22:         operativeEventType: OperativeEventType,\n23:         loadTrackingToken: ByteString,\n24:         opportunityId: ByteString,\n25:         additionalEventData: ByteString,\n26:         playerServerId: String?,\n27:         adFormat: AdFormat?\n28:     ) : OperativeEventRequest {\n29:         return operativeEventRequest {\n30:             eventId = generateByteStringId()\n31:             eventType = operativeEventType\n32:             impressionOpportunityId = opportunityId\n33:             trackingToken = loadTrackingToken\n34:             additionalData = additionalEventData\n35:             playerServerId?.let { sid = it }\n36:             dynamicDeviceInfo = deviceInfoRepository.dynamicDeviceInfo\n37:             staticDeviceInfo = deviceInfoRepository.staticDeviceInfo()\n38:             sessionCounters = sessionRepository.sessionCounters\n39:             campaignState = campaignRepository.getCampaignState()\n40:             adFormat?.let { this.adFormat = it }\n41:         }\n42:     }\n43: }",
+    "package_provenance_catalog": "cross-sdk/SDK_MATRIX.json",
+    "verified_original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+        "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 674033
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:02:42.001339+00:00",
+    "actual_target_game_call": false,
+    "production_successful_send": false,
+    "server_received": false,
+    "server_model_training": false
+  },
+  {
+    "id": "GI69C02",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/OperativeEventObserver.kt",
+    "sha256": "88e3f4202fef731d4a7271a546eed5ab18c443a1e2da48a04e6abaa6621b6a51",
+    "start_line": 38,
+    "end_line": 60,
+    "version": "4.17.0",
+    "class_or_method": "OperativeEventObserver.invoke",
+    "meaning": "Repository flow -> UniversalRequest -> persisted work item -> background job; fallback event sender",
+    "excerpt": "38:         // If we are already collecting events, do nothing\n39:         if (isRunning.getAndUpdate { true }) return@withContext\n40:         operativeEventRepository.operativeEvents.onEach { operativeEventRequest ->\n41:             val payload = UniversalRequestKt.payload {\n42:                 operativeEvent = operativeEventRequest\n43:             }\n44:             val fullRequest = getUniversalRequestForPayLoad(payload)\n45: \n46:             try {\n47:                 val workId = UUID.randomUUID().toString()\n48:                 universalRequestDataSource.set(workId, fullRequest.toByteArray().toByteString())\n49: \n50:                 val universalRequestWorkerData = UniversalRequestWorkerData(workId)\n51:                 backgroundWorker<OperativeEventJob>(universalRequestWorkerData)\n52:             }  catch (throwable: Throwable) {\n53:                 universalRequestEventSender(fullRequest, operativeRequestPolicy())\n54:             }\n55:         }.launchIn(scope)\n56:     }\n57: }",
+    "package_provenance_catalog": "cross-sdk/SDK_MATRIX.json",
+    "verified_original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+        "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 674033
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:02:42.001339+00:00",
+    "actual_target_game_call": false,
+    "production_successful_send": false,
+    "server_received": false,
+    "server_model_training": false
+  },
+  {
+    "id": "GI69C03",
+    "path": "ThirdPartySDKs/AppsFlyer/Android/6.17.5/decompiled/com/appsflyer/AFAdRevenueData.java",
+    "sha256": "0f2955b1f5dbe62aa3711186defe0b8e90a0a5c932fb1a5b886c3c2dc391d6a1",
+    "start_line": 16,
+    "end_line": 64,
+    "version": "6.17.5",
+    "class_or_method": "AFAdRevenueData.constructor/getters",
+    "meaning": "Separate network,mediation,currency,revenue; precision not one of these four constructor fields",
+    "excerpt": "16: \n17:     @NotNull\n18:     private final String monetizationNetwork;\n19: \n20:     @NotNull\n21:     private final MediationNetwork mediationNetwork;\n22: \n23:     @NotNull\n24:     private final String currencyIso4217Code;\n25:     private final double revenue;\n26: \n27:     public AFAdRevenueData(@NotNull String monetizationNetwork, @NotNull MediationNetwork mediationNetwork, @NotNull String currencyIso4217Code, double revenue) {\n28:         Intrinsics.checkNotNullParameter(monetizationNetwork, \"\");\n29:         Intrinsics.checkNotNullParameter(mediationNetwork, \"\");\n30:         Intrinsics.checkNotNullParameter(currencyIso4217Code, \"\");\n31:         this.monetizationNetwork = monetizationNetwork;\n32:         this.mediationNetwork = mediationNetwork;\n33:         this.currencyIso4217Code = currencyIso4217Code;\n34:         this.revenue = revenue;\n35:     }\n36: \n37:     @NotNull\n38:     @JvmName(name = \"getMonetizationNetwork\")\n39:     public final String getMonetizationNetwork() {\n40:         return this.monetizationNetwork;\n41:     }\n42: \n43:     @NotNull\n44:     @JvmName(name = \"getMediationNetwork\")\n45:     public final MediationNetwork getMediationNetwork() {\n46:         return this.mediationNetwork;\n47:     }\n48: \n49:     @NotNull\n50:     @JvmName(name = \"getCurrencyIso4217Code\")\n51:     public final String getCurrencyIso4217Code() {\n52:         return this.currencyIso4217Code;\n53:     }\n54: \n55:     @JvmName(name = \"getRevenue\")\n56:     public final double getRevenue() {\n57:         return this.revenue;\n58:     }\n59: \n60:     public final boolean areAllFieldsValid() {\n61:         return (!StringsKt.isBlank(this.monetizationNetwork)) && AFAdRevenueData();\n62:     }\n63: \n64:     private final boolean AFAdRevenueData() {",
+    "package_provenance_catalog": "cross-sdk/SDK_MATRIX.json",
+    "verified_original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppsFlyer/Android/6.17.5/af-android-sdk-6.17.5.aar",
+        "sha256": "af3f8e59f6ef5e0237fe7c53dd2040c0bb941688b4eb6a4c5b280143d377face",
+        "url": "https://repo.maven.apache.org/maven2/com/appsflyer/af-android-sdk/6.17.5/af-android-sdk-6.17.5.aar",
+        "http_last_modified": "Wed, 26 Nov 2025 11:56:49 GMT",
+        "bytes": 758514
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:02:42.001339+00:00",
+    "actual_target_game_call": false,
+    "production_successful_send": false,
+    "server_received": false,
+    "server_model_training": false
+  },
+  {
+    "id": "GI69C04",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustAdRevenue.java",
+    "sha256": "fb69d08af67fbcec0f405e7ec237f4b03af5f70b726cafbd9d8dba7a7c218ba9",
+    "start_line": 6,
+    "end_line": 49,
+    "version": "5.8.1",
+    "class_or_method": "AdjustAdRevenue.setRevenue/setAdRevenueNetwork/setAdRevenueUnit/setAdRevenuePlacement",
+    "meaning": "Caller supplies currency,amount,network,unit,placement; class does not verify settlement",
+    "excerpt": "6: public class AdjustAdRevenue {\n7:     String source;\n8:     Double revenue;\n9:     String currency;\n10:     Integer adImpressionsCount;\n11:     String adRevenueNetwork;\n12:     String adRevenueUnit;\n13:     String adRevenuePlacement;\n14:     Map<String, String> callbackParameters;\n15:     Map<String, String> partnerParameters;\n16: \n17:     private static final ILogger logger = AdjustFactory.getLogger();\n18: \n19:     public AdjustAdRevenue(final String source) {\n20:         if (!isValidSource(source)) {\n21:             return;\n22:         }\n23: \n24:         this.source = source;\n25:     }\n26: \n27:     public void setRevenue(final Double revenue, final String currency) {\n28:         this.revenue = revenue;\n29:         this.currency = currency;\n30:     }\n31: \n32:     public void setAdImpressionsCount(final Integer adImpressionsCount) {\n33:         this.adImpressionsCount = adImpressionsCount;\n34:     }\n35: \n36:     public void setAdRevenueNetwork(final String adRevenueNetwork) {\n37:         this.adRevenueNetwork = adRevenueNetwork;\n38:     }\n39: \n40:     public void setAdRevenueUnit(final String adRevenueUnit) {\n41:         this.adRevenueUnit = adRevenueUnit;\n42:     }\n43: \n44:     public void setAdRevenuePlacement(final String adRevenuePlacement) {\n45:         this.adRevenuePlacement = adRevenuePlacement;\n46:     }\n47: \n48:     public void addCallbackParameter(final String key, final String value) {\n49:         if (!Util.isValidParameter(key, \"key\", \"Callback\")) return;",
+    "package_provenance_catalog": "cross-sdk/SDK_MATRIX.json",
+    "verified_original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      },
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1-sources.jar",
+        "sha256": "dfee5dda1f80d86b1e0af56af77e04568f7929462a5fe09ffd6b75254180030b",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1-sources.jar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 139471
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:02:42.001339+00:00",
+    "actual_target_game_call": false,
+    "production_successful_send": false,
+    "server_received": false,
+    "server_model_training": false
+  },
+  {
+    "id": "GI69C05",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java",
+    "sha256": "105476c7e4d3d235fcdd8146d798b55aba4761fd81505664c58a014f017f9721",
+    "start_line": 920,
+    "end_line": 948,
+    "version": "5.8.1",
+    "class_or_method": "PackageBuilder ad-revenue parameter writer",
+    "meaning": "Revenue metadata into MMP package,not a direct Axon/Vector production postback",
+    "excerpt": "920:         PackageBuilder.addString(parameters, \"external_device_id\", adjustConfig.externalDeviceId);\n921:         PackageBuilder.addString(parameters, \"fb_id\", deviceInfo.fbAttributionId);\n922:         PackageBuilder.addString(parameters, \"hardware_name\", deviceInfo.hardwareName);\n923:         PackageBuilder.addDateInMilliseconds(parameters, \"installed_at\", deviceInfo.appInstallTime);\n924:         PackageBuilder.addString(parameters, \"language\", deviceInfo.language);\n925:         PackageBuilder.addString(parameters, \"mcc\", deviceInfo.mcc);\n926:         PackageBuilder.addString(parameters, \"mnc\", deviceInfo.mnc);\n927:         PackageBuilder.addBoolean(parameters, \"needs_response_details\", true);\n928:         PackageBuilder.addString(parameters, \"os_build\", deviceInfo.buildName);\n929:         PackageBuilder.addString(parameters, \"os_name\", deviceInfo.osName);\n930:         PackageBuilder.addString(parameters, \"os_version\", deviceInfo.osVersion);\n931:         PackageBuilder.addString(parameters, \"package_name\", deviceInfo.packageName);\n932:         PackageBuilder.addString(parameters, \"push_token\", activityStateCopy.pushToken);\n933:         PackageBuilder.addString(parameters, \"screen_density\", deviceInfo.screenDensity);\n934:         PackageBuilder.addString(parameters, \"screen_format\", deviceInfo.screenFormat);\n935:         PackageBuilder.addString(parameters, \"screen_size\", deviceInfo.screenSize);\n936:         PackageBuilder.addString(parameters, \"source\", adjustAdRevenue.source);\n937:         PackageBuilder.addDoubleWithoutRounding(parameters, \"revenue\", adjustAdRevenue.revenue);\n938:         PackageBuilder.addString(parameters, \"currency\", adjustAdRevenue.currency);\n939:         PackageBuilder.addInteger(parameters, \"ad_impressions_count\", adjustAdRevenue.adImpressionsCount);\n940:         PackageBuilder.addString(parameters, \"ad_revenue_network\", adjustAdRevenue.adRevenueNetwork);\n941:         PackageBuilder.addString(parameters, \"ad_revenue_unit\", adjustAdRevenue.adRevenueUnit);\n942:         PackageBuilder.addString(parameters, \"ad_revenue_placement\", adjustAdRevenue.adRevenuePlacement);\n943:         PackageBuilder.addLong(parameters, \"session_count\", activityStateCopy.sessionCount);\n944:         PackageBuilder.addDuration(parameters, \"session_length\", activityStateCopy.sessionLength);\n945:         PackageBuilder.addLong(parameters, \"subsession_count\", activityStateCopy.subsessionCount);\n946:         PackageBuilder.addDuration(parameters, \"time_spent\", activityStateCopy.timeSpent);\n947:         PackageBuilder.addString(parameters, \"updated_at\", deviceInfo.appUpdateTime);\n948: ",
+    "package_provenance_catalog": "cross-sdk/SDK_MATRIX.json",
+    "verified_original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      },
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1-sources.jar",
+        "sha256": "dfee5dda1f80d86b1e0af56af77e04568f7929462a5fe09ffd6b75254180030b",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1-sources.jar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 139471
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:02:42.001339+00:00",
+    "actual_target_game_call": false,
+    "production_successful_send": false,
+    "server_received": false,
+    "server_model_training": false
+  }
+]

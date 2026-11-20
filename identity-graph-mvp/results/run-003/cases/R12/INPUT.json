@@ -1,0 +1,71 @@
+{
+  "test_id": "R12",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {}
+  },
+  "operations": [
+    {
+      "component": "IdentitySystem",
+      "operation": "ltv_admission",
+      "at": 1767225600,
+      "args": [
+        {
+          "synthetic": true,
+          "real_game_data": false,
+          "lawful_use": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "real_game_data",
+          "stable_scope",
+          "complete_install_denominator",
+          "mature_revenue_labels",
+          "observation_missingness_known",
+          "temporal_holdout",
+          "feature_available_times",
+          "comparison_authorized",
+          "REAL_DATA_NOT_SYNTHETIC"
+        ],
+        "model_training_executed": false,
+        "D": "UNKNOWN"
+      }
+    },
+    {
+      "component": "IdentitySystem",
+      "operation": "ltv_admission",
+      "at": 1767225600,
+      "args": [
+        {
+          "synthetic": true,
+          "real_game_data": false,
+          "lawful_use": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "real_game_data",
+          "stable_scope",
+          "complete_install_denominator",
+          "mature_revenue_labels",
+          "observation_missingness_known",
+          "temporal_holdout",
+          "feature_available_times",
+          "comparison_authorized",
+          "REAL_DATA_NOT_SYNTHETIC"
+        ],
+        "model_training_executed": false,
+        "D": "UNKNOWN"
+      }
+    }
+  ]
+}

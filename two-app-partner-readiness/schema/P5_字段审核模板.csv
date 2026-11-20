@@ -1,0 +1,9 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P5.roster_and_observation_unit_ref,string,完整安装名册及观察单位定义,不是仅付费者或成功匹配样本；不对外提交名册,syn:roster:INTERNAL_ONLY
+P5.observation_start_end,object<utc>,入样/退出观察边界,不以首末交易代替,"{""start"":""2035-01-01T00:00:00Z"",""end"":""2035-01-02T00:00:00Z""}"
+P5.coverage_intervals,array<object>,完整、缺采、退出区间及原因,COMPLETE需证据；无事件不自动零,"[{""status"":""MISSING"",""from"":""2035-01-01T00:00:00Z"",""to"":""2035-01-02T00:00:00Z"",""reason"":""syn:unknown-gap""}]"
+P5.source_receiver_watermarks,object,各行为/收入源和接收系统的成熟水位,所有声明收入源均覆盖；缺源不填0,"{""source_ref"":""syn:source"",""certificate"":""syn:watermark:UNVERIFIED""}"
+P5.arrival_lag_certificate,object,最大迟到/修订界及证明,现有协议要求L≤7天；未知或更长不得缩窗口凑数,"{""max_days"":null,""certificate"":""syn:lag:UNVERIFIED""}"
+P5.denominator_reconciliation_ref,string,安装数/事件/经济账本及零值对账,需包含未匹配/零收入与退出，不导出个体,syn:reconciliation:UNVERIFIED
+P5.label_definition_version,string,remaining/install标签及退款定义版本,两个窗口分开；现金流时间与修订规则固定,syn:label-v1-PROPOSED
+P5.D1_D7_D30_maturity,object,三个窗口成熟证书及实际时点,未知保持UNKNOWN；未来时点示例不证真实成熟,"{""D1"":""UNKNOWN"",""D7"":""UNKNOWN"",""D30"":""UNKNOWN"",""certificate"":""syn:maturity:UNVERIFIED""}"

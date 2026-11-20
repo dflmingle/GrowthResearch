@@ -1,0 +1,74 @@
+{
+  "evidence": {
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "policy_valid": true,
+    "provenance": {
+      "source_authenticated": true,
+      "independently_reviewed": true,
+      "quotation_permitted": true,
+      "coverage_complete": true,
+      "meaning": "SEEDED_LOCAL_FIXTURE_ATTESTATIONS_ONLY"
+    },
+    "resolution": {
+      "ref": "resolution_000033",
+      "status": "existing_entity_asserted",
+      "grain": "account",
+      "component_version": "independent-local-v1",
+      "purpose": "synthetic-value-research",
+      "available_at": 1767225600
+    },
+    "receiver": {
+      "ref": "receipt_000034",
+      "resolution_ref": "resolution_000033",
+      "product": "synthetic-mvp",
+      "received_at": 1767225600,
+      "available_at": 1767225600,
+      "purpose": "synthetic-value-research"
+    },
+    "read": {
+      "ref": "read_000032",
+      "receiver_ref": "receipt_000034",
+      "bundle_ref": "bundle_000029",
+      "product": "synthetic-mvp",
+      "model": "local-feature-consumer",
+      "model_version": "1",
+      "feature_group": "observed-economic-history-v1",
+      "graph_version": 10,
+      "inference_ref": "inference_000035",
+      "nonempty_refs": [
+        "app_instance_count",
+        "currency",
+        "observation_status",
+        "observed_ledger_count",
+        "observed_revenue_micros",
+        "person_inferred",
+        "revenue_by_currency_micros",
+        "revenue_micros"
+      ],
+      "read_at": 1767225600,
+      "purpose": "synthetic-value-research",
+      "default_fallback": false
+    },
+    "decision": {
+      "ref": "decision_000036",
+      "read_ref": "read_000032",
+      "inference_ref": "inference_000035",
+      "model_version": "1",
+      "opportunity_ref": "opportunity_000037",
+      "decision_at": 1767225600,
+      "use": "active",
+      "purpose": "synthetic-value-research"
+    },
+    "consumed_checksum": "b470847ee0ab5c62512b6d5079cde66f1c604fc501f0dfd4814781d60edfa05d",
+    "consumer_kind": "CHECKSUM_PROBE_NOT_LTV_MODEL"
+  },
+  "local_verdict": {
+    "status": "LOCAL_CHAIN_VERIFIED",
+    "reason": "LOCAL_FIXTURE_CONSISTENCY_ONLY_NOT_VENDOR_OR_PERSON_TRUTH",
+    "scope": "LOCAL_SYNTHETIC_ONLY",
+    "C_graph_Axon": "UNKNOWN",
+    "C_graph_Vector": "UNKNOWN",
+    "D": "UNKNOWN",
+    "production_forensics": "STOP"
+  }
+}

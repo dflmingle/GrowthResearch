@@ -1,0 +1,30 @@
+[
+  {
+    "assertion": "late amount and refund not available at old prediction",
+    "input_refs": "operation trace",
+    "expected": 10000,
+    "actual": 10000,
+    "passed": true
+  },
+  {
+    "assertion": "new query uses revised net total not both revisions",
+    "input_refs": "operation trace",
+    "expected": 11000,
+    "actual": 11000,
+    "passed": true
+  },
+  {
+    "assertion": "historical replay is materialized now",
+    "input_refs": "operation trace",
+    "expected": 1767225610,
+    "actual": 1767225610,
+    "passed": true
+  },
+  {
+    "assertion": "cannot fabricate old active decision",
+    "input_refs": "operation trace",
+    "expected": "BACKDATED_OR_FUTURE_DECISION_FORBIDDEN",
+    "actual": "BACKDATED_OR_FUTURE_DECISION_FORBIDDEN",
+    "passed": true
+  }
+]

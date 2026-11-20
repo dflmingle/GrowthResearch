@@ -1,0 +1,9 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P3.event_key_source_revision,object,行为来源内幂等主键,同键不同payload冲突拒绝；仅合作方内引用,"{""event"":""syn:event:001"",""source"":""syn:app:A"",""revision"":1}"
+P3.app_instance_ref,string,事件所属安装实例,引用P1；不能拿请求ID冒充安装键,syn:install:001
+P3.event_type,string,行为类型定义,使用冻结字段字典；无内容文本或个人画像,syn:session_start
+P3.occurred_at,utc,行为实际发生,三时点独立记录；不能以导出时间倒填,2035-01-01T00:00:00Z
+P3.source_received_at,utc,源系统接收,三时点独立记录；不能以导出时间倒填,2035-01-01T00:00:00Z
+P3.source_available_at,utc,源系统实际可用,三时点独立记录；不能以导出时间倒填,2035-01-01T00:00:00Z
+P3.revision_and_arrival_watermark_ref,string,迟到/修订及到账水位说明,可信原件或上界，缺失不猜测,syn:watermark:UNVERIFIED
+P3.account_ref,string|null,合法账号归属，若适用,可缺；不能由共享设备自动赋账号,syn:account:001

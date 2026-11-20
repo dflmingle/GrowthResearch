@@ -1,0 +1,72 @@
+{
+  "case": {
+    "case_id": "BB75M001",
+    "original_row": {
+      "row_id": "BB75M001",
+      "hypothesis": "H0",
+      "training_scope": "T0: target/context-only supervised knowledge",
+      "online_link_scope": "D0: no individual source-app history query",
+      "observation_id": "O1_creative",
+      "observation": "广告素材变化",
+      "controllable_input": "Same-device randomized source history;time/inventory/frequency blocks",
+      "observable_output": "Raw authorized creative hash or local mock category;no landing-page tracking",
+      "expected_difference": "Frozen contextual baseline does not respond to a privately randomized source-history bit under exclusion;current context/market still affect ads. Material selection can change under any hypothesis;no change also possible under any",
+      "major_confounders": "Campaign eligibility,auction noise,creative rotation,caching,context mediation",
+      "additional_evidence_required": "Frozen-state source-history perturbation plus provenance/selection audit",
+      "identifiability": "不可识别（仅素材）",
+      "identifying_assumptions": "Random assignment/positivity;no source->target context leakage;frozen aggregate/model/stock/caps;no interference or cluster it;known delivery latency;purpose-valid consent;valid denominator and observed receipt.",
+      "entity_claim_boundary": "Context/device and pre-frozen baseline statistics;no source-game-trained delta in the operational build",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74R01;EX73R07;EX73R08"
+    },
+    "fixture_route": "D0",
+    "observation_level": "creative",
+    "expected_status": "UNIDENTIFIABLE",
+    "required_claims": [],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "creative",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Response cannot identify history route,person or model benefit"
+  },
+  "hypothesis_observed": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+  "weakened_input": {
+    "observation_level": "creative",
+    "observations": [
+      {
+        "creative": "mock-creative-high",
+        "frequency": 2,
+        "category": 1
+      }
+    ]
+  },
+  "weakened_verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Response cannot identify history route,person or model benefit"
+  },
+  "derived_variant_verdict": null,
+  "passed": true
+}

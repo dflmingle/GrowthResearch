@@ -1,0 +1,43 @@
+{
+  "scope": "E02_ONLY_LOCAL_SYNTHETIC",
+  "seed": 780241,
+  "tests_run": 30,
+  "passed": 30,
+  "failures": 0,
+  "errors": 0,
+  "mutants": [
+    {
+      "id": "T11_mutant_enqueue_only",
+      "detected": true,
+      "status": "PASS"
+    },
+    {
+      "id": "T12_mutant_stale_retry_epoch",
+      "detected": true,
+      "status": "PASS"
+    },
+    {
+      "id": "T13_mutant_check_revoke_commit",
+      "detected": true,
+      "status": "PASS"
+    }
+  ],
+  "network_attempts": [],
+  "preservation": {
+    "checked": 4113,
+    "mismatches": []
+  },
+  "unproven_cases": [
+    "T10_unproven_external_boundary",
+    "T19_state_lock_busy",
+    "T20_control_lock_busy",
+    "T21_pending_transaction",
+    "T28_unsupported_durable_restart"
+  ],
+  "decision": "GO_LOCAL_E02_ONLY",
+  "atomic_scope": "Single trusted thread; original SQLite writer exclusion; memory insertion only. No durable/external/distributed/crash guarantee.",
+  "C_graph_Axon": "UNKNOWN",
+  "C_graph_Vector": "UNKNOWN",
+  "D": "UNKNOWN",
+  "production_forensics": "STOP"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "assertion": "restored entity remains deleted",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  },
+  {
+    "assertion": "restored revenue stays purged",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "deleted key replay cannot create new identity",
+    "input_refs": "operation trace",
+    "expected": "DELETED_KEY_REPLAY",
+    "actual": "DELETED_KEY_REPLAY",
+    "passed": true
+  },
+  {
+    "assertion": "durable delete control not rolled back",
+    "input_refs": "operation trace",
+    "expected": "COMPLETE_FOR_DECLARED_SCOPE",
+    "actual": "COMPLETE_FOR_DECLARED_SCOPE",
+    "passed": true
+  }
+]

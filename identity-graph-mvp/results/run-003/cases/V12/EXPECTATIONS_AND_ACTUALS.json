@@ -1,0 +1,32 @@
+[
+  {
+    "assertion": "only completely observed no-purchase is zero",
+    "input_refs": "operation trace",
+    "expected": [
+      0,
+      null,
+      null
+    ],
+    "actual": [
+      0,
+      null,
+      null
+    ],
+    "passed": true
+  },
+  {
+    "assertion": "missingness distinctions preserved",
+    "input_refs": "operation trace",
+    "expected": [
+      "KNOWN_ZERO",
+      "MISSING_OBSERVATION",
+      "EXITED_OBSERVATION"
+    ],
+    "actual": [
+      "KNOWN_ZERO",
+      "MISSING_OBSERVATION",
+      "EXITED_OBSERVATION"
+    ],
+    "passed": true
+  }
+]

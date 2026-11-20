@@ -1,0 +1,218 @@
+{
+  "schema_version": "reference-design-1.0",
+  "status": "DESIGN_ONLY;not vendor schema;not executed",
+  "time_semantics": {
+    "utc": "timezone aware; clock error bounds required",
+    "valid_time": "[valid_from, valid_to)",
+    "system_time": "[recorded_at, superseded_at)",
+    "available_at": "When specifically named consumer product could use this version; not mere event time or insertion time",
+    "read_rule": "source event/edge/feature knowledge available by as_of; read permission valid at actual read_at; no retroactive edge discovery"
+  },
+  "entities": {
+    "IdentityKey": {
+      "required": [
+        "tenant_ref",
+        "issuer_ref",
+        "namespace_version",
+        "entity_type",
+        "scoped_token_ref",
+        "token_key_version"
+      ],
+      "entity_type_enum": [
+        "device",
+        "installation",
+        "account",
+        "person",
+        "household"
+      ],
+      "forbidden": "No raw personal IDs or reversible token registry in audit; no empty/unknown scoped-key auto matching"
+    },
+    "RelationshipRevision": {
+      "required": [
+        "relation_id",
+        "revision",
+        "from_key_ref",
+        "to_key_ref",
+        "relation_type",
+        "grain",
+        "source_evidence_ref",
+        "method_version",
+        "quality_kind",
+        "quality_scope",
+        "match_status",
+        "valid_from",
+        "recorded_at",
+        "available_at",
+        "purpose",
+        "policy_epoch",
+        "graph_version"
+      ],
+      "nullable_fields_require_reason": [
+        "valid_to",
+        "superseded_at",
+        "revoked_at",
+        "expires_at",
+        "calibrated_probability"
+      ],
+      "quality_kind_enum": [
+        "authenticated_account_control",
+        "provider_asserted",
+        "uncalibrated_score",
+        "calibrated_on_declared_population",
+        "unknown"
+      ],
+      "relation_type_enum": [
+        "installed_on",
+        "logged_in_as",
+        "provider_claimed_same_entity",
+        "candidate_same_entity",
+        "cannot_link"
+      ],
+      "constraints": [
+        "entity grain cannot silently change",
+        "confidence is nullable; no default certainty",
+        "new graph membership retains original edges and revision refs"
+      ]
+    },
+    "ResolutionReceipt": {
+      "required": [
+        "resolver_owner",
+        "component_version",
+        "namespace_mapping_ref",
+        "input_receipt_refs",
+        "relation_method",
+        "entity_grain",
+        "result_type",
+        "match_status",
+        "quality_scope",
+        "allowed_purpose",
+        "policy_ref",
+        "resolved_at",
+        "available_at",
+        "evidence_permission_ref"
+      ],
+      "match_status_enum": [
+        "existing_entity_asserted",
+        "new_derived_key",
+        "ambiguous",
+        "no_match",
+        "unknown"
+      ],
+      "rule": "A nonempty identifier is not sufficient to assert existing-entity match; provider assertion does not establish actual personal truth"
+    },
+    "EventRevision": {
+      "required": [
+        "tenant_ref",
+        "app_ref",
+        "source",
+        "source_event_id",
+        "revision",
+        "event_type",
+        "origin_entity_refs",
+        "occurred_at",
+        "received_at",
+        "available_at",
+        "purpose",
+        "policy_epoch",
+        "source_receipt_ref"
+      ],
+      "optional": [
+        "install_ref",
+        "session_ref",
+        "opportunity_ref",
+        "candidate_ref",
+        "impression_ref",
+        "order_ref",
+        "ledger_entry_ref",
+        "amount",
+        "currency",
+        "precision",
+        "correction_of"
+      ],
+      "rule": "Economic identities remain typed and independently unique; no approximate timestamp join"
+    },
+    "FeatureBundle": {
+      "required": [
+        "bundle_ref",
+        "feature_group_version",
+        "producer_version",
+        "graph_version",
+        "membership_revision_refs",
+        "source_event_revision_refs",
+        "entity_scope",
+        "as_of",
+        "materialized_at",
+        "consumer_available_at",
+        "purpose",
+        "policy_epoch",
+        "missingness",
+        "eligibility",
+        "computed_feature_count"
+      ],
+      "rule": "Bundle delivered is not model consumed; values must not include unknown/expired relations as confirmed"
+    },
+    "ConsumerReceipt": {
+      "required": [
+        "receiver_product",
+        "environment",
+        "model_owner",
+        "model_family",
+        "model_version",
+        "task",
+        "inference_ref",
+        "feature_read_ref",
+        "bundle_ref",
+        "actual_nonempty_input_refs",
+        "lineage_ref",
+        "read_at",
+        "opportunity_audit_ref",
+        "decision_ref",
+        "decision_at",
+        "decision_use",
+        "source_audit_ref"
+      ],
+      "decision_use_enum": [
+        "active",
+        "shadow",
+        "unused"
+      ],
+      "rule": "Store fetch, fallback default, shadow score and active decision are distinct; records require authenticity evidence"
+    },
+    "DeletionCase": {
+      "required": [
+        "case_ref",
+        "subject_scope_ref",
+        "purpose_scope",
+        "policy_ref",
+        "requested_at",
+        "effective_at",
+        "deny_epoch",
+        "impacted_relation_refs",
+        "impacted_event_refs",
+        "feature_lineage_refs",
+        "sink_acknowledgements",
+        "pending_sinks",
+        "retention_exceptions",
+        "training_impact_disposition",
+        "audit_ref"
+      ],
+      "states": [
+        "RECEIVED",
+        "READS_BLOCKED",
+        "INVALIDATING",
+        "ACK_PENDING",
+        "COMPLETE_FOR_DECLARED_SCOPE",
+        "EXCEPTION_OR_UNKNOWN"
+      ],
+      "rule": "COMPLETE needs explicitly bounded sink coverage; does not imply trained weights unlearned"
+    }
+  },
+  "not_provided": [
+    "production schemas",
+    "PII samples",
+    "identity service credentials",
+    "trained models",
+    "resolver executable",
+    "Axon/Vector feature dictionaries"
+  ]
+}

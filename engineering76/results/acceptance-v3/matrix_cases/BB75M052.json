@@ -1,0 +1,74 @@
+{
+  "case": {
+    "case_id": "BB75M052",
+    "original_row": {
+      "row_id": "BB75M052",
+      "hypothesis": "HH_household",
+      "training_scope": "Any",
+      "online_link_scope": "Household/network association,not individual equality",
+      "observation_id": "O4_audience",
+      "observation": "测试账户可见受众状态",
+      "controllable_input": "Platform-approved source canary and destination scope;no real PII",
+      "observable_output": "Audience membership/change time in an explicitly authorized test console",
+      "expected_difference": "Shared-network/household effects can mimic cross-device co-response;must separate network group from permitted account link. Could show a receiver processed an inclusion rule;not independent proof of learned value",
+      "major_confounders": "Async refresh,retention,manual list upload,household eligibility,wrong namespace",
+      "additional_evidence_required": "Receiver/product/granularity/version and event-receipt mapping",
+      "identifiability": "条件识别受众处理；不识别Axon/Vector模型使用",
+      "identifying_assumptions": "Random assignment/positivity;no source->target context leakage;frozen aggregate/model/stock/caps;no interference or cluster it;known delivery latency;purpose-valid consent;valid denominator and observed receipt.",
+      "entity_claim_boundary": "Competing nuisance mechanism;shared IP does not establish a household truth",
+      "current_level": "L0/design plus offline synthetic;no real L1/L2 execution",
+      "evidence_ids": "IV74S01;IV74S02;IV74S04;IV74S05;IV74S09;IG72S05;MA60S17"
+    },
+    "fixture_route": "D1",
+    "observation_level": "audience",
+    "expected_status": "BOUNDED_AUDIENCE_STATE",
+    "required_claims": [
+      "recipient_test_audience_state"
+    ],
+    "forbidden_claims": [
+      "natural_person",
+      "household",
+      "cross_device_account",
+      "Axon_Vector_model_consumption",
+      "independent_value_gain",
+      "H0_training_origin",
+      "H3_training_origin"
+    ],
+    "hypothesis_outcome": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+    "scope": "ENGINE_FIXTURE_OR_CONTRACT_FIXTURE_ONLY;NO_REAL_H2_PERSON_HOUSEHOLD_ENGINE",
+    "ablation": "Remove audience/match scope or route provenance;must never produce stronger claims"
+  },
+  "input": {
+    "observation_level": "audience",
+    "audience": {
+      "scope_attested": true,
+      "namespace": "mock-audience",
+      "receiver": "mock-service",
+      "member": true
+    }
+  },
+  "verdict": {
+    "status": "BOUNDED_AUDIENCE_STATE",
+    "claims": [
+      "recipient_test_audience_state"
+    ],
+    "limit": "Audience is not actual value-feature use"
+  },
+  "hypothesis_observed": "NOT_IDENTIFIED_AT_REQUESTED_HYPOTHESIS_LEVEL",
+  "weakened_input": {
+    "observation_level": "audience",
+    "audience": {
+      "scope_attested": false,
+      "namespace": "mock-audience",
+      "receiver": "mock-service",
+      "member": true
+    }
+  },
+  "weakened_verdict": {
+    "status": "UNIDENTIFIABLE",
+    "claims": [],
+    "limit": "Audience is not actual value-feature use"
+  },
+  "derived_variant_verdict": null,
+  "passed": true
+}

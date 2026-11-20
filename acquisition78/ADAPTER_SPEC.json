@@ -1,0 +1,118 @@
+{
+  "specification_version": "78.1",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "current_engine": "engineering76/mock76/auditor.py",
+  "current_engine_environment": "offline-mock only",
+  "production_adapter_connected": false,
+  "production_adapter_implemented": false,
+  "real_packets_received": 0,
+  "proposed_input": "Authorized export or independently reviewable scoped report;no live API",
+  "input_restrictions": [
+    "No raw personal identifiers or their direct hashes",
+    "Owner retains mapping;limited audit aliases only after rights review",
+    "Do not convert production records into offline-mock fixtures",
+    "Do not query for missing fields"
+  ],
+  "required_groups": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08",
+    "F09",
+    "F10"
+  ],
+  "gates": [
+    {
+      "id": "G00",
+      "check": "permission and lawful handling",
+      "missing_result": "STOP_AUTHORIZATION",
+      "executed": false
+    },
+    {
+      "id": "G01",
+      "check": "source authenticity and independent review",
+      "missing_result": "PROVENANCE_UNVERIFIED",
+      "executed": false
+    },
+    {
+      "id": "G02",
+      "check": "specific product/model/task/environment",
+      "missing_result": "SCOPE_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G03",
+      "check": "relation semantics and entity scope",
+      "missing_result": "RELATION_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G04",
+      "check": "actual receiver evidence",
+      "missing_result": "RECEIPT_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G05",
+      "check": "time and lifecycle",
+      "missing_result": "TIME_OR_LIFECYCLE_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G06",
+      "check": "actual valid non-default model input",
+      "missing_result": "READ_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G07",
+      "check": "opportunity and active decision references",
+      "missing_result": "DECISION_LINK_UNRESOLVED",
+      "executed": false
+    },
+    {
+      "id": "G08",
+      "check": "scoped integrity,coverage and limitations",
+      "missing_result": "COVERAGE_UNRESOLVED",
+      "executed": false
+    }
+  ],
+  "output_fields": [
+    "claim_ref",
+    "predicate",
+    "environment",
+    "product/model/task/version",
+    "entity_scope",
+    "evidence_refs",
+    "provenance_verification",
+    "independence_scope",
+    "gate_results",
+    "missing_fields",
+    "contradictions",
+    "permission_scope",
+    "supported_subclaims",
+    "not_identified",
+    "reviewer/decision_date"
+  ],
+  "result_classes": [
+    "STOP_AUTHORIZATION",
+    "INVALID_EVIDENCE",
+    "UNIDENTIFIABLE",
+    "A_COMPONENT_ONLY",
+    "B_RECEIVED_SCOPED",
+    "C_TEST_ONLY",
+    "C_SHADOW_ONLY",
+    "C_TRAINING_ONLY",
+    "C_GRAPH_REPORTED",
+    "C_GRAPH_CONFIRMED_SCOPED",
+    "NO_READ_OBSERVED_SCOPED",
+    "D_SCOPED_REAL_INCREMENT"
+  ],
+  "independence": "Verified original provenance plus explicitly scoped independent inspection of actual emission/consumption path;signature alone not factual truth",
+  "time_rule": "Per-dependency DAG with clock uncertainty;no fabricated global ordering across systems",
+  "c_graph_vs_D": "Confirmed actual consumption does not establish independent predictive gain;effect does not identify architecture"
+}

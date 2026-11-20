@@ -49,6 +49,7 @@ def main():
     forbidden = {".apk", ".xapk", ".apks", ".aab", ".dex", ".so", ".exe", ".dll",
                  ".xlsx", ".xls", ".download", ".parquet", ".pem", ".p12", ".pfx", ".keystore"}
     counts = dict(python=0, json=0, csv=0)
+    alternate_log_encodings = []
     gaps = []
     for p in files:
         rel = p.relative_to(ROOT).as_posix()
@@ -56,13 +57,23 @@ def main():
             errors.append("Excluded material in publication: " + rel)
         if p.stat().st_size >= 100_000_000:
             errors.append("GitHub file size limit: " + rel)
-        if p.suffix not in {".md", ".py", ".json", ".csv", ".java", ".txt"}:
+        if p.suffix not in {".md", ".py", ".json", ".csv", ".java", ".txt", ".sql", ".diff", ".log", ".jsonl"}:
             continue
         try:
             content = p.read_text(encoding="utf-8-sig")
         except UnicodeError:
-            errors.append("Invalid text encoding: " + rel)
-            continue
+            # PowerShell historical stdout is UTF-16 with an explicit BOM.
+            # Preserve original bytes/hashes; do not silently replace characters.
+            if p.suffix == ".log" and p.read_bytes()[:2] in {b"\xff\xfe", b"\xfe\xff"}:
+                try:
+                    content = p.read_text(encoding="utf-16")
+                    alternate_log_encodings.append(dict(path=rel, encoding="utf-16-bom", sha256=sha(p)))
+                except UnicodeError:
+                    errors.append("Invalid UTF-16 log: " + rel)
+                    continue
+            else:
+                errors.append("Invalid text encoding: " + rel)
+                continue
         for kind, pattern in patterns.items():
             if re.search(pattern, content):
                 errors.append("Credential pattern " + kind + " in " + rel)
@@ -97,8 +108,13 @@ def main():
         writer.writeheader()
         writer.writerows(gaps)
     reports = sorted(p for p in ROOT.glob("*.md") if re.match(r"\d\d_", p.name))
-    if len(reports) != 71:
-        errors.append("Expected 71 original numbered reports")
+    current_scope = ROOT / "publication/CURRENT_SCOPE.json"
+    expected_reports = json.loads(current_scope.read_text(encoding="utf-8"))["numbered_reports"] if current_scope.exists() else 71
+    if len(reports) != expected_reports:
+        errors.append("Numbered report count differs from frozen publication scope")
+    original_report_paths = [x["path"] for x in original if re.match(r"(?:[0-5][0-9]|6[0-7])_.*\.md$", x["path"])]
+    if len(original_report_paths) != 71:
+        errors.append("Original 00-67 report inventory changed")
     result = dict(
         status="PASS" if not errors else "FAIL",
         checked_utc=datetime.now(timezone.utc).isoformat(),
@@ -107,6 +123,7 @@ def main():
         parsed_files=counts, historical_local_reference_gaps=len(gaps),
         production_requests=0, sdk_execution=False, raw_datasets_included=False,
         source_workspace_modified=False, errors=errors,
+        alternate_log_encodings=alternate_log_encodings,
         scope="Publication integrity and navigation, not independent production/model validation",
     )
     (ROOT / "publication/VALIDATION.json").write_text(

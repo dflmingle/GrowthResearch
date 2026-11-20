@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "hypothetical_cases_only": true,
+  "current_L2_permission": false,
+  "external_execution": false,
+  "checks": [
+    {
+      "case": "L0 offline",
+      "input": {
+        "level": "L0",
+        "action": "offline_synthetic"
+      },
+      "allowed": true,
+      "reason": "L0 has no external experiment"
+    },
+    {
+      "case": "L1 local mock",
+      "input": {
+        "level": "L1",
+        "owned_resources": true,
+        "mock_only": true
+      },
+      "allowed": true,
+      "reason": "Owned devices alone do not authorize platform experiments"
+    },
+    {
+      "case": "L1 owned but production ad request",
+      "input": {
+        "level": "L1",
+        "owned_resources": true,
+        "mock_only": false,
+        "production_ad_request": true
+      },
+      "allowed": false,
+      "reason": "No production ads/events in round75"
+    },
+    {
+      "case": "L1 unapproved identity query",
+      "input": {
+        "level": "L1",
+        "owned_resources": true,
+        "mock_only": true,
+        "real_personal_identity_query": true
+      },
+      "allowed": false,
+      "reason": "No real identity queries in round75"
+    },
+    {
+      "case": "L2 no written scope",
+      "input": {
+        "level": "L2",
+        "test_namespace": true,
+        "synthetic_test_subjects": true,
+        "privacy_purpose_allowed": true,
+        "endpoint_in_scope": true
+      },
+      "allowed": false,
+      "reason": "L2 is prospective scoped sandbox only;no such permission held now"
+    },
+    {
+      "case": "L2 hypothetical approved sandbox",
+      "input": {
+        "level": "L2",
+        "written_platform_scope": true,
+        "test_namespace": true,
+        "synthetic_test_subjects": true,
+        "privacy_purpose_allowed": true,
+        "endpoint_in_scope": true,
+        "external_endpoint": "explicit_sandbox"
+      },
+      "allowed": true,
+      "reason": "L2 is prospective scoped sandbox only;no such permission held now"
+    },
+    {
+      "case": "L2 purpose denied",
+      "input": {
+        "level": "L2",
+        "written_platform_scope": true,
+        "test_namespace": true,
+        "synthetic_test_subjects": true,
+        "privacy_purpose_allowed": false,
+        "endpoint_in_scope": true
+      },
+      "allowed": false,
+      "reason": "L2 is prospective scoped sandbox only;no such permission held now"
+    },
+    {
+      "case": "derived return",
+      "input": {
+        "rampid_returned": true,
+        "maintained": false
+      },
+      "interpretation": [
+        "derived_or_unknown_not_existing_match"
+      ]
+    },
+    {
+      "case": "ad response",
+      "input": {
+        "ad_changed": true
+      },
+      "interpretation": [
+        "response_change_only"
+      ]
+    },
+    {
+      "case": "same login",
+      "input": {
+        "same_account": true
+      },
+      "interpretation": [
+        "account_not_person"
+      ]
+    },
+    {
+      "case": "Exchange cooperation",
+      "input": {
+        "exchange_partner": true
+      },
+      "interpretation": [
+        "exchange_not_vector_consumption"
+      ]
+    },
+    {
+      "case": "logged feature without nonnull read",
+      "input": {
+        "feature_consumed": true,
+        "authorized_trace": true,
+        "source_lineage": true
+      },
+      "interpretation": []
+    }
+  ]
+}

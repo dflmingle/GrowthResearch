@@ -1,0 +1,143 @@
+{
+  "account_a": {
+    "bundle_ref": "bundle_000029",
+    "as_of": 1767225600,
+    "consumer_available_at": 1767225600,
+    "values": {
+      "observed_revenue_micros": 1450000,
+      "revenue_micros": 1450000,
+      "observed_ledger_count": 2,
+      "app_instance_count": 2,
+      "currency": "USD",
+      "revenue_by_currency_micros": {
+        "USD": 1450000
+      },
+      "observation_status": "OBSERVED_COMPLETE",
+      "person_inferred": false
+    },
+    "lineage": {
+      "entity_refs": [
+        "entity_000002",
+        "entity_000003",
+        "entity_000005",
+        "entity_000010",
+        "entity_000013"
+      ],
+      "edge_revisions": [
+        [
+          "edge_000011",
+          1
+        ],
+        [
+          "edge_000014",
+          1
+        ],
+        [
+          "edge_000015",
+          1
+        ],
+        [
+          "edge_000016",
+          1
+        ]
+      ],
+      "event_refs": [
+        "event_000018",
+        "event_000021"
+      ],
+      "ledger_refs": [
+        "ledger_000020",
+        "ledger_000023"
+      ],
+      "coverage_refs": [
+        "coverage_000027",
+        "coverage_000028"
+      ],
+      "incomplete_reasons": [],
+      "feature_group": "observed-economic-history-v1",
+      "environment": "LOCAL_SYNTHETIC_ONLY"
+    },
+    "graph_version": 10,
+    "policy_epoch": 7
+  },
+  "account_b": {
+    "bundle_ref": "bundle_000030",
+    "as_of": 1767225600,
+    "consumer_available_at": 1767225600,
+    "values": {
+      "observed_revenue_micros": 9000000,
+      "revenue_micros": 9000000,
+      "observed_ledger_count": 1,
+      "app_instance_count": 1,
+      "currency": "USD",
+      "revenue_by_currency_micros": {
+        "USD": 9000000
+      },
+      "observation_status": "OBSERVED_COMPLETE",
+      "person_inferred": false
+    },
+    "lineage": {
+      "entity_refs": [
+        "entity_000002",
+        "entity_000006",
+        "entity_000010"
+      ],
+      "edge_revisions": [
+        [
+          "edge_000011",
+          1
+        ],
+        [
+          "edge_000017",
+          1
+        ]
+      ],
+      "event_refs": [
+        "event_000024"
+      ],
+      "ledger_refs": [
+        "ledger_000026"
+      ],
+      "coverage_refs": [
+        "coverage_000027"
+      ],
+      "incomplete_reasons": [],
+      "feature_group": "observed-economic-history-v1",
+      "environment": "LOCAL_SYNTHETIC_ONLY"
+    },
+    "graph_version": 10,
+    "policy_epoch": 7
+  },
+  "person_isolated": {
+    "bundle_ref": "bundle_000031",
+    "as_of": 1767225600,
+    "consumer_available_at": 1767225600,
+    "values": {
+      "observed_revenue_micros": 0,
+      "revenue_micros": null,
+      "observed_ledger_count": 0,
+      "app_instance_count": 0,
+      "currency": "USD",
+      "revenue_by_currency_micros": {},
+      "observation_status": "NOT_FULLY_OBSERVED",
+      "person_inferred": false
+    },
+    "lineage": {
+      "entity_refs": [
+        "entity_000008"
+      ],
+      "edge_revisions": [],
+      "event_refs": [],
+      "ledger_refs": [],
+      "coverage_refs": [],
+      "incomplete_reasons": [
+        "NO_ELIGIBLE_APP_OBSERVATION",
+        "NO_SUPPORTED_PERSON_OR_HOUSEHOLD_RELATION"
+      ],
+      "feature_group": "observed-economic-history-v1",
+      "environment": "LOCAL_SYNTHETIC_ONLY"
+    },
+    "graph_version": 10,
+    "policy_epoch": 7
+  }
+}

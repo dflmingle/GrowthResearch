@@ -1,0 +1,30 @@
+[
+  {
+    "assertion": "device-owned app instance erased",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  },
+  {
+    "assertion": "only deleted device contribution removed",
+    "input_refs": "operation trace",
+    "expected": 200,
+    "actual": 200,
+    "passed": true
+  },
+  {
+    "assertion": "separate device account remains valid",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  },
+  {
+    "assertion": "erased installation control authority exists",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  }
+]

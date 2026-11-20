@@ -1,0 +1,911 @@
+{
+  "nodes": [
+    {
+      "id": "SIRN_namespace",
+      "label": "Scoped namespaces: tenant/issuer/app/partner and typed entities",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_resolver",
+      "label": "Authorized deterministic relations and optional scored candidates",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_graph",
+      "label": "Confidence-aware temporal relationship graph reference design",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_event",
+      "label": "Temporal event and economic ledger linkage reference design",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_feature",
+      "label": "As-of feature service and independent consumer receipts",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_consent",
+      "label": "Consent/revocation/deletion design, not a compliance certificate",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_audit",
+      "label": "Provenance and anonymous evidence acceptance design",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "SIRN_boundary",
+      "label": "Axon/Vector C_graph and D UNKNOWN; production forensics STOP",
+      "stage": "unproven",
+      "contains_real_personal_data": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "SIRE01",
+      "source": "SIRN_namespace",
+      "target": "SIRN_resolver",
+      "source_ids": [
+        "SIR14",
+        "SIR15",
+        "SIR16",
+        "SIRL07"
+      ],
+      "claim": "Issuer/client scope and authentication references; not verified person identity",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE02",
+      "source": "SIRN_resolver",
+      "target": "SIRN_graph",
+      "source_ids": [
+        "SIR01",
+        "SIR02",
+        "SIR03",
+        "SIR05",
+        "SIR06",
+        "SIRL07"
+      ],
+      "claim": "Candidate and typed account relations must pass independent graph/policy constraints",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE03",
+      "source": "SIRN_graph",
+      "target": "SIRN_feature",
+      "source_ids": [
+        "SIR04",
+        "SIR07",
+        "SIR08",
+        "SIR18",
+        "SIR19",
+        "SIRL07"
+      ],
+      "claim": "Reference clustering and uncertainty concepts; no vendor graph inference",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE04",
+      "source": "SIRN_event",
+      "target": "SIRN_feature",
+      "source_ids": [
+        "AMSS05",
+        "AMSS06",
+        "SIRL07"
+      ],
+      "claim": "Separate identity relation, economic idempotence and event/available time",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE05",
+      "source": "SIRN_consent",
+      "target": "SIRN_feature",
+      "source_ids": [
+        "SIR17",
+        "EC78S01",
+        "SIRL04",
+        "SIRL07"
+      ],
+      "claim": "Revocation and derived feature invalidation are independent proposed rules",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE06",
+      "source": "SIRN_feature",
+      "target": "SIRN_audit",
+      "source_ids": [
+        "SIR11",
+        "SIR12",
+        "SIR13",
+        "SIRL05",
+        "SIRL07"
+      ],
+      "claim": "Feature materialization/retrieval differ from nonempty model consumption and active decision",
+      "status": "reference_design",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE07",
+      "source": "SIRN_audit",
+      "target": "SIRN_boundary",
+      "source_ids": [
+        "EC78S01",
+        "EC78S04",
+        "SIRL10"
+      ],
+      "claim": "No new vendor receipt or model-read evidence; production status unchanged",
+      "status": "unknown",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "SIRE08",
+      "source": "SIRN_namespace",
+      "target": "SIRN_boundary",
+      "source_ids": [
+        "IV74S02",
+        "IG72S05",
+        "SIRL10"
+      ],
+      "claim": "Partner encoding/Exchange contract does not map to Axon/Vector production model",
+      "status": "unknown",
+      "evidence_level": "E: independent design with scoped original reference sources",
+      "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "SIR01",
+      "path": "server-identity-reference/sources/splink-theory.raw",
+      "sha256": "d0a1d728d00a051881f66636a3f040db258cbb6d6d28171302e2c8aa0d08b88a",
+      "url": "https://raw.githubusercontent.com/moj-analytical-services/splink/f319070e56c5b3666ec512811ac1820070f6f2e5/docs/topic_guides/theory/fellegi_sunter.md",
+      "source_date": "2026-11-20T08:36:07.873056+00:00",
+      "text_path": "server-identity-reference/sources/splink-theory.raw",
+      "text_sha256": "d0a1d728d00a051881f66636a3f040db258cbb6d6d28171302e2c8aa0d08b88a",
+      "start_line": 13,
+      "end_line": 20,
+      "evidence_kind": "REF_DOC",
+      "scope": "Splink pinned documentation",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR02",
+      "path": "server-identity-reference/sources/splink-theory.raw",
+      "sha256": "d0a1d728d00a051881f66636a3f040db258cbb6d6d28171302e2c8aa0d08b88a",
+      "url": "https://raw.githubusercontent.com/moj-analytical-services/splink/f319070e56c5b3666ec512811ac1820070f6f2e5/docs/topic_guides/theory/fellegi_sunter.md",
+      "source_date": "2026-11-20T08:36:07.873056+00:00",
+      "text_path": "server-identity-reference/sources/splink-theory.raw",
+      "text_sha256": "d0a1d728d00a051881f66636a3f040db258cbb6d6d28171302e2c8aa0d08b88a",
+      "start_line": 127,
+      "end_line": 135,
+      "evidence_kind": "REF_DOC",
+      "scope": "Splink theory, selected paragraph",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR03",
+      "path": "server-identity-reference/sources/splink-deterministic.raw",
+      "sha256": "49f5e10c6d3c5a3cca9f277bf836bc69f15d7cf99dc7733c933de3096d6433d2",
+      "url": "https://raw.githubusercontent.com/moj-analytical-services/splink/f319070e56c5b3666ec512811ac1820070f6f2e5/docs/topic_guides/theory/probabilistic_vs_deterministic.md",
+      "source_date": "2026-11-20T08:36:07.874056+00:00",
+      "text_path": "server-identity-reference/sources/splink-deterministic.raw",
+      "text_sha256": "49f5e10c6d3c5a3cca9f277bf836bc69f15d7cf99dc7733c933de3096d6433d2",
+      "start_line": 76,
+      "end_line": 83,
+      "evidence_kind": "REF_DOC",
+      "scope": "Record linkage routes; not authenticated-login proof",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR04",
+      "path": "server-identity-reference/sources/splink-cluster-code.raw",
+      "sha256": "2d5127753ff54f32387c437075211c8497fd43b006fbd898bd2d488b932c9367",
+      "url": "https://raw.githubusercontent.com/moj-analytical-services/splink/f319070e56c5b3666ec512811ac1820070f6f2e5/splink/internals/clustering.py",
+      "source_date": "2026-11-20T08:36:07.875056+00:00",
+      "text_path": "server-identity-reference/sources/splink-cluster-code.raw",
+      "text_sha256": "2d5127753ff54f32387c437075211c8497fd43b006fbd898bd2d488b932c9367",
+      "start_line": 42,
+      "end_line": 69,
+      "evidence_kind": "REF_CODE",
+      "scope": "Only selected function/docstring, not full package behavior",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR05",
+      "path": "server-identity-reference/sources/dedupe-matching.raw",
+      "sha256": "4a94b896532a1128ba1264a90db2da1a2f84392947aced25afa793d6ba07e841",
+      "url": "https://raw.githubusercontent.com/dedupeio/dedupe/3f61e79102910bd355e920a2df7e44c14c9cb247/docs/how-it-works/Matching-records.rst",
+      "source_date": "2026-11-20T08:36:08.990534+00:00",
+      "text_path": "server-identity-reference/sources/dedupe-matching.raw",
+      "text_sha256": "4a94b896532a1128ba1264a90db2da1a2f84392947aced25afa793d6ba07e841",
+      "start_line": 91,
+      "end_line": 100,
+      "evidence_kind": "REF_DOC",
+      "scope": "dedupe algorithm description, not current dependency-runtime verification",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR06",
+      "path": "server-identity-reference/sources/dedupe-threshold.raw",
+      "sha256": "90a037b45d8543a72411e804e9cc357b8e0649c586bee9f2d0a8c52f4feb9042",
+      "url": "https://raw.githubusercontent.com/dedupeio/dedupe/3f61e79102910bd355e920a2df7e44c14c9cb247/docs/how-it-works/Choosing-a-good-threshold.rst",
+      "source_date": "2026-11-20T08:36:08.991534+00:00",
+      "text_path": "server-identity-reference/sources/dedupe-threshold.raw",
+      "text_sha256": "90a037b45d8543a72411e804e9cc357b8e0649c586bee9f2d0a8c52f4feb9042",
+      "start_line": 25,
+      "end_line": 33,
+      "evidence_kind": "REF_DOC",
+      "scope": "dedupe threshold documentation",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR07",
+      "path": "server-identity-reference/sources/dedupe-cluster-code.raw",
+      "sha256": "4ce419422aa800dde48b213369d34dd5801b7736773b5bffe45464896b9e0f6d",
+      "url": "https://raw.githubusercontent.com/dedupeio/dedupe/3f61e79102910bd355e920a2df7e44c14c9cb247/dedupe/clustering.py",
+      "source_date": "2026-11-20T08:36:09.600036+00:00",
+      "text_path": "server-identity-reference/sources/dedupe-cluster-code.raw",
+      "text_sha256": "4ce419422aa800dde48b213369d34dd5801b7736773b5bffe45464896b9e0f6d",
+      "start_line": 232,
+      "end_line": 242,
+      "evidence_kind": "REF_CODE",
+      "scope": "dedupe cluster function snippet only",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR08",
+      "path": "server-identity-reference/sources/dedupe-grouping.raw",
+      "sha256": "515ba2aa2fde6e04c87fe8ebeab7ac6b422fecd8036397ed7eb2e8a6b5e855ee",
+      "url": "https://raw.githubusercontent.com/dedupeio/dedupe/3f61e79102910bd355e920a2df7e44c14c9cb247/docs/how-it-works/Grouping-duplicates.rst",
+      "source_date": "2026-11-20T08:36:08.990534+00:00",
+      "text_path": "server-identity-reference/sources/dedupe-grouping.raw",
+      "text_sha256": "515ba2aa2fde6e04c87fe8ebeab7ac6b422fecd8036397ed7eb2e8a6b5e855ee",
+      "start_line": 36,
+      "end_line": 45,
+      "evidence_kind": "REF_DOC",
+      "scope": "dedupe clustering rationale",
+      "license_scope": "MIT",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR09",
+      "path": "server-identity-reference/sources/recordlinkage-classifiers.raw",
+      "sha256": "4c602affa050356cf60c9bdd131a83aeeb1be5954c1c5361f6a172fe2e20a09f",
+      "url": "https://raw.githubusercontent.com/J535D165/recordlinkage/b93d97641952f8c85106be5794ca93b1f1298fbc/docs/ref-classifiers.rst",
+      "source_date": "2026-11-20T08:36:09.602036+00:00",
+      "text_path": "server-identity-reference/sources/recordlinkage-classifiers.raw",
+      "text_sha256": "4c602affa050356cf60c9bdd131a83aeeb1be5954c1c5361f6a172fe2e20a09f",
+      "start_line": 7,
+      "end_line": 16,
+      "evidence_kind": "REF_DOC",
+      "scope": "Toolkit API documentation, generated API bodies not fetched",
+      "license_scope": "BSD-3-Clause",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR10",
+      "path": "server-identity-reference/sources/recordlinkage-datasets.raw",
+      "sha256": "d35ff7da19ea80f03383042cbbadabf4b57912b442ef783e875749716abd958a",
+      "url": "https://raw.githubusercontent.com/J535D165/recordlinkage/b93d97641952f8c85106be5794ca93b1f1298fbc/docs/ref-datasets.rst",
+      "source_date": "2026-11-20T08:36:09.603036+00:00",
+      "text_path": "server-identity-reference/sources/recordlinkage-datasets.raw",
+      "text_sha256": "d35ff7da19ea80f03383042cbbadabf4b57912b442ef783e875749716abd958a",
+      "start_line": 4,
+      "end_line": 14,
+      "evidence_kind": "REF_DOC",
+      "scope": "Dataset documentation only; no rows downloaded",
+      "license_scope": "BSD-3-Clause repository; underlying datasets not automatically covered",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR11",
+      "path": "server-identity-reference/sources/feast-point-time.raw",
+      "sha256": "ce3d3a52023509f3a985e2900689835550537303b6e7a72bdcc0cda5c06507a8",
+      "url": "https://raw.githubusercontent.com/feast-dev/feast/1d6cfb40f47e82872a6275b96867746ca6ef5e88/docs/getting-started/concepts/point-in-time-joins.md",
+      "source_date": "2026-11-20T08:36:10.159806+00:00",
+      "text_path": "server-identity-reference/sources/feast-point-time.raw",
+      "text_sha256": "ce3d3a52023509f3a985e2900689835550537303b6e7a72bdcc0cda5c06507a8",
+      "start_line": 65,
+      "end_line": 85,
+      "evidence_kind": "REF_DOC",
+      "scope": "Pinned Feast docs, not all backends verified",
+      "license_scope": "Apache-2.0",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR12",
+      "path": "server-identity-reference/sources/feast-point-time.raw",
+      "sha256": "ce3d3a52023509f3a985e2900689835550537303b6e7a72bdcc0cda5c06507a8",
+      "url": "https://raw.githubusercontent.com/feast-dev/feast/1d6cfb40f47e82872a6275b96867746ca6ef5e88/docs/getting-started/concepts/point-in-time-joins.md",
+      "source_date": "2026-11-20T08:36:10.159806+00:00",
+      "text_path": "server-identity-reference/sources/feast-point-time.raw",
+      "text_sha256": "ce3d3a52023509f3a985e2900689835550537303b6e7a72bdcc0cda5c06507a8",
+      "start_line": 83,
+      "end_line": 87,
+      "evidence_kind": "REF_DOC",
+      "scope": "Flag support and null behavior per docs",
+      "license_scope": "Apache-2.0",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR13",
+      "path": "server-identity-reference/sources/feast-entity.raw",
+      "sha256": "d6a67c37fe8bc56c77faed2515b1daf1ee486fc686033f0468cf8adea5fcef0a",
+      "url": "https://raw.githubusercontent.com/feast-dev/feast/1d6cfb40f47e82872a6275b96867746ca6ef5e88/docs/getting-started/concepts/entity.md",
+      "source_date": "2026-11-20T08:36:10.161807+00:00",
+      "text_path": "server-identity-reference/sources/feast-entity.raw",
+      "text_sha256": "d6a67c37fe8bc56c77faed2515b1daf1ee486fc686033f0468cf8adea5fcef0a",
+      "start_line": 4,
+      "end_line": 12,
+      "evidence_kind": "REF_DOC",
+      "scope": "Feast entity concept",
+      "license_scope": "Apache-2.0",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR14",
+      "path": "server-identity-reference/sources/oidc-core.raw",
+      "sha256": "4d016752a645e8a3c259baa4173b5a90cb6c82898ce868fc8444adde262a5aed",
+      "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "source_date": "2026-11-20T08:36:10.648731+00:00",
+      "text_path": "server-identity-reference/sources/oidc-core.txt",
+      "text_sha256": "42fbdc978e344bc623bbe6f159618e7289b13aa7a62b1831487516f7dde7e454",
+      "start_line": 663,
+      "end_line": 671,
+      "evidence_kind": "PROTOCOL",
+      "scope": "OIDC Core1.0 errata2, not advertising-platform adoption",
+      "license_scope": "OIDF Notices; specification implementation/citation, not blanket code license",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR15",
+      "path": "server-identity-reference/sources/oidc-core.raw",
+      "sha256": "4d016752a645e8a3c259baa4173b5a90cb6c82898ce868fc8444adde262a5aed",
+      "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "source_date": "2026-11-20T08:36:10.648731+00:00",
+      "text_path": "server-identity-reference/sources/oidc-core.txt",
+      "text_sha256": "42fbdc978e344bc623bbe6f159618e7289b13aa7a62b1831487516f7dde7e454",
+      "start_line": 3983,
+      "end_line": 3995,
+      "evidence_kind": "PROTOCOL",
+      "scope": "OIDC sections8/8.1; same sector exception preserved",
+      "license_scope": "OIDF Notices",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR16",
+      "path": "server-identity-reference/sources/oidc-core.raw",
+      "sha256": "4d016752a645e8a3c259baa4173b5a90cb6c82898ce868fc8444adde262a5aed",
+      "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "source_date": "2026-11-20T08:36:10.648731+00:00",
+      "text_path": "server-identity-reference/sources/oidc-core.txt",
+      "text_sha256": "42fbdc978e344bc623bbe6f159618e7289b13aa7a62b1831487516f7dde7e454",
+      "start_line": 672,
+      "end_line": 683,
+      "evidence_kind": "PROTOCOL",
+      "scope": "OIDC ID Token claims; stricter resolver policy is independent design",
+      "license_scope": "OIDF Notices",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR17",
+      "path": "server-identity-reference/sources/w3c-prov.raw",
+      "sha256": "5c925c21bc96c285b25017c3b90d82cf74251d07713b71fcb81ca60f873c9e88",
+      "url": "https://www.w3.org/TR/prov-dm/",
+      "source_date": "2026-11-20T08:36:10.670731+00:00",
+      "text_path": "server-identity-reference/sources/w3c-prov.txt",
+      "text_sha256": "b432d7bff7a284807c45806c779382581c03c5fbda6b6edf2da809eb7eb0eefb",
+      "start_line": 829,
+      "end_line": 836,
+      "evidence_kind": "PROTOCOL",
+      "scope": "PROV-DM recommendation2013-04-30; not privacy-law compliance guarantee",
+      "license_scope": "W3C document-use conditions",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR18",
+      "path": "server-identity-reference/sources/bayesian-paper-pdf.raw",
+      "sha256": "4995fd81d43878b5805d95b918f2e5cd1499ed6d9a68b3d1495382a061f84ef8",
+      "url": "https://arxiv.org/pdf/1312.4645",
+      "source_date": "2026-11-20T08:37:15.108608+00:00",
+      "text_path": "server-identity-reference/sources/bayesian-paper-pdf.txt",
+      "text_sha256": "c3f995b1b816db1cf71fc71f92a501a62d5999bfac72b9973c761a7ec86631dc",
+      "start_line": 12,
+      "end_line": 23,
+      "evidence_kind": "PAPER",
+      "scope": "Steorts/Hall/Fienberg; focused PDF page1 abstract; not device benchmark",
+      "license_scope": "arXiv nonexclusive-distrib/1.0; reading/citation only, no blanket redistribution/code grant",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIR19",
+      "path": "server-identity-reference/sources/bayesian-paper-pdf.raw",
+      "sha256": "4995fd81d43878b5805d95b918f2e5cd1499ed6d9a68b3d1495382a061f84ef8",
+      "url": "https://arxiv.org/pdf/1312.4645",
+      "source_date": "2026-11-20T08:37:15.108608+00:00",
+      "text_path": "server-identity-reference/sources/bayesian-paper-pdf.txt",
+      "text_sha256": "c3f995b1b816db1cf71fc71f92a501a62d5999bfac72b9973c761a7ec86631dc",
+      "start_line": 567,
+      "end_line": 576,
+      "evidence_kind": "PAPER",
+      "scope": "Focused PDF page13 discussion; not replicated",
+      "license_scope": "arXiv nonexclusive-distrib/1.0; reference reading only",
+      "evidence_stages": [
+        "reference_technical_document_or_code"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL01",
+      "path": "server-identity-reference/服务端身份解析技术路线对比.md",
+      "sha256": "919b14e805e9bfbeae5a2f99e25c685bad66d0e3043913efb41ddbd13ea21e0a",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL02",
+      "path": "server-identity-reference/开源组件与许可清单.md",
+      "sha256": "63b37faace6c01f2b875b198e80d013d5f52d967c22677d53ce7c75fb640276f",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL03",
+      "path": "server-identity-reference/身份关系图谱参考架构.md",
+      "sha256": "bb69692ea1117734e0b28eaf5bcd976a848c75a4be980510b89bf7a3270b6210",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL04",
+      "path": "server-identity-reference/关系建立冲突撤销与删除规则.md",
+      "sha256": "7c883e0f361bab2c2ff90235fc01a7c733efc0519f9bf55cc4037a4eb224ea12",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL05",
+      "path": "server-identity-reference/图谱特征与LTV预测接口设计.md",
+      "sha256": "8ec1b170098422cfb94853d2ca39c0792abf7bd98b9b13d542f3c50d3c7ce20f",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL06",
+      "path": "server-identity-reference/与Axon_Vector已证证据的差距矩阵.md",
+      "sha256": "4177ee8a39299f1d5d733fcca088b9a47bece1620071c5acd1ebfba460f0aa2c",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL07",
+      "path": "server-identity-reference/REFERENCE_CONTRACTS.json",
+      "sha256": "8e701414d7020ed853a122ac8061629f0e63d30b2e46ca8488852e8d35f1f3e1",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL08",
+      "path": "server-identity-reference/OPEN_SOURCE_COMPONENTS.csv",
+      "sha256": "486efe89a2cb1a96f1ecad4aa7e1e5080a4b8c41e13d308c7ffabdd892e696bf",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL09",
+      "path": "server-identity-reference/ACCEPTANCE_TEST_DESIGN.csv",
+      "sha256": "8a45d914d8800a262a67bd35318481a4dc95e62936e0c844e950efe082edf574",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL10",
+      "path": "server-identity-reference/AXON_VECTOR_GAP_MATRIX.csv",
+      "sha256": "c9e9f16a073e690c32a55d6ac3ac3cdb1d02a4c9c6ac81fb7a889f8158bb98c8",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL11",
+      "path": "server-identity-reference/STATUS.json",
+      "sha256": "8966823e8029fdfafe6d8be5cbe23789a390e960b353962d76120c2de0a8c74a",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "SIRL12",
+      "path": "server-identity-reference/SOURCE_CATALOG.md",
+      "sha256": "71b091d54d8bb0c21cb732b3ade9c57e80798bcdfccff8421b044288f0d5e684",
+      "url": null,
+      "source_date": "2026-11-20T08:46:29.769383+00:00",
+      "evidence_kind": "Independent reference design/license audit; no production deployment or experiment",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    }
+  ],
+  "extension": {
+    "reviewed_utc": "2026-11-20T08:46:29.769383+00:00",
+    "scope": "Public original technical research and independent reference architecture; no resolver/SDK/model execution",
+    "reports": [
+      "server-identity-reference/服务端身份解析技术路线对比.md",
+      "server-identity-reference/开源组件与许可清单.md",
+      "server-identity-reference/身份关系图谱参考架构.md",
+      "server-identity-reference/关系建立冲突撤销与删除规则.md",
+      "server-identity-reference/图谱特征与LTV预测接口设计.md",
+      "server-identity-reference/与Axon_Vector已证证据的差距矩阵.md"
+    ],
+    "new_node_ids": [
+      "SIRN_namespace",
+      "SIRN_resolver",
+      "SIRN_graph",
+      "SIRN_event",
+      "SIRN_feature",
+      "SIRN_consent",
+      "SIRN_audit",
+      "SIRN_boundary"
+    ],
+    "new_edge_ids": [
+      "SIRE01",
+      "SIRE02",
+      "SIRE03",
+      "SIRE04",
+      "SIRE05",
+      "SIRE06",
+      "SIRE07",
+      "SIRE08"
+    ],
+    "new_source_ids": [
+      "SIR01",
+      "SIR02",
+      "SIR03",
+      "SIR04",
+      "SIR05",
+      "SIR06",
+      "SIR07",
+      "SIR08",
+      "SIR09",
+      "SIR10",
+      "SIR11",
+      "SIR12",
+      "SIR13",
+      "SIR14",
+      "SIR15",
+      "SIR16",
+      "SIR17",
+      "SIR18",
+      "SIR19",
+      "SIRL01",
+      "SIRL02",
+      "SIRL03",
+      "SIRL04",
+      "SIRL05",
+      "SIRL06",
+      "SIRL07",
+      "SIRL08",
+      "SIRL09",
+      "SIRL10",
+      "SIRL11",
+      "SIRL12"
+    ],
+    "before": "server-identity-reference/EVIDENCE_GRAPH.before.json",
+    "pinned_open_source_components": 4,
+    "new_vendor_production_evidence": 0,
+    "unexecuted_test_designs": 20,
+    "C_graph_Axon": "UNKNOWN",
+    "C_graph_Vector": "UNKNOWN",
+    "D": "UNKNOWN",
+    "production_forensics": "STOP",
+    "engineering76_modified": false
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "assertion": "event retry deduplicated",
+    "input_refs": "operation trace",
+    "expected": "DUPLICATE_EVENT",
+    "actual": "DUPLICATE_EVENT",
+    "passed": true
+  },
+  {
+    "assertion": "same event ID with different payload is conflict",
+    "input_refs": "operation trace",
+    "expected": "IDEMPOTENCY_PAYLOAD_CONFLICT",
+    "actual": "IDEMPOTENCY_PAYLOAD_CONFLICT",
+    "passed": true
+  },
+  {
+    "assertion": "two genuine business events survive",
+    "input_refs": "operation trace",
+    "expected": 2200,
+    "actual": 2200,
+    "passed": true
+  },
+  {
+    "assertion": "exactly two local economic entries",
+    "input_refs": "operation trace",
+    "expected": 2,
+    "actual": 2,
+    "passed": true
+  }
+]

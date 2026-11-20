@@ -1,0 +1,735 @@
+{
+  "test_id": "V11",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {
+      "device-a": "entity_000002",
+      "app-a": "entity_000004",
+      "account-a": "entity_000007"
+    }
+  },
+  "operations": [
+    {
+      "component": "SyntheticWorld",
+      "operation": "pair",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {},
+      "returned": [
+        "entity_000002",
+        "entity_000004",
+        "entity_000007"
+      ]
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "device-a",
+        "device"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "device",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000001"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000001",
+        "syn:device-a:0c704012ee15"
+      ],
+      "kwargs": {},
+      "returned": "entity_000002"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000002",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 1
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "install",
+      "at": 1767225600,
+      "args": [
+        "app-a",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "app-a",
+        "app_instance"
+      ],
+      "kwargs": {
+        "app": "synthetic-app-a"
+      },
+      "returned": "entity_000004"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "app_instance",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000003"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000003",
+        "syn:app-a:fa66b470cb95"
+      ],
+      "kwargs": {},
+      "returned": "entity_000004"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 2
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000002",
+        "installed_on"
+      ],
+      "kwargs": {
+        "source_ref": "synth:install"
+      },
+      "returned": {
+        "edge_ref": "edge_000005",
+        "status": "ACTIVE",
+        "grain": "app_instance",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "entity",
+      "at": 1767225600,
+      "args": [
+        "account-a",
+        "account"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "register",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "tenant": "synthetic-tenant",
+        "issuer": "synthetic:first-party",
+        "app": "synthetic-app-a",
+        "sector": "first-party",
+        "entity_type": "account",
+        "scope": "first-party-organization"
+      },
+      "returned": "ns_000006"
+    },
+    {
+      "component": "IdentityNamespaceRegistry",
+      "operation": "create",
+      "at": 1767225600,
+      "args": [
+        "ns_000006",
+        "syn:account-a:c5c6bb3b6248"
+      ],
+      "kwargs": {},
+      "returned": "entity_000007"
+    },
+    {
+      "component": "ConsentAndDeletionManager",
+      "operation": "set",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "synthetic-value-research",
+        true
+      ],
+      "kwargs": {},
+      "returned": 3
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ACCOUNT_RELATION_ESTABLISHED",
+        "edge_ref": "edge_000008",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "assertion",
+      "at": 1767225600,
+      "args": [
+        "entity_000007",
+        "entity_000004",
+        "entity_000002"
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ]
+    },
+    {
+      "component": "DeterministicIdentityResolver",
+      "operation": "login",
+      "at": 1767225600,
+      "args": [
+        {
+          "issuer": "synthetic:first-party",
+          "audience": "synthetic-app-a",
+          "account": "entity_000007",
+          "app_instance": "entity_000004",
+          "device": "entity_000002",
+          "nonce": "synth:nonce:760078:1",
+          "issued_at": 1767225600,
+          "expires_at": 1767225660,
+          "purpose": "synthetic-value-research",
+          "source_ref": "synth:fixture-auth"
+        },
+        "7d326b310db75c31bab5c677962c273594ff2cd62f0320b1b0c610cc4389f014"
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ACCOUNT_RELATION_ESTABLISHED",
+        "edge_ref": "edge_000008",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "ConfidenceAwareRelationshipGraph",
+      "operation": "add",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        "entity_000007",
+        "logged_in_as"
+      ],
+      "kwargs": {
+        "source_ref": "synth:fixture-auth",
+        "confidence": 1.0,
+        "quality_kind": "authenticated_account_control",
+        "quality_scope": "local-synthetic-credential-control-only",
+        "purpose": "synthetic-value-research",
+        "auth_receipt": "synth:nonce:760078:1"
+      },
+      "returned": {
+        "edge_ref": "edge_000008",
+        "status": "ACTIVE",
+        "grain": "account",
+        "person_inference": false
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "revenue",
+      "at": 1767225600,
+      "args": [
+        "entity_000004",
+        10000
+      ],
+      "kwargs": {
+        "account": "entity_000007",
+        "economic_key": "synth:order-original"
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000009",
+        "ledger_ref": "ledger_000011"
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "ingest",
+      "at": 1767225600,
+      "args": [],
+      "kwargs": {
+        "app": "entity_000004",
+        "source_name": "synth:revenue-source",
+        "event_id": "synth:event:2",
+        "event_type": "revenue",
+        "occurred_at": 1767225600,
+        "account": "entity_000007",
+        "amount_micros": 10000,
+        "economic_key": "synth:order-original",
+        "economic_kind": "IAP"
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000009",
+        "ledger_ref": "ledger_000011"
+      }
+    },
+    {
+      "component": "ManualClock",
+      "operation": "advance",
+      "at": 1767225600,
+      "args": [
+        10
+      ],
+      "kwargs": {},
+      "returned": 1767225610
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "revenue",
+      "at": 1767225610,
+      "args": [
+        "entity_000004",
+        4000
+      ],
+      "kwargs": {
+        "account": "entity_000007",
+        "occurred_at": 1767225601
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000012",
+        "ledger_ref": "ledger_000014"
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "ingest",
+      "at": 1767225610,
+      "args": [],
+      "kwargs": {
+        "app": "entity_000004",
+        "source_name": "synth:revenue-source",
+        "event_id": "synth:event:3",
+        "event_type": "revenue",
+        "occurred_at": 1767225601,
+        "account": "entity_000007",
+        "amount_micros": 4000,
+        "economic_key": "synth:economic:3",
+        "economic_kind": "IAP"
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000012",
+        "ledger_ref": "ledger_000014"
+      }
+    },
+    {
+      "component": "SyntheticWorld",
+      "operation": "revenue",
+      "at": 1767225610,
+      "args": [
+        "entity_000004",
+        7000
+      ],
+      "kwargs": {
+        "account": "entity_000007",
+        "economic_key": "synth:order-original",
+        "revision": 2,
+        "correction_of": "ledger_000011"
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000015",
+        "ledger_ref": "ledger_000017"
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "ingest",
+      "at": 1767225610,
+      "args": [],
+      "kwargs": {
+        "app": "entity_000004",
+        "source_name": "synth:revenue-source",
+        "event_id": "synth:event:4",
+        "event_type": "revenue",
+        "occurred_at": 1767225610,
+        "account": "entity_000007",
+        "amount_micros": 7000,
+        "economic_key": "synth:order-original",
+        "economic_kind": "IAP",
+        "revision": 2,
+        "correction_of": "ledger_000011"
+      },
+      "returned": {
+        "status": "ACCEPTED",
+        "event_ref": "event_000015",
+        "ledger_ref": "ledger_000017"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225610,
+      "args": [
+        "entity_000007"
+      ],
+      "kwargs": {
+        "as_of": 1767225600,
+        "since_at": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000018",
+        "as_of": 1767225600,
+        "consumer_available_at": 1767225610,
+        "values": {
+          "observed_revenue_micros": 10000,
+          "revenue_micros": null,
+          "observed_ledger_count": 1,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {
+            "USD": 10000
+          },
+          "observation_status": "NOT_FULLY_OBSERVED",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000004",
+            "entity_000007"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000005",
+              1
+            ],
+            [
+              "edge_000008",
+              1
+            ]
+          ],
+          "event_refs": [
+            "event_000009"
+          ],
+          "ledger_refs": [
+            "ledger_000011"
+          ],
+          "coverage_refs": [],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 5,
+        "policy_epoch": 3
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225610,
+      "args": [
+        1767225600
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "id": "ledger_000011",
+          "event_ref": "event_000009",
+          "app_ref": "entity_000004",
+          "account_ref": "entity_000007",
+          "source": "synth:revenue-source",
+          "economic_key": "synth:order-original",
+          "revision": 1,
+          "amount_micros": 10000,
+          "currency": "USD",
+          "economic_kind": "IAP",
+          "economic_at": 1767225600,
+          "occurred_at": 1767225600,
+          "observed_at": 1767225600,
+          "available_at": 1767225600,
+          "correction_of": null,
+          "semantic_hash": "9852dffa82f7711a7f13ef11aca4eea9dd58abb4cc78df17594857f22b50ba0c",
+          "deleted": 0
+        }
+      ]
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225610,
+      "args": [
+        "entity_000007"
+      ],
+      "kwargs": {
+        "as_of": null,
+        "since_at": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000019",
+        "as_of": 1767225610,
+        "consumer_available_at": 1767225610,
+        "values": {
+          "observed_revenue_micros": 11000,
+          "revenue_micros": null,
+          "observed_ledger_count": 2,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {
+            "USD": 11000
+          },
+          "observation_status": "NOT_FULLY_OBSERVED",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000004",
+            "entity_000007"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000005",
+              1
+            ],
+            [
+              "edge_000008",
+              1
+            ]
+          ],
+          "event_refs": [
+            "event_000012",
+            "event_000015"
+          ],
+          "ledger_refs": [
+            "ledger_000014",
+            "ledger_000017"
+          ],
+          "coverage_refs": [],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 5,
+        "policy_epoch": 3
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225610,
+      "args": [
+        1767225610
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "id": "ledger_000014",
+          "event_ref": "event_000012",
+          "app_ref": "entity_000004",
+          "account_ref": "entity_000007",
+          "source": "synth:revenue-source",
+          "economic_key": "synth:economic:3",
+          "revision": 1,
+          "amount_micros": 4000,
+          "currency": "USD",
+          "economic_kind": "IAP",
+          "economic_at": 1767225601,
+          "occurred_at": 1767225601,
+          "observed_at": 1767225610,
+          "available_at": 1767225610,
+          "correction_of": null,
+          "semantic_hash": "78c1b5e2b4542bdf36285a67bde2ce53d0ae4a102897dceb08a38ec7d0ac3049",
+          "deleted": 0
+        },
+        {
+          "id": "ledger_000017",
+          "event_ref": "event_000015",
+          "app_ref": "entity_000004",
+          "account_ref": "entity_000007",
+          "source": "synth:revenue-source",
+          "economic_key": "synth:order-original",
+          "revision": 2,
+          "amount_micros": 7000,
+          "currency": "USD",
+          "economic_kind": "IAP",
+          "economic_at": 1767225600,
+          "occurred_at": 1767225610,
+          "observed_at": 1767225610,
+          "available_at": 1767225610,
+          "correction_of": "ledger_000011",
+          "semantic_hash": "99de931eb2e0f93c38cc03130f55537696a083d06378ae8d0ba9a5a4f19212b2",
+          "deleted": 0
+        }
+      ]
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "compute",
+      "at": 1767225610,
+      "args": [
+        "entity_000007"
+      ],
+      "kwargs": {
+        "as_of": 1767225600
+      },
+      "returned": {
+        "bundle_ref": "bundle_000020",
+        "as_of": 1767225600,
+        "consumer_available_at": 1767225610,
+        "values": {
+          "observed_revenue_micros": 10000,
+          "revenue_micros": null,
+          "observed_ledger_count": 1,
+          "app_instance_count": 1,
+          "currency": "USD",
+          "revenue_by_currency_micros": {
+            "USD": 10000
+          },
+          "observation_status": "NOT_FULLY_OBSERVED",
+          "person_inferred": false
+        },
+        "lineage": {
+          "entity_refs": [
+            "entity_000002",
+            "entity_000004",
+            "entity_000007"
+          ],
+          "edge_revisions": [
+            [
+              "edge_000005",
+              1
+            ],
+            [
+              "edge_000008",
+              1
+            ]
+          ],
+          "event_refs": [
+            "event_000009"
+          ],
+          "ledger_refs": [
+            "ledger_000011"
+          ],
+          "coverage_refs": [],
+          "incomplete_reasons": [],
+          "feature_group": "observed-economic-history-v1",
+          "environment": "LOCAL_SYNTHETIC_ONLY"
+        },
+        "graph_version": 5,
+        "policy_epoch": 3
+      }
+    },
+    {
+      "component": "TemporalEventLinker",
+      "operation": "visible_ledger",
+      "at": 1767225610,
+      "args": [
+        1767225600
+      ],
+      "kwargs": {},
+      "returned": [
+        {
+          "id": "ledger_000011",
+          "event_ref": "event_000009",
+          "app_ref": "entity_000004",
+          "account_ref": "entity_000007",
+          "source": "synth:revenue-source",
+          "economic_key": "synth:order-original",
+          "revision": 1,
+          "amount_micros": 10000,
+          "currency": "USD",
+          "economic_kind": "IAP",
+          "economic_at": 1767225600,
+          "occurred_at": 1767225600,
+          "observed_at": 1767225600,
+          "available_at": 1767225600,
+          "correction_of": null,
+          "semantic_hash": "9852dffa82f7711a7f13ef11aca4eea9dd58abb4cc78df17594857f22b50ba0c",
+          "deleted": 0
+        }
+      ]
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "consume_local",
+      "at": 1767225610,
+      "args": [
+        "bundle_000020"
+      ],
+      "kwargs": {
+        "decision_at": 1767225600
+      },
+      "raised": {
+        "type": "Rejected",
+        "message": "BACKDATED_OR_FUTURE_DECISION_FORBIDDEN"
+      }
+    }
+  ]
+}

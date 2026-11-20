@@ -1,0 +1,66 @@
+[
+  {
+    "seq": 1,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"account\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "65d85db180119ed26081af7dac680971385756f727d4c12a317c164f37044918"
+  },
+  {
+    "seq": 2,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000002\",\"grain\":\"account\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "65d85db180119ed26081af7dac680971385756f727d4c12a317c164f37044918",
+    "hash": "2dd50cf175c77c96a1539e330d40d2d3752d530f3d16f63a10135ea0aeac898c"
+  },
+  {
+    "seq": 3,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000002\",\"epoch\":1,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2dd50cf175c77c96a1539e330d40d2d3752d530f3d16f63a10135ea0aeac898c",
+    "hash": "2b469d199622056f86e21a06f167c1ce6b201cc3d99b852895aba3d5dba52371"
+  },
+  {
+    "seq": 4,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "2b469d199622056f86e21a06f167c1ce6b201cc3d99b852895aba3d5dba52371",
+    "hash": "02aaaab5f2451402cd0c2b9ac77e5028ff68d83b1524edf48a54cf4668f0f0f7"
+  },
+  {
+    "seq": 5,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000004\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "02aaaab5f2451402cd0c2b9ac77e5028ff68d83b1524edf48a54cf4668f0f0f7",
+    "hash": "575745e1b09d796cd66f60006a6b4799735e525bf3ba1700dd987854bf39500c"
+  },
+  {
+    "seq": 6,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000004\",\"epoch\":2,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "575745e1b09d796cd66f60006a6b4799735e525bf3ba1700dd987854bf39500c",
+    "hash": "b611ff87af3b69745245e1363e568c6b2bba6f64e1c8590bf0493d943363d804"
+  },
+  {
+    "seq": 7,
+    "at": 1767225600,
+    "kind": "namespace_mapping_authorized",
+    "payload_json": "{\"namespace_refs\":[\"ns_000001\",\"ns_000003\"],\"purpose\":\"synthetic-value-research\"}",
+    "previous_hash": "b611ff87af3b69745245e1363e568c6b2bba6f64e1c8590bf0493d943363d804",
+    "hash": "99f467ef6899ecef50c771aeb40b8410edf6aae7a35984747036a16e771c8067"
+  },
+  {
+    "seq": 8,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000002\",\"epoch\":3,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "99f467ef6899ecef50c771aeb40b8410edf6aae7a35984747036a16e771c8067",
+    "hash": "969c4da39b9aeeb80ddbbc9df2b5b48e4929b22348d00df3a799377b03098ac2"
+  }
+]

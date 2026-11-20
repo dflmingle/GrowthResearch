@@ -1,0 +1,902 @@
+{
+  "status": "PASS",
+  "reviewed_utc": "2026-11-20T05:09:20.823030+00:00",
+  "checks": [
+    {
+      "name": "historical_numbered_files_unchanged",
+      "passed": true,
+      "detail": {
+        "count": 107,
+        "changed": []
+      }
+    },
+    {
+      "name": "historical_nodes_prefix",
+      "passed": true,
+      "detail": {
+        "before": 195,
+        "after": 211
+      }
+    },
+    {
+      "name": "historical_edges_prefix",
+      "passed": true,
+      "detail": {
+        "before": 233,
+        "after": 250
+      }
+    },
+    {
+      "name": "historical_sources_prefix",
+      "passed": true,
+      "detail": {
+        "before": 513,
+        "after": 525
+      }
+    },
+    {
+      "name": "historical_unknown_breakpoints_prefix",
+      "passed": true,
+      "detail": {
+        "before": 21,
+        "after": 25
+      }
+    },
+    {
+      "name": "historical_excluded_claims_prefix",
+      "passed": true,
+      "detail": {
+        "before": 19,
+        "after": 24
+      }
+    },
+    {
+      "name": "old_metadata_schema_version",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_reviewed_utc",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_scope",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_levels",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_production_semantics",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_cross_sdk_extension",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_core_insights_extension",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_client_growth_extension",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_model_architecture_round60",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_revenue_bid_round61_63",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_cross_game_cold_start_round62",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_final_causal_round64",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_public_evidence_round65",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_public_history_retail_round66",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_independent_retail_time_round67",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_public_data_round68",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_original_source_round69",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_game_industry_round69",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_closed_loop_round70",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "old_metadata_training_lineage_round71",
+      "passed": true,
+      "detail": "Preserved"
+    },
+    {
+      "name": "index_append_only",
+      "passed": true,
+      "detail": "Original text retained"
+    },
+    {
+      "name": "graph_snapshot_matches",
+      "passed": true,
+      "detail": "Current root graph"
+    },
+    {
+      "name": "unique_nodes",
+      "passed": true,
+      "detail": 211
+    },
+    {
+      "name": "unique_edges",
+      "passed": true,
+      "detail": 250
+    },
+    {
+      "name": "unique_sources",
+      "passed": true,
+      "detail": 525
+    },
+    {
+      "name": "edge_refs_L72E01",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E01",
+      "passed": true,
+      "detail": "Actual app config,reconciliation IDs/precision and frozen historical versions"
+    },
+    {
+      "name": "edge_refs_L72E02",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E02",
+      "passed": true,
+      "detail": "Real install roster,identity lifecycle,coverage/maturity and as-of available_at"
+    },
+    {
+      "name": "edge_refs_L72E03",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E03",
+      "passed": true,
+      "detail": "Actual partner grants,report receipt and consumed schema"
+    },
+    {
+      "name": "edge_refs_L72E04",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E04",
+      "passed": true,
+      "detail": "Actual mapping,revenue values/scope,success receipt and dedup"
+    },
+    {
+      "name": "edge_refs_L72E05",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E05",
+      "passed": true,
+      "detail": "Actual account activation,received report and data fields"
+    },
+    {
+      "name": "edge_refs_L72E06",
+      "passed": true,
+      "detail": "official_contract"
+    },
+    {
+      "name": "edge_no_production_L72E06",
+      "passed": true,
+      "detail": "Actual app mapping,privacy/scope and receiver logs"
+    },
+    {
+      "name": "edge_refs_L72E07",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E07",
+      "passed": true,
+      "detail": "Dedicated Axon IAA receiver/mapping contract and real partner config"
+    },
+    {
+      "name": "edge_refs_L72E08",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E08",
+      "passed": true,
+      "detail": "Ingest/label-generation/model-decision version dictionary and controlled validation"
+    },
+    {
+      "name": "edge_refs_L72E09",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E09",
+      "passed": true,
+      "detail": "Explicit IAA route,source-to-training data lineage,privacy and label maturity"
+    },
+    {
+      "name": "edge_refs_L72E10",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E10",
+      "passed": true,
+      "detail": "Actual applicant facts,explicit dispatch instruction,rights-holder reply/licence/files"
+    },
+    {
+      "name": "edge_refs_L72E11",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E11",
+      "passed": true,
+      "detail": "Current rights-holder,retention and allowed complete cohort access"
+    },
+    {
+      "name": "edge_refs_L72E12",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E12",
+      "passed": true,
+      "detail": "New rights-holder approval;not author copy or synthetic OSF data"
+    },
+    {
+      "name": "edge_refs_L72E13A",
+      "passed": true,
+      "detail": "design_only"
+    },
+    {
+      "name": "edge_no_production_L72E13A",
+      "passed": true,
+      "detail": "Licence,complete population,true revenue,maturity/as-of time and independent games before execution"
+    },
+    {
+      "name": "edge_refs_L72E13B",
+      "passed": true,
+      "detail": "design_only"
+    },
+    {
+      "name": "edge_no_production_L72E13B",
+      "passed": true,
+      "detail": "Licence,complete population,true revenue,maturity/as-of time and independent games before execution"
+    },
+    {
+      "name": "edge_refs_L72E13C",
+      "passed": true,
+      "detail": "design_only"
+    },
+    {
+      "name": "edge_no_production_L72E13C",
+      "passed": true,
+      "detail": "Licence,complete population,true revenue,maturity/as-of time and independent games before execution"
+    },
+    {
+      "name": "edge_refs_L72E14",
+      "passed": true,
+      "detail": "design_only"
+    },
+    {
+      "name": "edge_no_production_L72E14",
+      "passed": true,
+      "detail": "Real comparable games and equal-budget held-out tests;not vendor implementation evidence"
+    },
+    {
+      "name": "edge_refs_L72E15",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "name": "edge_no_production_L72E15",
+      "passed": true,
+      "detail": "Actual opportunity/cost/assignment and mature outcomes;incremental vs attributed revenue"
+    },
+    {
+      "name": "hashes_SOURCE_EVIDENCE.json",
+      "passed": true,
+      "detail": {
+        "count": 12,
+        "bad": []
+      }
+    },
+    {
+      "name": "source_matches_graph_L72S01",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S01",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-revenue-roi360.txt",
+        "lines": [
+          5,
+          62
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S01",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S02",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S02",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-revenue-roi360.txt",
+        "lines": [
+          171,
+          215
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S02",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S03",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S03",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-revenue-roi360.txt",
+        "lines": [
+          419,
+          460
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S03",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S04",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S04",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-revenue-roi360.txt",
+        "lines": [
+          573,
+          681
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S04",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S05",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S05",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-share-revenue.txt",
+        "lines": [
+          1,
+          78
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S05",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S06",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S06",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-share-revenue.txt",
+        "lines": [
+          93,
+          189
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S06",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S07",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S07",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-share-revenue.txt",
+        "lines": [
+          191,
+          457
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S07",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S08",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S08",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-raw-dictionary.txt",
+        "lines": [
+          743,
+          769
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S08",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S09",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S09",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-raw-dictionary.txt",
+        "lines": [
+          1413,
+          1458
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S09",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S10",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S10",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/af-ltv-activity.txt",
+        "lines": [
+          23,
+          49
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S10",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S11",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "excerpt_L72S11",
+      "passed": true,
+      "detail": {
+        "path": "access72/sources/adjust-sdk-revenue.txt",
+        "lines": [
+          39,
+          67
+        ]
+      }
+    },
+    {
+      "name": "source_no_training_receipt_L72S11",
+      "passed": true,
+      "detail": "Public document read/citation;not transaction-data licence or account access"
+    },
+    {
+      "name": "source_matches_graph_L72S12",
+      "passed": true,
+      "detail": "Exact object"
+    },
+    {
+      "name": "public_contact_offsets",
+      "passed": true,
+      "detail": "Official public contact component only"
+    },
+    {
+      "name": "source_no_training_receipt_L72S12",
+      "passed": true,
+      "detail": "Public marketing component only;no sign-in,data or private API requested"
+    },
+    {
+      "name": "hashes_REUSED_EVIDENCE.json",
+      "passed": true,
+      "detail": {
+        "count": 35,
+        "bad": []
+      }
+    },
+    {
+      "name": "fetch_unique",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "name": "fetch_raw_yokozuna-home",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_yokozuna-home",
+      "passed": true,
+      "detail": "access72/sources/yokozuna-home.txt"
+    },
+    {
+      "name": "fetch_raw_yokozuna-research",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_yokozuna-research",
+      "passed": true,
+      "detail": "access72/sources/yokozuna-research.txt"
+    },
+    {
+      "name": "fetch_raw_unity-analytics-export",
+      "passed": true,
+      "detail": 404
+    },
+    {
+      "name": "fetch_text_unity-analytics-export",
+      "passed": true,
+      "detail": "access72/sources/unity-analytics-export.txt"
+    },
+    {
+      "name": "fetch_raw_af-revenue-roi360",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_af-revenue-roi360",
+      "passed": true,
+      "detail": "access72/sources/af-revenue-roi360.txt"
+    },
+    {
+      "name": "fetch_raw_adjust-ad-revenue",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_adjust-ad-revenue",
+      "passed": true,
+      "detail": "access72/sources/adjust-ad-revenue.txt"
+    },
+    {
+      "name": "fetch_raw_af-raw-dictionary",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_af-raw-dictionary",
+      "passed": true,
+      "detail": "access72/sources/af-raw-dictionary.txt"
+    },
+    {
+      "name": "fetch_raw_af-share-revenue",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_af-share-revenue",
+      "passed": true,
+      "detail": "access72/sources/af-share-revenue.txt"
+    },
+    {
+      "name": "fetch_raw_af-ltv-activity",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_af-ltv-activity",
+      "passed": true,
+      "detail": "access72/sources/af-ltv-activity.txt"
+    },
+    {
+      "name": "fetch_raw_adjust-sdk-revenue",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_adjust-sdk-revenue",
+      "passed": true,
+      "detail": "access72/sources/adjust-sdk-revenue.txt"
+    },
+    {
+      "name": "fetch_raw_yokozuna-public-bundle",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "fetch_text_yokozuna-public-bundle",
+      "passed": true,
+      "detail": "access72/sources/yokozuna-public-bundle.txt"
+    },
+    {
+      "name": "failed_sources_excluded",
+      "passed": true,
+      "detail": "404 not promoted to evidence"
+    },
+    {
+      "name": "unity_receiver_table_exact",
+      "passed": true,
+      "detail": "Separate source and receiver tables"
+    },
+    {
+      "name": "axon_absence_limited_to_snapshot",
+      "passed": true,
+      "detail": "Not universal lack-of-support conclusion"
+    },
+    {
+      "name": "contact_excerpt_hash_source",
+      "passed": true,
+      "detail": "New public route,not dataset access"
+    },
+    {
+      "name": "all_routes_unsent_unlicensed",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "all_three_designs_stop",
+      "passed": true,
+      "detail": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "independent_product_requirements",
+      "passed": true,
+      "detail": "Independent games,not platforms"
+    },
+    {
+      "name": "causal_csv_roundtrip",
+      "passed": true,
+      "detail": 7
+    },
+    {
+      "name": "causal_unknown_no_experiments",
+      "passed": true,
+      "detail": "No invented results"
+    },
+    {
+      "name": "causal_refs_valid",
+      "passed": true,
+      "detail": "Empty references explicitly design-only"
+    },
+    {
+      "name": "six_deliveries",
+      "passed": true,
+      "detail": 6
+    },
+    {
+      "name": "delivery_72_真实游戏数据获取进展.md",
+      "passed": true,
+      "detail": 5737
+    },
+    {
+      "name": "delivery_72_Axon_Vector训练血缘突破.md",
+      "passed": true,
+      "detail": 5899
+    },
+    {
+      "name": "delivery_72_跨游戏迁移实验设计.md",
+      "passed": true,
+      "detail": 9347
+    },
+    {
+      "name": "delivery_72_普通游戏盈利改善因果矩阵.csv",
+      "passed": true,
+      "detail": 4759
+    },
+    {
+      "name": "delivery_72_公开逆向停止清单.md",
+      "passed": true,
+      "detail": 4785
+    },
+    {
+      "name": "delivery_72_下一阶段行动计划.md",
+      "passed": true,
+      "detail": 4363
+    },
+    {
+      "name": "local_graph_matches",
+      "passed": true,
+      "detail": "Self-contained subset"
+    },
+    {
+      "name": "local_graph_refs",
+      "passed": true,
+      "detail": "Sources resolved"
+    },
+    {
+      "name": "new_text_utf8_72_真实游戏数据获取进展.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_72_Axon_Vector训练血缘突破.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_72_跨游戏迁移实验设计.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_72_公开逆向停止清单.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_72_下一阶段行动计划.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_AGE_ROUTING_DRAFT.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_EVIDENCE_INDEX.before.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_REQUESTED_AUTHORIZED_MATERIALS.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "new_text_utf8_SOURCE_CATALOG.md",
+      "passed": true,
+      "detail": "No replacement characters"
+    },
+    {
+      "name": "local_links_resolve",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "declared_action_boundaries",
+      "passed": true,
+      "detail": "Artifact/declared audit,not packet-capture proof"
+    },
+    {
+      "name": "strict_goal_gap_recorded",
+      "passed": true,
+      "detail": "Public-contract progress distinguished from actual permission/production evidence"
+    },
+    {
+      "name": "no_player_data_file_artifacts",
+      "passed": true,
+      "detail": "Metadata JSON and official pages only;root causal CSV"
+    }
+  ],
+  "counts": {
+    "historical_numbered_files": 107,
+    "deliveries": 6,
+    "new_source_records": 12,
+    "reused_records": 35,
+    "causal_rows": 7,
+    "designs": 3,
+    "graph_nodes": 211,
+    "graph_edges": 250,
+    "graph_sources": 525,
+    "sdk_scans": 0,
+    "emails_sent": 0,
+    "models_trained": 0,
+    "licensed_game_datasets": 0,
+    "authorized_production_materials": 0
+  },
+  "limits": [
+    "Integrity/references/admission validation only;no real model effect validation",
+    "New public MMP contracts not actual app configuration or received training rows",
+    "No new licensed game cohort or confirmed current Uken custodian",
+    "Strict access/authorized-production-material objective remains unmet"
+  ]
+}

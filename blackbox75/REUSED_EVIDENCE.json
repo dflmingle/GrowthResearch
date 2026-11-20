@@ -1,0 +1,708 @@
+[
+  {
+    "id": "IG72S01",
+    "path": "identity-graph/google-appset-guide.raw",
+    "sha256": "0cc8467649d695ddd7f62c6b5c870f2fae77c53005f0532b6e6dad4f1025be84",
+    "url": "https://developer.android.com/identity/app-set-id",
+    "text_path": "identity-graph/google-appset-guide.txt",
+    "text_sha256": "bb61901935598647d535eda379adafe8b4aaf78c5eda31e39cc2f07550cf40b2",
+    "start_line": 1,
+    "end_line": 91,
+    "excerpt": "1: Identify developer-owned apps  |  Identity  |  Android Developers\n2: Skip to main content\n3: /\n4: English\n5: Deutsch\n6: Español – América Latina\n7: Français\n8: Indonesia\n9: Italiano\n10: Polski\n11: Português – Brasil\n12: Tiếng Việt\n13: Türkçe\n14: Русский\n15: עברית\n16: العربيّة\n17: فارسی\n18: हिंदी\n19: বাংলা\n20: ภาษาไทย\n21: 中文 – 简体\n22: 中文 – 繁體\n23: 日本語\n24: 한국어\n25: Android Studio\n26: Sign in\n27: Security\n28: Identity\n29: Android Developers\n30: Design & Plan\n31: Security\n32: Identity\n33: Guides\n34: Send feedback\n35: Identify developer-owned apps\n36: Stay organized with collections\n37: Save and categorize content based on your preferences.\n38: For use cases such as analytics or fraud prevention on a given device, you might\n39: need to correlate usage or actions across a set of apps owned by your\n40: organization.\n41: Google Play services\n42: offers a privacy-friendly option called\n43: app set ID\n44: .\n45: App set ID scope\n46: The app set ID can have one of the following defined scopes. To determine which\n47: scope a particular ID is associated with, call\n48: getScope()\n49: .\n50: Caution:\n51: When Google Play services updates from a version that only supports app\n52: scope to a version that supports developer scope, the app set ID's value is\n53: reset automatically, without any developer action. See\n54: other reasons developers\n55: shouldn't rely on a cached value of the app set ID\n56: .\n57: Google Play developer scope\n58: Note:\n59: The app set SDK attempts to return app set IDs that have the developer\n60: scope without any additional developer action, unless the app satisfies the\n61: conditions for app scope, described in the App scope section.\n62: For apps that are installed by the Google Play store, the app set ID API returns\n63: an ID scoped to the set of apps published under the same Google Play developer\n64: account.\n65: For example, suppose you publish two apps under your Google Play developer\n66: account and both apps are installed on the same device through the Google Play\n67: store. The apps share the same app set ID on that device. The ID is the same\n68: even if the apps are signed by different keys.\n69: App scope\n70: Under any of the following conditions, the app set ID SDK returns an ID unique\n71: to the calling app itself on a given device:\n72: The app is installed by an installer other than the Google Play store.\n73: Google Play services is unable to determine an app's Google Play developer\n74: account.\n75: The app is installed on a device without Google Play services.\n76: Don't rely on a cached value of app set ID\n77: Under any of the following conditions, the app set ID for a given set of Google\n78: Play store-installed apps on a device can be reset:\n79: The app set ID API hasn't been accessed by the groups of apps that share the\n80: same ID value for over 13 months.\n81: The last app from a given set of apps is uninstalled from the device.\n82: The user performs a factory reset of the device.\n83: Your app must use the SDK to retrieve the ID value every time it's needed.\n84: Add the app set ID SDK to your app\n85: The following snippet shows an example\n86: build.gradle\n87: file that uses the app set\n88: ID library:\n89: dependencies\n90: {\n91: implementation",
+    "claim": "Google App Set ID scope/reset and permitted usage;not global personal identity",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "previous verified official snapshot;not new publication",
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "privacy_conditions": "Subject to provider contracts,scope,consent and local privacy controls",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "IG72S02",
+    "path": "identity-graph/unity-upa-doc-md.raw",
+    "sha256": "855d1cbba7a24d89ac84026f09045a14c9449b43d73cf902cb2a27e41f646154",
+    "url": "https://docs.unity.com/en-us/authentication/unity-player-accounts.md",
+    "text_path": "identity-graph/unity-upa-doc-md.txt",
+    "text_sha256": "5387779009afbdf5fa51e1aa38414354b8742f4afdfa5557211bd2f3be43f3af",
+    "start_line": 11,
+    "end_line": 101,
+    "excerpt": "11: \n12: > Use Unity's comprehensive sign-in solution that provides persistent accounts across games, devices, and platforms.\n13: \n14: ## Overview\n15: \n16: Unity Player Accounts is Unity's comprehensive sign-in solution that supports persistence across games, devices and platforms. It's an end-to-end account system that includes a user flow UX, email and password, social sign-in options, and data access and deletion flows.\n17: \n18: Unity Player Accounts is an external identity provider which is natively integrated with Unity Gaming Services and the Authentication SDK. It has multiple benefits such as SSO, organization-level player pool, and cross-game, cross-device or cross-platform gameplay.\n19: \n20: | Technical feature                                | Description                                                                                                                                                                                                                                                                                                                                                           |\n21: | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n22: | Integrated with Unity Gaming Services and Editor | Player Accounts is the out-of-the-box sign-in and identity solution for Unity Gaming Services and Unity's ecosystem. It's seamlessly integrated with Authentication and offers additional features such as organization-level player identifiers.                                                                                                                     |\n23: | Cross-platform and cross-device                  | Your players can sign up and sign into your games across a range of platforms, including iOS, Android, Windows, and macOS.                                                                                                                                                                                                                                            |\n24: | Cross-game                                       | Leverage organization-level player identifiers to maintain persistent player profiles across all of your games.                                                                                                                                                                                                                                                       |\n25: | Streamlined user sign-up & sign-in journey       | Your players can sign up or sign in to their accounts using their preferred method, such as email and password or social accounts like Google or Apple.                                                                                                                                                                                                               |\n26: | Integrate once and forget it                     | Our browser-based sign-up and sign-in flow is automatically updated with new features without any integration or update for your game. Focus on building and running your game, without the need to reintegrate your authentication solution. Once integrated, you can rely on Player Accounts to stay up to date with the latest security improvements and features. |\n27: \n28: ## Get started\n29: \n30: To get started you must first [install the Authentication package](./get-started.md), and then configure a Unity Player Accounts ID provider in the Unity Dashboard.\n31: \n32: The C# methods required for interacting with Unity Player Accounts are included within the Authentication package in the dedicated `PlayerAccountService` namespace.\n33: \n34: ### Set up the Unity Player Accounts ID provider\n35: \n36: You can set up Unity Player Accounts directly in the Unity Dashboard.\n37: \n38: 1. In the Unity Editor select **Services** > **Authentication** > **Configure** from the navigation menu.\n39: 2. Select **Go to Dashboard** to open the Authentication Identity providers web page.\n40: 3. On the web page, select **Add Identity Provider** and select **Unity Player Accounts**.\n41: 4. Enter the provider details in the **Add Unity Player Accounts** dialog.\n42:    > **Note:**\n43:    >\n44:    > For the sign-in flow to work in the Unity Editor Play mode, include the **PC** platform.\n45: 5. Select **Add provider**.\n46: 6. Return to **Services** > **Authentication** > **Configure** in the Unity Editor and select **Refresh**. This displays the **Unity Player Accounts** ID provider.\n47: 7. In the Unity Editor, navigate to **Services** > **Unity Player Accounts** > **Configure** and ensure the Client ID is correctly set. This is also where you can optionally configure scopes and custom redirect URI schemes.\n48: \n49: > **Note:**\n50: >\n51: > The authentication flow works without the need for configuring the redirect URI, as long as the registered URIs follow the prescribed format:\n52: >\n53: > * Desktop/Standalone: `http://localhost/callback`\n54: > * Android/IOS default deep link URI: `unitydl://com.unityplayeraccounts.{unity-project-id}`\n55: \n56: ### Before you publish your game\n57: \n58: Review Unity's compliance and branding guidelines:\n59: \n60: * You must provide a way for players to request data deletion and disclosure requests for your application and their Unity Player Account.\n61: * Include a link to the Unity Player Accounts account deletion page: `https://player-account.unity.com/delete-account`\n62: * Include a link to the Unity Player Accounts privacy support email for data disclosure or other privacy requests: `unity-player-login-privacy@unity3d.com`\n63: * You must always ensure compliance with [Unity Terms of Service](https://unity.com/legal/terms-of-service).\n64: * You must always maintain, display, and abide by a conspicuously placed Privacy Policy that makes appropriate disclosure to end-users, complies with all applicable privacy and data protection laws and regulations, and grants Unity the necessary rights required for the use of the Unity Player Accounts service.\n65: \n66: ### Unity Player Accounts sample\n67: \n68: The Authentication package includes a sample scene which is fully integrated with Unity Player Accounts. Use this sample to try out the flow after completing the configuration steps above.\n69: \n70: To import the sample, follow these steps:\n71: \n72: 1. In the Unity Editor, select **Window** > **Package Management**.\n73: 2. Select the Authentication package.\n74: 3. Select **Samples** > **Import**.\n75: \n76: Open the sample scene under **Assets** > **Samples** > **Authentication** > \\[Package-Version] > **UI Example** > **UnityPlayerAccountsUIExample**.\n77: \n78: ## Sign in a returning player or create new player\n79: \n80: Use the `PlayerAccountService.Instance.StartSignInAsync` method to start the player sign-in flow for Unity Player Accounts. This opens the system browser to `https://player-login.unity.com`, prompts the player to sign in, and then returns them to the application with their Unity Player Accounts credentials.\n81: \n82: When they have signed in to Unity Player Accounts and returned to your application with their credentials, use the `AuthenticationService.Instance.SignInWithUnityAsync` method to either:\n83: \n84: * Create a new Unity Authentication player with the Unity Player Accounts credentials.\n85: * Sign in an existing player using the Unity Player Accounts credentials.\n86: \n87: The `PlayerAccountService.Instance.SignedIn` event will let us know when the browser-based Unity Player Accounts sign in has succeeded and we can proceed with signing in to Unity Authentication.\n88: \n89: The credentials required to sign in to Unity Authentication are the access token available on `PlayerAccountService.Instance.AccessToken`.\n90: \n91: ```cs\n92: async void Start()\n93: {\n94:     await UnityServices.InitializeAsync();\n95: \n96:     // Register the Unity Player Accounts sign-in event handler after services initialization.\n97:     PlayerAccountService.Instance.SignedIn += SignInWithUnityAuth;\n98: }\n99: \n100: // Call this from a button or other application-specific trigger to begin the sign-in flow.\n101: async void StartPlayerAccountsSignInAsync()",
+    "claim": "Explicit org-scoped account persistence across games/devices;not Vector consumption",
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "source_date": "previous verified official snapshot;not new publication",
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "privacy_conditions": "Subject to provider contracts,scope,consent and local privacy controls",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "IG72S03",
+    "path": "identity-graph/unity-identity-management.raw",
+    "sha256": "0eceb6f88c8b4aacd70ba8b04f276abd1fddc02dcd8c86e268828373b099fbcf",
+    "url": "https://docs.unity.com/en-us/authentication/identity-management.md",
+    "text_path": "identity-graph/unity-identity-management.txt",
+    "text_sha256": "c1124124f6fa7bdfa11f53a84786e07f92e934d55380902aa7aefdfcc2ea6158",
+    "start_line": 3,
+    "end_line": 38,
+    "excerpt": "3: product: Authentication\n4: canonical: https://docs.unity.com/en-us/authentication/identity-management\n5: last_updated: 2025-12-15\n6: generated_at: 2026-11-19T02:50:06.097Z\n7: locale: en-us\n8: ---\n9: \n10: # Manage linked external identities\n11: \n12: > Handle account linking conflicts and manage multiple linked external identities for players.\n13: \n14: Managing a player’s linked external identities is important to ensure your players can secure their accounts and use the access method of their choice. When offering account linking to your customers, it's important to properly handle every scenario.\n15: \n16: A player can have multiple linked unique external identities (e.g. Apple, Facebook, Google). However, an external identity can only be linked to a single player (e.g. one player ID cannot be linked to multiple Google identities).\n17: \n18: ### Retrieve a player's information\n19: \n20: `GetPlayerInfoAsync()` can be used to load a player’s information which includes their linked identities.\n21: \n22: ### Handle account linking conflicts\n23: \n24: The linking operations will throw an error if an identity is already linked to another player.\n25: \n26: When there’s a conflict, it’s important to inform the player of the situation.\n27: \n28: An optional parameter can be provided to force the link to be created. Using this option will remove the initial link which can make the initial account unrecoverable.\n29: \n30: We recommend offering the following options in case of conflict:\n31: \n32: * Choose to force the link and keep the current account.\n33: * Choose to switch to the initial account by using the `SignInWith*` API.\n34: * Choose to cancel the action and remain in the current state.\n35: \n36: \n37: **Frame:**\n38: ![An example workflow for identity management that presents the previously mentioned options for how to handle conflicts. ](/api/media?file=/authentication/media/images/identity-management.png)",
+    "claim": "Link/unlink external identities,conflict constraints;not automatic unconsented merge",
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "source_date": "previous verified official snapshot;not new publication",
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "privacy_conditions": "Subject to provider contracts,scope,consent and local privacy controls",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "IG72S05",
+    "path": "vector/exchange-rampid.txt",
+    "sha256": "e2124f8e22357e85d8934c612f24483367a154bf7b25a42fbabe59c5746fc818",
+    "url": "https://unity.com/blog/unity-exchange-rampid-addressable-buying-mobile-gaming",
+    "text_path": "vector/exchange-rampid.txt",
+    "text_sha256": "e2124f8e22357e85d8934c612f24483367a154bf7b25a42fbabe59c5746fc818",
+    "start_line": 1,
+    "end_line": 30,
+    "excerpt": "1: RampID is Now Available Across Unity Exchange  | Unity\n2: Build with Unity\n3: Get started\n4: Blog\n5: Extending programmatic addressability into mobile gaming: Unity Exchange now supports RampID\n6: Apr 2, 2026\n7: |\n8: 3:00 Min\n9: In-app advertising\n10: In-app advertising\n11: Identity strategies shape how many teams buy media today, but mobile gaming has not always fit neatly into those workflows. Unity's expanded partnership with\n12: LiveRamp\n13: , the leader in data collaboration, is designed to change that.\n14: LiveRamp’s durable, interoperable identifier, RampID is now available across Unity Exchange in the U.S. and Canada. This gives you a way to activate identity-based audiences within Unity's mobile gaming ecosystem using the same identity framework you already use across the broader digital landscape.\n15: Closing the gap between identity strategy and mobile gaming\n16: For most teams, the challenge is less about strategy and more about consistency. Identity-driven buying works well across digital channels, but mobile gaming has often required separate approaches or workarounds that add friction and limit scale.\n17: With RampID available across Unity Exchange, Unity is increasing the addressability of gaming and helping advertisers extend their identity-driven strategies into mobile apps at scale.* You can activate RampID-enabled audiences across Unity's 256M monthly active devices in the United States¹, within brand-safe, high-attention gaming inventory, as a seamless part of an omnichannel media strategy.\n18: “Marketers want to be able to activate across every channel and reach their target customers quickly and seamlessly, and the partnership between LiveRamp and Unity extends this even further into gaming at scale,” said Matthew Hogg, SVP, Connectivity & Ecosystem at LiveRamp. “Unity is tapping RampID to unlock a critical capability for marketers to extend identity into a channel where it hasn’t always been available through standard exchange workflows.”\n19: Why mobile gaming, why now\n20: Players are engaged, attentive, and returning frequently. As programmatic budgets continue to shift toward environments where attention is high and inventory is brand-safe, mobile gaming is becoming a core part of media plans, not an afterthought.\n21: Making mobile gaming interoperable with the identity frameworks you already rely on positions it as a first-class addressable channel, rather than a standalone environment outside your existing workflows.\n22: \"Identity strategies only create value when they can be applied in the environments where people actually spend time on mobile,\" said Chris Feo, SVP, Programmatic at Unity. \"Making RampID available across Unity Exchange gives brands, agencies, and platforms a seamless way to extend addressable planning into mobile gaming as part of how they already approach identity across digital media.\"\n23: Getting started\n24: RampID is now available across Unity Exchange for brand advertisers and agencies transacting on Unity's mobile inventory.\n25: Talk to your Unity representative to learn more about activating RampID-enabled audiences within mobile gaming.\n26: Talk to your Unity representative\n27: Get in touch\n28: Sources:\n29: ¹ - Unity internal data, 2026.\n30: *RampID activation requires support from both Unity and the receiving partner.",
+    "claim": "US/Canada Exchange RampID activation requires receiving partner support;not confirmed Vector input",
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "source_date": "2026-04-02",
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "privacy_conditions": "Subject to provider contracts,scope,consent and local privacy controls",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "IG72C04",
+    "legacy_id": "MAX-device-payload",
+    "path": "identity-graph/sdk/max-13.6.4/java/com/applovin/impl/sdk/m.java",
+    "sha256": "b71a557faa6c799442b504b6b31c71c7d75d4076fe8c6eeacaa2f18f9be5ea0a",
+    "start_line": 1328,
+    "end_line": 1366,
+    "excerpt": "1328:         if (z) {\n1329:             v$a v_a = (v$a) l.get();\n1330:             v_aF = v_a;\n1331:             if (v_a != null) {\n1332:                 a0();\n1333:             } else if (u7.i()) {\n1334:                 v_aF = v_a;\n1335:                 v$a v_a2 = new v$a();\n1336:                 map2.put(\"inc\", Boolean.TRUE);\n1337:             } else {\n1338:                 v_aF = f();\n1339:             }\n1340:         } else {\n1341:             v_aF = f();\n1342:         }\n1343:         String strA = v_aF.a();\n1344:         if (StringUtils.isValidString(strA)) {\n1345:             map2.put(\"idfa\", strA);\n1346:         }\n1347:         v$a v_a3 = v_aF;\n1348:         map2.put(\"dnt\", Boolean.valueOf(v_a3.c()));\n1349:         map2.put(\"dnt_code\", v_a3.b().b());\n1350:         m$b m_b = (m$b) m.get();\n1351:         if (((Boolean) this.a.a(c5.J3)).booleanValue() && m_b != null) {\n1352:             map2.put(\"idfv\", m_b.a);\n1353:             map2.put(\"idfv_scope\", Integer.valueOf(m_b.b));\n1354:         }\n1355:         Boolean boolB = q0.b().b(this.c);\n1356:         if (boolB != null) {\n1357:             map2.put(\"huc\", boolB);\n1358:         }\n1359:         Boolean boolB2 = q0.c().b(this.c);\n1360:         if (boolB2 != null) {\n1361:             map2.put(\"aru\", boolB2);\n1362:         }\n1363:         Boolean boolB3 = q0.a().b(this.c);\n1364:         if (boolB3 != null) {\n1365:             map2.put(\"dns\", boolB3);\n1366:         }",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MAX-device-payload",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "original_jars": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/classes.jar",
+        "sha256": "a86e6ea602713fb4f441249a10c9f5b70aaa8dac022e8168f07ce3368756b1e0"
+      }
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "proof_scope": "Read/normalization/model or request-construction fragment;not actual upload/match/training",
+    "privacy_conditions": "OS identifier scope,SDK flags,authenticated account/provider consent,project config and applicable privacy authorization;field-specific report adds limits",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "class_name": "m",
+    "method_names_in_excerpt": [],
+    "call_chain_reference": "MAX-device-payload; related explicit edges in IG72 graph; no runtime observation"
+  },
+  {
+    "id": "IG72C05",
+    "legacy_id": "MAX-app-payload",
+    "path": "identity-graph/sdk/max-13.6.4/java/com/applovin/impl/sdk/m.java",
+    "sha256": "b71a557faa6c799442b504b6b31c71c7d75d4076fe8c6eeacaa2f18f9be5ea0a",
+    "start_line": 884,
+    "end_line": 925,
+    "excerpt": "884:     public Map H() {\n885:         Map map;\n886:         synchronized (this.g) {\n887:             try {\n888:                 map = CollectionUtils.map(this.f);\n889:             } catch (Throwable th) {\n890:                 throw this;\n891:             }\n892:         }\n893:         String str = StringUtils.isValidString(j) ? j : this.c.getApplicationInfo().packageName;\n894:         map.put(\"package_name\", str);\n895:         map.put(\"vz\", StringUtils.toShortSHA1Hash(str));\n896:         map.put(\"first_install\", Boolean.valueOf(this.a.F0()));\n897:         map.put(\"first_install_v2\", Boolean.valueOf(!this.a.C0()));\n898:         map.put(\"app_launch_count\", Long.valueOf(this.a.O()));\n899:         CollectionUtils.putLongIfValid(\"last_launch_ms\", this.a.N(), map);\n900:         map.put(\"test_ads\", Boolean.valueOf(this.h));\n901:         map.put(\"test_mode\", Integer.valueOf(this.a.u0().c() ? 1 : 0));\n902:         map.put(\"muted\", Boolean.valueOf(this.a.p0().isMuted()));\n903:         if (((Boolean) this.a.a(c5.K3)).booleanValue()) {\n904:             CollectionUtils.putStringIfValid(\"cuid\", this.a.z0().e(), map);\n905:         }\n906:         if (((Boolean) this.a.a(c5.N3)).booleanValue()) {\n907:             map.put(\"compass_random_token\", this.a.v());\n908:         }\n909:         if (((Boolean) this.a.a(c5.P3)).booleanValue()) {\n910:             map.put(\"applovin_random_token\", this.a.j0());\n911:         }\n912:         if (((Boolean) this.a.a(c5.T3)).booleanValue()) {\n913:             map.put(\"art\", this.a.s());\n914:         }\n915:         map.putAll(v());\n916:         CollectionUtils.putStringIfValid(\"template_browser_package_name\", (String) this.a.r0().a(e5.V, null), map);\n917:         return map;\n918:     }\n919: \n920:     public Map e() {\n921:         HashMap map = new HashMap();\n922:         map.put(\"sc\", this.a.a(c5.l));\n923:         map.put(\"sc2\", this.a.a(c5.m));\n924:         map.put(\"sc3\", this.a.a(c5.n));\n925:         map.put(\"server_installed_at\", this.a.a(c5.o));",
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MAX-app-payload",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "original_jars": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/classes.jar",
+        "sha256": "a86e6ea602713fb4f441249a10c9f5b70aaa8dac022e8168f07ce3368756b1e0"
+      }
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "proof_scope": "Read/normalization/model or request-construction fragment;not actual upload/match/training",
+    "privacy_conditions": "OS identifier scope,SDK flags,authenticated account/provider consent,project config and applicable privacy authorization;field-specific report adds limits",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "class_name": "m",
+    "method_names_in_excerpt": [
+      "H",
+      "e"
+    ],
+    "call_chain_reference": "MAX-app-payload; related explicit edges in IG72 graph; no runtime observation"
+  },
+  {
+    "id": "IG72C14",
+    "legacy_id": "UGS-external-link",
+    "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/AuthenticationServiceInternal.External.cs",
+    "sha256": "c8f50ce908c88603ab00e9f18b376ea14fed86a03649cf7ffb1b51f12779d3b4",
+    "start_line": 327,
+    "end_line": 365,
+    "excerpt": "327:             else\n328:             {\n329:                 throw ExceptionHandler.BuildClientInvalidStateException(State);\n330:             }\n331:         }\n332: \n333:         internal async Task UnlinkExternalTokenAsync(string idProvider)\n334:         {\n335:             if (IsAuthorized)\n336:             {\n337:                 var externalId = PlayerInfo?.GetIdentityId(idProvider);\n338: \n339:                 if (externalId == null)\n340:                 {\n341:                     throw ExceptionHandler.BuildClientUnlinkExternalIdNotFoundException();\n342:                 }\n343: \n344:                 try\n345:                 {\n346:                     await NetworkClient.UnlinkExternalTokenAsync(idProvider, new UnlinkRequest\n347:                     {\n348:                         IdProvider = idProvider,\n349:                         ExternalId = externalId\n350:                     });\n351: \n352:                     PlayerInfo.RemoveIdentity(idProvider);\n353:                 }\n354:                 catch (WebRequestException e)\n355:                 {\n356:                     throw ExceptionHandler.ConvertException(e);\n357:                 }\n358:             }\n359:             else\n360:             {\n361:                 throw ExceptionHandler.BuildClientInvalidStateException(State);\n362:             }\n363:         }\n364:     }\n365: }",
+    "sdk": "Unity Authentication/Player Accounts",
+    "version": "3.9.0",
+    "class_or_method": "UGS-external-link",
+    "original_packages": [
+      {
+        "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+        "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde"
+      }
+    ],
+    "original_jars": [],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "proof_scope": "Read/normalization/model or request-construction fragment;not actual upload/match/training",
+    "privacy_conditions": "OS identifier scope,SDK flags,authenticated account/provider consent,project config and applicable privacy authorization;field-specific report adds limits",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "class_name": "AuthenticationServiceInternal.External",
+    "method_names_in_excerpt": [
+      "UnlinkExternalTokenAsync"
+    ],
+    "call_chain_reference": "UGS-external-link; related explicit edges in IG72 graph; no runtime observation"
+  },
+  {
+    "id": "IG72C25",
+    "legacy_id": "UNITY-ads-initialization-identities",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetInitializationRequestPayload.kt",
+    "sha256": "ccfdc3d43907fffcd6a15a3819f7ba489821336e740029d9b12c9bd4071c88df",
+    "start_line": 26,
+    "end_line": 116,
+    "excerpt": "26:     override suspend fun invoke(): InitializationRequest = initializationRequest {\n27:         isFirstInit = !StorageManager.getStorage(StorageManager.StorageType.PRIVATE).run {\n28:             readStorage() && get(\"configuration.hasInitialized\") as? Boolean ?: false\n29:         }\n30:         clientInfo = getClientInfo()\n31:         idfi = deviceInfoRepository.getIdfi()\n32:         deviceInfoRepository.analyticsUserId?.let { analyticsUserId = it }\n33:         sessionId = sessionRepository.sessionId\n34:         deviceInfo = initializationDeviceInfo {\n35:             bundleId = deviceInfoRepository.appName\n36:             deviceModel = deviceInfoRepository.model\n37:             deviceMake = deviceInfoRepository.manufacturer\n38:             osVersion = deviceInfoRepository.osVersion\n39:             totalDiskSpace = deviceInfoRepository.staticDeviceInfo().totalDiskSpace\n40:             totalRamMemory = deviceInfoRepository.staticDeviceInfo().totalRamMemory\n41:             currentUiTheme = deviceInfoRepository.currentUiTheme.toLong()\n42:             networkOperator = deviceInfoRepository.dynamicDeviceInfo.networkOperator\n43:             batteryLevel = deviceInfoRepository.dynamicDeviceInfo.batteryLevel\n44:             batteryStatus = deviceInfoRepository.dynamicDeviceInfo.batteryStatus\n45:             systemBootTime = deviceInfoRepository.systemBootTime\n46:             language = deviceInfoRepository.dynamicDeviceInfo.language\n47:             localList = deviceInfoRepository.localeList.joinToString(\",\")\n48:             connectionType = deviceInfoRepository.connectionTypeStr\n49:         }\n50: \n51:         val auidByteString = deviceInfoRepository.getAuidByteString()\n52:         if (auidByteString != null) {\n53:             this.auid = auidByteString\n54:         }\n55: \n56:         val auidString = deviceInfoRepository.getAuidString()\n57:         if (!auidString.isNullOrEmpty()) {\n58:             this.auidString = auidString\n59:         }\n60: \n61:         val privacy = sessionRepository.getPrivacy()\n62:         if (!privacy.isEmpty) {\n63:             this.privacy = privacy\n64:         }\n65: \n66:         val gatewayCache = sessionRepository.getGatewayCache()\n67:         if (!gatewayCache.isEmpty) {\n68:             cache = gatewayCache\n69:         }\n70: \n71:         legacyUserConsentRepository.legacyFlowUserConsent?.let { legacyFlowUserConsent = it }\n72: \n73:         sessionRepository.unityInstallationId?.let {\n74:             unityInstallationId = it.toByteStringUtf8()\n75:         }\n76: \n77:         sessionRepository.unityMegaSessionId?.let {\n78:             unityMegaSessionId = it.toByteStringUtf8()\n79:         }\n80: \n81:         deviceInfoRepository.getUnityBuildGuid().takeIf {\n82:             !it.isNullOrEmpty()\n83:         }?.let {\n84:             this.unityBuildGuid = it\n85:         }\n86: \n87:         sessionRepository.initializationConfiguration?.extras?.toMutableMap()?.let {\n88:             // public api, blob passed via extras.\n89:             // MetaData will be deprecated and eventually removed\n90:             it.remove(BLOB_EXTRA_KEY)\n91:                 ?.toByteStringUtf8()\n92:                 ?.let(::uadsInitBlob::set)\n93: \n94:             extras.putAll(it)\n95:         }\n96: \n97:         if (!hasUadsInitBlob()) {\n98:             // If no blob added via extras, try the legacy metaData reader\n99:             mediationInitBlobMetadataReader.read<String?>()\n100:                 ?.toByteStringUtf8()\n101:                 ?.let(::uadsInitBlob::set)\n102:         }\n103: \n104:         if (isFirstInit) {\n105:             installReferrerDataSource()?.let {\n106:                 installReferrer = it\n107:             }\n108:         }\n109: \n110:         UnityAds.userIdentifier?.let { externalUserIdentifier = it }\n111:     }\n112: \n113:     companion object {\n114:         private const val BLOB_EXTRA_KEY = \"uads_init_blob\"\n115:     }\n116: }",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "UNITY-ads-initialization-identities",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "original_jars": [],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "proof_scope": "Read/normalization/model or request-construction fragment;not actual upload/match/training",
+    "privacy_conditions": "OS identifier scope,SDK flags,authenticated account/provider consent,project config and applicable privacy authorization;field-specific report adds limits",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "class_name": "AndroidGetInitializationRequestPayload",
+    "method_names_in_excerpt": [
+      "invoke"
+    ],
+    "call_chain_reference": "UNITY-ads-initialization-identities; related explicit edges in IG72 graph; no runtime observation"
+  },
+  {
+    "id": "IG72C27",
+    "legacy_id": "UNITY-ads-PII-gates",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidPrivacyDeviceInfoDataSource.kt",
+    "sha256": "47e6255c8cb9218cd6c300efb0fae3f94e17877e8ae5a27d2558a06cb6a058f8",
+    "start_line": 20,
+    "end_line": 58,
+    "excerpt": "20:     private val idfaInitialized = MutableStateFlow(false)\n21: \n22:     override fun fetch(allowed: AllowedPii): PiiOuterClass.Pii {\n23:         // Initialize only once, this is not done in init block for now since underlying service binder is doing callbacks on the main thread.\n24:         if (!idfaInitialized.value) {\n25:             idfaInitialized.value = true\n26:             AdvertisingId.init(context)\n27:             OpenAdvertisingId.init(context)\n28: \n29:         }\n30:         return pii {\n31:             if (allowed.idfa) {\n32:                 val adId = getAdvertisingTrackingId()\n33:                 if (adId.isNotEmpty()) advertisingId = UUID.fromString(adId).toByteString()\n34:                 val openAdId = getOpenAdvertisingTrackingId()\n35:                 if (openAdId.isNotEmpty()) openAdvertisingTrackingId = UUID.fromString(openAdId).toByteString()\n36:             }\n37: \n38:             if (allowed.fid) {\n39:                 fIdDataSource()\n40:                     ?.takeIf(String::isNotEmpty)\n41:                     ?.let(::fid::set)\n42:             }\n43: \n44:             if (allowed.appsetId) {\n45:                 appSetIdDataSource.appSetId\n46:                     ?.takeIf(String::isNotEmpty)\n47:                     ?.let(::appsetId::set)\n48:             }\n49:         }\n50:     }\n51: \n52:     private fun getAdvertisingTrackingId(): String {\n53:         return AdvertisingId.getAdvertisingTrackingId() ?: \"\"\n54:     }\n55: \n56:     private fun getOpenAdvertisingTrackingId(): String {\n57:         return OpenAdvertisingId.getOpenAdvertisingTrackingId() ?: \"\"\n58:     }",
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "UNITY-ads-PII-gates",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "original_jars": [],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "proof_scope": "Read/normalization/model or request-construction fragment;not actual upload/match/training",
+    "privacy_conditions": "OS identifier scope,SDK flags,authenticated account/provider consent,project config and applicable privacy authorization;field-specific report adds limits",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "reviewed_utc": "2026-11-20T05:27:46.711048+00:00",
+    "class_name": "AndroidPrivacyDeviceInfoDataSource",
+    "method_names_in_excerpt": [
+      "fetch",
+      "getAdvertisingTrackingId",
+      "getOpenAdvertisingTrackingId"
+    ],
+    "call_chain_reference": "UNITY-ads-PII-gates; related explicit edges in IG72 graph; no runtime observation"
+  },
+  {
+    "id": "CGS51",
+    "product": "Axon model inputs/advertiser-shared data and explicit exclusions",
+    "path": "nongame/applovin-axon-about.txt",
+    "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7",
+    "start_line": 54,
+    "end_line": 73,
+    "url": "https://legal.applovin.com/about-applovins-axon-ai/",
+    "excerpt": "54: How does Axon AI work?\n55: Businesses of all sizes use AppLovin Ads to automate, optimize, and manage their marketing efforts.\n56: Advertisers set specific return goals for their advertising campaigns.\n57: Axon AI’s predictive algorithms then evaluate potential impressions with the goals of meeting advertisers’ return on advertising spend targets and other marketing objectives and finding the users most likely to download or otherwise engage with their product(s).\n58: AppLovin bids on impressions based on Axon AI’s determination of the value of the impression to the particular advertiser.\n59: AppLovin earns revenues based on the value we drive for advertisers.  Our performance-based advertising model therefore demands that ads served by us lead to genuine, high-intent engagement, ensuring our campaigns deliver meaningful, measurable results for advertisers.\n60: What data does Axon AI use?\n61: Complex AI models, like Axon AI, train and optimize on a continual basis using an assortment of data.  Our models use device and network information and other information we have collected, or our partners share, about users’ engagement with applications, ads, and other digital properties, as described in our\n62: Privacy Policy\n63: and\n64: How AppLovin Shows You Ads\n65: page.  In addition, our models use win or loss notifications from our in-app bidding and monetization solution known as AppLovin Max, which all bidders receive depending on whether the bidder won or lost a particular impression.  Our models also use advertisers’ own data about their users if they choose to share that data with us.\n66: We do not collect or seek to elicit—and our models do not ingest—users’ “sensitive personal information” (such as social security numbers, precise geolocation, racial and ethnic characteristics, religious or philosophical beliefs, or the contents of messages) or protected characteristics (such as age and gender).  In addition, we do not collect or seek to elicit—and our models do not ingest—other bidders’ bid information or other bidders’ user data.  We also explicitly prohibit partners from initializing our technologies in connection with “children” or otherwise providing us with children’s data, and we prohibit apps exclusively designed for and/or exclusively directed to children on our platform.\n67: For more information, please review our\n68: Privacy Policy\n69: and\n70: How AppLovin Shows You Ads\n71: page.\n72: How does Axon AI continue to improve?\n73: On an ongoing basis, Axon AI’s models experience compounding improvements through self-learning, continuing data ingestion, and engineering oversight and enhancements.  As more advertisers use our performance-based advertising solutions, the models improve through additional data and better insights (per the collection described above), which then further enhances the efficiency and effectiveness of AppLovin Ads.",
+    "evidence_level": "【官方公开证实】",
+    "evidence_priority": "A",
+    "source_date": "page date not stated; cached/reviewed 2026-11-19",
+    "reviewed_utc": "2026-11-19T10:04:09.005670+00:00",
+    "production_delivery": false,
+    "server_received": false,
+    "model_training_proven": false,
+    "scope": "official product/integration statement, not observed target-game enablement"
+  },
+  {
+    "id": "MA60S17",
+    "company": "Unity",
+    "product": "Vector bid-time player/game intelligence",
+    "path": "model-architecture/public/unity-d7-d28.txt",
+    "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a",
+    "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns",
+    "source_date": "2026-06-25; cited data period 2024-04 to 2025-02",
+    "start_line": 208,
+    "end_line": 223,
+    "excerpt": "208: How Unity’s D28 IAP ROAS optimizer prevents D7 cannibalization\n209: The question remains that if both campaign types bid on impressions in the same inventory, won’t they compete against each other and drive up costs?\n210: Unity's analysis of D28 converters reveals that only 38%* of users who convert with in-app purchases by D28 spend in the first week. In other words, roughly two-thirds of high-value D28 spenders showed no early IAP conversion signals whatsoever.\n211: These aren’t players who nearly converted on D7 but needed a few more days. They’re a different player cohort with different motivations, engagement patterns, and conversion triggers.\n212: This is where Unity Vector's support is vital. Traditional optimization models can only see what happens after a user installs: Did they convert? How much did they spend? Unity Vector enables Unity IAP ROAS optimizers to see something more.\n213: Because Unity powers both game creation and user growth, Unity Vector has unique visibility into player behavior and patterns.\n214: Unity Vector combines holistic player and game intelligence to understand why certain players match with certain games, and when they're likely to convert. It uses both attributed data and unattributed data, like cross-game behavioral patterns and aggregate cohort insights, to distinguish between these player types at the moment of bid decision.\n215: The future of ROAS optimization with Unity Vector\n216: When UA efficiency increasingly plays a large role in which games succeed and which fail, leaving only 38% of IAP converters addressed isn't viable. And without the early converters of D7 campaigns, optimizers have less signals and businesses have less to invest in their late-game campaigns.\n217: Both are necessary. And with Unity Vector powering both optimization windows, these Unity Ads campaign types can deliver better results as the model learns from Unity's place at the intersection of game creation and growth.\n218: The architectural decision to optimize for holistic player and game intelligence means Unity Vector's optimization capabilities improve alongside games as they evolve and player behaviors shift - allowing Unity Vector to provide later LTV predictions as the market demands increasingly longer optimization windows. Ultimately, this ensures Unity is able to help creators build games that players love to play, and turn those games into profitable, sustainable businesses.\n219: Ready to expand your optimization strategy?\n220: Get started\n221: .\n222: *Source:\n223: Internal Unity data, D7 IAP/D28 IAP Comparative Analysis, April 2024 - February 2025",
+    "short_quote": "cross-game behavioral patterns and aggregate cohort insights",
+    "claim": "官方明确attributed/unattributed数据，包括cross-game behavioral patterns和aggregate cohort insights，在bid decision时区分玩家类型",
+    "evidence_level": "【官方公开证实】",
+    "applicable_product": "Vector IAP D7/D28产品用途，字段/作用域不公开",
+    "production_deployment_statement": "vendor states current bid-decision use; not independently audited",
+    "limits_and_counterevidence": "未说明参数共享/聚合统计/个人级ID各占何角色；38%统计样本期2024-04到2025-02，不是Vector因果提升实验。",
+    "evidence_kind": "official specific data-use assertion; not model implementation paper",
+    "original_source_id": null,
+    "reviewed_utc": "2026-11-19T10:26:23.399440+00:00",
+    "production_actual_proven": false,
+    "independent_production_audit": false,
+    "observed_target_game_delivery": false,
+    "server_model_training": false,
+    "fetch_provenance": {
+      "id": "unity-d7-d28",
+      "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns",
+      "acquired_utc": "2026-11-19T10:23:09.246879+00:00",
+      "method": "public GET only; no authentication or access-control bypass",
+      "status": 200,
+      "final_url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns",
+      "bytes": 450915,
+      "raw_path": "model-architecture/public/unity-d7-d28.raw",
+      "sha256": "92476c3495b2a740743241b3e868421c531b391b6f13037094f5f3b155f9f8c4",
+      "text_path": "model-architecture/public/unity-d7-d28.txt",
+      "text_sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a",
+      "title": "ROAS Optimization: Balancing D7 and D28 IAP Campaigns",
+      "links": 131
+    },
+    "page_dates": {}
+  },
+  {
+    "id": "IV74S01",
+    "company": "LiveRamp",
+    "url": "https://developers.liveramp.com/rampid-api/reference/about-liveramp-identity-resolution",
+    "final_url": "https://developers.liveramp.com/rampid-api/reference/about-liveramp-identity-resolution",
+    "path": "identity-value74/sources/lr-match-guide.raw",
+    "sha256": "cc8b96dd3b108fd344a97691ba8b18720ee58818eb5d887a2784998071104855",
+    "text_path": "identity-value74/sources/lr-match-guide.txt",
+    "text_sha256": "fe4393db522f513492fd541aa7b7456ca3eb7534be2ada1848ccadae93349894",
+    "start_line": 1,
+    "end_line": 25,
+    "excerpt": "1: Copy Page\n2: About LiveRamp Identity Resolution\n3: Learn how to match data to RampIDs.\n4: The Retrieval API allows you to resolve your data to individuals. To resolve raw PII data, you use the\n5: Match endpoint\n6: , and to resolve hashed PII data, you use the\n7: Lookup endpoint\n8: .\n9: Rate Limits\n10: API calls are made using\n11: batch requests\n12: , which allow you to send up to 360 calls per minute and 100-1000 records per call. The best practice is to batch the full 1000 records for as many calls as possible.\n13: The Process\n14: Request an access token.\n15: Send your PII-based consumer data, such as name, address, phone number, or email address, to a RampID API Match or Lookup endpoint.\n16: The API processes the request and then returns the applicable RampIDs along with any requested associated metadata.\n17: If a matching set of touchpoints is found in the LiveRamp Identity Graph, the API returns a\n18: maintained RampID\n19: .  The Match endpoint may return multiple matches, but the Lookup matchpoint returns only a single RampID.\n20: If a matching touchpoint isn't found, the API returns a\n21: derived RampID\n22: for each PII touchpoint.\n23: For more information about maintained and derived RampIDs, see\n24: RampIDs\n25: .",
+    "claim": "Resolution can return maintained match or derived RampID;returning an ID is not proof of existing entity match",
+    "evidence_stages": [
+      "E4"
+    ],
+    "source_date": "page says 8 months ago;exact date UNKNOWN",
+    "acquired_utc": "2026-11-20T05:40:32.047109+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S02",
+    "company": "LiveRamp",
+    "url": "https://developers.liveramp.com/rampid-api/reference/transcode-rampids-1",
+    "final_url": "https://developers.liveramp.com/rampid-api/reference/transcode-rampids-1",
+    "path": "identity-value74/sources/lr-translation.raw",
+    "sha256": "21b442cb4e20d47e96830706f380a28c34656e42ec367f97f5bdcb95cca48333",
+    "text_path": "identity-value74/sources/lr-translation.txt",
+    "text_sha256": "31ff5cb16e000a5596f406befb7fa2a5154084c054002844804bc97e22893149",
+    "start_line": 1,
+    "end_line": 59,
+    "excerpt": "1: Copy Page\n2: About RampID Translation\n3: Use the Translation endpoint to translate RampIDs from one partner encoding to another.\n4: 📘\n5: RampID translation was formerly known as \"RampID transcoding\". You might continue to see instances of \"transcode\", \"transcoding\", and \"transcoded\" in some places.\n6: 🚧\n7: Every RampID has a specific encoding to ensure the security and privacy of our partner's data. Due to the sensitive nature of RampIDs, certain privacy restrictions must be validated before translation access is provided. To enable this feature, contact your LiveRamp representative.\n8: The API translates RampIDs from one partner encoding to another, enabling each partner to maintain control of their unique RampIDs in a secure collaboration.\n9: Calls to translate RampIDs can be made as a single transaction call (for a single RampID) or as a batch request call (to translate up to 1,000 RampIDs per call).  We recommend you use batch requests whenever possible.\n10: For more information, see \"\n11: Identity Translation\n12: \" in the Identity help.\n13: RampID Structure\n14: Each RampID consists of three parts:\n15: The two-letter prefix, which denotes whether the RampID is maintained  (\n16: XY\n17: for individuals and\n18: HY\n19: for households) or derived (\n20: Xi\n21: or\n22: Hi\n23: for households)\n24: The four-digit partner encoding (sometimes abbreviated to just \"encoding\"), which uniquely identifies the partner\n25: The unique value that identifies the person or household\n26: The default encoding for the RampIDs that you receive is called your \"native encoding\".\n27: Other-to-Native Translation\n28: When you receive RampIDs in encodings that are different from your default, you translate them to your native encoding.  Each partner encoding you would like to translate from requires an explicit one-time authorization to be performed by our client support team.\n29: Once  this authorization is configured, you can send any RampID in any authorized encoding to the API and  then call the\n30: /people/anonymousAbilitec/\n31: endpoint (for individuals) or the\n32: /households/anonymousAbilitec/\n33: endpoint (for households) to receive that specific RampID in your native encoding.\n34: Native-to-Other Translation\n35: 📘\n36: The ability to perform native-to-other translation requires proper authorization setup. Your LiveRamp representative will properly permission and provide partner encodings to you.\n37: You can translate RampIDs from your native encoding to another entity's encoding by providing the partner encoding directly as a query parameter.\n38: Requesting RampID Translation Permissions\n39: Translation permissions depend on a two-way agreement between your company and the partner whose RampIDs you wish to translate. This agreement must explicitly consent to the translation while specifying the translation direction (native-to-other or other-to-native).\n40: When you contact your LiveRamp representative about obtaining translation permissions, they will email both you and your partner to obtain this consent, cc:ing\n41: [email protected]\n42: .\n43: The email for the partner doing the translation will read:\n44: Please confirm permission to translate Company A RampIDs into Company \n45: B RampIDs.  Once received, your permission may be revoked at \n46: any time via email to\n47: [email protected]\n48: .\n49: The email for the partner translated from will read:\n50: Please confirm permission to translate Company A RampIDs into Company B RampIDs.  \n51:  Once received, your permission may be revoked at any time via email to\n52: [email protected]\n53: .\n54: If you are translating both to and from a partner's RampIDs, you must obtain separate permission for each translation direction:\n55: Please confirm permission to translate Company A RampIDs into Company \n56: B RampIDs and to translate Company B RampIDs into \n57: Company A RampIDs.  Once received, your permission may be revoked at any time via \n58: email to\n59: [email protected]",
+    "claim": "Partner-specific encoding and direction-specific consent/revocable translation;not a globally interchangeable identifier",
+    "evidence_stages": [
+      "E4"
+    ],
+    "source_date": "page says 8 months ago;exact date UNKNOWN",
+    "acquired_utc": "2026-11-20T05:40:32.047109+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S03",
+    "company": "LiveRamp",
+    "url": "https://developers.liveramp.com/rampid-api/reference/envelope-decryption-endpoint",
+    "final_url": "https://developers.liveramp.com/rampid-api/reference/envelope-decryption-endpoint",
+    "path": "identity-value74/sources/lr-envelope.raw",
+    "sha256": "3587d4b72a93ccac2f0893d1028fe41422a66e2572f60cb8bfcffa9630bfe2fa",
+    "text_path": "identity-value74/sources/lr-envelope.txt",
+    "text_sha256": "90f6055bc869560873008cd0ee6bc9ecee3fd81079c7dda4da1954b98c187d7e",
+    "start_line": 1,
+    "end_line": 33,
+    "excerpt": "1: Copy Page\n2: Identity Envelope Decryption\n3: Learn how you can use the API for identity envelope decryption.\n4: 📘\n5: Want API reference information for  Identity Envelope Decryption?\n6: See\n7: Decrypt Identity Envelopes\n8: for more information.\n9: Due to the opaque nature of identity envelopes, they need to be decrypted into usable identifier data for the parties who receive them. The RampID API provides the decryption capability using the envelope decryption endpoint. This endpoint is used to decode and decrypt an envelope to extract the identifier in the envelope. The RampID API  then encrypts the value with a partner-specific encryption key and partner ID. The result is a RampID in the partner ID space that is usable for transactions.\n10: There is a limitation to the type of data the API can decrypt from. The data represented in the envelopes must correspond to a valid RampID. Data types such as cookie and mobile ID are not currently supported.\n11: Envelope Decryption Call\n12: The API supports envelope lookups on\n13: Person\n14: -based identifiers. As the name implies, the input envelope must represent an individual in the underlying data, namely, with granularity of \"X\" (meaning INDIVIDUAL).\n15: This endpoint supports POST operations with an envelope string passed in as a query parameter. The standard API parameters for the lookup endpoint are also applicable.\n16: The URI path is:\n17: /people/envelope?key=_\\<envelope_string_representing_individual>_\n18: The API returns status code 200 to indicate a successful execution. The resulting decrypted RampID is made available in the\n19: anonymousConsumerLink\n20: attribute in the \"anonymousAbilitec\" bundle.\n21: 📘\n22: Pseudonymous identifier\n23: In the context of the RampID API, references to \"anonymousAbilitec\" indicate online device linking to match disparate devices to people-based pseudonymous identifiers. For more information, see \"\n24: RampID Methodology\n25: \" in the Identity documentation.\n26: Unsuccessful responses from the endpoint may return status codes of 400 (bad request), 404 (not found) or 500 (server error). See\n27: Errors and Troubleshooting\n28: section for details.\n29: 🚧\n30: Before Using the Identity Envelope Decryption Endpoint\n31: In order to use this endpoint, a user must be set up with proper credentials and access permissions. A client representative can help with this setup. For making API calls, a user needs to have a client ID and a client secret. For more details, see \"\n32: Request an Access Token\n33: \".",
+    "claim": "Person envelope -> partner-space anonymousConsumerLink;credentials required;not direct cookie/mobile-ID decryption",
+    "evidence_stages": [
+      "E4"
+    ],
+    "source_date": "page says 8 months ago;exact date UNKNOWN",
+    "acquired_utc": "2026-11-20T05:40:32.047109+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S04",
+    "company": "LiveRamp",
+    "url": "https://developers.liveramp.com/rampid-api/reference/envelope-decryption-endpoint",
+    "final_url": "https://developers.liveramp.com/rampid-api/reference/envelope-decryption-endpoint",
+    "path": "identity-value74/sources/lr-envelope.raw",
+    "sha256": "3587d4b72a93ccac2f0893d1028fe41422a66e2572f60cb8bfcffa9630bfe2fa",
+    "text_path": "identity-value74/sources/lr-envelope.txt",
+    "text_sha256": "90f6055bc869560873008cd0ee6bc9ecee3fd81079c7dda4da1954b98c187d7e",
+    "start_line": 74,
+    "end_line": 123,
+    "excerpt": "74: Errors and Troubleshooting\n75: In addition to error codes listed in\n76: Error documents\n77: , the envelope decryption endpoint may return the following errors:\n78: Category\n79: Message\n80: Status Code\n81: Cause\n82: Invalid lookup request\n83: Invalid keyType and documentClass combination\n84: 400\n85: Only\n86: people\n87: documents are supported.\n88: Invalid RampID granularity for document class\n89: 400\n90: Only INDIVIDUAL granularity (\"X\") is supported\n91: Unsupported RampID source in the envelope\n92: 400\n93: The source type of the identity link data in the envelope is not supported by the API.\n94: Invalid envelope\n95: Envelope error: READ_ENVELOPE_HANDLE_FAILED\n96: 400\n97: Envelope handle cannot be read.\n98: Envelope error: INVALID_ENVELOPE_HANDLE\n99: 400\n100: Envelope handle is invalid/unsupported.\n101: Envelope error: ENVELOPE_EXPIRED\n102: 400\n103: Envelope was created at least 30 days ago and has expired.\n104: Envelope error: NO_PERMITTED_SUBNETWORKS\n105: 400\n106: Envelope does not contain at least 1 permitted publisher subnetwork.\n107: Envelope error: ENVELOPE_DECRYPTION_FAILED\n108: 400\n109: Envelope payload cannot be decrypted using the key indicated by the handle.\n110: Envelope error: ENVELOPE_DECODING_FAILED\n111: 400\n112: Envelope string is not in valid Base64 format.\n113: No matching entity\n114: Entity in the envelope no longer exists\n115: 404\n116: The entity represented in the envelope does not exist in the data repository any more.\n117: Opted-out entity\n118: 404\n119: The entity represented in the envelope has opted out.\n120: Server error\n121: Internal server error\n122: 500\n123: An error was encountered on server side while processing the request.",
+    "claim": "30-day envelope expiry,opted-out/deleted entity and subnetwork failures;not full RampID or model retention TTL",
+    "evidence_stages": [
+      "E4"
+    ],
+    "source_date": "page says 8 months ago;exact date UNKNOWN",
+    "acquired_utc": "2026-11-20T05:40:32.047109+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S05",
+    "company": "LiveRamp",
+    "url": "https://developers.liveramp.com/rampid-api/reference/matchmetadata-bundle",
+    "final_url": "https://developers.liveramp.com/rampid-api/reference/matchmetadata-bundle",
+    "path": "identity-value74/sources/lr-match-metadata.raw",
+    "sha256": "32ce90a9775e2d4770e5167c62104f7f8964b2c285d2acafc6843262affc6a46",
+    "text_path": "identity-value74/sources/lr-match-metadata.txt",
+    "text_sha256": "08b2f3410232be6064c9b1115e728845f6ce30af11ba97da120ac51744920357",
+    "start_line": 1,
+    "end_line": 43,
+    "excerpt": "1: Copy Page\n2: matchMetadata Bundle\n3: For calls to the\n4: Match Endpoint\n5: , the\n6: matchMetadata\n7: bundle returns information about the components that were used to obtain the match.\n8: See the table below for information on the metadata elements returned.\n9: Data Element\n10: Type\n11: Description\n12: Example or Valid Values\n13: matchComponents\n14: array of strings\n15: Components that contributed to the match\n16: name|streetAddress|zipCode|businessName|phoneNumber|emailAddress\n17: distinctMatch\n18: boolean\n19: When distinctMatch equals true this flag indicates that a single highest score match was found. Note: The distinct match flag for person and place documents is only equal to true when there is only one distinct document id for a given match cascade step. For entity documents, the distinct match flag is only equal to true when there is only one unique person id for that entity.**\n20: true\n21: matchConfidence\n22: string\n23: Indicates the confidence in the match. Corresponds directly to the step in which it matched in the cascade (see matchComponents)\n24: nameMatchIntegrity\n25: string\n26: Indicates whether part or all of the major name components were used to obtain the match\n27: • partial\n28: • complete\n29: **The\n30: distinctMatch\n31: flag is only valid on requests where limit is not set, or\n32: limit\n33: =\"1\".\n34: Example\n35: JSON\n36: {\n37:   \"matchMetadata\": {\n38:       \"matchComponents\" : [ \"name\", \"zipCode\" ],\n39:       \"distinctMatch\" : false,\n40:       \"matchConfidence\" : \"8\",\n41:       \"nameMatchIntegrity\" : \"complete\"\n42:   }\n43: }",
+    "claim": "matchComponents/distinctMatch/matchConfidence contract;confidence is cascade step,not calibrated probability",
+    "evidence_stages": [
+      "E4"
+    ],
+    "source_date": "page says 8 months ago;exact date UNKNOWN",
+    "acquired_utc": "2026-11-20T05:41:29.581394+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S07",
+    "company": "AppLovin",
+    "url": "https://legal.applovin.com/privacy/",
+    "final_url": "https://legal.applovin.com/privacy/",
+    "path": "identity-value74/sources/al-privacy.raw",
+    "sha256": "b890d8da9b8c09e8794b331a6053f3e6d8b1f9353c9dfdee1149ef9012b80a3a",
+    "text_path": "identity-value74/sources/al-privacy.txt",
+    "text_sha256": "2f8bb166ae234f4d5bfdfe3e62e27b95c5a851b0e098d8bff997876fae3eb74e",
+    "start_line": 82,
+    "end_line": 136,
+    "excerpt": "82: Effective Date\n83: : August 6, 2026\n84: AppLovin Corporation (“AppLovin,” “we,” “us,” or “our”) operates a suite of tools for app developers, web merchants, and other businesses to automate and optimize the marketing and monetization of their platforms, products, or services by enabling the placement of different types of advertisements on digital properties including mobile apps, websites, and connected TV devices (collectively, the “Advertising Services” or “Services”).  As explained below, consumers interact with us in various ways, primarily through advertisements served by AppLovin on behalf of advertisers.\n85: The AppLovin Privacy Policy (this “Privacy Policy”) explains how we collect, use, and share information through our Services and advertising platform, our corporate website at\n86: www.applovin.com\n87: , and our business platform websites\n88: ads.applovin.com\n89: and\n90: max.applovin.com\n91: , and other pages provided by AppLovin (collectively, the “Website”), as well as your choices related to that information.\n92: Our Advertising Services\n93: This section describes the information we collect, use, and share through our Advertising Services.\n94: General Information Collection and Use\n95: If you are a consumer who downloads and uses an application which contains the AppLovin SDK or otherwise interacts with the Services through advertisements served within a digital property, we may collect certain information, including the following:\n96: Device, App, and Browser Data\n97: Device make, model, hardware, and operating system;\n98: Device properties related to screen, display, size, orientation, audio, video, battery, storage, memory usage, settings, and boot time;\n99: Device settings related to accessibility features and font size;\n100: Device integrity and security signals;\n101: Carrier;\n102: Name, properties, performance, session information, and installation information of the mobile application through which you interact with the Services;\n103: Country, time zone, and locale settings (country and preferred language);\n104: Network connection type and speed;\n105: IP Address;\n106: Internet browser user-agent and software environment used to access the Services;\n107: HTTP header and request information;\n108: Advertising IDs (IDFA/GAID/Amazon Advertising ID);\n109: Vendor IDs (IDFV);\n110: App Set IDs;\n111: Email addresses, phone numbers, and Publisher User IDs (if provided by publisher); and\n112: Advertising and tracking preferences and restrictions.\n113: Advertisers (through the advertiser itself or through a third party service provider on behalf of such advertiser) may also share transactional or other “event” data related to a consumer’s interaction with an application, such as information about purchases or application installations.\n114: Information Collection and Use Specific\n115: to\n116: e-Commerce Ads Only\n117: If you are a consumer who interacts with the Services through an e-commerce platform or merchant website or app, we may collect certain additional information that you provided to the e-commerce platform or merchant (either through our SDK or pixel or through a third party’s API or other similar technologies), including the following:\n118: User IDs;\n119: Shopping browsing events (e.g., views) and search history;\n120: Records of products purchased or considered (e.g., added to cart, check out);\n121: Purchasing histories;\n122: Email addresses, phone numbers, city, state, country code, and 5-digit zip code (if provided by merchant); and\n123: Information regarding user interactions with advertising partners and their merchant partners’ sites and advertisements.\n124: The exact information AppLovin collects depends on choices you’ve made in the ad settings on your browser and device, on permissions you give on sites, apps, or other services, or in the privacy controls offered by those services and AppLovin.\n125: How We Collect Your Information\n126: This information may be collected automatically across mobile apps and devices via the Services or received from third parties (such as Mobile Measurement Partners) across different technologies over time. We may also combine information we collect with other information we derive through analytical techniques and we will use that combined information to provide the Services.\n127: How We Use Your Information\n128: We generally use the information we collect to:\n129: Deliver the Services, maintain, and improve them, including our AI-powered advertising technology, and research and develop new ones;\n130: Promote safety, security, and integrity of Services;\n131: Provide measurement, analytics, and reporting; and\n132: Comply with legal and regulatory obligations.\n133: Personalization\n134: . We may use the above categories of personal data to present you with advertising that appears more relevant based on your possible interests. For example, selected events on an app or website (such as pages you view or purchases you make) can be stored and used with other information (such as previous actions on that or other apps or websites) to suggest advertising to you.\n135: Use of Artificial Intelligence “AI.”\n136: We use AI-powered advertising technology to help us improve our advertising products and Services and serve ads that are relevant and interesting to you. We use it in ways that do not produce legal or similarly significant effects on you (for example, we may use such technology to provide an ad for a product you may be interested in or to reorder how advertisements might appear when you visit a digital property such as a mobile app or a website).",
+    "claim": "Official cross-app/device collection,combination and other-app personalization scope;no resolved graph output schema",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "2026-08-06 effective",
+    "acquired_utc": "2026-11-20T05:39:34.407735+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S08",
+    "company": "AppLovin",
+    "url": "https://legal.applovin.com/privacy/",
+    "final_url": "https://legal.applovin.com/privacy/",
+    "path": "identity-value74/sources/al-privacy.raw",
+    "sha256": "b890d8da9b8c09e8794b331a6053f3e6d8b1f9353c9dfdee1149ef9012b80a3a",
+    "text_path": "identity-value74/sources/al-privacy.txt",
+    "text_sha256": "2f8bb166ae234f4d5bfdfe3e62e27b95c5a851b0e098d8bff997876fae3eb74e",
+    "start_line": 161,
+    "end_line": 178,
+    "excerpt": "161: Manage Your Privacy Choices\n162: To limit collection of information from mobile devices, please visit your device’s settings to set the “Limit Ad Tracking” or other similar features on your device. Additionally, you may opt-out of interest-based advertising within ads served by AppLovin; for detailed instructions, see\n163: How AppLovin Shows You Ads\n164: . You may still receive ads after limiting processing of your information for interest-based advertising, but those ads may be less relevant to your interests.\n165: To access or delete the data collected by AppLovin from your device linked to your advertising identifier, you may download the AppLovin Privacy Management Application from the Apple or Google Play Stores:\n166: By navigating through the tabs in the AppLovin Privacy Management Application, you can erase the personal information that AppLovin may have collected about you linked to your advertising identifier or request a copy of that personal information. If you encounter technical issues with the app, please contact us via email at\n167: [email protected]\n168: .\n169: To access or delete data collected by AppLovin linked to your email address or phone number  — such as data collected through our e-commerce advertising services where that information was shared with us by an advertiser or merchant — you may submit a request through AppLovin’s Privacy Rights Request Portal available at\n170: https://applovin.com/en/privacy-data-request\n171: .  To submit an access or deletion request, you will need to provide a valid email address; results or a deletion confirmation will be delivered to that address. We will use any information you provide solely to verify your identity and process your request.\n172: The above data rights mechanisms are available to you regardless of where you live.\n173: Children’s Privacy\n174: We do not knowingly collect personal information from, or serve advertisements to, children as defined by applicable laws. If you believe we have served an advertisement to a child or might have any personal information from or about a child, or if you believe a mobile application in which an AppLovin-served advertisement appeared may be designed for, directed to, or pass personal information knowingly from, children in violation of our policies, please contact us via email at\n175: [email protected]\n176: .\n177: Data Security and Retention\n178: We implement reasonable measures to help secure the information we collect through the Services. We retain information collected through the Services for limited periods, typically up to two (2) years. Information associated with a device is often maintained for periods shorter than two (2) years from the date of collection of that information, or until an end user requests deletion, whichever occurs first. Note that we may retain some information in our systems for as long as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.",
+    "claim": "ID-linked access/deletion paths and typical up-to-two-year retention with exceptions;no training purge proof",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "2026-08-06 effective",
+    "acquired_utc": "2026-11-20T05:39:34.407735+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S09",
+    "company": "AppLovin/Axon",
+    "url": "https://dash.applovin.com/p/how-applovin-shows-you-ads",
+    "final_url": "https://max.applovin.com/p/how-applovin-shows-you-ads",
+    "path": "identity-value74/sources/al-ads-public.raw",
+    "sha256": "a32a318bbbf7e0d7d9b4a3e4d26e7c20acb1bdc6a64d966d553ce40ce4d86d73",
+    "text_path": "identity-value74/sources/al-ads-public.txt",
+    "text_sha256": "fe682217d0e0129bfa956d0ebb69c8dfa64d5c69013df20e3be939c550469bcf",
+    "start_line": 1,
+    "end_line": 45,
+    "excerpt": "1: AppLovin\n2: Introduction to AppLovin\n3: AppLovin operates a suite of marketing solutions that enable advertisers to automate, optimize, and\n4:                     manage their marketing efforts across a broad range of digital properties, including mobile apps,\n5:                     websites, and connected TVs.\n6: Axon AI\n7: ,\n8:                     AppLovin’s AI-powered advertising recommendation engine, powers these solutions by making predictions\n9:                     about the users most likely to engage with advertisers’ products or services and serving ads to those\n10:                     users. If publishers decide to show ads on their properties, AppLovin may help serve those ads to you\n11:                     on behalf of advertisers.\n12: How AppLovin’s Axon AI Shows You Ads\n13: To help serve you relevant and interesting ads (often called interest-based advertising),\n14: Axon AI\n15: uses device information and\n16:                     other information we have collected about your engagement with apps, websites, ads, and other digital\n17:                     properties, as described in our\n18: Privacy Policy\n19: and\n20: About Applovin’s Axon AI\n21: page.\n22: AppLovin showed you this ad or content on behalf of the advertiser whose ad you clicked on based on\n23:                     factors like:\n24: Device make, model, hardware, and operating system;\n25: Device properties related to screen, display, size, orientation, audio, video, battery, storage,\n26:                         memory usage, settings, and boot time;\n27: Device settings related to accessibility features and font size;\n28: Device integrity and security signals;\n29: Carrier;\n30: Name, properties, performance, session information, and installation information of the mobile\n31:                         application through which you interact with the Services;\n32: Country, time zone, and locale settings (including preferred language);\n33: Network connection type and speed;\n34: IP Address;\n35: Internet browser user-agent and software environment used to access the Services;\n36: HTTP header and request information;\n37: Advertising IDs or User IDs (e.g., IDFA/GAID);\n38: Vendor IDs (IDFV);\n39: App Set IDs;\n40: Browsing behavior and search and purchasing histories;\n41: Previous interactions with ads served by AppLovin, with our advertising partners, or merchant\n42:                         partners’ websites and advertisements;\n43: To the extent received from e-commerce platform partners: email address, phone number, and\n44:                         5-digit zip code; and\n45: Advertising and tracking preferences and restrictions.",
+    "claim": "Official Axon ad decision factors include advertising IDs,engagement/purchase histories and conditional ecommerce contacts;not specific graph-column consumption",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "publication date UNKNOWN;collection timestamp retained",
+    "acquired_utc": "2026-11-20T05:40:33.519084+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S10",
+    "company": "AppLovin/Axon",
+    "url": "https://dash.applovin.com/p/how-applovin-shows-you-ads",
+    "final_url": "https://max.applovin.com/p/how-applovin-shows-you-ads",
+    "path": "identity-value74/sources/al-ads-public.raw",
+    "sha256": "a32a318bbbf7e0d7d9b4a3e4d26e7c20acb1bdc6a64d966d553ce40ce4d86d73",
+    "text_path": "identity-value74/sources/al-ads-public.txt",
+    "text_sha256": "fe682217d0e0129bfa956d0ebb69c8dfa64d5c69013df20e3be939c550469bcf",
+    "start_line": 49,
+    "end_line": 81,
+    "excerpt": "49: Opting Out of Interest-Based Advertising\n50: Opting out of, or withdrawing consent to, interest-based advertising does not mean that you will not\n51:                    receive ads served by AppLovin. You may still receive ads, but those ads may be less relevant to\n52:                    your interests. Please note that if your advertising ID (IDFA/GAID) changes, you may need to opt-out\n53:                    of interest-based advertising again.\n54: Below are various ways you can opt-out of interest-based advertising served by AppLovin. (You may\n55:                    also be able to opt-out through the underlying mobile app developer, among other choices you may\n56:                    have in relation to ads.)\n57: Opting Out Within The Ad\n58: You can opt-out of interest-based advertising by clicking the “Opt-Out of Interest-Based Advertising”\n59:                    button below.\n60: Opt-Out of Interest-Based Advertising\n61: Thank you. You have been opted out.\n62: You have already opted out of interest-based ads through your device-level settings or by\n63:                             previously requesting to opt-out in an ad served by AppLovin.\n64: Something went wrong. Please contact info@applovin.com for assistance.\n65: Opting Out Through Your Device Settings\n66: Note: Your device may have different options depending on version and carrier. Below are instructions\n67:                    for the more recent iOS and Android devices.\n68: iOS Devices:\n69: Go to\n70: Settings > Privacy & Security > Tracking\n71: .\n72: Turn off “Allow Apps to Request to Track”.\n73: Android Devices:\n74: Go to the\n75: Settings > Google > All Services > Ads\n76: page.\n77: Select “Delete advertising ID”.\n78: AppLovin Privacy Management\n79: To access or delete the personal information that AppLovin may have about you from the mobile games\n80:                    or other applications, platforms, or services that you use, you can download the AppLovin Privacy\n81:                    Management Application from the Apple or Google Play Stores.",
+    "claim": "Opt-out may need repeating after ad-ID change;public template messages are not this researcher opting out",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "publication date UNKNOWN;collection timestamp retained",
+    "acquired_utc": "2026-11-20T05:40:33.519084+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S12",
+    "company": "Unity",
+    "url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "final_url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "path": "identity-value74/sources/unity-privacy.raw",
+    "sha256": "200600c9cab752f6d23bdea6473009d1a6808c262c1feeb5c5789ce9af03e3d6",
+    "text_path": "identity-value74/sources/unity-privacy.txt",
+    "text_sha256": "8d04e9e49a0ad1dcf40f21a2b82abf6e591c8c4c707e3f61cfa68cbdb2bc0d88",
+    "start_line": 874,
+    "end_line": 886,
+    "excerpt": "874: How to exercise your Privacy Rights\n875: To access, correct, update, suppress, restrict, or delete your Personal Data, object to or opt out of the processing of Personal Data, withdraw your consent (which will not affect the lawfulness of processing prior to the withdrawal), or if you would like to request a copy of your Personal Data to transmit it to another company (to the extent these rights are provided to you by applicable law), you may contact us in accordance with the instructions at the end of this section, or in accordance with\n876: Section 17\n877: \"Contact Us\" below. We will respond to your request consistent with applicable law.\n878: Your request should make clear what Personal Data you would like to have changed or whether you would like to have your Personal Data suppressed from our database. For your protection, we may only implement requests with respect to the Personal Data associated with the particular identifier (e.g., email address, device ID, advertising ID) that you use to send us your request, and we may need to verify your identity before implementing your request. We will try to comply with your request as soon as reasonably practicable and as required by law.\n879: Please note that we may need to retain certain information for recordkeeping purposes and/or to complete any transactions that you began prior to requesting a change or deletion (e.g., when you make a purchase or enter a promotion, you may not be able to change or delete the Personal Data provided until after the completion of such purchase or promotion).\n880: In the event your request relates to the Services below, you can ask us to stop collecting your app-usage data and delete what we've already collected. If your request is regarding Services where we do not process the Personal Data to which your request relates, you will need to contact the Developer directly:\n881: Unity Analytics\n882: The Developer may have configured privacy settings within its app in order to permit you to object to profiling, opt-out of further profiling, request deletion (erasure) of Personal Data, or request access to Personal Data.\n883: 2.\n884: App Users viewing Unity Ads\n885: Depending on the Developer's implementation of privacy tools, you can access the Personal Data collected about your device on a per-app basis by clicking or tapping the Data Privacy icon on the ad unit.\n886: By scrolling through the disclosure, you will either see a dynamically populated paragraph of plain text showing you the Personal Data related to your device from that app or you will see an option to click/tap a link within the text to see the data display. If you object to our maintaining this Personal Data or collecting future app-usage data, you may elect to opt-out of further collection and request deletion of historical data. Please note IP addresses may be maintained in logs for security of our system for our Services running on your device and may continue to be collected.",
+    "claim": "Identifier-scoped privacy requests and Ads historical-data deletion/opt-out;security IP logs excepted",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "2026-06-30 review;2025-07-24 updated",
+    "acquired_utc": "2026-11-20T05:39:34.408735+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S13",
+    "company": "Unity",
+    "url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "final_url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "path": "identity-value74/sources/unity-privacy.raw",
+    "sha256": "200600c9cab752f6d23bdea6473009d1a6808c262c1feeb5c5789ce9af03e3d6",
+    "text_path": "identity-value74/sources/unity-privacy.txt",
+    "text_sha256": "8d04e9e49a0ad1dcf40f21a2b82abf6e591c8c4c707e3f61cfa68cbdb2bc0d88",
+    "start_line": 948,
+    "end_line": 963,
+    "excerpt": "948: 10. Retention\n949: We retain Personal Data for as long as is necessary or as permitted in light of the purpose(s) for which it was obtained and consistent with applicable law, for example, for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements. The criteria to determine our retention periods include:\n950: The length of time we have an ongoing relationship with you and provide the Services to you (for example, for as long as you have an account with us or keep using the Services);\n951: We are subject to legal obligation (for example, certain laws require us to keep records of your transactions for a certain period of time before we can delete them); or\n952: Retention is advisable in light of our legal position (such as in regard to applicable statutes of limitations, litigation or regulatory investigations).\n953: Where a legal obligation arises or retention is advisable in light of our legal position, in some circumstances, we will retain certain Personal Data, even after your account has been deleted and/or we no longer provide the Services to you. For example:\n954: To cooperate with law enforcement or public, regulatory and government authorities\n955: : If we receive a preservation order or search warrant, related to your account, we will preserve Personal Data subject to such order or warrant after you delete your Services account.\n956: To comply with legal provisions on tax and accounting\n957: : We may retain your Personal Data after you delete your Personal Data, as required by tax law and to comply with bookkeeping requirements. Please note the length of time may vary by country.\n958: For fraud and security purposes\n959: : We may retain your Personal Data for fraud/ security purposes such as IP address, User ID, Device ID, and unique app installation-specific ID, which can be used to investigate whether a specific device exhibits a pattern of abnormal app interaction behavior, which may indicate a malicious bot or fraudulent actor.\n960: To pursue or defend a legal action\n961: : We may retain relevant Personal Data in the event of a legal claim or complaint, including regulatory investigations or legal proceedings about a claim related to your Personal Data. We may also retain Personal Data if we reasonably believe there is a prospect of litigation (whether in respect of our relationship with you or otherwise) after the dispute has been settled or decided by a court or tribunal from which there is no further right of appeal. The criteria for determining the length of time we will retain this information include:\n962: Whether there is a legal obligation to which we are subject (for example, if the settlement or decision requires us to keep the records for a certain period of time before we can delete them); or\n963: Whether retention is advisable in light of our legal position (such as in regard to applicable statutes of limitations, litigation or regulatory investigations).",
+    "claim": "Purpose/legal-based retention and security/accounting exceptions;no uniform identity-feature TTL disclosed",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "2026-06-30 review;2025-07-24 updated",
+    "acquired_utc": "2026-11-20T05:39:34.408735+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74S14",
+    "company": "Unity",
+    "url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "final_url": "https://unity.com/legal/game-player-and-app-user-privacy-policy",
+    "path": "identity-value74/sources/unity-privacy.raw",
+    "sha256": "200600c9cab752f6d23bdea6473009d1a6808c262c1feeb5c5789ce9af03e3d6",
+    "text_path": "identity-value74/sources/unity-privacy.txt",
+    "text_sha256": "8d04e9e49a0ad1dcf40f21a2b82abf6e591c8c4c707e3f61cfa68cbdb2bc0d88",
+    "start_line": 979,
+    "end_line": 988,
+    "excerpt": "979: 13. Unity Ads Privacy Features and Third Party Partners in Providing Advertising\n980: Privacy Features\n981: If Unity delivers personalized advertising through its ad network, Unity will provide notice and information about how you may be able to opt-out of such personalized advertisements. Please note that the limitations available to you are determined by the laws within your jurisdiction and the tools the Developer chooses to implement. Such an opportunity to opt out may occur through your device settings (see the section “Information and choices regarding tracking and targeting on mobile devices” in our\n982: Cookie & Advertising Policy\n983: and the choices available within the ad unit as described in this Privacy Policy by accessing the Data Privacy icon in the ad unit.\n984: Developer Advertising Using Other Ad Networks\n985: Developers may use other third-party advertising networks, and Unity’s choice features within its ad units only apply to ads delivered in the Unity network.\n986: Please note that the Developer of the app showing Unity Ads may have limited choices in providing certain identifying information, including your device advertising ID, about you to our third-party partners advertising goods and services with Unity. You may still see ads from the partners listed below, but they will not be based on your Personal Data. Additionally, you may have opted-out of profiling in Unity’s ad network within a Unity Ad for your app, in which case we will only serve contextual ads from ourselves and these partners within your app. For all others, please review the following information:\n987: Third Party Ad Network Partners\n988: The following third-party partners may receive an ad request from Unity containing your Personal Data. This list may be updated from time to time. These partners use this information to build your profile and personalize your ad experience to serve future ads you may see on the internet as well as inside the Unity ad network. The privacy policies linked below provide you with information around the Personal Data that they have from all sources, including Unity.",
+    "claim": "Opted-out profiling serves contextual ads;partner ad requests do not establish Vector graph feature ingestion",
+    "evidence_stages": [
+      "E3"
+    ],
+    "source_date": "2026-06-30 review;2025-07-24 updated",
+    "acquired_utc": "2026-11-20T05:39:34.408735+00:00",
+    "reviewed_utc": "2026-11-20T05:44:06.576704+00:00",
+    "permission_conditions": "Public static documentation only;runtime matching needs provider authorization,consent and namespace permissions",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "EX73R04",
+    "path": "identity72-experiments73/results/B_RESULTS.csv",
+    "sha256": "09180f40edd07d36818fdc8e98a96a7d3332ca69879f4fa4bf3f26fa9184afaf",
+    "claim": "35 synthetic BPID baseline/stress rows;not production matches",
+    "source_date": "2026-11-20T05:18:14.299838+00:00",
+    "evidence_stages": [],
+    "data_type": "SYNTHETIC_MECHANISM_OR_PROTOCOL_ONLY",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "EX73R06",
+    "path": "identity72-experiments73/results/B_FS_RESULTS.csv",
+    "sha256": "9b224b058f7c8d806acdff4c8400f21e6ef1857512913f8935f825ef1140cb3b",
+    "claim": "7 synthetic BPID probabilistic baseline/stress rows",
+    "source_date": "2026-11-20T05:21:23.442531+00:00",
+    "evidence_stages": [],
+    "data_type": "SYNTHETIC_MECHANISM_OR_PROTOCOL_ONLY",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "EX73R07",
+    "path": "identity72-experiments73/results/D_RESULTS.csv",
+    "sha256": "326c76bf6ec7f24e99874db2df19736078dd698fbe758065b5ccba261384602b",
+    "claim": "360 independent synthetic value predictions;generated units",
+    "source_date": "2026-11-20T05:16:35.809682+00:00",
+    "evidence_stages": [],
+    "data_type": "SYNTHETIC_MECHANISM_OR_PROTOCOL_ONLY",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "EX73R08",
+    "path": "identity72-experiments73/results/D_CONFIG.json",
+    "sha256": "14c2d54c9790dd99492fb9ff5a707949bdcfcc5d5fe9e066ebd22eaaafdc1318",
+    "claim": "Fixed synthetic generator and model configuration",
+    "source_date": "2026-11-20T05:16:33.400954+00:00",
+    "evidence_stages": [],
+    "data_type": "SYNTHETIC_MECHANISM_OR_PROTOCOL_ONLY",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "EX73R09",
+    "path": "identity72-experiments73/results/D_CHECKS.json",
+    "sha256": "e8999b2d2e5cbfef902b7c877637f7564c9ae8204f163747edc306e2bd5beb62",
+    "claim": "D0 equals oracle and exact injected-link error counts",
+    "source_date": "2026-11-20T05:16:35.822676+00:00",
+    "evidence_stages": [],
+    "data_type": "SYNTHETIC_MECHANISM_OR_PROTOCOL_ONLY",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false
+  },
+  {
+    "id": "IV74R01",
+    "path": "74_图谱与群体学习对照实验设计.md",
+    "sha256": "fcd43426d7482fda45f08b7e802bd99c82b563f0c0b16ab07850794936be5c6e",
+    "claim": "Prospective real-data design only;primary M4-M3,not executed",
+    "evidence_stages": [],
+    "source_date": "2026-11-20T05:48:35.610165+00:00",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74R02",
+    "path": "74_身份关联商业价值证据矩阵.csv",
+    "sha256": "e76ef4141329aa3fcd1854660c33552111e19cc3d50daac01eff1f6d39379622",
+    "claim": "18 bounded A/B/C_id/C_graph/D claims;not effect estimates",
+    "evidence_stages": [],
+    "source_date": "2026-11-20T05:48:35.610165+00:00",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  },
+  {
+    "id": "IV74R03",
+    "path": "identity-value74/EXPERIMENT_READINESS.json",
+    "sha256": "fb959b8bdce4f2990041426e50236d2923d2f627109b265b637411575b5bfdba",
+    "claim": "All real experiments STOP;no training or real ROAS",
+    "evidence_stages": [],
+    "source_date": "2026-11-20T05:48:35.610165+00:00",
+    "production_match_proven": false,
+    "prediction_model_consumption_proven": false,
+    "independent_identity_lift_proven": false
+  }
+]

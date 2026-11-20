@@ -1,0 +1,706 @@
+[
+  {
+    "id": "L71C01",
+    "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+    "sha256": "2b4eb30708ef12bf5545c774cde70d7bb112df94a1c1ed837af2f60f46819319",
+    "start_line": 284,
+    "end_line": 317,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "k.a(c3)",
+    "claim": "Initial bundle id=c3.T and ad metadata;later ad_values.putAll may override same keys",
+    "trigger_privacy_and_limits": "Same MaxAd object;subscriber/config gating;server values unknown",
+    "excerpt": "284:     private Bundle a(c3 c3Var) {\n285:         Bundle bundle = new Bundle();\n286:         bundle.putString(\"id\", c3Var.T());\n287:         bundle.putString(\"network_name\", c3Var.c());\n288:         bundle.putString(\"max_ad_unit_id\", c3Var.getAdUnitId());\n289:         bundle.putString(\"third_party_ad_placement_id\", c3Var.U());\n290:         bundle.putString(\"ad_format\", c3Var.getFormat().getLabel());\n291:         BundleUtils.putStringIfValid(\"creative_id\", c3Var.getCreativeId(), bundle);\n292:         BundleUtils.putStringIfValid(\"adomain\", c3Var.v(), bundle);\n293:         BundleUtils.putStringIfValid(\"dsp_name\", c3Var.getDspName(), bundle);\n294:         if (\"CUSTOM_NETWORK_SDK\".equalsIgnoreCase(c3Var.c())) {\n295:             bundle.putString(\"custom_sdk_network_name\", c3Var.getNetworkName());\n296:         }\n297:         bundle.putAll(JsonUtils.toBundle(c3Var.y()));\n298:         if (c3Var instanceof l3) {\n299:             View viewV0 = null;\n300:             if (c3Var instanceof f3) {\n301:                 viewV0 = ((f3) c3Var).z();\n302:             } else if (c3Var instanceof h3) {\n303:                 h3 h3Var = (h3) c3Var;\n304:                 if (!h3Var.A0()) {\n305:                     viewV0 = h3Var.v0() != null ? h3Var.v0() : h3Var.w0();\n306:                 }\n307:             }\n308:             bundle.putString(\"ad_view\", viewV0 != null ? k8.a(viewV0) : \"N/A\");\n309:             return bundle;\n310:         }\n311:         if (!(c3Var instanceof g3)) {\n312:             return bundle;\n313:         }\n314:         Bundle bundle2 = ((g3) c3Var).t0().getBundle(\"applovin_ad_view_info\");\n315:         bundle.putString(\"ad_view\", BundleUtils.getString(\"ad_view_address\", \"N/A\", bundle2));\n316:         bundle.putString(\"video_view\", BundleUtils.getString(\"video_view_address\", \"N/A\", bundle2));\n317:         return bundle;",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C02",
+    "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+    "sha256": "2b4eb30708ef12bf5545c774cde70d7bb112df94a1c1ed837af2f60f46819319",
+    "start_line": 177,
+    "end_line": 183,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "k.b(c3)",
+    "claim": "Base bundle + revenue_parameters overlay + country -> max_revenue_events",
+    "trigger_privacy_and_limits": "revenue_parameters may override id/revenue;do not promise final id equals c3.T without collision check",
+    "excerpt": "177:     public void b(c3 c3Var) {\n178:         if (b(\"max_revenue_events\")) {\n179:             Bundle bundleA = a(c3Var);\n180:             bundleA.putAll(JsonUtils.toBundle(c3Var.S()));\n181:             bundleA.putString(\"country_code\", this.a.w().getCountryCode());\n182:             a(bundleA, \"max_revenue_events\");\n183:         }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C03",
+    "path": "auction/sdk/MAX-13.6.4/java/com/applovin/impl/c3.java",
+    "sha256": "eaa49f0cfbe01dcc2a2041afa6f2a1cefb5fea80102c3fcb51d3d7ddadadd9fa",
+    "start_line": 172,
+    "end_line": 198,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "c3.y/S/R/T",
+    "claim": "ad_values/revenue_parameters are per-ad JSON;T reads full-response event_id",
+    "trigger_privacy_and_limits": "Response-selected suffix;not economic ledger uniqueness",
+    "excerpt": "172:     public JSONObject y() {\n173:         m5 m5Var = this.h;\n174:         return m5Var != null ? (JSONObject) m5Var.a(m5Var2 -> {\n175:             return JsonUtils.deepCopy(m5Var2.a(\"ad_values\", new JSONObject()));\n176:         }) : a(\"ad_values\", new JSONObject());\n177:     }\n178: \n179:     public JSONObject P() {\n180:         m5 m5Var = this.h;\n181:         return m5Var != null ? (JSONObject) m5Var.a(m5Var2 -> {\n182:             return JsonUtils.deepCopy(m5Var2.a(\"publisher_extra_info\", new JSONObject()));\n183:         }) : a(\"publisher_extra_info\", new JSONObject());\n184:     }\n185: \n186:     public JSONObject S() {\n187:         m5 m5Var = this.h;\n188:         return m5Var != null ? (JSONObject) m5Var.a(m5Var2 -> {\n189:             return JsonUtils.deepCopy(m5Var2.a(\"revenue_parameters\", new JSONObject()));\n190:         }) : a(\"revenue_parameters\", new JSONObject());\n191:     }\n192: \n193:     public String R() {\n194:         return JsonUtils.getString(S(), \"revenue_event\", MaxReward.DEFAULT_LABEL);\n195:     }\n196: \n197:     public String T() {\n198:         return b(\"event_id\", MaxReward.DEFAULT_LABEL);",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C04",
+    "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+    "sha256": "2b4eb30708ef12bf5545c774cde70d7bb112df94a1c1ed837af2f60f46819319",
+    "start_line": 274,
+    "end_line": 277,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "k.a(Bundle,String)",
+    "claim": "Communicator publish;message sticky policy selected by config",
+    "trigger_privacy_and_limits": "Local pubsub;not an HTTP send or MMP subscription observation",
+    "excerpt": "274:     public void a(Bundle bundle, String str) {\n275:         if (b(str)) {\n276:             this.b.getMessagingService().publish(CommunicatorMessageImpl.create(bundle, str, this, this.a.c(c5.z7).contains(str)));\n277:         }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C05",
+    "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAd.java",
+    "sha256": "1f08cf7e2be5a8862597971b1e9188fe4b7e9ffde576582ad930e20ecf889c8e",
+    "start_line": 63,
+    "end_line": 80,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MaxAd.getRevenue/getRevenuePrecision",
+    "claim": "Amount may be0 when unavailable;precision exact/estimated/publisher_defined/undefined",
+    "trigger_privacy_and_limits": "API contract13.6.4;not final bank settlement;current online undefined wording differs",
+    "excerpt": "63:     /**\n64:      * The revenue amount tied to the ad.\n65:      *\n66:      * @return The ad’s revenue amount. In the case where no revenue amount exists, or it is not available yet, will return a value of 0.\n67:      */\n68:     double getRevenue();\n69: \n70:     /**\n71:      * The precision of the revenue value for this ad.\n72:      *\n73:      * @return Possible values are:\n74:      * - \"publisher_defined\" - If the revenue is the price assigned to the line item by the publisher.\n75:      * - \"exact\" - If the revenue is the resulting price of a real-time auction.\n76:      * - \"estimated\" - If the revenue is the price obtained by auto-CPM.\n77:      * - \"undefined\" - If we do not have permission from the ad network to share impression-level data.\n78:      * - \"\" - An empty string, if revenue and precision are not valid (for example, in test mode).\n79:      */\n80:     String getRevenuePrecision();",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C06",
+    "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAdWaterfallInfo.java",
+    "sha256": "57e98dbbed13dd21f9dcdbafde059e5670e35b3ddc93a9b1a5b98ee85fc7ae20",
+    "start_line": 10,
+    "end_line": 35,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "MaxAdWaterfallInfo interface",
+    "claim": "Public interface has no getEventId;implementation getter exists in70",
+    "trigger_privacy_and_limits": "Does not exclude arbitrary getAdValue or other configured integrations",
+    "excerpt": "10: public interface MaxAdWaterfallInfo\n11: {\n12:     /**\n13:      * The loaded ad, if any, for this waterfall.\n14:      */\n15:     MaxAd getLoadedAd();\n16: \n17:     /**\n18:      * The ad waterfall name.\n19:      */\n20:     String getName();\n21: \n22:     /**\n23:      * The ad waterfall test name.\n24:      */\n25:     String getTestName();\n26: \n27:     /**\n28:      * The list of @c MAAdapterResponseInfo info objects relating to each ad in the waterfall, ordered by their position.\n29:      */\n30:     List<MaxNetworkResponseInfo> getNetworkResponses();\n31: \n32:     /**\n33:      * The total latency in milliseconds for this waterfall to finish processing.\n34:      */\n35:     long getLatencyMillis();",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C07",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustAdRevenue.java",
+    "sha256": "fb69d08af67fbcec0f405e7ec237f4b03af5f70b726cafbd9d8dba7a7c218ba9",
+    "start_line": 6,
+    "end_line": 76,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "AdjustAdRevenue fields,setters,addPartnerParameter",
+    "claim": "Amount,currency,network,unit,placement,callback/partner maps;no dedicated deduplicationId member",
+    "trigger_privacy_and_limits": "Optional metadata only when caller supplies;not automatically populated with MAX ID",
+    "excerpt": "6: public class AdjustAdRevenue {\n7:     String source;\n8:     Double revenue;\n9:     String currency;\n10:     Integer adImpressionsCount;\n11:     String adRevenueNetwork;\n12:     String adRevenueUnit;\n13:     String adRevenuePlacement;\n14:     Map<String, String> callbackParameters;\n15:     Map<String, String> partnerParameters;\n16: \n17:     private static final ILogger logger = AdjustFactory.getLogger();\n18: \n19:     public AdjustAdRevenue(final String source) {\n20:         if (!isValidSource(source)) {\n21:             return;\n22:         }\n23: \n24:         this.source = source;\n25:     }\n26: \n27:     public void setRevenue(final Double revenue, final String currency) {\n28:         this.revenue = revenue;\n29:         this.currency = currency;\n30:     }\n31: \n32:     public void setAdImpressionsCount(final Integer adImpressionsCount) {\n33:         this.adImpressionsCount = adImpressionsCount;\n34:     }\n35: \n36:     public void setAdRevenueNetwork(final String adRevenueNetwork) {\n37:         this.adRevenueNetwork = adRevenueNetwork;\n38:     }\n39: \n40:     public void setAdRevenueUnit(final String adRevenueUnit) {\n41:         this.adRevenueUnit = adRevenueUnit;\n42:     }\n43: \n44:     public void setAdRevenuePlacement(final String adRevenuePlacement) {\n45:         this.adRevenuePlacement = adRevenuePlacement;\n46:     }\n47: \n48:     public void addCallbackParameter(final String key, final String value) {\n49:         if (!Util.isValidParameter(key, \"key\", \"Callback\")) return;\n50:         if (!Util.isValidParameter(value, \"value\", \"Callback\")) return;\n51: \n52:         if (callbackParameters == null) {\n53:             callbackParameters = new LinkedHashMap<String, String>();\n54:         }\n55: \n56:         String previousValue = callbackParameters.put(key, value);\n57: \n58:         if (previousValue != null) {\n59:             logger.warn(\"Key %s was overwritten\", key);\n60:         }\n61:     }\n62: \n63:     public void addPartnerParameter(String key, String value) {\n64:         if (!Util.isValidParameter(key, \"key\", \"Partner\")) return;\n65:         if (!Util.isValidParameter(value, \"value\", \"Partner\")) return;\n66: \n67:         if (partnerParameters == null) {\n68:             partnerParameters = new LinkedHashMap<String, String>();\n69:         }\n70: \n71:         String previousValue = partnerParameters.put(key, value);\n72: \n73:         if (previousValue != null) {\n74:             logger.warn(\"Key %s was overwritten\", key);\n75:         }\n76:     }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C08",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java",
+    "sha256": "105476c7e4d3d235fcdd8146d798b55aba4761fd81505664c58a014f017f9721",
+    "start_line": 180,
+    "end_line": 191,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "buildAdRevenuePackage",
+    "claim": "AdjustAdRevenue -> AD_REVENUE package /ad_revenue;metadata carried",
+    "trigger_privacy_and_limits": "Build path only;no observed request or receipt",
+    "excerpt": "180:     ActivityPackage buildAdRevenuePackage(AdjustAdRevenue adjustAdRevenue) {\n181:         Map<String, String> parameters = getAdRevenueParameters(adjustAdRevenue);\n182:         ActivityPackage adRevenuePackage = getDefaultActivityPackage(ActivityKind.AD_REVENUE);\n183:         adRevenuePackage.setPath(\"/ad_revenue\");\n184:         adRevenuePackage.setSuffix(\"\");\n185: \n186:         adRevenuePackage.setParameters(parameters);\n187: \n188:         adRevenuePackage.setCallbackParameters(adjustAdRevenue.callbackParameters);\n189:         adRevenuePackage.setPartnerParameters(adjustAdRevenue.partnerParameters);\n190: \n191:         return adRevenuePackage;",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C09",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java",
+    "sha256": "105476c7e4d3d235fcdd8146d798b55aba4761fd81505664c58a014f017f9721",
+    "start_line": 880,
+    "end_line": 946,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "getAdRevenueParameters",
+    "claim": "Maps serialized as callback_params/partner_params;source,revenue,currency,network,unit,placement;created_at from SDK processing time",
+    "trigger_privacy_and_limits": "Allowed identifiers/config only;not original impression timestamp;no dedicated precision/serve-id serialization in this range",
+    "excerpt": "880:         // Callback and partner parameters.\n881:         PackageBuilder.addMapJson(parameters, \"callback_params\", Util.mergeParameters(this.globalParameters.callbackParameters, adjustAdRevenue.callbackParameters, \"Callback\"));\n882:         PackageBuilder.addMapJson(parameters, \"partner_params\", Util.mergeParameters(this.globalParameters.partnerParameters, adjustAdRevenue.partnerParameters, \"Partner\"));\n883: \n884:         // Device identifiers.\n885:         deviceInfo.reloadGoogleAdId(adjustConfig);\n886:         PackageBuilder.addString(parameters, \"android_uuid\", activityStateCopy.uuid);\n887:         PackageBuilder.addString(parameters, \"gps_adid\", deviceInfo.googleAdId);\n888:         PackageBuilder.addLong(parameters, \"gps_adid_attempt\", deviceInfo.googleAdIdReadAttempt);\n889:         PackageBuilder.addString(parameters, \"gps_adid_src\", deviceInfo.googleAdIdSource);\n890:         PackageBuilder.addBoolean(parameters, \"tracking_enabled\", deviceInfo.isTrackingEnabled);\n891:         PackageBuilder.addString(parameters, \"fire_adid\", deviceInfo.fireAdId);\n892:         PackageBuilder.addBoolean(parameters, \"fire_tracking_enabled\", deviceInfo.fireTrackingEnabled);\n893:         PackageBuilder.addString(parameters, \"google_app_set_id\", deviceInfo.appSetId);\n894: \n895:         if (!containsGoogleAdId(parameters) && !containsFireAdId(parameters)) {\n896:             logger.warn(\"Google Advertising ID or Fire Advertising ID not detected, \" +\n897:                         \"fallback to non Google Play and Fire identifiers will take place\");\n898:             deviceInfo.readAndroidId(adjustConfig);\n899:             PackageBuilder.addString(parameters, \"android_id\", deviceInfo.androidId);\n900:         }\n901: \n902:         // Rest of the parameters.\n903:         PackageBuilder.addString(parameters, \"api_level\", deviceInfo.apiLevel);\n904:         PackageBuilder.addString(parameters, \"app_token\", adjustConfig.appToken);\n905:         PackageBuilder.addString(parameters, \"app_version\", deviceInfo.appVersion);\n906:         PackageBuilder.addBoolean(parameters, \"attribution_deeplink\", true);\n907:         PackageBuilder.addLong(parameters, \"connectivity_type\", deviceInfo.connectivityType);\n908:         PackageBuilder.addString(parameters, \"country\", deviceInfo.country);\n909:         PackageBuilder.addString(parameters, \"cpu_type\", deviceInfo.abi);\n910:         PackageBuilder.addDateInMilliseconds(parameters, \"created_at\", createdAt);\n911:         PackageBuilder.addString(parameters, \"default_tracker\", adjustConfig.defaultTracker);\n912:         PackageBuilder.addBoolean(parameters, \"needs_cost\", adjustConfig.isCostDataInAttributionEnabled);\n913:         PackageBuilder.addString(parameters, \"device_manufacturer\", deviceInfo.deviceManufacturer);\n914:         PackageBuilder.addString(parameters, \"device_name\", deviceInfo.deviceName);\n915:         PackageBuilder.addString(parameters, \"device_type\", deviceInfo.deviceType);\n916:         PackageBuilder.addLong(parameters, \"ui_mode\", deviceInfo.uiMode);\n917:         PackageBuilder.addString(parameters, \"display_height\", deviceInfo.displayHeight);\n918:         PackageBuilder.addString(parameters, \"display_width\", deviceInfo.displayWidth);\n919:         PackageBuilder.addString(parameters, \"environment\", adjustConfig.environment);\n920:         PackageBuilder.addString(parameters, \"external_device_id\", adjustConfig.externalDeviceId);\n921:         PackageBuilder.addString(parameters, \"fb_id\", deviceInfo.fbAttributionId);\n922:         PackageBuilder.addString(parameters, \"hardware_name\", deviceInfo.hardwareName);\n923:         PackageBuilder.addDateInMilliseconds(parameters, \"installed_at\", deviceInfo.appInstallTime);\n924:         PackageBuilder.addString(parameters, \"language\", deviceInfo.language);\n925:         PackageBuilder.addString(parameters, \"mcc\", deviceInfo.mcc);\n926:         PackageBuilder.addString(parameters, \"mnc\", deviceInfo.mnc);\n927:         PackageBuilder.addBoolean(parameters, \"needs_response_details\", true);\n928:         PackageBuilder.addString(parameters, \"os_build\", deviceInfo.buildName);\n929:         PackageBuilder.addString(parameters, \"os_name\", deviceInfo.osName);\n930:         PackageBuilder.addString(parameters, \"os_version\", deviceInfo.osVersion);\n931:         PackageBuilder.addString(parameters, \"package_name\", deviceInfo.packageName);\n932:         PackageBuilder.addString(parameters, \"push_token\", activityStateCopy.pushToken);\n933:         PackageBuilder.addString(parameters, \"screen_density\", deviceInfo.screenDensity);\n934:         PackageBuilder.addString(parameters, \"screen_format\", deviceInfo.screenFormat);\n935:         PackageBuilder.addString(parameters, \"screen_size\", deviceInfo.screenSize);\n936:         PackageBuilder.addString(parameters, \"source\", adjustAdRevenue.source);\n937:         PackageBuilder.addDoubleWithoutRounding(parameters, \"revenue\", adjustAdRevenue.revenue);\n938:         PackageBuilder.addString(parameters, \"currency\", adjustAdRevenue.currency);\n939:         PackageBuilder.addInteger(parameters, \"ad_impressions_count\", adjustAdRevenue.adImpressionsCount);\n940:         PackageBuilder.addString(parameters, \"ad_revenue_network\", adjustAdRevenue.adRevenueNetwork);\n941:         PackageBuilder.addString(parameters, \"ad_revenue_unit\", adjustAdRevenue.adRevenueUnit);\n942:         PackageBuilder.addString(parameters, \"ad_revenue_placement\", adjustAdRevenue.adRevenuePlacement);\n943:         PackageBuilder.addLong(parameters, \"session_count\", activityStateCopy.sessionCount);\n944:         PackageBuilder.addDuration(parameters, \"session_length\", activityStateCopy.sessionLength);\n945:         PackageBuilder.addLong(parameters, \"subsession_count\", activityStateCopy.subsessionCount);\n946:         PackageBuilder.addDuration(parameters, \"time_spent\", activityStateCopy.timeSpent);",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C10",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+    "sha256": "8b2ae7cae4dee5d3e0a1209f7ab9017571060e806151b304511edf620a3cab44",
+    "start_line": 3161,
+    "end_line": 3176,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "trackAdRevenueI",
+    "claim": "enabled,valid,not GDPR-forgotten -> package queue -> sendFirstPackage call",
+    "trigger_privacy_and_limits": "Invocation is not actual delivery;no shouldProcessEventI here",
+    "excerpt": "3161:     private void trackAdRevenueI(AdjustAdRevenue adjustAdRevenue) {\n3162:         if (!checkActivityStateI(activityState)) { return; }\n3163:         if (!isEnabledI()) { return; }\n3164:         if (!checkAdjustAdRevenue(adjustAdRevenue)) { return; }\n3165:         if (activityState.isGdprForgotten) { return; }\n3166: \n3167:         long now = System.currentTimeMillis();\n3168: \n3169:         PackageBuilder packageBuilder = new PackageBuilder(\n3170:           adjustConfig, deviceInfo, activityState, globalParameters, firstSessionDelayManager, now);\n3171:         packageBuilder.internalState = internalState;\n3172: \n3173:         ActivityPackage adRevenuePackage = packageBuilder.buildAdRevenuePackage(adjustAdRevenue);\n3174:         packageHandler.addPackage(adRevenuePackage);\n3175:         packageHandler.sendFirstPackage();\n3176:     }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C11",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+    "sha256": "8b2ae7cae4dee5d3e0a1209f7ab9017571060e806151b304511edf620a3cab44",
+    "start_line": 2066,
+    "end_line": 2075,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "trackEventI",
+    "claim": "Generic AdjustEvent calls shouldProcessEventI(deduplicationId)",
+    "trigger_privacy_and_limits": "Do not transfer generic-event guard to dedicated ad revenue path",
+    "excerpt": "2066:     private void trackEventI(AdjustEvent event) {\n2067:         if (!checkActivityStateI(activityState)) return;\n2068:         if (!isEnabledI()) return;\n2069:         if (!checkEventI(event)) return;\n2070:         if (activityState.isGdprForgotten) return;\n2071:         if (!shouldProcessEventI(event.deduplicationId)) return;\n2072: \n2073:         long now = System.currentTimeMillis();\n2074: \n2075:         int sequence = eventMetadata.incrementSequenceForEvent(event.eventToken);",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C12",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java",
+    "sha256": "8b2ae7cae4dee5d3e0a1209f7ab9017571060e806151b304511edf620a3cab44",
+    "start_line": 3503,
+    "end_line": 3516,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "shouldProcessEventI",
+    "claim": "Missing ID accepted;duplicate cached ID rejected;new ID stored",
+    "trigger_privacy_and_limits": "Local cache scope;not universal server deduplication",
+    "excerpt": "3503:     private boolean shouldProcessEventI(String deduplicationId) {\n3504:         if (deduplicationId == null || deduplicationId.isEmpty()) {\n3505:             return true;  // no deduplication ID given\n3506:         }\n3507: \n3508:         if (activityState.eventDeduplicationIdExists(deduplicationId)) {\n3509:             logger.info(\"Skipping duplicate event with deduplication ID '%s'\", deduplicationId);\n3510:             return false; // deduplication ID found -> used already\n3511:         }\n3512: \n3513:         activityState.addDeduplicationId(deduplicationId);\n3514:         logger.verbose(\"Added deduplication ID '%s'\", deduplicationId);\n3515:         // activity state will get written by caller\n3516:         return true;",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C13",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityState.java",
+    "sha256": "8b7b2173ecd68bc5d32785b1dea1de5862d8ef664a52729be990c2236737c9e1",
+    "start_line": 185,
+    "end_line": 210,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "addDeduplicationId/eventDeduplicationIdExists",
+    "claim": "Bounded list eviction;0 disables remembering;max size configurable",
+    "trigger_privacy_and_limits": "Not permanent ledger;server behavior unknown",
+    "excerpt": "185:     protected void addDeduplicationId(String deduplicationId) {\n186:         if (eventDeduplicationIdsMaxSize == 0) {\n187:             return;\n188:         }\n189: \n190:         if (orderIds == null) {\n191:             orderIds = new LinkedList<String>();\n192:         } else {\n193:             while (orderIds.size() >= eventDeduplicationIdsMaxSize) {\n194:                 orderIds.removeLast();\n195:             }\n196:         }\n197:         orderIds.addFirst(deduplicationId);\n198:     }\n199: \n200:     protected boolean eventDeduplicationIdExists(String deduplicationId) {\n201:         if (orderIds == null) {\n202:             return false;\n203:         }\n204:         return orderIds.contains(deduplicationId);\n205:     }\n206: \n207:     protected void setEventDeduplicationIdsMaxSize(Integer size) {\n208:         if (size != null && size >= 0) {\n209:             eventDeduplicationIdsMaxSize = size;\n210:         }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C14",
+    "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustEvent.java",
+    "sha256": "cc5a91b32787a9a966a44df8f1b379b45bcb2eb4443b322af7ee32960f0fd187",
+    "start_line": 6,
+    "end_line": 75,
+    "sdk": "Adjust/Android",
+    "version": "5.8.1",
+    "class_or_method": "AdjustEvent.setDeduplicationId",
+    "claim": "Explicit caller-supplied generic event dedup key",
+    "trigger_privacy_and_limits": "Not generated from MAX event_id by this API",
+    "excerpt": "6: /**\n7:  * Created by pfms on 05/11/14.\n8:  */\n9: public class AdjustEvent {\n10:     String eventToken;\n11:     Double revenue;\n12:     String currency;\n13:     Map<String, String> callbackParameters;\n14:     Map<String, String> partnerParameters;\n15:     String orderId;\n16:     String deduplicationId;\n17:     String callbackId;\n18:     String productId;\n19:     String purchaseToken;\n20: \n21:     private static ILogger logger = AdjustFactory.getLogger();\n22: \n23:     public AdjustEvent(String eventToken) {\n24:         if (!checkEventToken(eventToken, logger)) return;\n25: \n26:         this.eventToken = eventToken;\n27:     }\n28: \n29:     public void setRevenue(double revenue, String currency) {\n30:         if (!checkRevenue(revenue, currency)) return;\n31: \n32:         this.revenue = revenue;\n33:         this.currency = currency;\n34:     }\n35: \n36:     public void addCallbackParameter(String key, String value) {\n37:         if (!Util.isValidParameter(key, \"key\", \"Callback\")) return;\n38:         if (!Util.isValidParameter(value, \"value\", \"Callback\")) return;\n39: \n40:         if (callbackParameters == null) {\n41:             callbackParameters = new LinkedHashMap<String, String>();\n42:         }\n43: \n44:         String previousValue = callbackParameters.put(key, value);\n45: \n46:         if (previousValue != null) {\n47:             logger.warn(\"Key %s was overwritten\", key);\n48:         }\n49:     }\n50: \n51:     public void addPartnerParameter(String key, String value) {\n52:         if (!Util.isValidParameter(key, \"key\", \"Partner\")) return;\n53:         if (!Util.isValidParameter(value, \"value\", \"Partner\")) return;\n54: \n55:         if (partnerParameters == null) {\n56:             partnerParameters = new LinkedHashMap<String, String>();\n57:         }\n58: \n59:         String previousValue = partnerParameters.put(key, value);\n60: \n61:         if (previousValue != null) {\n62:             logger.warn(\"Key %s was overwritten\", key);\n63:         }\n64:     }\n65: \n66:     public void setOrderId(String orderId) {\n67:         this.orderId = orderId;\n68:     }\n69: \n70:     public void setDeduplicationId(String deduplicationId) {\n71:         this.deduplicationId = deduplicationId;\n72:     }\n73: \n74:     public void setCallbackId(String callbackId) {\n75:         this.callbackId = callbackId;",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+        "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+        "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT",
+        "bytes": 294242
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C15",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/AdObject.kt",
+    "sha256": "b1ac04a01ce933cf563b03d4435b38fd74d811b77c675f4ce1d839acf1158d44",
+    "start_line": 23,
+    "end_line": 43,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "AdObject",
+    "claim": "opportunityId val;trackingToken var",
+    "trigger_privacy_and_limits": "Object-lifetime stability not global economic uniqueness",
+    "excerpt": "23: @OptIn(UnityAdsExperimental::class)\n24: data class AdObject(\n25:     val opportunityId: ByteString,\n26:     val placementId: String,\n27:     var trackingToken: ByteString,\n28:     var isScarAd: Boolean = false,\n29:     var scarQueryId: String? = null,\n30:     var scarAdUnitId: String? = null,\n31:     var scarAdString: String? = null,\n32:     var isOfferwallAd: Boolean = false,\n33:     var offerwallPlacementName: String? = null,\n34:     val adPlayer: AdPlayer? = null,\n35:     var playerServerId: String? = null,\n36:     val loadOptions: UnityAdsLoadOptions,\n37:     val isHeaderBidding: Boolean,\n38:     val adType: DiagnosticAdType,\n39:     var ttl: MutableStateFlow<Duration?> = MutableStateFlow(null),\n40:     var state: MutableStateFlow<AdObjectState> = MutableStateFlow(AdObjectState.INIT),\n41:     var loadConfiguration: LoadConfiguration? = null,\n42:     var showConfiguration: ShowConfiguration? = null,\n43:     var activity: WeakReference<Activity>? = null,",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C16",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventRequest.kt",
+    "sha256": "e57d204b45101f18a4ce1defb25ab76124955489a1d0725ad57283a78e036c19",
+    "start_line": 21,
+    "end_line": 42,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "GetOperativeEventRequest.invoke",
+    "claim": "New eventId;opportunity and current token copied into built request;context also serialized",
+    "trigger_privacy_and_limits": "Opaque additionalData;not proven money or IAP label",
+    "excerpt": "21:     suspend operator fun invoke(\n22:         operativeEventType: OperativeEventType,\n23:         loadTrackingToken: ByteString,\n24:         opportunityId: ByteString,\n25:         additionalEventData: ByteString,\n26:         playerServerId: String?,\n27:         adFormat: AdFormat?\n28:     ) : OperativeEventRequest {\n29:         return operativeEventRequest {\n30:             eventId = generateByteStringId()\n31:             eventType = operativeEventType\n32:             impressionOpportunityId = opportunityId\n33:             trackingToken = loadTrackingToken\n34:             additionalData = additionalEventData\n35:             playerServerId?.let { sid = it }\n36:             dynamicDeviceInfo = deviceInfoRepository.dynamicDeviceInfo\n37:             staticDeviceInfo = deviceInfoRepository.staticDeviceInfo()\n38:             sessionCounters = sessionRepository.sessionCounters\n39:             campaignState = campaignRepository.getCampaignState()\n40:             adFormat?.let { this.adFormat = it }\n41:         }\n42:     }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C17",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/OperativeEventRepository.kt",
+    "sha256": "a378715e10d94436300bc46c8744e8d10609d7f61b6d46310fe51d8841367e10",
+    "start_line": 11,
+    "end_line": 21,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "addOperativeEvent",
+    "claim": "Built request emitted to SharedFlow with DROP_OLDEST",
+    "trigger_privacy_and_limits": "Not lossless;not server ACK",
+    "excerpt": "11: class OperativeEventRepository {\n12:     private val _operativeEvents = MutableSharedFlow<OperativeEventRequestOuterClass.OperativeEventRequest>(\n13:         replay = UnityAdsConstants.SharedFlow.REPLAY,\n14:         extraBufferCapacity = UnityAdsConstants.SharedFlow.EXTRA_CAPACITY,\n15:         onBufferOverflow = BufferOverflow.DROP_OLDEST\n16:     )\n17:     val operativeEvents = _operativeEvents.asSharedFlow()\n18: \n19:     fun addOperativeEvent(operativeEventRequest: OperativeEventRequestOuterClass.OperativeEventRequest) {\n20:         _operativeEvents.tryEmit(operativeEventRequest)\n21:     }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C18",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/OperativeEventObserver.kt",
+    "sha256": "88e3f4202fef731d4a7271a546eed5ab18c443a1e2da48a04e6abaa6621b6a51",
+    "start_line": 37,
+    "end_line": 55,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "OperativeEventObserver.invoke",
+    "claim": "Payload -> full request -> serialized bytes under separate random workId;fallback sender",
+    "trigger_privacy_and_limits": "Enveloping time differs from operative creation;no history token rewrite shown",
+    "excerpt": "37:     suspend operator fun invoke() = withContext(scope.coroutineContext)  {\n38:         // If we are already collecting events, do nothing\n39:         if (isRunning.getAndUpdate { true }) return@withContext\n40:         operativeEventRepository.operativeEvents.onEach { operativeEventRequest ->\n41:             val payload = UniversalRequestKt.payload {\n42:                 operativeEvent = operativeEventRequest\n43:             }\n44:             val fullRequest = getUniversalRequestForPayLoad(payload)\n45: \n46:             try {\n47:                 val workId = UUID.randomUUID().toString()\n48:                 universalRequestDataSource.set(workId, fullRequest.toByteArray().toByteString())\n49: \n50:                 val universalRequestWorkerData = UniversalRequestWorkerData(workId)\n51:                 backgroundWorker<OperativeEventJob>(universalRequestWorkerData)\n52:             }  catch (throwable: Throwable) {\n53:                 universalRequestEventSender(fullRequest, operativeRequestPolicy())\n54:             }\n55:         }.launchIn(scope)",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C19",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/work/UniversalRequestJob.kt",
+    "sha256": "9a23f53085c605a18fcd80c2c543c8c26beae07ed79b8eef059ca6b8b1fcb640",
+    "start_line": 25,
+    "end_line": 43,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "UniversalRequestJob.doWork",
+    "claim": "Read persisted bytes -> parse request -> sender;retry on failure;remove on sender return",
+    "trigger_privacy_and_limits": "Same persisted event identity on retry in this path;success not equal to server ingestion",
+    "excerpt": "25:     override suspend fun doWork(): Result {\n26:         val universalRequestId =\n27:             workerParams.inputData.getString(UniversalRequestWorkerData.KEY_UNIVERSAL_REQUEST_ID)?: return Result.success()\n28:         val rawUniversalRequest = runCatching {\n29:             universalRequestDataSource.get().getUniversalRequestMapOrThrow(universalRequestId)\n30:         }.getOrElse {\n31:             // Request is not in storage anymore, mark as success so that its cleared from WorkDB\n32:             return Result.success()\n33:         }\n34:         val universalRequest = UniversalRequest.parseFrom(rawUniversalRequest)\n35:         val universalRequestEventSender = runCatching {\n36:             universalRequestEventSender(universalRequest, requestPolicy)\n37:         }\n38:         return if (universalRequestEventSender.isSuccess) {\n39:             universalRequestDataSource.remove(universalRequestId)\n40:             Result.success()\n41:         } else {\n42:             Result.retry()\n43:         }",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C20",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/ShowEvent.kt",
+    "sha256": "0999ff5f80d7d94a1887abdc50ca2031e24db0ed09e80ef8efa3fccaaa8c9280",
+    "start_line": 5,
+    "end_line": 12,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "ShowEvent",
+    "claim": "Started/Clicked/ReceivedReward/Completed are separate SDK lifecycle event variants",
+    "trigger_privacy_and_limits": "Not a proven one-to-one wire enum or income event",
+    "excerpt": "5: sealed class ShowEvent {\n6:     object Started : ShowEvent()\n7:     object Clicked : ShowEvent()\n8:     object ReceivedReward : ShowEvent()\n9:     object CancelTimeout : ShowEvent()\n10:     data class Completed(val status: ShowStatus, val reason: String? = null, val reasonDebug: String? = null) : ShowEvent()\n11:     data class Error(val message: String, val errorCode: Int, val reason: String) : ShowEvent()\n12:     object LeftApplication : ShowEvent()",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C21",
+    "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventApi.kt",
+    "sha256": "16f947cc89f84df471722e4e43477568edb28b41e4ccf00c4013d489eba0c8d3",
+    "start_line": 14,
+    "end_line": 46,
+    "sdk": "Unity/Ads",
+    "version": "4.17.0",
+    "class_or_method": "GetOperativeEventApi.invoke",
+    "claim": "Current AdObject token passed by value to event builder before event queued",
+    "trigger_privacy_and_limits": "Refresh changes later events,not a shown rewrite of persisted earlier payloads",
+    "excerpt": "14:     suspend operator fun invoke(\n15:         operativeEventType: OperativeEventType,\n16:         opportunityId: ByteString,\n17:         trackingToken: ByteString,\n18:         additionalEventData: ByteString,\n19:         playerServerId: String? = null,\n20:         adFormat: AdFormat? = null) {\n21:         val operativeEvent = operativeEventRequest(\n22:             operativeEventType = operativeEventType,\n23:             opportunityId = opportunityId,\n24:             additionalEventData = additionalEventData,\n25:             loadTrackingToken = trackingToken,\n26:             playerServerId = playerServerId,\n27:             adFormat = adFormat\n28:         )\n29:         // Adds the event to the operative event flow\n30:         operativeEventRepository.addOperativeEvent(operativeEvent)\n31:     }\n32: \n33:     suspend operator fun invoke(\n34:         operativeEventType: OperativeEventType,\n35:         adObject: AdObject,\n36:         additionalEventData: ByteString\n37:     ) {\n38:         invoke(\n39:             operativeEventType = operativeEventType,\n40:             opportunityId = adObject.opportunityId,\n41:             trackingToken = adObject.trackingToken,\n42:             additionalEventData = additionalEventData,\n43:             playerServerId = adObject.playerServerId,\n44:             adFormat = takeIf { adObject.adType == DiagnosticAdType.DIAGNOSTIC_AD_TYPE_BANNER }\n45:                 ?.let { AdFormat.AD_FORMAT_BANNER }\n46:         )",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+        "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+        "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+        "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT",
+        "bytes": 4311926
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  },
+  {
+    "id": "L71C22",
+    "path": "lineage71/java/com/applovin/impl/sdk/k.java",
+    "sha256": "2b4eb30708ef12bf5545c774cde70d7bb112df94a1c1ed837af2f60f46819319",
+    "start_line": 206,
+    "end_line": 210,
+    "sdk": "AppLovin/MAX",
+    "version": "13.6.4",
+    "class_or_method": "k.b(String)",
+    "claim": "Communicator enable flag and sticky-topic list OR active subscriber gate",
+    "trigger_privacy_and_limits": "Publish configuration is not proof an MMP actually subscribes",
+    "excerpt": "206:     private boolean b(String str) {\n207:         if (((Boolean) this.a.a(c5.A7)).booleanValue()) {\n208:             return this.a.c(c5.z7).contains(str) || this.b.hasSubscriber(str);\n209:         }\n210:         return false;",
+    "original_packages": [
+      {
+        "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+        "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+        "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+        "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT",
+        "bytes": 3792065
+      }
+    ],
+    "reviewed_utc": "2026-11-20T04:50:55.698288+00:00",
+    "evidence_level": "SDK代码证实",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "seed": 780241,
+  "run_id": "20261120T104157989849Z",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:17:27) [MSC v.1929 64 bit (AMD64)]",
+  "protocol": {
+    "scope": "E02_ONLY_LOCAL_SYNTHETIC",
+    "seed": 780241,
+    "frozen_at": "2026-11-20T10:36:26.505336+00:00",
+    "states": [
+      "QUEUED",
+      "CLAIMED",
+      "REVALIDATING",
+      "CANCELLED",
+      "LOCAL_ACK",
+      "RETRY_PENDING"
+    ],
+    "source": "Original MVP outbox; immutable event and economic lineage refs",
+    "permission": "Original policy+graph+E01 reread at claim/retry/pre-handoff; current read-only original checks under dual DB locks at memory acceptance",
+    "boundary": "Single trusted thread, ManualClock, no callback/yield in critical section, exact built-in memory sink; memory insertion linearization only",
+    "unsupported": "ATOMIC_HANDOFF_UNPROVEN for external/durable/restart/multiprocess claims or unestablished boundary",
+    "mutations": [
+      "enqueue_only",
+      "stale_retry_epoch",
+      "check_then_revoke_commit"
+    ],
+    "no_E03": true,
+    "no_training": true,
+    "no_network": true,
+    "no_sdk": true,
+    "no_real_data": true,
+    "C_graph_Axon": "UNKNOWN",
+    "C_graph_Vector": "UNKNOWN",
+    "D": "UNKNOWN",
+    "production_forensics": "STOP"
+  },
+  "timing": "UTC integer seconds; clock advances only through scheduled actions",
+  "network": "ALL_SOCKET_AUDIT_EVENTS_AND_SUBPROCESS_DENIED"
+}

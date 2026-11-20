@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-20T07:45:26.554417+00:00",
+  "active_stage": "Official sample inventory and license verification;no new functional static analysis",
+  "original_reference_architecture_goal": "Retained but deferred;first-round sample/license gate takes priority",
+  "allowed": [
+    "Read archived provenance/POM/package/license metadata",
+    "Hash existing selected artifacts",
+    "Read license entries only from archives",
+    "Bounded official public license/repository/release metadata GETs",
+    "Reuse prior identity findings with original scope"
+  ],
+  "forbidden": [
+    "New SDK decompile or identity code scan",
+    "Real ad or identity query",
+    "Production SDK execution",
+    "Third-party personal identifiers",
+    "Leaked repo or access-control bypass",
+    "Modify engineering76",
+    "Automatic reference implementation development"
+  ],
+  "invariants": {
+    "Axon_C_graph": "UNKNOWN",
+    "Vector_C_graph": "UNKNOWN",
+    "D": "UNKNOWN",
+    "production_forensics": "STOP"
+  }
+}

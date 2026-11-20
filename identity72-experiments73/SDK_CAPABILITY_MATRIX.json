@@ -1,0 +1,302 @@
+[
+  {
+    "sdk": "MAX/Axon",
+    "versions": "MAX13.6.4;Axon1.3.4",
+    "analysis_status": "已核验所选完整调用链",
+    "identity_capability": "设备ID/AppSet/CUID/user_data归一化和请求字段",
+    "evidence_ids": [
+      "IG72C01",
+      "IG72C04",
+      "IG72C06",
+      "IG72C08",
+      "IG72C20"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "limits": "没有完整生产图谱/匹配服务输出",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Unity Ads/Vector",
+    "versions": "4.17.0/4.18.1",
+    "analysis_status": "已核验所选调用链",
+    "identity_capability": "广告/分析标识和隐私构造、机会事件",
+    "evidence_ids": [
+      "IG72C21",
+      "IG72C22",
+      "IG72C23",
+      "IG72C24",
+      "IG72C25",
+      "IG72C26",
+      "IG72C27"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "limits": "Vector是服务端产品，不是独立客户端启用证据",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "LevelPlay/ironSource",
+    "versions": "9.3.0/9.4.0/9.5.0归档",
+    "analysis_status": "复用已有mediation分析；本轮未恢复新图谱",
+    "identity_capability": "用户/广告收入接口不自动成为跨设备join",
+    "evidence_ids": [
+      "L71D01"
+    ],
+    "evidence_stages": [],
+    "limits": "版本存在不是身份图谱证据；无新的逐字段合并契约",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "AppsFlyer",
+    "versions": "6.14.2/6.17.5",
+    "analysis_status": "复用官方字段/业务链",
+    "identity_capability": "安装作用域ID、CUID/收入和伙伴转发",
+    "evidence_ids": [
+      "L72S08",
+      "L72S05",
+      "L72S06"
+    ],
+    "evidence_stages": [
+      "E3"
+    ],
+    "limits": "安装/归因和伙伴sharing不等于跨游戏个人图谱",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Adjust",
+    "versions": "5.5.0/5.7.0/5.8.1",
+    "analysis_status": "复用所选源码和伙伴契约",
+    "identity_capability": "允许设备字段/partner参数/收入",
+    "evidence_ids": [
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "limits": "SDK包构造不等于匹配/训练",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Singular",
+    "versions": "12.17.0",
+    "analysis_status": "复用setter核验",
+    "identity_capability": "开发者显式用户ID",
+    "evidence_ids": [
+      "XS39"
+    ],
+    "evidence_stages": [
+      "E1"
+    ],
+    "limits": "未证目标业务调用或跨SDK共享",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Firebase Analytics/Installations",
+    "versions": "Analytics22.1.2;Installations19.0.0等归档",
+    "analysis_status": "FID/AII区别及官方跨App user ID契约",
+    "identity_capability": "可选开发者稳定user_id支持BigQuery同人跨App/设备分析",
+    "evidence_ids": [
+      "IG72S13",
+      "XS41"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "不自动回填历史/不许PII；不等于向Axon/Vector共享",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Unity Core/Auth/Analytics/IAP",
+    "versions": "Core1.19.0;Auth3.9.0;Analytics6.3.0;IAP5.5.1",
+    "analysis_status": "提供者、消费者与账号链接已核验",
+    "identity_capability": "项目玩家/组织外部账号；IAP身份共包",
+    "evidence_ids": [
+      "C53S12",
+      "C53S16",
+      "XS11",
+      "IG72S02",
+      "IG72S03"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "limits": "E4是账号服务，不是广告图谱/训练列",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Meta Audience Network",
+    "versions": "6.21.0/6.22.0;FacebookCore18.0.3",
+    "analysis_status": "已有归档/选定跨SDK提供者证据",
+    "identity_capability": "Adjust官方签名校验的Facebook attribution provider",
+    "evidence_ids": [
+      "XS34"
+    ],
+    "evidence_stages": [
+      "E1"
+    ],
+    "limits": "非Facebook登录账号；FAN完整图谱未恢复",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Google Mobile Ads",
+    "versions": "25.1.0/25.2.0/25.4.0等",
+    "analysis_status": "已有归档/适配器链",
+    "identity_capability": "竞价placement_req_id及广告上下文",
+    "evidence_ids": [
+      "CGS26"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "limits": "广告请求关联非跨设备人图；不将所有Google数据视为共享",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Mintegral",
+    "versions": "16.9.91",
+    "analysis_status": "归档核验；本轮未找到可补核心断点的身份合并链",
+    "identity_capability": "UNKNOWN",
+    "evidence_ids": [],
+    "evidence_stages": [],
+    "limits": "不能从适配器/同名设备字段声称图谱；不宣称已逐类完成逆向",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Liftoff/Vungle",
+    "versions": "7.6.3/7.7.1/7.7.6",
+    "analysis_status": "归档核验；本轮未找到可补核心断点的身份合并链",
+    "identity_capability": "UNKNOWN",
+    "evidence_ids": [],
+    "evidence_stages": [],
+    "limits": "不能从适配器/同名设备字段声称图谱；不宣称已逐类完成逆向",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Pangle",
+    "versions": "7.8.5.2/8.1.0.3/8.1.0.5",
+    "analysis_status": "归档核验；本轮未找到可补核心断点的身份合并链",
+    "identity_capability": "UNKNOWN",
+    "evidence_ids": [],
+    "evidence_stages": [],
+    "limits": "不能从适配器/同名设备字段声称图谱；不宣称已逐类完成逆向",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Chartboost",
+    "versions": "归档目录存在，但本轮未确认独立可用AAR/接口",
+    "analysis_status": "归档核验；本轮未找到可补核心断点的身份合并链",
+    "identity_capability": "UNKNOWN",
+    "evidence_ids": [],
+    "evidence_stages": [],
+    "limits": "不能从适配器/同名设备字段声称图谱；不宣称已逐类完成逆向",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Branch",
+    "versions": "公开Android API文档；本轮未下载二进制",
+    "analysis_status": "官方setIdentity/logout契约",
+    "identity_capability": "开发者非PII别名可跨平台/重装持久归因",
+    "evidence_ids": [
+      "IG72S12"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "未证与两平台的图谱共享",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Amplitude",
+    "versions": "公开文档；本轮未下载二进制",
+    "analysis_status": "官方device/user/Amplitude ID合并",
+    "identity_capability": "登录后的账号关联、同组织项目作用域",
+    "evidence_ids": [
+      "IG72S11"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "稳定userID由客户指定；不是全球广告图谱",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "Mixpanel",
+    "versions": "Simplified ID Merge API文档；未下载SDK",
+    "analysis_status": "官方显式merge契约",
+    "identity_capability": "$device_id+$user_id同事件→identity cluster；logout reset",
+    "evidence_ids": [
+      "IG72S10"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "共享设备未reset会误合并；两平台集成未知",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "LiveRamp/RampID",
+    "versions": "官方产品+Unity2026-04-02公告",
+    "analysis_status": "第三方身份激活契约",
+    "identity_capability": "跨渠道身份/受众激活",
+    "evidence_ids": [
+      "IG72S04",
+      "IG72S05"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "Unity具体输入/返回映射和Vector消费未证",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  },
+  {
+    "sdk": "UID2",
+    "versions": "公开namespace/确定性服务文档",
+    "analysis_status": "官方服务契约",
+    "identity_capability": "广告身份framework",
+    "evidence_ids": [
+      "IG72S09"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "limits": "未证两平台部署；不构造真实身份查询",
+    "production_matching": false,
+    "axon_vector_consumption": false
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "assertion": "real SQLite transaction failure triggered",
+    "input_refs": "operation trace",
+    "expected": "synthetic-injected-failure",
+    "actual": "synthetic-injected-failure",
+    "passed": true
+  },
+  {
+    "assertion": "events rolled back on failed outbox insert",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "ledger rolled back on failed outbox insert",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "outbox rolled back on failed outbox insert",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "retry after rollback accepts exactly one economic event",
+    "input_refs": "operation trace",
+    "expected": 123,
+    "actual": 123,
+    "passed": true
+  }
+]

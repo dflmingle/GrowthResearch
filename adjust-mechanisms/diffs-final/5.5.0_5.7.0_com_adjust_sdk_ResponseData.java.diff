@@ -1,0 +1,12 @@
+--- 5.5.0/com/adjust/sdk/ResponseData.java
++++ 5.7.0/com/adjust/sdk/ResponseData.java
+@@ -57,6 +57,9 @@
+             case PURCHASE_VERIFICATION:
+                 responseData = new PurchaseVerificationResponseData();
+                 break;
++            case THIRD_PARTY_SHARING:
++                responseData = new ThirdPartySharingResponseData();
++                break;
+             default:
+                 responseData = new ResponseData();
+                 break;

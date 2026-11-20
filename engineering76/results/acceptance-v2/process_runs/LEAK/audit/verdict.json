@@ -1,0 +1,37 @@
+{
+  "status": "IDENTIFIED_LOCAL_CHAIN",
+  "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+  "identified_claims": [
+    "local_source_to_current_context_bridge"
+  ],
+  "not_identified": [
+    "natural_person",
+    "household",
+    "training_origin_H0_vs_H3",
+    "Axon_Vector_model_consumption",
+    "independent_value_gain"
+  ],
+  "scope": "local_fixture_run_only",
+  "routes": [
+    "CONTEXT_LEAKAGE"
+  ],
+  "requests": [
+    {
+      "request_id": "mock-request-1",
+      "route": "CONTEXT_LEAKAGE",
+      "decision_seq": 9,
+      "feature_families": [
+        "current-context"
+      ],
+      "response": {
+        "creative": "mock-creative-high",
+        "filled": true,
+        "model_version": "mock-model-v1",
+        "request_id": "mock-request-1",
+        "score": 0.8
+      }
+    }
+  ],
+  "complete_local_no_read": false,
+  "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+}

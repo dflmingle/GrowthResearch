@@ -1,0 +1,21 @@
+﻿test_id,test,permitted_fixture,expected,component,rules,execution,real_personal_data
+V01,同值不同issuer/app/namespace,两个自有测试token裸值相同、scope不同,不比较为同实体；UNKNOWN_SCOPE或不同键,NS,R01,NOT_RUN_DESIGN_ONLY,NONE
+V02,pairwise sector,同账号不同sector sub，与合法同sector配置分别建样本,不绕过sector；只有明示授权映射可跨域,NS,R01/R02,NOT_RUN_DESIGN_ONLY,NONE
+V03,账号认证与重放,有效自有auth回执、错aud/过期/重放各一例,只有效者建立账号边；无person升级,DR,R02,NOT_RUN_DESIGN_ONLY,NONE
+V04,账号共享,两自有设备同账号、同设备两账号,多对多关系保留；不宣称同一自然人,DR/RG,R02/R06,NOT_RUN_DESIGN_ONLY,NONE
+V05,未校准高分,合法合成候选高分但无校准scope,候选不自动合并，quality明确uncalibrated,RG,R04,NOT_RUN_DESIGN_ONLY,NONE
+V06,桥接冲突,合成A–B/B–C候选与A–C cannot-link,CONFLICT；不硬连整簇,RG,R05,NOT_RUN_DESIGN_ONLY,NONE
+V07,删桥拆分,自有图删除关键桥接边,旧membership/feature失效，子图重算新版本,RG,R08,NOT_RUN_DESIGN_ONLY,NONE
+V08,图关系回填,valid_from早、recorded/available晚于as_of,历史预测不得见回填新关系,RG/FS,R09,NOT_RUN_DESIGN_ONLY,NONE
+V09,事件幂等与attempt,相同source_event_id重试和新的经济事件,重试不重复入账；不同业务不误去重,EL,R09,NOT_RUN_DESIGN_ONLY,NONE
+V10,请求多候选多回调,合成机会/候选/load/impression/revenue修订各自键,按明确经济主键计账，不按request/load数计金额,EL,R09,NOT_RUN_DESIGN_ONLY,NONE
+V11,迟到退款和收入,事件发生早、可用晚；后续退款修订,当时特征只见已知版本；标签另版成熟,EL/FS,R09,NOT_RUN_DESIGN_ONLY,NONE
+V12,缺失与零,无购买、退出观察、漏采三个自有情形,分开状态，未知不可补0,EL,R09,NOT_RUN_DESIGN_ONLY,NONE
+V13,Feast后端时间语义,候选后端能力记录、回填created、NULL及不支持flag,不支持/语义不符则拒绝准入；不静默降级,FS,R09,NOT_RUN_DESIGN_ONLY,NONE
+V14,读旧缓存,feature epoch旧于当前deny epoch,拒读或授权无图基线并记录原因,FS/CD,R10,NOT_RUN_DESIGN_ONLY,NONE
+V15,部分删除回执,图已清、offline/export一个sink未确认,ACK_PENDING，不称全部删除完成,CD,R11,NOT_RUN_DESIGN_ONLY,NONE
+V16,备份重放,旧备份恢复含被删除的自有记录,恢复时重放删除清单，不能复活关系,CD,R11,NOT_RUN_DESIGN_ONLY,NONE
+V17,训练影响,模拟血缘指向旧训练快照，未做权重遗忘证明,单列训练影响未完成，不报告参数已忘记,CD/PA,R12,NOT_RUN_DESIGN_ONLY,NONE
+V18,接收缺失/模型默认,只有发送或物化、空值default fallback,NOT_IDENTIFIABLE，不升级实际非空模型消费,PA/FS,R14,NOT_RUN_DESIGN_ONLY,NONE
+V19,产品不一致,Exchange receipt配Vector模型声明，或Adjust receipt配Axon,跨系统引用不一致，C_graph仍UNKNOWN,PA,R14,NOT_RUN_DESIGN_ONLY,NONE
+V20,真实来源与引用权限缺失,同hash但无来源签认/独立复核/引用权,UNTRUSTED或PARTIAL；不升级生产,PA,R13/R14,NOT_RUN_DESIGN_ONLY,NONE

@@ -1,0 +1,101 @@
+{
+  "outbox": [
+    {
+      "id": "outbox_000010",
+      "event_ref": "event_000009",
+      "payload_json": null,
+      "status": "DELETED"
+    }
+  ],
+  "events": [
+    {
+      "id": "event_000009",
+      "tenant": "synthetic-tenant",
+      "app_ref": "entity_000006",
+      "source": "synth:revenue-source",
+      "source_event_id": "synth:e02:event:1",
+      "revision": 1,
+      "event_type": "revenue",
+      "account_ref": "entity_000004",
+      "occurred_at": 1767225600,
+      "received_at": 1767225600,
+      "observed_at": 1767225600,
+      "available_at": 1767225600,
+      "source_ref": "synth:event",
+      "purpose": "synthetic-value-research",
+      "policy_epoch": 3,
+      "payload_hash": "32de7bfb3d1d92ae2c3f4379d900c4dc3679f184cb5dfa364b3f285aed0a4b03",
+      "payload_json": null,
+      "deleted": 1
+    }
+  ],
+  "ledger": [
+    {
+      "id": "ledger_000011",
+      "event_ref": "event_000009",
+      "app_ref": "entity_000006",
+      "account_ref": "entity_000004",
+      "source": "synth:revenue-source",
+      "economic_key": "synth:e02:economic:1",
+      "revision": 1,
+      "amount_micros": null,
+      "currency": "USD",
+      "economic_kind": "IAP",
+      "economic_at": 1767225600,
+      "occurred_at": 1767225600,
+      "observed_at": 1767225600,
+      "available_at": 1767225600,
+      "correction_of": null,
+      "semantic_hash": "64598bf782ab722e44388764a8c4a7b19d49504097ad4a3dac765a3e3db6006b",
+      "deleted": 1
+    }
+  ],
+  "edge_revisions": [
+    {
+      "id": "edge_000007",
+      "revision": 1,
+      "src": "entity_000006",
+      "dst": "entity_000002",
+      "kind": "installed_on",
+      "grain": "app_instance",
+      "source_ref": "synth:install",
+      "scope": "ns_000005->ns_000001",
+      "confidence": null,
+      "quality_kind": "synthetic_attestation",
+      "quality_scope": "synthetic-ground-truth-only",
+      "method_version": "independent-local-v1",
+      "status": "ACTIVE",
+      "valid_from": 1767225600,
+      "valid_to": null,
+      "observed_at": 1767225600,
+      "available_at": 1767225600,
+      "revoked_at": null,
+      "purpose": "synthetic-value-research",
+      "policy_epoch": 3,
+      "graph_version": 1
+    },
+    {
+      "id": "edge_000008",
+      "revision": 1,
+      "src": "entity_000006",
+      "dst": "entity_000004",
+      "kind": "logged_in_as",
+      "grain": "account",
+      "source_ref": "synth:fixture-auth",
+      "scope": "ns_000005->ns_000003",
+      "confidence": 1.0,
+      "quality_kind": "authenticated_account_control",
+      "quality_scope": "local-synthetic-credential-control-only",
+      "method_version": "independent-local-v1",
+      "status": "DELETED",
+      "valid_from": 1767225600,
+      "valid_to": null,
+      "observed_at": 1767225600,
+      "available_at": 1767225600,
+      "revoked_at": 1767225600,
+      "purpose": "synthetic-value-research",
+      "policy_epoch": 3,
+      "graph_version": 2
+    }
+  ]
+}

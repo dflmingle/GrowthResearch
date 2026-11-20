@@ -1,0 +1,11 @@
+--- 5.7.0/com/adjust/sdk/PackageHandler.java
++++ 5.8.1/com/adjust/sdk/PackageHandler.java
+@@ -170,7 +170,7 @@
+             }
+         };
+ 
+-        if (responseData.retryIn != null) {
++        if (responseData.retryIn != null && responseData.retryIn > 0) {
+             long retryIn = responseData.retryIn;
+             scheduler.schedule(runnable, retryIn);
+             return;

@@ -1,0 +1,393 @@
+[
+  {
+    "name": "equal_outputs_different_routes",
+    "passed": true,
+    "details": {
+      "D1": {
+        "status": "IDENTIFIED_LOCAL_CHAIN",
+        "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+        "identified_claims": [
+          "local_same_device_source_history_consumed"
+        ],
+        "not_identified": [
+          "natural_person",
+          "household",
+          "training_origin_H0_vs_H3",
+          "Axon_Vector_model_consumption",
+          "independent_value_gain"
+        ],
+        "scope": "local_fixture_run_only",
+        "routes": [
+          "SAME_DEVICE_HISTORY_READ"
+        ],
+        "requests": [
+          {
+            "request_id": "mock-request-1",
+            "route": "SAME_DEVICE_HISTORY_READ",
+            "decision_seq": 10,
+            "feature_families": [
+              "cross-app-device-history"
+            ],
+            "response": {
+              "creative": "mock-creative-high",
+              "filled": true,
+              "model_version": "mock-model-v1",
+              "request_id": "mock-request-1",
+              "score": 0.8
+            }
+          }
+        ],
+        "complete_local_no_read": false,
+        "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+      },
+      "LEAK": {
+        "status": "IDENTIFIED_LOCAL_CHAIN",
+        "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+        "identified_claims": [
+          "local_source_to_current_context_bridge"
+        ],
+        "not_identified": [
+          "natural_person",
+          "household",
+          "training_origin_H0_vs_H3",
+          "Axon_Vector_model_consumption",
+          "independent_value_gain"
+        ],
+        "scope": "local_fixture_run_only",
+        "routes": [
+          "CONTEXT_LEAKAGE"
+        ],
+        "requests": [
+          {
+            "request_id": "mock-request-1",
+            "route": "CONTEXT_LEAKAGE",
+            "decision_seq": 9,
+            "feature_families": [
+              "current-context"
+            ],
+            "response": {
+              "creative": "mock-creative-high",
+              "filled": true,
+              "model_version": "mock-model-v1",
+              "request_id": "mock-request-1",
+              "score": 0.8
+            }
+          }
+        ],
+        "complete_local_no_read": false,
+        "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+      }
+    }
+  },
+  {
+    "name": "ads_only_unidentifiable_both",
+    "passed": true,
+    "details": {
+      "response": {
+        "creative": "mock-creative-high",
+        "filled": true,
+        "model_version": "mock-model-v1",
+        "request_id": "mock-request-1",
+        "score": 0.8
+      }
+    }
+  },
+  {
+    "name": "D0_no_H0_vs_H3_training_inference",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "NO_INDIVIDUAL_HISTORY_READ_OBSERVED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "NO_INDIVIDUAL_HISTORY_READ_OBSERVED",
+          "decision_seq": 7,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "not_yet_available",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "NO_INDIVIDUAL_HISTORY_READ_OBSERVED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "NO_INDIVIDUAL_HISTORY_READ_OBSERVED",
+          "decision_seq": 9,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "source_denied",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "GATE_BLOCKED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "GATE_BLOCKED",
+          "decision_seq": 7,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "revoke_after_collect",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "GATE_BLOCKED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "GATE_BLOCKED",
+          "decision_seq": 8,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "reset_no_relink",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "NO_INDIVIDUAL_HISTORY_READ_OBSERVED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "NO_INDIVIDUAL_HISTORY_READ_OBSERVED",
+          "decision_seq": 10,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "different_device",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "GATE_BLOCKED"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "GATE_BLOCKED",
+          "decision_seq": 8,
+          "feature_families": [],
+          "response": {
+            "creative": "mock-creative-base",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.2
+          }
+        }
+      ],
+      "complete_local_no_read": true,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "duplicate_event",
+    "passed": true,
+    "details": {
+      "status": "IDENTIFIED_LOCAL_CHAIN",
+      "reason": "COMPLETE_INSTRUMENTED_LOCAL_TRACE",
+      "identified_claims": [
+        "local_same_device_source_history_consumed"
+      ],
+      "not_identified": [
+        "natural_person",
+        "household",
+        "training_origin_H0_vs_H3",
+        "Axon_Vector_model_consumption",
+        "independent_value_gain"
+      ],
+      "scope": "local_fixture_run_only",
+      "routes": [
+        "SAME_DEVICE_HISTORY_READ"
+      ],
+      "requests": [
+        {
+          "request_id": "mock-request-1",
+          "route": "SAME_DEVICE_HISTORY_READ",
+          "decision_seq": 11,
+          "feature_families": [
+            "cross-app-device-history"
+          ],
+          "response": {
+            "creative": "mock-creative-high",
+            "filled": true,
+            "model_version": "mock-model-v1",
+            "request_id": "mock-request-1",
+            "score": 0.8
+          }
+        }
+      ],
+      "complete_local_no_read": false,
+      "caveat": "Local producer instrumentation is trusted for this fixture;hash chains are not signatures and do not prove production truth. No architecture-wide absence or value gain inferred."
+    }
+  },
+  {
+    "name": "fixed_seed_ledger_replay",
+    "passed": true,
+    "details": {
+      "seed": 760031,
+      "comparison": "all ledger records byte-equivalent JSON;absolute process paths excluded"
+    }
+  },
+  {
+    "name": "auditor_no_private_truth",
+    "passed": true,
+    "details": {
+      "command": "auditor with public packet only",
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "socket_creation_denied",
+    "passed": true,
+    "details": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"C:\\Users\\89trillion\\anaconda3\\Lib\\socket.py\", line 233, in __init__\n    _socket.socket.__init__(self, family, type, proto, fileno)\n  File \"D:\\GrowthResearch\\engineering76\\mock76\\safety.py\", line 7, in guard\n    raise PermissionError('Round76 forbids all sockets and external transports')\nPermissionError: Round76 forbids all sockets and external transports\n"
+    }
+  },
+  {
+    "name": "app_child_spawn_denied",
+    "passed": true,
+    "details": {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"C:\\Users\\89trillion\\anaconda3\\Lib\\subprocess.py\", line 548, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\89trillion\\anaconda3\\Lib\\subprocess.py\", line 1026, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\89trillion\\anaconda3\\Lib\\subprocess.py\", line 1534, in _execute_child\n    sys.audit(\"subprocess.Popen\", executable, args, cwd, env)\n  File \"D:\\GrowthResearch\\engineering76\\mock76\\safety.py\", line 11, in guard\n    raise PermissionError('App/service/auditor cannot spawn children')\nPermissionError: App/service/auditor cannot spawn children\n"
+    }
+  }
+]

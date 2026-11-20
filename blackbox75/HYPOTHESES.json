@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "id": "H0",
+      "training": "T0: target/context-only supervised knowledge",
+      "online": "D0: no individual source-app history query",
+      "scope": "Context/device and pre-frozen baseline statistics;no source-game-trained delta in the operational build"
+    },
+    {
+      "id": "H3_cohort",
+      "training": "T1: multi-product aggregate cohort knowledge",
+      "online": "D0: no individual source-app history query",
+      "scope": "Aggregate tables fixed during primary window;small-cell or dynamic cohort leakage must be audited"
+    },
+    {
+      "id": "H3_shared",
+      "training": "T1: multi-product shared parameters/representations",
+      "online": "D0: no individual source-app history query",
+      "scope": "Training provenance differs from H0;frozen prediction mapping can be identical"
+    },
+    {
+      "id": "H1",
+      "training": "T0 or T1",
+      "online": "D1: same-device source-app history;D2 absent",
+      "scope": "Cross-app device relation,not cross-device or person identity"
+    },
+    {
+      "id": "H2_account",
+      "training": "T0 or T1",
+      "online": "D2: cross-device account-linked history;D1 optional",
+      "scope": "Account-level link and source->target use;not natural-person identity"
+    },
+    {
+      "id": "H2_person",
+      "training": "T0 or T1",
+      "online": "D2 plus independently authorized person-level truth/contract",
+      "scope": "Additional entity claim;self-owned shared test login alone cannot establish person granularity"
+    },
+    {
+      "id": "HH_household",
+      "training": "Any",
+      "online": "Household/network association,not individual equality",
+      "scope": "Competing nuisance mechanism;shared IP does not establish a household truth"
+    }
+  ],
+  "mutual_exclusivity": "H0 vs H3 differ on source-training provenance;H1 excludes D2;H2 permits D1. H2_person is nested in H2,not independently separable by ad outputs. HH is a competing layer and can coexist.",
+  "operational_nonpersonal_null": "D0 with frozen aggregate/model state includes H0 and H3;ad-only tests generally target D0 vs online transfer,not T0 vs T1",
+  "identifiability": "Output equality of two feasible worlds makes the internal mechanism non-identifiable at that observation level"
+}

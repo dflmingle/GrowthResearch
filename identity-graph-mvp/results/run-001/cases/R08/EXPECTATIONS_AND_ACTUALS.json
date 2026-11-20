@@ -1,0 +1,22 @@
+[
+  {
+    "assertion": "no implicit currency conversion",
+    "input_refs": "operation trace",
+    "expected": null,
+    "actual": null,
+    "passed": true
+  },
+  {
+    "assertion": "currencies retained",
+    "input_refs": "operation trace",
+    "expected": {
+      "USD": 100,
+      "EUR": 200
+    },
+    "actual": {
+      "USD": 100,
+      "EUR": 200
+    },
+    "passed": true
+  }
+]

@@ -2669,3 +2669,239 @@ A线新事实：Meow精确包名10月3日归档近30天估570万，当前930万�
 
 
 IV67补充核验：预定周×消费层描述诊断已补齐，9个固定预测器全部重建一致；[225行交叉诊断](public-experiments/round67/WEEK_BY_TIER_DIAGNOSTIC.csv)、[重建边界](public-experiments/round67/WEEK_TIER_DIAGNOSTIC_MANIFEST.json)。每周尾层仅2—3客户、总体仅3不同客户，未获得稳定长尾改善或新增确认性结论。
+
+
+<a id="pd68"></a>
+
+## PD68 · 全新公开数据源与跨产品迁移准入
+
+- [68号报告](68_全新公开数据源调查.md)、[17候选目录](68_DATASET_CATALOG.csv)、[许可审计](68_DATASET_LICENSE_AUDIT.md)
+- [跨产品准入与69建议](68_CROSS_PRODUCT_TRANSFER_READINESS.md)、[6项实验矩阵](68_EXPERIMENT_ADMISSION_MATRIX.csv)
+- [原始来源/摘录/哈希](public-experiments/round68/SOURCE_CATALOG.md)、[完整数据下载记录](public-experiments/round68/ASSET_ACQUISITION.json)、[电子交易原包](public-experiments/round68/ASSET_ELECTRONICS.json)
+- [Complete Journey](public-experiments/round68/AUDIT_JOURNEY.json)、[珠宝](public-experiments/round68/AUDIT_JEWELRY.json)、[电子](public-experiments/round68/AUDIT_ELECTRONICS.json)、[租赁](public-experiments/round68/AUDIT_VIBRENT.json)
+- [最终保留与结构校验](public-experiments/round68/VALIDATION68.json)
+
+新证据：取得独立Complete Journey全量1469307行及两个商店完整交易发行物；电子缺键78.58%、金额缺16.40%及1970异常，珠宝无表头，Vibrent套餐标价非扣款。A级真实游戏/B级媒体IAA准入均0，当前跨产品训练组合0；不关联个人ID的参数/聚合迁移可设计但未执行。严格零值/观测缺失门槛未满足，69号先补证不训练；无UCI原始使用、无新增模型结果、无Axon/Vector效果主张。旧对象与历史报告原样保留。
+
+
+<a id="os69"></a>
+
+## OS69 · 原始发布者、字段契约与观察覆盖
+
+- [Complete Journey](69_CompleteJourney原始数据与观察覆盖审计.md)、[Jewelry](69_REES46Jewelry字段语义审计.md)、[Electronics](69_REES46Electronics缺失与异常审计.md)
+- [原始来源及作者证据索引](69_原始数据来源及作者证据索引.csv)、[八门槛最终判断](69_实验准入最终判断.md)
+- [CJ作者处理原代码](public-experiments/round69/sources/journey-prep.txt)、[全量原件秒数/时区/删日核验](public-experiments/round69/JOURNEY_PREPROCESSING_VERIFICATION.json)
+- [Jewelry官方v1原包/header](public-experiments/round69/VERSION_PROBES.json)、[两版对照](public-experiments/round69/JEWELRY_VERSION_COMPARISON.json)、[13列契约](public-experiments/round69/JEWELRY_FIELD_CONTRACT.csv)
+- [电子旧版完整下载](public-experiments/round69/VERSION_ELECTRONICS_FULL.json)、[事件/日期版本差分](public-experiments/round69/ELECTRONICS_VERSION_COMPARISON.json)
+- [Jewelry短行](public-experiments/round69/JEWELRY_RAW_STRUCTURE.json)、[电子短行与日期](public-experiments/round69/ELECTRONICS_RAW_STRUCTURE.json)、[电子逐日缺失](public-experiments/round69/ELECTRONICS_DAILY_COVERAGE.csv)
+- [未发送作者问题](public-experiments/round69/AUTHOR_QUESTIONS_UNSENT.md)、[最终保留校验](public-experiments/round69/VALIDATION69.json)
+
+对68号补充：CJ2017为作者人工映射，秒数按basket后缀构造，12-25被假定闭店删除；sales_value不是顾客实付。Jewelry官方旧版13列表头已恢复；5352个共同解析空值均对应11字段短行。电子431954个price解析空值均为6字段短行，正常行另有1637398空用户，1970原字面在旧版已存在。字段/源证据GO，三数据完整真实未来价值和跨产品训练仍STOP；旧对象不改写，无模型/UCI/个人匹配/作者联系。
+
+
+## GI69：真实游戏数据、广告请求与价值反馈专项（2026-11-20）
+
+与原零售69号并行保留。没有新增可直接训练的真实游戏玩家文件；没有发送申请、签约、训练或生产测试。
+
+- [69总览](69_真实游戏数据来源与获取可行性.md)：6候选准入卡，真实训练均STOP或排除。
+- [Uken](69_Uken数据获取与准入审计.md)：SFU2015参与者30万行/44字段说明，明确无上传数据权限；缩放、观察窗口和完整NDA未知。
+- [Unity交易研究](69_Unity交易数据来源审计.md)：真实IAP论文、OSF两份补充文件已下载验哈希；原数据内部受控、作者不能共享、仅付费者、跨游戏ID不关联；R样本为合成。
+- [MAG](69_MAG游戏经营数据审计.md)：五游戏原论文/数据包身份尚未匹配，UNKNOWN/STOP，不以无检索结果否定其存在。
+- [字段时间线](69_广告请求与收入反馈字段时间线.md)：24条广告前/响应/展示/收入/MMP/Apple归因字段链；复用220条哈希核验材料。
+- [Axon/Vector连接](69_Axon_Vector训练与竞价数据连接证据.md)：官方产品用途与客户端字段级消费保持分开，没有新增生产训练血缘。
+- [70号建议](69_NEXT_RESEARCH_PRIORITY.md)：优先数据授权、成熟cohort与接收→训练列契约；没有合格数据不训练。
+
+原始URL、位置、日期、SHA256：[SOURCE_CATALOG](game-industry69/SOURCE_CATALOG.md)、[来源对象](game-industry69/SOURCE_EVIDENCE.json)、[代码片段](game-industry69/CODE_EVIDENCE.json)、[获取记录](game-industry69/FETCH_MANIFEST.json)。[字段CSV](game-industry69/SDK_FIELD_TIMELINE.csv)、[准入CSV](game-industry69/DATASET_ADMISSION.csv)。
+
+图追加GI69节点/边/来源，保留全部历史对象；六层不跳级，所有本轮生产送达/接收/训练状态未证。[核验结果](game-industry69/VALIDATION.json)。
+
+
+## CL70：真实游戏授权准备与竞价/事件关联补证（2026-11-20）
+
+本轮有新的客户端赋值链，未取得新原始玩家数据/许可、未训练、未发送申请或生产测试。
+
+- [Uken授权与申请准备](70_Uken数据授权与申请准备.md)：由SFU官方目录找到现行统计系管理/咨询转介及Uken公开入口；不是已证实数据许可渠道。[四份未发送草稿](closure70/application/RESEARCH_BRIEF_AND_DATA_REQUEST.md)。
+- [真实游戏新增来源审计](70_真实游戏数据新增来源审计.md)：Unity补充材料复用验哈希；Age原作者记录核验；MAG仍无法准确匹配原研究；数据训练STOP。
+- [Axon/MAX闭环](70_Axon竞价数据闭环.md)：完整响应event_id→赢家map→下一请求previous_loaded_request_id；同广告对象收入回调；click/load与impression分支边界补齐。
+- [Vector/Unity Ads闭环](70_Vector竞价数据闭环.md)：适配器新load UUID→load/show objectId→Unity机会→广告对象→operative关联；Token ID不可自动等同，trackingToken可刷新。
+- [22项预测输入/反馈时间线](70_预测输入与收入反馈时间线.csv)：逐项共同ID/显式赋值、时间、触发、接收方与生产/训练未知。
+- [下一阶段建议](70_下一阶段突破建议.md)：优先授权成熟游戏cohort与经济事件/MMP/训练列关联契约，不再重复SDK清单。
+
+新增38段静态代码证据+6份官方联系/元数据，复用27条既核验材料；片段数量不等于独立发现数量。[SOURCE_CATALOG](closure70/SOURCE_CATALOG.md)、[原包/源码哈希及片段](closure70/CODE_EVIDENCE.json)、[关联机器表](closure70/EVENT_ASSOCIATIONS.json)、[字节码核验记录](closure70/BYTECODE_CHECK.json)。
+
+关系图追加CL70节点/边/来源，所有00—69报告及旧图对象保留。真实生产发送、接收和字段级模型训练均未新增证明。[完整性核验](closure70/VALIDATION.json)。
+
+
+## L71：训练血缘、经济展示与真实游戏数据准入（2026-11-20）
+
+本轮新增条件关联，不新增生产接收/训练或盈利证据。MAX响应T()→收入广播基础id，后续两层putAll可覆盖；load内部调用现定位到本地收入topic，仍无所查公共收入回调。Unity事件快照→持久化重试已核对。MMP伙伴字段≠训练列，Uken权利方及许可仍未知，申请未发送、训练STOP。
+
+- [71_MAX经济展示与收入关联.md](71_MAX经济展示与收入关联.md)
+- [71_Unity机会ID与事件关联.md](71_Unity机会ID与事件关联.md)
+- [71_MMP到广告平台数据血缘.md](71_MMP到广告平台数据血缘.md)
+- [71_Axon训练数据字段证据.md](71_Axon训练数据字段证据.md)
+- [71_Vector训练数据字段证据.md](71_Vector训练数据字段证据.md)
+- [71_Uken数据授权最终申请包.md](71_Uken数据授权最终申请包.md)
+- [71_端到端训练反馈关系图.json](71_端到端训练反馈关系图.json)
+- [71_下一阶段突破建议.md](71_下一阶段突破建议.md)
+
+[原始URL/哈希/源码位置](lineage71/SOURCE_CATALOG.md)；[22行字段血缘](lineage71/FIELD_LINEAGE.csv)；[代码原包哈希及六层状态](lineage71/CODE_EVIDENCE.json)；[申请人待补信息](lineage71/application/APPLICANT_INFORMATION.md)；[完整性核验](lineage71/VALIDATION.json)。公开SDK/文档止于伙伴配置、opaque token及服务端接口；实收、训练列和ROAS不升级。保留00—70历史文件及原图对象。
+
+
+## L72：真实游戏数据访问与预测验证准入（2026-11-20）
+
+停止旧SDK扫描。新增公开MMP契约：SDK/API混合替换与报表修订、去重选项适用范围、日级UA signals/实时postbacks、all-source省略其他来源归因、Unity明确接收映射；不是实际配置/接收或训练列。Age新增机构公开业务路由，非数据许可。Uken主体/保管人未明，申请未发送。严格目标“新获准数据或授权生产血缘”未达成；A/B/C实验STOP，无训练/效果数字。
+
+- [72_真实游戏数据获取进展.md](72_真实游戏数据获取进展.md)
+- [72_Axon_Vector训练血缘突破.md](72_Axon_Vector训练血缘突破.md)
+- [72_跨游戏迁移实验设计.md](72_跨游戏迁移实验设计.md)
+- [72_普通游戏盈利改善因果矩阵.csv](72_普通游戏盈利改善因果矩阵.csv)
+- [72_公开逆向停止清单.md](72_公开逆向停止清单.md)
+- [72_下一阶段行动计划.md](72_下一阶段行动计划.md)
+
+[原件URL/日期/哈希/摘录](access72/SOURCE_CATALOG.md)；[准入矩阵](access72/EXPERIMENT_ADMISSION.json)；[本轮关系图](access72/RELATION_GRAPH.json)；[访问路由](access72/ACCESS_ROUTES.json)；[搜索与操作边界](access72/SEARCH_BOUNDARY.json)；[完整性核验](access72/VALIDATION.json)。历史00—71文件与原图对象保留。
+
+
+## 72身份专题与73独立实验（2026-11-20）
+
+本节为新增专题，保留此前access72及00—71历史文件。E1读取、E2构造、E3官方接收/用途、E4服务关联契约；E5生产匹配/E6匹配结果入预测均未取得。
+
+TalkingData/Criteo STOP；BPID和独立价值实验均为合成。42行B＋360行D＋2行STOP，共404行；不证明真实LTV、ROAS、个人跨App图谱或两家相对优势。
+
+| 交付 | 内容 |
+|---|---|
+| [72_AppLovin身份图谱逆向.md](72_AppLovin身份图谱逆向.md) | 边界、方法和最终判断 |
+| [72_Unity身份图谱逆向.md](72_Unity身份图谱逆向.md) | 边界、方法和最终判断 |
+| [72_下一阶段突破建议.md](72_下一阶段突破建议.md) | 边界、方法和最终判断 |
+| [72_第三方SDK身份关联能力矩阵.md](72_第三方SDK身份关联能力矩阵.md) | 边界、方法和最终判断 |
+| [72_设备标识与身份标识完整清单.md](72_设备标识与身份标识完整清单.md) | 边界、方法和最终判断 |
+| [72_证据等级与反证清单.md](72_证据等级与反证清单.md) | 边界、方法和最终判断 |
+| [72_跨应用身份关联证据图.json](72_跨应用身份关联证据图.json) | 机器可读证据/结果 |
+| [72_身份图谱到价值预测的数据血缘.md](72_身份图谱到价值预测的数据血缘.md) | 边界、方法和最终判断 |
+| [72_非游戏身份数据入口分析.md](72_非游戏身份数据入口分析.md) | 边界、方法和最终判断 |
+| [73_BPID身份匹配算法实验.md](73_BPID身份匹配算法实验.md) | 边界、方法和最终判断 |
+| [73_Criteo广告价值预测实验.md](73_Criteo广告价值预测实验.md) | 边界、方法和最终判断 |
+| [73_下一阶段研究建议.md](73_下一阶段研究建议.md) | 边界、方法和最终判断 |
+| [73_实验结果汇总.csv](73_实验结果汇总.csv) | 机器可读证据/结果 |
+| [73_数据许可及质量审计.md](73_数据许可及质量审计.md) | 边界、方法和最终判断 |
+| [73_设备应用关系图实验.md](73_设备应用关系图实验.md) | 边界、方法和最终判断 |
+| [73_身份关联增益与错误率实验.md](73_身份关联增益与错误率实验.md) | 边界、方法和最终判断 |
+
+来源：[SOURCE_CATALOG](identity72-experiments73/SOURCE_CATALOG.md)；复现：[README](identity72-experiments73/README.md)；完整性：[VALIDATION](identity72-experiments73/VALIDATION.json)。
+
+主图仅追加32节点、43边、65来源；原211节点/250边/525来源和所有旧元数据保留。72自包含图标明未知边，合成实验不使用E5/E6。
+
+下一步优先授权真实游戏cohort和匿名化身份/标签/模型血缘；停止同版本重复扫描和受限来源镜像。未经指示未发送申请、签约或发布。
+
+
+## 74号：身份图谱是否驱动买量优势（2026-11-20）
+
+结论：第三方解析/命名空间/失败契约有新增补证；Unity账号/Exchange合作与AppLovin跨App用途和C_id类别披露有证。特定解析结果入Axon/Vector的C_graph和独立增益D仍UNKNOWN。没有新训练或真实收益。
+
+| 交付 | 内容 |
+|---|---|
+| [74_图谱与群体学习对照实验设计.md](74_图谱与群体学习对照实验设计.md) | 本轮结论、方法或停止条件 |
+| [74_研究边界与停止条件.md](74_研究边界与停止条件.md) | 本轮结论、方法或停止条件 |
+| [74_身份关联商业价值证据矩阵.csv](74_身份关联商业价值证据矩阵.csv) | 18项A/B/C_id/C_graph/D证据矩阵 |
+| [74_身份图谱生产证据.md](74_身份图谱生产证据.md) | 本轮结论、方法或停止条件 |
+| [74_身份特征进入价值模型的证据.md](74_身份特征进入价值模型的证据.md) | 本轮结论、方法或停止条件 |
+
+[一手来源及SHA256](identity-value74/SOURCE_CATALOG.md)；[覆盖与失败](identity-value74/SEARCH_COVERAGE.json)；[补充勘误](identity-value74/CORRECTIONS.md)；[准入STOP](identity-value74/EXPERIMENT_READINESS.json)；[验证](identity-value74/VALIDATION.json)。
+
+仅追加16节点/19边/17来源，原243/293/590对象及旧元数据保留。00—73共129份编号文件保持原字节。未重扫SDK、重试数据下载、采集身份或调用生产匹配/广告服务。
+
+
+## 75号：身份图谱黑盒验证与可识别性（2026-11-20）
+
+先完成设计与可行性审计，无真实投放、身份查询、外部请求、旧SDK扫描或真人数据。H0/H3按训练来源与在线依赖两轴定义；广告响应不能直接恢复个人图谱或价值优势。
+
+| 交付 | 范围 |
+|---|---|
+| [75_下一步最小可执行方案.md](75_下一步最小可执行方案.md) | 研究设计、边界或本地合成结果 |
+| [75_合成实验设计验证.md](75_合成实验设计验证.md) | 研究设计、边界或本地合成结果 |
+| [75_同设备跨App关联实验.md](75_同设备跨App关联实验.md) | 研究设计、边界或本地合成结果 |
+| [75_实验授权与数据边界.md](75_实验授权与数据边界.md) | 研究设计、边界或本地合成结果 |
+| [75_混杂因素与反证实验.md](75_混杂因素与反证实验.md) | 研究设计、边界或本地合成结果 |
+| [75_跨设备同人关联实验.md](75_跨设备同人关联实验.md) | 研究设计、边界或本地合成结果 |
+| [75_身份图谱黑盒实验总设计.md](75_身份图谱黑盒实验总设计.md) | 研究设计、边界或本地合成结果 |
+| [75_黑盒可识别性矩阵.csv](75_黑盒可识别性矩阵.csv) | 56行条件可识别性 |
+
+[本地来源/复现](blackbox75/README.md)；[冻结协议](blackbox75/PREREGISTRATION.md)；[5700重复结果](blackbox75/results/REPLICATE_RESULTS.csv)；[19场景摘要](blackbox75/results/DESIGN_SUMMARY.csv)；[当前准入](blackbox75/EXPERIMENT_READINESS.json)；[VALIDATION](blackbox75/VALIDATION.json)。
+
+合成给出三组不同内部机制、逐行相同外部输出的反例；统计响应显著也可能来自库存/频控/目标上下文。未新增Axon/Vector实际入模或独立收益证据。下一步先做自有本地mock可观测性先导，平台固定回放需L2明确授权。
+
+主图仅追加18节点/21边/16来源；旧259/312/607对象和元数据保留，00—74共134份编号文件保持原字节。
+
+
+## 76号：身份图谱证据链工程验证（2026-11-20）
+
+交付：[76_身份图谱证据链工程验证.md](76_身份图谱证据链工程验证.md)；[可运行代码/README](engineering76/README.md)；[测试报告](engineering76/TEST_REPORT.md)；[最终v3摘要](engineering76/results/acceptance-v3/SUMMARY.json)；[矩阵逐行结果](engineering76/results/acceptance-v3/MATRIX_RESULTS.csv)；[完整性验证](engineering76/VALIDATION.json)。
+
+双App为独立Python CLI进程，以本地文件IPC实现D0/D1/上下文泄漏三路由。独立审计不读隐藏route真值，时间/用途/epoch门控和不可识别判定已落地。56行矩阵、13进程回归、40单元通过；不把本地fixture升级为真实平台匹配/入模/价值收益。
+
+无外部请求、真实身份查询、生产SDK、文献搜索、SDK扫描或新增统计模拟；00—75共142份编号文件保留。旧结果保留但正式验证只引用当前代码对应acceptance-v3。
+
+主图仅追加11节点/12边/12来源，原277/333/623数组和元数据保持原样。
+
+
+## 77号：生产身份图谱工程证据（2026-11-20）
+
+结论：**Axon/Vector生产价值模型读取跨App/跨设备身份图谱特征仍UNKNOWN；C_graph零突破。** 真正新增3份官方岗位及1份专利，不能升级为部署；另2份Vector岗位为旧URL别名重复获取，已排除新增。Vector训练特征管道有团队描述，但Exchange/RampID不能推成Vector消费；AppLovin用户表示岗位仍不指定解析组件。
+
+| 交付 | 内容 |
+|---|---|
+| [77_生产身份图谱工程证据矩阵.csv](77_生产身份图谱工程证据矩阵.csv) | 12行：4新来源、8复用；URL/日期/摘录/SHA256/粒度/消费断点 |
+| [77_Axon身份图谱工程证据.md](77_Axon身份图谱工程证据.md) | 用户表示、竞价基础设施与图谱消费的界限 |
+| [77_Vector身份图谱工程证据.md](77_Vector身份图谱工程证据.md) | 明确Vector岗位、OS推荐专利及Exchange范围 |
+| [77_关键证据缺口与竞争解释.md](77_关键证据缺口与竞争解释.md) | 组件→接收产品→模型消费缺口与非图谱解释 |
+| [77_最终判断与停止条件.md](77_最终判断与停止条件.md) | 零突破、搜索覆盖与恢复条件 |
+
+[原始目录](production77/SOURCE_CATALOG.md)、[21份GET记录](production77/FETCH_MANIFEST.json)、[搜索边界](production77/SEARCH_COVERAGE.json)、[完整性验证](production77/VALIDATION.json)。未新增SDK扫描、模拟、mock、身份查询或生产请求。00—76共143份编号文件及76产物哈希核验保留；主图仅追加5节点/4边/4来源，旧288/345/635对象及旧元数据不变。
+
+
+## 78号：身份图谱关键证据突破方案（2026-11-20）
+
+结论：**契约与获取/验收门槛已完成；C_graph与D仍UNKNOWN。当前无已确认可执行的新证据渠道，执行STOP，不创建79号任务。** 未搜索、联网、联系平台、接收真实日志、训练、模拟或重跑76号mock。所有候选渠道可行性UNKNOWN，不代表平台已开放合作。
+
+| 交付 | 内容 |
+|---|---|
+| [78_身份图谱最小生产证据契约.md](78_身份图谱最小生产证据契约.md) | F01—F10，实体/产品/模型/时间/权限/原件与引用权 |
+| [78_Axon证据获取路径.md](78_Axon证据获取路径.md) | 5类候选渠道、权利角色、最小匿名审计询问草稿；未发送 |
+| [78_Vector证据获取路径.md](78_Vector证据获取路径.md) | 5类渠道及Exchange/Vector、设备/账号/人的反误判 |
+| [78_证据验收与升级规则.md](78_证据验收与升级规则.md) | 76原则的设计适配；G00—G08；C_graph与D分开 |
+| [78_最小行动方案与停止条件.md](78_最小行动方案与停止条件.md) | 7项回答、最小受控审计方案及具体恢复输入 |
+
+[输入原件与SHA256](acquisition78/SOURCE_CATALOG.md)、[75号56行逐行门槛对照](acquisition78/MATRIX75_CROSSWALK.csv)、[拟议适配契约](acquisition78/ADAPTER_SPEC.json)、[当前准入](acquisition78/READINESS.json)、[保全核验](acquisition78/VALIDATION.json)。56行对照仅设计，未执行实验；76号代码只认offline-mock，未改动。00—77共148份编号文件及1217项旧产物保留。主图只追加5节点/4边/5份本地规范来源；旧293/349/639对象与旧元数据保留，不升级生产匹配/消费。
+
+
+## 官方技术样本与许可核验：未编号首轮专项（2026-11-20）
+
+首轮已盘点30个版本、47份既有AAR/source jar/UPM包并核对哈希；未下载新SDK，未新增功能静态分析。22次公开请求只取官方许可/仓库/发布元数据。3份Adjust MIT源码包可列下一阶段优先，Google官方适配器Apache许可需固定源码commit；MAX/Unity核心/其他范围未自动放行。
+
+交付：[样本与许可](official-samples-audit/官方样本清单与许可核验.md)、[47行版本/哈希/URL](official-samples-audit/ACQUIRED_SAMPLE_CATALOG.csv)、[静态分析可行性](official-samples-audit/静态分析可行性报告.md)、[身份字段与调用关系图](official-samples-audit/身份字段及调用关系图.md)、[五项机制](official-samples-audit/五项优先机制与反证测试.md)、[下一轮条件](official-samples-audit/下一轮授权与测试条件.md)。
+
+[来源与SHA256](official-samples-audit/SOURCE_CATALOG.md)、[勘误](official-samples-audit/CORRECTIONS.md)、[当前状态](official-samples-audit/STATUS.json)、[核验](official-samples-audit/VALIDATION.json)。旧AppLovin适配器license.txt实际为404，不能当许可证据；当前条款不追溯替代历史许可。30字段/10映射仅复用旧证据，不是新代码分析。
+
+00—78共153份编号文件保留，76审计器不改、不运行；C_graph.Axon/Vector与D仍UNKNOWN，原生产取证STOP。主图只追加5节点/5边/13份许可或本地盘点/设计来源，旧298/353/644对象及元数据保持；未创建79号任务或自主实现生产消费。
+
+
+## Adjust MIT源码机制验证：未编号限定专项（2026-11-20）
+
+仅分析OSM034/036/038（5.5.0/5.7.0/5.8.1）MIT源码：111个选定条目、22项发现/61行逐版本记录、76个配对比较中的24项变化/新增。区分应用私有UUID、OS标识、external_device_id输入与服务器adid；有限去重/出队不等于经济事件唯一或远端成功。5.7类白名单/FB开关/TPS回调，5.8细分读取开关及重试恢复差分有明确代码位置。
+
+交付：[总览](adjust-mechanisms/README.md)、[身份/归因机制图](adjust-mechanisms/Adjust身份与归因机制图.md)、[三版本差分](adjust-mechanisms/三版本源码差分.md)、[标识生命周期](adjust-mechanisms/身份标识生命周期表.md)、[客户端已证实与服务端未知](adjust-mechanisms/已证实机制与服务端未知清单.md)、[独立Resolver设计](adjust-mechanisms/自主IdentityResolver最小设计建议.md)、[下一阶段条件](adjust-mechanisms/下一阶段授权和测试条件.md)。
+
+[源码证据/完整方法/哈希](adjust-mechanisms/CODE_EVIDENCE.json)、[61行矩阵](adjust-mechanisms/FINDINGS.csv)、[MAX/LevelPlay逐版本许可复核](adjust-mechanisms/license-review/版本许可复核.md)、[静态保全核验](adjust-mechanisms/VALIDATION.json)。5次新请求仅为法律文件；未下载新SDK、未分析MAX/LevelPlay功能、未启动SDK/生产请求或真实身份查询。
+
+00—78共153份编号文件保留；76程序不改、不重跑；不创建79。Adjust机制不归属于Axon/Vector。C_graph.Axon=UNKNOWN、C_graph.Vector=UNKNOWN、D=UNKNOWN，原生产取证STOP。主图只追加5节点/4边/21来源；旧303/358/657对象及旧元数据保留。核验PASS仅说明静态引用、版本差分和保全，不是实际匹配/删除/接收/模型测试。
+
+
+## 服务端身份解析机制与参考架构：未编号专项（2026-11-20）
+
+完成4个固定commit的开源许可/文档核验（Splink MIT、dedupe MIT、RecordLinkage BSD-3、Feast Apache-2），并引用OIDC、PROV-DM与原作者图式记录关联论文。42次GET仅公开技术/法律材料，19项逐行原文证据；没有真实身份接口、SDK或模型运行。
+
+六项交付：[路线比较](server-identity-reference/服务端身份解析技术路线对比.md)、[组件与许可](server-identity-reference/开源组件与许可清单.md)、[七组件架构](server-identity-reference/身份关系图谱参考架构.md)、[14条关系/冲突/删除规则](server-identity-reference/关系建立冲突撤销与删除规则.md)、[图谱/LTV接口](server-identity-reference/图谱特征与LTV预测接口设计.md)、[Axon/Vector差距](server-identity-reference/与Axon_Vector已证证据的差距矩阵.md)。
+
+[来源/哈希/版本](server-identity-reference/SOURCE_CATALOG.md)、[拟议契约](server-identity-reference/REFERENCE_CONTRACTS.json)、[20项未执行验收设计](server-identity-reference/ACCEPTANCE_TEST_DESIGN.csv)、[数据准入](server-identity-reference/DATA_READINESS.csv)、[静态核验](server-identity-reference/VALIDATION.json)。当前Feast文档区分事件时间与created过滤，但后端/真实available_at仍需单独验证；配对分数、簇一致性、认证账号与自然人真值明确分开。
+
+本轮只研究与设计，没有新增合格真实跨设备/游戏收入数据，没有新的厂商生产证据或可升级C_graph材料。历史153份编号文件、76代码、官方样本审计及Adjust专项保留；主图只追加8节点/8边/31来源，旧308/362/678对象及旧元数据不变。C_graph.Axon=UNKNOWN、C_graph.Vector=UNKNOWN、D=UNKNOWN，原生产取证STOP，不创建79号；第三方参考技术不归属于厂商。

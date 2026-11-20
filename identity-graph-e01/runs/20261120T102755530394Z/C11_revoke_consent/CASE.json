@@ -1,0 +1,376 @@
+{
+  "id": "C11_revoke_consent",
+  "seed": 780241,
+  "expected": "old snapshot denied; fresh excludes revoked source",
+  "options": {},
+  "status": "FAIL",
+  "input": {
+    "task": {
+      "task_ref": "synth:task:E01:A:Y",
+      "target_install_ref": "entity_000013",
+      "subject_type": "account",
+      "auth_receipt": "synth:nonce:780241:3",
+      "prediction_at": 1767225600,
+      "since_at": 1767225600,
+      "purpose": "synthetic-value-research",
+      "authorization_context": {
+        "environment": "LOCAL_SYNTHETIC_ONLY",
+        "purpose": "synthetic-value-research",
+        "source_app_allowlist": [
+          "synthetic-X"
+        ]
+      }
+    },
+    "fixture": {
+      "fixture": {
+        "seed": 780241,
+        "environment": "LOCAL_SYNTHETIC_ONLY",
+        "start_utc_epoch": 1767225600,
+        "entities": {
+          "D1": "entity_000002",
+          "D2": "entity_000003",
+          "A": "entity_000005",
+          "B": "entity_000006",
+          "X_A": "entity_000008",
+          "X_B": "entity_000010",
+          "Y_A": "entity_000013"
+        }
+      },
+      "calls": [
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-X",
+              "account": "entity_000005",
+              "app_instance": "entity_000008",
+              "device": "entity_000002",
+              "nonce": "synth:nonce:780241:1",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "7b16bac526d0ed99655ae2d09ed8f332334331430db717c1b18454a39919b5ac"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000015",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-X",
+              "account": "entity_000006",
+              "app_instance": "entity_000010",
+              "device": "entity_000002",
+              "nonce": "synth:nonce:780241:2",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "32f4eff8e8c4b49d50726d651d32b879e200c7797eb3b15e347db4dbe8da1326"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000016",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "resolver.login",
+          "input": {
+            "assertion": {
+              "issuer": "synthetic:first-party",
+              "audience": "synthetic-Y",
+              "account": "entity_000005",
+              "app_instance": "entity_000013",
+              "device": "entity_000003",
+              "nonce": "synth:nonce:780241:3",
+              "issued_at": 1767225600,
+              "expires_at": 1767225660,
+              "purpose": "synthetic-value-research",
+              "source_ref": "synth:fixture-auth"
+            },
+            "signature": "c60082db3779aa326e7f1126eed6dfdaf5c582ee4909b1add52925616420c543"
+          },
+          "actual": {
+            "status": "ACCOUNT_RELATION_ESTABLISHED",
+            "edge_ref": "edge_000017",
+            "grain": "account",
+            "person_inference": false
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000008",
+            "account": "entity_000005",
+            "amount_micros": 7000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000018",
+            "ledger_ref": "ledger_000020"
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000010",
+            "account": "entity_000006",
+            "amount_micros": 99000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000021",
+            "ledger_ref": "ledger_000023"
+          }
+        },
+        {
+          "api": "fixture.revenue",
+          "input": {
+            "app": "entity_000013",
+            "account": "entity_000005",
+            "amount_micros": 3000000
+          },
+          "actual": {
+            "status": "ACCEPTED",
+            "event_ref": "event_000024",
+            "ledger_ref": "ledger_000026"
+          }
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000008",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000027"
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000010",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000028"
+        },
+        {
+          "api": "events.coverage",
+          "input": {
+            "app": "entity_000013",
+            "start_at": 1767225600,
+            "end_at": 1767225600,
+            "status": "COMPLETE"
+          },
+          "actual": "coverage_000029"
+        }
+      ],
+      "login_refs": {
+        "xa": "edge_000015",
+        "xb": "edge_000016",
+        "y": "edge_000017"
+      },
+      "receipts": {
+        "xa": "synth:nonce:780241:1",
+        "xb": "synth:nonce:780241:2",
+        "y": "synth:nonce:780241:3"
+      },
+      "shared_device_accounts": [
+        "entity_000005",
+        "entity_000006"
+      ],
+      "source_app": "synthetic-X",
+      "target_app": "synthetic-Y"
+    }
+  },
+  "error": "Traceback (most recent call last):\n  File \"D:\\GrowthResearch\\identity-graph-e01\\run.py\", line 253, in test\n    execute(name,f,rec)\n  File \"D:\\GrowthResearch\\identity-graph-e01\\run.py\", line 125, in execute\n    prior=adapter.extract(req);approved(prior)\n                               ^^^^^^^^^^^^^^^\n  File \"D:\\GrowthResearch\\identity-graph-e01\\run.py\", line 23, in approved\n    equal(partition_violations(result,source=source,target=target),[])\n  File \"D:\\GrowthResearch\\identity-graph-e01\\run.py\", line 18, in equal\n    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: expected [], got ['EXPECTED_APPROVED_PARTITION']\n",
+  "final_fixture": {
+    "fixture": {
+      "seed": 780241,
+      "environment": "LOCAL_SYNTHETIC_ONLY",
+      "start_utc_epoch": 1767225600,
+      "entities": {
+        "D1": "entity_000002",
+        "D2": "entity_000003",
+        "A": "entity_000005",
+        "B": "entity_000006",
+        "X_A": "entity_000008",
+        "X_B": "entity_000010",
+        "Y_A": "entity_000013"
+      }
+    },
+    "calls": [
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-X",
+            "account": "entity_000005",
+            "app_instance": "entity_000008",
+            "device": "entity_000002",
+            "nonce": "synth:nonce:780241:1",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "7b16bac526d0ed99655ae2d09ed8f332334331430db717c1b18454a39919b5ac"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000015",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-X",
+            "account": "entity_000006",
+            "app_instance": "entity_000010",
+            "device": "entity_000002",
+            "nonce": "synth:nonce:780241:2",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "32f4eff8e8c4b49d50726d651d32b879e200c7797eb3b15e347db4dbe8da1326"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000016",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "resolver.login",
+        "input": {
+          "assertion": {
+            "issuer": "synthetic:first-party",
+            "audience": "synthetic-Y",
+            "account": "entity_000005",
+            "app_instance": "entity_000013",
+            "device": "entity_000003",
+            "nonce": "synth:nonce:780241:3",
+            "issued_at": 1767225600,
+            "expires_at": 1767225660,
+            "purpose": "synthetic-value-research",
+            "source_ref": "synth:fixture-auth"
+          },
+          "signature": "c60082db3779aa326e7f1126eed6dfdaf5c582ee4909b1add52925616420c543"
+        },
+        "actual": {
+          "status": "ACCOUNT_RELATION_ESTABLISHED",
+          "edge_ref": "edge_000017",
+          "grain": "account",
+          "person_inference": false
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000008",
+          "account": "entity_000005",
+          "amount_micros": 7000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000018",
+          "ledger_ref": "ledger_000020"
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000010",
+          "account": "entity_000006",
+          "amount_micros": 99000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000021",
+          "ledger_ref": "ledger_000023"
+        }
+      },
+      {
+        "api": "fixture.revenue",
+        "input": {
+          "app": "entity_000013",
+          "account": "entity_000005",
+          "amount_micros": 3000000
+        },
+        "actual": {
+          "status": "ACCEPTED",
+          "event_ref": "event_000024",
+          "ledger_ref": "ledger_000026"
+        }
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000008",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000027"
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000010",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000028"
+      },
+      {
+        "api": "events.coverage",
+        "input": {
+          "app": "entity_000013",
+          "start_at": 1767225600,
+          "end_at": 1767225600,
+          "status": "COMPLETE"
+        },
+        "actual": "coverage_000029"
+      }
+    ],
+    "login_refs": {
+      "xa": "edge_000015",
+      "xb": "edge_000016",
+      "y": "edge_000017"
+    },
+    "receipts": {
+      "xa": "synth:nonce:780241:1",
+      "xb": "synth:nonce:780241:2",
+      "y": "synth:nonce:780241:3"
+    },
+    "shared_device_accounts": [
+      "entity_000005",
+      "entity_000006"
+    ],
+    "source_app": "synthetic-X",
+    "target_app": "synthetic-Y"
+  }
+}

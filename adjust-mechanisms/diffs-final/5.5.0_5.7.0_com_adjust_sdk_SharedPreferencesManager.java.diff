@@ -1,0 +1,42 @@
+--- 5.5.0/com/adjust/sdk/SharedPreferencesManager.java
++++ 5.7.0/com/adjust/sdk/SharedPreferencesManager.java
+@@ -7,6 +7,7 @@
+ import android.content.Context;
+ import android.content.SharedPreferences;
+ import android.net.Uri;
++import android.text.TextUtils;
+ 
+ /**
+  * Class used for shared preferences manipulation.
+@@ -56,6 +57,7 @@
+ 
+     private static final String PREFS_KEY_LVL_TRACKED = "lvl_tracked";
+ 
++    private static final String PREFS_KEY_TPS_RESULT_SETTINGS = "tps_result_settings";
+ 
+     /**
+      * Index for raw referrer string content in saved JSONArray object.
+@@ -491,6 +493,23 @@
+         return getBoolean(PREFS_KEY_LVL_TRACKED, false);
+     }
+ 
++    public synchronized void saveThirdPartySharingResult(final AdjustThirdPartySharingResult thirdPartySharingResult) {
++        try {
++            saveString(PREFS_KEY_TPS_RESULT_SETTINGS, thirdPartySharingResult.getThirdPartySharingSettingsJson());
++        } catch (Throwable t) {
++        }
++    }
++
++    public synchronized AdjustThirdPartySharingResult getThirdPartySharingResult() {
++        String thirdPartySharingSettingsJson = getString(PREFS_KEY_TPS_RESULT_SETTINGS);
++
++        if (TextUtils.isEmpty(thirdPartySharingSettingsJson)) {
++            return null;
++        }
++
++        return new AdjustThirdPartySharingResult(thirdPartySharingSettingsJson);
++    }
++
+     /**
+      * Remove all key-value pairs from shared preferences.
+      */

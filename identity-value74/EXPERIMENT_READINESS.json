@@ -1,0 +1,58 @@
+{
+  "design_version": "74-v1-design-only",
+  "reviewed_utc": "2026-11-20T05:48:35.610165+00:00",
+  "real_training_performed": false,
+  "goal": "Incremental personal-history feature value beyond aggregate/shared-parameter learning",
+  "primary_contrast": "M4-M3",
+  "primary_endpoint": "D28 total-revenue MAE paired difference;ranking/calibration also reported",
+  "all_target_training_samples_fixed": true,
+  "M2_M3_M4_source_supervised_pool_fixed": true,
+  "M3_M4_effective_supervised_samples_fixed": true,
+  "all_five_effective_source_data_equal": false,
+  "source_data_caveat": "M0/M1 do not consume cross-game supervision;their total difference is not identity-only lift",
+  "model_capacity": "Fixed predictor dimension/regularization/compute;zero slots do not guarantee equal effective rank;source-stage budget separately counted",
+  "models": [
+    {
+      "model": "M0",
+      "status": "STOP_REAL_DATA_NOT_ADMITTED",
+      "result": null
+    },
+    {
+      "model": "M1",
+      "status": "STOP_REAL_DATA_NOT_ADMITTED",
+      "result": null
+    },
+    {
+      "model": "M2",
+      "status": "STOP_REAL_DATA_NOT_ADMITTED",
+      "result": null
+    },
+    {
+      "model": "M3",
+      "status": "STOP_REAL_DATA_NOT_ADMITTED",
+      "result": null
+    },
+    {
+      "model": "M4",
+      "status": "STOP_REAL_DATA_NOT_ADMITTED",
+      "result": null
+    }
+  ],
+  "gates": [
+    "Owner/purpose-authorized real revenue and complete cohort",
+    "Observed zero vs missing distinction",
+    "Mature labels and available_at <= bid_time",
+    "Training labels mature before next phase",
+    "Time/entity-isolated target and source supervised splits",
+    "M4 accurate legal relationship and graph snapshot at prediction"
+  ],
+  "no_personal_cross_app_id_required_for": [
+    "M2 aggregate cohort prior",
+    "M3 shared parameters"
+  ],
+  "fixed_decision_policy": true,
+  "real_ROAS_allowed": false,
+  "further_ROAS_gate": "Authorized opportunity/cost/randomization and mature net outcomes;prediction metrics alone insufficient",
+  "protocol_path": "74_图谱与群体学习对照实验设计.md",
+  "protocol_sha256": "fcd43426d7482fda45f08b7e802bd99c82b563f0c0b16ab07850794936be5c6e"
+}

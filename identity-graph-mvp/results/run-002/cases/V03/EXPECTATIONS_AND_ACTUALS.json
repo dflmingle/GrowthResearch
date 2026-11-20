@@ -1,0 +1,44 @@
+[
+  {
+    "assertion": "valid local fixture authenticates account relation",
+    "input_refs": "operation trace",
+    "expected": "ACCOUNT_RELATION_ESTABLISHED",
+    "actual": "ACCOUNT_RELATION_ESTABLISHED",
+    "passed": true
+  },
+  {
+    "assertion": "nonce replay refused",
+    "input_refs": "operation trace",
+    "expected": "AUTH_REPLAY",
+    "actual": "AUTH_REPLAY",
+    "passed": true
+  },
+  {
+    "assertion": "wrong signed audience refused",
+    "input_refs": "operation trace",
+    "expected": "AUTH_ISSUER_OR_AUDIENCE",
+    "actual": "AUTH_ISSUER_OR_AUDIENCE",
+    "passed": true
+  },
+  {
+    "assertion": "expired local assertion refused",
+    "input_refs": "operation trace",
+    "expected": "AUTH_TIME_INVALID",
+    "actual": "AUTH_TIME_INVALID",
+    "passed": true
+  },
+  {
+    "assertion": "invalid signature refused",
+    "input_refs": "operation trace",
+    "expected": "BAD_FIXTURE_SIGNATURE",
+    "actual": "BAD_FIXTURE_SIGNATURE",
+    "passed": true
+  },
+  {
+    "assertion": "only one account relation",
+    "input_refs": "operation trace",
+    "expected": 1,
+    "actual": 1,
+    "passed": true
+  }
+]

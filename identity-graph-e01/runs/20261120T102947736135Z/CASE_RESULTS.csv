@@ -1,0 +1,39 @@
+﻿id,status,expected,case_json
+C01_three_routes,PASS,"A rejects shared device; B account total=10; C source=7,target=3,B99 excluded",C01_three_routes/CASE.json
+C02_missing_receipt,PASS,DENIED without accepted resolver receipt,C02_missing_receipt/CASE.json
+C03_bare_account,PASS,DENIED bare account_ref input,C03_bare_account/CASE.json
+C04_wrong_receipt_app,PASS,DENIED receipt from source installation,C04_wrong_receipt_app/CASE.json
+C05_other_account_receipt,PASS,DENIED unrelated account receipt,C05_other_account_receipt/CASE.json
+C06_namespace_collision,PASS,different namespaces same token stay separate; source=7,C06_namespace_collision/CASE.json
+C07_bad_signature,PASS,original resolver rejects altered signature,C07_bad_signature/CASE.json
+C08_expired_assertion,PASS,original resolver rejects expired login proof,C08_expired_assertion/CASE.json
+C09_revoke_source,PASS,old snapshot denied; fresh source unobserved,C09_revoke_source/CASE.json
+C10_revoke_target,PASS,old snapshot and new request denied,C10_revoke_target/CASE.json
+C11_revoke_consent,PASS,old snapshot denied; fresh excludes revoked source,C11_revoke_consent/CASE.json
+C12_delete_source,PASS,old snapshot denied; fresh excludes deleted source,C12_delete_source/CASE.json
+C13_expiry_no_write,PASS,at valid_to with no graph/epoch change old snapshot denied; fresh excludes source,C13_expiry_no_write/CASE.json
+C14_scheduled_revoke_no_write,PASS,at effective_at with no subsequent write old snapshot denied; source excluded,C14_scheduled_revoke_no_write/CASE.json
+C15_late_event,PASS,future-available 41 excluded at prediction; source=7,C15_late_event/CASE.json
+C16_late_relation,PASS,future-available login excluded; no source history,C16_late_relation/CASE.json
+C17_negative_amount,PASS,source=-7 preserved; target=3,C17_negative_amount/CASE.json
+C18_missing_observation,PASS,no source rows and MISSING coverage != complete zero,C18_missing_observation/CASE.json
+C19_complete_zero,PASS,no source rows and COMPLETE coverage = known zero,C19_complete_zero/CASE.json
+C20_missing_lineage,PASS,UNSUPPORTED_PARTITION; no fallback,C20_missing_lineage/CASE.json
+C21_lineage_disagreement,PASS,UNSUPPORTED_PARTITION; no fallback,C21_lineage_disagreement/CASE.json
+C22_source_policy_exclusion,PASS,approved source refs never include revoked source,C22_source_policy_exclusion/CASE.json
+C23_wrong_purpose,PASS,DENIED purpose mismatch,C23_wrong_purpose/CASE.json
+C24_wrong_context,PASS,DENIED environment mismatch,C24_wrong_context/CASE.json
+C25_backdated_prediction,PASS,DENIED late feature materialization/backdated task,C25_backdated_prediction/CASE.json
+C26_future_prediction,PASS,DENIED future task,C26_future_prediction/CASE.json
+C27_mutant_account,PASS,deliberately faulty account adapter detected,C27_mutant_account/CASE.json
+C28_mutant_partition,PASS,deliberately faulty mixed-app adapter detected,C28_mutant_partition/CASE.json
+C29_mutant_late,PASS,deliberately faulty late-information adapter detected,C29_mutant_late/CASE.json
+C30_target_reinstall,PASS,"same product reinstall remains target history; source=7,target=5",C30_target_reinstall/CASE.json
+C31_reset_target_device,PASS,reset blocks old and current target task,C31_reset_target_device/CASE.json
+C32_receipt_after_assertion_ttl,PASS,accepted receipt not incorrectly treated as expired login proof,C32_receipt_after_assertion_ttl/CASE.json
+C33_delete_account,PASS,old snapshot and current task denied,C33_delete_account/CASE.json
+C34_missing_account_values,PASS,UNSUPPORTED_PARTITION on incomplete original API schema,C34_missing_account_values/CASE.json
+C35_multi_currency,PASS,no implicit currency conversion; signed amounts partitioned by currency,C35_multi_currency/CASE.json
+C36_only_approved_pk_reads,PASS,partition SQL reads exact approved primary keys only,C36_only_approved_pk_reads/CASE.json
+C37_expired_target_relation,PASS,target relation expiry rejects current and old read,C37_expired_target_relation/CASE.json
+C38_no_target_auth_fallback,PASS,revoked target auth cannot fall back to shared-device identity,C38_no_target_auth_fallback/CASE.json

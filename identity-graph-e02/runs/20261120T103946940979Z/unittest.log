@@ -1,0 +1,79 @@
+unittest.case.FunctionTestCase (test)
+T00_legal_local_accept — LOCAL_ACK; exactly one local receipt; original outbox still pending ... ok
+unittest.case.FunctionTestCase (test)
+T01_revoke_after_enqueue — CANCELLED before claim; no receipt ... ok
+unittest.case.FunctionTestCase (test)
+T02_delete_before_retry — failure then delete then retry CANCELLED; no receipt ... ok
+unittest.case.FunctionTestCase (test)
+T03_scheduled_revoke_no_write — policy effective boundary observed even without new write; CANCELLED ... ok
+unittest.case.FunctionTestCase (test)
+T04_policy_between_prepare_and_commit — late revoke detected inside final boundary; CANCELLED ... ok
+unittest.case.FunctionTestCase (test)
+T05_restore_old_state_keep_control — old state restored but durable deletion retained; no revived send ... FAIL
+unittest.case.FunctionTestCase (test)
+T06_repeated_economic_retries — two failures then success; repeated economic callback stays one ledger and one acceptance ... ok
+unittest.case.FunctionTestCase (test)
+T07_relation_expiry — at relation valid_to with no new write; CANCELLED ... ok
+unittest.case.FunctionTestCase (test)
+T08_wrong_purpose — other purpose cannot claim queued authorization ... ok
+unittest.case.FunctionTestCase (test)
+T09_ack_loss_retry — sink acceptance then lost ACK; retry deduplicates to one local receipt ... ok
+unittest.case.FunctionTestCase (test)
+T10_unproven_external_boundary — ATOMIC_HANDOFF_UNPROVEN, never LOCAL_ACK ... ok
+unittest.case.FunctionTestCase (test)
+T11_mutant_enqueue_only — unsafe accept actually occurs; independent oracle detects unauthorized delivery ... ok
+unittest.case.FunctionTestCase (test)
+T12_mutant_stale_retry_epoch — unsafe retry actually occurs; independent oracle detects stale epoch and revoke ... ok
+unittest.case.FunctionTestCase (test)
+T13_mutant_check_revoke_commit — unsafe postcheck send actually occurs; independent oracle detects TOCTOU ... ok
+unittest.case.FunctionTestCase (test)
+T14_final_check_relation_expiry — expiry inserted after prepare blocked by final check without epoch change ... ok
+unittest.case.FunctionTestCase (test)
+T15_final_check_scheduled_revoke — scheduled revocation inserted after prepare blocked without epoch change ... ok
+unittest.case.FunctionTestCase (test)
+T16_final_check_delete — delete between prepare and final acceptance blocked ... ok
+unittest.case.FunctionTestCase (test)
+T17_transmission_disabled — local transmission switch can narrow but not grant policy ... ok
+unittest.case.FunctionTestCase (test)
+T18_ack_loss_then_revoke — prior valid receipt retained as historical; retry after revoke CANCELLED; no new accept ... ok
+unittest.case.FunctionTestCase (test)
+T19_state_lock_busy — cannot acquire original state writer exclusion: ATOMIC_HANDOFF_UNPROVEN ... ok
+unittest.case.FunctionTestCase (test)
+T20_control_lock_busy — cannot acquire privacy writer exclusion: ATOMIC_HANDOFF_UNPROVEN ... ok
+unittest.case.FunctionTestCase (test)
+T21_pending_transaction — pre-existing transaction not owned by handoff: ATOMIC_HANDOFF_UNPROVEN ... ok
+unittest.case.FunctionTestCase (test)
+T22_terminal_replay — LOCAL_ACK and CANCELLED are terminal; scheduler refuses replay ... ok
+unittest.case.FunctionTestCase (test)
+T23_epoch_change_revalidate — policy epoch changes while permissions ultimately granted; no stale snapshot fallback ... ok
+unittest.case.FunctionTestCase (test)
+T24_no_account_auth_at_enqueue — missing accepted receipt rejected before shadow queue ... ok
+unittest.case.FunctionTestCase (test)
+T25_delete_after_claim — claim passed then delete; pre-handoff recheck blocks old payload ... ok
+unittest.case.FunctionTestCase (test)
+T26_event_payload_tamper — modified local outbox payload mismatches original event; reject ... ok
+unittest.case.FunctionTestCase (test)
+T27_later_economic_revision — new source revision invalidates old snapshot; no stale economic handoff ... ok
+unittest.case.FunctionTestCase (test)
+T28_unsupported_durable_restart — durable/restart boundary claim rejected ATOMIC_HANDOFF_UNPROVEN ... ok
+unittest.case.FunctionTestCase (test)
+T29_declined_claim_is_not_delivery — revoked relation blocks claim; no sink attempt ... ok
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (test)
+T05_restore_old_state_keep_control — old state restored but durable deletion retained; no revived send
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\GrowthResearch\identity-graph-e02\run.py", line 196, in test
+    execute(name,f,m,d,rec)
+  File "D:\GrowthResearch\identity-graph-e02\run.py", line 96, in execute
+    eq(sha(privacy_path),control_hash)
+  File "D:\GrowthResearch\identity-graph-e02\run.py", line 17, in eq
+    if actual!=expected:raise AssertionError(f'expected {expected!r}, got {actual!r}')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: expected 'a60c47b126e92f525ea88438cbb74588dc7bb1bfee91fcdb80b5a42641fe5d19', got '7eac17871cdab002e11cfbc6b3fdd732b441f4deb07a8e876cd04c5b35efdbd8'
+
+----------------------------------------------------------------------
+Ran 30 tests in 45.359s
+
+FAILED (failures=1)

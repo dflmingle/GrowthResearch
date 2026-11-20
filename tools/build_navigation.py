@@ -15,7 +15,7 @@ for p in reports:
     lines.append(f"| {p.name[:2]} | [{p.stem[3:]}]({p.name}) |")
 lines += ["", "证据入口：[索引](EVIDENCE_INDEX.md)、[主图](prediction-system/EVIDENCE_GRAPH.json)。",
           "最新实验：[实验索引](public-experiments/EXPERIMENT_INDEX.md)。"]
-(ROOT / "REPORTS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+(ROOT / "REPORTS.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 with (ROOT / "publication/SDK_ARTIFACTS.csv").open(encoding="utf-8", newline="") as f:
     sdks = list(csv.DictReader(f))
@@ -42,5 +42,5 @@ lines += [
 for number in ["14", "47", "53"]:
     report = next(p for p in reports if p.name.startswith(number + "_"))
     lines.append(f"- [{report.stem}](../{report.name})")
-(ROOT / "ThirdPartySDKs/README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+(ROOT / "ThirdPartySDKs/README.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 print(f"Navigation built: {len(reports)} reports, {len(groups)} SDK families, {len(sdks)} artifacts")

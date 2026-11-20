@@ -1,0 +1,415 @@
+--- 5.5.0/com/adjust/sdk/ActivityHandler.java
++++ 5.7.0/com/adjust/sdk/ActivityHandler.java
+@@ -24,6 +24,7 @@
+ import static com.adjust.sdk.Constants.REFERRER_API_SAMSUNG;
+ import static com.adjust.sdk.Constants.REFERRER_API_VIVO;
+ import static com.adjust.sdk.Constants.REFERRER_API_XIAOMI;
++import static com.adjust.sdk.Constants.TPS_SETTINGS_TIMEOUT_TIMER_NAME;
+ 
+ import android.app.ActivityManager;
+ import android.content.Context;
+@@ -45,6 +46,7 @@
+ import com.adjust.sdk.scheduler.TimerCycle;
+ import com.adjust.sdk.scheduler.TimerOnce;
+ 
++import org.json.JSONArray;
+ import org.json.JSONObject;
+ 
+ import java.io.InputStream;
+@@ -87,6 +89,7 @@
+     private DeviceInfo deviceInfo;
+     private AdjustConfig adjustConfig; // always valid after construction
+     private AdjustAttribution attribution;
++    private AdjustThirdPartySharingResult thirdPartySharingResult;
+     private IAttributionHandler attributionHandler;
+     private ISdkClickHandler sdkClickHandler;
+     private IPurchaseVerificationHandler purchaseVerificationHandler;
+@@ -99,6 +102,7 @@
+     private final ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+     private final ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
+     private List<AdjustThirdPartySharing> cachedAdjustThirdPartySharingArray;
++    private final ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacks = new ArrayList<>();
+     private Boolean cachedLastMeasurementConsentTrack;
+     private FirstSessionDelayManager firstSessionDelayManager;
+     private @NonNull EventMetadata eventMetadata = new EventMetadata();
+@@ -269,6 +273,7 @@
+         executor.submit(() -> {
+             // has to be read in the background
+             readAttributionI(adjustConfig.context);
++            readThirdPartySharingResultI(adjustConfig.context);
+             readActivityStateI(adjustConfig.context);
+             readEventMetadataI(adjustConfig.context);
+             firstSessionDelayManager.activityStateFileReadI();
+@@ -389,6 +394,9 @@
+ 
+     @Override
+     public void finishedTrackingActivity(ResponseData responseData) {
++        // process remote triggers from any response
++        processRemoteTriggers(responseData);
++
+         // redirect session responses to attribution handler to check for attribution information
+         if (responseData instanceof SessionResponseData) {
+             logger.debug("Finished tracking session");
+@@ -409,6 +417,11 @@
+         // check if it's a purchase verification response
+         if (responseData instanceof PurchaseVerificationResponseData) {
+             launchPurchaseVerificationResponseTasks((PurchaseVerificationResponseData)responseData);
++        }
++
++        // check if it's a third party sharing response
++        if (responseData instanceof ThirdPartySharingResponseData) {
++            launchThirdPartySharingResponseTasks((ThirdPartySharingResponseData)responseData);
+         }
+     }
+ 
+@@ -610,6 +623,59 @@
+         return true;
+     }
+ 
++    private boolean updateThirdPartySharingSettingsI(final AdjustThirdPartySharingResult thirdPartySharingResult) {
++        if (thirdPartySharingResult == null) {
++            return false;
++        }
++
++        boolean thirdPartySharingSettingsChanged = !thirdPartySharingResult.equals(this.thirdPartySharingResult);
++        this.thirdPartySharingResult = thirdPartySharingResult;
++
++        if (thirdPartySharingSettingsChanged) {
++            final SharedPreferencesManager sharedPreferencesManager =
++                    SharedPreferencesManager.getDefaultInstance(getContext());
++            sharedPreferencesManager.saveThirdPartySharingResult(this.thirdPartySharingResult);
++        }
++
++        ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacksCopy = null;
++        synchronized (cachedThirdPartySharingTimeoutCallbacks) {
++            if (!cachedThirdPartySharingTimeoutCallbacks.isEmpty()) {
++                cachedThirdPartySharingTimeoutCallbacksCopy = new ArrayList<>(cachedThirdPartySharingTimeoutCallbacks);
++                cachedThirdPartySharingTimeoutCallbacks.clear();
++            }
++        }
++
++        // process third party sharing callbacks
++        if (cachedThirdPartySharingTimeoutCallbacksCopy != null) {
++            final AdjustThirdPartySharingResult thirdPartySharingResultCopy = this.thirdPartySharingResult;
++            ArrayList<AdjustTimeoutCallback> finalCachedThirdPartySharingTimeoutCallbacksCopy = cachedThirdPartySharingTimeoutCallbacksCopy;
++            new Handler(adjustConfig.context.getMainLooper()).post(new Runnable() {
++                @Override
++                public void run() {
++                    for (AdjustTimeoutCallback adjustTimeoutCallback : finalCachedThirdPartySharingTimeoutCallbacksCopy) {
++                        if (adjustTimeoutCallback != null) {
++                            // cancel any pending timeout
++                            TimerOnce timerOnce = adjustTimeoutCallback.getTimeoutTimer();
++                            if (timerOnce != null) {
++                                timerOnce.cancel();
++                            }
++
++                            OnThirdPartySharingSettingsReadListener listener = adjustTimeoutCallback.getOnThirdPartySharingSettingsReadListener();
++                            if (listener != null) {
++                                listener.onThirdPartySharingSettingsRead(thirdPartySharingResultCopy);
++                            }
++
++                            // null callback to call it only once
++                            adjustTimeoutCallback.setOnThirdPartySharingSettingsReadListener(null);
++                        }
++                    }
++                }
++            });
++        }
++
++        return thirdPartySharingSettingsChanged;
++    }
++
+     @Override
+     public void setAskingAttribution(final boolean askingAttribution) {
+         executor.submit(new Runnable() {
+@@ -702,6 +768,25 @@
+             @Override
+             public void run() {
+                 launchPurchaseVerificationResponseTasksI(purchaseVerificationResponseData);
++            }
++        });
++    }
++
++    private void launchThirdPartySharingResponseTasks(final ThirdPartySharingResponseData thirdPartySharingResponseData) {
++        executor.submit(new Runnable() {
++            @Override
++            public void run() {
++                launchThirdPartySharingResponseTasksI(thirdPartySharingResponseData);
++            }
++        });
++    }
++
++    @Override
++    public void processRemoteTriggers(ResponseData responseData) {
++        executor.submit(new Runnable() {
++            @Override
++            public void run() {
++                processRemoteTriggersI(responseData);
+             }
+         });
+     }
+@@ -912,6 +997,22 @@
+             // attribution not found
+             // queue timeout callback for later processing
+             queueGetAttributionWithTimeout(timeoutInMilliSec, onAttributionReadListener, cachedAttributionReadTimeoutCallbacks, getContext());
++        }
++    }
++
++    @Override
++    public void getThirdPartySharingSettingsWithTimeout(long timeoutInMilliSec, OnThirdPartySharingSettingsReadListener listener) {
++        if (thirdPartySharingResult != null) {
++            new Handler(adjustConfig.context.getMainLooper()).post(new Runnable() {
++                @Override
++                public void run() {
++                    listener.onThirdPartySharingSettingsRead(thirdPartySharingResult);
++                }
++            });
++        } else {
++            // third party sharing settings not found
++            // queue timeout callback for later processing
++            queueGetThirdPartySharingSettingsWithTimeout(timeoutInMilliSec, listener, cachedThirdPartySharingTimeoutCallbacks, getContext());
+         }
+     }
+ 
+@@ -1038,6 +1139,48 @@
+         timerOnce.startIn(timeoutInMilliSec);
+     }
+ 
++    public static void queueGetThirdPartySharingSettingsWithTimeout(final long timeoutInMilliSec,
++                                                                    final OnThirdPartySharingSettingsReadListener listener,
++                                                                    final ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingSettingsReadTimeoutCallbacks,
++                                                                    final Context context) {
++        AdjustTimeoutCallback timeoutCallback = new AdjustTimeoutCallback(listener);
++
++        // cache the callback before starting the timer
++        synchronized (cachedThirdPartySharingSettingsReadTimeoutCallbacks) {
++            cachedThirdPartySharingSettingsReadTimeoutCallbacks.add(timeoutCallback);
++        }
++
++        // set up timeout timer immediately
++        TimerOnce timerOnce = new TimerOnce(new Runnable() {
++            @Override
++            public void run() {
++                if (timeoutCallback.getOnThirdPartySharingSettingsReadListener() != null) {
++                    // remove callback from array and call callback with null
++                    synchronized (cachedThirdPartySharingSettingsReadTimeoutCallbacks) {
++                        cachedThirdPartySharingSettingsReadTimeoutCallbacks.remove(timeoutCallback);
++                    }
++                    new Handler(context.getMainLooper()).post(new Runnable() {
++                        @Override
++                        public void run() {
++                            // if timer elapses, return null (only if callback still exists)
++                            OnThirdPartySharingSettingsReadListener readListener =
++                                    timeoutCallback.getOnThirdPartySharingSettingsReadListener();
++                            if (readListener != null) {
++                                readListener.onThirdPartySharingSettingsRead(null);
++                            }
++
++                            // null callback to call it only once
++                            timeoutCallback.setOnThirdPartySharingSettingsReadListener(null);
++                        }
++                    });
++                }
++            }
++        }, TPS_SETTINGS_TIMEOUT_TIMER_NAME);
++
++        timeoutCallback.setTimer(timerOnce);
++        timerOnce.startIn(timeoutInMilliSec);
++    }
++
+     void initI() {
+         SESSION_INTERVAL = AdjustFactory.getSessionInterval();
+         SUBSESSION_INTERVAL = AdjustFactory.getSubsessionInterval();
+@@ -1123,6 +1266,7 @@
+ 
+         handleAdidCallbackI();
+         handleAttributionCallbackI();
++        handleThirdPartySharingCallbackI();
+ 
+         // GDPR
+         if (activityState != null) {
+@@ -1390,6 +1534,52 @@
+         }
+     }
+ 
++    private void handleThirdPartySharingCallbackI() {
++        synchronized (cachedThirdPartySharingTimeoutCallbacks) {
++            cachedThirdPartySharingTimeoutCallbacks.addAll(adjustConfig.cachedThirdPartySharingTimeoutCallbacks);
++            adjustConfig.cachedThirdPartySharingTimeoutCallbacks.clear();
++        }
++
++        if (thirdPartySharingResult == null) {
++            return;
++        }
++
++        ArrayList<AdjustTimeoutCallback> cachedThirdPartySharingTimeoutCallbacksCopy = null;
++        synchronized (cachedThirdPartySharingTimeoutCallbacks) {
++            if (! cachedThirdPartySharingTimeoutCallbacks.isEmpty()) {
++                cachedThirdPartySharingTimeoutCallbacksCopy = new ArrayList<>(cachedThirdPartySharingTimeoutCallbacks);
++                cachedThirdPartySharingTimeoutCallbacks.clear();
++            }
++        }
++
++        // process third party sharing callbacks
++        if (cachedThirdPartySharingTimeoutCallbacksCopy != null) {
++            final AdjustThirdPartySharingResult thirdPartySharingResultCopy = thirdPartySharingResult;
++            ArrayList<AdjustTimeoutCallback> finalCachedThirdPartySharingTimeoutCallbacksCopy = cachedThirdPartySharingTimeoutCallbacksCopy;
++            new Handler(adjustConfig.context.getMainLooper()).post(new Runnable() {
++                @Override
++                public void run() {
++                    for (AdjustTimeoutCallback adjustTimeoutCallback : finalCachedThirdPartySharingTimeoutCallbacksCopy) {
++                        if (adjustTimeoutCallback != null) {
++                            // cancel any pending timeout
++                            TimerOnce timerOnce = adjustTimeoutCallback.getTimeoutTimer();
++                            if (timerOnce != null) {
++                                timerOnce.cancel();
++                            }
++                            OnThirdPartySharingSettingsReadListener listener = adjustTimeoutCallback.getOnThirdPartySharingSettingsReadListener();
++                            if (listener != null) {
++                                listener.onThirdPartySharingSettingsRead(thirdPartySharingResultCopy);
++                            }
++
++                            // null callback to call it only once
++                            adjustTimeoutCallback.setOnThirdPartySharingSettingsReadListener(null);
++                        }
++                    }
++                }
++            });
++        }
++    }
++
+     private void bootstrapLifecycleI() {
+         this.systemLifecycle = SystemLifecycle.getSingletonInstance();
+ 
+@@ -2050,6 +2240,9 @@
+     }
+ 
+     private void launchAttributionResponseTasksI(AttributionResponseData attributionResponseData) {
++        // process remote triggers from any response
++        processRemoteTriggersI(attributionResponseData);
++
+         // try to update adid from response
+         updateAdidI(attributionResponseData.adid);
+ 
+@@ -2082,6 +2275,26 @@
+                     return;
+                 }
+                 adjustConfig.onAttributionChangedListener.onAttributionChanged(attribution);
++            }
++        };
++        handler.post(runnable);
++    }
++
++    private void launchThirdPartySharingSettingsChangedListenerI(Handler handler) {
++        if (adjustConfig.onThirdPartySharingSettingsChangedListener == null) {
++            return;
++        }
++        // add it to the handler queue
++        Runnable runnable = new Runnable() {
++            @Override
++            public void run() {
++                if (adjustConfig == null) {
++                    return;
++                }
++                if (adjustConfig.onThirdPartySharingSettingsChangedListener == null) {
++                    return;
++                }
++                adjustConfig.onThirdPartySharingSettingsChangedListener.onThirdPartySharingSettingsChanged(thirdPartySharingResult);
+             }
+         };
+         handler.post(runnable);
+@@ -2119,6 +2332,84 @@
+           purchaseVerificationResponseData.activityPackage.event != null)
+         {
+             this.trackEventI(purchaseVerificationResponseData.activityPackage.event);
++        }
++    }
++
++    private void processRemoteTriggersI(ResponseData responseData) {
++        // process remote triggers independently from other response processing
++        if (responseData.jsonResponse == null) {
++            return;
++        }
++
++        JSONArray remoteTriggers = responseData.jsonResponse.optJSONArray("remote_triggers");
++
++        if (remoteTriggers == null) {
++            return;
++        }
++
++        if (remoteTriggers.length() == 0) {
++            return;
++        }
++
++        if (adjustConfig.onRemoteTriggerListener == null) {
++            return;
++        }
++
++        // process each remote trigger in order
++        for (int i = 0; i < remoteTriggers.length(); i++) {
++            JSONObject remoteTrigger = remoteTriggers.optJSONObject(i);
++            if (remoteTrigger == null) {
++                logger.warn("Invalid remote trigger item, skipping");
++                continue;
++            }
++
++            String label = remoteTrigger.optString("label");
++            if (label.isEmpty()) {
++                logger.warn("Remote trigger missing or invalid label, skipping");
++                continue;
++            }
++
++            JSONObject payload = remoteTrigger.optJSONObject("payload");
++            if (payload == null) {
++                logger.warn("Remote trigger missing or invalid payload, skipping");
++                continue;
++            }
++
++            final AdjustRemoteTrigger adjustRemoteTrigger = new AdjustRemoteTrigger(label, payload);
++            Handler handler = new Handler(adjustConfig.context.getMainLooper());
++            Runnable runnable = new Runnable() {
++                @Override
++                public void run() {
++                    if (adjustConfig.onRemoteTriggerListener != null) {
++                        adjustConfig.onRemoteTriggerListener.onRemoteTrigger(adjustRemoteTrigger);
++                    }
++                }
++            };
++            handler.post(runnable);
++        }
++    }
++
++    private void launchThirdPartySharingResponseTasksI(final ThirdPartySharingResponseData thirdPartySharingResponseData) {
++        if (thirdPartySharingResponseData.jsonResponse == null) {
++            return;
++        }
++
++        final JSONObject tpsSettingsJson = thirdPartySharingResponseData.jsonResponse.optJSONObject("third_party_sharing");
++
++        if (tpsSettingsJson == null) {
++            // nothing to update
++            return;
++        }
++
++        String tpsSettingsJsonString = tpsSettingsJson.toString();
++
++        boolean thirdPartySharingSettingsChanged =
++                updateThirdPartySharingSettingsI(new AdjustThirdPartySharingResult(tpsSettingsJsonString));
++
++        // if third party sharing settings changed, launch third party sharing settings changed delegate
++        if (thirdPartySharingSettingsChanged) {
++            Handler handler = new Handler(adjustConfig.context.getMainLooper());
++            launchThirdPartySharingSettingsChangedListenerI(handler);
+         }
+     }
+ 
+@@ -3069,6 +3360,9 @@
+         }
+     }
+ 
++    private void readThirdPartySharingResultI(final Context context) {
++        thirdPartySharingResult = SharedPreferencesManager.getDefaultInstance(context).getThirdPartySharingResult();
++    }
+ 
+     @SuppressWarnings("unchecked")
+     private void readGlobalCallbackParametersI(Context context) {

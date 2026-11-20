@@ -1,0 +1,13 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P4.economic_key_source_app_revision,object,经济事实幂等键,与请求/机会/回调ID分离；修订不重复累加,"{""key"":""syn:cashflow:001"",""source"":""syn:ledger"",""app"":""syn:app:B"",""revision"":1}"
+P4.event_and_install_refs,object,经济事件到目标安装的可核验归属,需独立映射依据；重装和历史退款口径冻结,"{""event"":""syn:event:001"",""install"":""syn:install:001"",""basis"":""syn:allocation-rule""}"
+P4.cashflow_kind,enum,IAP/IAA/REFUND/ADJUSTMENT,只含授权且真实采集类型；没有IAA不能填0,REFUND
+P4.cashflow_at,utc,经济现金流发生,按发生时间定标签，不按到达时间挪窗口,2035-01-01T00:00:00Z
+P4.received_at,utc,账本事实到达,按发生时间定标签，不按到达时间挪窗口,2035-01-01T00:00:00Z
+P4.available_at,utc,账本事实可用,按发生时间定标签，不按到达时间挪窗口,2035-01-01T00:00:00Z
+P4.signed_amount_micros,int64,有符号实际金额，百万分之一货币单位,退款允许负；禁止强制裁0；金额非预测值或广告标价,-300000
+P4.currency,string,金额ISO4217币种,缺币种不可合并；混币需冻结汇率规则,USD
+P4.precision_gross_net_tax_definition_ref,string,真实金额、估算精度、税费及净额口径,估算ILRD需单列；不可冒充结算净收入,syn:money-definition:UNVERIFIED
+P4.correction_and_refund_refs,object,技术修订链及退款原交易,修订替换同事实，退款另现金流；不能混用,"{""corrects_revision"":null,""refunds_transaction"":""syn:purchase:001""}"
+P4.dedup_and_install_allocation_ref,string,多回调去重和安装归属证明,按真实经济事实，不以广告请求ID当账本主键,syn:dedup-rule:UNVERIFIED
+P4.finality_watermark_ref,string,该金额窗口及修订完成的证书引用,仅有截止日期不等于成熟,syn:finality:UNVERIFIED

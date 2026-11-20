@@ -1,0 +1,170 @@
+[
+  {
+    "seq": 1,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "20e7f917c150832b0c678ed16bd7b0b1ae932e48ae4c22cbb7bc56862cfe80dd"
+  },
+  {
+    "seq": 2,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000002\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "20e7f917c150832b0c678ed16bd7b0b1ae932e48ae4c22cbb7bc56862cfe80dd",
+    "hash": "fe1275a62e37423219628d7ea4c8d32618054e1cc28b7323820eea792edaa086"
+  },
+  {
+    "seq": 3,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000002\",\"epoch\":1,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "fe1275a62e37423219628d7ea4c8d32618054e1cc28b7323820eea792edaa086",
+    "hash": "6e1fff37d37468071d3708efc18f3183bc6af73f4d57c86d8ea1db42694f0a01"
+  },
+  {
+    "seq": 4,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "6e1fff37d37468071d3708efc18f3183bc6af73f4d57c86d8ea1db42694f0a01",
+    "hash": "ad0671b995f4b77e86481257405ee5d65e98f07d1053e12afb7815e4e3575e99"
+  },
+  {
+    "seq": 5,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000004\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "ad0671b995f4b77e86481257405ee5d65e98f07d1053e12afb7815e4e3575e99",
+    "hash": "e7a437e718bb0bdffda8e824db0257aac85e358982ae1887da040930c49f2c79"
+  },
+  {
+    "seq": 6,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000004\",\"epoch\":2,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "e7a437e718bb0bdffda8e824db0257aac85e358982ae1887da040930c49f2c79",
+    "hash": "cff46fb765b26e4428c4c063bf37d0546c0b80213eec31d7e4b6f792a6de33fd"
+  },
+  {
+    "seq": 7,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "cff46fb765b26e4428c4c063bf37d0546c0b80213eec31d7e4b6f792a6de33fd",
+    "hash": "1509cacc3d726a74e2a826e641940e09fa7e96fa859d3b1c77e3536e0c8c9d5d"
+  },
+  {
+    "seq": 8,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000006\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "1509cacc3d726a74e2a826e641940e09fa7e96fa859d3b1c77e3536e0c8c9d5d",
+    "hash": "46e4b8bc703199c25bbd95455c2bb062cb75317c9ff16c65e4b620d163b117c6"
+  },
+  {
+    "seq": 9,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000006\",\"epoch\":3,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "46e4b8bc703199c25bbd95455c2bb062cb75317c9ff16c65e4b620d163b117c6",
+    "hash": "1729b8bf614fb8c15f874bb47e1bf43596d5750297ff077eaa3d6d3aa35a95fa"
+  },
+  {
+    "seq": 10,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000007\",\"grain\":\"app_instance\",\"graph_version\":1,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "1729b8bf614fb8c15f874bb47e1bf43596d5750297ff077eaa3d6d3aa35a95fa",
+    "hash": "cd711352e429c6427d0b504f3ee1165d75bad0bef6a2bbc5b0a63f2c10c66e17"
+  },
+  {
+    "seq": 11,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000008\",\"grain\":\"account\",\"graph_version\":2,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "cd711352e429c6427d0b504f3ee1165d75bad0bef6a2bbc5b0a63f2c10c66e17",
+    "hash": "0ef3f80d1e7c64e9b35ca16c6cd93b7256c9c90fc1841414fc6f5dd215206bed"
+  },
+  {
+    "seq": 12,
+    "at": 1767225600,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000009\",\"ledger_ref\":\"ledger_000011\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "0ef3f80d1e7c64e9b35ca16c6cd93b7256c9c90fc1841414fc6f5dd215206bed",
+    "hash": "e0be43758f886f01dada3ebb346d09c4d0b73b7490fc31e290bb128e9ccb799e"
+  },
+  {
+    "seq": 13,
+    "at": 1767225600,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767225600,\"available_at\":1767225600,\"bundle_ref\":\"bundle_000012\",\"graph_version\":3,\"materialized_at\":1767225600,\"policy_epoch\":3,\"subject_ref\":\"entity_000004\"}",
+    "previous_hash": "e0be43758f886f01dada3ebb346d09c4d0b73b7490fc31e290bb128e9ccb799e",
+    "hash": "0077cea371780441a966d3bea772cb037abf41c613b392a4488a6108e711d04b"
+  },
+  {
+    "seq": 14,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000013\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "0077cea371780441a966d3bea772cb037abf41c613b392a4488a6108e711d04b",
+    "hash": "75e17da3eddf8a62094da2763f622289d22c79674079e22984a6ce27df84a3f6"
+  },
+  {
+    "seq": 15,
+    "at": 1767225600,
+    "kind": "event_retry_deduplicated",
+    "payload_json": "{\"event_ref\":\"event_000009\"}",
+    "previous_hash": "75e17da3eddf8a62094da2763f622289d22c79674079e22984a6ce27df84a3f6",
+    "hash": "0bf61e8eb26b0efb6f79684e0ac4ac367664681e558755f10a5e143a165f5228"
+  },
+  {
+    "seq": 16,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000014\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "0bf61e8eb26b0efb6f79684e0ac4ac367664681e558755f10a5e143a165f5228",
+    "hash": "fd1c9f001d70732e2ba821d2223c50b712821b04fd8d8477ffa1ab9f47913bf8"
+  },
+  {
+    "seq": 17,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000015\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "fd1c9f001d70732e2ba821d2223c50b712821b04fd8d8477ffa1ab9f47913bf8",
+    "hash": "6dd878dec279904728617199818d35f0bbfc972414069a5a4b7d1765cbf58013"
+  },
+  {
+    "seq": 18,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000016\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "6dd878dec279904728617199818d35f0bbfc972414069a5a4b7d1765cbf58013",
+    "hash": "08440a0451792863a9f84a182d1373dbbec8d0334fad20a25f57f958118365f6"
+  },
+  {
+    "seq": 19,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000017\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "08440a0451792863a9f84a182d1373dbbec8d0334fad20a25f57f958118365f6",
+    "hash": "4d73b3df3fba2ff7998dd0775d4080a5b915b9ffc52687ab0b683b20bc3c44b8"
+  },
+  {
+    "seq": 20,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000018\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "4d73b3df3fba2ff7998dd0775d4080a5b915b9ffc52687ab0b683b20bc3c44b8",
+    "hash": "4d5f6d70334bacc937562d9d9b7e693ab32dc5e2fd0426d28d1b205fc8eedea7"
+  },
+  {
+    "seq": 21,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000019\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "4d5f6d70334bacc937562d9d9b7e693ab32dc5e2fd0426d28d1b205fc8eedea7",
+    "hash": "8719b604a0023e1e2bba824b165ec226ea6c8699761187a526b8a60b03260f65"
+  }
+]

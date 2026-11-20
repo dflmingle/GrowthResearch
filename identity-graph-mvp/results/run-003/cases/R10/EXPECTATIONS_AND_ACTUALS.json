@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "feature unavailable before decision",
+    "input_refs": "operation trace",
+    "expected": "TEMPORAL_LEAKAGE",
+    "actual": "TEMPORAL_LEAKAGE",
+    "passed": true
+  },
+  {
+    "assertion": "cross-version decision refused",
+    "input_refs": "operation trace",
+    "expected": "MODEL_INFERENCE_MISMATCH",
+    "actual": "MODEL_INFERENCE_MISMATCH",
+    "passed": true
+  },
+  {
+    "assertion": "revoked read refused",
+    "input_refs": "operation trace",
+    "expected": "REVOKED_OR_EXPIRED",
+    "actual": "REVOKED_OR_EXPIRED",
+    "passed": true
+  }
+]

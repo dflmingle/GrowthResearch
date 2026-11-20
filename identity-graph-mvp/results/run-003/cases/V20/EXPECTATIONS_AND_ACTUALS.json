@@ -1,0 +1,45 @@
+[
+  {
+    "assertion": "same checksum insufficient without source_authenticated",
+    "input_refs": "operation trace",
+    "expected": "UNTRUSTED",
+    "actual": "UNTRUSTED",
+    "passed": true
+  },
+  {
+    "assertion": "same checksum insufficient without independently_reviewed",
+    "input_refs": "operation trace",
+    "expected": "UNTRUSTED",
+    "actual": "UNTRUSTED",
+    "passed": true
+  },
+  {
+    "assertion": "same checksum insufficient without quotation_permitted",
+    "input_refs": "operation trace",
+    "expected": "UNTRUSTED",
+    "actual": "UNTRUSTED",
+    "passed": true
+  },
+  {
+    "assertion": "same checksum insufficient without coverage_complete",
+    "input_refs": "operation trace",
+    "expected": "UNTRUSTED",
+    "actual": "UNTRUSTED",
+    "passed": true
+  },
+  {
+    "assertion": "vendor claims remain UNKNOWN",
+    "input_refs": "operation trace",
+    "expected": [
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN"
+    ],
+    "actual": [
+      "UNKNOWN",
+      "UNKNOWN",
+      "UNKNOWN"
+    ],
+    "passed": true
+  }
+]

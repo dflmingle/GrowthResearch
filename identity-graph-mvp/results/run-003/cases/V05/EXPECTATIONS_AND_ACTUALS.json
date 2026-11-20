@@ -1,0 +1,27 @@
+[
+  {
+    "assertion": "high score remains candidate",
+    "input_refs": "operation trace",
+    "expected": "CANDIDATE",
+    "actual": "CANDIDATE",
+    "passed": true
+  },
+  {
+    "assertion": "no automatic transitive or irreversible merge",
+    "input_refs": "operation trace",
+    "expected": [
+      "entity_000002"
+    ],
+    "actual": [
+      "entity_000002"
+    ],
+    "passed": true
+  },
+  {
+    "assertion": "uncalibrated score labeled",
+    "input_refs": "operation trace",
+    "expected": "uncalibrated_score",
+    "actual": "uncalibrated_score",
+    "passed": true
+  }
+]

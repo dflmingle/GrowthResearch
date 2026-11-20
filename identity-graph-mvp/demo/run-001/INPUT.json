@@ -1,0 +1,93 @@
+{
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "seed": 760078,
+  "currency": "USD",
+  "money_unit": "integer-micros",
+  "nodes": [
+    {
+      "label": "device-a",
+      "entity_type": "device",
+      "app": "synthetic-app-a",
+      "token": "syn:device-a:0c7052d84012ee15"
+    },
+    {
+      "label": "device-b",
+      "entity_type": "device",
+      "app": "synthetic-app-a",
+      "token": "syn:device-b:fa669432b470cb95"
+    },
+    {
+      "label": "account-a",
+      "entity_type": "account",
+      "app": "first-party-account",
+      "token": "syn:account-a:c5c69d70bb3b6248"
+    },
+    {
+      "label": "account-b",
+      "entity_type": "account",
+      "app": "first-party-account",
+      "token": "syn:account-b:435e260acc106b9f"
+    },
+    {
+      "label": "person-isolated",
+      "entity_type": "person",
+      "app": "synthetic-app-a",
+      "token": "syn:person-isolated:3fe873283bb8e9af"
+    }
+  ],
+  "installations": [
+    {
+      "label": "app-a-on-a",
+      "device": "device-a",
+      "app": "synthetic-app-a"
+    },
+    {
+      "label": "app-b-on-b",
+      "device": "device-b",
+      "app": "synthetic-app-b"
+    }
+  ],
+  "logins": [
+    {
+      "account": "account-a",
+      "installation": "app-a-on-a",
+      "device": "device-a"
+    },
+    {
+      "account": "account-a",
+      "installation": "app-b-on-b",
+      "device": "device-b"
+    },
+    {
+      "account": "account-b",
+      "installation": "app-a-on-a",
+      "device": "device-a"
+    }
+  ],
+  "events": [
+    {
+      "installation": "app-a-on-a",
+      "account": "account-a",
+      "amount_micros": 1200000,
+      "economic_kind": "IAP"
+    },
+    {
+      "installation": "app-b-on-b",
+      "account": "account-a",
+      "amount_micros": 250000,
+      "economic_kind": "IAA"
+    },
+    {
+      "installation": "app-a-on-a",
+      "account": "account-b",
+      "amount_micros": 9000000,
+      "economic_kind": "IAP"
+    }
+  ],
+  "synthetic_truth": {
+    "account_a_observed_revenue_micros": 1450000,
+    "account_b_observed_revenue_micros": 9000000,
+    "person_account_relationship": "UNSPECIFIED_AND_NOT_INFERRED"
+  },
+  "caveat": "Entirely fabricated event amounts/identities; NOT LTV data or a real-world effect"
+}

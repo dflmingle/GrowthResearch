@@ -1,0 +1,14 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P2.edge_ref_revision,object,关系主键与修订,修订不可静默覆盖；候选不自动激活,"{""ref"":""syn:edge:001"",""revision"":1}"
+P2.typed_endpoints,object,关系两端实体引用和粒度/namespace,禁止账号直接提升person或跨类型闭包,"{""src"":{""ref"":""syn:account:001"",""grain"":""ACCOUNT"",""ns"":""syn:ns:A""},""dst"":{""ref"":""syn:device:001"",""grain"":""DEVICE"",""ns"":""syn:ns:B""}}"
+P2.source_target_apps,array<string>,跨App关系两端产品,独立App的合法使用范围须有权利人证明,"[""syn:app:A"",""syn:app:B""]"
+P2.relation_kind,string,账号登录、同设备、家庭等具体关系语义,类型受端点约束；不是自然人事实,syn:authenticated_account_device
+P2.method_source_component_version,object,认证/解析依据、来源及组件版本,不能仅因字段存在就认定服务端匹配,"{""evidence"":""syn:assertion:001"",""component"":""syn:resolver"",""version"":""syn:v1""}"
+P2.purpose_scope_ref,string,该边允许用途与App/地区范围,引用P0，不能先读后mask,syn:purpose:NOT_APPROVED
+P2.quality_kind_score_calibration,object,质量类型、分数及校准版本,未校准score不当概率；候选隔离,"{""kind"":""uncalibrated_score"",""score"":0.5,""calibration"":null}"
+P2.valid_from_to,object<utc|null>,业务有效时间,半开区间；valid_from不替代当时已知时间,"{""from"":""2035-01-01T00:00:00Z"",""to"":null}"
+P2.observed_at,utc,关系首次被系统观察,分别提供；不晚于实际预测且附时钟误差,2035-01-01T00:00:00Z
+P2.received_at,utc,关系到达该系统,分别提供；不晚于实际预测且附时钟误差,2035-01-01T00:00:00Z
+P2.available_at,utc,关系实际可供模型使用,分别提供；不晚于实际预测且附时钟误差,2035-01-01T00:00:00Z
+P2.revoked_expired_deleted_effective,object<utc|null>,撤销/到期/删除禁止使用生效时点,null需说明未发生还是未知；未知不当未撤销,"{""revoked"":null,""expired"":null,""deleted"":null,""knowledge"":""UNKNOWN""}"
+P2.status,enum,边状态,ACTIVE/CANDIDATE/CONFLICT/REVOKED；候选不得传递合并,CANDIDATE

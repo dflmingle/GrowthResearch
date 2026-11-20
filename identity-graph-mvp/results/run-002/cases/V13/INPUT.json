@@ -1,0 +1,163 @@
+{
+  "test_id": "V13",
+  "seed": 760078,
+  "environment": "LOCAL_SYNTHETIC_ONLY",
+  "fixture": {
+    "seed": 760078,
+    "environment": "LOCAL_SYNTHETIC_ONLY",
+    "start_utc_epoch": 1767225600,
+    "entities": {}
+  },
+  "operations": [
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": true,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ADAPTER_CONTRACT_ELIGIBLE",
+        "missing": [],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": false,
+          "created_means_consumer_available": true,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "created_timestamp_filter_supported"
+        ],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": false,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "created_means_consumer_available"
+        ],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": true,
+          "exclude_null_created": false,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "exclude_null_created"
+        ],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": true,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": false,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "explicit_relationship_known_at"
+        ],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": true,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": false
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "STOP",
+        "missing": [
+          "consent_epoch_gate"
+        ],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    },
+    {
+      "component": "GraphFeatureService",
+      "operation": "admit_backend",
+      "at": 1767225600,
+      "args": [
+        {
+          "created_timestamp_filter_supported": true,
+          "created_means_consumer_available": true,
+          "exclude_null_created": true,
+          "explicit_relationship_known_at": true,
+          "consent_epoch_gate": true
+        }
+      ],
+      "kwargs": {},
+      "returned": {
+        "status": "ADAPTER_CONTRACT_ELIGIBLE",
+        "missing": [],
+        "scope": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST"
+      }
+    }
+  ]
+}

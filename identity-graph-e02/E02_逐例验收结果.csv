@@ -1,0 +1,31 @@
+﻿id,category,expected,actual,sink_receipt_count,test_result,evidence
+T00_legal_local_accept,CONTROL,LOCAL_ACK; exactly one local receipt; original outbox still pending,LOCAL_ACK:LOCAL_MEMORY_ACK_ONLY,1,PASS,runs/20261120T104157989849Z/T00_legal_local_accept/CASE.json
+T01_revoke_after_enqueue,1,CANCELLED before claim; no receipt,CANCELLED:CONSENT_DENIED_OR_UNKNOWN,0,PASS,runs/20261120T104157989849Z/T01_revoke_after_enqueue/CASE.json
+T02_delete_before_retry,2,failure then delete then retry CANCELLED; no receipt,CANCELLED:DEPENDENCY_DELETED,0,PASS,runs/20261120T104157989849Z/T02_delete_before_retry/CASE.json
+T03_scheduled_revoke_no_write,3,policy effective boundary observed even without new write; CANCELLED,CANCELLED:CONSENT_DENIED_OR_UNKNOWN,0,PASS,runs/20261120T104157989849Z/T03_scheduled_revoke_no_write/CASE.json
+T04_policy_between_prepare_and_commit,4,late revoke detected inside final boundary; CANCELLED,CANCELLED:CONSENT_DENIED_OR_UNKNOWN,0,PASS,runs/20261120T104157989849Z/T04_policy_between_prepare_and_commit/CASE.json
+T05_restore_old_state_keep_control,5,old state restored but durable deletion retained; no revived send,CANCELLED:DEPENDENCY_DELETED,0,PASS,runs/20261120T104157989849Z/T05_restore_old_state_keep_control/CASE.json
+T06_repeated_economic_retries,6,two failures then success; repeated economic callback stays one ledger and one acceptance,LOCAL_ACK:LOCAL_MEMORY_ACK_ONLY,1,PASS,runs/20261120T104157989849Z/T06_repeated_economic_retries/CASE.json
+T07_relation_expiry,7,at relation valid_to with no new write; CANCELLED,CANCELLED:TARGET_AUTH_RELATION_NOT_ACTIVE,0,PASS,runs/20261120T104157989849Z/T07_relation_expiry/CASE.json
+T08_wrong_purpose,8,other purpose cannot claim queued authorization,CANCELLED:TASK_PURPOSE_NOT_REUSABLE,0,PASS,runs/20261120T104157989849Z/T08_wrong_purpose/CASE.json
+T09_ack_loss_retry,9,sink acceptance then lost ACK; retry deduplicates to one local receipt,LOCAL_ACK:LOCAL_MEMORY_ACK_ONLY,1,PASS,runs/20261120T104157989849Z/T09_ack_loss_retry/CASE.json
+T10_unproven_external_boundary,10,"ATOMIC_HANDOFF_UNPROVEN, never LOCAL_ACK",CANCELLED:ATOMIC_HANDOFF_UNPROVEN,0,PASS,runs/20261120T104157989849Z/T10_unproven_external_boundary/CASE.json
+T11_mutant_enqueue_only,MUTANT,unsafe accept actually occurs; independent oracle detects unauthorized delivery,QUEUED:ENQUEUED_LOCALLY,1,PASS,runs/20261120T104157989849Z/T11_mutant_enqueue_only/CASE.json
+T12_mutant_stale_retry_epoch,MUTANT,unsafe retry actually occurs; independent oracle detects stale epoch and revoke,QUEUED:ENQUEUED_LOCALLY,1,PASS,runs/20261120T104157989849Z/T12_mutant_stale_retry_epoch/CASE.json
+T13_mutant_check_revoke_commit,MUTANT,unsafe postcheck send actually occurs; independent oracle detects TOCTOU,QUEUED:ENQUEUED_LOCALLY,1,PASS,runs/20261120T104157989849Z/T13_mutant_check_revoke_commit/CASE.json
+T14_final_check_relation_expiry,7,expiry inserted after prepare blocked by final check without epoch change,CANCELLED:TARGET_AUTH_RELATION_NOT_ACTIVE,0,PASS,runs/20261120T104157989849Z/T14_final_check_relation_expiry/CASE.json
+T15_final_check_scheduled_revoke,3,scheduled revocation inserted after prepare blocked without epoch change,CANCELLED:CONSENT_DENIED_OR_UNKNOWN,0,PASS,runs/20261120T104157989849Z/T15_final_check_scheduled_revoke/CASE.json
+T16_final_check_delete,4,delete between prepare and final acceptance blocked,CANCELLED:DEPENDENCY_DELETED,0,PASS,runs/20261120T104157989849Z/T16_final_check_delete/CASE.json
+T17_transmission_disabled,EXTRA,local transmission switch can narrow but not grant policy,CANCELLED:LOCAL_TRANSMISSION_DISABLED,0,PASS,runs/20261120T104157989849Z/T17_transmission_disabled/CASE.json
+T18_ack_loss_then_revoke,9,prior valid receipt retained as historical; retry after revoke CANCELLED; no new accept,CANCELLED:CONSENT_DENIED_OR_UNKNOWN,1,PASS,runs/20261120T104157989849Z/T18_ack_loss_then_revoke/CASE.json
+T19_state_lock_busy,10,cannot acquire original state writer exclusion: ATOMIC_HANDOFF_UNPROVEN,CANCELLED:ATOMIC_HANDOFF_UNPROVEN,0,PASS,runs/20261120T104157989849Z/T19_state_lock_busy/CASE.json
+T20_control_lock_busy,10,cannot acquire privacy writer exclusion: ATOMIC_HANDOFF_UNPROVEN,CANCELLED:ATOMIC_HANDOFF_UNPROVEN,0,PASS,runs/20261120T104157989849Z/T20_control_lock_busy/CASE.json
+T21_pending_transaction,10,pre-existing transaction not owned by handoff: ATOMIC_HANDOFF_UNPROVEN,CANCELLED:ATOMIC_HANDOFF_UNPROVEN,0,PASS,runs/20261120T104157989849Z/T21_pending_transaction/CASE.json
+T22_terminal_replay,EXTRA,LOCAL_ACK and CANCELLED are terminal; scheduler refuses replay,LOCAL_ACK:LOCAL_MEMORY_ACK_ONLY;CANCELLED:LOCAL_TRANSMISSION_DISABLED,1,PASS,runs/20261120T104157989849Z/T22_terminal_replay/CASE.json
+T23_epoch_change_revalidate,EXTRA,policy epoch changes while permissions ultimately granted; no stale snapshot fallback,CANCELLED:ORIGINAL_BUNDLE_INVALIDATED,0,PASS,runs/20261120T104157989849Z/T23_epoch_change_revalidate/CASE.json
+T24_no_account_auth_at_enqueue,EXTRA,missing accepted receipt rejected before shadow queue,ENQUEUE_DENIED,0,PASS,runs/20261120T104157989849Z/T24_no_account_auth_at_enqueue/CASE.json
+T25_delete_after_claim,2,claim passed then delete; pre-handoff recheck blocks old payload,CANCELLED:DEPENDENCY_DELETED,0,PASS,runs/20261120T104157989849Z/T25_delete_after_claim/CASE.json
+T26_event_payload_tamper,EXTRA,modified local outbox payload mismatches original event; reject,CANCELLED:OUTBOX_EVENT_PAYLOAD_MISMATCH,0,PASS,runs/20261120T104157989849Z/T26_event_payload_tamper/CASE.json
+T27_later_economic_revision,EXTRA,new source revision invalidates old snapshot; no stale economic handoff,CANCELLED:ORIGINAL_BUNDLE_INVALIDATED,0,PASS,runs/20261120T104157989849Z/T27_later_economic_revision/CASE.json
+T28_unsupported_durable_restart,10,durable/restart boundary claim rejected ATOMIC_HANDOFF_UNPROVEN,CANCELLED:ATOMIC_HANDOFF_UNPROVEN,0,PASS,runs/20261120T104157989849Z/T28_unsupported_durable_restart/CASE.json
+T29_declined_claim_is_not_delivery,EXTRA,revoked relation blocks claim; no sink attempt,CANCELLED:TARGET_AUTH_RELATION_NOT_ACTIVE,0,PASS,runs/20261120T104157989849Z/T29_declined_claim_is_not_delivery/CASE.json

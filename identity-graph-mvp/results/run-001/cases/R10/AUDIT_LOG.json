@@ -1,0 +1,314 @@
+[
+  {
+    "seq": 1,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "20e7f917c150832b0c678ed16bd7b0b1ae932e48ae4c22cbb7bc56862cfe80dd"
+  },
+  {
+    "seq": 2,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000002\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "20e7f917c150832b0c678ed16bd7b0b1ae932e48ae4c22cbb7bc56862cfe80dd",
+    "hash": "fe1275a62e37423219628d7ea4c8d32618054e1cc28b7323820eea792edaa086"
+  },
+  {
+    "seq": 3,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000002\",\"epoch\":1,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "fe1275a62e37423219628d7ea4c8d32618054e1cc28b7323820eea792edaa086",
+    "hash": "6e1fff37d37468071d3708efc18f3183bc6af73f4d57c86d8ea1db42694f0a01"
+  },
+  {
+    "seq": 4,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"app_instance\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "6e1fff37d37468071d3708efc18f3183bc6af73f4d57c86d8ea1db42694f0a01",
+    "hash": "23527f0cf8e4d24216e94a8f27a2a444b14e763ebca2830f21795ac5d44164bb"
+  },
+  {
+    "seq": 5,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000004\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "23527f0cf8e4d24216e94a8f27a2a444b14e763ebca2830f21795ac5d44164bb",
+    "hash": "f01421fc21ef2b4c8058ea39e4aea280cc1d3a8f421cf009fd95b98537ffeee8"
+  },
+  {
+    "seq": 6,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000004\",\"epoch\":2,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "f01421fc21ef2b4c8058ea39e4aea280cc1d3a8f421cf009fd95b98537ffeee8",
+    "hash": "8b11112eb3c34c02671b72d95e0befc6258ac5c537cc6dc27ddbddec7b1e01a2"
+  },
+  {
+    "seq": 7,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000005\",\"grain\":\"app_instance\",\"graph_version\":1,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "8b11112eb3c34c02671b72d95e0befc6258ac5c537cc6dc27ddbddec7b1e01a2",
+    "hash": "430dd312a087ba148411b312c2f9a9eaa82c87e014fee7cf8504d328206e5419"
+  },
+  {
+    "seq": 8,
+    "at": 1767225600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"account\",\"namespace_ref\":\"ns_000006\"}",
+    "previous_hash": "430dd312a087ba148411b312c2f9a9eaa82c87e014fee7cf8504d328206e5419",
+    "hash": "8155794182a6c18f8f904934f6c7341b2c554165c018e264cdb4c28b9e71b0f9"
+  },
+  {
+    "seq": 9,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000007\",\"grain\":\"account\",\"namespace_ref\":\"ns_000006\"}",
+    "previous_hash": "8155794182a6c18f8f904934f6c7341b2c554165c018e264cdb4c28b9e71b0f9",
+    "hash": "253d1264cc25c9f9bf3e73e07a9f49d5e334b0b2e7384a5269159c6694b9807b"
+  },
+  {
+    "seq": 10,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000007\",\"epoch\":3,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "253d1264cc25c9f9bf3e73e07a9f49d5e334b0b2e7384a5269159c6694b9807b",
+    "hash": "273408027c88a67a111fa8654b07ceb4c8b3fc7c6f68f4189704b8e97230ef40"
+  },
+  {
+    "seq": 11,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000008\",\"grain\":\"account\",\"graph_version\":2,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "273408027c88a67a111fa8654b07ceb4c8b3fc7c6f68f4189704b8e97230ef40",
+    "hash": "a2eefc85450702fc31b90a1c8b181f93607fee08f14df8c74081005f0811434a"
+  },
+  {
+    "seq": 12,
+    "at": 1767225600,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000009\",\"ledger_ref\":\"ledger_000011\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "a2eefc85450702fc31b90a1c8b181f93607fee08f14df8c74081005f0811434a",
+    "hash": "3b1bf8f3ab6e2ea298c12bf1f6844ab3d031c5218dc31ef8a4ecf00797d751a1"
+  },
+  {
+    "seq": 13,
+    "at": 1767225600,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767225600,\"available_at\":1767225600,\"bundle_ref\":\"bundle_000012\",\"graph_version\":3,\"materialized_at\":1767225600,\"policy_epoch\":3,\"subject_ref\":\"entity_000007\"}",
+    "previous_hash": "3b1bf8f3ab6e2ea298c12bf1f6844ab3d031c5218dc31ef8a4ecf00797d751a1",
+    "hash": "b86220f50377e8e6264aed6933ee816522edeaf1fcd6b2f436e2fcea06cf2058"
+  },
+  {
+    "seq": 14,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"feature_read_ref\":\"read_000013\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "b86220f50377e8e6264aed6933ee816522edeaf1fcd6b2f436e2fcea06cf2058",
+    "hash": "0675c5544946ce815844b76b0206b464164c5cf39686b8213234fd863cefeef8"
+  },
+  {
+    "seq": 15,
+    "at": 1767225600,
+    "kind": "local_consumer_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000012\",\"consumed_checksum\":\"33c7b769246bcf79c5e853f5f2552250961b5fc9a75eb9ae90dc0d60fba25095\",\"decision_ref\":\"decision_000017\",\"feature_read_ref\":\"read_000013\",\"inference_ref\":\"inference_000016\",\"model\":\"local-feature-consumer\",\"model_version\":\"1\",\"opportunity_ref\":\"opportunity_000018\",\"use\":\"active\"}",
+    "previous_hash": "0675c5544946ce815844b76b0206b464164c5cf39686b8213234fd863cefeef8",
+    "hash": "fa0a0389a056a4c17be8c2a399905847725622f7aecaff85c0286611b6dc8e22"
+  },
+  {
+    "seq": 16,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000019\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "fa0a0389a056a4c17be8c2a399905847725622f7aecaff85c0286611b6dc8e22",
+    "hash": "015721cbda134d7952857dad6270db7c1fbe2ce35b96a3963f3922d41579ff82"
+  },
+  {
+    "seq": 17,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000019\",\"epoch\":4,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "015721cbda134d7952857dad6270db7c1fbe2ce35b96a3963f3922d41579ff82",
+    "hash": "b3f05c09b6a57d756d6ad2dcc7ee3275e6acaf916d9570b468cbf0798f02ba8f"
+  },
+  {
+    "seq": 18,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000020\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "b3f05c09b6a57d756d6ad2dcc7ee3275e6acaf916d9570b468cbf0798f02ba8f",
+    "hash": "9f720163b18912410fe6000fc04510fb9e02a3bafcae7efa29b1cde73f799182"
+  },
+  {
+    "seq": 19,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000020\",\"epoch\":5,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "9f720163b18912410fe6000fc04510fb9e02a3bafcae7efa29b1cde73f799182",
+    "hash": "c46c8a3964fcb03f2a42c05c6fb4cdbe0ad7712d08df56e44685f384cd013dfd"
+  },
+  {
+    "seq": 20,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000021\",\"grain\":\"app_instance\",\"graph_version\":4,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c46c8a3964fcb03f2a42c05c6fb4cdbe0ad7712d08df56e44685f384cd013dfd",
+    "hash": "0db3dc353bf18e7b4ada5accba9be02e2c5316b0d28a68667c52739650e23d1f"
+  },
+  {
+    "seq": 21,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000022\",\"grain\":\"account\",\"namespace_ref\":\"ns_000006\"}",
+    "previous_hash": "0db3dc353bf18e7b4ada5accba9be02e2c5316b0d28a68667c52739650e23d1f",
+    "hash": "f4d7aead9ac52b794b72237bf50ba3a83b92472726868a53a42054f947beeb04"
+  },
+  {
+    "seq": 22,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000022\",\"epoch\":6,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "f4d7aead9ac52b794b72237bf50ba3a83b92472726868a53a42054f947beeb04",
+    "hash": "63a69ebb1e6b55471009faa066eede47ae86ddf3a4d531c52d8f8d66cb4f04e4"
+  },
+  {
+    "seq": 23,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000023\",\"grain\":\"account\",\"graph_version\":5,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "63a69ebb1e6b55471009faa066eede47ae86ddf3a4d531c52d8f8d66cb4f04e4",
+    "hash": "6402cdc3fdd028abeb1ebf8870affb8b7743f216876586e32d228537e66962df"
+  },
+  {
+    "seq": 24,
+    "at": 1767225600,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000024\",\"ledger_ref\":\"ledger_000026\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "6402cdc3fdd028abeb1ebf8870affb8b7743f216876586e32d228537e66962df",
+    "hash": "f550f115051d6bdce8cc1bf56c8bcaa220fb5b8f99e0835377774f6f8f6a6244"
+  },
+  {
+    "seq": 25,
+    "at": 1767225600,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767225600,\"available_at\":1767225600,\"bundle_ref\":\"bundle_000027\",\"graph_version\":6,\"materialized_at\":1767225600,\"policy_epoch\":6,\"subject_ref\":\"entity_000022\"}",
+    "previous_hash": "f550f115051d6bdce8cc1bf56c8bcaa220fb5b8f99e0835377774f6f8f6a6244",
+    "hash": "dd399b46ef9ffa549ee544f9149ae23f77e8bc6c1c4b8d26be056c244ac6c64a"
+  },
+  {
+    "seq": 26,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000027\",\"feature_read_ref\":\"read_000028\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "dd399b46ef9ffa549ee544f9149ae23f77e8bc6c1c4b8d26be056c244ac6c64a",
+    "hash": "d5e5d0e7cc6df83b1e32e5907604c80c4781e8b2545a650a416a632a5482ae88"
+  },
+  {
+    "seq": 27,
+    "at": 1767225600,
+    "kind": "local_consumer_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000027\",\"consumed_checksum\":\"33c7b769246bcf79c5e853f5f2552250961b5fc9a75eb9ae90dc0d60fba25095\",\"decision_ref\":\"decision_000032\",\"feature_read_ref\":\"read_000028\",\"inference_ref\":\"inference_000031\",\"model\":\"local-feature-consumer\",\"model_version\":\"1\",\"opportunity_ref\":\"opportunity_000033\",\"use\":\"active\"}",
+    "previous_hash": "d5e5d0e7cc6df83b1e32e5907604c80c4781e8b2545a650a416a632a5482ae88",
+    "hash": "710ad68fb2f8c23efe67bb16ccccbb7e4f95a255b6dfc21c9f1b6c17aee3bd52"
+  },
+  {
+    "seq": 28,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000034\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "710ad68fb2f8c23efe67bb16ccccbb7e4f95a255b6dfc21c9f1b6c17aee3bd52",
+    "hash": "3cbc3ba6451b61dfc0807dbd47332f162e818f834a0b9144edf09a8dc95197ee"
+  },
+  {
+    "seq": 29,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000034\",\"epoch\":7,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3cbc3ba6451b61dfc0807dbd47332f162e818f834a0b9144edf09a8dc95197ee",
+    "hash": "d28a54ff1a6e9490017bffc1dc80460131bf2c1e7a3a25df8ac4191300b70ea1"
+  },
+  {
+    "seq": 30,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000035\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "d28a54ff1a6e9490017bffc1dc80460131bf2c1e7a3a25df8ac4191300b70ea1",
+    "hash": "a334e0ce38b7a67b4004ee630846f277acf5e357041ebad9195871cbc7315bf3"
+  },
+  {
+    "seq": 31,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000035\",\"epoch\":8,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a334e0ce38b7a67b4004ee630846f277acf5e357041ebad9195871cbc7315bf3",
+    "hash": "38aec427d84476cb6d99e5ba193c7d20cb882223c4a57f35c06a1641d7c66c1a"
+  },
+  {
+    "seq": 32,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000036\",\"grain\":\"app_instance\",\"graph_version\":7,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "38aec427d84476cb6d99e5ba193c7d20cb882223c4a57f35c06a1641d7c66c1a",
+    "hash": "a480de43167a75769accc14ee95b4e80353ee5aebbe6fea81b0c09bdd9b86e97"
+  },
+  {
+    "seq": 33,
+    "at": 1767225600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000037\",\"grain\":\"account\",\"namespace_ref\":\"ns_000006\"}",
+    "previous_hash": "a480de43167a75769accc14ee95b4e80353ee5aebbe6fea81b0c09bdd9b86e97",
+    "hash": "0ce15f0364c170601544f81a4f258fa140c2dd2808d94966421b9dc216405123"
+  },
+  {
+    "seq": 34,
+    "at": 1767225600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767225600,\"entity_ref\":\"entity_000037\",\"epoch\":9,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "0ce15f0364c170601544f81a4f258fa140c2dd2808d94966421b9dc216405123",
+    "hash": "a4d285c36de4146fe241240298098920b3e28e6ca3a8f7f3f9c53c093e9c2823"
+  },
+  {
+    "seq": 35,
+    "at": 1767225600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000038\",\"grain\":\"account\",\"graph_version\":8,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "a4d285c36de4146fe241240298098920b3e28e6ca3a8f7f3f9c53c093e9c2823",
+    "hash": "f224ffef865c477debc2a81ebf6d23aec5eef4fb8310d714eba5dc70f32bfe2d"
+  },
+  {
+    "seq": 36,
+    "at": 1767225600,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000039\",\"ledger_ref\":\"ledger_000041\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "f224ffef865c477debc2a81ebf6d23aec5eef4fb8310d714eba5dc70f32bfe2d",
+    "hash": "627b915d65ddff87142e4ee10e40961f96d4ecb0ebc71b93aecb9fe4d1d1c2fb"
+  },
+  {
+    "seq": 37,
+    "at": 1767225600,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767225600,\"available_at\":1767225600,\"bundle_ref\":\"bundle_000042\",\"graph_version\":9,\"materialized_at\":1767225600,\"policy_epoch\":9,\"subject_ref\":\"entity_000037\"}",
+    "previous_hash": "627b915d65ddff87142e4ee10e40961f96d4ecb0ebc71b93aecb9fe4d1d1c2fb",
+    "hash": "b3e2f9813aac3769338c85a96d8ee7bf7b91dcf55ac448f8b1d123d4c33ce16e"
+  },
+  {
+    "seq": 38,
+    "at": 1767225600,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000042\",\"feature_read_ref\":\"read_000043\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767225600}",
+    "previous_hash": "b3e2f9813aac3769338c85a96d8ee7bf7b91dcf55ac448f8b1d123d4c33ce16e",
+    "hash": "12534f06472d4a4dfcc66b5463cbf0c32589141503874662036afa21ed2b537e"
+  },
+  {
+    "seq": 39,
+    "at": 1767225600,
+    "kind": "local_consumer_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000042\",\"consumed_checksum\":\"33c7b769246bcf79c5e853f5f2552250961b5fc9a75eb9ae90dc0d60fba25095\",\"decision_ref\":\"decision_000047\",\"feature_read_ref\":\"read_000043\",\"inference_ref\":\"inference_000046\",\"model\":\"local-feature-consumer\",\"model_version\":\"1\",\"opportunity_ref\":\"opportunity_000048\",\"use\":\"active\"}",
+    "previous_hash": "12534f06472d4a4dfcc66b5463cbf0c32589141503874662036afa21ed2b537e",
+    "hash": "daa67a8a6dcee02ec32adbb06544abe7ffd33bf644b4f23b150f320a09da00ad"
+  }
+]

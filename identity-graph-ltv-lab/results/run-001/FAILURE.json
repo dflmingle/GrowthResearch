@@ -1,0 +1,5 @@
+{
+  "type": "ValueError",
+  "message": "Synthetic clock rewind forbidden",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\GrowthResearch\\identity-graph-ltv-lab\\run_experiment.py\", line 146, in main\n    summary=execute(output,protocol,progress)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GrowthResearch\\identity-graph-ltv-lab\\run_experiment.py\", line 29, in execute\n    rows,audit=extract(generated,seed,world,output,protocol,progress);save(raw/'FEATURE_ROWS.json',rows);time_audit.extend(audit)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\GrowthResearch\\identity-graph-ltv-lab\\lab\\extraction.py\", line 29, in extract\n    to_time(s.clock,row['install_at'])\n  File \"D:\\GrowthResearch\\identity-graph-ltv-lab\\lab\\common.py\", line 23, in to_time\n    if t<clock.now:raise ValueError('Synthetic clock rewind forbidden')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Synthetic clock rewind forbidden\n"
+}

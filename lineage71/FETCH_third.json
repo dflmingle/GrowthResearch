@@ -1,0 +1,2780 @@
+[
+  {
+    "id": "max-mmp-api",
+    "url": "https://support.applovin.com/en/max/android/overview/impression-level-user-revenue-api-for-mmps",
+    "acquired_utc": "2026-11-20T04:44:50.281857+00:00",
+    "status": 200,
+    "final_url": "https://support.applovin.com/en/max/android/overview/impression-level-user-revenue-api-for-mmps",
+    "path": "lineage71/sources/max-mmp-api.raw",
+    "sha256": "428c77d1b5d6507e94506c4abdfc56bc7d4ab21e719b405b1f6e6b338f9bdb4a",
+    "bytes": 3272407,
+    "content_type": "text/html; charset=utf-8",
+    "links": [
+      {
+        "text": "",
+        "url": "/"
+      },
+      {
+        "text": "",
+        "url": "/en/growth/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/max/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/growth/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/max/getting-started"
+      },
+      {
+        "text": "arrow_back Changelog",
+        "url": "/en/max/adobe-air/changelog"
+      },
+      {
+        "text": "arrow_forward Integration",
+        "url": "/en/max/android/overview/integration"
+      },
+      {
+        "text": "Policy Center",
+        "url": "https://legal.applovin.com/en"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "https://legal.applovin.com/en/terms/"
+      },
+      {
+        "text": "Publisher Policies",
+        "url": "https://legal.applovin.com/en/policies-publishers/"
+      },
+      {
+        "text": "Demand Partner Policies",
+        "url": "https://legal.applovin.com/en/policies-demand-partners/"
+      },
+      {
+        "text": "Platform Enforcement",
+        "url": "https://www.applovin.com/platform-enforcement/"
+      },
+      {
+        "text": "Privacy",
+        "url": "https://legal.applovin.com/en/privacy/"
+      },
+      {
+        "text": "Your Privacy Choices",
+        "url": "https://legal.applovin.com/en/multistate-privacy-notice/"
+      }
+    ],
+    "preview": "MONETIZE | SDK integration guides | Android / Amazon | Overview | Impression-Level User Revenue API for MMPs | AppLovin | Support Center\nmenu\nsearch\n⌘ K\n​\nsearch\nlanguage\nlight_mode\nADVERTISE\nMONETIZE\nADVERTISE\nMONETIZE\nImpression-Level User Revenue API for MMPs\nThis API uses a publisher-subscriber architecture.\nThe MAX SDK broadcasts MAX ad revenue events and MMPs subscribe to the\nmax_revenue_events\ntopic.\nAppLovin recommends that you subscribe to that topic immediately after your app launches.\nThis way, you will not miss events.\nEach broadcast event includes the following parameters:\nName\nDescription\nExample\nad_format\nThe ad format of the ad.\nBANNER\n,\nMREC\n,\nINTER\n,\nREWARDED\ncountry_code\nThe revenue’s country code.\nUS\n(for the United States)\nid\nUnique internal ID for the serve.\n19017d954ffcded6c42772b09ec36699efe0bfc2\nmax_ad_unit_id\nThe MAX Ad Unit ID.\n65d8d0195e50bda6\nnetwork_name\nDisplay name of the network that showed the ad.\nAppLovin\nrevenue\nA double that represents the revenue a"
+  },
+  {
+    "id": "max-user-api",
+    "url": "https://support.applovin.com/en/max/reporting-apis/user-level-ad-revenue-api",
+    "acquired_utc": "2026-11-20T04:44:50.281857+00:00",
+    "status": 200,
+    "final_url": "https://support.applovin.com/en/max/reporting-apis/user-level-ad-revenue-api",
+    "path": "lineage71/sources/max-user-api.raw",
+    "sha256": "28d35e5c25d2a744bec2dc453ffa697ef2cf57c41458d2aecf99b6a08170af2b",
+    "bytes": 3520561,
+    "content_type": "text/html; charset=utf-8",
+    "links": [
+      {
+        "text": "",
+        "url": "/"
+      },
+      {
+        "text": "",
+        "url": "/en/growth/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/max/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/growth/getting-started"
+      },
+      {
+        "text": "",
+        "url": "/en/max/getting-started"
+      },
+      {
+        "text": "Adjust, AppsFlyer, GameAnalytics or Singular, for all supported networks",
+        "url": "https://blog.applovin.com/blog/take-ad-revenue-attribution-to-the-next-level-with-max/"
+      },
+      {
+        "text": "How to find your AppLovin SDK version",
+        "url": "/en/max/faq/how-to-find-your-applovin-sdk-version"
+      },
+      {
+        "text": "the S2S impression revenue API documentation page",
+        "url": "/en/max/advanced-features/s2s-impression-level-api"
+      },
+      {
+        "text": "“Take Ad-Revenue Attribution to the Next Level With MAX”",
+        "url": "https://blog.applovin.com/blog/take-ad-revenue-attribution-to-the-next-level-with-max/"
+      },
+      {
+        "text": "Report Key",
+        "url": "https://dash.applovin.com/o/account#keys"
+      },
+      {
+        "text": "this table",
+        "url": "/en/max/advanced-features/ad-unit-management-api#ad-networks"
+      },
+      {
+        "text": "“Setting an internal user ID”",
+        "url": "#setting-an-internal-user-id"
+      },
+      {
+        "text": "arrow_back Revenue Reporting API",
+        "url": "/en/max/reporting-apis/revenue-reporting-api"
+      },
+      {
+        "text": "arrow_forward Cohort API",
+        "url": "/en/max/reporting-apis/cohort-api"
+      },
+      {
+        "text": "Policy Center",
+        "url": "https://legal.applovin.com/en"
+      },
+      {
+        "text": "Terms of Use",
+        "url": "https://legal.applovin.com/en/terms/"
+      },
+      {
+        "text": "Publisher Policies",
+        "url": "https://legal.applovin.com/en/policies-publishers/"
+      },
+      {
+        "text": "Demand Partner Policies",
+        "url": "https://legal.applovin.com/en/policies-demand-partners/"
+      },
+      {
+        "text": "Platform Enforcement",
+        "url": "https://www.applovin.com/platform-enforcement/"
+      },
+      {
+        "text": "Privacy",
+        "url": "https://legal.applovin.com/en/privacy/"
+      },
+      {
+        "text": "Your Privacy Choices",
+        "url": "https://legal.applovin.com/en/multistate-privacy-notice/"
+      }
+    ],
+    "preview": "MONETIZE | Reporting APIs | User-Level Ad Revenue API | AppLovin | Support Center\nmenu\nsearch\n⌘ K\n​\nsearch\nlanguage\nlight_mode\nADVERTISE\nMONETIZE\nADVERTISE\nMONETIZE\nUser-Level Ad Revenue API\nUse this API to retrieve user-level revenue data.\nYou can retrieve this data aggregated for a particular user or with one row per impression.\nUser-level revenue data is available eight hours after UTC day end.\nFor example, data for UTC 2019‒01‒01 is available on UTC 2019‒01‒02 after 08:00.\nYou can share user-level and impression-level ad revenue data with your mobile measurement partner of choice, such as\nAdjust, AppsFlyer, GameAnalytics or Singular, for all supported networks\n.\nYou can also access impression-level user revenue data on the client side.\nYou can read more about this in SDK integration guides >\nPlatform\n> Overview > Advanced settings.\ninfo\nSee also\nHow to find your AppLovin SDK version\n.\nMAX posts data to a tracking URL of your choosing, whenever it records a MAX impression, with a Se"
+  },
+  {
+    "id": "adjust-s2s-revenue",
+    "url": "https://dev.adjust.com/en/api/s2s-api/ad-revenue",
+    "acquired_utc": "2026-11-20T04:44:50.281857+00:00",
+    "status": 200,
+    "final_url": "https://dev.adjust.com/en/api/s2s-api/ad-revenue",
+    "path": "lineage71/sources/adjust-s2s-revenue.raw",
+    "sha256": "aad80daefba86e0618bb41497daa8dad330eb3b2f5b53b2b3226fd64f07c0e38",
+    "bytes": 516448,
+    "content_type": "text/html; charset=utf-8",
+    "links": [
+      {
+        "text": "",
+        "url": "https://dev.adjust.com/en"
+      },
+      {
+        "text": "",
+        "url": "https://dev.adjust.com/en/search"
+      },
+      {
+        "text": "",
+        "url": "https://dev.adjust.com/en"
+      },
+      {
+        "text": "for Marketers",
+        "url": "https://help.adjust.com/en/marketer"
+      },
+      {
+        "text": "for Partners",
+        "url": "https://help.adjust.com/en/partner"
+      },
+      {
+        "text": "Search",
+        "url": "/en/search"
+      },
+      {
+        "text": "API documentation",
+        "url": "/en/api"
+      },
+      {
+        "text": "Report service API",
+        "url": "/en/api/rs-api"
+      },
+      {
+        "text": "Authentication",
+        "url": "/en/api/rs-api/authentication"
+      },
+      {
+        "text": "Filters data endpoint",
+        "url": "/en/api/rs-api/filters-data"
+      },
+      {
+        "text": "Events endpoint",
+        "url": "/en/api/rs-api/events"
+      },
+      {
+        "text": "Parquet report endpoint",
+        "url": "/en/api/rs-api/parquet"
+      },
+      {
+        "text": "JSON report endpoint",
+        "url": "/en/api/rs-api/reports"
+      },
+      {
+        "text": "CSV report endpoint",
+        "url": "/en/api/rs-api/csv"
+      },
+      {
+        "text": "Pivot report endpoint",
+        "url": "/en/api/rs-api/pivot"
+      },
+      {
+        "text": "Rate limits",
+        "url": "/en/api/rs-api/rate-limits"
+      },
+      {
+        "text": "Partner ad spend API",
+        "url": "/en/api/ad-spend-api"
+      },
+      {
+        "text": "Blocklist API",
+        "url": "/en/api/blocklist-api"
+      },
+      {
+        "text": "Campaign API",
+        "url": "/en/api/campaign-api"
+      },
+      {
+        "text": "App Automation API",
+        "url": "/en/api/app-automation-api"
+      },
+      {
+        "text": "App endpoint",
+        "url": "/en/api/app-automation-api/app-endpoint"
+      },
+      {
+        "text": "Channel setup",
+        "url": "/en/api/app-automation-api/channel-setup"
+      },
+      {
+        "text": "Status endpoint",
+        "url": "/en/api/app-automation-api/status-endpoint"
+      },
+      {
+        "text": "Events endpoint",
+        "url": "/en/api/app-automation-api/events-endpoint"
+      },
+      {
+        "text": "App settings endpoint",
+        "url": "/en/api/app-automation-api/app-settings-endpoint"
+      },
+      {
+        "text": "SDK secrets endpoint",
+        "url": "/en/api/app-automation-api/sdk-secrets-endpoint"
+      },
+      {
+        "text": "Vault endpoint",
+        "url": "/en/api/app-automation-api/vault-endpoint"
+      },
+      {
+        "text": "Device API",
+        "url": "/en/api/device-api"
+      },
+      {
+        "text": "S2S API",
+        "url": "/en/api/s2s-api"
+      },
+      {
+        "text": "S2S security",
+        "url": "/en/api/s2s-api/security"
+      },
+      {
+        "text": "S2S events",
+        "url": "/en/api/s2s-api/events"
+      },
+      {
+        "text": "S2S ad revenue",
+        "url": "/en/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "S2S sessions",
+        "url": "/en/api/s2s-api/sessions"
+      },
+      {
+        "text": "Transition SDK to S2S events",
+        "url": "/en/api/s2s-api/sdk-to-s2s-events"
+      },
+      {
+        "text": "S2S third-party sharing",
+        "url": "/en/api/s2s-api/s2s-third-party-sharing"
+      },
+      {
+        "text": "S2S developer guide",
+        "url": "/en/api/s2s-api/s2s-developer-guide"
+      },
+      {
+        "text": "Data erasure API",
+        "url": "/en/api/s2s-api/data-erasure-api"
+      },
+      {
+        "text": "TrueLink API (Deep Link Generator API)",
+        "url": "/en/api/deep-link-generator-api"
+      },
+      {
+        "text": "QR code generator API",
+        "url": "/en/api/deep-link-generator-api/qr-codes"
+      },
+      {
+        "text": "SDK documentation",
+        "url": "/en/sdk"
+      },
+      {
+        "text": "Android SDK",
+        "url": "/en/sdk/android/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/android/v4/configuration"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/android/v4/setup"
+      },
+      {
+        "text": "Multi-process apps",
+        "url": "/en/sdk/android/v4/setup/multi-process"
+      },
+      {
+        "text": "Adjust Store & Pre-Install Tool",
+        "url": "/en/sdk/android/v4/setup/preinstall-tool"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/android/v4/setup/preinstalled"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/android/v4/features"
+      },
+      {
+        "text": "Send ad revenue information",
+        "url": "/en/sdk/android/v4/features/ad-revenue"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/android/v4/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/android/v4/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/android/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/android/v4/features/events"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/android/v4/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/android/v4/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/android/v4/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/android/v4/features/deep-links/deferred"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/android/v4/features/deep-links/additional"
+      },
+      {
+        "text": "Privacy features",
+        "url": "/en/sdk/android/v4/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/android/v4/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/android/v4/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/android/v4/features/short-links"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/android/v4/features/subscriptions"
+      },
+      {
+        "text": "Uninstall and reinstall measurement",
+        "url": "/en/sdk/android/v4/features/uninstall-reinstall"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/android/v4/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/android/v4/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/android/v4/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/android/v4/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/android/v4/integrations/applovin"
+      },
+      {
+        "text": "Batch.com SDK integration",
+        "url": "/en/sdk/android/v4/integrations/batch"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/android/v4/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/android/v4/integrations/ironsource"
+      },
+      {
+        "text": "Mixpanel SDK integration",
+        "url": "/en/sdk/android/v4/integrations/mixpanel"
+      },
+      {
+        "text": "Retrieve Android certificate fingerprints",
+        "url": "/en/sdk/android/v4/integrations/retrieve-certificate-fingerprints"
+      },
+      {
+        "text": "Segment SDK integration",
+        "url": "/en/sdk/android/v4/integrations/segment"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/android/v4/integrations/signature-library"
+      },
+      {
+        "text": "TopOn SDK integration",
+        "url": "/en/sdk/android/v4/integrations/topon"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/android/v4/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/android/v4/plugins"
+      },
+      {
+        "text": "Criteo",
+        "url": "/en/sdk/android/v4/plugins/criteo"
+      },
+      {
+        "text": "Facebook pixel",
+        "url": "/en/sdk/android/v4/plugins/facebook-pixel"
+      },
+      {
+        "text": "Huawei Install Referrer",
+        "url": "/en/sdk/android/v4/plugins/huawei-referrer-plugin"
+      },
+      {
+        "text": "IMEI",
+        "url": "/en/sdk/android/v4/plugins/imei-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/android/v4/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "OAID",
+        "url": "/en/sdk/android/v4/plugins/oaid-plugin"
+      },
+      {
+        "text": "Samsung CloudDev SDK",
+        "url": "/en/sdk/android/v4/plugins/samsung-clouddev"
+      },
+      {
+        "text": "Samsung referrer",
+        "url": "/en/sdk/android/v4/plugins/samsung-referrer-plugin"
+      },
+      {
+        "text": "Sociomantic",
+        "url": "/en/sdk/android/v4/plugins/sociomantic"
+      },
+      {
+        "text": "Trademob",
+        "url": "/en/sdk/android/v4/plugins/trademob"
+      },
+      {
+        "text": "Vivo referrer",
+        "url": "/en/sdk/android/v4/plugins/vivo-referrer"
+      },
+      {
+        "text": "Xiaomi referrer",
+        "url": "/en/sdk/android/v4/plugins/xiaomi-referrer"
+      },
+      {
+        "text": "Android SDK",
+        "url": "/en/sdk/android"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/android/configuration"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/android/setup"
+      },
+      {
+        "text": "Multi-process apps",
+        "url": "/en/sdk/android/setup/multi-process"
+      },
+      {
+        "text": "Adjust Store & Pre-Install Tool",
+        "url": "/en/sdk/android/setup/preinstall-tool"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/android/setup/preinstalled"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/android/setup/store-type"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/android/features"
+      },
+      {
+        "text": "Send ad revenue information",
+        "url": "/en/sdk/android/features/ad-revenue"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/android/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/android/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/android/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/android/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/android/features/first-session-delay"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/android/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/android/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/android/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/android/features/deep-links/deferred"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/android/features/deep-links/additional"
+      },
+      {
+        "text": "Privacy features",
+        "url": "/en/sdk/android/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/android/features/purchase-verification"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/android/features/remote-trigger"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/android/features/session-parameters"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/android/features/subscriptions"
+      },
+      {
+        "text": "Uninstall and reinstall measurement",
+        "url": "/en/sdk/android/features/uninstall-reinstall"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/android/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/android/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/android/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/android/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/android/integrations/applovin"
+      },
+      {
+        "text": "Batch.com SDK integration",
+        "url": "/en/sdk/android/integrations/batch"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/android/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/android/integrations/ironsource"
+      },
+      {
+        "text": "Mixpanel SDK integration",
+        "url": "/en/sdk/android/integrations/mixpanel"
+      },
+      {
+        "text": "Retrieve Android certificate fingerprints",
+        "url": "/en/sdk/android/integrations/retrieve-certificate-fingerprints"
+      },
+      {
+        "text": "Segment SDK integration",
+        "url": "/en/sdk/android/integrations/segment"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/android/integrations/signature-library"
+      },
+      {
+        "text": "TopOn SDK integration",
+        "url": "/en/sdk/android/integrations/topon"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/android/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/android/plugins"
+      },
+      {
+        "text": "Criteo",
+        "url": "/en/sdk/android/plugins/criteo"
+      },
+      {
+        "text": "Facebook pixel",
+        "url": "/en/sdk/android/plugins/facebook-pixel"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/android/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Huawei Install Referrer",
+        "url": "/en/sdk/android/plugins/huawei-referrer-plugin"
+      },
+      {
+        "text": "IMEI",
+        "url": "/en/sdk/android/plugins/imei-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/android/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "OAID",
+        "url": "/en/sdk/android/plugins/oaid-plugin"
+      },
+      {
+        "text": "Samsung CloudDev SDK",
+        "url": "/en/sdk/android/plugins/samsung-clouddev"
+      },
+      {
+        "text": "Samsung referrer",
+        "url": "/en/sdk/android/plugins/samsung-referrer-plugin"
+      },
+      {
+        "text": "Sociomantic",
+        "url": "/en/sdk/android/plugins/sociomantic"
+      },
+      {
+        "text": "Trademob",
+        "url": "/en/sdk/android/plugins/trademob"
+      },
+      {
+        "text": "Vivo referrer",
+        "url": "/en/sdk/android/plugins/vivo-referrer"
+      },
+      {
+        "text": "Xiaomi referrer",
+        "url": "/en/sdk/android/plugins/xiaomi-referrer"
+      },
+      {
+        "text": "iOS SDK",
+        "url": "/en/sdk/ios/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/ios/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/ios/v4/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/ios/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/ios/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/ios/v4/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/ios/v4/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/ios/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/ios/v4/features/events"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/ios/v4/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/ios/v4/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/ios/v4/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/ios/v4/features/deep-links/deferred"
+      },
+      {
+        "text": "Link resolution",
+        "url": "/en/sdk/ios/v4/features/deep-links/resolution"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/ios/v4/features/deep-links/additional"
+      },
+      {
+        "text": "Test deep linking",
+        "url": "/en/sdk/ios/v4/features/deep-links/testing"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/ios/v4/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/ios/v4/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/ios/v4/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/ios/v4/features/session-parameters"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/ios/v4/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/ios/v4/features/subscriptions"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/ios/v4/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/applovin"
+      },
+      {
+        "text": "Batch.com SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/batch"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/ironsource"
+      },
+      {
+        "text": "Mixpanel SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/mixpanel"
+      },
+      {
+        "text": "Segment SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/segment"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/ios/v4/integrations/signature-library"
+      },
+      {
+        "text": "TopOn SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/topon"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/ios/v4/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/ios/v4/plugins"
+      },
+      {
+        "text": "Criteo",
+        "url": "/en/sdk/ios/v4/plugins/criteo"
+      },
+      {
+        "text": "Facebook pixel integration",
+        "url": "/en/sdk/ios/v4/plugins/facebook-pixel"
+      },
+      {
+        "text": "Sociomantic",
+        "url": "/en/sdk/ios/v4/plugins/sociomantic"
+      },
+      {
+        "text": "Trademob",
+        "url": "/en/sdk/ios/v4/plugins/trademob"
+      },
+      {
+        "text": "iOS SDK",
+        "url": "/en/sdk/ios"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/ios/configuration"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/ios/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/ios/setup/store-type"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/ios/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/ios/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/ios/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/ios/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/ios/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/ios/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/ios/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/ios/features/first-session-delay"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/ios/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/ios/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/ios/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/ios/features/deep-links/deferred"
+      },
+      {
+        "text": "Link resolution",
+        "url": "/en/sdk/ios/features/deep-links/resolution"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/ios/features/deep-links/additional"
+      },
+      {
+        "text": "Test deep linking",
+        "url": "/en/sdk/ios/features/deep-links/testing"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/ios/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/ios/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/ios/features/purchase-verification"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/ios/features/remote-trigger"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/ios/features/session-parameters"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/ios/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/ios/features/subscriptions"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/ios/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/ios/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/ios/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/ios/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/ios/integrations/applovin"
+      },
+      {
+        "text": "Batch.com SDK integration",
+        "url": "/en/sdk/ios/integrations/batch"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/ios/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/ios/integrations/ironsource"
+      },
+      {
+        "text": "Mixpanel SDK integration",
+        "url": "/en/sdk/ios/integrations/mixpanel"
+      },
+      {
+        "text": "Segment SDK integration",
+        "url": "/en/sdk/ios/integrations/segment"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/ios/integrations/signature-library"
+      },
+      {
+        "text": "Superwall SDK integration",
+        "url": "/en/sdk/ios/integrations/superwall"
+      },
+      {
+        "text": "TopOn SDK integration",
+        "url": "/en/sdk/ios/integrations/topon"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/ios/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/ios/plugins"
+      },
+      {
+        "text": "Criteo",
+        "url": "/en/sdk/ios/plugins/criteo"
+      },
+      {
+        "text": "Facebook pixel integration",
+        "url": "/en/sdk/ios/plugins/facebook-pixel"
+      },
+      {
+        "text": "Google On-device Conversion Measurement",
+        "url": "/en/sdk/ios/plugins/google-odm"
+      },
+      {
+        "text": "Sociomantic",
+        "url": "/en/sdk/ios/plugins/sociomantic"
+      },
+      {
+        "text": "Trademob",
+        "url": "/en/sdk/ios/plugins/trademob"
+      },
+      {
+        "text": "Unity SDK",
+        "url": "/en/sdk/unity/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/unity/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/unity/v4/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/unity/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/unity/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/unity/v4/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/unity/v4/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/unity/v4/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/unity/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/unity/v4/features/events"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/unity/v4/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/unity/v4/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/unity/v4/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/unity/v4/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/unity/v4/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/unity/v4/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/unity/v4/features/subscriptions"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/unity/v4/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/applovin"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/ironsource"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/unity/v4/integrations/signature-library"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/unity/v4/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/unity/v4/plugins"
+      },
+      {
+        "text": "IMEI plugin",
+        "url": "/en/sdk/unity/v4/plugins/imei"
+      },
+      {
+        "text": "OAID plugin",
+        "url": "/en/sdk/unity/v4/plugins/oaid"
+      },
+      {
+        "text": "Unity SDK",
+        "url": "/en/sdk/unity"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/unity/configuration"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/unity/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/unity/setup/store-type"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/unity/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/unity/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/unity/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/unity/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/unity/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/unity/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/unity/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/unity/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/unity/features/first-session-delay"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/unity/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/unity/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/unity/features/purchase-verification"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/unity/features/remote-trigger"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/unity/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/unity/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/unity/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/unity/features/subscriptions"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/unity/integrations"
+      },
+      {
+        "text": "Admob SDK integration",
+        "url": "/en/sdk/unity/integrations/admob"
+      },
+      {
+        "text": "Admost SDK integration",
+        "url": "/en/sdk/unity/integrations/admost"
+      },
+      {
+        "text": "AD(X) SDK integration",
+        "url": "/en/sdk/unity/integrations/adx"
+      },
+      {
+        "text": "AppLovin MAX SDK integration",
+        "url": "/en/sdk/unity/integrations/applovin"
+      },
+      {
+        "text": "Helium by Chartboost SDK integration",
+        "url": "/en/sdk/unity/integrations/helium"
+      },
+      {
+        "text": "Unity LevelPlay (IronSource) SDK integration",
+        "url": "/en/sdk/unity/integrations/ironsource"
+      },
+      {
+        "text": "SDK Signature library integration",
+        "url": "/en/sdk/unity/integrations/signature-library"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/unity/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/unity/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/unity/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Google On-device Conversion Measurement",
+        "url": "/en/sdk/unity/plugins/google-odm"
+      },
+      {
+        "text": "IMEI plugin",
+        "url": "/en/sdk/unity/plugins/imei"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/unity/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "OAID plugin",
+        "url": "/en/sdk/unity/plugins/oaid"
+      },
+      {
+        "text": "Flutter SDK",
+        "url": "/en/sdk/flutter/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/flutter/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/flutter/v4/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/flutter/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/flutter/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/flutter/v4/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/flutter/v4/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/flutter/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/flutter/v4/features/events"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/flutter/v4/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/flutter/v4/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/flutter/v4/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/flutter/v4/features/deep-links/deferred"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/flutter/v4/features/deep-links/additional"
+      },
+      {
+        "text": "Test deep linking",
+        "url": "/en/sdk/flutter/v4/features/deep-links/testing"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/flutter/v4/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/flutter/v4/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/flutter/v4/features/purchase-verification"
+      },
+      {
+        "text": "Configure session parameters",
+        "url": "/en/sdk/flutter/v4/features/session-parameters"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/flutter/v4/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/flutter/v4/features/subscriptions"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/flutter/v4/integrations"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/flutter/v4/integrations/tradplus"
+      },
+      {
+        "text": "Flutter SDK",
+        "url": "/en/sdk/flutter"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/flutter/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/flutter/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/flutter/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/flutter/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/flutter/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/flutter/features/callbacks"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/flutter/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/flutter/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/flutter/features/first-session-delay"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/flutter/features/deep-links"
+      },
+      {
+        "text": "Configure deep link settings",
+        "url": "/en/sdk/flutter/features/deep-links/configure-deep-link-settings"
+      },
+      {
+        "text": "Set up direct deep linking",
+        "url": "/en/sdk/flutter/features/deep-links/direct"
+      },
+      {
+        "text": "Set up deferred deep linking",
+        "url": "/en/sdk/flutter/features/deep-links/deferred"
+      },
+      {
+        "text": "Additional deep link features",
+        "url": "/en/sdk/flutter/features/deep-links/additional"
+      },
+      {
+        "text": "Test deep linking",
+        "url": "/en/sdk/flutter/features/deep-links/testing"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/flutter/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/flutter/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/flutter/features/purchase-verification"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/flutter/features/remote-trigger"
+      },
+      {
+        "text": "Configure session parameters",
+        "url": "/en/sdk/flutter/features/session-parameters"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/flutter/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/flutter/features/subscriptions"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/flutter/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/flutter/setup/store-type"
+      },
+      {
+        "text": "Integrations",
+        "url": "/en/sdk/flutter/integrations"
+      },
+      {
+        "text": "Braze SDK integration",
+        "url": "/en/sdk/flutter/integrations/braze"
+      },
+      {
+        "text": "TradPlus SDK integration",
+        "url": "/en/sdk/flutter/integrations/tradplus"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/flutter/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/flutter/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Google On-device Conversion Measurement",
+        "url": "/en/sdk/flutter/plugins/google-odm"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/flutter/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "React Native SDK",
+        "url": "/en/sdk/react-native/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/react-native/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/react-native/v4/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/react-native/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/react-native/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/react-native/v4/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/react-native/v4/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/react-native/v4/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/react-native/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/react-native/v4/features/events"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/react-native/v4/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/react-native/v4/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/react-native/v4/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/react-native/v4/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/react-native/v4/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/react-native/v4/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/react-native/v4/features/subscriptions"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/react-native/v4/plugins"
+      },
+      {
+        "text": "OAID plugin",
+        "url": "/en/sdk/react-native/v4/plugins/oaid"
+      },
+      {
+        "text": "React Native SDK",
+        "url": "/en/sdk/react-native"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/react-native/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/react-native/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/react-native/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/react-native/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/react-native/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/react-native/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/react-native/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/react-native/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/react-native/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/react-native/features/first-session-delay"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/react-native/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/react-native/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/react-native/features/purchase-verification"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/react-native/features/remote-trigger"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/react-native/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/react-native/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/react-native/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/react-native/features/subscriptions"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/react-native/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/react-native/setup/store-type"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/react-native/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/react-native/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Google On-device Conversion Measurement",
+        "url": "/en/sdk/react-native/plugins/google-odm"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/react-native/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "OAID plugin",
+        "url": "/en/sdk/react-native/plugins/oaid"
+      },
+      {
+        "text": "Cordova SDK",
+        "url": "/en/sdk/cordova/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/cordova/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/cordova/v4/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/cordova/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/cordova/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/cordova/v4/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/cordova/v4/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/cordova/v4/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/cordova/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/cordova/v4/features/events"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/cordova/v4/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/cordova/v4/features/privacy"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/cordova/v4/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/cordova/v4/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/cordova/v4/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/cordova/v4/features/subscriptions"
+      },
+      {
+        "text": "Cordova SDK",
+        "url": "/en/sdk/cordova"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/cordova/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/cordova/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/cordova/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/cordova/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/cordova/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/cordova/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/cordova/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/cordova/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/cordova/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/cordova/features/first-session-delay"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/cordova/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/cordova/features/privacy"
+      },
+      {
+        "text": "Remote Trigger Callback",
+        "url": "/en/sdk/cordova/features/remote-trigger"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/cordova/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/cordova/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/cordova/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/cordova/features/subscriptions"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/cordova/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/cordova/setup/store-type"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/cordova/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/cordova/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/cordova/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "Cocos2d-x SDK",
+        "url": "/en/sdk/cocos2dx/v4"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/cocos2dx/v4/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/cocos2dx/v4/features"
+      },
+      {
+        "text": "Send ad revenue information",
+        "url": "/en/sdk/cocos2dx/v4/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/cocos2dx/v4/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/cocos2dx/v4/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/cocos2dx/v4/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/cocos2dx/v4/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/cocos2dx/v4/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/cocos2dx/v4/features/events"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/cocos2dx/v4/features/privacy"
+      },
+      {
+        "text": "Configure session parameters",
+        "url": "/en/sdk/cocos2dx/v4/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/cocos2dx/v4/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/cocos2dx/v4/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/cocos2dx/v4/features/subscriptions"
+      },
+      {
+        "text": "Cocos2d-x SDK",
+        "url": "/en/sdk/cocos2dx"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/cocos2dx/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/cocos2dx/features"
+      },
+      {
+        "text": "Send ad revenue information",
+        "url": "/en/sdk/cocos2dx/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/cocos2dx/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/cocos2dx/features/attribution"
+      },
+      {
+        "text": "Send callback information",
+        "url": "/en/sdk/cocos2dx/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/cocos2dx/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/cocos2dx/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/cocos2dx/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/cocos2dx/features/first-session-delay"
+      },
+      {
+        "text": "Configure global parameters",
+        "url": "/en/sdk/cocos2dx/features/session-parameters"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/cocos2dx/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/cocos2dx/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/cocos2dx/features/purchase-verification"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/cocos2dx/features/short-links"
+      },
+      {
+        "text": "Set up SKAN and conversion values",
+        "url": "/en/sdk/cocos2dx/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/cocos2dx/features/subscriptions"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/cocos2dx/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/cocos2dx/setup/store-type"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/cocos2dx/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/cocos2dx/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/cocos2dx/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "MAUI SDK",
+        "url": "/en/sdk/maui"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/maui/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/maui/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/maui/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/maui/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/maui/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/maui/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/maui/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/maui/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/maui/features/events"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/maui/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/maui/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/maui/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/maui/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/maui/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/maui/features/skad"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/maui/features/subscriptions"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/maui/features/first-session-delay"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/maui/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/maui/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/maui/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "OAID plugin",
+        "url": "/en/sdk/maui/plugins/oaid"
+      },
+      {
+        "text": "Corona SDK",
+        "url": "/en/sdk/corona"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/corona/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/corona/features"
+      },
+      {
+        "text": "Record ad revenue information",
+        "url": "/en/sdk/corona/features/ad-revenue"
+      },
+      {
+        "text": "Set up App Tracking Transparency",
+        "url": "/en/sdk/corona/features/att"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/corona/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/corona/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/corona/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/corona/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/corona/features/events"
+      },
+      {
+        "text": "First session delay",
+        "url": "/en/sdk/corona/features/first-session-delay"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/corona/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/corona/features/privacy"
+      },
+      {
+        "text": "Purchase verification",
+        "url": "/en/sdk/corona/features/purchase-verification"
+      },
+      {
+        "text": "Configure callback parameters",
+        "url": "/en/sdk/corona/features/session-parameters"
+      },
+      {
+        "text": "Resolve short branded links",
+        "url": "/en/sdk/corona/features/short-links"
+      },
+      {
+        "text": "Set up SKAdNetwork and conversion values",
+        "url": "/en/sdk/corona/features/skan"
+      },
+      {
+        "text": "Send subscription information",
+        "url": "/en/sdk/corona/features/subscriptions"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/corona/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/corona/setup/store-type"
+      },
+      {
+        "text": "Plugins",
+        "url": "/en/sdk/corona/plugins"
+      },
+      {
+        "text": "Google LVL (License Verification Library)",
+        "url": "/en/sdk/corona/plugins/google-lvl-plugin"
+      },
+      {
+        "text": "Meta Install Referrer",
+        "url": "/en/sdk/corona/plugins/meta-referrer-plugin"
+      },
+      {
+        "text": "Web SDK",
+        "url": "/en/sdk/web"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/web/configuration"
+      },
+      {
+        "text": "Optional setup",
+        "url": "/en/sdk/web/setup"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/web/setup/store-type"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/web/features"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/web/features/attribution"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/web/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/web/features/events"
+      },
+      {
+        "text": "Set up global parameters",
+        "url": "/en/sdk/web/features/global-params"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/web/features/privacy"
+      },
+      {
+        "text": "Google Tag Manager integration",
+        "url": "/en/sdk/web/google-tag-manager-integration"
+      },
+      {
+        "text": "Smart Banner SDK",
+        "url": "/en/sdk/smart-banner"
+      },
+      {
+        "text": "Initialization options",
+        "url": "/en/sdk/smart-banner/init-options"
+      },
+      {
+        "text": "Show and hide",
+        "url": "/en/sdk/smart-banner/show-hide"
+      },
+      {
+        "text": "Dynamic deep links",
+        "url": "/en/sdk/smart-banner/deep-linking"
+      },
+      {
+        "text": "Platform integrations",
+        "url": "/en/sdk/smart-banner/integrations"
+      },
+      {
+        "text": "Adobe launch",
+        "url": "/en/sdk/smart-banner/integrations/adobe-launch"
+      },
+      {
+        "text": "Shopify",
+        "url": "/en/sdk/smart-banner/integrations/shopify"
+      },
+      {
+        "text": "Google Tag Manager",
+        "url": "/en/sdk/smart-banner/integrations/google-tag-manager"
+      },
+      {
+        "text": "Windows SDK",
+        "url": "/en/sdk/windows"
+      },
+      {
+        "text": "Configuration",
+        "url": "/en/sdk/windows/configuration"
+      },
+      {
+        "text": "Features",
+        "url": "/en/sdk/windows/features"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/windows/features/attribution"
+      },
+      {
+        "text": "Set up callbacks",
+        "url": "/en/sdk/windows/features/callbacks"
+      },
+      {
+        "text": "Deep linking",
+        "url": "/en/sdk/windows/features/deep-links"
+      },
+      {
+        "text": "Get device information",
+        "url": "/en/sdk/windows/features/device-info"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/windows/features/events"
+      },
+      {
+        "text": "Send preinstalled app activity",
+        "url": "/en/sdk/windows/features/preinstalled"
+      },
+      {
+        "text": "Set up privacy features",
+        "url": "/en/sdk/windows/features/privacy"
+      },
+      {
+        "text": "Configure session parameters",
+        "url": "/en/sdk/windows/features/session-parameters"
+      },
+      {
+        "text": "Steamworks SDK",
+        "url": "/en/sdk/steamworks"
+      },
+      {
+        "text": "Unity Steam",
+        "url": "/en/sdk/steamworks/unity"
+      },
+      {
+        "text": "Adobe Experience Extension",
+        "url": "/en/sdk/adobe-extension"
+      },
+      {
+        "text": "iOS",
+        "url": "/en/sdk/adobe-extension/ios"
+      },
+      {
+        "text": "Integration guide",
+        "url": "/en/sdk/adobe-extension/ios/integration"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/adobe-extension/ios/attribution"
+      },
+      {
+        "text": "Configure preinstalled app",
+        "url": "/en/sdk/adobe-extension/ios/preinstalled"
+      },
+      {
+        "text": "Configure external device ID",
+        "url": "/en/sdk/adobe-extension/ios/external-device-id"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/adobe-extension/ios/events"
+      },
+      {
+        "text": "Set up deep linking",
+        "url": "/en/sdk/adobe-extension/ios/deep-linking"
+      },
+      {
+        "text": "Set up global parameters",
+        "url": "/en/sdk/adobe-extension/ios/global-parameters"
+      },
+      {
+        "text": "Send push tokens",
+        "url": "/en/sdk/adobe-extension/ios/push-tokens"
+      },
+      {
+        "text": "Example",
+        "url": "/en/sdk/adobe-extension/ios/example"
+      },
+      {
+        "text": "Android",
+        "url": "/en/sdk/adobe-extension/android"
+      },
+      {
+        "text": "Integration guide",
+        "url": "/en/sdk/adobe-extension/android/integration"
+      },
+      {
+        "text": "Get attribution information",
+        "url": "/en/sdk/adobe-extension/android/attribution"
+      },
+      {
+        "text": "Configure preinstalled app",
+        "url": "/en/sdk/adobe-extension/android/preinstalled"
+      },
+      {
+        "text": "Configure external device ID",
+        "url": "/en/sdk/adobe-extension/android/external-device-id"
+      },
+      {
+        "text": "Send event information",
+        "url": "/en/sdk/adobe-extension/android/events"
+      },
+      {
+        "text": "Set up deep linking",
+        "url": "/en/sdk/adobe-extension/android/deep-linking"
+      },
+      {
+        "text": "Set up global parameters",
+        "url": "/en/sdk/adobe-extension/android/global-parameters"
+      },
+      {
+        "text": "Send push tokens",
+        "url": "/en/sdk/adobe-extension/android/push-tokens"
+      },
+      {
+        "text": "Example",
+        "url": "/en/sdk/adobe-extension/android/example"
+      },
+      {
+        "text": "Testing guide",
+        "url": "/en/sdk/testing"
+      },
+      {
+        "text": "Install recording",
+        "url": "/en/sdk/testing/install-recording"
+      },
+      {
+        "text": "Event recording",
+        "url": "/en/sdk/testing/event-recording"
+      },
+      {
+        "text": "Subscription recording",
+        "url": "/en/sdk/testing/subscription-recording"
+      },
+      {
+        "text": "Device API",
+        "url": "/en/sdk/testing/device-api"
+      },
+      {
+        "text": "Migration guides",
+        "url": "/en/sdk/migration"
+      },
+      {
+        "text": "Android",
+        "url": "/en/sdk/migration/android"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/android/v4-to-v5"
+      },
+      {
+        "text": "Web bridge v5",
+        "url": "/en/sdk/migration/android/web-v4-to-v5"
+      },
+      {
+        "text": "v5 purchase verification",
+        "url": "/en/sdk/migration/android/v5-purchase-verification"
+      },
+      {
+        "text": "iOS",
+        "url": "/en/sdk/migration/ios"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/ios/v4-to-v5"
+      },
+      {
+        "text": "Web bridge v5",
+        "url": "/en/sdk/migration/ios/web-v4-to-v5"
+      },
+      {
+        "text": "v5 purchase verification",
+        "url": "/en/sdk/migration/ios/v5-purchase-verification"
+      },
+      {
+        "text": "Unity",
+        "url": "/en/sdk/migration/unity"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/unity/v4-to-v5"
+      },
+      {
+        "text": "v5 purchase verification",
+        "url": "/en/sdk/migration/unity/v5-purchase-verification"
+      },
+      {
+        "text": "React Native",
+        "url": "/en/sdk/migration/react-native"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/react-native/v4-to-v5"
+      },
+      {
+        "text": "Cordova",
+        "url": "/en/sdk/migration/cordova"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/cordova/v4-to-v5"
+      },
+      {
+        "text": "Flutter",
+        "url": "/en/sdk/migration/flutter"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/flutter/v4-to-v5"
+      },
+      {
+        "text": "Cocos2d-x",
+        "url": "/en/sdk/migration/cocos2dx"
+      },
+      {
+        "text": "SDK v5 migration guide",
+        "url": "/en/sdk/migration/cocos2dx/v4-to-v5"
+      },
+      {
+        "text": "Adobe Extension",
+        "url": "/en/sdk/migration/adobe-extension"
+      },
+      {
+        "text": "iOS v3 migration guide",
+        "url": "/en/sdk/migration/adobe-extension/ios"
+      },
+      {
+        "text": "Android v3 migration guide",
+        "url": "/en/sdk/migration/adobe-extension/android"
+      },
+      {
+        "text": "Apps for children",
+        "url": "/en/sdk/apps-for-children"
+      },
+      {
+        "text": "Store Type",
+        "url": "/en/sdk/maui/setup/store-type"
+      },
+      {
+        "text": "English",
+        "url": "/en/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "中文",
+        "url": "/zh/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "日本語",
+        "url": "/ja/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "한국어",
+        "url": "/ko/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "API documentation",
+        "url": "/en/api"
+      },
+      {
+        "text": "S2S API",
+        "url": "/en/api/s2s-api"
+      },
+      {
+        "text": "Server-to-server (S2S) ad revenue",
+        "url": "/en/api/s2s-api/ad-revenue"
+      },
+      {
+        "text": "Before you begin",
+        "url": "#before-you-begin"
+      },
+      {
+        "text": "Availability",
+        "url": "#availability"
+      },
+      {
+        "text": "Send S2S ad revenue",
+        "url": "#send-s2s-ad-revenue"
+      },
+      {
+        "text": "Set up S2S Security",
+        "url": "#set-up-s2s-security"
+      },
+      {
+        "text": "Required parameters",
+        "url": "#required-parameters"
+      },
+      {
+        "text": "Recommended additional parameters for callbacks",
+        "url": "#recommended-additional-parameters-for-callbacks"
+      },
+      {
+        "text": "Example",
+        "url": "#example"
+      },
+      {
+        "text": "Before you begin",
+        "url": "#before-you-begin"
+      },
+      {
+        "text": "Availability",
+        "url": "#availability"
+      },
+      {
+        "text": "Send S2S ad revenue",
+        "url": "#send-s2s-ad-revenue"
+      },
+      {
+        "text": "Set up S2S Security",
+        "url": "#set-up-s2s-security"
+      },
+      {
+        "text": "Required parameters",
+        "url": "#required-parameters"
+      },
+      {
+        "text": "Recommended additional parameters for callbacks",
+        "url": "#recommended-additional-parameters-for-callbacks"
+      },
+      {
+        "text": "Example",
+        "url": "#example"
+      },
+      {
+        "text": "",
+        "url": "#before-you-begin"
+      },
+      {
+        "text": "",
+        "url": "#availability"
+      },
+      {
+        "text": "",
+        "url": "#send-s2s-ad-revenue"
+      },
+      {
+        "text": "",
+        "url": "#set-up-s2s-security"
+      },
+      {
+        "text": "S2S Security article",
+        "url": "/en/api/s2s-api/security"
+      },
+      {
+        "text": "",
+        "url": "#required-parameters"
+      },
+      {
+        "text": "See full list",
+        "url": "https://help.adjust.com/en/article/server-to-server-events#accepted-identifiers"
+      },
+      {
+        "text": "",
+        "url": "#recommended-additional-parameters-for-callbacks"
+      },
+      {
+        "text": "",
+        "url": "#example"
+      },
+      {
+        "text": "Contact Us",
+        "url": "https://help.adjust.com/en/support"
+      },
+      {
+        "text": "About Us",
+        "url": "https://www.adjust.com/company/"
+      },
+      {
+        "text": "Security",
+        "url": "https://www.adjust.com/security/"
+      },
+      {
+        "text": "Privacy Policy",
+        "url": "https://www.adjust.com/terms/privacy-policy/"
+      },
+      {
+        "text": "Terms & Conditions",
+        "url": "https://www.adjust.com/terms/general-terms-and-conditions/"
+      },
+      {
+        "text": "CCPA & GDPR",
+        "url": "https://www.adjust.com/terms/ccpa/"
+      },
+      {
+        "text": "Legal Notice",
+        "url": "https://www.adjust.com/terms/impressum/"
+      },
+      {
+        "text": "",
+        "url": "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzODg5ODQwMg=="
+      },
+      {
+        "text": "",
+        "url": "https://www.facebook.com/adjustcom"
+      },
+      {
+        "text": "",
+        "url": "https://twitter.com/adjustcom"
+      },
+      {
+        "text": "",
+        "url": "https://www.instagram.com/adjustcom/"
+      },
+      {
+        "text": "",
+        "url": "https://www.linkedin.com/company/adjustcom/"
+      },
+      {
+        "text": "",
+        "url": "https://www.youtube.com/channel/UCLxY21pzKyjTuODjUytJIsA"
+      },
+      {
+        "text": "Before you begin",
+        "url": "#before-you-begin"
+      },
+      {
+        "text": "Availability",
+        "url": "#availability"
+      },
+      {
+        "text": "Send S2S ad revenue",
+        "url": "#send-s2s-ad-revenue"
+      },
+      {
+        "text": "Set up S2S Security",
+        "url": "#set-up-s2s-security"
+      },
+      {
+        "text": "Required parameters",
+        "url": "#required-parameters"
+      },
+      {
+        "text": "Recommended additional parameters for callbacks",
+        "url": "#recommended-additional-parameters-for-callbacks"
+      },
+      {
+        "text": "Example",
+        "url": "#example"
+      }
+    ],
+    "preview": "Server-to-server (S2S) ad revenue | Adjust Developer Hub\nToggle sidebar\nfor Developers\nfor Marketers\nfor Partners\nSearch\nAPI documentation\nReport service API\nAuthentication\nFilters data endpoint\nEvents endpoint\nParquet report endpoint\nJSON report endpoint\nCSV report endpoint\nPivot report endpoint\nRate limits\nPartner ad spend API\nBlocklist API\nCampaign API\nApp Automation API\nApp endpoint\nChannel setup\nStatus endpoint\nEvents endpoint\nApp settings endpoint\nSDK secrets endpoint\nVault endpoint\nDevice API\nS2S API\nS2S security\nS2S events\nS2S ad revenue\nS2S sessions\nTransition SDK to S2S events\nS2S third-party sharing\nS2S developer guide\nData erasure API\nTrueLink API (Deep Link Generator API)\nQR code generator API\nSDK documentation\nAndroid SDK\nConfiguration\nOptional setup\nMulti-process apps\nAdjust Store & Pre-Install Tool\nSend preinstalled app activity\nFeatures\nSend ad revenue information\nGet attribution information\nSend callback information\nGet device information\nSend event information\nDeep l"
+  }
+]

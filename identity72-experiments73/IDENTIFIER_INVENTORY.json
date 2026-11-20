@@ -1,0 +1,710 @@
+[
+  {
+    "field": "GAID/AAID/IDFA",
+    "kind": "设备广告标识",
+    "producer": "OS广告标识服务",
+    "reader": "获准SDK；MAX与Unity代码各自读取",
+    "upload_and_destination": "MAX逻辑device payload/Unity privacy payload；实际上传未观测",
+    "lifecycle_reset": "可由用户/OS删除或重置；IDFA受ATT及可用值限制",
+    "cross_app_scope": "同设备可为允许的SDK提供共同广告键；非永久/跨设备个人ID",
+    "privacy_conditions": "OS政策、用户选择、同意、隐私门控；不能绕过禁用",
+    "association_contract": [
+      "同请求共同出现支持可join候选；不证明服务端匹配成功"
+    ],
+    "evidence_ids": [
+      "IG72C01",
+      "IG72C04",
+      "IG72C27",
+      "CGS10"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Android ID",
+    "kind": "平台上下文标识",
+    "producer": "Android scoped system identity",
+    "reader": "部分MMP；本轮不重新分析所有vendor",
+    "upload_and_destination": "Adjust已核验条件fallback请求字段；非所有SDK必采",
+    "lifecycle_reset": "受设备用户、签名/应用作用域、重置等平台规则",
+    "cross_app_scope": "不能当所有发行商共享的全球设备键",
+    "privacy_conditions": "平台权限/政策和SDK配置",
+    "association_contract": "字段存在不证明跨网络映射",
+    "evidence_ids": [
+      "L71D01"
+    ],
+    "evidence_stages": [
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "IDFV",
+    "kind": "vendor级设备标识",
+    "producer": "Apple OS",
+    "reader": "对应vendor app/获准SDK",
+    "upload_and_destination": "CAPI可接受、Unity相关字段可选；非Android SDK实测",
+    "lifecycle_reset": "vendor app卸载/重装等平台条件影响",
+    "cross_app_scope": "同vendor同设备，不等于同人其他设备",
+    "privacy_conditions": "平台及用途授权；不能代替跨vendor广告同意",
+    "association_contract": "不得与Unity engine installation ID强行等同",
+    "evidence_ids": [
+      "IG72S06"
+    ],
+    "evidence_stages": [
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "App Set ID",
+    "kind": "开发者集合标识",
+    "producer": "Google Play services",
+    "reader": "MAX/Axon；Unity条件字段",
+    "upload_and_destination": "MAX app_set_id+scope等请求上下文；Unity privacy payload",
+    "lifecycle_reset": "13个月未访问、最后app卸载等；具体scope依安装来源",
+    "cross_app_scope": "可同开发者集合/同设备；不是跨所有App",
+    "privacy_conditions": "使用政策和SDK配置；非用于绕过广告ID限制",
+    "association_contract": "SDK返回scope与ID一起解释",
+    "evidence_ids": [
+      "IG72C02",
+      "IG72C03",
+      "IG72C09",
+      "IG72C27",
+      "IG72S01"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Installation ID / Engine Installation ID",
+    "kind": "安装身份",
+    "producer": "Unity Core提供者/Engine桥接",
+    "reader": "UGS Analytics/IAP消费者",
+    "upload_and_destination": "Analytics标准字段及Insights身份打包",
+    "lifecycle_reset": "本地持久化/重装/提供者原生实现边界见53号",
+    "cross_app_scope": "接口同名不证明跨App相等",
+    "privacy_conditions": "项目/服务初始化、同意与允许列表",
+    "association_contract": "相同provider与存储需逐条证实；不等于PlayerId",
+    "evidence_ids": [
+      "C53S05",
+      "C53S12",
+      "C53S18",
+      "C53S19"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Firebase FID",
+    "kind": "安装身份",
+    "producer": "Firebase Installations",
+    "reader": "Unity可选反射/SDK消费者",
+    "upload_and_destination": "隐私允许时可能进入Unity相关请求/IAP身份包",
+    "lifecycle_reset": "安装/应用实例及删除API影响",
+    "cross_app_scope": "项目/安装作用域；不是Analytics App Instance ID",
+    "privacy_conditions": "同意、SDK依赖、允许列表",
+    "association_contract": "仅明确赋值桥；不按Firebase名称合并",
+    "evidence_ids": [
+      "XS01",
+      "CGS10"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Firebase Analytics App Instance ID",
+    "kind": "分析实例",
+    "producer": "Firebase Analytics",
+    "reader": "Analytics和明确集成消费者",
+    "upload_and_destination": "分析事件/部分IAP桥接；实际后台未知",
+    "lifecycle_reset": "重置analytics/实例条件；非FID同义词",
+    "cross_app_scope": "应用实例；账户跨设备须另设user_id",
+    "privacy_conditions": "分析同意；不得用户重识别",
+    "association_contract": "FirebaseApp options.ApplicationId是项目上下文，不是本字段",
+    "evidence_ids": [
+      "XS41",
+      "IG72S13"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Customer/Publisher User ID",
+    "kind": "业务指定账号或本地键",
+    "producer": "开发者业务代码",
+    "reader": "MAX、MMP或分析SDK setter",
+    "upload_and_destination": "MAX用户上下文；MMP额外/用户字段；配置门控",
+    "lifecycle_reset": "账号生命周期/本地GUID/注销依调用者",
+    "cross_app_scope": "只有同namespace合法稳定账号才可能跨设备；本地GUID不够",
+    "privacy_conditions": "开发者声明、同意、项目/伙伴配置",
+    "association_contract": "四游戏已证的局部同源键不等于全平台账号",
+    "evidence_ids": [
+      "IG72C08",
+      "L71D01",
+      "L71C01"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "External User ID",
+    "kind": "业务身份",
+    "producer": "游戏/UnityEngine可选原生userId",
+    "reader": "Core→Analytics/IAP",
+    "upload_and_destination": "Analytics优先外部userID；IAP独立打包",
+    "lifecycle_reset": "原生桥接或内存fallback；解绑/重置由调用者",
+    "cross_app_scope": "无默认跨App契约",
+    "privacy_conditions": "SDK初始化、同意/allowlist",
+    "association_contract": "不等于UGS PlayerId或广告ID",
+    "evidence_ids": [
+      "C53S05",
+      "XS06",
+      "XS19"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "UGS Player ID",
+    "kind": "项目玩家身份",
+    "producer": "认证服务token.subject",
+    "reader": "Auth PlayerId组件及消费者",
+    "upload_and_destination": "认证上下文；Analytics/IAP可读取",
+    "lifecycle_reset": "登录/退出clearCredentials/profile切换影响",
+    "cross_app_scope": "项目级PlayerId；跨项目需外部账号/组织契约",
+    "privacy_conditions": "登录授权及服务配置",
+    "association_contract": "token Subject明确赋值；非Engine ID",
+    "evidence_ids": [
+      "IG72C28",
+      "C53S16",
+      "C53S17"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "UPA组织级账户ID / Login ID",
+    "kind": "账户身份",
+    "producer": "Unity Player Accounts认证服务",
+    "reader": "OAuth client/UGS登录链接消费者",
+    "upload_and_destination": "OAuth token claims→link/login→UGS项目玩家",
+    "lifecycle_reset": "账户、外部身份link/unlink、注销/删除",
+    "cross_app_scope": "官方组织跨游戏/设备契约；非全发行商广告身份",
+    "privacy_conditions": "用户登录、组织/项目配置、账号隐私和删除流程",
+    "association_contract": "账户图谱E4；未证UPA→RampID或Vector",
+    "evidence_ids": [
+      "IG72C10",
+      "IG72C11",
+      "IG72C12",
+      "IG72C13",
+      "IG72C14",
+      "IG72S02",
+      "IG72S03"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3",
+      "E4"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Hashed email / hashed phone",
+    "kind": "伪名化联系方式",
+    "producer": "业务输入→规范化/hash；Pixel可条件收集",
+    "reader": "MAX/Axon UserData、Pixel/CAPI",
+    "upload_and_destination": "request user_data/事件payload；CAPI官方接收字段",
+    "lifecycle_reset": "账户/联系方式可变；hash不具自动删除语义",
+    "cross_app_scope": "可作为确定性候选；namespace/算法/服务匹配需契约",
+    "privacy_conditions": "真实授权、hash规范；哈希不等于匿名",
+    "association_contract": "SDK归一化不是已建跨设备图谱",
+    "evidence_ids": [
+      "IG72C06",
+      "IG72C20",
+      "IG72P04",
+      "IG72P05",
+      "IG72P06",
+      "IG72S06"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "IP/IPv6",
+    "kind": "网络环境",
+    "producer": "网络连接/业务CAPI入参或传输层可见",
+    "reader": "接收服务器；部分协议字段",
+    "upload_and_destination": "CAPI允许client_ip；网络传输IP不需SDK显式读取",
+    "lifecycle_reset": "随网络/VPN/NAT改变；可能多人共享",
+    "cross_app_scope": "不是设备或个人唯一键；家庭推断需额外证据",
+    "privacy_conditions": "合法处理目的及共享范围",
+    "association_contract": "IP相同只能环境相似，不证明确定性匹配",
+    "evidence_ids": [
+      "IG72S06",
+      "L71D01"
+    ],
+    "evidence_stages": [
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Device model",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "OS version",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Language",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Timezone",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Network type",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "App version",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Carrier/MCC/MNC",
+    "kind": "环境/上下文",
+    "producer": "OS/应用/网络API",
+    "reader": "广告SDK/MMP选择字段",
+    "upload_and_destination": "已有device/app payload与MMP context；逐vendor实际发送未知",
+    "lifecycle_reset": "随系统/应用/网络变化",
+    "cross_app_scope": "非唯一；组合可能增加可识别性但不证明fingerprint模型",
+    "privacy_conditions": "SDK配置、最小化和隐私条件",
+    "association_contract": "共同出现不等于服务器概率匹配已运行",
+    "evidence_ids": [
+      "IG72C04",
+      "IG72C05",
+      "L71D01",
+      "L71C09"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Device fingerprint",
+    "kind": "推断性派生标识",
+    "producer": "若平台存在需服务端算法/契约",
+    "reader": "未知",
+    "upload_and_destination": "未恢复完整生产指纹构造或图谱输出",
+    "lifecycle_reset": "未知",
+    "cross_app_scope": "不能仅凭多个设备字段声称生成了指纹",
+    "privacy_conditions": "不得绕过重置、同意或反跟踪",
+    "association_contract": "将上下文与概率匹配候选区分",
+    "evidence_ids": [
+      "IG72C04",
+      "CGS51"
+    ],
+    "evidence_stages": [],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Advertising token / HeaderBiddingToken",
+    "kind": "广告信号封包",
+    "producer": "Unity Token builder",
+    "reader": "适配器/mediation/网关",
+    "upload_and_destination": "opaque token作为竞价信号",
+    "lifecycle_reset": "缓存TTL/生成时刻/格式配置",
+    "cross_app_scope": "广告请求上下文，不是跨设备用户主键",
+    "privacy_conditions": "SDK隐私门控/配置",
+    "association_contract": "不能把未解码token当特征清单",
+    "evidence_ids": [
+      "CGS01",
+      "CGS02"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "MAX request/event/waterfall ID",
+    "kind": "广告生命周期",
+    "producer": "响应event_id→T()/waterfall/下一请求",
+    "reader": "MAX对象/遥测/条件收入广播",
+    "upload_and_destination": "基础广播id可被overlay覆盖；S2S另有EVENT_ID",
+    "lifecycle_reset": "响应/广告位历史/事件各自生命周期",
+    "cross_app_scope": "候选可共享；不是经济账本或个人身份",
+    "privacy_conditions": "配置/订阅/账户启用",
+    "association_contract": "需要映射契约才能跨出口join",
+    "evidence_ids": [
+      "L71C01",
+      "L71C02"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "biddingAdId/objectId/impressionOpportunityId",
+    "kind": "加载实例",
+    "producer": "适配器load UUID→Unity选项",
+    "reader": "Unity load/show/repository/operative",
+    "upload_and_destination": "请求/config/事件对象明确复制",
+    "lifecycle_reset": "广告实例内稳定；本地重复检查非全局持久唯一约束",
+    "cross_app_scope": "不跨设备；晚于原HB信号",
+    "privacy_conditions": "SDK初始化及同意，广告对象存在",
+    "association_contract": "没有与原TokenID相等契约",
+    "evidence_ids": [
+      "L71C15",
+      "L71C16",
+      "L71C21"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "trackingToken",
+    "kind": "服务器opaque广告上下文",
+    "producer": "gateway响应；viewer可更新",
+    "reader": "AdObject与operative构造",
+    "upload_and_destination": "事件构造复制当前值；持久化重试原bytes",
+    "lifecycle_reset": "可刷新；旧token服务器语义未知",
+    "cross_app_scope": "不是长期自然人键",
+    "privacy_conditions": "隐私门控、合法广告上下文",
+    "association_contract": "机会ID+事件快照可关联，不证明经济收入标签",
+    "evidence_ids": [
+      "L71C15",
+      "L71C16",
+      "L71C18",
+      "L71C19"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "operative eventId / Session ID / Event UUID",
+    "kind": "事件或会话",
+    "producer": "SDK生成",
+    "reader": "事件构造/队列/接收方",
+    "upload_and_destination": "各自事件/会话字段",
+    "lifecycle_reset": "每事件或会话；不可互换",
+    "cross_app_scope": "不是用户ID",
+    "privacy_conditions": "事件用途/采集条件",
+    "association_contract": "事件去重不等于身份合并",
+    "evidence_ids": [
+      "L71C16",
+      "C53S19"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Attribution ID / AppsFlyer ID / click ID",
+    "kind": "归因实例/广告点击",
+    "producer": "MMP或广告点击链",
+    "reader": "MMP/获准伙伴postback",
+    "upload_and_destination": "按来源范围发送；all-source对其他来源归因脱敏",
+    "lifecycle_reset": "重装/归因窗口/点击生命周期",
+    "cross_app_scope": "归因scope；非永久跨App账户",
+    "privacy_conditions": "伙伴映射/同意/共享开关",
+    "association_contract": "MMP已接收/训练须独立证明",
+    "evidence_ids": [
+      "L72S08",
+      "L71D01",
+      "L72S05",
+      "L72S06"
+    ],
+    "evidence_stages": [
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "Pixel _axwrt / _axeid / _axart",
+    "kind": "网站访客与点击标记",
+    "producer": "Pixel cookie/local备份/URL解析",
+    "reader": "同源Pixel、授权CAPI",
+    "upload_and_destination": "事件payload及cookie-match代码；未实际发送",
+    "lifecycle_reset": "cookie域/过期/浏览器限制；_axwrt约一年参数非保证",
+    "cross_app_scope": "同源访客/点击串联；不自动跨域",
+    "privacy_conditions": "商家部署、用户同意、远程配置",
+    "association_contract": "autoEmailCapture需精确true；服务器匹配未知",
+    "evidence_ids": [
+      "IG72P01",
+      "IG72P02",
+      "IG72P03",
+      "IG72P07",
+      "IG72P08",
+      "IG72P09",
+      "IG72P10"
+    ],
+    "evidence_stages": [
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "RampID",
+    "kind": "第三方广告身份",
+    "producer": "LiveRamp受许可身份解析/翻译",
+    "reader": "支持的Exchange/DSP伙伴",
+    "upload_and_destination": "Unity官方美加库存受众激活；具体请求字段未证",
+    "lifecycle_reset": "受服务协议/伙伴命名空间与隐私删除控制",
+    "cross_app_scope": "产品具跨渠道身份能力；每请求映射成功未知",
+    "privacy_conditions": "双方支持/合约/同意和地域限制",
+    "association_contract": "UPA→RampID、RampID→Vector训练未知",
+    "evidence_ids": [
+      "IG72S04",
+      "IG72S05"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  },
+  {
+    "field": "UID2",
+    "kind": "第三方确定性广告身份",
+    "producer": "UID2受许可邮件/电话等输入→广告token体系",
+    "reader": "UID2参与者/支持广告伙伴",
+    "upload_and_destination": "公开确定性广告身份framework；两厂商具体集成未证",
+    "lifecycle_reset": "token刷新/退出/隐私机制按服务契约",
+    "cross_app_scope": "开放namespace；不是默认所有SDK共享",
+    "privacy_conditions": "参与者授权/用户选择/适用政策",
+    "association_contract": "不能将UID2产品存在等同Axon/Vector部署",
+    "evidence_ids": [
+      "IG72S09"
+    ],
+    "evidence_stages": [
+      "E3",
+      "E4"
+    ],
+    "actual_upload_observed": false,
+    "production_match_proven": false,
+    "value_model_consumption_proven": false
+  }
+]

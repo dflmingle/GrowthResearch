@@ -1,0 +1,57 @@
+[
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 9,
+    "exact_line": "def _audit(packet):"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 12,
+    "exact_line": "if packet.get('view')!='complete_local_audit':return result('UNIDENTIFIABLE','OUTPUT_OR_REDACTED_VIEW_INSUFFICIENT')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 14,
+    "exact_line": "if not rows or not verify(rows):return result('INVALID_EVIDENCE','HASH_CHAIN_OR_SEQUENCE_INVALID')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 18,
+    "exact_line": "if rows[0]['data'].get('environment')!='offline-mock':return result('UNIDENTIFIABLE','NO_REAL_PLATFORM_ATTESTATION')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 52,
+    "exact_line": "if set(decision['data']['feature_receipts'])!={x['seq'] for x in features}:return result('UNIDENTIFIABLE','FEATURE_DECISION_LINK_MISSING')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 58,
+    "exact_line": "if not d.get('actual_read') or not d.get('nonnull') or not p:return result('UNIDENTIFIABLE','NO_ACTUAL_NON_NULL_READ')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 59,
+    "exact_line": "if d['model_version']!=decision['data']['model_version'] or d['materialized_at']>t:return result('INVALID_EVIDENCE','MODEL_OR_AVAILABILITY_MISMATCH')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 70,
+    "exact_line": "if not e:return result('UNIDENTIFIABLE','SOURCE_RECEIPT_MISSING')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 74,
+    "exact_line": "if not permitted('source-app',device,p['time'],p['seq']) or not permitted('target-app',device,p['time'],p['seq']):return result('INVALID_EVIDENCE','UNAUTHORIZED_PROVENANCE_READ')"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 92,
+    "exact_line": "def assess_observable(packet):"
+  },
+  {
+    "path": "engineering76/mock76/auditor.py",
+    "line": 111,
+    "exact_line": "def hypothesis_verdict(hypothesis,observation_verdict):"
+  }
+]

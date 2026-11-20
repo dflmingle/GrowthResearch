@@ -1,0 +1,16 @@
+[
+  {
+    "assertion": "cannot promote account to person via same_device edge",
+    "input_refs": "operation trace",
+    "expected": "RELATION_GRAIN_MISMATCH",
+    "actual": "RELATION_GRAIN_MISMATCH",
+    "passed": true
+  },
+  {
+    "assertion": "person remains unlinked",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  }
+]

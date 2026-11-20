@@ -1,0 +1,481 @@
+{
+  "nodes": [
+    {
+      "id": "AMN_source",
+      "label": "3 Adjust MIT source archives / scoped client review",
+      "stage": "client_static",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "AMN_client",
+      "label": "App-private UUID / external ID transport / attribution response / bounded queues",
+      "stage": "client_static",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "AMN_design",
+      "label": "Independent scoped identity resolver design only",
+      "stage": "reference_design",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "AMN_license",
+      "label": "MAX/LevelPlay core/adapters permission HOLD; legal-only review",
+      "stage": "license_gate",
+      "contains_real_personal_data": false
+    },
+    {
+      "id": "AMN_unknown",
+      "label": "Axon/Vector C_graph and D UNKNOWN; production forensics STOP",
+      "stage": "unproven",
+      "contains_real_personal_data": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "AME01",
+      "source": "AMN_source",
+      "target": "AMN_client",
+      "source_ids": [
+        "AMSS01",
+        "AMSS02",
+        "AMSS03",
+        "AMSS05",
+        "AMSS06"
+      ],
+      "claim": "Scoped static proof of listed client calls only; no observed sends/receipt/graph/model",
+      "status": "client_static",
+      "evidence_level": "B: client static only",
+      "reviewed_utc": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_stages": [
+        "client_static"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": true,
+        "actual_game_business_callsite": false,
+        "request_construction_code": true,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "AME02",
+      "source": "AMN_client",
+      "target": "AMN_design",
+      "source_ids": [
+        "AMSS12",
+        "AMSS13"
+      ],
+      "claim": "Reference mechanisms for independent design; not a vendor architecture reproduction",
+      "status": "design",
+      "evidence_level": "Design/license/unknown; no production upgrade",
+      "reviewed_utc": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "AME03",
+      "source": "AMN_license",
+      "target": "AMN_unknown",
+      "source_ids": [
+        "AMSS14",
+        "AMSS15"
+      ],
+      "claim": "Custom version-specific licenses remain HOLD; no MAX/LevelPlay functional analysis",
+      "status": "unknown",
+      "evidence_level": "Design/license/unknown; no production upgrade",
+      "reviewed_utc": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "AME04",
+      "source": "AMN_client",
+      "target": "AMN_unknown",
+      "source_ids": [
+        "AMSS11",
+        "AMSS13"
+      ],
+      "claim": "Adjust client transport does not prove Axon/Vector receipt or identity-feature consumption",
+      "status": "unknown",
+      "evidence_level": "Design/license/unknown; no production upgrade",
+      "reviewed_utc": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "AMSS01",
+      "path": "ThirdPartySDKs/Adjust/Android/5.5.0/adjust-android-5.5.0-sources.jar",
+      "sha256": "e76d574c1155d74dbc11db8ee6fd043a10b41062c722e590ac8663f30edd7792",
+      "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.5.0/adjust-android-5.5.0-sources.jar",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Adjust MIT source archive",
+      "evidence_stages": [
+        "client_static"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS02",
+      "path": "ThirdPartySDKs/Adjust/Android/5.7.0/adjust-android-5.7.0-sources.jar",
+      "sha256": "6e92756c8419253619aa57dbf6a7127e6533f8c3fecd42c672f84772d7b8c8be",
+      "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.7.0/adjust-android-5.7.0-sources.jar",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Adjust MIT source archive",
+      "evidence_stages": [
+        "client_static"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS03",
+      "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1-sources.jar",
+      "sha256": "dfee5dda1f80d86b1e0af56af77e04568f7929462a5fe09ffd6b75254180030b",
+      "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1-sources.jar",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Adjust MIT source archive",
+      "evidence_stages": [
+        "client_static"
+      ],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS04",
+      "path": "adjust-mechanisms/EXTRACTED_FILES.json",
+      "sha256": "603cadeba36a59665096561902c152d3ae1e37011c00f39b4e881f3f5820330a",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS05",
+      "path": "adjust-mechanisms/CODE_EVIDENCE.json",
+      "sha256": "3f3eab41614daf895760de69fe94aa9b1d9881f60ef63debf4af2fa1311f8451",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS06",
+      "path": "adjust-mechanisms/FINDINGS.json",
+      "sha256": "e4fc9d14697e98ba3aaf2ef12019116b125d1dd33219e2460796da8e9d39036c",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS07",
+      "path": "adjust-mechanisms/DIFF_INDEX.final.json",
+      "sha256": "270c3fed9611ec630b8d29441ab11858379b94c28d85ab2c090f666a545b8983",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS08",
+      "path": "adjust-mechanisms/Adjust身份与归因机制图.md",
+      "sha256": "ef3fcb2507060737ac078d861ad2df93937b3998adef0ae0516f17e3d7b0cb61",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS09",
+      "path": "adjust-mechanisms/三版本源码差分.md",
+      "sha256": "08d43633c85ecd99d24f73f07a454f439eba3067c34d6071e9a28f068de9465a",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS10",
+      "path": "adjust-mechanisms/身份标识生命周期表.md",
+      "sha256": "11896d8121e93a1d6b6eb9f132961c7dedb532f0fd47cf5bdd72f389524fb0e7",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS11",
+      "path": "adjust-mechanisms/已证实机制与服务端未知清单.md",
+      "sha256": "faf88628c0070d339be2eeb585f1a82bedbcd9928b744e00770e9d45189b974d",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS12",
+      "path": "adjust-mechanisms/自主IdentityResolver最小设计建议.md",
+      "sha256": "8dc1c35bb7ff96792a0d5a95f7f2e6a986845079f08553052f6b54f798d98aa6",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS13",
+      "path": "adjust-mechanisms/下一阶段授权和测试条件.md",
+      "sha256": "bf259de522d199dc891be5904cb4c1966dea77e2b0a91aee9b4fbc68ceaf4655",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS14",
+      "path": "adjust-mechanisms/license-review/版本许可复核.md",
+      "sha256": "f90235cc7d54f6330599c80f800a54d04d5b9908017fa75aa1c3e44cea8baacd",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS15",
+      "path": "adjust-mechanisms/license-review/FETCH_MANIFEST.json",
+      "sha256": "271cf23d96d0af182027c79d406840a97c2d18f8932dfb9bd865450f97c76233",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSS16",
+      "path": "adjust-mechanisms/STATUS.json",
+      "sha256": "05860c0c074141b4e59ca9a73dc5f2475b5a4bd2de41e0461b65e4bb53d4498a",
+      "url": null,
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Local scoped static analysis/license review/design; not production",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSL01",
+      "path": "adjust-mechanisms/license-review/sources/max-1320-license.raw",
+      "sha256": "e736ae9fee62d3e70c9325b848aaf1b37351117889fab3472dee84acec0612f8",
+      "url": "https://raw.githubusercontent.com/AppLovin/AppLovin-MAX-SDK-Android/release_13_2_0/LICENSE.md",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Official legal-only HTTP response; not implementation permission inference",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSL02",
+      "path": "adjust-mechanisms/license-review/sources/max-1364-license.raw",
+      "sha256": "e736ae9fee62d3e70c9325b848aaf1b37351117889fab3472dee84acec0612f8",
+      "url": "https://raw.githubusercontent.com/AppLovin/AppLovin-MAX-SDK-Android/release_13_6_4/LICENSE.md",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Official legal-only HTTP response; not implementation permission inference",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSL03",
+      "path": "adjust-mechanisms/license-review/sources/max-1370-license.raw",
+      "sha256": "e736ae9fee62d3e70c9325b848aaf1b37351117889fab3472dee84acec0612f8",
+      "url": "https://raw.githubusercontent.com/AppLovin/AppLovin-MAX-SDK-Android/release_13_7_0/LICENSE.md",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Official legal-only HTTP response; not implementation permission inference",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSL04",
+      "path": "adjust-mechanisms/license-review/sources/lp-unity-930-license.raw",
+      "sha256": "4aa74c09508382bcf26b4d62928ece88bb268fff609f901aee999e102e8a070e",
+      "url": "https://raw.githubusercontent.com/ironsource-mobile/Unity-sdk/UnityLevelPlay_9.3.0/LICENSE",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Official legal-only HTTP response; not implementation permission inference",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    },
+    {
+      "id": "AMSL05",
+      "path": "adjust-mechanisms/license-review/sources/max-eula-trailing-slash.raw",
+      "sha256": "67becda1a1c415680cbafe118796a2da519b826b521b3b5563224f91a7cf9f53",
+      "url": "https://www.applovin.com/eula/",
+      "source_date": "2026-11-20T08:26:20.248966+00:00",
+      "evidence_kind": "Official legal-only HTTP response; not implementation permission inference",
+      "evidence_stages": [],
+      "production_actual_proven": false,
+      "production_match_proven": false,
+      "prediction_model_consumption_proven": false,
+      "independent_real_identity_lift_proven": false
+    }
+  ],
+  "extension": {
+    "reviewed_utc": "2026-11-20T08:26:20.248966+00:00",
+    "samples": [
+      "OSM034",
+      "OSM036",
+      "OSM038"
+    ],
+    "scope": "111 selected Adjust MIT Java entries; no SDK execution",
+    "findings": 22,
+    "changed_selected_pairs": 24,
+    "new_node_ids": [
+      "AMN_source",
+      "AMN_client",
+      "AMN_design",
+      "AMN_license",
+      "AMN_unknown"
+    ],
+    "new_edge_ids": [
+      "AME01",
+      "AME02",
+      "AME03",
+      "AME04"
+    ],
+    "new_source_ids": [
+      "AMSS01",
+      "AMSS02",
+      "AMSS03",
+      "AMSS04",
+      "AMSS05",
+      "AMSS06",
+      "AMSS07",
+      "AMSS08",
+      "AMSS09",
+      "AMSS10",
+      "AMSS11",
+      "AMSS12",
+      "AMSS13",
+      "AMSS14",
+      "AMSS15",
+      "AMSS16",
+      "AMSL01",
+      "AMSL02",
+      "AMSL03",
+      "AMSL04",
+      "AMSL05"
+    ],
+    "C_graph_Axon": "UNKNOWN",
+    "C_graph_Vector": "UNKNOWN",
+    "D": "UNKNOWN",
+    "production_forensics": "STOP",
+    "SDK_executions": 0,
+    "production_requests": 0,
+    "engineering76_modified": false,
+    "before": "adjust-mechanisms/EVIDENCE_GRAPH.before.json"
+  }
+}

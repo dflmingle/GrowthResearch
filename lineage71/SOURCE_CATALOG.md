@@ -1,0 +1,53 @@
+# 71号原始证据目录
+
+核验UTC：2026-11-20T04:50:55.698288+00:00。新增材料仅公开文档GET与定点源码核验；未提交事件、未访问报表或生产API。
+
+## 新的一手文档
+
+| ID | 原始URL | 原件SHA256 | 证据位置 | 支持与限制 |
+|---|---|---|---|---|
+| L71S01 | https://support.applovin.com/en/max/android/overview/impression-level-user-revenue-api-for-mmps | `428c77d1b5d6507e94506c4abdfc56bc7d4ab21e719b405b1f6e6b338f9bdb4a` | lineage71/sources/max-mmp-api.txt:13 | MMP communicator contract names id unique internal ID for serve;subscription required;not a production receipt |
+| L71S02 | https://support.applovin.com/en/max/advanced-features/s2s-impression-level-api | `7f979d1041d9a3f5f0d99f688c72c4e16e153a1160e42694f58e3bad98bf9d56` | lineage71/sources/max-s2s-impression.txt:20 | Separate account-enabled S2S impression API:EVENT_ID UUID,EVENT_TOKEN,TS,PRECISION;5s timeout,no retries;no equality to SDK id promised |
+| L71S03 | https://dev.adjust.com/en/sdk/android/integrations/applovin/ | `b98b251349c0ee59eea054a1ee928d9bd2c3711c24fca1d59f4531ccd7af4067` | lineage71/sources/adjust-max-integration.article.txt:5 | Explicit MaxAd revenue/network/unit/placement -> AdjustAdRevenue -> trackAdRevenue official example;no serve ID/precision in example |
+| L71S04 | https://dev.adjust.com/en/sdk/android/features/ad-revenue/ | `9ea943905fbe123df3f381095479eec038be7a96d556db42bc113c3ebdbe1d68` | lineage71/sources/adjust-ad-revenue.article.txt:421 | Callback parameters versus configured/enabled external partner parameters;not automatic platform consumption |
+| L71S05 | https://dev.adjust.com/en/sdk/android/features/events/ | `085506b83c8515d086a312c3f71ffbbd31d026472e56ace229601af1f6182a29` | lineage71/sources/adjust-event.article.txt:507 | AdjustEvent deduplication API and finite ID cache;not an AdjustAdRevenue exactly-once contract |
+| L71S06 | https://dev.appsflyer.com/hc/docs/ad-revenue-1 | `167d750d325eec567280a87d8c8f6db4bbb61989ed98d6d18f9f124d9bcbfb59` | lineage71/sources/af-ad-revenue-v6.article.txt:6 | SDK6.15+ logAdRevenue and optional additional map;remove old connector;revenue attributed to original UA source at product-contract level |
+| L71S07 | https://dev.appsflyer.com/hc/docs/in-app-events-android | `454e306f5b30ead21f5a5aa549d05914b34611a94579765584ad58071adbdd20` | lineage71/sources/af-dedup.article.txt:235 | ROI360 warning:manual af_revenue plus connectors/API can duplicate revenue;not evidence of automatic reconciliation |
+| L71S08 | https://docs.unity.com/en-us/grow/acquire/partner-integration/app-data/post-install-event-data.md | `564f82f5abf3dd24c303e0cd80b78e3d460dc15a5471c784fbe36d0095c4098f` | lineage71/sources/unity-post-events-canonical.raw:12 | Official event types -> campaigns -> models;misconfigured postbacks cannot retroactively send lost events;not physical training columns |
+| L71S09 | https://support.applovin.com/en/max/reporting-apis/user-level-ad-revenue-api | `28d35e5c25d2a744bec2dc453ffa697ef2cf57c41458d2aecf99b6a08170af2b` | lineage71/sources/max-user-api.txt:107 | Daily export sample:impression time,USD revenue at6 decimals;no mandatory event ID in shown schema |
+| L71S10 | https://dev.adjust.com/en/api/s2s-api/ad-revenue | `aad80daefba86e0618bb41497daa8dad330eb3b2f5b53b2b3226fd64f07c0e38` | lineage71/sources/adjust-s2s-revenue.article.txt:17 | S2S ad revenue product contract:28-day arrival limit,created_at,amount,currency,app/allowed device fields;not a public dataset |
+| L71S11 | https://support.applovin.com/en/max/android/overview/advanced-settings/ | `261949b600a245f8d04c7d21a132b2ba686259b062e3203ff985972bed917551` | lineage71/sources/max-ilrd.txt:124 | Client ILRD accessible in lifecycle callbacks;precision levels;current undefined description differs from cached13.6.4 API comments |
+| L71D01 | https://help.adjust.com/en/partner-setup/applovin | `95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984` | axon/adjust-applovin.txt:165 | Adjust->Axon partner parameter mapping and explicit outgoing placeholders including revenue_usd,is_organic,match_type,partner_parameters;not training schema |
+
+## 定点代码核验
+
+| ID | SDK/版本 | 类/方法 | 原始位置 | 结论与边界 |
+|---|---|---|---|---|
+| L71C01 | AppLovin/MAX 13.6.4 | k.a(c3) | lineage71/java/com/applovin/impl/sdk/k.java:284 | Initial bundle id=c3.T and ad metadata;later ad_values.putAll may override same keys; Same MaxAd object;subscriber/config gating;server values unknown |
+| L71C02 | AppLovin/MAX 13.6.4 | k.b(c3) | lineage71/java/com/applovin/impl/sdk/k.java:177 | Base bundle + revenue_parameters overlay + country -> max_revenue_events; revenue_parameters may override id/revenue;do not promise final id equals c3.T without collision check |
+| L71C03 | AppLovin/MAX 13.6.4 | c3.y/S/R/T | auction/sdk/MAX-13.6.4/java/com/applovin/impl/c3.java:172 | ad_values/revenue_parameters are per-ad JSON;T reads full-response event_id; Response-selected suffix;not economic ledger uniqueness |
+| L71C04 | AppLovin/MAX 13.6.4 | k.a(Bundle,String) | lineage71/java/com/applovin/impl/sdk/k.java:274 | Communicator publish;message sticky policy selected by config; Local pubsub;not an HTTP send or MMP subscription observation |
+| L71C05 | AppLovin/MAX 13.6.4 | MaxAd.getRevenue/getRevenuePrecision | ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAd.java:63 | Amount may be0 when unavailable;precision exact/estimated/publisher_defined/undefined; API contract13.6.4;not final bank settlement;current online undefined wording differs |
+| L71C06 | AppLovin/MAX 13.6.4 | MaxAdWaterfallInfo interface | ThirdPartySDKs/AppLovin/MAX/13.6.4/sources/com/applovin/mediation/MaxAdWaterfallInfo.java:10 | Public interface has no getEventId;implementation getter exists in70; Does not exclude arbitrary getAdValue or other configured integrations |
+| L71C07 | Adjust/Android 5.8.1 | AdjustAdRevenue fields,setters,addPartnerParameter | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustAdRevenue.java:6 | Amount,currency,network,unit,placement,callback/partner maps;no dedicated deduplicationId member; Optional metadata only when caller supplies;not automatically populated with MAX ID |
+| L71C08 | Adjust/Android 5.8.1 | buildAdRevenuePackage | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java:180 | AdjustAdRevenue -> AD_REVENUE package /ad_revenue;metadata carried; Build path only;no observed request or receipt |
+| L71C09 | Adjust/Android 5.8.1 | getAdRevenueParameters | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/PackageBuilder.java:880 | Maps serialized as callback_params/partner_params;source,revenue,currency,network,unit,placement;created_at from SDK processing time; Allowed identifiers/config only;not original impression timestamp;no dedicated precision/serve-id serialization in this range |
+| L71C10 | Adjust/Android 5.8.1 | trackAdRevenueI | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java:3161 | enabled,valid,not GDPR-forgotten -> package queue -> sendFirstPackage call; Invocation is not actual delivery;no shouldProcessEventI here |
+| L71C11 | Adjust/Android 5.8.1 | trackEventI | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java:2066 | Generic AdjustEvent calls shouldProcessEventI(deduplicationId); Do not transfer generic-event guard to dedicated ad revenue path |
+| L71C12 | Adjust/Android 5.8.1 | shouldProcessEventI | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityHandler.java:3503 | Missing ID accepted;duplicate cached ID rejected;new ID stored; Local cache scope;not universal server deduplication |
+| L71C13 | Adjust/Android 5.8.1 | addDeduplicationId/eventDeduplicationIdExists | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/ActivityState.java:185 | Bounded list eviction;0 disables remembering;max size configurable; Not permanent ledger;server behavior unknown |
+| L71C14 | Adjust/Android 5.8.1 | AdjustEvent.setDeduplicationId | ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustEvent.java:6 | Explicit caller-supplied generic event dedup key; Not generated from MAX event_id by this API |
+| L71C15 | Unity/Ads 4.17.0 | AdObject | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/AdObject.kt:23 | opportunityId val;trackingToken var; Object-lifetime stability not global economic uniqueness |
+| L71C16 | Unity/Ads 4.17.0 | GetOperativeEventRequest.invoke | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventRequest.kt:21 | New eventId;opportunity and current token copied into built request;context also serialized; Opaque additionalData;not proven money or IAP label |
+| L71C17 | Unity/Ads 4.17.0 | addOperativeEvent | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/OperativeEventRepository.kt:11 | Built request emitted to SharedFlow with DROP_OLDEST; Not lossless;not server ACK |
+| L71C18 | Unity/Ads 4.17.0 | OperativeEventObserver.invoke | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/OperativeEventObserver.kt:37 | Payload -> full request -> serialized bytes under separate random workId;fallback sender; Enveloping time differs from operative creation;no history token rewrite shown |
+| L71C19 | Unity/Ads 4.17.0 | UniversalRequestJob.doWork | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/work/UniversalRequestJob.kt:25 | Read persisted bytes -> parse request -> sender;retry on failure;remove on sender return; Same persisted event identity on retry in this path;success not equal to server ingestion |
+| L71C20 | Unity/Ads 4.17.0 | ShowEvent | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/model/ShowEvent.kt:5 | Started/Clicked/ReceivedReward/Completed are separate SDK lifecycle event variants; Not a proven one-to-one wire enum or income event |
+| L71C21 | Unity/Ads 4.17.0 | GetOperativeEventApi.invoke | ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/events/GetOperativeEventApi.kt:14 | Current AdObject token passed by value to event builder before event queued; Refresh changes later events,not a shown rewrite of persisted earlier payloads |
+| L71C22 | AppLovin/MAX 13.6.4 | k.b(String) | lineage71/java/com/applovin/impl/sdk/k.java:206 | Communicator enable flag and sticky-topic list OR active subscriber gate; Publish configuration is not proof an MMP actually subscribes |
+
+全部精确片段、源文件和原包SHA256/官方URL见CODE_EVIDENCE.json；复用证据逐哈希确认，见REUSED_EVIDENCE.json。sdk.k为本轮新定位的单类，不重复扫描SDK版本。TARGETED_ANALYSIS.json记录原JAR、单类反编译及javap结果。
+
+所有官方示例中的标识仅为文档示例，未采集真实用户值、未生成生产请求。FETCH_MANIFEST保留404和失效重定向记录；其内容不算有效接口证据。Unity旧路径重定向到0.0.0.0失败，随后仅读取官网canonical文档路径。
+
+没有新增数据集许可；SFU/Uken联系路径复用70号官方原件，不以当前岗位证明2015保管权。

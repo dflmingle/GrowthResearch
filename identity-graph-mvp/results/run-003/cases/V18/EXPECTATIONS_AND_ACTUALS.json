@@ -1,0 +1,37 @@
+[
+  {
+    "assertion": "local complete trace checks only local consistency",
+    "input_refs": "operation trace",
+    "expected": "LOCAL_CHAIN_VERIFIED",
+    "actual": "LOCAL_CHAIN_VERIFIED",
+    "passed": true
+  },
+  {
+    "assertion": "materialization without receiver insufficient",
+    "input_refs": "operation trace",
+    "expected": "NOT_IDENTIFIABLE",
+    "actual": "NOT_IDENTIFIABLE",
+    "passed": true
+  },
+  {
+    "assertion": "default values not graph consumption",
+    "input_refs": "operation trace",
+    "expected": "NO_NONEMPTY_MODEL_INPUT",
+    "actual": "NO_NONEMPTY_MODEL_INPUT",
+    "passed": true
+  },
+  {
+    "assertion": "empty read not graph consumption",
+    "input_refs": "operation trace",
+    "expected": "NOT_IDENTIFIABLE",
+    "actual": "NOT_IDENTIFIABLE",
+    "passed": true
+  },
+  {
+    "assertion": "derived ID is not existing-entity match",
+    "input_refs": "operation trace",
+    "expected": "NON_MATCH_OR_DERIVED_ID",
+    "actual": "NON_MATCH_OR_DERIVED_ID",
+    "passed": true
+  }
+]

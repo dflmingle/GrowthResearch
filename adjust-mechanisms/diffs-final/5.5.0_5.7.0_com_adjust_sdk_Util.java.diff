@@ -1,0 +1,47 @@
+--- 5.5.0/com/adjust/sdk/Util.java
++++ 5.7.0/com/adjust/sdk/Util.java
+@@ -29,6 +29,7 @@
+ import java.io.FileInputStream;
+ import java.io.FileNotFoundException;
+ import java.io.FileOutputStream;
++import java.io.InvalidClassException;
+ import java.io.NotSerializableException;
+ import java.io.ObjectInputStream;
+ import java.io.ObjectOutputStream;
+@@ -216,7 +217,7 @@
+             BufferedInputStream bufferedStream = new BufferedInputStream(inputStream);
+             closable = bufferedStream;
+ 
+-            ObjectInputStream objectStream = new ObjectInputStream(bufferedStream);
++            ObjectInputStream objectStream = new ObjectInputFilterStream(bufferedStream);
+             closable = objectStream;
+ 
+             try {
+@@ -224,6 +225,8 @@
+                 getLogger().debug("Read %s: %s", objectName, object);
+             } catch (ClassNotFoundException e) {
+                 getLogger().error("Failed to find %s class (%s)", objectName, e.getMessage());
++            } catch (InvalidClassException e) {
++                getLogger().error("Failed to validate %s class (%s)", objectName, e.getMessage());
+             } catch (ClassCastException e) {
+                 getLogger().error("Failed to cast %s object (%s)", objectName, e.getMessage());
+             } catch (Exception e) {
+@@ -690,6 +693,13 @@
+             return false;
+         }
+         return canReadPlayIds(adjustConfig);
++    }
++
++    public static boolean canReadFbId(final AdjustConfig adjustConfig) {
++        if (!adjustConfig.isFbIdReadingEnabled) {
++            return false;
++        }
++        return canReadNonPlayIds(adjustConfig);
+     }
+ 
+     public static boolean isGooglePlayGamesForPC(final Context context) {
+@@ -828,4 +838,4 @@
+                 "Attribution",
+                 AdjustAttribution.class);
+     }
+-}+}

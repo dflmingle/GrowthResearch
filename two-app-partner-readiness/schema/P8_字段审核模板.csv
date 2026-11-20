@@ -1,0 +1,7 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P8.truth_unit_grain,enum,独立真值的pair/cluster实体粒度,不以模型分数或未来收入自证；不默认自然人,ACCOUNT_PAIR
+P8.truth_and_annotation_ref,string,正负关系标注与独立依据,仅权利方内部；不给本方真实配对记录,syn:gold:INTERNAL_ONLY_UNVERIFIED
+P8.sampling_frame_weights,object,抽样框、纳入概率和权重,需覆盖拒识、未匹配、共享设备和负例,"{""frame"":""syn:frame"",""inclusion_probability"":null,""weight"":null}"
+P8.annotation_time_uncertainty,object,标注时刻、不确定性和冲突,不强制模糊样本变确定真值,"{""at"":""2035-01-01T00:00:00Z"",""status"":""UNKNOWN""}"
+P8.isolation_calibration_threshold_ref,string,关系质量训练/验证/测试隔离及阈值版本,先冻结质量阈值，再解封价值测试；不拿测试调阈值,syn:quality-plan:UNCONFIRMED
+P8.independent_review_ref,string,独立复核与利益关系声明,供应方score不足；不能只挑成功匹配,syn:review:UNCONFIRMED

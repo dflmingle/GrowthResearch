@@ -1,0 +1,12 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P6.bundle_feature_schema_version,object,时间点特征快照、组和schema版本,实际快照不可事后倒填,"{""bundle"":""syn:bundle:001"",""group"":""syn:history"",""version"":""syn:v1""}"
+P6.entity_app_scope,object,特征实体及源目标App粒度,设备/账号/人区分；只留合作方内,"{""grain"":""ACCOUNT"",""entity"":""syn:account:001"",""apps"":[""syn:app:A"",""syn:app:B""]}"
+P6.graph_mapping_version,string,生成特征依赖的关系版本,须在预测时已存在且合法,syn:graph:001
+P6.event_edge_lineage_refs,object,源事件和边修订引用,只指合法且当时可用来源；不导出明细血缘,"{""events"":[""syn:event:001""],""edges"":[""syn:edge:001@1""]}"
+P6.source_max_observed_at,utc,依赖最大观察时刻,逐依赖因果审计；未来可用不得入模,2035-01-01T00:00:00Z
+P6.source_max_available_at,utc,依赖最大可用时刻,逐依赖因果审计；未来可用不得入模,2035-01-01T00:00:00Z
+P6.materialized_at,utc,实际特征物化,逐依赖因果审计；未来可用不得入模,2035-01-01T00:00:00Z
+P6.consumer_available_at,utc,模型消费系统实际可用,逐依赖因果审计；未来可用不得入模,2035-01-01T00:00:00Z
+P6.as_of,utc,预测截止,逐依赖因果审计；未来可用不得入模,2035-01-01T00:00:00Z
+P6.policy_epoch_gate_missing_reason,object,权限代次、门控和缺失原因,缺失不填真实0；授权未知则不读,"{""epoch"":0,""gate"":""DENY"",""missing_reason"":""syn:permission_unknown""}"
+P6.retention_invalid_after,object,特征保留期和禁止使用时点,撤销/删除后旧缓存及snapshot同样受限,"{""retention_policy"":""syn:policy:UNCONFIRMED"",""invalid_after"":null}"

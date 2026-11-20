@@ -1,0 +1,3346 @@
+[
+  {
+    "seq": 1,
+    "at": 1756857600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "d0428d524d979893628908311dee765a8732a6d1a1a316081c1a37657d3ac58f"
+  },
+  {
+    "seq": 2,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000002\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "d0428d524d979893628908311dee765a8732a6d1a1a316081c1a37657d3ac58f",
+    "hash": "4b1d175a2d05b9b1d1d26143b976a47c78e9be352893ed22d85b01ba089a29fe"
+  },
+  {
+    "seq": 3,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000002\",\"epoch\":1,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "4b1d175a2d05b9b1d1d26143b976a47c78e9be352893ed22d85b01ba089a29fe",
+    "hash": "fb19dfeb566dcb895d71c234cba308fb755ec70a33844b0f7c1475b3a4d51bb2"
+  },
+  {
+    "seq": 4,
+    "at": 1756857600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "fb19dfeb566dcb895d71c234cba308fb755ec70a33844b0f7c1475b3a4d51bb2",
+    "hash": "bcf6a5fd26a4bf7938ed227584f3d24131e05fd786bf1b3e7c7b13c65ec86999"
+  },
+  {
+    "seq": 5,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000004\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "bcf6a5fd26a4bf7938ed227584f3d24131e05fd786bf1b3e7c7b13c65ec86999",
+    "hash": "52307aec4452996ebd05170037327d1645d8f2914dfaee454734c56ddebe4ea6"
+  },
+  {
+    "seq": 6,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000004\",\"epoch\":2,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "52307aec4452996ebd05170037327d1645d8f2914dfaee454734c56ddebe4ea6",
+    "hash": "6f851633444e0e3b53b7fa395c37a720753f13191661c373c243c178100ed349"
+  },
+  {
+    "seq": 7,
+    "at": 1756857600,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "6f851633444e0e3b53b7fa395c37a720753f13191661c373c243c178100ed349",
+    "hash": "de80bf4924346835279454c37f25873a0bb8a1c69342ce137bf87ee06db1472e"
+  },
+  {
+    "seq": 8,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000006\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "de80bf4924346835279454c37f25873a0bb8a1c69342ce137bf87ee06db1472e",
+    "hash": "32925abed5f0de13c236358965ce51b73e9c6f72e3d08550f7729ec5ebf577e0"
+  },
+  {
+    "seq": 9,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000006\",\"epoch\":3,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "32925abed5f0de13c236358965ce51b73e9c6f72e3d08550f7729ec5ebf577e0",
+    "hash": "04cb8d7e4e2989f6ce88a315913df1c3520f5ae176cc64c1d5561fa6869a0c43"
+  },
+  {
+    "seq": 10,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000007\",\"grain\":\"app_instance\",\"graph_version\":1,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "04cb8d7e4e2989f6ce88a315913df1c3520f5ae176cc64c1d5561fa6869a0c43",
+    "hash": "de19329ae0d3f5cbd01f91719cb0b202c6b07d65f9b6d6489b43d3a048562bca"
+  },
+  {
+    "seq": 11,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000008\",\"grain\":\"account\",\"graph_version\":2,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "de19329ae0d3f5cbd01f91719cb0b202c6b07d65f9b6d6489b43d3a048562bca",
+    "hash": "51e0cd4c6b3e8dd297e6b3b16659c5d236e3a14fc2fc8ac6230a74d110d90ec7"
+  },
+  {
+    "seq": 12,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000009\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "51e0cd4c6b3e8dd297e6b3b16659c5d236e3a14fc2fc8ac6230a74d110d90ec7",
+    "hash": "bcf7580a386912549b1ba59d979097daa3f92c72a808c747152c784fd0fcd898"
+  },
+  {
+    "seq": 13,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000009\",\"epoch\":4,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "bcf7580a386912549b1ba59d979097daa3f92c72a808c747152c784fd0fcd898",
+    "hash": "54b5c0e8b404fa7133ad76c539f94b65c654840aef889ee03f50c6d0fbb25d1e"
+  },
+  {
+    "seq": 14,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000010\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "54b5c0e8b404fa7133ad76c539f94b65c654840aef889ee03f50c6d0fbb25d1e",
+    "hash": "2c26ff3f516f5dcfbd8fbf1227104db1f250221faac44b20a9f17e824fb12f03"
+  },
+  {
+    "seq": 15,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000010\",\"epoch\":5,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2c26ff3f516f5dcfbd8fbf1227104db1f250221faac44b20a9f17e824fb12f03",
+    "hash": "5675138c8ea571d3ed08bd74895bf8ea4e5fbd103f5a8a3dc9fcf24ec9eb4a90"
+  },
+  {
+    "seq": 16,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000011\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "5675138c8ea571d3ed08bd74895bf8ea4e5fbd103f5a8a3dc9fcf24ec9eb4a90",
+    "hash": "424060577c093a848c8e55558f343f2a699355382fffdb63cd8406ffffdcfe3b"
+  },
+  {
+    "seq": 17,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000011\",\"epoch\":6,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "424060577c093a848c8e55558f343f2a699355382fffdb63cd8406ffffdcfe3b",
+    "hash": "2f3b7b1ed2352b9bccbc39fedf261aac2972cc95bdc22a5f5ce5afb2bf525dea"
+  },
+  {
+    "seq": 18,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000012\",\"grain\":\"app_instance\",\"graph_version\":3,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "2f3b7b1ed2352b9bccbc39fedf261aac2972cc95bdc22a5f5ce5afb2bf525dea",
+    "hash": "4b147bbec8c5b36c0b9c1196c2eeeb8882c698526c2f4bc788ec056ebbdbf1a7"
+  },
+  {
+    "seq": 19,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000013\",\"grain\":\"account\",\"graph_version\":4,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4b147bbec8c5b36c0b9c1196c2eeeb8882c698526c2f4bc788ec056ebbdbf1a7",
+    "hash": "9653c8ad68701b042301e2330519a592ae66a4a72841538385273856e14e99ba"
+  },
+  {
+    "seq": 20,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000014\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "9653c8ad68701b042301e2330519a592ae66a4a72841538385273856e14e99ba",
+    "hash": "a2112376d2c53660ff841bb9cdc82b5d4a5aac30f0626f5896514ae792fedaa8"
+  },
+  {
+    "seq": 21,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000014\",\"epoch\":7,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a2112376d2c53660ff841bb9cdc82b5d4a5aac30f0626f5896514ae792fedaa8",
+    "hash": "a04a0b07e07bf543b3823d1d7765005c6af28e87e866b09d74e9d5c785a752f5"
+  },
+  {
+    "seq": 22,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000015\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "a04a0b07e07bf543b3823d1d7765005c6af28e87e866b09d74e9d5c785a752f5",
+    "hash": "d26a77addeb0ee7e9dc28ec76f23b18c9ef5825ad7236afec5efd31c039d7e46"
+  },
+  {
+    "seq": 23,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000015\",\"epoch\":8,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d26a77addeb0ee7e9dc28ec76f23b18c9ef5825ad7236afec5efd31c039d7e46",
+    "hash": "91ebced850629dda787f1a8fa861855bedaf364b5291a6f8c4d725b2d32dc335"
+  },
+  {
+    "seq": 24,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000016\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "91ebced850629dda787f1a8fa861855bedaf364b5291a6f8c4d725b2d32dc335",
+    "hash": "936f51ceb739e179db3be292894bab5becf0d0a7a178b6faf216ed2ee92ddfe2"
+  },
+  {
+    "seq": 25,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000016\",\"epoch\":9,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "936f51ceb739e179db3be292894bab5becf0d0a7a178b6faf216ed2ee92ddfe2",
+    "hash": "29fb9da0cf47bc38a5b238ca7e60b74f0a05e56e0e4e8068b6dc1cf752b159fb"
+  },
+  {
+    "seq": 26,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000017\",\"grain\":\"app_instance\",\"graph_version\":5,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "29fb9da0cf47bc38a5b238ca7e60b74f0a05e56e0e4e8068b6dc1cf752b159fb",
+    "hash": "2bf886781ca5c5f7023c3477053e21984311f14b90d1e7b7e387003683b79a16"
+  },
+  {
+    "seq": 27,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000018\",\"grain\":\"account\",\"graph_version\":6,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "2bf886781ca5c5f7023c3477053e21984311f14b90d1e7b7e387003683b79a16",
+    "hash": "c081c8ed3eec5edeb7fa13b88f673003bae7ca1c9d7d3ee410744aad8b64167e"
+  },
+  {
+    "seq": 28,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000019\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "c081c8ed3eec5edeb7fa13b88f673003bae7ca1c9d7d3ee410744aad8b64167e",
+    "hash": "8b8afa03fef037e3985dcf55b4943dd2b2126a3cda7e533b422b36cce5b6fd52"
+  },
+  {
+    "seq": 29,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000019\",\"epoch\":10,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "8b8afa03fef037e3985dcf55b4943dd2b2126a3cda7e533b422b36cce5b6fd52",
+    "hash": "88c0492e00d00dc047c5a797913355ea4118421bdebac4e4745dcb5ce3d2db28"
+  },
+  {
+    "seq": 30,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000020\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "88c0492e00d00dc047c5a797913355ea4118421bdebac4e4745dcb5ce3d2db28",
+    "hash": "9234c1bc854d1ef85eb4ca015bf842a316b07b852654c666ca4914bc22dcc157"
+  },
+  {
+    "seq": 31,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000020\",\"epoch\":11,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "9234c1bc854d1ef85eb4ca015bf842a316b07b852654c666ca4914bc22dcc157",
+    "hash": "c092b7c66a48788428b6835f597e5204ca9b88baabbe2650e64f77a8d0241c34"
+  },
+  {
+    "seq": 32,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000021\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "c092b7c66a48788428b6835f597e5204ca9b88baabbe2650e64f77a8d0241c34",
+    "hash": "34a4c3bac84b94756dd96264673744efe28b4f194403d68caf6aff6d442ab0c9"
+  },
+  {
+    "seq": 33,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000021\",\"epoch\":12,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "34a4c3bac84b94756dd96264673744efe28b4f194403d68caf6aff6d442ab0c9",
+    "hash": "7a848203bb446eadaf2bf8ee39c23dd081daae216a8bdc247426825a5d42a2c7"
+  },
+  {
+    "seq": 34,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000022\",\"grain\":\"app_instance\",\"graph_version\":7,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7a848203bb446eadaf2bf8ee39c23dd081daae216a8bdc247426825a5d42a2c7",
+    "hash": "f20e621ec295b60a5aa491d78abf81553a7e4cb6859dbbf06cae9b833c1348ee"
+  },
+  {
+    "seq": 35,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000023\",\"grain\":\"account\",\"graph_version\":8,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f20e621ec295b60a5aa491d78abf81553a7e4cb6859dbbf06cae9b833c1348ee",
+    "hash": "4706e669b62b13bb514f3c5d31d0d4cb990d13130713dd94366d843621d5a6ec"
+  },
+  {
+    "seq": 36,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000024\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "4706e669b62b13bb514f3c5d31d0d4cb990d13130713dd94366d843621d5a6ec",
+    "hash": "d4e5b628a2f21660c81fce170adf35d50f8ebf688f158ee7926261bc7dca94c9"
+  },
+  {
+    "seq": 37,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000024\",\"epoch\":13,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d4e5b628a2f21660c81fce170adf35d50f8ebf688f158ee7926261bc7dca94c9",
+    "hash": "b89c2c6edc6ced1302669eb37df56f5b27135d9a4b6f56c43cd89238a3011e07"
+  },
+  {
+    "seq": 38,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000025\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "b89c2c6edc6ced1302669eb37df56f5b27135d9a4b6f56c43cd89238a3011e07",
+    "hash": "cfd7c55bb8294b4cbf0afd6c42d6e087e62ad5e7de167ec20e065ccebd1bd04c"
+  },
+  {
+    "seq": 39,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000025\",\"epoch\":14,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "cfd7c55bb8294b4cbf0afd6c42d6e087e62ad5e7de167ec20e065ccebd1bd04c",
+    "hash": "66a6c6d692908583124a9ca701d4421d2e8c64a005b05aa383acd7022a2bb080"
+  },
+  {
+    "seq": 40,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000026\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "66a6c6d692908583124a9ca701d4421d2e8c64a005b05aa383acd7022a2bb080",
+    "hash": "05982f224df2ae200ad4463686615d6d54beeac8d9dac9db473414bc165779a1"
+  },
+  {
+    "seq": 41,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000026\",\"epoch\":15,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "05982f224df2ae200ad4463686615d6d54beeac8d9dac9db473414bc165779a1",
+    "hash": "6f94c71c8ad7bf4d08a01f9cf3e593bbe22da9ffae049846644913603d58ab9b"
+  },
+  {
+    "seq": 42,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000027\",\"grain\":\"app_instance\",\"graph_version\":9,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "6f94c71c8ad7bf4d08a01f9cf3e593bbe22da9ffae049846644913603d58ab9b",
+    "hash": "d46ea048a7762d70046e93deb73c0a9bd19705a280c4799e0373877842821db7"
+  },
+  {
+    "seq": 43,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000028\",\"grain\":\"account\",\"graph_version\":10,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d46ea048a7762d70046e93deb73c0a9bd19705a280c4799e0373877842821db7",
+    "hash": "dce4d7ae812dc10476e2a4a66e0c9fefe888b33ec0577435719104e3fc1111fe"
+  },
+  {
+    "seq": 44,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000029\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "dce4d7ae812dc10476e2a4a66e0c9fefe888b33ec0577435719104e3fc1111fe",
+    "hash": "5aa606bb072a9cbc9374f44ceafebd5fee6806437ef508b40f7f9cc6f45d2d5e"
+  },
+  {
+    "seq": 45,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000029\",\"epoch\":16,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "5aa606bb072a9cbc9374f44ceafebd5fee6806437ef508b40f7f9cc6f45d2d5e",
+    "hash": "ad065021c2cfcdbb1d2fdaab442370c5f3ac4c7928b82612f107b17b2d8eb651"
+  },
+  {
+    "seq": 46,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000030\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "ad065021c2cfcdbb1d2fdaab442370c5f3ac4c7928b82612f107b17b2d8eb651",
+    "hash": "1d07586854cdb7711e81e427f55f5f167a4c5dc58896a8d538f08e902d45adea"
+  },
+  {
+    "seq": 47,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000030\",\"epoch\":17,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "1d07586854cdb7711e81e427f55f5f167a4c5dc58896a8d538f08e902d45adea",
+    "hash": "f44bc060da20e97fdf36334c39e3d959ba91405f288fd3e823ab0304e0bd1771"
+  },
+  {
+    "seq": 48,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000031\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "f44bc060da20e97fdf36334c39e3d959ba91405f288fd3e823ab0304e0bd1771",
+    "hash": "78cdc581775d7a02223adbac07516b7cc6240da9fa221e3e2c6b5f350d83207c"
+  },
+  {
+    "seq": 49,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000031\",\"epoch\":18,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "78cdc581775d7a02223adbac07516b7cc6240da9fa221e3e2c6b5f350d83207c",
+    "hash": "c4003adc43ef4396b0f265a75e6c07f9920988e17004f972779055b29694007e"
+  },
+  {
+    "seq": 50,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000032\",\"grain\":\"app_instance\",\"graph_version\":11,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c4003adc43ef4396b0f265a75e6c07f9920988e17004f972779055b29694007e",
+    "hash": "aabc124a8969a2208a728ab2cab715c63b5ef0cc9da5d8b637da36b00b888ea7"
+  },
+  {
+    "seq": 51,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000033\",\"grain\":\"account\",\"graph_version\":12,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "aabc124a8969a2208a728ab2cab715c63b5ef0cc9da5d8b637da36b00b888ea7",
+    "hash": "5028c23762e5f31d1b1e9898d2bb9ecba5cce5e1253d442a18681832fcfaa8ac"
+  },
+  {
+    "seq": 52,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000034\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "5028c23762e5f31d1b1e9898d2bb9ecba5cce5e1253d442a18681832fcfaa8ac",
+    "hash": "3ac8a9ffb8184b795fffccd04af263af4616608e7227bb6945b8f0ff6b69b970"
+  },
+  {
+    "seq": 53,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000034\",\"epoch\":19,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3ac8a9ffb8184b795fffccd04af263af4616608e7227bb6945b8f0ff6b69b970",
+    "hash": "7475472c5a5d4877998d8ae50ccd7908b9900aded73992527398ff4cfe0e9d84"
+  },
+  {
+    "seq": 54,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000035\",\"grain\":\"account\",\"graph_version\":13,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7475472c5a5d4877998d8ae50ccd7908b9900aded73992527398ff4cfe0e9d84",
+    "hash": "4897bc68c83caf634533b2e75fdde8f1984b16942a650539ff34cdd5f4d27f39"
+  },
+  {
+    "seq": 55,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000036\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "4897bc68c83caf634533b2e75fdde8f1984b16942a650539ff34cdd5f4d27f39",
+    "hash": "da9012f3c629dfd5e2ee4f796fac23da2f80765aeac8f30ab25ed81319662aa3"
+  },
+  {
+    "seq": 56,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000036\",\"epoch\":20,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "da9012f3c629dfd5e2ee4f796fac23da2f80765aeac8f30ab25ed81319662aa3",
+    "hash": "2aa7b268ddf27041725e08449b0eec2d75c7634eadb83a3137eaf73d74f26fcd"
+  },
+  {
+    "seq": 57,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000037\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "2aa7b268ddf27041725e08449b0eec2d75c7634eadb83a3137eaf73d74f26fcd",
+    "hash": "c3bba867c34eedacdec10b53535c4a1b2a92a5b40355277e643954706e0bbeeb"
+  },
+  {
+    "seq": 58,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000037\",\"epoch\":21,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "c3bba867c34eedacdec10b53535c4a1b2a92a5b40355277e643954706e0bbeeb",
+    "hash": "e49b24bf1d1e8e545111bbce48fc2dc0695bc5bac23884b0729b7affce3d2e55"
+  },
+  {
+    "seq": 59,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000038\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "e49b24bf1d1e8e545111bbce48fc2dc0695bc5bac23884b0729b7affce3d2e55",
+    "hash": "41f764d65d50ec1a34d82f91cd5933d440678df449152ddc3bf7f9ab2b067019"
+  },
+  {
+    "seq": 60,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000038\",\"epoch\":22,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "41f764d65d50ec1a34d82f91cd5933d440678df449152ddc3bf7f9ab2b067019",
+    "hash": "34052a5cdc3898c44e138126cd6efe2798d4c0eee2997527b8bad74cf7e61c02"
+  },
+  {
+    "seq": 61,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000039\",\"grain\":\"app_instance\",\"graph_version\":14,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "34052a5cdc3898c44e138126cd6efe2798d4c0eee2997527b8bad74cf7e61c02",
+    "hash": "a72f88bbc949a3a984b21112e5ba8e922f9e0c1ccb42090b819d512cdbb6d79e"
+  },
+  {
+    "seq": 62,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000040\",\"grain\":\"account\",\"graph_version\":15,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "a72f88bbc949a3a984b21112e5ba8e922f9e0c1ccb42090b819d512cdbb6d79e",
+    "hash": "3ddc3451680cfe8b6e2bf7206ee753a5474f13c9834d8c59b1e1e09efea98c66"
+  },
+  {
+    "seq": 63,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000041\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "3ddc3451680cfe8b6e2bf7206ee753a5474f13c9834d8c59b1e1e09efea98c66",
+    "hash": "8955c54240ae30d1c09ade6a76c145e3128c481f1a8f5ec04c47dccbed9e9270"
+  },
+  {
+    "seq": 64,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000041\",\"epoch\":23,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "8955c54240ae30d1c09ade6a76c145e3128c481f1a8f5ec04c47dccbed9e9270",
+    "hash": "907631367c9a062f5167a858626699657e247745e7ce1c25b02c255af594a421"
+  },
+  {
+    "seq": 65,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000042\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "907631367c9a062f5167a858626699657e247745e7ce1c25b02c255af594a421",
+    "hash": "af411821accb88516de84bdccec9b03eda2a7898d8254073e365fc1e16be17fc"
+  },
+  {
+    "seq": 66,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000042\",\"epoch\":24,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "af411821accb88516de84bdccec9b03eda2a7898d8254073e365fc1e16be17fc",
+    "hash": "6b4500754d52911a02fb5cfb07a0be3074debd82dd86552a1559dbdb9b3adc1e"
+  },
+  {
+    "seq": 67,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000043\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "6b4500754d52911a02fb5cfb07a0be3074debd82dd86552a1559dbdb9b3adc1e",
+    "hash": "8eb71997458b314c00db466e83d571c25f3cd13b10519a9d7e5beb36fd247f9e"
+  },
+  {
+    "seq": 68,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000043\",\"epoch\":25,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "8eb71997458b314c00db466e83d571c25f3cd13b10519a9d7e5beb36fd247f9e",
+    "hash": "e64cf141e37f1a98619cd1354fde740419736d87e1b95fb0e8b00aa6b3b98ed8"
+  },
+  {
+    "seq": 69,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000044\",\"grain\":\"app_instance\",\"graph_version\":16,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "e64cf141e37f1a98619cd1354fde740419736d87e1b95fb0e8b00aa6b3b98ed8",
+    "hash": "48753b4b9225e84f68f665f8af17d7f930ab026aae6b6fa50a83daf6fa7a6096"
+  },
+  {
+    "seq": 70,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000045\",\"grain\":\"account\",\"graph_version\":17,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "48753b4b9225e84f68f665f8af17d7f930ab026aae6b6fa50a83daf6fa7a6096",
+    "hash": "47a15347fc1774abfa0901a0b5d9d1be46aa68838323d7c145507b9bc03356da"
+  },
+  {
+    "seq": 71,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000046\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "47a15347fc1774abfa0901a0b5d9d1be46aa68838323d7c145507b9bc03356da",
+    "hash": "4d4625eee62f02eddcccbeeda5d32a28d22c42d5ebc13a3aff76664bea726c66"
+  },
+  {
+    "seq": 72,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000046\",\"epoch\":26,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "4d4625eee62f02eddcccbeeda5d32a28d22c42d5ebc13a3aff76664bea726c66",
+    "hash": "cb19979c06bc153569edff09616f6e9d6c7169f8b8c1d32c700a806e4def5ec9"
+  },
+  {
+    "seq": 73,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000047\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "cb19979c06bc153569edff09616f6e9d6c7169f8b8c1d32c700a806e4def5ec9",
+    "hash": "af870b0f3b2f3911fdf2327074f42493048d0fa30285a86b2cbec289701f02d9"
+  },
+  {
+    "seq": 74,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000047\",\"epoch\":27,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "af870b0f3b2f3911fdf2327074f42493048d0fa30285a86b2cbec289701f02d9",
+    "hash": "fdd4c29977f2c2afa56d7c44be652582c18e7a7bd77f626fa5ccd8bf8deaea48"
+  },
+  {
+    "seq": 75,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000048\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "fdd4c29977f2c2afa56d7c44be652582c18e7a7bd77f626fa5ccd8bf8deaea48",
+    "hash": "2a43ac554d95fb4836ef2149075fb7f29f0cd6ae06d38d5a3798324f943bea81"
+  },
+  {
+    "seq": 76,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000048\",\"epoch\":28,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2a43ac554d95fb4836ef2149075fb7f29f0cd6ae06d38d5a3798324f943bea81",
+    "hash": "8d86ff28969cb14ff089591e00f63c7af76e7ca04dd9486ac995254afc779202"
+  },
+  {
+    "seq": 77,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000049\",\"grain\":\"app_instance\",\"graph_version\":18,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "8d86ff28969cb14ff089591e00f63c7af76e7ca04dd9486ac995254afc779202",
+    "hash": "51ed08f439bda86d300e9a51a83706782f6af958dc5bbc49191e3997237d751f"
+  },
+  {
+    "seq": 78,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000050\",\"grain\":\"account\",\"graph_version\":19,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "51ed08f439bda86d300e9a51a83706782f6af958dc5bbc49191e3997237d751f",
+    "hash": "e9496d123ff5cb0cd3d24f01507cee025128ad04f1372bb81c0e62a7b5b07782"
+  },
+  {
+    "seq": 79,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000051\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "e9496d123ff5cb0cd3d24f01507cee025128ad04f1372bb81c0e62a7b5b07782",
+    "hash": "2515e7951126491d3ff041f0ffe3d1c54bedbf0351d77b168c44af1a04581990"
+  },
+  {
+    "seq": 80,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000051\",\"epoch\":29,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2515e7951126491d3ff041f0ffe3d1c54bedbf0351d77b168c44af1a04581990",
+    "hash": "151e1c060aca7a3b07b6a647f230d9717db9cce75194e02f00d68e3981855f56"
+  },
+  {
+    "seq": 81,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000052\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "151e1c060aca7a3b07b6a647f230d9717db9cce75194e02f00d68e3981855f56",
+    "hash": "97e169749ae02f930472e41cc03c4764ecb8fcf71993c3178141d71e4e080820"
+  },
+  {
+    "seq": 82,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000052\",\"epoch\":30,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "97e169749ae02f930472e41cc03c4764ecb8fcf71993c3178141d71e4e080820",
+    "hash": "75413a11313f6d213d2d58865872ff5babaf96f0f42e373f36b82dbb50511952"
+  },
+  {
+    "seq": 83,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000053\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "75413a11313f6d213d2d58865872ff5babaf96f0f42e373f36b82dbb50511952",
+    "hash": "0b6e096325825c42e753e6fd3af4736d96c73efd541d52c6d5fe947c8a4be3a6"
+  },
+  {
+    "seq": 84,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000053\",\"epoch\":31,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "0b6e096325825c42e753e6fd3af4736d96c73efd541d52c6d5fe947c8a4be3a6",
+    "hash": "b52053ce7a34d97988989424983f84e9ed381ec1fa8fae6c4df3aabe5bedd49a"
+  },
+  {
+    "seq": 85,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000054\",\"grain\":\"app_instance\",\"graph_version\":20,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "b52053ce7a34d97988989424983f84e9ed381ec1fa8fae6c4df3aabe5bedd49a",
+    "hash": "31e1ff59e16b779afc68d13ec127fb0a26131b3e6eecba6977ebb0505eac03b9"
+  },
+  {
+    "seq": 86,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000055\",\"grain\":\"account\",\"graph_version\":21,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "31e1ff59e16b779afc68d13ec127fb0a26131b3e6eecba6977ebb0505eac03b9",
+    "hash": "ea3e203863ffc4a54f41e5e11fe3226138fab08b652ffd971fecaae618b0f978"
+  },
+  {
+    "seq": 87,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000056\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "ea3e203863ffc4a54f41e5e11fe3226138fab08b652ffd971fecaae618b0f978",
+    "hash": "857286bb73eaf98490e8f9c510bfef35e098c995d4c806c73a48f862b50ee0cf"
+  },
+  {
+    "seq": 88,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000056\",\"epoch\":32,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "857286bb73eaf98490e8f9c510bfef35e098c995d4c806c73a48f862b50ee0cf",
+    "hash": "d6c61a70c1f05c3da9a31594b24b0480473747938f4c500a0863d2908abaaa31"
+  },
+  {
+    "seq": 89,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000057\",\"grain\":\"account\",\"graph_version\":22,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d6c61a70c1f05c3da9a31594b24b0480473747938f4c500a0863d2908abaaa31",
+    "hash": "adcecede0f878ac19ca1ef17b7728a518fbf1fcc9b8ec2ba20078c265e804b96"
+  },
+  {
+    "seq": 90,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000058\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "adcecede0f878ac19ca1ef17b7728a518fbf1fcc9b8ec2ba20078c265e804b96",
+    "hash": "3af87cd10e9822eae07aecaf83d0edc246d3d60b410bbb93957565fb2370314d"
+  },
+  {
+    "seq": 91,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000058\",\"epoch\":33,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3af87cd10e9822eae07aecaf83d0edc246d3d60b410bbb93957565fb2370314d",
+    "hash": "aef2be9c8d53a99b443e44f97900dff5c06fe5ca906c97c19648cf16a1422bac"
+  },
+  {
+    "seq": 92,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000059\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "aef2be9c8d53a99b443e44f97900dff5c06fe5ca906c97c19648cf16a1422bac",
+    "hash": "b7c2b1f50dd9018c4899d4ad3b8bb64feb7a314e1258d2c03d46982af1e66c35"
+  },
+  {
+    "seq": 93,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000059\",\"epoch\":34,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "b7c2b1f50dd9018c4899d4ad3b8bb64feb7a314e1258d2c03d46982af1e66c35",
+    "hash": "216a59f3595d7cdc7b092535b531ec0f05cdf942d3206c71554e3d3f01f4fec4"
+  },
+  {
+    "seq": 94,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000060\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "216a59f3595d7cdc7b092535b531ec0f05cdf942d3206c71554e3d3f01f4fec4",
+    "hash": "3a0c6f4abd4d0b14908124028258e0fa3ab36311c2586f9f3736765f08fdd94c"
+  },
+  {
+    "seq": 95,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000060\",\"epoch\":35,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3a0c6f4abd4d0b14908124028258e0fa3ab36311c2586f9f3736765f08fdd94c",
+    "hash": "2c2104beff396ede3bb348a9300e2eaaf6ea042ed0255b7797979e92840b6bc2"
+  },
+  {
+    "seq": 96,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000061\",\"grain\":\"app_instance\",\"graph_version\":23,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "2c2104beff396ede3bb348a9300e2eaaf6ea042ed0255b7797979e92840b6bc2",
+    "hash": "f1fffacbd8db423740a1e96c8e49e1473f2673dd62bd928129b70f5ee1ca27bc"
+  },
+  {
+    "seq": 97,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000062\",\"grain\":\"account\",\"graph_version\":24,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f1fffacbd8db423740a1e96c8e49e1473f2673dd62bd928129b70f5ee1ca27bc",
+    "hash": "b50ec4770b0af12f39df224616e1ada073fae7c4edeaa08a55cdc8f0edb28c30"
+  },
+  {
+    "seq": 98,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000063\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "b50ec4770b0af12f39df224616e1ada073fae7c4edeaa08a55cdc8f0edb28c30",
+    "hash": "2aa2655a580c3e36f259356b3fd897b9cb2801bafd832abd1c3e23716d3ebf97"
+  },
+  {
+    "seq": 99,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000063\",\"epoch\":36,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2aa2655a580c3e36f259356b3fd897b9cb2801bafd832abd1c3e23716d3ebf97",
+    "hash": "7af60e6341ca4a651cd8de14d1b8d62762ddfdea76cf6e641b9e8ab82fa4f25b"
+  },
+  {
+    "seq": 100,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000064\",\"grain\":\"account\",\"graph_version\":25,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7af60e6341ca4a651cd8de14d1b8d62762ddfdea76cf6e641b9e8ab82fa4f25b",
+    "hash": "2ee3b31663cebf34c50f0b4fe8d1a1e9e079625d8e09e097bbb7d6975b4cebad"
+  },
+  {
+    "seq": 101,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000065\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "2ee3b31663cebf34c50f0b4fe8d1a1e9e079625d8e09e097bbb7d6975b4cebad",
+    "hash": "d5509cc6c3bf734f3cc1412e2e492dfa86b423aa83fd848e263e1a7087e46188"
+  },
+  {
+    "seq": 102,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000065\",\"epoch\":37,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d5509cc6c3bf734f3cc1412e2e492dfa86b423aa83fd848e263e1a7087e46188",
+    "hash": "adc77ddf8ca50b7e9c7fd0c9ed685c746916b309e6b65a15ba3954f1ee5170dd"
+  },
+  {
+    "seq": 103,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000066\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "adc77ddf8ca50b7e9c7fd0c9ed685c746916b309e6b65a15ba3954f1ee5170dd",
+    "hash": "8b8153d3ae64c69c347ec92ece3f976dbe6e59b7968c838b88ee11e468c89027"
+  },
+  {
+    "seq": 104,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000066\",\"epoch\":38,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "8b8153d3ae64c69c347ec92ece3f976dbe6e59b7968c838b88ee11e468c89027",
+    "hash": "8ad26b3154612e8d5d8e99c1a5216b788cd2fc53a47f12912ef779ead1ef3c23"
+  },
+  {
+    "seq": 105,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000067\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "8ad26b3154612e8d5d8e99c1a5216b788cd2fc53a47f12912ef779ead1ef3c23",
+    "hash": "ce0e4a1d8163dc2a8105444ffd0f4df02be202ea5bf74fc96dd5da667c0d7917"
+  },
+  {
+    "seq": 106,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000067\",\"epoch\":39,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "ce0e4a1d8163dc2a8105444ffd0f4df02be202ea5bf74fc96dd5da667c0d7917",
+    "hash": "f2006fd090dec35b9ad571e9c61e95e151d708904dade73607a8fb1878f27628"
+  },
+  {
+    "seq": 107,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000068\",\"grain\":\"app_instance\",\"graph_version\":26,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f2006fd090dec35b9ad571e9c61e95e151d708904dade73607a8fb1878f27628",
+    "hash": "f86b01173f318b220a35c59b80df9b9a5558b85631e4d42c0add26d10023c379"
+  },
+  {
+    "seq": 108,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000069\",\"grain\":\"account\",\"graph_version\":27,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f86b01173f318b220a35c59b80df9b9a5558b85631e4d42c0add26d10023c379",
+    "hash": "ae8caad31155db18efb7955fcf329dec09e8f54d20deda8c13127abfcb6bd982"
+  },
+  {
+    "seq": 109,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000070\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "ae8caad31155db18efb7955fcf329dec09e8f54d20deda8c13127abfcb6bd982",
+    "hash": "718124c61554c2f76e5b72c75468d919498a90c8b3aea58e48471f2e484b2b8b"
+  },
+  {
+    "seq": 110,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000070\",\"epoch\":40,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "718124c61554c2f76e5b72c75468d919498a90c8b3aea58e48471f2e484b2b8b",
+    "hash": "717f82de4b84d3250af5cea5d5cd67fe7cdad5dc92be45a424b4e364773733b5"
+  },
+  {
+    "seq": 111,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000071\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "717f82de4b84d3250af5cea5d5cd67fe7cdad5dc92be45a424b4e364773733b5",
+    "hash": "423f31bd0102ccc0a65a37fa8424c37695e12b26fda66e1c25669cdf01a78db0"
+  },
+  {
+    "seq": 112,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000071\",\"epoch\":41,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "423f31bd0102ccc0a65a37fa8424c37695e12b26fda66e1c25669cdf01a78db0",
+    "hash": "7ce4fcbb107bb1aae8b4593a0b7512887f22508a1a2f6ed1e44b84c8ec93aa8b"
+  },
+  {
+    "seq": 113,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000072\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "7ce4fcbb107bb1aae8b4593a0b7512887f22508a1a2f6ed1e44b84c8ec93aa8b",
+    "hash": "80b1b38bcce24c340167c04201cfd6e22d37d63d2feb29e7a7200107cb6bcff2"
+  },
+  {
+    "seq": 114,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000072\",\"epoch\":42,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "80b1b38bcce24c340167c04201cfd6e22d37d63d2feb29e7a7200107cb6bcff2",
+    "hash": "53b6f55b36a3aa8f0f8e0445b1b91d06c75b6366ca04531cb1fad4b1983ec086"
+  },
+  {
+    "seq": 115,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000073\",\"grain\":\"app_instance\",\"graph_version\":28,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "53b6f55b36a3aa8f0f8e0445b1b91d06c75b6366ca04531cb1fad4b1983ec086",
+    "hash": "d36bccbb29d676954415940e92f96872446cfe27d0a53c9d8c46ad07cafce084"
+  },
+  {
+    "seq": 116,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000074\",\"grain\":\"account\",\"graph_version\":29,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d36bccbb29d676954415940e92f96872446cfe27d0a53c9d8c46ad07cafce084",
+    "hash": "0ed2bebb9de9e31f5e6c40e36da32414b8dbfefe46741c5ec1635aef9a3f53bc"
+  },
+  {
+    "seq": 117,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000075\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "0ed2bebb9de9e31f5e6c40e36da32414b8dbfefe46741c5ec1635aef9a3f53bc",
+    "hash": "2c0504ed05f0a40c024c01f85bfb8b6d978ef3f6890a1047e63a85995585b3a0"
+  },
+  {
+    "seq": 118,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000075\",\"epoch\":43,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2c0504ed05f0a40c024c01f85bfb8b6d978ef3f6890a1047e63a85995585b3a0",
+    "hash": "f125d48731b8995813714dca194b1d9365a374b95b77386af5bb9480ac648a0d"
+  },
+  {
+    "seq": 119,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000076\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "f125d48731b8995813714dca194b1d9365a374b95b77386af5bb9480ac648a0d",
+    "hash": "73b17b876bb8aca5687426ffbc7b9832e0af625d4a81b12cea80c939a89721e1"
+  },
+  {
+    "seq": 120,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000076\",\"epoch\":44,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "73b17b876bb8aca5687426ffbc7b9832e0af625d4a81b12cea80c939a89721e1",
+    "hash": "df0c342c31748f2f8e20ad173e6bebd54a50a324d7a44c8bc0be402d5831a54c"
+  },
+  {
+    "seq": 121,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000077\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "df0c342c31748f2f8e20ad173e6bebd54a50a324d7a44c8bc0be402d5831a54c",
+    "hash": "1ecca9bd6fde0540a182cc0d5d3b9085db8be00712f730411c6ea401f35e8f3f"
+  },
+  {
+    "seq": 122,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000077\",\"epoch\":45,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "1ecca9bd6fde0540a182cc0d5d3b9085db8be00712f730411c6ea401f35e8f3f",
+    "hash": "4f60c0bc3845bfba0b7975fff86c3d6982b96a5c997cbd5d0f1d2667848ee117"
+  },
+  {
+    "seq": 123,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000078\",\"grain\":\"app_instance\",\"graph_version\":30,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4f60c0bc3845bfba0b7975fff86c3d6982b96a5c997cbd5d0f1d2667848ee117",
+    "hash": "9ec265863e9a3af1e2dc3cdc2e2f540ca439b319d21f113becb6971b6ba63dbd"
+  },
+  {
+    "seq": 124,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000079\",\"grain\":\"account\",\"graph_version\":31,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "9ec265863e9a3af1e2dc3cdc2e2f540ca439b319d21f113becb6971b6ba63dbd",
+    "hash": "d7eaaa81c9740c4fe209e8eb0b6907ca0671472789c8f5309ca773a47e24a723"
+  },
+  {
+    "seq": 125,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000080\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "d7eaaa81c9740c4fe209e8eb0b6907ca0671472789c8f5309ca773a47e24a723",
+    "hash": "9b3e382c3b8339fd192cfc8d8a226977b47699b15277a0839f7bc1bc81612e81"
+  },
+  {
+    "seq": 126,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000080\",\"epoch\":46,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "9b3e382c3b8339fd192cfc8d8a226977b47699b15277a0839f7bc1bc81612e81",
+    "hash": "89a1f1c2eb610182933ed3994544655168e5420decf5e4a8def3db1633f046dd"
+  },
+  {
+    "seq": 127,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000081\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "89a1f1c2eb610182933ed3994544655168e5420decf5e4a8def3db1633f046dd",
+    "hash": "b6bd2e1c2f29dd4087a78e14ac026eaec093f207169a8741ac294154326a7943"
+  },
+  {
+    "seq": 128,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000081\",\"epoch\":47,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "b6bd2e1c2f29dd4087a78e14ac026eaec093f207169a8741ac294154326a7943",
+    "hash": "15e9f8dbf04d9b0b23372ecbb1eb70f3e7369a7838da076df89945c58accf6f2"
+  },
+  {
+    "seq": 129,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000082\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "15e9f8dbf04d9b0b23372ecbb1eb70f3e7369a7838da076df89945c58accf6f2",
+    "hash": "75d10da1f8313ff8fd569bd42c7b0b4e196748dcf82518b0d8d16698dbccddf4"
+  },
+  {
+    "seq": 130,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000082\",\"epoch\":48,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "75d10da1f8313ff8fd569bd42c7b0b4e196748dcf82518b0d8d16698dbccddf4",
+    "hash": "f0f5e3e2d016c6cba9ee0d863e2ae005e612955d36c367b818493cc3967df97c"
+  },
+  {
+    "seq": 131,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000083\",\"grain\":\"app_instance\",\"graph_version\":32,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f0f5e3e2d016c6cba9ee0d863e2ae005e612955d36c367b818493cc3967df97c",
+    "hash": "c40b46fa5d778ad49dcf2e30e1ebf8cd2cbc1bdb199bc66427137d977c2e0fd2"
+  },
+  {
+    "seq": 132,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000084\",\"grain\":\"account\",\"graph_version\":33,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c40b46fa5d778ad49dcf2e30e1ebf8cd2cbc1bdb199bc66427137d977c2e0fd2",
+    "hash": "2c9a6661ab2751b486f705805b0eb01d11636ca6eac57b6abe1eaadd3cd84341"
+  },
+  {
+    "seq": 133,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000085\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "2c9a6661ab2751b486f705805b0eb01d11636ca6eac57b6abe1eaadd3cd84341",
+    "hash": "5a6f2629ae50783c0451cbe3377849a552f3da9bf8f4bd6fd609a486aeb7d5da"
+  },
+  {
+    "seq": 134,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000085\",\"epoch\":49,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "5a6f2629ae50783c0451cbe3377849a552f3da9bf8f4bd6fd609a486aeb7d5da",
+    "hash": "b072cef28213e65476fc9d563f13c5e92cd0550dd2de3a6a79ffaaeef831b0b6"
+  },
+  {
+    "seq": 135,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000086\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "b072cef28213e65476fc9d563f13c5e92cd0550dd2de3a6a79ffaaeef831b0b6",
+    "hash": "066b20ebead00b882526b4c5d6201256274b9561f66715c31a6ce8de3cad1929"
+  },
+  {
+    "seq": 136,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000086\",\"epoch\":50,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "066b20ebead00b882526b4c5d6201256274b9561f66715c31a6ce8de3cad1929",
+    "hash": "8d92453699f79302accdd548fd0346b272589de60cea73f8b8cf02610843992c"
+  },
+  {
+    "seq": 137,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000087\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "8d92453699f79302accdd548fd0346b272589de60cea73f8b8cf02610843992c",
+    "hash": "d8f0546118af2faa1159e7e400992f9c946702d104eb4618fc4d72095822cb2f"
+  },
+  {
+    "seq": 138,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000087\",\"epoch\":51,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d8f0546118af2faa1159e7e400992f9c946702d104eb4618fc4d72095822cb2f",
+    "hash": "7656e172a3a1c55dcdcd477358fc66705ca6051cee9d39a44d4fd8b73c0de7c7"
+  },
+  {
+    "seq": 139,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000088\",\"grain\":\"app_instance\",\"graph_version\":34,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7656e172a3a1c55dcdcd477358fc66705ca6051cee9d39a44d4fd8b73c0de7c7",
+    "hash": "3429c75902170aea8259c87de9eede6e32798d32eb572a6bad297a2103cf5d94"
+  },
+  {
+    "seq": 140,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000089\",\"grain\":\"account\",\"graph_version\":35,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "3429c75902170aea8259c87de9eede6e32798d32eb572a6bad297a2103cf5d94",
+    "hash": "044b74df77df879c6b013d80c28befa08a89b18e32d84a14201358f0faf5820d"
+  },
+  {
+    "seq": 141,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000090\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "044b74df77df879c6b013d80c28befa08a89b18e32d84a14201358f0faf5820d",
+    "hash": "0b802ac705981e2acc86188e321f3ca903b0f7df23662481c4f8f6346b19aba7"
+  },
+  {
+    "seq": 142,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000090\",\"epoch\":52,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "0b802ac705981e2acc86188e321f3ca903b0f7df23662481c4f8f6346b19aba7",
+    "hash": "b04cb1ce6efb234462152793e08f25963cb681974476987500bdff2a26b5d849"
+  },
+  {
+    "seq": 143,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000091\",\"grain\":\"account\",\"graph_version\":36,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "b04cb1ce6efb234462152793e08f25963cb681974476987500bdff2a26b5d849",
+    "hash": "f2af5e778c0b13f87fbb711e81167831c5451d341f3f73c5a003ba08cf9592db"
+  },
+  {
+    "seq": 144,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000092\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "f2af5e778c0b13f87fbb711e81167831c5451d341f3f73c5a003ba08cf9592db",
+    "hash": "978f3ddc4308be0b602684d2fbd3736e29d888e0ab0fab01163db25474a7a07c"
+  },
+  {
+    "seq": 145,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000092\",\"epoch\":53,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "978f3ddc4308be0b602684d2fbd3736e29d888e0ab0fab01163db25474a7a07c",
+    "hash": "c419957d05cab28063a4262f088304dddc09342cd24ca6040ff06606cb9d2f10"
+  },
+  {
+    "seq": 146,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000093\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "c419957d05cab28063a4262f088304dddc09342cd24ca6040ff06606cb9d2f10",
+    "hash": "55edf44759e28a843f104b78ac05a9dae7583fd19465efb3ae9f63847c0940c6"
+  },
+  {
+    "seq": 147,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000093\",\"epoch\":54,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "55edf44759e28a843f104b78ac05a9dae7583fd19465efb3ae9f63847c0940c6",
+    "hash": "70098162cc1bd208a4725b3d3798d19f2defd4ecb1e473f8e56450431af492f6"
+  },
+  {
+    "seq": 148,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000094\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "70098162cc1bd208a4725b3d3798d19f2defd4ecb1e473f8e56450431af492f6",
+    "hash": "0f6241b9d8dbf2f61c5b2a0f53ddceabcc945392e9fdbafde51f7d51c032c855"
+  },
+  {
+    "seq": 149,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000094\",\"epoch\":55,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "0f6241b9d8dbf2f61c5b2a0f53ddceabcc945392e9fdbafde51f7d51c032c855",
+    "hash": "e69c57578771079f5652c430a8b489495959fa5f5fd5db28eae2af56e498f671"
+  },
+  {
+    "seq": 150,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000095\",\"grain\":\"app_instance\",\"graph_version\":37,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "e69c57578771079f5652c430a8b489495959fa5f5fd5db28eae2af56e498f671",
+    "hash": "01c11edacfc32058a4edb60e43352a27f41eb33e697727b949950c802485f439"
+  },
+  {
+    "seq": 151,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000096\",\"grain\":\"account\",\"graph_version\":38,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "01c11edacfc32058a4edb60e43352a27f41eb33e697727b949950c802485f439",
+    "hash": "2e9cd0e5a8c9321974598eeb0e70844e55864e1a13a1b98c00ca7eb81ed4a2be"
+  },
+  {
+    "seq": 152,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000097\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "2e9cd0e5a8c9321974598eeb0e70844e55864e1a13a1b98c00ca7eb81ed4a2be",
+    "hash": "b6388168bc2f8856a7238e9ea3a0525825fd39b1bcc6dc9ee7d9df6ea33496ea"
+  },
+  {
+    "seq": 153,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000097\",\"epoch\":56,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "b6388168bc2f8856a7238e9ea3a0525825fd39b1bcc6dc9ee7d9df6ea33496ea",
+    "hash": "28db81c5fe7bd5a71afc21d46de372d2f7227a6d9dd889e24cd4a83c5524f9db"
+  },
+  {
+    "seq": 154,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000098\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "28db81c5fe7bd5a71afc21d46de372d2f7227a6d9dd889e24cd4a83c5524f9db",
+    "hash": "4efcb973cfee58f91d4e802ecd3c1738e07731c842eeda658f4ef52344767140"
+  },
+  {
+    "seq": 155,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000098\",\"epoch\":57,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "4efcb973cfee58f91d4e802ecd3c1738e07731c842eeda658f4ef52344767140",
+    "hash": "e21d40008dc71137436dc53d50c39360438ce779d9e33731cbb2c5d541b293a1"
+  },
+  {
+    "seq": 156,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000099\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "e21d40008dc71137436dc53d50c39360438ce779d9e33731cbb2c5d541b293a1",
+    "hash": "1df66cfe67fbb88ff7f9dceab41d368818af9b49daf8b9ada08fc74d7c3b5b78"
+  },
+  {
+    "seq": 157,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000099\",\"epoch\":58,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "1df66cfe67fbb88ff7f9dceab41d368818af9b49daf8b9ada08fc74d7c3b5b78",
+    "hash": "0f97f04c77743759f121ba5df4f725a1da4b3d16bb76d39002e356731a160ff6"
+  },
+  {
+    "seq": 158,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000100\",\"grain\":\"app_instance\",\"graph_version\":39,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "0f97f04c77743759f121ba5df4f725a1da4b3d16bb76d39002e356731a160ff6",
+    "hash": "c625eb22b4532de788a6dc6ebd75869a505fbec9f76533dfc06bff25a6c04c19"
+  },
+  {
+    "seq": 159,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000101\",\"grain\":\"account\",\"graph_version\":40,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c625eb22b4532de788a6dc6ebd75869a505fbec9f76533dfc06bff25a6c04c19",
+    "hash": "44cb226f0d1d83560f0402ccc0e873d79e1f7a8179cf88e6410b8c142bbfbc9c"
+  },
+  {
+    "seq": 160,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000102\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "44cb226f0d1d83560f0402ccc0e873d79e1f7a8179cf88e6410b8c142bbfbc9c",
+    "hash": "57064b0a76892642f9b65d4a110324685b6c46cdce7a9c31c1a1bd6ee0199b4d"
+  },
+  {
+    "seq": 161,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000102\",\"epoch\":59,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "57064b0a76892642f9b65d4a110324685b6c46cdce7a9c31c1a1bd6ee0199b4d",
+    "hash": "0026c9371a689b70bb8e0ca91984a09348ae0781154a721847ba2491f66cd77d"
+  },
+  {
+    "seq": 162,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000103\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "0026c9371a689b70bb8e0ca91984a09348ae0781154a721847ba2491f66cd77d",
+    "hash": "3c08bbb3c2db0a2262759e035834903624cb2f59a7d0c09b8dfab2d15df7811b"
+  },
+  {
+    "seq": 163,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000103\",\"epoch\":60,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3c08bbb3c2db0a2262759e035834903624cb2f59a7d0c09b8dfab2d15df7811b",
+    "hash": "21a8f6f4cf583733a6e37f2cfa97f71ff4e0e864044e9bc9b4ea50757fabf63a"
+  },
+  {
+    "seq": 164,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000104\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "21a8f6f4cf583733a6e37f2cfa97f71ff4e0e864044e9bc9b4ea50757fabf63a",
+    "hash": "72b18abd806aaeef3f0bf97502884e2021f7652adcab38b0243afc9237241e95"
+  },
+  {
+    "seq": 165,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000104\",\"epoch\":61,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "72b18abd806aaeef3f0bf97502884e2021f7652adcab38b0243afc9237241e95",
+    "hash": "579511c19e4344776faf5326bb812ce3287a7af75c6f9663f7e7e7c9476782d0"
+  },
+  {
+    "seq": 166,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000105\",\"grain\":\"app_instance\",\"graph_version\":41,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "579511c19e4344776faf5326bb812ce3287a7af75c6f9663f7e7e7c9476782d0",
+    "hash": "4ce94959abaa254917aa4709e9cf6b0673439faa2ff57a9a0cfc7555a7a54d13"
+  },
+  {
+    "seq": 167,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000106\",\"grain\":\"account\",\"graph_version\":42,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4ce94959abaa254917aa4709e9cf6b0673439faa2ff57a9a0cfc7555a7a54d13",
+    "hash": "eba837b6d4963e384dd31e5e9976ea83a9d864e99040c2bbd17ab118f5e87480"
+  },
+  {
+    "seq": 168,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000107\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "eba837b6d4963e384dd31e5e9976ea83a9d864e99040c2bbd17ab118f5e87480",
+    "hash": "b4cdf3a8faa740a674ce4ef76ccecc4e314108152a7c3c2dd82cfb4231dfb18f"
+  },
+  {
+    "seq": 169,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000107\",\"epoch\":62,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "b4cdf3a8faa740a674ce4ef76ccecc4e314108152a7c3c2dd82cfb4231dfb18f",
+    "hash": "5371b2b55cb3b602764e66c7c647f37ae40701b897b8b1642696ec63a7804272"
+  },
+  {
+    "seq": 170,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000108\",\"grain\":\"account\",\"graph_version\":43,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "5371b2b55cb3b602764e66c7c647f37ae40701b897b8b1642696ec63a7804272",
+    "hash": "6d119bb157bd6faac24231c4ed1436cd7d6a994e1a7113af223d999adb194234"
+  },
+  {
+    "seq": 171,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000109\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "6d119bb157bd6faac24231c4ed1436cd7d6a994e1a7113af223d999adb194234",
+    "hash": "04ac03c0c674b60e212a546d65d8fb4ed9f83074b4483625bab85d2148def102"
+  },
+  {
+    "seq": 172,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000109\",\"epoch\":63,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "04ac03c0c674b60e212a546d65d8fb4ed9f83074b4483625bab85d2148def102",
+    "hash": "1219cc9824c4cb8256a83d8c62260fcaef6b54ff825a69e131a8b6b4c745a170"
+  },
+  {
+    "seq": 173,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000110\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "1219cc9824c4cb8256a83d8c62260fcaef6b54ff825a69e131a8b6b4c745a170",
+    "hash": "729cdf24ca3d6407de06beb6ae1b31fc61bfc445924cd50bbe12b9beac6785f1"
+  },
+  {
+    "seq": 174,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000110\",\"epoch\":64,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "729cdf24ca3d6407de06beb6ae1b31fc61bfc445924cd50bbe12b9beac6785f1",
+    "hash": "713935706cc5dc5c68dcdb9dbfe46849817376ffd4392636c2bb862c202b7102"
+  },
+  {
+    "seq": 175,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000111\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "713935706cc5dc5c68dcdb9dbfe46849817376ffd4392636c2bb862c202b7102",
+    "hash": "afdbe424da2011277bd6be4944f057ab83f0ea08c8b2b68ab4b48cd890969fb9"
+  },
+  {
+    "seq": 176,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000111\",\"epoch\":65,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "afdbe424da2011277bd6be4944f057ab83f0ea08c8b2b68ab4b48cd890969fb9",
+    "hash": "b19710d71fcfba2fe770b0a4d27b17dad2e64983cb6dd4b961414a6b8f091dc9"
+  },
+  {
+    "seq": 177,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000112\",\"grain\":\"app_instance\",\"graph_version\":44,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "b19710d71fcfba2fe770b0a4d27b17dad2e64983cb6dd4b961414a6b8f091dc9",
+    "hash": "d392d03fe20a29ac23c49c98ed91013191b6d22680efedd70762d59d5f9152a4"
+  },
+  {
+    "seq": 178,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000113\",\"grain\":\"account\",\"graph_version\":45,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d392d03fe20a29ac23c49c98ed91013191b6d22680efedd70762d59d5f9152a4",
+    "hash": "b93c6ff9903d9b1434c59ea2d1e7c3219cfb30b0afea10042d7e4493ea89aa9e"
+  },
+  {
+    "seq": 179,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000114\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "b93c6ff9903d9b1434c59ea2d1e7c3219cfb30b0afea10042d7e4493ea89aa9e",
+    "hash": "75536871e2b258179e314a9505d1f6d5ac70e7c1fc9e9f7ccaf8a9cccb7471a0"
+  },
+  {
+    "seq": 180,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000114\",\"epoch\":66,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "75536871e2b258179e314a9505d1f6d5ac70e7c1fc9e9f7ccaf8a9cccb7471a0",
+    "hash": "4d5d37667edecde8c7fc645aa37af63be17bb15914ca6f8296ecba4c5f734e09"
+  },
+  {
+    "seq": 181,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000115\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "4d5d37667edecde8c7fc645aa37af63be17bb15914ca6f8296ecba4c5f734e09",
+    "hash": "4c1903ad49fda99a67789e380719b624d166f3698f23b3359175159663fd0427"
+  },
+  {
+    "seq": 182,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000115\",\"epoch\":67,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "4c1903ad49fda99a67789e380719b624d166f3698f23b3359175159663fd0427",
+    "hash": "9aa72834f7577339320a28f7a3a484865146f9e1017d673dff2630ac2f7863e1"
+  },
+  {
+    "seq": 183,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000116\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "9aa72834f7577339320a28f7a3a484865146f9e1017d673dff2630ac2f7863e1",
+    "hash": "c4c960bb7ac1feb08e4fbe0cecda599592e025a85f152bb56584e924c225b04f"
+  },
+  {
+    "seq": 184,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000116\",\"epoch\":68,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "c4c960bb7ac1feb08e4fbe0cecda599592e025a85f152bb56584e924c225b04f",
+    "hash": "4fc8cadd838362597e356e7df900c8c42333890328173b28fc2693fa5349d68c"
+  },
+  {
+    "seq": 185,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000117\",\"grain\":\"app_instance\",\"graph_version\":46,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4fc8cadd838362597e356e7df900c8c42333890328173b28fc2693fa5349d68c",
+    "hash": "5b725df2403095cf641e885d2743ab4ab33107dedb4eba38aff9e4012e473830"
+  },
+  {
+    "seq": 186,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000118\",\"grain\":\"account\",\"graph_version\":47,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "5b725df2403095cf641e885d2743ab4ab33107dedb4eba38aff9e4012e473830",
+    "hash": "399755b35d6ee333547fdbb44ea9e0021b892fac306be66562fb13f76faf150a"
+  },
+  {
+    "seq": 187,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000119\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "399755b35d6ee333547fdbb44ea9e0021b892fac306be66562fb13f76faf150a",
+    "hash": "9eb2266738f8f9e4289b3f2774fc1d876d95cd492249d9196892d0e58b51b8c5"
+  },
+  {
+    "seq": 188,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000119\",\"epoch\":69,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "9eb2266738f8f9e4289b3f2774fc1d876d95cd492249d9196892d0e58b51b8c5",
+    "hash": "0a3de9e330c5f857805d9c24f387c121df8195b2885e7e8521a0732b70504aef"
+  },
+  {
+    "seq": 189,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000120\",\"grain\":\"account\",\"graph_version\":48,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "0a3de9e330c5f857805d9c24f387c121df8195b2885e7e8521a0732b70504aef",
+    "hash": "ea70f6292578f21861db98db81aaf7d8c718faf6bc822ad2f782ed76eb4fb7bd"
+  },
+  {
+    "seq": 190,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000121\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "ea70f6292578f21861db98db81aaf7d8c718faf6bc822ad2f782ed76eb4fb7bd",
+    "hash": "d744f3de154faf94b8e0fa8f6b57e142a1b0d73cc6cb0d7ff706c56d9a540841"
+  },
+  {
+    "seq": 191,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000121\",\"epoch\":70,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d744f3de154faf94b8e0fa8f6b57e142a1b0d73cc6cb0d7ff706c56d9a540841",
+    "hash": "483722d9ab23e438101915e26535130a19c84ba07200159248f601863c279298"
+  },
+  {
+    "seq": 192,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000122\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "483722d9ab23e438101915e26535130a19c84ba07200159248f601863c279298",
+    "hash": "2ab20ec0ea03bb9e1a527ed0a401ee363b0b4c23a9dc311c301ea1a5adb5e018"
+  },
+  {
+    "seq": 193,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000122\",\"epoch\":71,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "2ab20ec0ea03bb9e1a527ed0a401ee363b0b4c23a9dc311c301ea1a5adb5e018",
+    "hash": "fb1989728c37320063298b38c36e5f25127605f6a543502d3b43adee22e181cf"
+  },
+  {
+    "seq": 194,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000123\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "fb1989728c37320063298b38c36e5f25127605f6a543502d3b43adee22e181cf",
+    "hash": "e52b6330d2d24c3e22366c751c25042ec4adc7865af0b4f5c830e8d9e8eb30ca"
+  },
+  {
+    "seq": 195,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000123\",\"epoch\":72,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "e52b6330d2d24c3e22366c751c25042ec4adc7865af0b4f5c830e8d9e8eb30ca",
+    "hash": "a3e50e5675368cbf9f96b768d524ae3c79dff73d2eff05335c9f9d35855a2038"
+  },
+  {
+    "seq": 196,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000124\",\"grain\":\"app_instance\",\"graph_version\":49,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "a3e50e5675368cbf9f96b768d524ae3c79dff73d2eff05335c9f9d35855a2038",
+    "hash": "25ad234cfcb02f6d48f5c55a3d7a2764b4918f33357e4ecf992a32f326b82f32"
+  },
+  {
+    "seq": 197,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000125\",\"grain\":\"account\",\"graph_version\":50,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "25ad234cfcb02f6d48f5c55a3d7a2764b4918f33357e4ecf992a32f326b82f32",
+    "hash": "d572697137292bf190ffee876c4736e9b773671ed8cbb896225c09830f336448"
+  },
+  {
+    "seq": 198,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000126\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "d572697137292bf190ffee876c4736e9b773671ed8cbb896225c09830f336448",
+    "hash": "4c555fd801dfc90d09d47ae9cd7165d921920412f2eabb985814e3d77eae5d03"
+  },
+  {
+    "seq": 199,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000126\",\"epoch\":73,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "4c555fd801dfc90d09d47ae9cd7165d921920412f2eabb985814e3d77eae5d03",
+    "hash": "dea84d83f9fc80afd7c57d229a1629bd0954c5771ff2453d2376934a18d26a3d"
+  },
+  {
+    "seq": 200,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000127\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "dea84d83f9fc80afd7c57d229a1629bd0954c5771ff2453d2376934a18d26a3d",
+    "hash": "964690ec40ad023ac2d07ca280b3da4ab566a15d66a8ee8555f1ce2e30f6eb45"
+  },
+  {
+    "seq": 201,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000127\",\"epoch\":74,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "964690ec40ad023ac2d07ca280b3da4ab566a15d66a8ee8555f1ce2e30f6eb45",
+    "hash": "c8c775c4a7fdad8de9d4539a8c14a2dd81d6f1628b9defe2e11b2f8970156590"
+  },
+  {
+    "seq": 202,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000128\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "c8c775c4a7fdad8de9d4539a8c14a2dd81d6f1628b9defe2e11b2f8970156590",
+    "hash": "25ca06f64276fa7fc1e20aae4b17acc68d8d6fd9607ccb71ffad0d04f24c1509"
+  },
+  {
+    "seq": 203,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000128\",\"epoch\":75,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "25ca06f64276fa7fc1e20aae4b17acc68d8d6fd9607ccb71ffad0d04f24c1509",
+    "hash": "fd385e9ace5ae8bb143b91f12133ec0d10f0cfae0e33b1ae2b66735e6325aca0"
+  },
+  {
+    "seq": 204,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000129\",\"grain\":\"app_instance\",\"graph_version\":51,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "fd385e9ace5ae8bb143b91f12133ec0d10f0cfae0e33b1ae2b66735e6325aca0",
+    "hash": "f44d6ea9c6ad4f806be8a6e065326182f1afdfe999ca38fcaff7de15616fd5f2"
+  },
+  {
+    "seq": 205,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000130\",\"grain\":\"account\",\"graph_version\":52,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f44d6ea9c6ad4f806be8a6e065326182f1afdfe999ca38fcaff7de15616fd5f2",
+    "hash": "9e09e7c905bc1aa0165ffc80341c068a8bea49c8ead6a756738e63cf1a95acd3"
+  },
+  {
+    "seq": 206,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000131\",\"grain\":\"device\",\"namespace_ref\":\"ns_000001\"}",
+    "previous_hash": "9e09e7c905bc1aa0165ffc80341c068a8bea49c8ead6a756738e63cf1a95acd3",
+    "hash": "a7892bc7c4f7ace7eb405b307b83e8d3827ef2d4fcf88a90f57daf28edb4cea5"
+  },
+  {
+    "seq": 207,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000131\",\"epoch\":76,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a7892bc7c4f7ace7eb405b307b83e8d3827ef2d4fcf88a90f57daf28edb4cea5",
+    "hash": "1045ca856105564fc9bc855e9df0cd834e947fcf6a896d3d64bdb52322e1b179"
+  },
+  {
+    "seq": 208,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000132\",\"grain\":\"account\",\"namespace_ref\":\"ns_000003\"}",
+    "previous_hash": "1045ca856105564fc9bc855e9df0cd834e947fcf6a896d3d64bdb52322e1b179",
+    "hash": "f8287c847cba8a2fd2f2f256eba025fc11719daa11cf3663edc4edb194ac90d0"
+  },
+  {
+    "seq": 209,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000132\",\"epoch\":77,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "f8287c847cba8a2fd2f2f256eba025fc11719daa11cf3663edc4edb194ac90d0",
+    "hash": "ef6d2eb2f1f5f7732600bf3a41942cb4db54709787043b6ed0f896e0e62562fc"
+  },
+  {
+    "seq": 210,
+    "at": 1756857600,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000133\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000005\"}",
+    "previous_hash": "ef6d2eb2f1f5f7732600bf3a41942cb4db54709787043b6ed0f896e0e62562fc",
+    "hash": "d6deb5b60d15ce4ce1752c58096c86dda0c44d0f3988b227eeee7feeadec974e"
+  },
+  {
+    "seq": 211,
+    "at": 1756857600,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1756857600,\"entity_ref\":\"entity_000133\",\"epoch\":78,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d6deb5b60d15ce4ce1752c58096c86dda0c44d0f3988b227eeee7feeadec974e",
+    "hash": "8083fc9baffb271a8d19a7986e3a3f817264b412f36144f1af9601a7669af133"
+  },
+  {
+    "seq": 212,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000134\",\"grain\":\"app_instance\",\"graph_version\":53,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "8083fc9baffb271a8d19a7986e3a3f817264b412f36144f1af9601a7669af133",
+    "hash": "301c8736f40a3aad663496329d4f62fcdcdd485a8fec320788b9e73d8274873e"
+  },
+  {
+    "seq": 213,
+    "at": 1756857600,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000135\",\"grain\":\"account\",\"graph_version\":54,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "301c8736f40a3aad663496329d4f62fcdcdd485a8fec320788b9e73d8274873e",
+    "hash": "aac353590ae65ca0a6029248f6334d3273d892a3c9e29e29f036b59a5e6c3434"
+  },
+  {
+    "seq": 214,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000136\",\"ledger_ref\":\"ledger_000138\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "aac353590ae65ca0a6029248f6334d3273d892a3c9e29e29f036b59a5e6c3434",
+    "hash": "369342fc48409041abd36c7bd36b1b1348c20ecd07712f3d4c16cdf855da452d"
+  },
+  {
+    "seq": 215,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000139\",\"ledger_ref\":\"ledger_000141\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "369342fc48409041abd36c7bd36b1b1348c20ecd07712f3d4c16cdf855da452d",
+    "hash": "8924974c1b3c3e47c5b0e496b342b328f61dd7355f558d3a269629b16e6233ee"
+  },
+  {
+    "seq": 216,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000142\",\"ledger_ref\":\"ledger_000144\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "8924974c1b3c3e47c5b0e496b342b328f61dd7355f558d3a269629b16e6233ee",
+    "hash": "9aea7da92f677ee587bf63498b379da816b3056fd3754afc6bab20cee0745aa9"
+  },
+  {
+    "seq": 217,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000145\",\"ledger_ref\":\"ledger_000147\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "9aea7da92f677ee587bf63498b379da816b3056fd3754afc6bab20cee0745aa9",
+    "hash": "5afc968b283278346d3d65b0dace72ac310a1bfe982ed1965a2120f9758d8cd3"
+  },
+  {
+    "seq": 218,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000148\",\"ledger_ref\":\"ledger_000150\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "5afc968b283278346d3d65b0dace72ac310a1bfe982ed1965a2120f9758d8cd3",
+    "hash": "bede392c47a8db0f0ebf56b2d19e00e864878b7c41e720fb3d91bff5c76be2b5"
+  },
+  {
+    "seq": 219,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000151\",\"ledger_ref\":\"ledger_000153\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "bede392c47a8db0f0ebf56b2d19e00e864878b7c41e720fb3d91bff5c76be2b5",
+    "hash": "e0f51e9ecb4c4f98c67ac97939588e2b59f3a135eab4dfa6196e6b3009bc1af9"
+  },
+  {
+    "seq": 220,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000154\",\"ledger_ref\":\"ledger_000156\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "e0f51e9ecb4c4f98c67ac97939588e2b59f3a135eab4dfa6196e6b3009bc1af9",
+    "hash": "e4d273b3b88668f19ced04d09441edb0671d9b7f0d7b118577e648d4a111c2ff"
+  },
+  {
+    "seq": 221,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000157\",\"ledger_ref\":\"ledger_000159\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "e4d273b3b88668f19ced04d09441edb0671d9b7f0d7b118577e648d4a111c2ff",
+    "hash": "c8d7686d4c83d75bf952bf2ef89b005793692464a231340fccfe68c4e5b79ce6"
+  },
+  {
+    "seq": 222,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000160\",\"ledger_ref\":\"ledger_000162\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "c8d7686d4c83d75bf952bf2ef89b005793692464a231340fccfe68c4e5b79ce6",
+    "hash": "98db1fea36f9f554f9fb98326ce313acd4bbb47d9887288f6752770812a6a9ea"
+  },
+  {
+    "seq": 223,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000163\",\"ledger_ref\":\"ledger_000165\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "98db1fea36f9f554f9fb98326ce313acd4bbb47d9887288f6752770812a6a9ea",
+    "hash": "552844acd01145214dd3115b9e710658f152f3ea1f3fc5bd0c5bef499185745c"
+  },
+  {
+    "seq": 224,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000166\",\"ledger_ref\":\"ledger_000168\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "552844acd01145214dd3115b9e710658f152f3ea1f3fc5bd0c5bef499185745c",
+    "hash": "b7a49b877d45463c5588d7a0e08a6179cabdeda26760ba30c15a1658b09e8af1"
+  },
+  {
+    "seq": 225,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000169\",\"ledger_ref\":\"ledger_000171\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "b7a49b877d45463c5588d7a0e08a6179cabdeda26760ba30c15a1658b09e8af1",
+    "hash": "826b98827710ec4c88c49c4f91436bba29c5b5a23d6f1d6bd95a8069e3230fca"
+  },
+  {
+    "seq": 226,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000172\",\"ledger_ref\":\"ledger_000174\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "826b98827710ec4c88c49c4f91436bba29c5b5a23d6f1d6bd95a8069e3230fca",
+    "hash": "28779e4dca7f602f97e828bce47e8f8fd2c08d1a3c1d89e3daac97ae96b28f89"
+  },
+  {
+    "seq": 227,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000175\",\"ledger_ref\":\"ledger_000177\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "28779e4dca7f602f97e828bce47e8f8fd2c08d1a3c1d89e3daac97ae96b28f89",
+    "hash": "6b550a0e5f60e670fedaea81e20f3dc2d4df05385920786e22c5bc516b8c8b66"
+  },
+  {
+    "seq": 228,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000178\",\"ledger_ref\":\"ledger_000180\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "6b550a0e5f60e670fedaea81e20f3dc2d4df05385920786e22c5bc516b8c8b66",
+    "hash": "04a46506bb53695898f4a656ef4b1dce05f37c1c1efa9bb0dc5db6cabbd3f1e5"
+  },
+  {
+    "seq": 229,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000181\",\"ledger_ref\":\"ledger_000183\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "04a46506bb53695898f4a656ef4b1dce05f37c1c1efa9bb0dc5db6cabbd3f1e5",
+    "hash": "249dc3e62bf19ede3ff97c2096a0fbe5158f3b89e9e22ec46198a5f014ea7615"
+  },
+  {
+    "seq": 230,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000184\",\"ledger_ref\":\"ledger_000186\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "249dc3e62bf19ede3ff97c2096a0fbe5158f3b89e9e22ec46198a5f014ea7615",
+    "hash": "bc3c9cd68f6325b4085c359cf3da58f6bb768ef654b1c66d7e33850857302a1a"
+  },
+  {
+    "seq": 231,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000187\",\"ledger_ref\":\"ledger_000189\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "bc3c9cd68f6325b4085c359cf3da58f6bb768ef654b1c66d7e33850857302a1a",
+    "hash": "04f138bed555464e95568efae8d71bdc9ad9ba2113c1fac682796c0d675569f6"
+  },
+  {
+    "seq": 232,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000190\",\"ledger_ref\":\"ledger_000192\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "04f138bed555464e95568efae8d71bdc9ad9ba2113c1fac682796c0d675569f6",
+    "hash": "9eb4697268f4715af754dfcca91e741a72ca166b562434e165ad8dabafebe359"
+  },
+  {
+    "seq": 233,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000193\",\"ledger_ref\":\"ledger_000195\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "9eb4697268f4715af754dfcca91e741a72ca166b562434e165ad8dabafebe359",
+    "hash": "40c999edb613c01246c47f62d53056aea013dd733d2b1d92bf08bf4b68fb1799"
+  },
+  {
+    "seq": 234,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000196\",\"ledger_ref\":\"ledger_000198\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "40c999edb613c01246c47f62d53056aea013dd733d2b1d92bf08bf4b68fb1799",
+    "hash": "2b6b3d914ff8ed57217e1f16fdfeb6b106e693e817251b40ba918ecfb24301bb"
+  },
+  {
+    "seq": 235,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000199\",\"ledger_ref\":\"ledger_000201\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "2b6b3d914ff8ed57217e1f16fdfeb6b106e693e817251b40ba918ecfb24301bb",
+    "hash": "5815b62fd753f2a1ea90fe31ba6da430c4cf9a302670450ed554b36886f9ec4c"
+  },
+  {
+    "seq": 236,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000202\",\"ledger_ref\":\"ledger_000204\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "5815b62fd753f2a1ea90fe31ba6da430c4cf9a302670450ed554b36886f9ec4c",
+    "hash": "e448cd6016016621555a24daada5b6b8b18d43c9296660c2ab3fcf66ccd83121"
+  },
+  {
+    "seq": 237,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000205\",\"ledger_ref\":\"ledger_000207\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "e448cd6016016621555a24daada5b6b8b18d43c9296660c2ab3fcf66ccd83121",
+    "hash": "b0eec941b7c274bb5e56049f96b3afc930705c5fbee36713c65076bca1951f2b"
+  },
+  {
+    "seq": 238,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000208\",\"ledger_ref\":\"ledger_000210\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "b0eec941b7c274bb5e56049f96b3afc930705c5fbee36713c65076bca1951f2b",
+    "hash": "ffe1e980bfe53b9a829e737c233065e443492c531994fa8311be8d267c2ec89e"
+  },
+  {
+    "seq": 239,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000211\",\"ledger_ref\":\"ledger_000213\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "ffe1e980bfe53b9a829e737c233065e443492c531994fa8311be8d267c2ec89e",
+    "hash": "2f2ecfacd59d967778017ec579774c31d60ce363a20948cb519044fc5d73067d"
+  },
+  {
+    "seq": 240,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000214\",\"ledger_ref\":\"ledger_000216\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "2f2ecfacd59d967778017ec579774c31d60ce363a20948cb519044fc5d73067d",
+    "hash": "64801665acba9d314e3a53cc29aedcef416c465e71ee6240faed4b1210e1d0a7"
+  },
+  {
+    "seq": 241,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000217\",\"ledger_ref\":\"ledger_000219\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "64801665acba9d314e3a53cc29aedcef416c465e71ee6240faed4b1210e1d0a7",
+    "hash": "a4d2f011eb7700352d2f81981803cc93bdb11005c366eab1a99abc3c4c67cbbf"
+  },
+  {
+    "seq": 242,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000220\",\"ledger_ref\":\"ledger_000222\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "a4d2f011eb7700352d2f81981803cc93bdb11005c366eab1a99abc3c4c67cbbf",
+    "hash": "145302947a6184878a6873e16d9a3a6ef4d3273153223dc5213b157481666757"
+  },
+  {
+    "seq": 243,
+    "at": 1756944000,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000223\",\"ledger_ref\":\"ledger_000225\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "145302947a6184878a6873e16d9a3a6ef4d3273153223dc5213b157481666757",
+    "hash": "c4772452a790bdd07d36353ec925fd50060b5db0a2cd345ba46f9c040cd1c393"
+  },
+  {
+    "seq": 244,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000226\",\"ledger_ref\":\"ledger_000228\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "c4772452a790bdd07d36353ec925fd50060b5db0a2cd345ba46f9c040cd1c393",
+    "hash": "97dcfe6276a1187bfcaf9d842829f6ec5d087ba128d481ba068c576d2dea98d5"
+  },
+  {
+    "seq": 245,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000229\",\"ledger_ref\":\"ledger_000231\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "97dcfe6276a1187bfcaf9d842829f6ec5d087ba128d481ba068c576d2dea98d5",
+    "hash": "0f2641c36a41e4055b873ca6b6a9f83cbbe904de7d97ad3be37620958e10b6ce"
+  },
+  {
+    "seq": 246,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000232\",\"ledger_ref\":\"ledger_000234\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "0f2641c36a41e4055b873ca6b6a9f83cbbe904de7d97ad3be37620958e10b6ce",
+    "hash": "5322ccc5630c8a5e99291dda09757620e182bcdb58b2eb1ffb93471e5f5cae03"
+  },
+  {
+    "seq": 247,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000235\",\"ledger_ref\":\"ledger_000237\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "5322ccc5630c8a5e99291dda09757620e182bcdb58b2eb1ffb93471e5f5cae03",
+    "hash": "e4a1ad920f12b5d7c98977aac037bed9a7a4ffacbe4b7e3e1fcd9a17c577ba36"
+  },
+  {
+    "seq": 248,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000238\",\"ledger_ref\":\"ledger_000240\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "e4a1ad920f12b5d7c98977aac037bed9a7a4ffacbe4b7e3e1fcd9a17c577ba36",
+    "hash": "f74ceadb12b16206bc8d11c166ae4d8a98d001702f5518781319c38b4c9d6e6b"
+  },
+  {
+    "seq": 249,
+    "at": 1757030400,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000241\",\"ledger_ref\":\"ledger_000243\",\"source_ref\":\"synth:event\",\"type\":\"revenue\"}",
+    "previous_hash": "f74ceadb12b16206bc8d11c166ae4d8a98d001702f5518781319c38b4c9d6e6b",
+    "hash": "826b2657dd0d4e4efdb1e4be51780207ead098dfc7f76c226b178f9653d7fa54"
+  },
+  {
+    "seq": 250,
+    "at": 1767677389,
+    "kind": "namespace_registered",
+    "payload_json": "{\"entity_type\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "826b2657dd0d4e4efdb1e4be51780207ead098dfc7f76c226b178f9653d7fa54",
+    "hash": "0152a73f4fb143c3cee56e0d50858e29537d09a54e6c330f78ba78951334950e"
+  },
+  {
+    "seq": 251,
+    "at": 1767677389,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000245\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "0152a73f4fb143c3cee56e0d50858e29537d09a54e6c330f78ba78951334950e",
+    "hash": "036d90c6a7de4aa6a470906e7f4a1ad771d727cdb8efdf7aafe4ef2429fc84c0"
+  },
+  {
+    "seq": 252,
+    "at": 1767677389,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767677389,\"entity_ref\":\"entity_000245\",\"epoch\":79,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "036d90c6a7de4aa6a470906e7f4a1ad771d727cdb8efdf7aafe4ef2429fc84c0",
+    "hash": "dc561c19d4ec3b4fad5d41dc24d18a7ad56bdb3527daf1181790dc88fb93d14e"
+  },
+  {
+    "seq": 253,
+    "at": 1767677389,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000246\",\"grain\":\"app_instance\",\"graph_version\":91,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "dc561c19d4ec3b4fad5d41dc24d18a7ad56bdb3527daf1181790dc88fb93d14e",
+    "hash": "53df7a71bab165a4818c9b792caf56e789d5e9e1d1375b179dfb00cc0c0c9a66"
+  },
+  {
+    "seq": 254,
+    "at": 1767677389,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000247\",\"grain\":\"account\",\"graph_version\":92,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "53df7a71bab165a4818c9b792caf56e789d5e9e1d1375b179dfb00cc0c0c9a66",
+    "hash": "0145e7ff24114f88d68554bc482fac399ae6c9d3bf84cff77565be79bd921b1b"
+  },
+  {
+    "seq": 255,
+    "at": 1767683664,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000248\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "0145e7ff24114f88d68554bc482fac399ae6c9d3bf84cff77565be79bd921b1b",
+    "hash": "59a1d72336334bdc6a724bb6faf933e167dc3c5a8504bd5085d5096692c26058"
+  },
+  {
+    "seq": 256,
+    "at": 1767683664,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767683664,\"entity_ref\":\"entity_000248\",\"epoch\":80,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "59a1d72336334bdc6a724bb6faf933e167dc3c5a8504bd5085d5096692c26058",
+    "hash": "be9b9ea807c63fc85eef4049c319c59c8fefbe8b1906796a179148eefa1c815c"
+  },
+  {
+    "seq": 257,
+    "at": 1767683664,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000249\",\"grain\":\"app_instance\",\"graph_version\":93,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "be9b9ea807c63fc85eef4049c319c59c8fefbe8b1906796a179148eefa1c815c",
+    "hash": "de7e9ae3c5cea05165827234acfbcd4a8e09625aebf037adf85cdfb0d22eb1e0"
+  },
+  {
+    "seq": 258,
+    "at": 1767683664,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000250\",\"grain\":\"account\",\"graph_version\":94,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "de7e9ae3c5cea05165827234acfbcd4a8e09625aebf037adf85cdfb0d22eb1e0",
+    "hash": "29165221404c20285166820f1a8c529f90c9cb9a54a1ab397ab459c4dfea99d3"
+  },
+  {
+    "seq": 259,
+    "at": 1767689939,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000251\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "29165221404c20285166820f1a8c529f90c9cb9a54a1ab397ab459c4dfea99d3",
+    "hash": "a1304ccb24c209bfa998569a18c1f4efcc6fda444858bc00bb3253071cba7fbe"
+  },
+  {
+    "seq": 260,
+    "at": 1767689939,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767689939,\"entity_ref\":\"entity_000251\",\"epoch\":81,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a1304ccb24c209bfa998569a18c1f4efcc6fda444858bc00bb3253071cba7fbe",
+    "hash": "3ddeca93f4e15ed23209ba75b341bcd8a473314cb074de0fa10451ee97313ae2"
+  },
+  {
+    "seq": 261,
+    "at": 1767689939,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000252\",\"grain\":\"app_instance\",\"graph_version\":95,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "3ddeca93f4e15ed23209ba75b341bcd8a473314cb074de0fa10451ee97313ae2",
+    "hash": "48a0ee0fdb9172b5169799d9bd444083ba3ff19c175475c710099707a971b377"
+  },
+  {
+    "seq": 262,
+    "at": 1767689939,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000253\",\"grain\":\"account\",\"graph_version\":96,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "48a0ee0fdb9172b5169799d9bd444083ba3ff19c175475c710099707a971b377",
+    "hash": "f72ccbc674e32c3d0394c3afa506c490a3266cabf9b4d56de2a250a001b3e5f1"
+  },
+  {
+    "seq": 263,
+    "at": 1767696214,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000254\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "f72ccbc674e32c3d0394c3afa506c490a3266cabf9b4d56de2a250a001b3e5f1",
+    "hash": "af45ca30eb5e51348141649da4f182aace49a5f7f7d1dc3f86c8e8ab895be5e3"
+  },
+  {
+    "seq": 264,
+    "at": 1767696214,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767696214,\"entity_ref\":\"entity_000254\",\"epoch\":82,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "af45ca30eb5e51348141649da4f182aace49a5f7f7d1dc3f86c8e8ab895be5e3",
+    "hash": "48e294723379649b2f676fce1285c6a880835179861d6fc1d0a5c883a9720c2a"
+  },
+  {
+    "seq": 265,
+    "at": 1767696214,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000255\",\"grain\":\"app_instance\",\"graph_version\":97,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "48e294723379649b2f676fce1285c6a880835179861d6fc1d0a5c883a9720c2a",
+    "hash": "d567e894b64190ef739223d6f353457000e8ba2fd24db457552ea9f0f816424c"
+  },
+  {
+    "seq": 266,
+    "at": 1767696214,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000256\",\"grain\":\"account\",\"graph_version\":98,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d567e894b64190ef739223d6f353457000e8ba2fd24db457552ea9f0f816424c",
+    "hash": "ca6c1911ed6eb8c32a12aeaa2a25e91cfbc5dd3908695fac34d71566144100be"
+  },
+  {
+    "seq": 267,
+    "at": 1767698989,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000257\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "ca6c1911ed6eb8c32a12aeaa2a25e91cfbc5dd3908695fac34d71566144100be",
+    "hash": "a19ea0ccf4b7ab03e7a24490ebce64a3c1dae30ca460383445e496a771b05621"
+  },
+  {
+    "seq": 268,
+    "at": 1767698989,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767698989,\"available_at\":1767698989,\"bundle_ref\":\"bundle_000259\",\"graph_version\":99,\"materialized_at\":1767698989,\"policy_epoch\":82,\"subject_ref\":\"entity_000002\"}",
+    "previous_hash": "a19ea0ccf4b7ab03e7a24490ebce64a3c1dae30ca460383445e496a771b05621",
+    "hash": "7d80d8fab62ae7f7b0c72d2c3d429226dfade47da3039e94f5e37d1735c7cdc7"
+  },
+  {
+    "seq": 269,
+    "at": 1767698989,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000259\",\"feature_read_ref\":\"read_000260\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767698989}",
+    "previous_hash": "7d80d8fab62ae7f7b0c72d2c3d429226dfade47da3039e94f5e37d1735c7cdc7",
+    "hash": "c0e491c189308c04b46f72254dcafeb8ff7cdd54cbb04282e79a8679ff94e333"
+  },
+  {
+    "seq": 270,
+    "at": 1767702489,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000261\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "c0e491c189308c04b46f72254dcafeb8ff7cdd54cbb04282e79a8679ff94e333",
+    "hash": "b7e44520795ebe77637b37cc356451505161b7fea4b18a6646d10ef61e8957a3"
+  },
+  {
+    "seq": 271,
+    "at": 1767702489,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767702489,\"entity_ref\":\"entity_000261\",\"epoch\":83,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "b7e44520795ebe77637b37cc356451505161b7fea4b18a6646d10ef61e8957a3",
+    "hash": "9b38102e2a9e8c088004b99634c9211dfae0877608b960bc4452f8b06b0984bf"
+  },
+  {
+    "seq": 272,
+    "at": 1767702489,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000262\",\"grain\":\"app_instance\",\"graph_version\":100,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "9b38102e2a9e8c088004b99634c9211dfae0877608b960bc4452f8b06b0984bf",
+    "hash": "6a83de1b56bee1eaa7183a2790428cd26824209352f9af3d2555e92288bd7144"
+  },
+  {
+    "seq": 273,
+    "at": 1767702489,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000263\",\"grain\":\"account\",\"graph_version\":101,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "6a83de1b56bee1eaa7183a2790428cd26824209352f9af3d2555e92288bd7144",
+    "hash": "416777faf799be60e519955841e21d00bde2c50e68b0bdec32ecfb74a82746c5"
+  },
+  {
+    "seq": 274,
+    "at": 1767705264,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000264\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "416777faf799be60e519955841e21d00bde2c50e68b0bdec32ecfb74a82746c5",
+    "hash": "0432b49f932f39d8580c103237e9084bc023744189a22c4249d407cbe3d98f61"
+  },
+  {
+    "seq": 275,
+    "at": 1767705264,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767705264,\"available_at\":1767705264,\"bundle_ref\":\"bundle_000266\",\"graph_version\":102,\"materialized_at\":1767705264,\"policy_epoch\":83,\"subject_ref\":\"entity_000009\"}",
+    "previous_hash": "0432b49f932f39d8580c103237e9084bc023744189a22c4249d407cbe3d98f61",
+    "hash": "07c4c86f6097f2be73f2bbd29fefc28729078fa35ee3fa9c1dd7a2019f25ea9f"
+  },
+  {
+    "seq": 276,
+    "at": 1767705264,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000266\",\"feature_read_ref\":\"read_000267\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767705264}",
+    "previous_hash": "07c4c86f6097f2be73f2bbd29fefc28729078fa35ee3fa9c1dd7a2019f25ea9f",
+    "hash": "f2d06a3a0c1830a5246a836c068f982f301adf9f54b863528dc9c856f90ac14f"
+  },
+  {
+    "seq": 277,
+    "at": 1767708764,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000268\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "f2d06a3a0c1830a5246a836c068f982f301adf9f54b863528dc9c856f90ac14f",
+    "hash": "181e05871296343ca8eedcc04c4de2fdcfde336a754acbaa1bdd5af1c3e9da3e"
+  },
+  {
+    "seq": 278,
+    "at": 1767708764,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767708764,\"entity_ref\":\"entity_000268\",\"epoch\":84,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "181e05871296343ca8eedcc04c4de2fdcfde336a754acbaa1bdd5af1c3e9da3e",
+    "hash": "d0ac9ecb48c21bb127cedba19d3f4de08cdeb33d4a068ed4fe2e50def1c48733"
+  },
+  {
+    "seq": 279,
+    "at": 1767708764,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000269\",\"grain\":\"app_instance\",\"graph_version\":103,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d0ac9ecb48c21bb127cedba19d3f4de08cdeb33d4a068ed4fe2e50def1c48733",
+    "hash": "6f543335b8a7a91a7a1d562eddd2ccd57be971c59c5189221884e01334bd37ca"
+  },
+  {
+    "seq": 280,
+    "at": 1767708764,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000270\",\"grain\":\"account\",\"graph_version\":104,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "6f543335b8a7a91a7a1d562eddd2ccd57be971c59c5189221884e01334bd37ca",
+    "hash": "22e78f36bcd2fafeed0aa80c970161fd7605940d2942bac221f0c51dff493ca5"
+  },
+  {
+    "seq": 281,
+    "at": 1767711539,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000271\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "22e78f36bcd2fafeed0aa80c970161fd7605940d2942bac221f0c51dff493ca5",
+    "hash": "8e23a69c798770a573bfcb8250f2a24e50e947b730a6f12ef35bd8dceb29c920"
+  },
+  {
+    "seq": 282,
+    "at": 1767711539,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767711539,\"available_at\":1767711539,\"bundle_ref\":\"bundle_000273\",\"graph_version\":105,\"materialized_at\":1767711539,\"policy_epoch\":84,\"subject_ref\":\"entity_000014\"}",
+    "previous_hash": "8e23a69c798770a573bfcb8250f2a24e50e947b730a6f12ef35bd8dceb29c920",
+    "hash": "22594c7d6518c9c0d90db21521c2eb8a0bdd79247dbb59872ce7bb41891502d0"
+  },
+  {
+    "seq": 283,
+    "at": 1767711539,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000273\",\"feature_read_ref\":\"read_000274\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767711539}",
+    "previous_hash": "22594c7d6518c9c0d90db21521c2eb8a0bdd79247dbb59872ce7bb41891502d0",
+    "hash": "192391269ed758992f863d392f5a74b00995c99c0ba4e11a04816cbb13c9d2c2"
+  },
+  {
+    "seq": 284,
+    "at": 1767715039,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000275\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "192391269ed758992f863d392f5a74b00995c99c0ba4e11a04816cbb13c9d2c2",
+    "hash": "35bc0dbdb68fafa0b35da9c769e6e3b406117fcc51ac64f80c8a27c7689c2bea"
+  },
+  {
+    "seq": 285,
+    "at": 1767715039,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767715039,\"entity_ref\":\"entity_000275\",\"epoch\":85,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "35bc0dbdb68fafa0b35da9c769e6e3b406117fcc51ac64f80c8a27c7689c2bea",
+    "hash": "5d9b4fb39334d99dab0102229ba3662f468fb35f46f93cfa3642b7239bd8dfb1"
+  },
+  {
+    "seq": 286,
+    "at": 1767715039,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000276\",\"grain\":\"app_instance\",\"graph_version\":106,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "5d9b4fb39334d99dab0102229ba3662f468fb35f46f93cfa3642b7239bd8dfb1",
+    "hash": "5ab16a78715e275b80bf27504a90942a6dfb25d3baf0491876ff95bd714685a6"
+  },
+  {
+    "seq": 287,
+    "at": 1767715039,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000277\",\"grain\":\"account\",\"graph_version\":107,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "5ab16a78715e275b80bf27504a90942a6dfb25d3baf0491876ff95bd714685a6",
+    "hash": "c334cc5ea7d2a774a14c72168a76b2b968081da4a796212cf33d255cc2111215"
+  },
+  {
+    "seq": 288,
+    "at": 1767717814,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000278\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "c334cc5ea7d2a774a14c72168a76b2b968081da4a796212cf33d255cc2111215",
+    "hash": "cf93fa950ff6906e48f78b47ea25222799329e06d90ecc11d49d4ded65d56a8c"
+  },
+  {
+    "seq": 289,
+    "at": 1767717814,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767717814,\"available_at\":1767717814,\"bundle_ref\":\"bundle_000280\",\"graph_version\":108,\"materialized_at\":1767717814,\"policy_epoch\":85,\"subject_ref\":\"entity_000019\"}",
+    "previous_hash": "cf93fa950ff6906e48f78b47ea25222799329e06d90ecc11d49d4ded65d56a8c",
+    "hash": "f58826024cd58e59bfc37c27106dd5170e9a0bdc970f28cdcde3b77deddcc7b4"
+  },
+  {
+    "seq": 290,
+    "at": 1767717814,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000280\",\"feature_read_ref\":\"read_000281\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767717814}",
+    "previous_hash": "f58826024cd58e59bfc37c27106dd5170e9a0bdc970f28cdcde3b77deddcc7b4",
+    "hash": "b6eaf79f180078415beb88d696acfc6be658204256dd09bd42fdfaed1d84a8d7"
+  },
+  {
+    "seq": 291,
+    "at": 1767721313,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000282\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "b6eaf79f180078415beb88d696acfc6be658204256dd09bd42fdfaed1d84a8d7",
+    "hash": "a4fdbde72b33705220ea548f9e54f3056a88938301eb8516382eb2f022c9956c"
+  },
+  {
+    "seq": 292,
+    "at": 1767721313,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767721313,\"entity_ref\":\"entity_000282\",\"epoch\":86,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a4fdbde72b33705220ea548f9e54f3056a88938301eb8516382eb2f022c9956c",
+    "hash": "ded914730738349c01a44adc5593b79f591f899039564713d96c8674a94a98ab"
+  },
+  {
+    "seq": 293,
+    "at": 1767721313,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000283\",\"grain\":\"app_instance\",\"graph_version\":109,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "ded914730738349c01a44adc5593b79f591f899039564713d96c8674a94a98ab",
+    "hash": "06dc94b077274f9ce045758b659bcdb452dbf7135e63632233c1528e4eabf725"
+  },
+  {
+    "seq": 294,
+    "at": 1767721313,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000284\",\"grain\":\"account\",\"graph_version\":110,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "06dc94b077274f9ce045758b659bcdb452dbf7135e63632233c1528e4eabf725",
+    "hash": "974a52a3c848e94636688ae58d897a6d30b386c9e9c97700fe4a54f4974a671a"
+  },
+  {
+    "seq": 295,
+    "at": 1767724089,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000285\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "974a52a3c848e94636688ae58d897a6d30b386c9e9c97700fe4a54f4974a671a",
+    "hash": "405e3ecd374e6a2050d9ebde359439f9eb6b552e544cc3695388525dcf38017a"
+  },
+  {
+    "seq": 296,
+    "at": 1767724089,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767724089,\"available_at\":1767724089,\"bundle_ref\":\"bundle_000287\",\"graph_version\":111,\"materialized_at\":1767724089,\"policy_epoch\":86,\"subject_ref\":\"entity_000024\"}",
+    "previous_hash": "405e3ecd374e6a2050d9ebde359439f9eb6b552e544cc3695388525dcf38017a",
+    "hash": "c0eedc5ca6bb702f93beeeba8855eb55ef83bca3b8f9ada0ad5d03b34df8ff0a"
+  },
+  {
+    "seq": 297,
+    "at": 1767724089,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000287\",\"feature_read_ref\":\"read_000288\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767724089}",
+    "previous_hash": "c0eedc5ca6bb702f93beeeba8855eb55ef83bca3b8f9ada0ad5d03b34df8ff0a",
+    "hash": "d31b0fb0f149ae3f8296e98d09e9dc0f4e602492f6c4ae325d22cfa816752919"
+  },
+  {
+    "seq": 298,
+    "at": 1767727588,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000289\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "d31b0fb0f149ae3f8296e98d09e9dc0f4e602492f6c4ae325d22cfa816752919",
+    "hash": "5ef46b6cf0b4038d8d7b4df3facafa47fc3302b4576dfb598da4c0e745f4d9ee"
+  },
+  {
+    "seq": 299,
+    "at": 1767727588,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767727588,\"entity_ref\":\"entity_000289\",\"epoch\":87,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "5ef46b6cf0b4038d8d7b4df3facafa47fc3302b4576dfb598da4c0e745f4d9ee",
+    "hash": "7dcf1a9bff3f785db07f920aa03ab70a8157ba4c64cdca6891977e429c77faf2"
+  },
+  {
+    "seq": 300,
+    "at": 1767727588,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000290\",\"grain\":\"app_instance\",\"graph_version\":112,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7dcf1a9bff3f785db07f920aa03ab70a8157ba4c64cdca6891977e429c77faf2",
+    "hash": "18e2558a8aa1a68160557cdf402c11ccce2b3f93fe3e58211c9ed0764843ee50"
+  },
+  {
+    "seq": 301,
+    "at": 1767727588,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000291\",\"grain\":\"account\",\"graph_version\":113,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "18e2558a8aa1a68160557cdf402c11ccce2b3f93fe3e58211c9ed0764843ee50",
+    "hash": "5bbb93ad8ace85362b91492b333b88f5775e2529b238f7bcfabf8e97f51e98e5"
+  },
+  {
+    "seq": 302,
+    "at": 1767730364,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000292\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "5bbb93ad8ace85362b91492b333b88f5775e2529b238f7bcfabf8e97f51e98e5",
+    "hash": "20b84ce95fc1700a3328b516556195bef6f027e9c745d90f5a0e9e26c64eabd3"
+  },
+  {
+    "seq": 303,
+    "at": 1767730364,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767730364,\"available_at\":1767730364,\"bundle_ref\":\"bundle_000294\",\"graph_version\":114,\"materialized_at\":1767730364,\"policy_epoch\":87,\"subject_ref\":\"entity_000029\"}",
+    "previous_hash": "20b84ce95fc1700a3328b516556195bef6f027e9c745d90f5a0e9e26c64eabd3",
+    "hash": "398c6b3350ea651f82663a04d0c6535659b6a323c5e1181789d981d05b15a425"
+  },
+  {
+    "seq": 304,
+    "at": 1767730364,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000294\",\"feature_read_ref\":\"read_000295\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767730364}",
+    "previous_hash": "398c6b3350ea651f82663a04d0c6535659b6a323c5e1181789d981d05b15a425",
+    "hash": "a8fb7840e20cc7516666cf94e1ea05585201ec35437c9591de288e34fc4b09fd"
+  },
+  {
+    "seq": 305,
+    "at": 1767733863,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000296\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "a8fb7840e20cc7516666cf94e1ea05585201ec35437c9591de288e34fc4b09fd",
+    "hash": "748806e53a3d6b7e6b8edfbcc69796d3678b97c27c3d37489e2a4cd1fa86f20d"
+  },
+  {
+    "seq": 306,
+    "at": 1767733863,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767733863,\"entity_ref\":\"entity_000296\",\"epoch\":88,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "748806e53a3d6b7e6b8edfbcc69796d3678b97c27c3d37489e2a4cd1fa86f20d",
+    "hash": "83d16e3512755e004e2800fc7214206ac2929653f8032191996780f2f422d9b6"
+  },
+  {
+    "seq": 307,
+    "at": 1767733863,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000297\",\"grain\":\"app_instance\",\"graph_version\":115,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "83d16e3512755e004e2800fc7214206ac2929653f8032191996780f2f422d9b6",
+    "hash": "7f05eb8c4ee2f1320e11159e3bc21b7ded98657c339a4e391ec9ef9080b0bbf0"
+  },
+  {
+    "seq": 308,
+    "at": 1767733863,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000298\",\"grain\":\"account\",\"graph_version\":116,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "7f05eb8c4ee2f1320e11159e3bc21b7ded98657c339a4e391ec9ef9080b0bbf0",
+    "hash": "7bb25a266eae5caca8edd325b88126d9594574c7b86fc4d1f832fb6549b88130"
+  },
+  {
+    "seq": 309,
+    "at": 1767736639,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000299\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "7bb25a266eae5caca8edd325b88126d9594574c7b86fc4d1f832fb6549b88130",
+    "hash": "edde7b6cbaef3cd5deb12d3dcd2aff239eeec5505dea405e93393aca845605dd"
+  },
+  {
+    "seq": 310,
+    "at": 1767736639,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767736639,\"available_at\":1767736639,\"bundle_ref\":\"bundle_000301\",\"graph_version\":117,\"materialized_at\":1767736639,\"policy_epoch\":88,\"subject_ref\":\"entity_000036\"}",
+    "previous_hash": "edde7b6cbaef3cd5deb12d3dcd2aff239eeec5505dea405e93393aca845605dd",
+    "hash": "75084ff6135d7152f5ad6caa79e0d2167f7c92063f83976e92275bfd256cdeb2"
+  },
+  {
+    "seq": 311,
+    "at": 1767736639,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000301\",\"feature_read_ref\":\"read_000302\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767736639}",
+    "previous_hash": "75084ff6135d7152f5ad6caa79e0d2167f7c92063f83976e92275bfd256cdeb2",
+    "hash": "86b3690bc5b7e0a45e1c8857ce20249faf4519444b20bfb6c5e46b9c4e287779"
+  },
+  {
+    "seq": 312,
+    "at": 1767740138,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000303\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "86b3690bc5b7e0a45e1c8857ce20249faf4519444b20bfb6c5e46b9c4e287779",
+    "hash": "141ab74c5d0df92e0fd74682332a57cfdcc582ef26bb9c666e53eca15d41051c"
+  },
+  {
+    "seq": 313,
+    "at": 1767740138,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767740138,\"entity_ref\":\"entity_000303\",\"epoch\":89,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "141ab74c5d0df92e0fd74682332a57cfdcc582ef26bb9c666e53eca15d41051c",
+    "hash": "d8e04236a017c29f08e13ab6afe639d4a132b7a71feb4621c58bb811ce91643d"
+  },
+  {
+    "seq": 314,
+    "at": 1767740138,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000304\",\"grain\":\"app_instance\",\"graph_version\":118,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d8e04236a017c29f08e13ab6afe639d4a132b7a71feb4621c58bb811ce91643d",
+    "hash": "d9c2f5bde42a8d6abd0c5fb33f2f529e58b279b92b1995cde9a5fe676a06ed02"
+  },
+  {
+    "seq": 315,
+    "at": 1767740138,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000305\",\"grain\":\"account\",\"graph_version\":119,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d9c2f5bde42a8d6abd0c5fb33f2f529e58b279b92b1995cde9a5fe676a06ed02",
+    "hash": "8dd4c9c5d8f8d156264cd5971b5390c102bef33de9c3563d80d8227da3d8172a"
+  },
+  {
+    "seq": 316,
+    "at": 1767742913,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000306\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "8dd4c9c5d8f8d156264cd5971b5390c102bef33de9c3563d80d8227da3d8172a",
+    "hash": "02a811f6fe023c4379db1b4d8162839d009252abf024e71bb61b5f963f109ba4"
+  },
+  {
+    "seq": 317,
+    "at": 1767742913,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767742913,\"available_at\":1767742913,\"bundle_ref\":\"bundle_000308\",\"graph_version\":120,\"materialized_at\":1767742913,\"policy_epoch\":89,\"subject_ref\":\"entity_000041\"}",
+    "previous_hash": "02a811f6fe023c4379db1b4d8162839d009252abf024e71bb61b5f963f109ba4",
+    "hash": "feb3d0b38b9761c8ed0701b0726d75b109d4b47d12ded41ea1d1f82adca87bec"
+  },
+  {
+    "seq": 318,
+    "at": 1767742913,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000308\",\"feature_read_ref\":\"read_000309\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767742913}",
+    "previous_hash": "feb3d0b38b9761c8ed0701b0726d75b109d4b47d12ded41ea1d1f82adca87bec",
+    "hash": "a8b1f3d94f1f0a78cffa84702b3937fc42c373529adc27ba176eb40ed4051948"
+  },
+  {
+    "seq": 319,
+    "at": 1767746413,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000310\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "a8b1f3d94f1f0a78cffa84702b3937fc42c373529adc27ba176eb40ed4051948",
+    "hash": "d9cb8e8d07cb84ef09005d06a2b3c57ad0fcbb011792f28f30be9e74077a7b7b"
+  },
+  {
+    "seq": 320,
+    "at": 1767746413,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767746413,\"entity_ref\":\"entity_000310\",\"epoch\":90,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "d9cb8e8d07cb84ef09005d06a2b3c57ad0fcbb011792f28f30be9e74077a7b7b",
+    "hash": "746b59d041319ba7250ae16128eaaa757bbbdf59b78fa4045dd0ea7bc5893c03"
+  },
+  {
+    "seq": 321,
+    "at": 1767746413,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000311\",\"grain\":\"app_instance\",\"graph_version\":121,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "746b59d041319ba7250ae16128eaaa757bbbdf59b78fa4045dd0ea7bc5893c03",
+    "hash": "33c84e5ac1b867b40c470f348abade1d816257152d0bd7102d335829ce3316be"
+  },
+  {
+    "seq": 322,
+    "at": 1767746413,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000312\",\"grain\":\"account\",\"graph_version\":122,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "33c84e5ac1b867b40c470f348abade1d816257152d0bd7102d335829ce3316be",
+    "hash": "463d83e12bb97256210b51347b34cd08ce4f3c0f67d2251f9dca481aca2819cd"
+  },
+  {
+    "seq": 323,
+    "at": 1767749188,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000313\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "463d83e12bb97256210b51347b34cd08ce4f3c0f67d2251f9dca481aca2819cd",
+    "hash": "c3106f140a6c664540dfd28a8fa62afe234c4b8c0645437b8ea448766a475899"
+  },
+  {
+    "seq": 324,
+    "at": 1767749188,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767749188,\"available_at\":1767749188,\"bundle_ref\":\"bundle_000315\",\"graph_version\":123,\"materialized_at\":1767749188,\"policy_epoch\":90,\"subject_ref\":\"entity_000046\"}",
+    "previous_hash": "c3106f140a6c664540dfd28a8fa62afe234c4b8c0645437b8ea448766a475899",
+    "hash": "68223bfa97cc7485ed1c4dd09e70621afa82cb4fbc7cd9bf8d42e2aca32388ee"
+  },
+  {
+    "seq": 325,
+    "at": 1767749188,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000315\",\"feature_read_ref\":\"read_000316\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767749188}",
+    "previous_hash": "68223bfa97cc7485ed1c4dd09e70621afa82cb4fbc7cd9bf8d42e2aca32388ee",
+    "hash": "9eb7a010f314f26751498e0e25dc3491635d5f3cb4a6cfd83eb4a8911ef9e18f"
+  },
+  {
+    "seq": 326,
+    "at": 1767752688,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000317\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "9eb7a010f314f26751498e0e25dc3491635d5f3cb4a6cfd83eb4a8911ef9e18f",
+    "hash": "3fad6ec613d39ccbd58fabd19b35d3c2da7090795891f0704f88d21f09bfb9f9"
+  },
+  {
+    "seq": 327,
+    "at": 1767752688,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767752688,\"entity_ref\":\"entity_000317\",\"epoch\":91,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "3fad6ec613d39ccbd58fabd19b35d3c2da7090795891f0704f88d21f09bfb9f9",
+    "hash": "5402c52ffef91d1f4bb3ba84a49b0550d3b8d5001f5e1fc970fe87c2a5fcc8ea"
+  },
+  {
+    "seq": 328,
+    "at": 1767752688,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000318\",\"grain\":\"app_instance\",\"graph_version\":124,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "5402c52ffef91d1f4bb3ba84a49b0550d3b8d5001f5e1fc970fe87c2a5fcc8ea",
+    "hash": "b9a5577c4895d7a30e3a4799388098447b4f4981c2a7d73d15ac5fad3b554dca"
+  },
+  {
+    "seq": 329,
+    "at": 1767752688,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000319\",\"grain\":\"account\",\"graph_version\":125,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "b9a5577c4895d7a30e3a4799388098447b4f4981c2a7d73d15ac5fad3b554dca",
+    "hash": "eb7e95c79668ca3f293164c3f90f58142f3e06124d9b0dc494928c14195525b0"
+  },
+  {
+    "seq": 330,
+    "at": 1767755463,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000320\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "eb7e95c79668ca3f293164c3f90f58142f3e06124d9b0dc494928c14195525b0",
+    "hash": "92fa0ae42172b26d80d5d43cdad4c445c18ded9d14d57f3de588448f0bfc6c61"
+  },
+  {
+    "seq": 331,
+    "at": 1767755463,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767755463,\"available_at\":1767755463,\"bundle_ref\":\"bundle_000322\",\"graph_version\":126,\"materialized_at\":1767755463,\"policy_epoch\":91,\"subject_ref\":\"entity_000051\"}",
+    "previous_hash": "92fa0ae42172b26d80d5d43cdad4c445c18ded9d14d57f3de588448f0bfc6c61",
+    "hash": "266d0a7fd28fa76b89fde0ab84f75820c0fcd1d30b60676d5d2198eeed0a7812"
+  },
+  {
+    "seq": 332,
+    "at": 1767755463,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000322\",\"feature_read_ref\":\"read_000323\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767755463}",
+    "previous_hash": "266d0a7fd28fa76b89fde0ab84f75820c0fcd1d30b60676d5d2198eeed0a7812",
+    "hash": "b816d0fe501f83b804b8d45a29cee829b0e122e3d0c0b7389e129bafb1131471"
+  },
+  {
+    "seq": 333,
+    "at": 1767758963,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000324\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "b816d0fe501f83b804b8d45a29cee829b0e122e3d0c0b7389e129bafb1131471",
+    "hash": "fbb3fb551e95adf1ab4e488ef9b62de27a9326089b990bcbe126476e8ef4ca7c"
+  },
+  {
+    "seq": 334,
+    "at": 1767758963,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767758963,\"entity_ref\":\"entity_000324\",\"epoch\":92,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "fbb3fb551e95adf1ab4e488ef9b62de27a9326089b990bcbe126476e8ef4ca7c",
+    "hash": "16664eaeb2c1bc9f01a38fa56773a90ebcf67498e86021d2a275ee4e6f9538d6"
+  },
+  {
+    "seq": 335,
+    "at": 1767758963,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000325\",\"grain\":\"app_instance\",\"graph_version\":127,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "16664eaeb2c1bc9f01a38fa56773a90ebcf67498e86021d2a275ee4e6f9538d6",
+    "hash": "f9aeeefb7eb3eebc340d5543a3fdfabac55124180ca18890e137bb941ad7fa75"
+  },
+  {
+    "seq": 336,
+    "at": 1767758963,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000326\",\"grain\":\"account\",\"graph_version\":128,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "f9aeeefb7eb3eebc340d5543a3fdfabac55124180ca18890e137bb941ad7fa75",
+    "hash": "64598c0aefb50755d5995c5f83f07e8678776f2f984c2581198ae4e2c663b6f3"
+  },
+  {
+    "seq": 337,
+    "at": 1767761738,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000327\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "64598c0aefb50755d5995c5f83f07e8678776f2f984c2581198ae4e2c663b6f3",
+    "hash": "83ebcef58f1f3756cea7214b818b56246ac84be3e5768b1563548c6dec910077"
+  },
+  {
+    "seq": 338,
+    "at": 1767761738,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767761738,\"available_at\":1767761738,\"bundle_ref\":\"bundle_000329\",\"graph_version\":129,\"materialized_at\":1767761738,\"policy_epoch\":92,\"subject_ref\":\"entity_000058\"}",
+    "previous_hash": "83ebcef58f1f3756cea7214b818b56246ac84be3e5768b1563548c6dec910077",
+    "hash": "4079d3edacb8fed7b8570b2f51ccf6bfe766700478d43baa0059d22974fe4d43"
+  },
+  {
+    "seq": 339,
+    "at": 1767761738,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000329\",\"feature_read_ref\":\"read_000330\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767761738}",
+    "previous_hash": "4079d3edacb8fed7b8570b2f51ccf6bfe766700478d43baa0059d22974fe4d43",
+    "hash": "10ac6ce2ccf2d18bdbbc7e54619273993be36c7df89205e9172c636d63b34409"
+  },
+  {
+    "seq": 340,
+    "at": 1767765237,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000331\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "10ac6ce2ccf2d18bdbbc7e54619273993be36c7df89205e9172c636d63b34409",
+    "hash": "72d1f5a4084a6d1384ed48215f48665c7c6da59411123639fe054e0187b5775b"
+  },
+  {
+    "seq": 341,
+    "at": 1767765237,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767765237,\"entity_ref\":\"entity_000331\",\"epoch\":93,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "72d1f5a4084a6d1384ed48215f48665c7c6da59411123639fe054e0187b5775b",
+    "hash": "b52a8f655fe6b9bbf61dc28102f97b35b53ee7beb3cfebcbb80df2b9dc63f5ac"
+  },
+  {
+    "seq": 342,
+    "at": 1767765237,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000332\",\"grain\":\"app_instance\",\"graph_version\":130,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "b52a8f655fe6b9bbf61dc28102f97b35b53ee7beb3cfebcbb80df2b9dc63f5ac",
+    "hash": "16962fe378e95235266bca6c262eb1a107d3ae01466ea263ebe8d9e499777228"
+  },
+  {
+    "seq": 343,
+    "at": 1767765237,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000333\",\"grain\":\"account\",\"graph_version\":131,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "16962fe378e95235266bca6c262eb1a107d3ae01466ea263ebe8d9e499777228",
+    "hash": "bff9e7e14162c880f858d7d4deae0b61e96c96ea7821b07ff41e1ab8f1ed5edc"
+  },
+  {
+    "seq": 344,
+    "at": 1767768013,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000334\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "bff9e7e14162c880f858d7d4deae0b61e96c96ea7821b07ff41e1ab8f1ed5edc",
+    "hash": "8e0b78a5e821aba3637ed373dbe62a3fbab3a1c91d9dbe144f3f92d3c1827574"
+  },
+  {
+    "seq": 345,
+    "at": 1767768013,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767768013,\"available_at\":1767768013,\"bundle_ref\":\"bundle_000336\",\"graph_version\":132,\"materialized_at\":1767768013,\"policy_epoch\":93,\"subject_ref\":\"entity_000065\"}",
+    "previous_hash": "8e0b78a5e821aba3637ed373dbe62a3fbab3a1c91d9dbe144f3f92d3c1827574",
+    "hash": "c1220e65ab84a055cd12ff335211e2e609060322017c4f8d63014f65bb56cbc9"
+  },
+  {
+    "seq": 346,
+    "at": 1767768013,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000336\",\"feature_read_ref\":\"read_000337\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767768013}",
+    "previous_hash": "c1220e65ab84a055cd12ff335211e2e609060322017c4f8d63014f65bb56cbc9",
+    "hash": "01bb7417f5428f371520034c7aa4b7204fb8ea6d492edd9ce502d8257fd11eb1"
+  },
+  {
+    "seq": 347,
+    "at": 1767771512,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000338\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "01bb7417f5428f371520034c7aa4b7204fb8ea6d492edd9ce502d8257fd11eb1",
+    "hash": "a02db3886e02313d85055937d9bd14b2ece7f76ac96fcb7fa96d64309d81d559"
+  },
+  {
+    "seq": 348,
+    "at": 1767771512,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767771512,\"entity_ref\":\"entity_000338\",\"epoch\":94,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a02db3886e02313d85055937d9bd14b2ece7f76ac96fcb7fa96d64309d81d559",
+    "hash": "4c279e5bdad5fe2f1287a0a0ec91ab666380afd086438b24a4be5e4b2b486be0"
+  },
+  {
+    "seq": 349,
+    "at": 1767771512,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000339\",\"grain\":\"app_instance\",\"graph_version\":133,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4c279e5bdad5fe2f1287a0a0ec91ab666380afd086438b24a4be5e4b2b486be0",
+    "hash": "e58a82e134343cf99777ba57eeae13b61e4ed26053990d762fb138cc2a9ce5ee"
+  },
+  {
+    "seq": 350,
+    "at": 1767771512,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000340\",\"grain\":\"account\",\"graph_version\":134,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "e58a82e134343cf99777ba57eeae13b61e4ed26053990d762fb138cc2a9ce5ee",
+    "hash": "87fce6a2d589a0a80bc7928b74be571f193c001528963f6c1df826287c0362d4"
+  },
+  {
+    "seq": 351,
+    "at": 1767774288,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000341\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "87fce6a2d589a0a80bc7928b74be571f193c001528963f6c1df826287c0362d4",
+    "hash": "d82f12f250aad3608c37112490b843b42b74e04349a5b34eb5c0be1222884e0d"
+  },
+  {
+    "seq": 352,
+    "at": 1767774288,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767774288,\"available_at\":1767774288,\"bundle_ref\":\"bundle_000343\",\"graph_version\":135,\"materialized_at\":1767774288,\"policy_epoch\":94,\"subject_ref\":\"entity_000070\"}",
+    "previous_hash": "d82f12f250aad3608c37112490b843b42b74e04349a5b34eb5c0be1222884e0d",
+    "hash": "be94d292c102b2beafdf2a9aa1f4ddcb8b7c9ed65c878af0d0bb3d67d1943242"
+  },
+  {
+    "seq": 353,
+    "at": 1767774288,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000343\",\"feature_read_ref\":\"read_000344\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767774288}",
+    "previous_hash": "be94d292c102b2beafdf2a9aa1f4ddcb8b7c9ed65c878af0d0bb3d67d1943242",
+    "hash": "5b1b8ae8174d024aaee5f3120104010cc47bfbd973c1367ad32639e7b35de86f"
+  },
+  {
+    "seq": 354,
+    "at": 1767777787,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000345\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "5b1b8ae8174d024aaee5f3120104010cc47bfbd973c1367ad32639e7b35de86f",
+    "hash": "f7f648c5b3df75d421aa5d8b6d746a351b212dc868cb532dfddd14054be98fc8"
+  },
+  {
+    "seq": 355,
+    "at": 1767777787,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767777787,\"entity_ref\":\"entity_000345\",\"epoch\":95,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "f7f648c5b3df75d421aa5d8b6d746a351b212dc868cb532dfddd14054be98fc8",
+    "hash": "552e014849960a6754552f608223fe482f5dd11eb237d0a907f48cfa9bc3169e"
+  },
+  {
+    "seq": 356,
+    "at": 1767777787,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000346\",\"grain\":\"app_instance\",\"graph_version\":136,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "552e014849960a6754552f608223fe482f5dd11eb237d0a907f48cfa9bc3169e",
+    "hash": "6aedaeb1f0f129f0e968f47906ae48eeec22962911e8591f1600254a4123ebe7"
+  },
+  {
+    "seq": 357,
+    "at": 1767777787,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000347\",\"grain\":\"account\",\"graph_version\":137,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "6aedaeb1f0f129f0e968f47906ae48eeec22962911e8591f1600254a4123ebe7",
+    "hash": "73e61352f25be9e903615bd04f4b9fe5449601c7deaae8de32b0657122e3a12c"
+  },
+  {
+    "seq": 358,
+    "at": 1767780563,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000348\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "73e61352f25be9e903615bd04f4b9fe5449601c7deaae8de32b0657122e3a12c",
+    "hash": "b4cf06de2c4af770b5f55dbae0c1babc183efde077040688332474bf4d88d003"
+  },
+  {
+    "seq": 359,
+    "at": 1767780563,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767780563,\"available_at\":1767780563,\"bundle_ref\":\"bundle_000350\",\"graph_version\":138,\"materialized_at\":1767780563,\"policy_epoch\":95,\"subject_ref\":\"entity_000075\"}",
+    "previous_hash": "b4cf06de2c4af770b5f55dbae0c1babc183efde077040688332474bf4d88d003",
+    "hash": "ab32dc3bc929fd5e9defd0d63cdac92014b7e2573744331d7cadb682c41e0ff4"
+  },
+  {
+    "seq": 360,
+    "at": 1767780563,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000350\",\"feature_read_ref\":\"read_000351\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767780563}",
+    "previous_hash": "ab32dc3bc929fd5e9defd0d63cdac92014b7e2573744331d7cadb682c41e0ff4",
+    "hash": "ff7d4971f8eb7ea2526a00edb9b3a613691e65fd544be546930435291b729dc6"
+  },
+  {
+    "seq": 361,
+    "at": 1767784062,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000352\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "ff7d4971f8eb7ea2526a00edb9b3a613691e65fd544be546930435291b729dc6",
+    "hash": "256fef5872bd63a1b2c697d2cd7e45311b502ad10a3d3b8bc13077996d1bfcbb"
+  },
+  {
+    "seq": 362,
+    "at": 1767784062,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767784062,\"entity_ref\":\"entity_000352\",\"epoch\":96,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "256fef5872bd63a1b2c697d2cd7e45311b502ad10a3d3b8bc13077996d1bfcbb",
+    "hash": "483b204c7d8f7d13ce45a1996cf85a8c384e65af4552c24f4aaf18f35b2ca5a3"
+  },
+  {
+    "seq": 363,
+    "at": 1767784062,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000353\",\"grain\":\"app_instance\",\"graph_version\":139,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "483b204c7d8f7d13ce45a1996cf85a8c384e65af4552c24f4aaf18f35b2ca5a3",
+    "hash": "d9fcd37df449eaa85f36d4f12bb6f743f167d0080a15ecb7ef489c6026a09b27"
+  },
+  {
+    "seq": 364,
+    "at": 1767784062,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000354\",\"grain\":\"account\",\"graph_version\":140,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "d9fcd37df449eaa85f36d4f12bb6f743f167d0080a15ecb7ef489c6026a09b27",
+    "hash": "296f85a8fdd536e66fd69f3b41ceede717bba967cc4d267dd895ceb65c988746"
+  },
+  {
+    "seq": 365,
+    "at": 1767786837,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000355\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "296f85a8fdd536e66fd69f3b41ceede717bba967cc4d267dd895ceb65c988746",
+    "hash": "db4aa28431d9abde1d1de949fb931a657a94147c17f618afee6a6bb42c97b124"
+  },
+  {
+    "seq": 366,
+    "at": 1767786837,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767786837,\"available_at\":1767786837,\"bundle_ref\":\"bundle_000357\",\"graph_version\":141,\"materialized_at\":1767786837,\"policy_epoch\":96,\"subject_ref\":\"entity_000080\"}",
+    "previous_hash": "db4aa28431d9abde1d1de949fb931a657a94147c17f618afee6a6bb42c97b124",
+    "hash": "f5d2b7fd4798bf23be6446b94dabaf48acbee5e2c6939b6c7ad89b57c0e57ad9"
+  },
+  {
+    "seq": 367,
+    "at": 1767786837,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000357\",\"feature_read_ref\":\"read_000358\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767786837}",
+    "previous_hash": "f5d2b7fd4798bf23be6446b94dabaf48acbee5e2c6939b6c7ad89b57c0e57ad9",
+    "hash": "b0b135cf275b375cf9254774306b5999a0ead0b89a867913201e0b42265059ea"
+  },
+  {
+    "seq": 368,
+    "at": 1767790337,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000359\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "b0b135cf275b375cf9254774306b5999a0ead0b89a867913201e0b42265059ea",
+    "hash": "bcb23f1071c7b4e50d0d06bb152fa48a303d22aeb3f92f2616f64d6edf873f90"
+  },
+  {
+    "seq": 369,
+    "at": 1767790337,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767790337,\"entity_ref\":\"entity_000359\",\"epoch\":97,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "bcb23f1071c7b4e50d0d06bb152fa48a303d22aeb3f92f2616f64d6edf873f90",
+    "hash": "e8ed56acf398e62aabcb9d18055a45910379da68af3cc4edf74f82b8bd564998"
+  },
+  {
+    "seq": 370,
+    "at": 1767790337,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000360\",\"grain\":\"app_instance\",\"graph_version\":142,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "e8ed56acf398e62aabcb9d18055a45910379da68af3cc4edf74f82b8bd564998",
+    "hash": "bf8157501db174d79c1b7e584441586442b255f3d45bbca8214a8387e8a4ea92"
+  },
+  {
+    "seq": 371,
+    "at": 1767790337,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000361\",\"grain\":\"account\",\"graph_version\":143,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "bf8157501db174d79c1b7e584441586442b255f3d45bbca8214a8387e8a4ea92",
+    "hash": "5a1c6082f0e6697d6cbc0aad801ff793b7d91d1fa420899569158706e232df9f"
+  },
+  {
+    "seq": 372,
+    "at": 1767793112,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000362\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "5a1c6082f0e6697d6cbc0aad801ff793b7d91d1fa420899569158706e232df9f",
+    "hash": "bf0687b6ef2757795a064e5e37da6638c6c331dba922a86ab9a3efe933361381"
+  },
+  {
+    "seq": 373,
+    "at": 1767793112,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767793112,\"available_at\":1767793112,\"bundle_ref\":\"bundle_000364\",\"graph_version\":144,\"materialized_at\":1767793112,\"policy_epoch\":97,\"subject_ref\":\"entity_000085\"}",
+    "previous_hash": "bf0687b6ef2757795a064e5e37da6638c6c331dba922a86ab9a3efe933361381",
+    "hash": "70cb3a82f0597c368cb66bb6b971b877cdfa5f2f7ca107ef6aab9ec3047b49d6"
+  },
+  {
+    "seq": 374,
+    "at": 1767793112,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000364\",\"feature_read_ref\":\"read_000365\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767793112}",
+    "previous_hash": "70cb3a82f0597c368cb66bb6b971b877cdfa5f2f7ca107ef6aab9ec3047b49d6",
+    "hash": "a2ecc2e8fddb67d6413b38e1e6d95349dc104ccb28323cb145c52f7332eb302b"
+  },
+  {
+    "seq": 375,
+    "at": 1767796612,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000366\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "a2ecc2e8fddb67d6413b38e1e6d95349dc104ccb28323cb145c52f7332eb302b",
+    "hash": "f87b6972394e075219126c7e440b974508d78d9cd408829821752bcd54c7e590"
+  },
+  {
+    "seq": 376,
+    "at": 1767796612,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767796612,\"entity_ref\":\"entity_000366\",\"epoch\":98,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "f87b6972394e075219126c7e440b974508d78d9cd408829821752bcd54c7e590",
+    "hash": "290fef2ba2cc3d32e70f2b1d30ec1768495e36a2a0b701d569176dff6226a037"
+  },
+  {
+    "seq": 377,
+    "at": 1767796612,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000367\",\"grain\":\"app_instance\",\"graph_version\":145,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "290fef2ba2cc3d32e70f2b1d30ec1768495e36a2a0b701d569176dff6226a037",
+    "hash": "c5721cbe276c7b1df237a5ebafa38d0eae6983eb5471fcd68ae5156c138774cf"
+  },
+  {
+    "seq": 378,
+    "at": 1767796612,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000368\",\"grain\":\"account\",\"graph_version\":146,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c5721cbe276c7b1df237a5ebafa38d0eae6983eb5471fcd68ae5156c138774cf",
+    "hash": "08ae8339d92b5f3825a829914cb2d002e3dbabc31a2fd90f5005d56d9b8f6570"
+  },
+  {
+    "seq": 379,
+    "at": 1767799387,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000369\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "08ae8339d92b5f3825a829914cb2d002e3dbabc31a2fd90f5005d56d9b8f6570",
+    "hash": "6db4e301e173b09c19988503e2cb6c480f1cfad632398f7c0720484db72e10fc"
+  },
+  {
+    "seq": 380,
+    "at": 1767799387,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767799387,\"available_at\":1767799387,\"bundle_ref\":\"bundle_000371\",\"graph_version\":147,\"materialized_at\":1767799387,\"policy_epoch\":98,\"subject_ref\":\"entity_000092\"}",
+    "previous_hash": "6db4e301e173b09c19988503e2cb6c480f1cfad632398f7c0720484db72e10fc",
+    "hash": "c2d330f974876294717c2377055e9aae8cfa1cc8ad0f01584e492b97ec532c9e"
+  },
+  {
+    "seq": 381,
+    "at": 1767799387,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000371\",\"feature_read_ref\":\"read_000372\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767799387}",
+    "previous_hash": "c2d330f974876294717c2377055e9aae8cfa1cc8ad0f01584e492b97ec532c9e",
+    "hash": "2b72d8ded18406a1e20172cee74fee06b33eb474f9302fd49265fe41b8d712d0"
+  },
+  {
+    "seq": 382,
+    "at": 1767802887,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000373\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "2b72d8ded18406a1e20172cee74fee06b33eb474f9302fd49265fe41b8d712d0",
+    "hash": "1a01883f22ace07942721a2556bb087b38741cc6cde4fff3293ae964e2a44993"
+  },
+  {
+    "seq": 383,
+    "at": 1767802887,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767802887,\"entity_ref\":\"entity_000373\",\"epoch\":99,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "1a01883f22ace07942721a2556bb087b38741cc6cde4fff3293ae964e2a44993",
+    "hash": "09f7aec1e6fdc98e355dda5a4d523940bf7cbfb9663b60c0660553b22f17739f"
+  },
+  {
+    "seq": 384,
+    "at": 1767802887,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000374\",\"grain\":\"app_instance\",\"graph_version\":148,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "09f7aec1e6fdc98e355dda5a4d523940bf7cbfb9663b60c0660553b22f17739f",
+    "hash": "3f1d0ab73991066587055195b512dc3403e73e62694214b7c5a0aa68ed6598e6"
+  },
+  {
+    "seq": 385,
+    "at": 1767802887,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000375\",\"grain\":\"account\",\"graph_version\":149,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "3f1d0ab73991066587055195b512dc3403e73e62694214b7c5a0aa68ed6598e6",
+    "hash": "833a50de862a1dd871a04dddcb4740e89e2e53f0ec16e6c28c3bf53d09b19f9b"
+  },
+  {
+    "seq": 386,
+    "at": 1767805662,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000376\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "833a50de862a1dd871a04dddcb4740e89e2e53f0ec16e6c28c3bf53d09b19f9b",
+    "hash": "693c5a3ff073476e72b77616c73c784a6b7f891228bd2cd655b2b0c630056b65"
+  },
+  {
+    "seq": 387,
+    "at": 1767805662,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767805662,\"available_at\":1767805662,\"bundle_ref\":\"bundle_000378\",\"graph_version\":150,\"materialized_at\":1767805662,\"policy_epoch\":99,\"subject_ref\":\"entity_000097\"}",
+    "previous_hash": "693c5a3ff073476e72b77616c73c784a6b7f891228bd2cd655b2b0c630056b65",
+    "hash": "35a1ce2e02bca914c1698963ccff87550a36351544232bd64847e531055d2844"
+  },
+  {
+    "seq": 388,
+    "at": 1767805662,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000378\",\"feature_read_ref\":\"read_000379\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767805662}",
+    "previous_hash": "35a1ce2e02bca914c1698963ccff87550a36351544232bd64847e531055d2844",
+    "hash": "b6752e980569c89927c37f3188e4a146e4cd1bfffbeead60002e9626a698752a"
+  },
+  {
+    "seq": 389,
+    "at": 1767809162,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000380\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "b6752e980569c89927c37f3188e4a146e4cd1bfffbeead60002e9626a698752a",
+    "hash": "cc180f815175f704d542bd021970803b7816446a407bd6803f32ec0ff5407d36"
+  },
+  {
+    "seq": 390,
+    "at": 1767809162,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767809162,\"entity_ref\":\"entity_000380\",\"epoch\":100,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "cc180f815175f704d542bd021970803b7816446a407bd6803f32ec0ff5407d36",
+    "hash": "16d75dc79dc6bbac67fd48acaf080119bf7f6235fbb4779f79bc99492e6fac20"
+  },
+  {
+    "seq": 391,
+    "at": 1767809162,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000381\",\"grain\":\"app_instance\",\"graph_version\":151,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "16d75dc79dc6bbac67fd48acaf080119bf7f6235fbb4779f79bc99492e6fac20",
+    "hash": "96cf3fb527623283bf2c059496c6e4b58dcf4c6d0568fa6f66dfeac92ce6bc2d"
+  },
+  {
+    "seq": 392,
+    "at": 1767809162,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000382\",\"grain\":\"account\",\"graph_version\":152,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "96cf3fb527623283bf2c059496c6e4b58dcf4c6d0568fa6f66dfeac92ce6bc2d",
+    "hash": "d116762c64ff973dff7da91b75263443773358f59c1807c577f0f7a858be2389"
+  },
+  {
+    "seq": 393,
+    "at": 1767811937,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000383\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "d116762c64ff973dff7da91b75263443773358f59c1807c577f0f7a858be2389",
+    "hash": "12425a6d1f12c2d4602a08b972a504d7d6887fa26c860a4aec81b9a3cab5664c"
+  },
+  {
+    "seq": 394,
+    "at": 1767811937,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767811937,\"available_at\":1767811937,\"bundle_ref\":\"bundle_000385\",\"graph_version\":153,\"materialized_at\":1767811937,\"policy_epoch\":100,\"subject_ref\":\"entity_000102\"}",
+    "previous_hash": "12425a6d1f12c2d4602a08b972a504d7d6887fa26c860a4aec81b9a3cab5664c",
+    "hash": "a09bce2d0d1e7ebcdd93452a210e98aeae9ad69e8f54ba15ac3313f4fb810cda"
+  },
+  {
+    "seq": 395,
+    "at": 1767811937,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000385\",\"feature_read_ref\":\"read_000386\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767811937}",
+    "previous_hash": "a09bce2d0d1e7ebcdd93452a210e98aeae9ad69e8f54ba15ac3313f4fb810cda",
+    "hash": "134785bac336863eb7635c56d40b744da3ddb1351337cfe0e73daeefb736e492"
+  },
+  {
+    "seq": 396,
+    "at": 1767815436,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000387\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "134785bac336863eb7635c56d40b744da3ddb1351337cfe0e73daeefb736e492",
+    "hash": "5b083680c0538f41d6f365e10b9a3eb3aecc457061419f2750d6835b2775d429"
+  },
+  {
+    "seq": 397,
+    "at": 1767815436,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767815436,\"entity_ref\":\"entity_000387\",\"epoch\":101,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "5b083680c0538f41d6f365e10b9a3eb3aecc457061419f2750d6835b2775d429",
+    "hash": "4d43b8117993000b00a30e5aa7938da62e619be15bf8a34be7afd0f78801b157"
+  },
+  {
+    "seq": 398,
+    "at": 1767815436,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000388\",\"grain\":\"app_instance\",\"graph_version\":154,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "4d43b8117993000b00a30e5aa7938da62e619be15bf8a34be7afd0f78801b157",
+    "hash": "71cecf13f8dd53ea6942da375efa9909e575d1469b85e6d902f5382a87d25281"
+  },
+  {
+    "seq": 399,
+    "at": 1767815436,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000389\",\"grain\":\"account\",\"graph_version\":155,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "71cecf13f8dd53ea6942da375efa9909e575d1469b85e6d902f5382a87d25281",
+    "hash": "d4a1f39c0eed733b87c1c15d122c6aecd157297d257a7e3bd0f0deb8cac1fe66"
+  },
+  {
+    "seq": 400,
+    "at": 1767818212,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000390\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "d4a1f39c0eed733b87c1c15d122c6aecd157297d257a7e3bd0f0deb8cac1fe66",
+    "hash": "d5b51246efbe83d479efa203d17da165f04895c642aeecd21e18997723970aa0"
+  },
+  {
+    "seq": 401,
+    "at": 1767818212,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767818212,\"available_at\":1767818212,\"bundle_ref\":\"bundle_000392\",\"graph_version\":156,\"materialized_at\":1767818212,\"policy_epoch\":101,\"subject_ref\":\"entity_000109\"}",
+    "previous_hash": "d5b51246efbe83d479efa203d17da165f04895c642aeecd21e18997723970aa0",
+    "hash": "73582f85dfe864ec2ba521c91c701bace23585d3b139318b69e8021888b04fdd"
+  },
+  {
+    "seq": 402,
+    "at": 1767818212,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000392\",\"feature_read_ref\":\"read_000393\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767818212}",
+    "previous_hash": "73582f85dfe864ec2ba521c91c701bace23585d3b139318b69e8021888b04fdd",
+    "hash": "1f440a9d8424e77052bc831c8e2a2595ac1192a821c1542c2250c6425d744645"
+  },
+  {
+    "seq": 403,
+    "at": 1767821711,
+    "kind": "entity_created",
+    "payload_json": "{\"entity_ref\":\"entity_000394\",\"grain\":\"app_instance\",\"namespace_ref\":\"ns_000244\"}",
+    "previous_hash": "1f440a9d8424e77052bc831c8e2a2595ac1192a821c1542c2250c6425d744645",
+    "hash": "a8e6433338947b15417ed71a228d08dcfb31c27894a103c96cabf06999ea129a"
+  },
+  {
+    "seq": 404,
+    "at": 1767821711,
+    "kind": "policy_changed",
+    "payload_json": "{\"effective_at\":1767821711,\"entity_ref\":\"entity_000394\",\"epoch\":102,\"purpose\":\"synthetic-value-research\",\"state\":\"GRANTED\"}",
+    "previous_hash": "a8e6433338947b15417ed71a228d08dcfb31c27894a103c96cabf06999ea129a",
+    "hash": "30497e1ac6180e7b455c4ea7093eb88e57c05a864c3e522fb61833df9b192877"
+  },
+  {
+    "seq": 405,
+    "at": 1767821711,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000395\",\"grain\":\"app_instance\",\"graph_version\":157,\"kind\":\"installed_on\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "30497e1ac6180e7b455c4ea7093eb88e57c05a864c3e522fb61833df9b192877",
+    "hash": "c5094163dab2985720726ee76bfb745dcc66ec8a687fa62874124739f07c078c"
+  },
+  {
+    "seq": 406,
+    "at": 1767821711,
+    "kind": "edge_added",
+    "payload_json": "{\"edge_ref\":\"edge_000396\",\"grain\":\"account\",\"graph_version\":158,\"kind\":\"logged_in_as\",\"status\":\"ACTIVE\"}",
+    "previous_hash": "c5094163dab2985720726ee76bfb745dcc66ec8a687fa62874124739f07c078c",
+    "hash": "6d458b61d67d29adfed4cda37dc7c469cdad40aa81133a21ffa4c903e26979d0"
+  },
+  {
+    "seq": 407,
+    "at": 1767824487,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000397\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "6d458b61d67d29adfed4cda37dc7c469cdad40aa81133a21ffa4c903e26979d0",
+    "hash": "20fc30d1f3b9686c71034e40af34205c34cd4b5573e814a9875e45ecdb89a170"
+  },
+  {
+    "seq": 408,
+    "at": 1767824487,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767824487,\"available_at\":1767824487,\"bundle_ref\":\"bundle_000399\",\"graph_version\":159,\"materialized_at\":1767824487,\"policy_epoch\":102,\"subject_ref\":\"entity_000114\"}",
+    "previous_hash": "20fc30d1f3b9686c71034e40af34205c34cd4b5573e814a9875e45ecdb89a170",
+    "hash": "af6351db7e17524b818758582f8478ae17d0a89471a1e67f514272c2c42f7a63"
+  },
+  {
+    "seq": 409,
+    "at": 1767824487,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000399\",\"feature_read_ref\":\"read_000400\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767824487}",
+    "previous_hash": "af6351db7e17524b818758582f8478ae17d0a89471a1e67f514272c2c42f7a63",
+    "hash": "6621074c0d1afb6b9bf5ab7c149c3e76f87d35bde1e78dc65caa9cdac8d4cba1"
+  },
+  {
+    "seq": 410,
+    "at": 1767830762,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000401\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "6621074c0d1afb6b9bf5ab7c149c3e76f87d35bde1e78dc65caa9cdac8d4cba1",
+    "hash": "e6af4ab226d9ae79e82b37ccb6c7db0e89b6528973ad0a0e93bf5ef2f20bd7db"
+  },
+  {
+    "seq": 411,
+    "at": 1767830762,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767830762,\"available_at\":1767830762,\"bundle_ref\":\"bundle_000403\",\"graph_version\":160,\"materialized_at\":1767830762,\"policy_epoch\":102,\"subject_ref\":\"entity_000121\"}",
+    "previous_hash": "e6af4ab226d9ae79e82b37ccb6c7db0e89b6528973ad0a0e93bf5ef2f20bd7db",
+    "hash": "fd359220df06fb6916919d9eab96ff6d3783fafcd97873810f6f1354bbdf2c20"
+  },
+  {
+    "seq": 412,
+    "at": 1767830762,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000403\",\"feature_read_ref\":\"read_000404\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767830762}",
+    "previous_hash": "fd359220df06fb6916919d9eab96ff6d3783fafcd97873810f6f1354bbdf2c20",
+    "hash": "8bbbffd61e95e7088c237c5d20841d91b2c84b976114f8c9920d5f3233919f8e"
+  },
+  {
+    "seq": 413,
+    "at": 1767837036,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000405\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "8bbbffd61e95e7088c237c5d20841d91b2c84b976114f8c9920d5f3233919f8e",
+    "hash": "e9b68ba74bbc59ca59e5d4fb2bb208d3a52db184b0c58b5f348c13f49b0edaf2"
+  },
+  {
+    "seq": 414,
+    "at": 1767837036,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767837036,\"available_at\":1767837036,\"bundle_ref\":\"bundle_000407\",\"graph_version\":161,\"materialized_at\":1767837036,\"policy_epoch\":102,\"subject_ref\":\"entity_000126\"}",
+    "previous_hash": "e9b68ba74bbc59ca59e5d4fb2bb208d3a52db184b0c58b5f348c13f49b0edaf2",
+    "hash": "b1c5ee4d157d514d5cf57a594d62dc516dddee764b46d4d527153dc80326b198"
+  },
+  {
+    "seq": 415,
+    "at": 1767837036,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000407\",\"feature_read_ref\":\"read_000408\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767837036}",
+    "previous_hash": "b1c5ee4d157d514d5cf57a594d62dc516dddee764b46d4d527153dc80326b198",
+    "hash": "34978a5788fdd323afb38e14c040162475bf1895f5c1e3421fe483f5df9d958a"
+  },
+  {
+    "seq": 416,
+    "at": 1767843311,
+    "kind": "event_accepted",
+    "payload_json": "{\"event_ref\":\"event_000409\",\"ledger_ref\":null,\"source_ref\":\"synth:event\",\"type\":\"early_summary\"}",
+    "previous_hash": "34978a5788fdd323afb38e14c040162475bf1895f5c1e3421fe483f5df9d958a",
+    "hash": "c72aff0dce93c5c70490749e3b2ecfcac09ddd548ec7f04a2a8082e859f0ffb2"
+  },
+  {
+    "seq": 417,
+    "at": 1767843311,
+    "kind": "feature_materialized",
+    "payload_json": "{\"as_of\":1767843311,\"available_at\":1767843311,\"bundle_ref\":\"bundle_000411\",\"graph_version\":162,\"materialized_at\":1767843311,\"policy_epoch\":102,\"subject_ref\":\"entity_000131\"}",
+    "previous_hash": "c72aff0dce93c5c70490749e3b2ecfcac09ddd548ec7f04a2a8082e859f0ffb2",
+    "hash": "e4f3bddfe44242f7a856b406ba3aba5a0a7c5eb870c05d2e8dd757ca0d5c85b8"
+  },
+  {
+    "seq": 418,
+    "at": 1767843311,
+    "kind": "feature_read",
+    "payload_json": "{\"bundle_ref\":\"bundle_000411\",\"feature_read_ref\":\"read_000412\",\"purpose\":\"synthetic-value-research\",\"read_at\":1767843311}",
+    "previous_hash": "e4f3bddfe44242f7a856b406ba3aba5a0a7c5eb870c05d2e8dd757ca0d5c85b8",
+    "hash": "ded6e22e0a16183f1c5534ea6d27b40918e44803c6907c02edff9b42d17ec284"
+  }
+]

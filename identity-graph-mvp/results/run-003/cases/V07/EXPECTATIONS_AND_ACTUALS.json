@@ -1,0 +1,47 @@
+[
+  {
+    "assertion": "fixture connected relation serves C history",
+    "input_refs": "operation trace",
+    "expected": 900,
+    "actual": 900,
+    "passed": true
+  },
+  {
+    "assertion": "graph split after wrong edge revoke",
+    "input_refs": "operation trace",
+    "expected": [
+      "entity_000002",
+      "entity_000003"
+    ],
+    "actual": [
+      "entity_000002",
+      "entity_000003"
+    ],
+    "passed": true
+  },
+  {
+    "assertion": "C becomes separate",
+    "input_refs": "operation trace",
+    "expected": [
+      "entity_000004"
+    ],
+    "actual": [
+      "entity_000004"
+    ],
+    "passed": true
+  },
+  {
+    "assertion": "old derived bundle blocked",
+    "input_refs": "operation trace",
+    "expected": "BUNDLE_INVALIDATED_OR_DELETED",
+    "actual": "BUNDLE_INVALIDATED_OR_DELETED",
+    "passed": true
+  },
+  {
+    "assertion": "new history does not leak across revoked bridge",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  }
+]

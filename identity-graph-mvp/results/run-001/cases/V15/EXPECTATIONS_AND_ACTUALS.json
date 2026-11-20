@@ -1,0 +1,69 @@
+[
+  {
+    "assertion": "unconfirmed downstream sink prevents completion",
+    "input_refs": "operation trace",
+    "expected": "ACK_PENDING",
+    "actual": "ACK_PENDING",
+    "passed": true
+  },
+  {
+    "assertion": "pending sink explicit",
+    "input_refs": "operation trace",
+    "expected": [
+      "synthetic:offline-export"
+    ],
+    "actual": [
+      "synthetic:offline-export"
+    ],
+    "passed": true
+  },
+  {
+    "assertion": "local token purged",
+    "input_refs": "operation trace",
+    "expected": null,
+    "actual": null,
+    "passed": true
+  },
+  {
+    "assertion": "local economic source deleted",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "no sensitive event payload left",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "outbox payload purged",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "derived values purged",
+    "input_refs": "operation trace",
+    "expected": 0,
+    "actual": 0,
+    "passed": true
+  },
+  {
+    "assertion": "bounded declared sink scope complete",
+    "input_refs": "operation trace",
+    "expected": "COMPLETE_FOR_DECLARED_SCOPE",
+    "actual": "COMPLETE_FOR_DECLARED_SCOPE",
+    "passed": true
+  },
+  {
+    "assertion": "audit preserved without identity tokens",
+    "input_refs": "operation trace",
+    "expected": true,
+    "actual": true,
+    "passed": true
+  }
+]

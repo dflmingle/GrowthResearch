@@ -1,0 +1,8 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P9.source_original_location_ref,string,原件受控位置与获取责任,只交文档索引；不交后台URL/token/凭证,syn:original:CONTROLLED_ONLY
+P9.original_sha256,string,原件一致性承诺,64小写hex；全零仅示例不证真实/完整,0000000000000000000000000000000000000000000000000000000000000000
+P9.signer_authority_review_ref,string,出具权限、原件见证和独立审核依据,签名不等于事实都真，需说明查验路径,syn:attestation:UNVERIFIED
+P9.transformation_missing_coverage_manifest,object,转换清单、缺字段/缺日志范围和记录覆盖,不拿选中成功记录推总体覆盖,"{""transform"":""syn:transform"",""missing"":""syn:unknown-fields"",""coverage"":""UNKNOWN""}"
+P9.environment_versions_clock_error_ref,string,环境、版本生效和跨系统时钟误差,生产/测试/回放分开；误差不明不扩大容差,syn:environment-clock:UNVERIFIED
+P9.independent_reviewer_scope_ref,string,审核人角色、利益关系、实际见到和未见内容,不要求暴露私人联系方式；授权后内部实名签认,syn:reviewer-role:UNCONFIRMED
+P9.inspection_export_quotation_permissions,object<bool>,查验/导出/引用分离,未经批准不能公开或通过匿名化绕过限制,"{""inspect"":false,""export"":false,""quote"":false}"

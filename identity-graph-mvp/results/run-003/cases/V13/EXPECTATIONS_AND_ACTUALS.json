@@ -1,0 +1,51 @@
+[
+  {
+    "assertion": "explicit local adapter capability contract eligible",
+    "input_refs": "operation trace",
+    "expected": "ADAPTER_CONTRACT_ELIGIBLE",
+    "actual": "ADAPTER_CONTRACT_ELIGIBLE",
+    "passed": true
+  },
+  {
+    "assertion": "missing backend guarantee created_timestamp_filter_supported",
+    "input_refs": "operation trace",
+    "expected": "STOP",
+    "actual": "STOP",
+    "passed": true
+  },
+  {
+    "assertion": "missing backend guarantee created_means_consumer_available",
+    "input_refs": "operation trace",
+    "expected": "STOP",
+    "actual": "STOP",
+    "passed": true
+  },
+  {
+    "assertion": "missing backend guarantee exclude_null_created",
+    "input_refs": "operation trace",
+    "expected": "STOP",
+    "actual": "STOP",
+    "passed": true
+  },
+  {
+    "assertion": "missing backend guarantee explicit_relationship_known_at",
+    "input_refs": "operation trace",
+    "expected": "STOP",
+    "actual": "STOP",
+    "passed": true
+  },
+  {
+    "assertion": "missing backend guarantee consent_epoch_gate",
+    "input_refs": "operation trace",
+    "expected": "STOP",
+    "actual": "STOP",
+    "passed": true
+  },
+  {
+    "assertion": "not a Feast runtime claim",
+    "input_refs": "operation trace",
+    "expected": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST",
+    "actual": "CAPABILITY_CONTRACT_ONLY;NOT_A_FEAST_RUNTIME_TEST",
+    "passed": true
+  }
+]

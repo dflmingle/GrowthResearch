@@ -1,0 +1,712 @@
+[
+  {
+    "id": "AM01",
+    "title": "本地UUID属于应用私有SDK状态",
+    "proven_client_mechanism": "ActivityState构造时生成随机UUID；读取/写入应用私有文件，反序列化缺失UUID时补建。不是每次会话重新生成。",
+    "input": "Context、已存ActivityState或缺失状态",
+    "processing": "读取状态；新建时Util.createUuid；MODE_PRIVATE持久化",
+    "output": "activityState.uuid；请求键android_uuid",
+    "call_chain": "readActivityStateI → Util.readObject → ActivityState/readObject；writeActivityStateI → Util.writeObject",
+    "server_unknown": "卸载/备份恢复的OS效果、服务端安装身份和旧新UUID合并/解绑均未证实。",
+    "reference_design": "独立命名installation_instance；租户/应用命名空间；数据清除建立新epoch，不能称自然人ID。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0001",
+        "AMS0002",
+        "AMS0003",
+        "AMS0004",
+        "AMS0005",
+        "AMS0006",
+        "AMS0007"
+      ],
+      "5.7.0": [
+        "AMS0008",
+        "AMS0009",
+        "AMS0010",
+        "AMS0011",
+        "AMS0012",
+        "AMS0013",
+        "AMS0014"
+      ],
+      "5.8.1": [
+        "AMS0015",
+        "AMS0016",
+        "AMS0017",
+        "AMS0018",
+        "AMS0019",
+        "AMS0020",
+        "AMS0021"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM02",
+    "title": "Google广告ID读取及重读并非身份图谱",
+    "proven_client_mechanism": "默认非read-once；重读链根据版本执行儿童/配置门控、服务读取和反射后备；5.8.1读取前清空相关字段。未见该链比较旧新GAID并同步轮换UUID、adid及队列。",
+    "input": "AdjustConfig、OS广告服务可返回的值",
+    "processing": "reloadPlayIds(旧)/reloadGoogleAdId(新)；有限重试/反射读取",
+    "output": "gps_adid、tracking_enabled、读取来源/尝试次数或空值",
+    "call_chain": "getEventParameters/getSessionParameters → DeviceInfo.reload* → 服务/Reflection",
+    "server_unknown": "OS重置后服务端是否重连旧身份、忘记历史或实际跨App使用UNKNOWN；不能依赖客户端字段清空推断服务器删除。",
+    "reference_design": "外部标识用可撤销时间区间和namespace存储；不以重置ID恢复追踪。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0022",
+        "AMS0023",
+        "AMS0024",
+        "AMS0025"
+      ],
+      "5.7.0": [
+        "AMS0026",
+        "AMS0027",
+        "AMS0028",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0030",
+        "AMS0031",
+        "AMS0032",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM03",
+    "title": "Android ID是条件回退且作用域由OS决定",
+    "proven_client_mechanism": "AndroidIdUtil调用Settings.Secure.ANDROID_ID；事件构造在未加入Google/Fire广告ID时走AndroidID回退；不是无条件同时读取所有ID。",
+    "input": "OS Secure设置、配置/儿童门控",
+    "processing": "readAndroidId缓存；PackageBuilder检查已加入的广告ID键",
+    "output": "条件性的android_id",
+    "call_chain": "getEventParameters → contains* → DeviceInfo.readAndroidId → AndroidIdUtil.getAndroidId",
+    "server_unknown": "客户端不能决定该系统标识跨签名/用户/版本的作用域；不证明跨App或跨设备匹配成功。",
+    "reference_design": "注册OS/签名/用户作用域，未知作用域禁止自动合并；空值不是新用户。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0034",
+        "AMS0035",
+        "AMS0025"
+      ],
+      "5.7.0": [
+        "AMS0036",
+        "AMS0037",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0038",
+        "AMS0039",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM04",
+    "title": "App Set ID是外部服务标识，不是本地跨设备解析",
+    "proven_client_mechanism": "Reflection调用AppSet客户端、等待任务并取getId；未保存getScope。DeviceInfo门控后保存并进入google_app_set_id。",
+    "input": "Google AppSet服务、AdjustConfig",
+    "processing": "getAppSetIdInfo → getId；SDK未实现其签发/重置规则",
+    "output": "google_app_set_id或空",
+    "call_chain": "DeviceInfo构造 → Reflection.getAppSetId → PackageBuilder",
+    "server_unknown": "仅凭getId不能给样本判定developer/device scope；也不能确认重置历史、跨设备或自然人关系。",
+    "reference_design": "作用域证据需单独记录；同开发者可共享不等于任意App全局身份。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0040",
+        "AMS0041",
+        "AMS0025"
+      ],
+      "5.7.0": [
+        "AMS0042",
+        "AMS0043",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0044",
+        "AMS0045",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM05",
+    "title": "Facebook aid读取依赖外部Provider与签名校验",
+    "proven_client_mechanism": "校验Facebook应用签名后查询AttributionIdProvider的aid，失败返回null。5.7新增显式FB读取开关；5.5没有该显式开关不等于无任何前置约束。",
+    "input": "已安装官方Facebook应用及其可访问Provider",
+    "processing": "包签名校验、ContentResolver查询、游标与异常处理",
+    "output": "fbAttributionId → fb_id或空",
+    "call_chain": "DeviceInfo构造 → getFacebookAttributionId → getEventParameters",
+    "server_unknown": "Provider实际返回率、身份粒度、平台匹配或跨设备关系不能由客户端查询代码证明。",
+    "reference_design": "外部来源标识记来源/验证条件/读取权限；不将provider标识升级为person。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0041",
+        "AMS0046",
+        "AMS0025"
+      ],
+      "5.7.0": [
+        "AMS0043",
+        "AMS0047",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0045",
+        "AMS0048",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM06",
+    "title": "external_device_id只证明标识传输入口",
+    "proven_client_mechanism": "setExternalDeviceId保存调用方字符串，session/event参数可携带；首会话延迟期间可更新。无该字符串的账号认证或跨设备关系解析代码证明。",
+    "input": "开发者提供的字符串",
+    "processing": "配置赋值；受控首会话延迟修改；构包",
+    "output": "external_device_id",
+    "call_chain": "AdjustConfig.setExternalDeviceId / FirstSessionDelayManager → PackageBuilder",
+    "server_unknown": "账户真实性、跨App命名空间、服务器身份合并及partner共享UNKNOWN。",
+    "reference_design": "只有经过自有认证的账号才建立account-device边，记录auth证明；同值不得无条件跨租户合并。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0049",
+        "AMS0050",
+        "AMS0051",
+        "AMS0025"
+      ],
+      "5.7.0": [
+        "AMS0052",
+        "AMS0053",
+        "AMS0054",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0055",
+        "AMS0056",
+        "AMS0057",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM07",
+    "title": "安装和会话以本地状态及计数连续表达",
+    "proven_client_mechanism": "首状态会话计数为1；间隔触发新session/subsession；默认会话间隔30分钟、子会话1秒，Factory可覆盖。resetSessionAttributes不轮换UUID/adid。",
+    "input": "活动时间、lastActivity、ActivityState",
+    "processing": "processSessionI比较间隔；trackNewSessionI计数；buildSessionPackage",
+    "output": "/session及session_count、subsession_count等",
+    "call_chain": "startFirstSessionI / processSessionI → trackNewSessionI → transferSessionPackageI → PackageBuilder",
+    "server_unknown": "首次session并不证明服务端最终认定新安装；不能拿计数当全局安装唯一键。",
+    "reference_design": "安装、会话和广告机会用不同ID；会话保留显式起止及发生时间。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0058",
+        "AMS0059",
+        "AMS0060",
+        "AMS0061",
+        "AMS0062",
+        "AMS0063",
+        "AMS0051"
+      ],
+      "5.7.0": [
+        "AMS0064",
+        "AMS0065",
+        "AMS0066",
+        "AMS0067",
+        "AMS0068",
+        "AMS0069",
+        "AMS0054"
+      ],
+      "5.8.1": [
+        "AMS0070",
+        "AMS0071",
+        "AMS0072",
+        "AMS0073",
+        "AMS0074",
+        "AMS0075",
+        "AMS0057"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM08",
+    "title": "事件token是类型，seq是该类型的本地序号",
+    "proven_client_mechanism": "事件门控后递增eventCount和EventMetadata的eventToken计数，序列化event_token/seq/session_count及android_uuid。",
+    "input": "有效AdjustEvent、当前状态、eventToken",
+    "processing": "trackEventI → incrementSequenceForEvent → buildEventPackage",
+    "output": "/event参数及本地EventMetadata",
+    "call_chain": "trackEventI → EventMetadata.incrementSequenceForEvent → PackageBuilder.getEventParameters → PackageHandler",
+    "server_unknown": "不是服务器全局唯一经济事件ID；不能仅用token或seq关联所有App、订单和广告展示。",
+    "reference_design": "单独生成事件实例ID；保留event_type、local_seq和installation引用，避免混用。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0076",
+        "AMS0077",
+        "AMS0025",
+        "AMS0078"
+      ],
+      "5.7.0": [
+        "AMS0079",
+        "AMS0080",
+        "AMS0029",
+        "AMS0081"
+      ],
+      "5.8.1": [
+        "AMS0082",
+        "AMS0083",
+        "AMS0033",
+        "AMS0084"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM09",
+    "title": "去重是有限本地字符串窗口",
+    "proven_client_mechanism": "deduplicationId非空才查本地orderIds列表；默认容量10、可配置0关闭；列表不含eventToken维度，容量淘汰后重复值可再通过。setOrderId不会自动等价setDeduplicationId。",
+    "input": "event.deduplicationId；state列表；容量配置",
+    "processing": "contains → 拒绝，或入列后再构包/持久化",
+    "output": "本地接受或忽略事件",
+    "call_chain": "AdjustEvent setters → trackEventI → shouldProcessEventI → ActivityState.eventDeduplicationIdExists/addDeduplicationId",
+    "server_unknown": "不证明服务端收入去重、订单真实性、跨设备去重或exactly-once；状态/队列分写可能产生崩溃窗口。",
+    "reference_design": "采用租户+业务事件实例ID幂等账本和原子outbox；不要把有限缓存当唯一账本。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0085",
+        "AMS0086",
+        "AMS0087",
+        "AMS0088",
+        "AMS0089",
+        "AMS0001",
+        "AMS0002",
+        "AMS0090"
+      ],
+      "5.7.0": [
+        "AMS0091",
+        "AMS0092",
+        "AMS0093",
+        "AMS0094",
+        "AMS0095",
+        "AMS0008",
+        "AMS0009",
+        "AMS0096"
+      ],
+      "5.8.1": [
+        "AMS0097",
+        "AMS0098",
+        "AMS0099",
+        "AMS0100",
+        "AMS0101",
+        "AMS0015",
+        "AMS0016",
+        "AMS0102"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM10",
+    "title": "主包队列落盘但没有跨状态原子事务证明",
+    "proven_client_mechanism": "PackageHandler以列表FIFO保存ActivityPackage、app-private序列化；主队列单发送门控，ActivityState/EventMetadata另外写文件。",
+    "input": "构造好的ActivityPackage与应用Context",
+    "processing": "addI追加并写队列；sendFirstI取队首；paused/isSending门控",
+    "output": "本地队列及准备提交的包",
+    "call_chain": "addPackage → scheduler → addI/writePackageQueueI → sendFirstI → sender",
+    "server_unknown": "落盘不等于远端提交；独立文件写入不提供exactly-once或事务性崩溃恢复保证。",
+    "reference_design": "显式outbox事务、唯一事件键、服务端幂等确认；持久化错误必须可审计。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0103",
+        "AMS0104",
+        "AMS0105",
+        "AMS0106",
+        "AMS0076",
+        "AMS0005"
+      ],
+      "5.7.0": [
+        "AMS0107",
+        "AMS0108",
+        "AMS0109",
+        "AMS0110",
+        "AMS0079",
+        "AMS0012"
+      ],
+      "5.8.1": [
+        "AMS0111",
+        "AMS0112",
+        "AMS0113",
+        "AMS0114",
+        "AMS0082",
+        "AMS0019"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM11",
+    "title": "HTTP结果、是否重试和业务成功不同",
+    "proven_client_mechanism": "sender把success定义为JSON存在、无retryIn且HTTP200；willRetry主要取决于JSON缺失或retryIn存在。主队列!willRetry即推进队首，不能称成功收款/入库。",
+    "input": "连接结果/HTTP码/JSON/retry_in",
+    "processing": "tryToGetResponse → onResponseDataCallback；退避上限和随机抖动",
+    "output": "success、willRetry、退避/出队/回调",
+    "call_chain": "ActivityPackageSender.tryToGetResponse → PackageHandler.onResponseDataCallback → sendNextI/重试",
+    "server_unknown": "不证明服务器写入、伙伴收到、模型读取；HTTP错误+有效JSON且无retry_in也可能不重试。",
+    "reference_design": "运输确认、业务入账确认及特征消费确认分层；指数退避与幂等配合。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0115",
+        "AMS0116",
+        "AMS0117",
+        "AMS0118"
+      ],
+      "5.7.0": [
+        "AMS0119",
+        "AMS0120",
+        "AMS0121",
+        "AMS0122"
+      ],
+      "5.8.1": [
+        "AMS0123",
+        "AMS0124",
+        "AMS0125",
+        "AMS0126"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM12",
+    "title": "序列化保存事件上下文，发送另有时间",
+    "proven_client_mechanism": "构包写created_at等参数，发送构造POST表单并编码；发送前可加入sent_at/排队重试字段。客户端创建和发送时刻不是服务器可用时间。",
+    "input": "ActivityPackage.parameters、构包时间、发送时间",
+    "processing": "map → form-urlencoded POST；ActivityPackage对象持久化",
+    "output": "静态可见的请求构造规则",
+    "call_chain": "PackageBuilder.getEventParameters → ActivityPackage → generatePOSTBodyString/injectParametersToPOSTStringBuilder",
+    "server_unknown": "真实payload、到达/available_at、远端可用时间和训练时点UNKNOWN。",
+    "reference_design": "事件发生/采集/送达/available_at分别记录；推断前必须校验available_at≤decision_at。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0025",
+        "AMS0127",
+        "AMS0104",
+        "AMS0128",
+        "AMS0129",
+        "AMS0130"
+      ],
+      "5.7.0": [
+        "AMS0029",
+        "AMS0131",
+        "AMS0108",
+        "AMS0132",
+        "AMS0133",
+        "AMS0134"
+      ],
+      "5.8.1": [
+        "AMS0033",
+        "AMS0135",
+        "AMS0112",
+        "AMS0136",
+        "AMS0137",
+        "AMS0138"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM13",
+    "title": "referrer/deeplink是归因输入，不是本地归因算法",
+    "proven_client_mechanism": "PackageFactory把referrer或deeplink构造成/sdk_click；按已保存的referrer详情抑制重复。SdkClickHandler独立内存队列/重试，不等同主落盘FIFO。",
+    "input": "安装referrer、来源API、click/install时间戳、deeplink",
+    "processing": "sendInstallReferrerI比较详情 → SDKclick包 → 单独队列 → 返回详情保存",
+    "output": "/sdk_click参数与本地referrer状态",
+    "call_chain": "sendInstallReferrerI → PackageFactory.buildInstallReferrerSdkClickPackage → SdkClickHandler → checkForInstallReferrerInfo",
+    "server_unknown": "没有本地归因胜者选择/跨设备图谱算法证明。非重试分支复制referrer详情，不应单凭注释称服务端成功归因。",
+    "reference_design": "原始触点和归因结果分存；重复触点抑制不替代经济事件去重。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0139",
+        "AMS0140",
+        "AMS0141",
+        "AMS0142",
+        "AMS0143",
+        "AMS0144",
+        "AMS0145"
+      ],
+      "5.7.0": [
+        "AMS0146",
+        "AMS0147",
+        "AMS0148",
+        "AMS0149",
+        "AMS0150",
+        "AMS0151",
+        "AMS0152"
+      ],
+      "5.8.1": [
+        "AMS0153",
+        "AMS0154",
+        "AMS0155",
+        "AMS0156",
+        "AMS0157",
+        "AMS0158",
+        "AMS0159"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM14",
+    "title": "Adjust adid与归因结果来自服务器响应",
+    "proven_client_mechanism": "parseResponse读取adid、attribution、tracking_state及调度字段；客户端更新adid/归因缓存并触发回调。session success时标记installTracked。",
+    "input": "响应JSON",
+    "processing": "parseResponse → session/event/sdkclick/attribution回调 → 更新状态",
+    "output": "本地adid、归因结果及应用回调",
+    "call_chain": "ActivityPackageSender.parseResponse → launchSessionResponseTasksI → updateAdidI/updateAttributionI；AttributionHandler.checkAttributionI",
+    "server_unknown": "adid签发范围、同人/设备匹配、归因算法、graph entity及模型消费全为服务端UNKNOWN。adid不等于gps_adid。",
+    "reference_design": "远端返回标识保留issuer/product/时间；归因是一条有来源的结果边，不是本地同人事实。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0160",
+        "AMS0161",
+        "AMS0162",
+        "AMS0163",
+        "AMS0164"
+      ],
+      "5.7.0": [
+        "AMS0165",
+        "AMS0166",
+        "AMS0167",
+        "AMS0168",
+        "AMS0169"
+      ],
+      "5.8.1": [
+        "AMS0170",
+        "AMS0171",
+        "AMS0172",
+        "AMS0173",
+        "AMS0174"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM15",
+    "title": "GDPR请求与opt-out响应是不同阶段",
+    "proven_client_mechanism": "gdprForgetMe先缓存意图；本地handler标记forgotten并把GDPR包加入主队列。gotOptOutResponseI明确flush主队列并disable；GDPR方法本身未flush主队列，也未清空UUID/adid。",
+    "input": "开发者GDPR调用或服务器opted_out响应",
+    "processing": "缓存 → 状态持久化/排队；或optout → flush+disable",
+    "output": "本地门控及待发送删除请求",
+    "call_chain": "AdjustInstance.gdprForgetMe → ActivityHandler.gdprForgetMeI；sender.parseResponse → gotOptOutResponseI",
+    "server_unknown": "不证明所有队列即时取消、所有派生/伙伴缓存删除或服务器删除完成；普通配置禁读不等于撤回已排队字段。",
+    "reference_design": "删除独立高优先级控制通道、撤销epoch、队列清理、派生特征清理和接收方确认。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0175",
+        "AMS0176",
+        "AMS0177",
+        "AMS0076",
+        "AMS0160"
+      ],
+      "5.7.0": [
+        "AMS0178",
+        "AMS0179",
+        "AMS0180",
+        "AMS0079",
+        "AMS0165"
+      ],
+      "5.8.1": [
+        "AMS0181",
+        "AMS0182",
+        "AMS0183",
+        "AMS0082",
+        "AMS0170"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM16",
+    "title": "disable/offline不等于身份删除",
+    "proven_client_mechanism": "setEnabledI持久化启停并拒绝重新启用已forgotten状态；offline调整发送门控。它们不构成本地身份删除契约；离线时可继续积累事件包。",
+    "input": "enabled/offline状态",
+    "processing": "设置状态、暂停/恢复handlers；事件enabled/GDPR校验",
+    "output": "暂停或恢复发送与事件接纳",
+    "call_chain": "setEnabledI/setOfflineModeI → updateHandlersStatusAndSendI；trackEventI",
+    "server_unknown": "不能由暂停推断清库、撤销伙伴接收或新旧ID断开。",
+    "reference_design": "区分collection_allowed、transmission_allowed、purpose_allowed和delete_required。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0184",
+        "AMS0185",
+        "AMS0076"
+      ],
+      "5.7.0": [
+        "AMS0186",
+        "AMS0187",
+        "AMS0079"
+      ],
+      "5.8.1": [
+        "AMS0188",
+        "AMS0189",
+        "AMS0082"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM17",
+    "title": "measurement consent与TPS是专门设置事件",
+    "proven_client_mechanism": "measurement consent/TPS按状态门控后构包；不自动证明所有ID读取被关闭或伙伴已执行。5.7新增TPS返回结果、缓存和设置回调。",
+    "input": "开发者consent/TPS设置",
+    "processing": "canTrack* → 构包 → 主队列",
+    "output": "measurement_consent/third_party_sharing事件",
+    "call_chain": "trackMeasurementConsentI/trackThirdPartySharingI → PackageBuilder → PackageHandler",
+    "server_unknown": "远端用途落实、伙伴设置同步和撤销历史数据UNKNOWN；真实用户授权不能由布尔配置替代。",
+    "reference_design": "用途授权做版本化状态机；读取/发送/特征服务同一epoch校验。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0190",
+        "AMS0191",
+        "AMS0192",
+        "AMS0193"
+      ],
+      "5.7.0": [
+        "AMS0194",
+        "AMS0195",
+        "AMS0196",
+        "AMS0197"
+      ],
+      "5.8.1": [
+        "AMS0198",
+        "AMS0199",
+        "AMS0200",
+        "AMS0201"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM18",
+    "title": "本地清理入口不是生产删除保证",
+    "proven_client_mechanism": "AdjustFactory.teardown(context)可调用ActivityHandler.deleteState和PackageHandler.deleteState清本地状态/队列；不能等价公开用户删除API及服务器删除完成。",
+    "input": "Factory teardown传入的Context",
+    "processing": "删除指定本地文件/偏好并释放Factory引用",
+    "output": "本地测试/生命周期清理能力",
+    "call_chain": "AdjustFactory.teardown → ActivityHandler.deleteState + PackageHandler.deleteState",
+    "server_unknown": "其他进程缓存、系统ID、服务端归因历史、伙伴和训练数据删除UNKNOWN。",
+    "reference_design": "身份生命周期与测试清理分开；生产删除需要全接收方确认及可审计的范围。",
+    "evidence_by_version": {
+      "5.5.0": [
+        "AMS0202",
+        "AMS0203",
+        "AMS0204"
+      ],
+      "5.7.0": [
+        "AMS0205",
+        "AMS0206",
+        "AMS0207"
+      ],
+      "5.8.1": [
+        "AMS0208",
+        "AMS0209",
+        "AMS0210"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM19",
+    "title": "5.7起本地反序列化加入类白名单",
+    "proven_client_mechanism": "Util.readObject从ObjectInputStream改成ObjectInputFilterStream；resolveClass拒绝未列入类。只证明限定的本地反序列化约束。",
+    "input": "应用私有序列化文件",
+    "processing": "allowed-class检查，未知类抛InvalidClassException",
+    "output": "反序列化对象或失败",
+    "call_chain": "Util.readObject → ObjectInputFilterStream.resolveClass",
+    "server_unknown": "不是数据加密、完整性签名或全安全证明；未执行损坏文件或兼容性测试。",
+    "reference_design": "新实现优先schema校验与显式版本迁移；避免不受控对象反序列化。",
+    "evidence_by_version": {
+      "5.7.0": [
+        "AMS0011",
+        "AMS0211"
+      ],
+      "5.8.1": [
+        "AMS0018",
+        "AMS0212"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM20",
+    "title": "5.8.1细分ID禁读且保持wire身份语义",
+    "proven_client_mechanism": "Google/Android/Fire/plugin分别有禁读开关及总禁读方法；儿童模式另门控。playAdId重命名googleAdId但wire键gps_adid不变。",
+    "input": "配置开关、COPPA/Kids状态",
+    "processing": "禁读各入口；reload时依据开关",
+    "output": "新读取可被禁止；并非全局撤销已缓存/排队标识",
+    "call_chain": "AdjustConfig.disable* → Util.is*ReadingEnabled → DeviceInfo/PackageBuilder",
+    "server_unknown": "不能确认远程接收或删除；运行时修改配置能否覆盖所有历史缓存需专门测试。",
+    "reference_design": "最小必要读取、用途门控、构包/发送再次校验；禁读与删除分离。",
+    "evidence_by_version": {
+      "5.8.1": [
+        "AMS0213",
+        "AMS0214",
+        "AMS0215",
+        "AMS0216",
+        "AMS0217",
+        "AMS0218"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM21",
+    "title": "重试恢复字段和retryIn分支发生修正",
+    "proven_client_mechanism": "5.8.1 readObject读取retryCount而非errorCount，与serialPersistentFields一致；主队列只有retryIn>0才直接按该值调度，否则走退避。",
+    "input": "旧队列序列化字段、响应retryIn",
+    "processing": "本地恢复键修正和分支选择",
+    "output": "恢复的retryCount/重试等待",
+    "call_chain": "ActivityPackage.readObject → PackageHandler.onResponseDataCallback",
+    "server_unknown": "静态修正不等于测得更高交付率；历史文件兼容/实际部署效果未运行验证。",
+    "reference_design": "版本化迁移并保留恢复测试；等待语义与业务确认分离。",
+    "evidence_by_version": {
+      "5.7.0": [
+        "AMS0219",
+        "AMS0220",
+        "AMS0120"
+      ],
+      "5.8.1": [
+        "AMS0221",
+        "AMS0222",
+        "AMS0124"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  },
+  {
+    "id": "AM22",
+    "title": "远程设置返回不证明模型特征消费",
+    "proven_client_mechanism": "5.7起有TPS结果保存/回调和控制参数处理；构包可携带control_params。这是配置/状态传输，不是身份图谱特征读取证据。",
+    "input": "服务器JSON、TPS设置结果、control参数",
+    "processing": "parse/缓存/回调；参数再次构包",
+    "output": "客户端可读取的远程控制状态",
+    "call_chain": "parseResponse → ActivityHandler.updateThirdPartySharingSettingsI → prefs/listener；PackageBuilder",
+    "server_unknown": "远端规则版本含义、partner实际接收和Axon/Vector读取UNKNOWN。",
+    "reference_design": "控制面与特征数据面分离；记录规则版本与实际消费审计，不凭开关推断上线。",
+    "evidence_by_version": {
+      "5.7.0": [
+        "AMS0165",
+        "AMS0223",
+        "AMS0029"
+      ],
+      "5.8.1": [
+        "AMS0170",
+        "AMS0224",
+        "AMS0033"
+      ]
+    },
+    "evidence_level": "客户端静态代码；未运行SDK、未证明实际发送/接收/入模"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "assertion": "same device authorized multiapp view",
+    "input_refs": "operation trace",
+    "expected": 350,
+    "actual": 350,
+    "passed": true
+  },
+  {
+    "assertion": "same account does not inherit untagged other-app revenue",
+    "input_refs": "operation trace",
+    "expected": 100,
+    "actual": 100,
+    "passed": true
+  },
+  {
+    "assertion": "device and person remain different grains",
+    "input_refs": "operation trace",
+    "expected": "device",
+    "actual": "device",
+    "passed": true
+  }
+]

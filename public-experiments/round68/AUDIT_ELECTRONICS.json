@@ -1,0 +1,80 @@
+{
+  "artifact": "electronics",
+  "provenance": {
+    "member": "kz.csv",
+    "member_bytes": 298649047,
+    "member_sha256": "5ac5727e6830084806f051d2d09a72570367e2b2ee8d8f3ff9f8096ca72f07fe",
+    "archive_crc_verified": true
+  },
+  "rows": 2633521,
+  "columns": [
+    "event_time",
+    "order_id",
+    "product_id",
+    "category_id",
+    "category_code",
+    "brand",
+    "price",
+    "user_id"
+  ],
+  "dtypes": {
+    "event_time": "object",
+    "order_id": "string",
+    "product_id": "int64",
+    "category_id": "float64",
+    "category_code": "object",
+    "brand": "object",
+    "price": "float64",
+    "user_id": "string"
+  },
+  "missing": {
+    "event_time": 0,
+    "order_id": 0,
+    "product_id": 0,
+    "category_id": 431954,
+    "category_code": 612202,
+    "brand": 506005,
+    "price": 431954,
+    "user_id": 2069352
+  },
+  "period": {
+    "min_timestamp": "1970-01-01T00:33:40+00:00",
+    "max_timestamp": "2020-11-21T10:10:30+00:00",
+    "observed_days": 323,
+    "calendar_span_days": 18588,
+    "days_without_any_dataset_row": 18265,
+    "monthly_rows": {
+      "1970-01": 19631,
+      "2020-01": 266045,
+      "2020-02": 323272,
+      "2020-03": 314510,
+      "2020-04": 57874,
+      "2020-05": 224342,
+      "2020-06": 403632,
+      "2020-07": 167080,
+      "2020-08": 301188,
+      "2020-09": 361977,
+      "2020-10": 116216,
+      "2020-11": 77754
+    },
+    "available_at_present": false,
+    "completeness_watermark_present": false
+  },
+  "invalid_times": 0,
+  "distinct_source_user_keys": 233834,
+  "users_with_multiple_rows": 109312,
+  "exact_repeated_rows": 675,
+  "no_records_deduplicated": true,
+  "amount_nonpositive": 121,
+  "amount_missing": 431954,
+  "amount_max": 50925.9,
+  "amount_median": 55.53,
+  "currency": "UNKNOWN in verified card/header; price is not certified net cash",
+  "quantity_field_present": false,
+  "transaction_id_present": true,
+  "customer_active_spells": "ABSENT",
+  "zero_vs_missing": "UNRESOLVED",
+  "refunds_or_payment_status_present": false,
+  "training_admitted": false,
+  "raw_keys_or_rows_exported": false
+}

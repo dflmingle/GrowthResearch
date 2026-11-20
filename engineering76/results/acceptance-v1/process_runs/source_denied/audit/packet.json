@@ -1,0 +1,142 @@
+{
+  "view": "complete_local_audit",
+  "records": [
+    {
+      "data": {
+        "aggregate_version": "frozen-v1",
+        "environment": "offline-mock",
+        "inventory_version": "fixed-v1",
+        "model_version": "mock-model-v1",
+        "namespace": "mock76",
+        "no_network": true,
+        "seed": 760031
+      },
+      "hash": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+      "kind": "run_open",
+      "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+      "seq": 1,
+      "time": 0
+    },
+    {
+      "data": {
+        "allow": false,
+        "app": "source-app",
+        "device": "mock-device-A",
+        "effective_at": 0,
+        "purpose": "mock-research",
+        "version": 1
+      },
+      "hash": "33ee3590c2a5e0a9d8a8df7c3b62c986a4c689933553d6227e1e4c4edf9fe340",
+      "kind": "permission_changed",
+      "prev": "26b6dada2dd6b0055a23cc4ed51d93d8e625d6021ee8ee4edbc69f60a90720e1",
+      "seq": 2,
+      "time": 0
+    },
+    {
+      "data": {
+        "allow": true,
+        "app": "target-app",
+        "device": "mock-device-A",
+        "effective_at": 0,
+        "purpose": "mock-research",
+        "version": 2
+      },
+      "hash": "e24e0c0885e4c89e3fbb859f1ffb0aafc3846f425df251e8e7a169664fb4b397",
+      "kind": "permission_changed",
+      "prev": "33ee3590c2a5e0a9d8a8df7c3b62c986a4c689933553d6227e1e4c4edf9fe340",
+      "seq": 3,
+      "time": 0
+    },
+    {
+      "data": {
+        "event_id": "mock-event-1",
+        "reason": "SOURCE_COLLECTION_DENIED"
+      },
+      "hash": "1a473c6b6be0ebf397af51bf653eeb7b7c82f1c9436ea1301802363b72d2ce3a",
+      "kind": "event_rejected",
+      "prev": "e24e0c0885e4c89e3fbb859f1ffb0aafc3846f425df251e8e7a169664fb4b397",
+      "seq": 4,
+      "time": 12
+    },
+    {
+      "data": {
+        "context": {
+          "country": "MOCK",
+          "model": "mock-device",
+          "placement": "mock-slot"
+        },
+        "device": "mock-device-A",
+        "epoch": 0,
+        "installation": "mock-install-T1",
+        "prediction_time": 30,
+        "purpose": "mock-research",
+        "request_id": "mock-request-1"
+      },
+      "hash": "79b2180b87dd33b34ddaaaf23e60969d239a30dad730953b196685b6f71eb5ca",
+      "kind": "request_received",
+      "prev": "1a473c6b6be0ebf397af51bf653eeb7b7c82f1c9436ea1301802363b72d2ce3a",
+      "seq": 5,
+      "time": 30
+    },
+    {
+      "data": {
+        "allow": false,
+        "device": "mock-device-A",
+        "purpose": "mock-research",
+        "request_id": "mock-request-1"
+      },
+      "hash": "7ccf39310012e47a15d4befe13a34d52a50ece8bad1f4c94cc796e7c06f4347f",
+      "kind": "use_gate",
+      "prev": "79b2180b87dd33b34ddaaaf23e60969d239a30dad730953b196685b6f71eb5ca",
+      "seq": 6,
+      "time": 30
+    },
+    {
+      "data": {
+        "cap_version": "fixed-v1",
+        "feature_receipts": [],
+        "gate_receipt": 6,
+        "inventory_version": "fixed-v1",
+        "model_version": "mock-model-v1",
+        "request_id": "mock-request-1",
+        "request_receipt": 5,
+        "response": {
+          "creative": "mock-creative-base",
+          "filled": true,
+          "model_version": "mock-model-v1",
+          "request_id": "mock-request-1",
+          "score": 0.2
+        }
+      },
+      "hash": "c7491ade559a623d2a6ce08ddac34cea3f4f3f644ce1545b69849bfb14fd63b8",
+      "kind": "decision",
+      "prev": "7ccf39310012e47a15d4befe13a34d52a50ece8bad1f4c94cc796e7c06f4347f",
+      "seq": 7,
+      "time": 30
+    },
+    {
+      "data": {
+        "decision_receipt": 7,
+        "feature_log_complete": true,
+        "request_id": "mock-request-1"
+      },
+      "hash": "ce9102f27a8ecea5545fb2e0b1cbebf8ccab1a63131cda334860d50c42ccda7b",
+      "kind": "request_closed",
+      "prev": "c7491ade559a623d2a6ce08ddac34cea3f4f3f644ce1545b69849bfb14fd63b8",
+      "seq": 8,
+      "time": 30
+    },
+    {
+      "data": {
+        "complete": true,
+        "events": 0,
+        "requests": 1
+      },
+      "hash": "dadeb814552d2f3ab39d6a866148d7489e954685798b5d9c23dff2263bd1ffdb",
+      "kind": "run_closed",
+      "prev": "ce9102f27a8ecea5545fb2e0b1cbebf8ccab1a63131cda334860d50c42ccda7b",
+      "seq": 9,
+      "time": 31
+    }
+  ]
+}

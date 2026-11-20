@@ -1,0 +1,11 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P0.package_ref,string,本次审核包引用,只用本包随机别名；不填客户或账号标识,syn:review:001
+P0.controller_and_authority_refs,array<string>,两App控制权、保管人与授权链证明引用,双方/多方权利分别签认；只交文件索引不交用户清单,"[""syn:authority:A"",""syn:authority:B""]"
+P0.applicant_role_and_purpose_ref,string,申请主体、真实用途和商业属性文件,不默认学术或非商业资格,syn:purpose:UNCONFIRMED
+P0.scope_apps_regions_people,object,App别名、地区、人员/角色范围,所有参与源/目标、处理方均须被涵盖,"{""apps"":[""syn:app:A"",""syn:app:B""],""region"":""syn:region"",""role"":""syn:reviewer""}"
+P0.legal_basis_and_link_use_ref,string|null,跨App/跨设备关系的合法依据与允许用途,空值阻断图谱实验；匿名化本身不替代合法依据,syn:basis:NOT_APPROVED
+P0.permissions,object<bool>,查验、解析、训练、扰动、导出、公开引用许可分别列出,不以一项许可代替全部；未批均false,"{""inspect"":false,""link"":false,""train"":false,""perturb"":false,""export"":false,""quote"":false}"
+P0.permission_valid_from_to,object<utc|null>,授权用途生效半开区间,历史和当前用途分别核验；禁止事后补同意回填,"{""from"":null,""to"":null}"
+P0.controlled_environment_ref,string|null,合作方受控环境及审批责任,不填写登录凭证/服务器密钥,syn:environment:PROPOSED_ONLY
+P0.retention_deletion_review_ref,string|null,留存、撤销删除和逐sink责任文件,未签认不启动处理；包含训练产物,syn:lifecycle:UNCONFIRMED
+P0.approval_status,enum,有权审核人的批准状态,UNKNOWN/PENDING/APPROVED/DENIED；模板不等于授权,UNKNOWN

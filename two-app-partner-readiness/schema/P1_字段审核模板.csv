@@ -1,0 +1,10 @@
+﻿field_name,type,semantics,constraints,synthetic_example
+P1.tenant_issuer_namespace_version,object,实体命名空间发行者、范围与版本,不能凭相同字符串跨命名空间合并,"{""tenant"":""syn:tenant"",""issuer"":""syn:issuer"",""namespace"":""syn:ns"",""version"":""syn:v1""}"
+P1.app_alias_and_version,object,App业务别名和版本,App A/B须是独立产品范围；不交商业密钥,"{""app"":""syn:app:A"",""version"":""syn:v1""}"
+P1.entity_grain,enum,实体粒度,ACCOUNT/DEVICE/APP_INSTANCE/PERSON/HOUSEHOLD各自分离；人级须另证,ACCOUNT
+P1.entity_ref,string,源内随机实体引用,只能留合作方环境；不可逆联系信息；默认不导出,syn:account:001
+P1.install_ref,string,App安装实例引用,"(app,namespace,install_ref,epoch)唯一；重装另实例",syn:install:001
+P1.install_at,utc,安装发生时间,需证明真实安装而非首次可见事件；UTC和误差另列,2035-01-01T00:00:00Z
+P1.first_seen_at,utc,首次被观察到的时间,不替代安装时间或进入观察边界,2035-01-01T00:00:00Z
+P1.reset_epoch,int64,设备/安装标识重置代次,非负；不绕过合法重置恢复关联,0
+P1.reinstall_dedup_definition_ref,string,重装、重复安装及分母口径,规则在标签和测试预览前冻结,syn:install-rule:UNCONFIRMED
