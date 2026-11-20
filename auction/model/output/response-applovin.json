@@ -1,0 +1,31 @@
+{
+  "id": "synthetic-request",
+  "cur": "USD",
+  "seatbid": [
+    {
+      "seat": "synthetic-seat",
+      "bid": [
+        {
+          "id": "synthetic-bid-synthetic-DSP",
+          "impid": "1",
+          "price": 12.0,
+          "adm": "<div>synthetic creative</div>",
+          "crid": "synthetic-creative",
+          "adomain": [
+            "advertiser.invalid"
+          ],
+          "cat": [
+            "IAB9"
+          ],
+          "bundle": "example.synthetic.advertiser",
+          "ext": {
+            "crtype": "HTML"
+          },
+          "nurl": "https://dsp.invalid/win?price=${AUCTION_PRICE}",
+          "burl": "https://dsp.invalid/bill?price=${AUCTION_PRICE}",
+          "lurl": "https://dsp.invalid/loss?reason=${AUCTION_LOSS}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "mobile-game-hf-v1.1.0/README.md": [
+    {
+      "line": 13,
+      "text": "## Data"
+    },
+    {
+      "line": 15,
+      "text": "The study uses monthly estimates licensed from a commercial app-market data vendor (two games, iOS and Android, 111"
+    },
+    {
+      "line": 17,
+      "text": "The export is licensed and **may not be redistributed. This archive contains code only: no data and no results"
+    },
+    {
+      "line": 18,
+      "text": "derived from the data.** Researchers with their own access can rebuild the panel with"
+    },
+    {
+      "line": 19,
+      "text": "`python -m hf.data --raw <export>.xlsx --out data/processed` (columns and checks: `docs/data_dictionary.md`)."
+    },
+    {
+      "line": 21,
+      "text": "Without the data, `python -m hf.synth --out data/synthetic` writes a simulated panel with the same structure (two"
+    },
+    {
+      "line": 24,
+      "text": "games. Every module that reads the panel accepts `--data data/synthetic`."
+    },
+    {
+      "line": 26,
+      "text": "`data/external/events.csv` is the calendar of scheduled events used as covariates. It was compiled from public"
+    },
+    {
+      "line": 27,
+      "text": "announcements and gives a source for every event (`data/external/events_README.md`)."
+    },
+    {
+      "line": 33,
+      "text": "| `src/hf/` | data pipeline, hierarchy, base models, LightGBM, deep and foundation models, reconciliation (incl. component C), evaluation, model selection, significance tests, event-month and stress analyses, robustness, SHAP and error decomposition, synthetic data |"
+    },
+    {
+      "line": 34,
+      "text": "| `tests/` | pytest suite (tests that need the licensed data are skipped without it) |"
+    },
+    {
+      "line": 36,
+      "text": "| `configs/`, `docs/` | settings of the baseline run; description of the data export |"
+    },
+    {
+      "line": 37,
+      "text": "| `data/external/` | event calendar |"
+    },
+    {
+      "line": 55,
+      "text": "python -m hf.synth --out data/synthetic"
+    },
+    {
+      "line": 56,
+      "text": "python -m hf.baselines --data data/synthetic --target revenue --split all --models fast --out experiments/p1"
+    },
+    {
+      "line": 57,
+      "text": "python -m hf.baselines --data data/synthetic --target downloads --split all --models fast --out experiments/p1"
+    },
+    {
+      "line": 58,
+      "text": "python -m hf.rescore --exp experiments/p1 --data data/synthetic"
+    },
+    {
+      "line": 59,
+      "text": "python -m hf.report --exp experiments/p1 --out experiments/tables --data data/synthetic"
+    },
+    {
+      "line": 62,
+      "text": "python -m hf.gbm run --data data/synthetic --split test --targets revenue --out experiments/lgbm --ref-exp experiments/p1"
+    },
+    {
+      "line": 69,
+      "text": "| Data | `python -m hf.data --raw <export>.xlsx` |"
+    },
+    {
+      "line": 85,
+      "text": "The GPU jobs are defined by `jobs/<name>/job.json` (inputs, environment, outputs) and `job.py` (the script run on"
+    },
+    {
+      "line": 101,
+      "text": "## License and citation"
+    },
+    {
+      "line": 103,
+      "text": "Code: MIT License (`LICENSE`); event calendar: CC BY 4.0. Please cite the archive as given in `CITATION.cff` and the"
+    }
+  ],
+  "mobile-game-hf-v1.1.0/docs/data_dictionary.md": [
+    {
+      "line": 1,
+      "text": "# Data dictionary"
+    },
+    {
+      "line": 3,
+      "text": "Source: licensed export of a commercial app-market data vendor, pulled 2026-09-24 (`data/raw/`, not"
+    },
+    {
+      "line": 8,
+      "text": "## `data/processed/panel.parquet` — one row per game × platform × country × month"
+    },
+    {
+      "line": 19,
+      "text": "**Scope (research plan, 2026-09-29): revenue and downloads only.** The export has 16 columns; `hf.data.load_raw`"
+    },
+    {
+      "line": 22,
+      "text": "`hf.data.validate` checks that country rows sum to the all-countries total (revenue and downloads, exactly) and"
+    },
+    {
+      "line": 25,
+      "text": "## `data/processed/entry.csv` — one row per bottom series"
+    },
+    {
+      "line": 31,
+      "text": "| `entry_type` | `launch_wave` (entry by 2017-01 for PoGO, 2021-11 for Pikmin; 316 series), `coverage_expansion` (≥5 series of the same game appearing in the same later month, which is the data vendor widening coverage rather than a launch; 60), `late_entry` (other later entries; 45) |"
+    },
+    {
+      "line": 41,
+      "text": "## `data/external/events.csv` — dated events (176 rows)"
+    },
+    {
+      "line": 63,
+      "text": "`data/processed/fm_inputs.parquet` (`python -m hf.fm prepare`): `target, origin, unique_id, ds, y`, the training"
+    }
+  ]
+}

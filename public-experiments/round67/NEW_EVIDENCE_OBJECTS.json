@@ -1,0 +1,303 @@
+{
+  "nodes": [
+    {
+      "id": "IV67_inputs",
+      "label": "UCI fixed cleaning and customer/date-disjoint historic input",
+      "stage": "public_data",
+      "company": "independent public retail research"
+    },
+    {
+      "id": "IV67_frozen",
+      "label": "Frozen66 M2 faithfully reconstructed",
+      "stage": "independent_reconstruction",
+      "company": "independent public retail research"
+    },
+    {
+      "id": "IV67_test",
+      "label": "Oct10-Nov07 28-day event-time test",
+      "stage": "independent_future_period",
+      "company": "independent public retail research"
+    },
+    {
+      "id": "IV67_mae",
+      "label": "MAE improvement vs history-rate replicated, other superiority limited",
+      "stage": "scoped_statistical_result",
+      "company": "independent public retail research"
+    },
+    {
+      "id": "IV67_twostage",
+      "label": "Two-stage and validation calibration, no confirmed overall superiority",
+      "stage": "scoped_negative_result",
+      "company": "independent public retail research"
+    },
+    {
+      "id": "IV67_game",
+      "label": "Game transfer / Axon Vector / bidding profit UNKNOWN",
+      "stage": "unsupported_domain_bridge",
+      "company": "independent public retail research"
+    }
+  ],
+  "edges": [
+    {
+      "id": "IV67E1",
+      "source": "IV67_inputs",
+      "target": "IV67_frozen",
+      "claim": "Exact old-period M2 amount/ranking metrics rebuilt before new-time evaluation",
+      "source_ids": [
+        "IV67S_raw",
+        "IV67S_rebuild"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "independent_time_retail_validation",
+      "permission_conditions": "UCI CC BY4; source-scoped grouping only; no personal matching or production calls",
+      "reviewed_utc": "2026-11-20T02:35:11.282329+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      },
+      "missing_evidence": "Only within same retail dataset, not independently deployed system"
+    },
+    {
+      "id": "IV67E2",
+      "source": "IV67_frozen",
+      "target": "IV67_test",
+      "claim": "Stable customer partitions and mature later labels; 690 old-test and 149 new customers explicitly separated",
+      "source_ids": [
+        "IV67S_split",
+        "IV67S_protocol"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "independent_time_retail_validation",
+      "permission_conditions": "UCI CC BY4; source-scoped grouping only; no personal matching or production calls",
+      "reviewed_utc": "2026-11-20T02:35:11.282329+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      },
+      "missing_evidence": "available_at and full retailer data completeness unknown"
+    },
+    {
+      "id": "IV67E3",
+      "source": "IV67_test",
+      "target": "IV67_mae",
+      "claim": "Frozen and refit M2 improve 28d MAE vs history-rate under 8-comparison familywise intervals; RMSE superiority not confirmed",
+      "source_ids": [
+        "IV67S_results",
+        "IV67S_pairs"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "independent_time_retail_validation",
+      "permission_conditions": "UCI CC BY4; source-scoped grouping only; no personal matching or production calls",
+      "reviewed_utc": "2026-11-20T02:35:11.282329+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      },
+      "missing_evidence": "Unseen retailer/seasons and stronger baselines; fixed-calendar bootstrap not refit uncertainty"
+    },
+    {
+      "id": "IV67E4",
+      "source": "IV67_test",
+      "target": "IV67_twostage",
+      "claim": "M3/M4 do not confirm simultaneous amount and high-consumer ranking improvement; validation calibration may worsen MAE",
+      "source_ids": [
+        "IV67S_pairs",
+        "IV67S_cal"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "independent_time_retail_validation",
+      "permission_conditions": "UCI CC BY4; source-scoped grouping only; no personal matching or production calls",
+      "reviewed_utc": "2026-11-20T02:35:11.282329+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      },
+      "missing_evidence": "Larger independent calibration/long-tail samples and new-data validation"
+    },
+    {
+      "id": "IV67E5",
+      "source": "IV67_mae",
+      "target": "IV67_game",
+      "claim": "Retail temporal validation cannot prove game LTV, transfer, platform consumption or advertising ROAS",
+      "source_ids": [
+        "IV67S_raw",
+        "IV67S_protocol"
+      ],
+      "status": "unknown",
+      "evidence_level": "【无法确认】",
+      "diagram_style": "dashed",
+      "edge_type": "independent_time_retail_validation",
+      "permission_conditions": "UCI CC BY4; source-scoped grouping only; no personal matching or production calls",
+      "reviewed_utc": "2026-11-20T02:35:11.282329+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      },
+      "missing_evidence": "Licensed multi-game installation/revenue/as-of features, opportunity prices and authorized platform evidence"
+    }
+  ],
+  "sources": [
+    {
+      "id": "IV67S_protocol",
+      "path": "67_独立实验协议.md",
+      "sha256": "1427fbc9426f786a0a342260a92094f810161068fab53f9c2b9c2a42fa80ca86",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "pre-fit preregistration",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_raw",
+      "path": "public-experiments/audit/retail352.download",
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+      "evidence_kind": "public UCI original",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_run",
+      "path": "public-experiments/round67/RUN_MANIFEST.json",
+      "sha256": "fc87031e1fc1eb8f1c2cb780525b19a76d0f7cc88f9f256e88a332628ed26d7e",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "actual fixed independent time retail run",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_results",
+      "path": "public-experiments/round67/MODEL_RESULTS.csv",
+      "sha256": "a6b669f8cd6c28ab899004701b82609116c606ddefcdfc3236ca0f5324d027b7",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "actual model results and customer CI",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_pairs",
+      "path": "public-experiments/round67/PAIRED_COMPARISONS.csv",
+      "sha256": "0881b0f0ad44053fc4ab36a6b257269a7a721e0a391443568445cb2884539bbd",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "paired customer bootstrap comparisons",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_rebuild",
+      "path": "public-experiments/round67/FROZEN66_RECONSTRUCTION.json",
+      "sha256": "beab7f484cb8673be4b474fd396d0d266e50c98bc984cc33963bb730827137c1",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "frozen original reconstruction checks",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_cal",
+      "path": "public-experiments/round67/CALIBRATION_FIT.json",
+      "sha256": "d459963cf1d1dda2c248d3889dcdcd95c4d40f3bb2be20043e6a8cd6784573a5",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "validation-only calibration fit",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_split",
+      "path": "public-experiments/round67/SPLIT_AND_LEAKAGE_CHECKS.json",
+      "sha256": "87e72dcebe4f7c1b2eccaa86c52c50cc0d667eb5bf14d2436115ba322ea6fa3f",
+      "source_date": "2026-11-20T02:35:11.282329+00:00",
+      "url": null,
+      "evidence_kind": "actual split/maturity audit",
+      "evidence_level": "【真实公开零售数据实验】 or pre-fit protocol as stated",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Independent retail customer experiment; no game/platform production model or causal revenue fact"
+    },
+    {
+      "id": "IV67S_week_tier",
+      "path": "public-experiments/round67/WEEK_BY_TIER_DIAGNOSTIC.csv",
+      "sha256": "8f288b9d2e65dae1e797fc64d62e58b9c1d9964e0d9a54025278a3a36c562a5b",
+      "source_date": "2026-11-20T02:39:18.061807+00:00",
+      "evidence_kind": "Preregistered descriptive week by observed consumption tier, exact fixed predictor reconstruction",
+      "evidence_level": "【真实公开零售数据实验】",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "225 aggregate rows; only 3 distinct positive-top1 customers across five weeks; not new model selection or confirmatory evidence",
+      "permission_conditions": "UCI CC BY 4.0; source-local grouping only; no individual identifiers exported",
+      "manifest_path": "public-experiments/round67/WEEK_TIER_DIAGNOSTIC_MANIFEST.json",
+      "manifest_sha256": "fcb309039abebbbdc2b6fcf718813b7eafbe603a8bb2db8956d37b33ece15369"
+    }
+  ]
+}

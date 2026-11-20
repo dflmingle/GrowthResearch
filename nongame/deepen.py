@@ -1,0 +1,33 @@
+from collect import batch
+base='https://support.applovin.com/en/growth/promoting-your-websites/'
+urls={
+ 'doc-events':base+'track-and-optimize/events-and-objects',
+ 'doc-capi':base+'api/conversion-api',
+ 'doc-dedupe':base+'track-and-optimize/deduplicating-events',
+ 'doc-shopify':base+'track-and-optimize/shopify-integration',
+ 'doc-order-history':base+'track-and-optimize/order-history-data',
+ 'doc-gtm':base+'track-and-optimize/google-tag-manager',
+ 'doc-attribution':base+'track-and-optimize/measurement-and-attribution',
+ 'doc-ios-axon':base+'track-and-optimize/mobile-app-integration/ios/integration',
+ 'legal-applovin':'https://legal.applovin.com/en/privacy/',
+ 'legal-merchant':'https://legal.applovin.com/en/advertising-agreement/',
+ 'app-shopify':'https://apps.shopify.com/axon',
+ 'unity-partners-correct':'https://unity.com/legal/advertising-partners',
+ 'unity-ads-nongame':'https://unity.com/solutions/non-gaming',
+ 'unity-partners-alternate':'https://unity.com/legal/game-player-and-app-user-privacy-policy/advertising-partners',
+ 'utility-truecaller-specific':'https://www.truecaller.com/privacy-policy-eu',
+ 'utility-flashlight':'https://www.rvappstudios.com/privacy_policy.php',
+ 'utility-words':'https://www.zedge.net/',
+ 'content-newsbreak-policy':'https://www.newsbreak.com/privacy-policy',
+ 'content-dailyhunt-policy':'https://m.dailyhunt.in/privacypolicy.html',
+ 'content-wattpad-policy':'https://policies.wattpad.com/privacy/',
+ 'content-dailymotion':'https://legal.dailymotion.com/en/privacy-policy/',
+ 'content-imgur':'https://imgur.com/privacy',
+ 'shopping-ibotta':'https://legal.ibotta.com/policies',
+ 'shopping-fetch':'https://fetch.com/privacy',
+ 'shopping-shopkick':'https://www.shopkick.com/privacy-policy',
+ 'site-ridge-home':'https://ridge.com/',
+ 'site-hexclad-home':'https://hexclad.com/',
+ 'site-jonesroad-home':'https://www.jonesroadbeauty.com/',
+}
+batch('deep',urls)

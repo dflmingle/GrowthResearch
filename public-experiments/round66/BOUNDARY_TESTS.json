@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "synthetic_fixtures_only": true,
+  "does_not_validate_model_gain": true,
+  "checks": [
+    "history excludes events at landmark",
+    "7-day label excludes t+7",
+    "28-day label excludes t+28",
+    "future-amount poisoning leaves every feature invariant",
+    "customer partition keys separate",
+    "constant-score ties do not yield fake ranking",
+    "zero amount excluded from high-spend target"
+  ],
+  "real_customer_identifiers_exported": false
+}

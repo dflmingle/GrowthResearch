@@ -1,0 +1,2644 @@
+[
+  {
+    "id": "CGE01",
+    "source": "CG_U_history",
+    "target": "CG_U_token",
+    "claim": "Prior counters and loaded/shown campaign state are explicitly written into visible token outer protobuf",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS01",
+      "CGS02",
+      "CGS03",
+      "CGS04",
+      "CGS05",
+      "CGS06",
+      "CGS07",
+      "CGS08",
+      "CGS22"
+    ],
+    "data_provider": "CG_U_history",
+    "data_receiver": "CG_U_token",
+    "explicit_call_chain": "viewer win/start/reset and campaign update -> repositories; build token snapshots state -> protobuf -> base64 version2",
+    "permission_conditions": "prior callbacks and initialization branch; campaign data opaque; server may update session counters",
+    "missing_evidence": "No per-target-game token capture, bid-time freshness or model feature mapping",
+    "supplements_original_edges": [
+      "U01",
+      "U04"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "4.17.0",
+      "4.18.1"
+    ],
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "method": "AndroidBuildHeaderBiddingToken.invoke",
+        "start_line": 33,
+        "end_line": 89
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/CommonGetHeaderBiddingToken.kt",
+        "method": "CommonGetHeaderBiddingToken.invoke",
+        "start_line": 13,
+        "end_line": 28
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidSessionRepository.kt",
+        "method": "AndroidSessionRepository session/counters",
+        "start_line": 77,
+        "end_line": 175
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidCampaignRepository.kt",
+        "method": "AndroidCampaignRepository",
+        "start_line": 11,
+        "end_line": 50
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "method": "HB WebView counter hooks",
+        "start_line": 405,
+        "end_line": 415
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "method": "updateCampaignState",
+        "start_line": 467,
+        "end_line": 494
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "method": "markCampaignStateShown",
+        "start_line": 274,
+        "end_line": 277
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayAdResponse.kt",
+        "method": "AndroidHandleGatewayAdResponse.invoke",
+        "start_line": 204,
+        "end_line": 215
+      },
+      {
+        "path": "client-growth/java/unity-4181/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.java",
+        "method": "4.18.1 AndroidBuildHeaderBiddingToken.invoke",
+        "start_line": 178,
+        "end_line": 350
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "sha256": "eaf08c35ec940f873fe79f04701f7799cb328b90ebe34d5dc97ea2ae0ca759c1",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/CommonGetHeaderBiddingToken.kt",
+        "sha256": "bdd8fce75a00c1c7689c7815ea1b70b2e997881954376db0c898638f09bc51ce",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidSessionRepository.kt",
+        "sha256": "d0dce9035b98a51a215992f0894a46e42812e02c890c384daea9487998d10040",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidCampaignRepository.kt",
+        "sha256": "54bee13f632ae8865dce5811a5d9d2e16fbd46f400904c620305958b2ad287c0",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "sha256": "7390d29e2c8c0291344a32ef70b4564790814cdbda31ba4b6070883df4fd5caf",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "sha256": "7390d29e2c8c0291344a32ef70b4564790814cdbda31ba4b6070883df4fd5caf",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/exposure/CommonAdViewerExposedFunctions.kt",
+        "sha256": "7390d29e2c8c0291344a32ef70b4564790814cdbda31ba4b6070883df4fd5caf",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayAdResponse.kt",
+        "sha256": "2cb92915be7308bc51c85e1ac71d2652563a8179456cfd2e977e420af8e4b59d",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/unity-4181/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.java",
+        "sha256": "97856e0d84ed2f381d6f55aff47d6c424ada3a365135a559ad47c3f27914fe11",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.18.1/unity-ads-4.18.1.aar",
+            "sha256": "1762b92a0825ff26104310dbb0f4137a176fd8170f422418c7cd0959df617a45",
+            "bytes": 4561540,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.18.1/unity-ads-4.18.1.aar",
+            "http_last_modified": "Thu, 28 May 2026 23:26:35 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE02",
+    "source": "U_firebase_ids",
+    "target": "CG_U_pii",
+    "claim": "Unity Ads fid is populated from FirebaseAnalytics.getAppInstanceId via cached reflection bridge",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS10",
+      "CGS11",
+      "CGS12",
+      "CGS13",
+      "CGS14",
+      "CGS15"
+    ],
+    "data_provider": "U_firebase_ids",
+    "data_receiver": "CG_U_pii",
+    "explicit_call_chain": "ServiceProvider -> CachedFIdDataSource(AndroidFIdDataSource) -> FIdBridge -> FirebaseAnalytics.getAppInstanceId -> Pii.fid",
+    "permission_conditions": "allowed.fid gates field population; cache constructor prewarms getter; Firebase/OS and applicable consent restrictions separate",
+    "missing_evidence": "No cross-app ID equality, successful matching or target-game production value",
+    "supplements_original_edges": [
+      "U02",
+      "U04"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "4.17.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidPrivacyDeviceInfoDataSource.kt",
+        "method": "AndroidPrivacyDeviceInfoDataSource.fetch",
+        "start_line": 20,
+        "end_line": 58
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidFIdDataSource.kt",
+        "method": "AndroidFIdDataSource.invoke",
+        "start_line": 10,
+        "end_line": 29
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/fid/Constants.kt",
+        "method": "FId Constants",
+        "start_line": 1,
+        "end_line": 12
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/fid/FIdBridge.kt",
+        "method": "FIdBridge.getAppInstanceId",
+        "start_line": 7,
+        "end_line": 22
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/CachedFIdDataSource.kt",
+        "method": "CachedFIdDataSource",
+        "start_line": 11,
+        "end_line": 35
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/di/ServiceProvider.kt",
+        "method": "ServiceProvider FIdDataSource binding",
+        "start_line": 1188,
+        "end_line": 1195
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidPrivacyDeviceInfoDataSource.kt",
+        "sha256": "47e6255c8cb9218cd6c300efb0fae3f94e17877e8ae5a27d2558a06cb6a058f8",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidFIdDataSource.kt",
+        "sha256": "316656eaddf9b2581aafbb9037254137317d4f2a61330125c1c949997f20bdd3",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/fid/Constants.kt",
+        "sha256": "6ee590fd70115d90085185bddb647c6964a46b4cc843e51c2632497f2635bb95",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/fid/FIdBridge.kt",
+        "sha256": "3816765408eabc8e057fba50c1a22883c0f1b90d38f6972607a90c18827d4f8c",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/CachedFIdDataSource.kt",
+        "sha256": "94c7075a49e869dabae30007c35a23bd7f693f458df8b36bdccfb64fd1d43f79",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/services/core/di/ServiceProvider.kt",
+        "sha256": "c016ca77310568e607ac3416b87ee33ec601ed0c21dd638ed887e766806ca6c4",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE03",
+    "source": "CG_U_gateway_config",
+    "target": "CG_U_pii",
+    "claim": "Gateway response can update AllowedPii controlling token PII fields",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS09",
+      "CGS10",
+      "CGS16"
+    ],
+    "data_provider": "CG_U_gateway_config",
+    "data_receiver": "CG_U_pii",
+    "explicit_call_chain": "UniversalResponse mutableData.allowedPii -> SessionRepository -> DeviceInfoRepository -> privacyDataSource.fetch",
+    "permission_conditions": "AllowedPii initially default-empty; ad provider init can occur before field gate; OS and purpose consent separate",
+    "missing_evidence": "Actual deployed allowlists, complete underlying getter collection gates and production use",
+    "supplements_original_edges": [
+      "U02"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "4.17.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidDeviceInfoRepository.kt",
+        "method": "AndroidDeviceInfoRepository",
+        "start_line": 21,
+        "end_line": 48
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidPrivacyDeviceInfoDataSource.kt",
+        "method": "AndroidPrivacyDeviceInfoDataSource.fetch",
+        "start_line": 20,
+        "end_line": 58
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayUniversalResponse.kt",
+        "method": "HandleGatewayUniversalResponse",
+        "start_line": 28,
+        "end_line": 54
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidDeviceInfoRepository.kt",
+        "sha256": "6808f7fafb68dae4c9fc99c47cde0bd8d7b7985877e5782be522a875f5d3fb03",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/datasource/AndroidPrivacyDeviceInfoDataSource.kt",
+        "sha256": "47e6255c8cb9218cd6c300efb0fae3f94e17877e8ae5a27d2558a06cb6a058f8",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayUniversalResponse.kt",
+        "sha256": "31642d5c85f333b05191f6c1e8e8c684e3b5d7c987aedcd27be2177d4cf721a2",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE04",
+    "source": "CG_U_token",
+    "target": "CG_MAX_collect",
+    "claim": "MAX Unity adapter requests format-specific token and returns it through signal callback",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS23",
+      "CGS24",
+      "CGS27"
+    ],
+    "data_provider": "CG_U_token",
+    "data_receiver": "CG_MAX_collect",
+    "explicit_call_chain": "UnityAdsMediationAdapter.collectSignal -> updatePrivacyConsent -> UnityAds.getToken(TokenConfiguration(format)) -> callback -> MAX collector",
+    "permission_conditions": "MAX consent/doNotSell only when supplied; provider initialization/callback conditions; no decoding token",
+    "missing_evidence": "Which target-game opportunity invoked adapter and whether token arrived at downstream DSP",
+    "supplements_original_edges": [
+      "U01"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.6.4",
+      "4.18.1.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "cross-sdk/java/max-unity-418/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+        "method": "UnityAdsMediationAdapter.collectSignal",
+        "start_line": 101,
+        "end_line": 109
+      },
+      {
+        "path": "cross-sdk/java/max-unity-418/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+        "method": "UnityAdsMediationAdapter.updatePrivacyConsent",
+        "start_line": 268,
+        "end_line": 286
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "method": "MediationServiceImpl.collectSignal",
+        "start_line": 221,
+        "end_line": 305
+      }
+    ],
+    "sha256": [
+      {
+        "path": "cross-sdk/java/max-unity-418/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+        "sha256": "185fb359ddedf6c2bc29ac9c69beadfe41d7c31ad4f9b2c995ebcf923b46b555",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+            "sha256": "f0c7f2474b214a75315b97ce360711db3e06fe3402e54a344cba8f34a71ee275",
+            "bytes": 16110,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+            "http_last_modified": "Fri, 29 May 2026 01:06:57 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0-sources.jar",
+            "sha256": "d9297ae9e5d0396cdc9847430383b4c813fc7dbfa1f73cbf5f2511dbbf699d0a",
+            "bytes": 4318,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0-sources.jar",
+            "http_last_modified": "Fri, 29 May 2026 01:06:57 GMT"
+          }
+        ]
+      },
+      {
+        "path": "cross-sdk/java/max-unity-418/com/applovin/mediation/adapters/UnityAdsMediationAdapter.java",
+        "sha256": "185fb359ddedf6c2bc29ac9c69beadfe41d7c31ad4f9b2c995ebcf923b46b555",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+            "sha256": "f0c7f2474b214a75315b97ce360711db3e06fe3402e54a344cba8f34a71ee275",
+            "bytes": 16110,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0.aar",
+            "http_last_modified": "Fri, 29 May 2026 01:06:57 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0-sources.jar",
+            "sha256": "d9297ae9e5d0396cdc9847430383b4c813fc7dbfa1f73cbf5f2511dbbf699d0a",
+            "bytes": 4318,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/unityads-adapter/4.18.1.0/unityads-adapter-4.18.1.0-sources.jar",
+            "http_last_modified": "Fri, 29 May 2026 01:06:57 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE05",
+    "source": "CG_MAX_collect",
+    "target": "CG_MAX_request",
+    "claim": "Collected provider signal_data is serialized into MAX POST request construction",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS25",
+      "CGS26",
+      "CGS27",
+      "CGS28",
+      "CGS29",
+      "CGS30",
+      "CGS31",
+      "CGS32",
+      "CGS33"
+    ],
+    "data_provider": "CG_MAX_collect",
+    "data_receiver": "CG_MAX_request",
+    "explicit_call_chain": "Unity/Google provider signal -> cache or collect callback -> signal array -> a6.i puts signal_data -> a6.run POST scheduled",
+    "permission_conditions": "network-specific conditions; signal TTL only caches if >0; format/unit/all scope; timeout; Google QueryInfo opaque",
+    "missing_evidence": "Actual HTTP success, server reception, OpenRTB mapping and Axon bidder features",
+    "supplements_original_edges": [
+      "A01",
+      "U01"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.6.4",
+      "25.4.0.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "cross-sdk/java/max-google-254/com/applovin/mediation/adapters/GoogleMediationAdapter.java",
+        "method": "GoogleMediationAdapter.collectSignal",
+        "start_line": 224,
+        "end_line": 228
+      },
+      {
+        "path": "cross-sdk/java/max-google-254/com/applovin/mediation/adapters/GoogleMediationAdapter.java",
+        "method": "GoogleMediationAdapter.createAdRequestWithParameters",
+        "start_line": 458,
+        "end_line": 505
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "method": "MediationServiceImpl.collectSignal",
+        "start_line": 221,
+        "end_line": 305
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/g5.java",
+        "method": "g5 SignalCacheManager",
+        "start_line": 18,
+        "end_line": 73
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/i5.java",
+        "method": "i5 signal provider spec",
+        "start_line": 14,
+        "end_line": 39
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/v3.java",
+        "method": "MAX configuration defaults",
+        "start_line": 85,
+        "end_line": 117
+      },
+      {
+        "path": "client-growth/g5$c.javap.txt",
+        "method": "g5$c bytecode cache age check",
+        "start_line": 9,
+        "end_line": 43
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6 mediated ad request body",
+        "start_line": 103,
+        "end_line": 157
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6.run",
+        "start_line": 164,
+        "end_line": 212
+      }
+    ],
+    "sha256": [
+      {
+        "path": "cross-sdk/java/max-google-254/com/applovin/mediation/adapters/GoogleMediationAdapter.java",
+        "sha256": "1c92c2355638352e7ca74f0349b9860be3d8928259b4a46ada2e01b5918e42de",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+            "sha256": "5b540214c1121410d72e8e1f757ad83a265f092f16850aec1507af255bac953b",
+            "bytes": 37441,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+            "http_last_modified": "Wed, 17 Jun 2026 19:06:07 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-google-adapter/25.4.0.0/google-adapter-25.4.0.0-sources.jar",
+            "sha256": "59653909655915a4d613b9ccfb9fb272005c75591241dd14f43f4490c3cd1113",
+            "bytes": 10832,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/google-adapter/25.4.0.0/google-adapter-25.4.0.0-sources.jar",
+            "http_last_modified": "Wed, 17 Jun 2026 19:06:07 GMT"
+          }
+        ]
+      },
+      {
+        "path": "cross-sdk/java/max-google-254/com/applovin/mediation/adapters/GoogleMediationAdapter.java",
+        "sha256": "1c92c2355638352e7ca74f0349b9860be3d8928259b4a46ada2e01b5918e42de",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+            "sha256": "5b540214c1121410d72e8e1f757ad83a265f092f16850aec1507af255bac953b",
+            "bytes": 37441,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+            "http_last_modified": "Wed, 17 Jun 2026 19:06:07 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/Adapter-google-adapter/25.4.0.0/google-adapter-25.4.0.0-sources.jar",
+            "sha256": "59653909655915a4d613b9ccfb9fb272005c75591241dd14f43f4490c3cd1113",
+            "bytes": 10832,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/google-adapter/25.4.0.0/google-adapter-25.4.0.0-sources.jar",
+            "http_last_modified": "Wed, 17 Jun 2026 19:06:07 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/g5.java",
+        "sha256": "a680840dd228b4854e7f0b000c016d5f0b4966fd74be0a358a3d43479e77fa87",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/i5.java",
+        "sha256": "a0692737139cfbb5b717f3e9f0b87b00e5f81bfb4586f3b2afc990b00da0ee52",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/v3.java",
+        "sha256": "7e1e16c3996d2a4b33e8ea97613861b09a42829930d9c8bb6c445c6d54d47917",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/g5$c.javap.txt",
+        "sha256": "50969b19df8a34ef938e85b6847710fe80c52e88e0897098a0cc32e865671d1e",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE06",
+    "source": "CG_MAX_history",
+    "target": "CG_MAX_request",
+    "claim": "MAX request includes prior request/network context and optionally request-count statistics",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS32",
+      "CGS34",
+      "CGS35",
+      "CGS36",
+      "CGS37",
+      "CGS38"
+    ],
+    "data_provider": "CG_MAX_history",
+    "data_receiver": "CG_MAX_request",
+    "explicit_call_chain": "ad-unit previous request/load/winner -> a6 ad_info.extra_parameters; w3.ar +1 counts -> gated mediation_stats",
+    "permission_conditions": "umsm default false; production override unknown; previous data may not exist; user_data separate object/flag",
+    "missing_evidence": "Not monetary LTV; SDK M reference time unproven; not evidence of competitor bids/users in model",
+    "supplements_original_edges": [
+      "A01",
+      "A18"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.6.4"
+    ],
+    "class_method_lines": [
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6 mediated ad request body",
+        "start_line": 103,
+        "end_line": 157
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6.ad_info/user_data",
+        "start_line": 221,
+        "end_line": 268
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/w3.java",
+        "method": "w3 metric names and scopes",
+        "start_line": 24,
+        "end_line": 29
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/y3.java",
+        "method": "y3 metric update/read",
+        "start_line": 103,
+        "end_line": 147
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/c5.java",
+        "method": "c5 umsm flag",
+        "start_line": 788,
+        "end_line": 798
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "method": "MediationServiceImpl timestamp stats write",
+        "start_line": 408,
+        "end_line": 417
+      }
+    ],
+    "sha256": [
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/w3.java",
+        "sha256": "45585675bbd33f30271c6ddbd1ad991b92aa375bd8d81945a60e0168cc875b76",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/y3.java",
+        "sha256": "d636fb52fd9752daeeda8807732c1939bccaca5acd41d821fee90ea503a3896e",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-history-cache/com/applovin/impl/c5.java",
+        "sha256": "d9a9a57091667942109e08d65e41e02d75169ed068ebbd0ef338fb3ab0233d1e",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-dispatch/com/applovin/impl/mediation/MediationServiceImpl.java",
+        "sha256": "382207e4fb6ee94435884d7de0e223bedcca6268fc9cacd990f265bb8f39be90",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE07",
+    "source": "CG_LP_collect",
+    "target": "CG_LP_map",
+    "claim": "LevelPlay9.5 gathers concurrent provider responses with deadline and instance-keyed bidding maps",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "CGS39",
+      "CGS40",
+      "CGS41"
+    ],
+    "data_provider": "CG_LP_collect",
+    "data_receiver": "CG_LP_map",
+    "explicit_call_chain": "provider callables -> workerManager deadline -> success/error/timeout -> provider instance bidding map",
+    "permission_conditions": "provider initialization, availability and timeout; provider data opaque",
+    "missing_evidence": "Complete cloud wire format, full TTL lifecycle, target-game invocation and Vector feature use",
+    "supplements_original_edges": [
+      "U01"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "9.5.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "client-growth/java/lp-follow/com/ironsource/C0318q3.java",
+        "method": "LevelPlay9.5 q3 collector",
+        "start_line": 14,
+        "end_line": 48
+      },
+      {
+        "path": "client-growth/java/lp-follow/com/ironsource/C0118g2.java",
+        "method": "LevelPlay9.5 g2 bidding data",
+        "start_line": 70,
+        "end_line": 100
+      },
+      {
+        "path": "client-growth/java/levelplay-950/com/ironsource/Q1.java",
+        "method": "LevelPlay9.5 Q1 collection completion",
+        "start_line": 161,
+        "end_line": 187
+      }
+    ],
+    "sha256": [
+      {
+        "path": "client-growth/java/lp-follow/com/ironsource/C0318q3.java",
+        "sha256": "5cc9b8fc6ee5e2ba6ec2f180c1d0b513aad4430102bf88f7c1b9e42751da9d55",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/LevelPlay/9.5.0/mediation-sdk-9.5.0.aar",
+            "sha256": "35991a6455528a5a88018d23abd3a57d1274a3ba42ea686bd3c59a9470b2b549",
+            "bytes": 2794999,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads-mediation/mediation-sdk/9.5.0/mediation-sdk-9.5.0.aar",
+            "http_last_modified": "Wed, 01 Jul 2026 08:22:05 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/lp-follow/com/ironsource/C0118g2.java",
+        "sha256": "b18c05754f47ccd7b48d9286ac6de86addcae912c80fe872f93395e3a3f78c97",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/LevelPlay/9.5.0/mediation-sdk-9.5.0.aar",
+            "sha256": "35991a6455528a5a88018d23abd3a57d1274a3ba42ea686bd3c59a9470b2b549",
+            "bytes": 2794999,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads-mediation/mediation-sdk/9.5.0/mediation-sdk-9.5.0.aar",
+            "http_last_modified": "Wed, 01 Jul 2026 08:22:05 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/levelplay-950/com/ironsource/Q1.java",
+        "sha256": "81c95673826c11cdd57e55b38911daad69ee22807a65c1732592e6a1d66689fd",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/LevelPlay/9.5.0/mediation-sdk-9.5.0.aar",
+            "sha256": "35991a6455528a5a88018d23abd3a57d1274a3ba42ea686bd3c59a9470b2b549",
+            "bytes": 2794999,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads-mediation/mediation-sdk/9.5.0/mediation-sdk-9.5.0.aar",
+            "http_last_modified": "Wed, 01 Jul 2026 08:22:05 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE08",
+    "source": "CG_Allsource",
+    "target": "U_predict",
+    "claim": "Unity explicitly recommends prelaunch unattributed postbacks plus SDK data to train models; not counted toward learning threshold",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS42",
+      "CGS43",
+      "CGS53"
+    ],
+    "data_provider": "CG_Allsource",
+    "data_receiver": "U_predict",
+    "explicit_call_chain": "same advertiser app all-source install/session/purchase/ad revenue -> authorized MMP sharing -> Unity product-level learning statement",
+    "permission_conditions": "at least two weeks recommended; lifetime/max window; purpose/privacy authorization and partner setup",
+    "missing_evidence": "Per-field training lineage, actual target-game sharing, historical backfill and measured lift",
+    "supplements_original_edges": [
+      "U07"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Attributed/unattributed/organic definitions",
+      "ROAS prelaunch data and all-source sharing",
+      "Vector product correlations and postback sources"
+    ],
+    "class_method_lines": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "method": "ROAS prelaunch data and all-source sharing",
+        "start_line": 36,
+        "end_line": 70
+      },
+      {
+        "path": "client-growth/unity-attribution-types.md",
+        "method": "Attributed/unattributed/organic definitions",
+        "start_line": 28,
+        "end_line": 80
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "method": "Vector product correlations and postback sources",
+        "start_line": 10,
+        "end_line": 43
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f",
+        "official_packages": null
+      },
+      {
+        "path": "client-growth/unity-attribution-types.md",
+        "sha256": "64d20fd3e139d358d631d3388d257ee87932a4842cd4d6a6a45ac54de619e973",
+        "official_packages": null
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "sha256": "7c38a287f3cd15624083e4c6d4720e49de626cbc7f85e7a5483018ac2e704a61",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE09",
+    "source": "M_af",
+    "target": "CG_U_receiver",
+    "claim": "Unity AppsFlyer contract supports organic/non-organic installs and mapped sessions/purchase/ad revenue with sharing permissions",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS44",
+      "CGS45"
+    ],
+    "data_provider": "M_af",
+    "data_receiver": "CG_U_receiver",
+    "explicit_call_chain": "Activate Partner -> correct advertiser Game ID -> all-source default installs and in-app postbacks -> purchase/ad_revenue mapping",
+    "permission_conditions": "background partner activation; event/revenue sharing scope and product permissions; privacy restrictions",
+    "missing_evidence": "Target-game configuration, successful delivery, receipt and use",
+    "supplements_original_edges": [
+      "U05",
+      "U06"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Unity AppsFlyer install/event sharing scopes and maps",
+      "Unity AppsFlyer revenue connection/permissions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "vector/doc-integrate-appsflyer-with-unity.txt",
+        "method": "Unity AppsFlyer install/event sharing scopes and maps",
+        "start_line": 113,
+        "end_line": 183
+      },
+      {
+        "path": "vector/doc-integrate-appsflyer-with-unity.txt",
+        "method": "Unity AppsFlyer revenue connection/permissions",
+        "start_line": 185,
+        "end_line": 273
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-integrate-appsflyer-with-unity.txt",
+        "sha256": "cb5762c48db5b889b93057135b69f83f924fa669817e8e38dceae590058820df",
+        "official_packages": null
+      },
+      {
+        "path": "vector/doc-integrate-appsflyer-with-unity.txt",
+        "sha256": "cb5762c48db5b889b93057135b69f83f924fa669817e8e38dceae590058820df",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE10",
+    "source": "M_adjust",
+    "target": "CG_U_receiver",
+    "claim": "Unity Adjust requires all-source selection, event maps and dedicated ad_revenue path/account capability",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS46",
+      "CGS48"
+    ],
+    "data_provider": "M_adjust",
+    "data_receiver": "CG_U_receiver",
+    "explicit_call_chain": "Unity Ads partner + advertiser Game ID -> data source selection -> sessions/revenue sharing and event mapping -> Unity postback",
+    "permission_conditions": "partner/account permissions; ad revenue dedicated path; valid privacy and source scope",
+    "missing_evidence": "Target-game switches and production ad revenue postback ACK",
+    "supplements_original_edges": [
+      "U05",
+      "U06"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Unity Adjust all-sources and dedicated revenue mapping",
+      "Unity S2S IDs/time/attribution/revenue contract"
+    ],
+    "class_method_lines": [
+      {
+        "path": "vector/doc-integrate-adjust-with-unity.txt",
+        "method": "Unity Adjust all-sources and dedicated revenue mapping",
+        "start_line": 43,
+        "end_line": 115
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "method": "Unity S2S IDs/time/attribution/revenue contract",
+        "start_line": 28,
+        "end_line": 109
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-integrate-adjust-with-unity.txt",
+        "sha256": "084be2af7f653092f166f2d3ae86938a4b0e801b1c38dbf16412a08cda86ef6c",
+        "official_packages": null
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "sha256": "a4f39f6236d9d3da9f8f07f3599a656d586e15df2322b134163d1b79d652d2d2",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE11",
+    "source": "CG_U_receiver",
+    "target": "U_predict",
+    "claim": "Unity ROAS product specifies post-install learning and mature cohort thresholds; D28 learning threshold uses D7 data",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS47",
+      "CGS53"
+    ],
+    "data_provider": "CG_U_receiver",
+    "data_receiver": "U_predict",
+    "explicit_call_chain": "post-install revenue/installs -> learning threshold by optimization objective and cohort window",
+    "permission_conditions": "IAA/IAP/Hybrid objective; D7 maturity; separate learning thresholds, not entire training sample count",
+    "missing_evidence": "Actual labels, feature construction, model weights and target-game production training",
+    "supplements_original_edges": [
+      "U07"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Learning maturity/thresholds",
+      "Vector product correlations and postback sources"
+    ],
+    "class_method_lines": [
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "method": "Learning maturity/thresholds",
+        "start_line": 79,
+        "end_line": 116
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "method": "Vector product correlations and postback sources",
+        "start_line": 10,
+        "end_line": 43
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61",
+        "official_packages": null
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "sha256": "7c38a287f3cd15624083e4c6d4720e49de626cbc7f85e7a5483018ac2e704a61",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE12",
+    "source": "U_mmp",
+    "target": "CG_U_receiver",
+    "claim": "Unity S2S contract carries permitted identifiers, campaign/game/install/event time, attribution flag and revenue",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS43",
+      "CGS48"
+    ],
+    "data_provider": "U_mmp",
+    "data_receiver": "CG_U_receiver",
+    "explicit_call_chain": "MMP-authorized secondary postback -> gamer_id/aid/ifa + advertiser game_id/campaign + install_ts/time + attributed flag/value",
+    "permission_conditions": "valid applicable privacy controls; identifier availability; correct advertiser rather than publisher Game ID",
+    "missing_evidence": "Successful join, match rates, deduplication, delayed feedback and target-game receipt",
+    "supplements_original_edges": [
+      "U06"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Attributed/unattributed/organic definitions",
+      "Unity S2S IDs/time/attribution/revenue contract"
+    ],
+    "class_method_lines": [
+      {
+        "path": "client-growth/unity-attribution-types.md",
+        "method": "Attributed/unattributed/organic definitions",
+        "start_line": 28,
+        "end_line": 80
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "method": "Unity S2S IDs/time/attribution/revenue contract",
+        "start_line": 28,
+        "end_line": 109
+      }
+    ],
+    "sha256": [
+      {
+        "path": "client-growth/unity-attribution-types.md",
+        "sha256": "64d20fd3e139d358d631d3388d257ee87932a4842cd4d6a6a45ac54de619e973",
+        "official_packages": null
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "sha256": "a4f39f6236d9d3da9f8f07f3599a656d586e15df2322b134163d1b79d652d2d2",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE13",
+    "source": "A_context",
+    "target": "A_predict",
+    "claim": "Axon explicitly discloses device/network, engagement, own MAX win/loss and advertiser-shared data for continual models and advertiser-value bidding",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS51"
+    ],
+    "data_provider": "A_context",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "official described collected/partner-shared data -> model continual learning -> impression value for advertiser -> bidding",
+    "permission_conditions": "advertiser voluntary data; excludes sensitive/protected/children and other bidder bid/user data",
+    "missing_evidence": "Per-field features, model structure, target-game calls, production delivery and measured contribution",
+    "supplements_original_edges": [
+      "A01",
+      "A06",
+      "A13",
+      "A18"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Axon model inputs/advertiser-shared data and explicit exclusions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "method": "Axon model inputs/advertiser-shared data and explicit exclusions",
+        "start_line": 54,
+        "end_line": 73
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE14",
+    "source": "M_af",
+    "target": "CG_A_receiver",
+    "claim": "AppLovin AppsFlyer partner mapping supports all media sources including organic; checkout excludes IAA/predicted LTV",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS49",
+      "CGS52"
+    ],
+    "data_provider": "M_af",
+    "data_receiver": "CG_A_receiver",
+    "explicit_call_chain": "AF configured event -> landing/checkout/postinstall; source scope and value/revenue choice -> AppLovin partner contract",
+    "permission_conditions": "partner enabled and authorized; checkout only direct actual user payments; correct event window",
+    "missing_evidence": "Game-specific event mapping/receipt; no IAA via checkout; no implicit MAX EventService routing",
+    "supplements_original_edges": [
+      "A08"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "AppLovin AppsFlyer all-sources mapping and excluded purchase revenue",
+      "AppLovin checkout revenue semantic restrictions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "method": "AppLovin AppsFlyer all-sources mapping and excluded purchase revenue",
+        "start_line": 183,
+        "end_line": 241
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "method": "AppLovin checkout revenue semantic restrictions",
+        "start_line": 13,
+        "end_line": 26
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "sha256": "dc1dfd019060e41b50e9570dcdce70452500ecba72a358d7f01dca2b2cf70b30",
+        "official_packages": null
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "sha256": "2aa160152e20bf5afcf6cee0f7bf76de6cde0878978f8a515a63e6041457f366",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE15",
+    "source": "M_adjust",
+    "target": "CG_A_receiver",
+    "claim": "Adjust Axon partner offers all-sources versus Axon-only, revenue sharing and explicit mapped events",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS50",
+      "CGS52"
+    ],
+    "data_provider": "M_adjust",
+    "data_receiver": "CG_A_receiver",
+    "explicit_call_chain": "partner data sharing activation -> source scope -> optional sessions/revenue + mapping; unmapped events not shared",
+    "permission_conditions": "actual partner configuration; session callback high-volume opt-in; in-app revenue semantics",
+    "missing_evidence": "Target-game enablement, server receipt and selected optimization objective",
+    "supplements_original_edges": [
+      "A08"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Adjust Axon partner/source choices and unmapped events",
+      "AppLovin checkout revenue semantic restrictions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "axon/adjust-applovin.txt",
+        "method": "Adjust Axon partner/source choices and unmapped events",
+        "start_line": 89,
+        "end_line": 127
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "method": "AppLovin checkout revenue semantic restrictions",
+        "start_line": 13,
+        "end_line": 26
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984",
+        "official_packages": null
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "sha256": "2aa160152e20bf5afcf6cee0f7bf76de6cde0878978f8a515a63e6041457f366",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE16",
+    "source": "A_max",
+    "target": "CG_MAX_queue",
+    "claim": "MAX EventService has event-name gated structured/legacy envelope and scheduled postback implementation",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "XS31",
+      "XS32",
+      "XS33"
+    ],
+    "data_provider": "A_max",
+    "data_receiver": "CG_MAX_queue",
+    "explicit_call_chain": "trackEvent -> axon_events choice -> structured or legacy payload -> scheduled postback",
+    "permission_conditions": "13.7 standalone evidence; prior20-22 cover actual target versions; optional user_data and dedupe inputs not automatic",
+    "missing_evidence": "Specific game business caller, successful send, reception and training",
+    "supplements_original_edges": [
+      "A01"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.7.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "method": "EventServiceImpl.trackEvent",
+        "start_line": 181,
+        "end_line": 195
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "method": "EventServiceImpl structured payload",
+        "start_line": 245,
+        "end_line": 293
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "method": "EventServiceImpl scheduler/postback builder",
+        "start_line": 46,
+        "end_line": 80
+      }
+    ],
+    "sha256": [
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "sha256": "029ccc2c1f00a616b4ee50d444f7990fc47498954b57bf9ef55397de58fad9a1",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppLovin/MAX/13.7.0/applovin-sdk-13.7.0.aar",
+          "sha256": "58d01ce77af9786b4b2d393534a057738bae7fb65f9bb02de7264646b1c6a563",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.7.0/applovin-sdk-13.7.0.aar",
+          "http_last_modified": "Fri, 30 Oct 2026 09:10:42 GMT",
+          "bytes": 3798560
+        }
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "sha256": "029ccc2c1f00a616b4ee50d444f7990fc47498954b57bf9ef55397de58fad9a1",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppLovin/MAX/13.7.0/applovin-sdk-13.7.0.aar",
+          "sha256": "58d01ce77af9786b4b2d393534a057738bae7fb65f9bb02de7264646b1c6a563",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.7.0/applovin-sdk-13.7.0.aar",
+          "http_last_modified": "Fri, 30 Oct 2026 09:10:42 GMT",
+          "bytes": 3798560
+        }
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "sha256": "029ccc2c1f00a616b4ee50d444f7990fc47498954b57bf9ef55397de58fad9a1",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppLovin/MAX/13.7.0/applovin-sdk-13.7.0.aar",
+          "sha256": "58d01ce77af9786b4b2d393534a057738bae7fb65f9bb02de7264646b1c6a563",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.7.0/applovin-sdk-13.7.0.aar",
+          "http_last_modified": "Fri, 30 Oct 2026 09:10:42 GMT",
+          "bytes": 3798560
+        }
+      }
+    ]
+  },
+  {
+    "id": "CGE17",
+    "source": "CG_MAX_request",
+    "target": "U_exchange",
+    "claim": "No complete mapping established from private SDK signals to server-side Unity/OpenRTB fields or final bidder inputs",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "CGS01",
+      "CGS21",
+      "CGS32",
+      "CGS33"
+    ],
+    "data_provider": "CG_MAX_request",
+    "data_receiver": "U_exchange",
+    "explicit_call_chain": "Known private protobuf/JSON builders stop before documented exchange/DSP mapping",
+    "permission_conditions": "Do not initialize SDK or probe production bidding; inspect authorized server traces only",
+    "missing_evidence": "Server serializer/field lineage and authorized request trace; opaque token fields stay unknown",
+    "supplements_original_edges": [
+      "A03",
+      "U04"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.6.4",
+      "4.17.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "method": "AndroidBuildHeaderBiddingToken.invoke",
+        "start_line": 33,
+        "end_line": 89
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetAdRequest.kt",
+        "method": "AndroidGetAdRequest.invoke",
+        "start_line": 31,
+        "end_line": 65
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6 mediated ad request body",
+        "start_line": 103,
+        "end_line": 157
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6.run",
+        "start_line": 164,
+        "end_line": 212
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "sha256": "eaf08c35ec940f873fe79f04701f7799cb328b90ebe34d5dc97ea2ae0ca759c1",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidGetAdRequest.kt",
+        "sha256": "4cec5463c9380504ca428e58e4a5dfb95cb79466202e4722f9bb12871e36c703",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE18",
+    "source": "CG_U_token",
+    "target": "U_features",
+    "claim": "Session/ad history serialization does not prove each field becomes a Vector pre-install feature or useful LTV signal",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "CGS01",
+      "CGS04",
+      "CGS16",
+      "CGS53"
+    ],
+    "data_provider": "CG_U_token",
+    "data_receiver": "U_features",
+    "explicit_call_chain": "Token serialization known; exact feature ingestion and bid-time as-of unknown",
+    "permission_conditions": "Install-before time separation, purpose authorization and per-field availability required",
+    "missing_evidence": "Feature schema, as-of joins, training provenance and controlled ablation",
+    "supplements_original_edges": [
+      "U04"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "4.17.0",
+      "Vector product correlations and postback sources"
+    ],
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "method": "AndroidBuildHeaderBiddingToken.invoke",
+        "start_line": 33,
+        "end_line": 89
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidCampaignRepository.kt",
+        "method": "AndroidCampaignRepository",
+        "start_line": 11,
+        "end_line": 50
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayUniversalResponse.kt",
+        "method": "HandleGatewayUniversalResponse",
+        "start_line": 28,
+        "end_line": 54
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "method": "Vector product correlations and postback sources",
+        "start_line": 10,
+        "end_line": 43
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidBuildHeaderBiddingToken.kt",
+        "sha256": "eaf08c35ec940f873fe79f04701f7799cb328b90ebe34d5dc97ea2ae0ca759c1",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/data/repository/AndroidCampaignRepository.kt",
+        "sha256": "54bee13f632ae8865dce5811a5d9d2e16fbd46f400904c620305958b2ad287c0",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "ThirdPartySDKs/Unity/Ads/4.17.0/sources/com/unity3d/ads/core/domain/AndroidHandleGatewayUniversalResponse.kt",
+        "sha256": "31642d5c85f333b05191f6c1e8e8c684e3b5d7c987aedcd27be2177d4cf721a2",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0.aar",
+            "sha256": "4410aa218ee81a918c99b1b346b258140f395ae8dcf01780c352192b4d40b13b",
+            "bytes": 4311926,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0.aar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Unity/Ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "sha256": "e92dd38826b86e86483347cf3b9286288b29feadfd37ab80f3739a828ab82252",
+            "bytes": 674033,
+            "url": "https://repo.maven.apache.org/maven2/com/unity3d/ads/unity-ads/4.17.0/unity-ads-4.17.0-sources.jar",
+            "http_last_modified": "Wed, 04 Mar 2026 21:03:30 GMT"
+          }
+        ]
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "sha256": "7c38a287f3cd15624083e4c6d4720e49de626cbc7f85e7a5483018ac2e704a61",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE19",
+    "source": "CG_A_receiver",
+    "target": "A_labels",
+    "claim": "AppLovin target-game receipt, canonical revenue rows and field-level LTV label generation remain unproven",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "CGS49",
+      "CGS50",
+      "CGS51",
+      "CGS52"
+    ],
+    "data_provider": "CG_A_receiver",
+    "data_receiver": "A_labels",
+    "explicit_call_chain": "Public postback contract -> unknown receipt/join/dedup/maturity/training dataset",
+    "permission_conditions": "actual authorized sharing; IAA distinct from IAP checkout; field-level privacy and time scope",
+    "missing_evidence": "Partner export/ACK, canonical revenue ledger, training-data lineage and dataset version",
+    "supplements_original_edges": [
+      "A08",
+      "A10"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Adjust Axon partner/source choices and unmapped events",
+      "AppLovin AppsFlyer all-sources mapping and excluded purchase revenue",
+      "AppLovin checkout revenue semantic restrictions",
+      "Axon model inputs/advertiser-shared data and explicit exclusions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "method": "AppLovin AppsFlyer all-sources mapping and excluded purchase revenue",
+        "start_line": 183,
+        "end_line": 241
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "method": "Adjust Axon partner/source choices and unmapped events",
+        "start_line": 89,
+        "end_line": 127
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "method": "Axon model inputs/advertiser-shared data and explicit exclusions",
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "method": "AppLovin checkout revenue semantic restrictions",
+        "start_line": 13,
+        "end_line": 26
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "sha256": "dc1dfd019060e41b50e9570dcdce70452500ecba72a358d7f01dca2b2cf70b30",
+        "official_packages": null
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984",
+        "official_packages": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7",
+        "official_packages": null
+      },
+      {
+        "path": "axon/doc-in-app-purchase-revenue-sharing.txt",
+        "sha256": "2aa160152e20bf5afcf6cee0f7bf76de6cde0878978f8a515a63e6041457f366",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE20",
+    "source": "CG_U_receiver",
+    "target": "U_labels",
+    "claim": "Unity public learning contract is not event-by-event proof of receipt, joins, mature canonical label rows or model ingestion",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "CGS42",
+      "CGS47",
+      "CGS48"
+    ],
+    "data_provider": "CG_U_receiver",
+    "data_receiver": "U_labels",
+    "explicit_call_chain": "Product-level learning established; specific postback -> canonical label transformation not visible",
+    "permission_conditions": "attributed/unattributed separated; real revenue vs proxy; consent, cohort maturity and bid-time isolation",
+    "missing_evidence": "Authorized delivery logs, joins, dedup/refund/FX/delay handling and model data lineage",
+    "supplements_original_edges": [
+      "U06",
+      "U07"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "Learning maturity/thresholds",
+      "ROAS prelaunch data and all-source sharing",
+      "Unity S2S IDs/time/attribution/revenue contract"
+    ],
+    "class_method_lines": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "method": "ROAS prelaunch data and all-source sharing",
+        "start_line": 36,
+        "end_line": 70
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "method": "Learning maturity/thresholds",
+        "start_line": 79,
+        "end_line": 116
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "method": "Unity S2S IDs/time/attribution/revenue contract",
+        "start_line": 28,
+        "end_line": 109
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f",
+        "official_packages": null
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61",
+        "official_packages": null
+      },
+      {
+        "path": "vector/doc-send-postbacks.txt",
+        "sha256": "a4f39f6236d9d3da9f8f07f3599a656d586e15df2322b134163d1b79d652d2d2",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE21",
+    "source": "GAME_rotate",
+    "target": "M_af",
+    "claim": "Rotate original wrapper sends the same double revenue into AFAdRevenueData plus separate ad_revenue2/4 paths",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "XS43"
+    ],
+    "data_provider": "GAME_rotate",
+    "data_receiver": "M_af",
+    "explicit_call_chain": "g8.a original revenue wrapper -> AFAdRevenueData(network,APPLOVIN_MAX,USD,d); eventTracking ad_revenue2; ad_revenue4 callback",
+    "permission_conditions": "actual original game method reached; original runtime rules, privacy and API conditions",
+    "missing_evidence": "Successful MMP delivery; downstream partner sharing and dedup of alternative events",
+    "supplements_original_edges": [
+      "XM01"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": true,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "6.17.5"
+    ],
+    "class_method_lines": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "method": "Rotate original g8.a revenue wrapper",
+        "start_line": 100,
+        "end_line": 126
+      }
+    ],
+    "sha256": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "sha256": "7c2c6b011ec46caed6c287ad292aa85aa51c16ed81fd81dcabc29ecc355c6c5a",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppsFlyer/Android/6.17.5/af-android-sdk-6.17.5.aar",
+          "sha256": "af3f8e59f6ef5e0237fe7c53dd2040c0bb941688b4eb6a4c5b280143d377face",
+          "url": "https://repo.maven.apache.org/maven2/com/appsflyer/af-android-sdk/6.17.5/af-android-sdk-6.17.5.aar",
+          "http_last_modified": "Wed, 26 Nov 2025 11:56:49 GMT",
+          "bytes": 758514
+        }
+      }
+    ]
+  },
+  {
+    "id": "CGE22",
+    "source": "CG_Game_value",
+    "target": "CG_MAX_queue",
+    "claim": "No complete target-game specific value rule -> MAX EventService chain established; generic capability is insufficient",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "XS31",
+      "XS32",
+      "CGS34"
+    ],
+    "data_provider": "CG_Game_value",
+    "data_receiver": "CG_MAX_queue",
+    "explicit_call_chain": "Public generic event and optional user-data capabilities; four-game original call scan separately preserved in report20/XD01-XD02",
+    "permission_conditions": "Car generic Unity/Metica bridge not proven concrete caller; no absence claim for native/reflection/hotfix/server paths",
+    "missing_evidence": "Concrete business callsite/arguments plus production postback and reception; cannot infer from default event names",
+    "supplements_original_edges": [
+      "A10"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "13.6.4",
+      "13.7.0"
+    ],
+    "class_method_lines": [
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "method": "EventServiceImpl.trackEvent",
+        "start_line": 181,
+        "end_line": 195
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "method": "EventServiceImpl structured payload",
+        "start_line": 245,
+        "end_line": 293
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "method": "a6.ad_info/user_data",
+        "start_line": 221,
+        "end_line": 268
+      }
+    ],
+    "sha256": [
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "sha256": "029ccc2c1f00a616b4ee50d444f7990fc47498954b57bf9ef55397de58fad9a1",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppLovin/MAX/13.7.0/applovin-sdk-13.7.0.aar",
+          "sha256": "58d01ce77af9786b4b2d393534a057738bae7fb65f9bb02de7264646b1c6a563",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.7.0/applovin-sdk-13.7.0.aar",
+          "http_last_modified": "Fri, 30 Oct 2026 09:10:42 GMT",
+          "bytes": 3798560
+        }
+      },
+      {
+        "path": "cross-sdk/java/max-137/com/applovin/impl/sdk/EventServiceImpl.java",
+        "sha256": "029ccc2c1f00a616b4ee50d444f7990fc47498954b57bf9ef55397de58fad9a1",
+        "official_packages": {
+          "path": "ThirdPartySDKs/AppLovin/MAX/13.7.0/applovin-sdk-13.7.0.aar",
+          "sha256": "58d01ce77af9786b4b2d393534a057738bae7fb65f9bb02de7264646b1c6a563",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.7.0/applovin-sdk-13.7.0.aar",
+          "http_last_modified": "Fri, 30 Oct 2026 09:10:42 GMT",
+          "bytes": 3798560
+        }
+      },
+      {
+        "path": "client-growth/java/max-1364/com/applovin/impl/a6.java",
+        "sha256": "84e39b8fe2c786f537507f1b5f267874f1474aa9a08f7d356c434aa258a9f557",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4.aar",
+            "sha256": "35c893f8f02e1bbdb2eb05bf728745b431a1854f17d65b0c7bc60eead018ee52",
+            "bytes": 3792065,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4.aar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/AppLovin/MAX/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "sha256": "c44986e2975ca53ac267d4eb49ea2c49229d80fac90de05aaaa7b420d4886886",
+            "bytes": 65185,
+            "url": "https://repo.maven.apache.org/maven2/com/applovin/applovin-sdk/13.6.4/applovin-sdk-13.6.4-sources.jar",
+            "http_last_modified": "Sat, 08 Aug 2026 04:35:00 GMT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "CGE23",
+    "source": "A_max",
+    "target": "A_predict",
+    "claim": "AppLovin gaming product links MAX monetization with IAA/Blended ROAS and MMP-based UA; internal label schema is not disclosed",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS54",
+      "CGS51"
+    ],
+    "data_provider": "A_max",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "official Ad ROAS/Blended products + MAX integration/MMP prerequisites -> advertised acquisition optimization",
+    "permission_conditions": "product eligibility, advertiser activation and authorized data use; no specific target-game campaign observation",
+    "missing_evidence": "Exact MAX income rows -> Axon labels/features, receipt and incremental effect",
+    "supplements_original_edges": [
+      "A09"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "AppLovin gaming ROAS and MAX prerequisites",
+      "Axon model inputs/advertiser-shared data and explicit exclusions"
+    ],
+    "class_method_lines": [
+      {
+        "path": "axon/gaming-apps.txt",
+        "method": "AppLovin gaming ROAS and MAX prerequisites",
+        "start_line": 18,
+        "end_line": 80
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "method": "Axon model inputs/advertiser-shared data and explicit exclusions",
+        "start_line": 54,
+        "end_line": 73
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/gaming-apps.txt",
+        "sha256": "26948f476ee7859902deeb7a9ceb7d23083fbadf511076a550d3b0f51798d46e",
+        "official_packages": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7",
+        "official_packages": null
+      }
+    ]
+  },
+  {
+    "id": "CGE24",
+    "source": "A_feedback",
+    "target": "A_mmp",
+    "claim": "AppLovin tracking macros expose ad-response event ID shared by impression/click and permitted device/campaign context",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "CGS55"
+    ],
+    "data_provider": "A_feedback",
+    "data_receiver": "A_mmp",
+    "explicit_call_chain": "ad response tracking template -> EVENT_ID shared by click/impression + device/campaign macros -> MMP tracking contract",
+    "permission_conditions": "advertiser tracking template; privacy/identifier availability; not raw target user data",
+    "missing_evidence": "Actual configured URL, install mapping, privacy fallback and successful server matching",
+    "supplements_original_edges": [
+      "A02",
+      "A08"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:13:45.723442+00:00",
+    "applies_to": "specific standalone SDK code or official product contract; not observed target-game production",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "production_evidence": "No production endpoint tests, SDK initialization, real identifiers or event transmission.",
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "versions": [
+      "AppLovin click/impression device and request tracking macros"
+    ],
+    "class_method_lines": [
+      {
+        "path": "axon/doc-tracking-url-macros.txt",
+        "method": "AppLovin click/impression device and request tracking macros",
+        "start_line": 14,
+        "end_line": 106
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/doc-tracking-url-macros.txt",
+        "sha256": "18107dc8e4cbc7db6d5602ae2eb0e5eb8654f1d550b1e03b2733e0d73fc844bc",
+        "official_packages": null
+      }
+    ]
+  }
+]

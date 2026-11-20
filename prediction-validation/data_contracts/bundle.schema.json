@@ -1,0 +1,672 @@
+{
+  "type": "object",
+  "properties": {
+    "manifest": {
+      "type": "object",
+      "properties": {
+        "dataset_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "synthetic",
+            "real_authorized"
+          ]
+        },
+        "authorization": {
+          "type": "object",
+          "properties": {
+            "owner": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authorization_reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "approved_purposes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "ltv_research",
+                  "install_probability_research",
+                  "cross_app_feature_research",
+                  "conditional_auction_simulation"
+                ]
+              }
+            },
+            "valid_from": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "valid_until": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "app_scopes": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "cross_app_history_allowed": {
+              "type": "boolean"
+            },
+            "no_direct_identifiers": {
+              "type": "boolean"
+            },
+            "export_join_scope": {
+              "type": "string",
+              "enum": [
+                "dataset_only"
+              ]
+            },
+            "source_data_synthetic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "owner",
+            "authorization_reference",
+            "approved_purposes",
+            "valid_from",
+            "valid_until",
+            "app_scopes",
+            "cross_app_history_allowed",
+            "no_direct_identifiers",
+            "export_join_scope",
+            "source_data_synthetic"
+          ],
+          "additionalProperties": false
+        },
+        "snapshot_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "label_as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "arrival_grace_hours": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 720
+        },
+        "iaa_complete_through_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "iap_complete_through_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "install_population_complete": {
+          "type": "boolean"
+        },
+        "revenue_basis": {
+          "type": "string",
+          "enum": [
+            "publisher_net_iaa_and_verified_net_iap"
+          ]
+        },
+        "accepted_iaa_precision": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "exact",
+              "estimated",
+              "publisher_defined",
+              "undefined"
+            ]
+          }
+        },
+        "label_precision_scope": {
+          "type": "string",
+          "enum": [
+            "exact_callback_revenue",
+            "estimated_callback_revenue"
+          ]
+        },
+        "refund_policy": {
+          "type": "string",
+          "enum": [
+            "restate_original_purchase_window_as_of_snapshot"
+          ]
+        },
+        "horizon_definition": {
+          "type": "string",
+          "enum": [
+            "elapsed_utc_half_open_7x24_28x24_hours"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "USD"
+          ]
+        },
+        "experiment_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "join_contracts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "join_contract_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "owner_reference": {
+                "type": "string",
+                "minLength": 1
+              },
+              "allowed_purpose": {
+                "type": "string",
+                "enum": [
+                  "cross_app_feature_research"
+                ]
+              },
+              "valid_from": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "valid_until": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "owner_authorized_aggregate"
+                ]
+              },
+              "raw_ids_exported": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "join_contract_id",
+              "owner_reference",
+              "allowed_purpose",
+              "valid_from",
+              "valid_until",
+              "scope",
+              "raw_ids_exported"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "dataset_id",
+        "provenance",
+        "authorization",
+        "snapshot_at",
+        "label_as_of",
+        "arrival_grace_hours",
+        "iaa_complete_through_at",
+        "iap_complete_through_at",
+        "install_population_complete",
+        "revenue_basis",
+        "accepted_iaa_precision",
+        "label_precision_scope",
+        "refund_policy",
+        "horizon_definition",
+        "currency",
+        "experiment_id",
+        "join_contracts"
+      ],
+      "additionalProperties": false
+    },
+    "installs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sample_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "app_scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "install_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "available_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "received_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "country": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "android",
+              "ios"
+            ]
+          },
+          "game_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "ad_policy_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "opportunity_key": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "sample_key",
+          "app_scope",
+          "install_at",
+          "available_at",
+          "received_at",
+          "country",
+          "platform",
+          "game_version",
+          "ad_policy_version",
+          "opportunity_key"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "opportunity_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "bid_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "served": {
+            "type": "boolean"
+          },
+          "outcome_complete": {
+            "type": "boolean"
+          },
+          "installed": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "outcome_available_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "cost_usd": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,12})?$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "logged_action_probability": {
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "logging_policy_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "randomized_exploration": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "opportunity_key",
+          "bid_at",
+          "served",
+          "outcome_complete",
+          "installed",
+          "outcome_available_at",
+          "cost_usd",
+          "logged_action_probability",
+          "logging_policy_id",
+          "randomized_exploration"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "opportunity",
+              "install"
+            ]
+          },
+          "entity_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "feature_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "feature_group": {
+            "type": "string",
+            "enum": [
+              "context",
+              "history_ads",
+              "cross_app_history",
+              "d0_behavior",
+              "d0_revenue",
+              "proxy"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "event_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_max_available_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "computed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "available_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "received_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "window_start_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "window_end_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "privacy_allowed": {
+            "type": "boolean"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "single_app",
+              "owner_authorized_aggregate"
+            ]
+          },
+          "join_contract_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "entity_type",
+          "entity_key",
+          "feature_name",
+          "feature_group",
+          "value",
+          "event_at",
+          "source_max_available_at",
+          "computed_at",
+          "available_at",
+          "received_at",
+          "window_start_at",
+          "window_end_at",
+          "privacy_allowed",
+          "scope",
+          "join_contract_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "revenues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "record_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "sample_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "canonical_economic_key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "iaa",
+              "iap"
+            ]
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "impression",
+              "paid",
+              "fulfilled",
+              "refund"
+            ]
+          },
+          "recognition_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "event_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "available_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "received_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "string",
+            "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]{1,12})?$"
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "precision": {
+            "type": "string",
+            "enum": [
+              "exact",
+              "estimated",
+              "publisher_defined",
+              "undefined"
+            ]
+          },
+          "amount_basis": {
+            "type": "string",
+            "enum": [
+              "publisher_net_iaa",
+              "verified_net_iap",
+              "catalog_metadata",
+              "proxy_value",
+              "predicted_value"
+            ]
+          },
+          "purchase_verified": {
+            "type": "boolean"
+          },
+          "source_system": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "original_purchase_key": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "record_key",
+          "sample_key",
+          "canonical_economic_key",
+          "kind",
+          "stage",
+          "recognition_at",
+          "event_at",
+          "available_at",
+          "received_at",
+          "amount",
+          "currency",
+          "precision",
+          "amount_basis",
+          "purchase_verified",
+          "source_system",
+          "original_purchase_key"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "fx_rates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "rate_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "usd_per_unit": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,12})?$"
+          },
+          "available_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_reference": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "currency",
+          "rate_date",
+          "usd_per_unit",
+          "available_at",
+          "source_reference"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "manifest",
+    "installs",
+    "opportunities",
+    "features",
+    "revenues",
+    "fx_rates"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:growth-research:prediction-validation:bundle:v1",
+  "title": "Independent LTV research export v1; schema validity is not authorization verification"
+}

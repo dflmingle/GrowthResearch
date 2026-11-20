@@ -1,0 +1,18 @@
+{
+  "scope": "Teaching assumption, NOT complete MAX/LevelPlay scheduler",
+  "candidates": [
+    {
+      "source": "waterfall-instance",
+      "ranking_cpm": 20,
+      "kind": "estimated",
+      "load": "fail"
+    },
+    {
+      "source": "real-time-bid",
+      "ranking_cpm": 15,
+      "kind": "bid",
+      "load": "success"
+    }
+  ],
+  "result": "Try estimated 20 first; failover to actual 15. Estimate is not a guaranteed payable offer."
+}

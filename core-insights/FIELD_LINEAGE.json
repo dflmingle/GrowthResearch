@@ -1,0 +1,3906 @@
+[
+  {
+    "field": "UGS installation identity",
+    "field_source": "PlayerPrefs UnityInstallationId; copy engine only if local empty",
+    "provider": "InstallationId:IInstallationId",
+    "read_conditions": "Core initialized; existing-key priority",
+    "consumer_sdk": "Analytics6.3.0",
+    "serialization": "IdentityManager.InstallId; standard installationID; fallback userID",
+    "transport_module": "Analytics buffer/dispatcher",
+    "known_receiver": "project/environment collect URL",
+    "proven_use": "Single-app installation fallback for analytics",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S01",
+      "C53S02",
+      "C53S17",
+      "C53S18",
+      "C53S19"
+    ],
+    "scope": "application local; key not project-prefixed",
+    "evidence_records": [
+      {
+        "id": "C53S01",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Registration/CorePackageInitializer.cs",
+        "sha256": "24c3a53b70441d17086579c1e3b5d817d3a10a18f6e4fb8ca693dc69b15901f1",
+        "version": "1.19.0",
+        "start_line": 111,
+        "end_line": 199,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S02",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Device/InstallationId.cs",
+        "sha256": "ba2264ac6de4bbd1aca18070d4bb2d175acd2fc51caebec9f1a2949489eb3624",
+        "version": "1.19.0",
+        "start_line": 7,
+        "end_line": 91,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S17",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/AnalyticsService.cs",
+        "sha256": "b94ec18f62aef3c3dc5baf99b85805b3ecd33b713693ce26ffe2c698c78992d5",
+        "version": "6.3.0",
+        "start_line": 49,
+        "end_line": 105,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S18",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/IdentityManager.cs",
+        "sha256": "836cfa2da1f65e331103708136d00c4619f219a5d64669c7e1ab8395f76617c1",
+        "version": "6.3.0",
+        "start_line": 22,
+        "end_line": 139,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S19",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/Runtime/BufferX.cs",
+        "sha256": "fdd07ac22a44caa6f208c5771d7bad0b115482344417b1dbbb2ab3167df859a4",
+        "version": "6.3.0",
+        "start_line": 366,
+        "end_line": 414,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.services.core",
+        "version": "1.19.0",
+        "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+        "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+        "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+        "registry_time": "2026-11-10T22:57:54.166Z",
+        "dependencies": {
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.nuget.newtonsoft-json": "3.2.2",
+          "com.unity.modules.androidjni": "1.0.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Core initialized; existing-key priority",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Engine installation identity",
+    "field_source": "Identifiers.installationId OR unity_connect.installation_id GUID",
+    "provider": "EngineInstallationId:IEngineInstallationId",
+    "read_conditions": "platform compile branch; Core component available",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "UnityIdentities[11].UnityInstallationId[1]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Install context in IAP telemetry",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S03",
+      "C53S20",
+      "C53S21",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "engine per-game install; native storage/reset unknown",
+    "evidence_records": [
+      {
+        "id": "C53S03",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Device/EngineInstallationId.cs",
+        "sha256": "962581c4c64176efe335d4a56e7b360721a8864c16c3c2d6a30a44235ed9d430",
+        "version": "1.19.0",
+        "start_line": 7,
+        "end_line": 53,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S20",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/ServicesCore/CoreRegistryHelper.cs",
+        "sha256": "212bfdbd42cc46be3de42704ef19e6739aa66563e331df6d685902ea5e3bf7c0",
+        "version": "5.5.1",
+        "start_line": 27,
+        "end_line": 56,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.services.core",
+        "version": "1.19.0",
+        "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+        "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+        "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+        "registry_time": "2026-11-10T22:57:54.166Z",
+        "dependencies": {
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.nuget.newtonsoft-json": "3.2.2",
+          "com.unity.modules.androidjni": "1.0.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "platform compile branch; Core component available",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "External developer user ID",
+    "field_source": "UnityServices.ExternalUserId / native Identifiers.userId / compatibility option",
+    "provider": "ExternalUserId:IExternalUserId",
+    "read_conditions": "native branch requires both symbols; fallback memory",
+    "consumer_sdk": "Analytics6.3.0 + IAP5.5.1",
+    "serialization": "Analytics userID preferred; IAP identities[11].UserId[3]",
+    "transport_module": "Analytics dispatcher or IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Analytics collect / Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Explicit developer identity input",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S05",
+      "C53S06",
+      "C53S07",
+      "C53S08",
+      "C53S18",
+      "C53S20",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "developer-controlled namespace; not automatic account graph",
+    "evidence_records": [
+      {
+        "id": "C53S05",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Core/ExternalUserIdProperty.cs",
+        "sha256": "fbc52928798c9259f6d6900d3155b945d83d8c0194991fe2d00c4e40cb82f707",
+        "version": "1.19.0",
+        "start_line": 8,
+        "end_line": 55,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S06",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Configuration/ExternalUserId.cs",
+        "sha256": "e7a50c127e866f15b344de5c2f4531fb3bb3911ec031ce59cbacd4effba33bef",
+        "version": "1.19.0",
+        "start_line": 6,
+        "end_line": 14,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S07",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Core/Unity.Services.Core.asmdef",
+        "sha256": "cf756830cc494eb0037e38a3519ce0c20bf0fd017cd8d72d69a8c0d517be80ab",
+        "version": "1.19.0",
+        "start_line": 1,
+        "end_line": 34,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S08",
+        "path": "core-insights/sdk/core/1.19.0/extracted/package/Runtime/Core/UnityServices.cs",
+        "sha256": "40f4b962fb731287dc5fbdd2e44daf29fbccbcee226989a0a782159ea7898638",
+        "version": "1.19.0",
+        "start_line": 79,
+        "end_line": 106,
+        "official_package": {
+          "sdk": "com.unity.services.core",
+          "version": "1.19.0",
+          "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+          "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+          "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+          "registry_time": "2026-11-10T22:57:54.166Z",
+          "dependencies": {
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.modules.androidjni": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S18",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/IdentityManager.cs",
+        "sha256": "836cfa2da1f65e331103708136d00c4619f219a5d64669c7e1ab8395f76617c1",
+        "version": "6.3.0",
+        "start_line": 22,
+        "end_line": 139,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S20",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/ServicesCore/CoreRegistryHelper.cs",
+        "sha256": "212bfdbd42cc46be3de42704ef19e6739aa66563e331df6d685902ea5e3bf7c0",
+        "version": "5.5.1",
+        "start_line": 27,
+        "end_line": 56,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.services.core",
+        "version": "1.19.0",
+        "path": "core-insights/sdk/core/1.19.0/com.unity.services.core-1.19.0.tgz",
+        "sha256": "cc62fb2eb916a5592bb5a5e31260f5bed7c71a6e5d495e4cfc206c319a9fe2a9",
+        "url": "https://download.packages.unity.com/com.unity.services.core/-/com.unity.services.core-1.19.0.tgz",
+        "registry_time": "2026-11-10T22:57:54.166Z",
+        "dependencies": {
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.nuget.newtonsoft-json": "3.2.2",
+          "com.unity.modules.androidjni": "1.0.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "native branch requires both symbols; fallback memory",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "UGS PlayerId",
+    "field_source": "Auth cache then decoded access token Subject",
+    "provider": "Authentication PlayerIdComponent:IPlayerId",
+    "read_conditions": "Authentication package/component present; profile and credentials state",
+    "consumer_sdk": "Analytics6.3.0 + IAP5.5.1",
+    "serialization": "Analytics standard unityPlayerID; IAP identities[11].PlayerId[2]",
+    "transport_module": "Analytics dispatcher or IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Analytics collect / Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Project/profile player context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S12",
+      "C53S13",
+      "C53S14",
+      "C53S15",
+      "C53S16",
+      "C53S19",
+      "C53S20",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "project+profile cache; not organization-wide automatic identity",
+    "evidence_records": [
+      {
+        "id": "C53S12",
+        "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/Core/AuthenticationPackageInitializer.cs",
+        "sha256": "aa3003a5b1262208e1e215befdce2c8305eab6a28d66e4e7c16035add16afc72",
+        "version": "3.9.0",
+        "start_line": 77,
+        "end_line": 149,
+        "official_package": {
+          "sdk": "com.unity.services.authentication",
+          "version": "3.9.0",
+          "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+          "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+          "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+          "registry_time": null,
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.ugui": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S13",
+        "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/Models/Components/PlayerIdComponent.cs",
+        "sha256": "04b0a7cb4ab848c628403782449f951ecac89166130d8c737d1fcf34c2e119e2",
+        "version": "3.9.0",
+        "start_line": 6,
+        "end_line": 63,
+        "official_package": {
+          "sdk": "com.unity.services.authentication",
+          "version": "3.9.0",
+          "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+          "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+          "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+          "registry_time": null,
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.ugui": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S14",
+        "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/Utilities/Cache/AuthenticationCache.cs",
+        "sha256": "4d4d53d95c14e8fa12fb7fcfbaaceb3c63ed17e364cd850c5989f74995984553",
+        "version": "3.9.0",
+        "start_line": 7,
+        "end_line": 76,
+        "official_package": {
+          "sdk": "com.unity.services.authentication",
+          "version": "3.9.0",
+          "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+          "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+          "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+          "registry_time": null,
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.ugui": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S15",
+        "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/AuthenticationServiceInternal.cs",
+        "sha256": "700da3842fc1b7842a33bf3e06bf172d2e98e47ce6cf5c6c2e0fa3ee6a40520f",
+        "version": "3.9.0",
+        "start_line": 224,
+        "end_line": 261,
+        "official_package": {
+          "sdk": "com.unity.services.authentication",
+          "version": "3.9.0",
+          "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+          "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+          "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+          "registry_time": null,
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.ugui": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S16",
+        "path": "identity-graph/sdk/authentication/3.9.0/extracted/package/Runtime/AuthenticationServiceInternal.cs",
+        "sha256": "700da3842fc1b7842a33bf3e06bf172d2e98e47ce6cf5c6c2e0fa3ee6a40520f",
+        "version": "3.9.0",
+        "start_line": 425,
+        "end_line": 450,
+        "official_package": {
+          "sdk": "com.unity.services.authentication",
+          "version": "3.9.0",
+          "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+          "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+          "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+          "registry_time": null,
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.2",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.ugui": "1.0.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S19",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/Runtime/BufferX.cs",
+        "sha256": "fdd07ac22a44caa6f208c5771d7bad0b115482344417b1dbbb2ab3167df859a4",
+        "version": "6.3.0",
+        "start_line": 366,
+        "end_line": 414,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S20",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/ServicesCore/CoreRegistryHelper.cs",
+        "sha256": "212bfdbd42cc46be3de42704ef19e6739aa66563e331df6d685902ea5e3bf7c0",
+        "version": "5.5.1",
+        "start_line": 27,
+        "end_line": 56,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.services.authentication",
+        "version": "3.9.0",
+        "path": "identity-graph/sdk/authentication/3.9.0/authentication-3.9.0.tgz",
+        "sha256": "bf9efe33dc39a09756ee3defd0d621366a05a926793104a10c5d49c9582d4dde",
+        "url": "https://download.packages.unity.com/com.unity.services.authentication/-/com.unity.services.authentication-3.9.0.tgz",
+        "registry_time": null,
+        "dependencies": {
+          "com.unity.nuget.newtonsoft-json": "3.2.2",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.ugui": "1.0.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Authentication package/component present; profile and credentials state",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Analytics UserId read by IAP",
+    "field_source": "AnalyticsService.Instance.GetAnalyticsUserID",
+    "provider": "IdentityManager external-first, installation fallback",
+    "read_conditions": "Analytics symbols and service initialized; failure optional null",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].AnalyticsId[4]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Common envelope with separate Auth/engine IDs",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S18",
+      "C53S53",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "analytics logical user; may differ from both installation IDs",
+    "evidence_records": [
+      {
+        "id": "C53S18",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/IdentityManager.cs",
+        "sha256": "836cfa2da1f65e331103708136d00c4619f219a5d64669c7e1ab8395f76617c1",
+        "version": "6.3.0",
+        "start_line": 22,
+        "end_line": 139,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S53",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 23,
+        "end_line": 55,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      },
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Analytics symbols and service initialized; failure optional null",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "GAID",
+    "field_source": "GoogleAdvertisingIdClient getter",
+    "provider": "Android advertising ID provider",
+    "read_conditions": "AdsIntent granted AND remote gaid allowlist; platform/provider privacy limits",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].Gaid[6]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Optional advertising-ID context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S25",
+      "C53S28"
+    ],
+    "scope": "advertising identity; reset/permission limited",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S28",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/ConnectionsSettingsClient.cs",
+        "sha256": "ab0cc755e98a056ac539775b72e3c539d82fbb207f2feea41ef0f7d68c222650",
+        "version": "5.5.1",
+        "start_line": 15,
+        "end_line": 186,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "AdsIntent granted AND remote gaid allowlist; platform/provider privacy limits",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "IDFA",
+    "field_source": "native Apple FetchAdvertisingIdentifier",
+    "provider": "Apple store native provider",
+    "read_conditions": "AdsIntent granted AND remote idfa allowlist; ATT/provider return constraints",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].Idfa[5]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Optional advertising-ID context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S25",
+      "C53S28"
+    ],
+    "scope": "Apple advertising ID, not IDFV",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S28",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/ConnectionsSettingsClient.cs",
+        "sha256": "ab0cc755e98a056ac539775b72e3c539d82fbb207f2feea41ef0f7d68c222650",
+        "version": "5.5.1",
+        "start_line": 15,
+        "end_line": 186,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "AdsIntent granted AND remote idfa allowlist; ATT/provider return constraints",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "IDFV",
+    "field_source": "native Apple FetchVendorIdentifier",
+    "provider": "Apple vendor provider",
+    "read_conditions": "Apple platform; independent of the AdsIntent conditional in this source",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].Idfv[7]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Vendor identity context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S25"
+    ],
+    "scope": "vendor-scoped identity, not account/global device",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Apple platform; independent of the AdsIntent conditional in this source",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Firebase Analytics App Instance ID",
+    "field_source": "FirebaseAnalytics.getAppInstanceId",
+    "provider": "FirebaseAnalyticsClient",
+    "read_conditions": "AdsIntent granted AND remote app_instance_id AND Firebase available",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].AppInstanceId[9]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Optional Analytics-instance correlation context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S28",
+      "C53S29",
+      "C53S25"
+    ],
+    "scope": "Firebase Analytics installation/instance scope; not FID",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S28",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/ConnectionsSettingsClient.cs",
+        "sha256": "ab0cc755e98a056ac539775b72e3c539d82fbb207f2feea41ef0f7d68c222650",
+        "version": "5.5.1",
+        "start_line": 15,
+        "end_line": 186,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S29",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Purchasing/Stores/Android/AAR/FirebaseAnalyticsClient.cs",
+        "sha256": "5f6d98d742761dd0e2213e57a7b33834439d6a48c7cedb635f9a76301e648b08",
+        "version": "5.5.1",
+        "start_line": 60,
+        "end_line": 156,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "AdsIntent granted AND remote app_instance_id AND Firebase available",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Firebase Analytics Session ID",
+    "field_source": "FirebaseAnalytics.getSessionId",
+    "provider": "FirebaseAnalyticsClient; PlayerData caches non-null",
+    "read_conditions": "AdsIntent granted AND remote firebase_session_id; configured/default app conditions",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "IAPSDKEvent.FirebaseSessionId[4]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Optional analytics-session context; 5.5.1 serialization fix",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S29",
+      "C53S25",
+      "C53S42"
+    ],
+    "scope": "session, not persistent user",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S29",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Purchasing/Stores/Android/AAR/FirebaseAnalyticsClient.cs",
+        "sha256": "5f6d98d742761dd0e2213e57a7b33834439d6a48c7cedb635f9a76301e648b08",
+        "version": "5.5.1",
+        "start_line": 60,
+        "end_line": 156,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S42",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/CHANGELOG.md",
+        "sha256": "e9e1ccf5647901070585f96e97a8daaa861aaf558032f9794f956ac2594b1131",
+        "version": "5.5.1",
+        "start_line": 1,
+        "end_line": 115,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "AdsIntent granted AND remote firebase_session_id; configured/default app conditions",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Firebase App ID",
+    "field_source": "FirebaseApp options getApplicationId",
+    "provider": "FirebaseAnalyticsClient",
+    "read_conditions": "AdsIntent granted AND remote firebase_app_id AND provider available",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "IAPSDKEvent.FirebaseAppId[100]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Firebase application configuration context",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S21",
+      "C53S29",
+      "C53S25"
+    ],
+    "scope": "application/project ID, not person",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S29",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Purchasing/Stores/Android/AAR/FirebaseAnalyticsClient.cs",
+        "sha256": "5f6d98d742761dd0e2213e57a7b33834439d6a48c7cedb635f9a76301e648b08",
+        "version": "5.5.1",
+        "start_line": 60,
+        "end_line": 156,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "AdsIntent granted AND remote firebase_app_id AND provider available",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Firebase FID",
+    "field_source": "FirebaseInstallations.getId (ConfigFetchHandler L256/278)",
+    "provider": "FirebaseInstallations consumed by RemoteConfig",
+    "read_conditions": "RC fetch prerequisites/FID token/provider privacy state",
+    "consumer_sdk": "Firebase Remote Config24.0.1",
+    "serialization": "ConfigFetchHttpClient INSTANCE_ID; no IAP FID assignment proven",
+    "transport_module": "Firebase RC HTTP fetch",
+    "known_receiver": "Firebase RC endpoint",
+    "proven_use": "Configuration fetch installation context",
+    "unproven_use": "FID=Analytics AppInstanceId or IAP FID/Vector path unproven",
+    "source_ids": [
+      "XS24",
+      "XS25"
+    ],
+    "scope": "Firebase installation identity, not Analytics instance identity",
+    "evidence_records": [
+      {
+        "id": "XS24",
+        "path": "ThirdPartySDKs/Google/FirebaseRemoteConfig/24.0.1/sources/com/google/firebase/remoteconfig/internal/ConfigFetchHttpClient.java",
+        "sha256": "8f980968694d78eb401055ff06061c5ccffed300e6ce2e15262cbf5591ccaa7d",
+        "version": "24.0.1",
+        "start_line": 321,
+        "end_line": 363,
+        "official_package": {
+          "path": "ThirdPartySDKs/Google/FirebaseRemoteConfig/24.0.1/firebase-config-24.0.1.aar",
+          "sha256": "1462c064e9b8b35ca7174e18c05b3cb7bc1f9121a5dd58c5d02cd18d8e8a4ea7",
+          "url": "https://dl.google.com/dl/android/maven2/com/google/firebase/firebase-config/24.0.1/firebase-config-24.0.1.aar",
+          "http_last_modified": "Wed, 21 Oct 2026 18:03:36 GMT",
+          "bytes": 106664
+        }
+      },
+      {
+        "id": "XS25",
+        "path": "ThirdPartySDKs/Google/FirebaseRemoteConfig/24.0.1/sources/com/google/firebase/remoteconfig/RemoteConfigComponent.java",
+        "sha256": "cd88f0d114d7a52ef0f4f68dbff5c8c21126a2d94da4e9f5cdad95bbc29bc570",
+        "version": "24.0.1",
+        "start_line": 172,
+        "end_line": 188,
+        "official_package": {
+          "path": "ThirdPartySDKs/Google/FirebaseRemoteConfig/24.0.1/firebase-config-24.0.1.aar",
+          "sha256": "1462c064e9b8b35ca7174e18c05b3cb7bc1f9121a5dd58c5d02cd18d8e8a4ea7",
+          "url": "https://dl.google.com/dl/android/maven2/com/google/firebase/firebase-config/24.0.1/firebase-config-24.0.1.aar",
+          "http_last_modified": "Wed, 21 Oct 2026 18:03:36 GMT",
+          "bytes": 106664
+        }
+      }
+    ],
+    "package_provenance": [],
+    "privacy_conditions": "RC fetch prerequisites/FID token/provider privacy state",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Unity IAP SessionId",
+    "field_source": "PlayerPrefs unity_connect.session_id",
+    "provider": "PlayerData m_SessionId",
+    "read_conditions": "Preference available; absent allowed",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "IAPSDKEvent.SessionId[3]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Runtime session context",
+    "unproven_use": "Who writes native session key, equality with Analytics/Firebase session, training use unknown",
+    "source_ids": [
+      "C53S53",
+      "C53S25"
+    ],
+    "scope": "engine session preference; not player/installation",
+    "evidence_records": [
+      {
+        "id": "C53S53",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 23,
+        "end_line": 55,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Preference available; absent allowed",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "UGS Analytics SessionId",
+    "field_source": "SessionManager.StartNewSession Guid.NewGuid",
+    "provider": "Analytics SessionManager",
+    "read_conditions": "new manager/session lifecycle",
+    "consumer_sdk": "Analytics6.3.0",
+    "serialization": "common sessionID",
+    "transport_module": "Analytics buffer/dispatcher",
+    "known_receiver": "project/environment collect URL",
+    "proven_use": "Analytics session grouping",
+    "unproven_use": "Server join/training use and target-game production enablement unknown",
+    "source_ids": [
+      "C53S43",
+      "C53S19"
+    ],
+    "scope": "independent generated session, no equality to IAP session",
+    "evidence_records": [
+      {
+        "id": "C53S43",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/SessionManager.cs",
+        "sha256": "f23185d1779a154e5c4c5ab157040855b95bce4b6db46de8c0cb58bc11d47180",
+        "version": "6.3.0",
+        "start_line": 12,
+        "end_line": 28,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S19",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/Runtime/BufferX.cs",
+        "sha256": "fdd07ac22a44caa6f208c5771d7bad0b115482344417b1dbbb2ab3167df859a4",
+        "version": "6.3.0",
+        "start_line": 366,
+        "end_line": 414,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "new manager/session lifecycle",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "IAP EventUuid",
+    "field_source": "BuildEnvelope Guid.NewGuid",
+    "provider": "PurchaseEventEmitter / SessionEventEmitter",
+    "read_conditions": "each envelope build, including lifecycle variants",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "IAPSDKEvent.EventUuid[2]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Individual telemetry event identifier",
+    "unproven_use": "server dedup/exactly-once, equivalence across re-built envelopes not proven",
+    "source_ids": [
+      "C53S24",
+      "C53S25",
+      "C53S30"
+    ],
+    "scope": "one event, not user or transaction",
+    "evidence_records": [
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S30",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/SessionEventEmitter.cs",
+        "sha256": "cb767cbd16c677edc31b6c3cf961cf71fb9cf40442955ae1389a2a82e18d007f",
+        "version": "5.5.1",
+        "start_line": 18,
+        "end_line": 80,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "each envelope build, including lifecycle variants",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Analytics Event UUID",
+    "field_source": "BufferSystemCalls.GenerateGuid per event start",
+    "provider": "BufferX",
+    "read_conditions": "Record event path and collection consent",
+    "consumer_sdk": "Analytics6.3.0",
+    "serialization": "common eventUUID",
+    "transport_module": "Analytics buffer/dispatcher",
+    "known_receiver": "project/environment collect URL",
+    "proven_use": "Individual analytics event identity",
+    "unproven_use": "Same ID as IAP event or production dedup not proven",
+    "source_ids": [
+      "C53S19"
+    ],
+    "scope": "one analytics event",
+    "evidence_records": [
+      {
+        "id": "C53S19",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/extracted/package/Runtime/Runtime/BufferX.cs",
+        "sha256": "fdd07ac22a44caa6f208c5771d7bad0b115482344417b1dbbb2ab3167df859a4",
+        "version": "6.3.0",
+        "start_line": 366,
+        "end_line": 414,
+        "official_package": {
+          "sdk": "com.unity.services.analytics",
+          "version": "6.3.0",
+          "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+          "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+          "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+          "registry_time": "2026-03-04T14:50:41.381Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.services.core": "1.16.0"
+          },
+          "license": "see package LICENSE.md",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.services.analytics",
+        "version": "6.3.0",
+        "path": "cross-sdk/packages/services.analytics/6.3.0/services.analytics-6.3.0.tgz",
+        "sha256": "bc1f64b7c3432aa7209ed37d0db5a53e3044507d77326845069de891d57b8910",
+        "url": "https://download.packages.unity.com/com.unity.services.analytics/-/com.unity.services.analytics-6.3.0.tgz",
+        "registry_time": "2026-03-04T14:50:41.381Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.services.core": "1.16.0"
+        },
+        "license": "see package LICENSE.md",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Record event path and collection consent",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "IAP ImpressionId",
+    "field_source": "ImpressionScope AsyncLocal Journey Guid.NewGuid",
+    "provider": "ImpressionScope.Shared",
+    "read_conditions": "journey active; callback/EnterNone may clear; fulfilled does not pass it by default",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "IAPSDKEvent.ImpressionId[24]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Purchase journey correlation",
+    "unproven_use": "Not advertising impression ID; not identity graph; backend success unknown",
+    "source_ids": [
+      "C53S32",
+      "C53S22",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "purchase journey, not person or ad request",
+    "evidence_records": [
+      {
+        "id": "C53S32",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Purchasing/Insights/ImpressionScope.cs",
+        "sha256": "978ff968ccc2fd9fb619c0d194192540787c60d5d08b6855ed75149cdecde3fd",
+        "version": "5.5.1",
+        "start_line": 8,
+        "end_line": 116,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S22",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 44,
+        "end_line": 162,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "journey active; callback/EnterNone may clear; fulfilled does not pass it by default",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "UnityAdsIdfi schema field",
+    "field_source": "DTO field only; MapIdentity does not assign",
+    "provider": "No established IAP emitter provider",
+    "read_conditions": "Writer would emit if nonempty, but this business path does not populate it",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "identities[11].UnityAdsIdfi[8] supported, normally absent here",
+    "transport_module": "No proven field movement via this emitter",
+    "known_receiver": "Unknown actual receiver for this unpopulated field",
+    "proven_use": "Schema support only",
+    "unproven_use": "Native enrichment/target enablement not proven",
+    "source_ids": [
+      "C53S24",
+      "C53S25",
+      "C53S27"
+    ],
+    "scope": "legacy install IDFI, not GAID",
+    "evidence_records": [
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S27",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/Models/PlayerIdentity.cs",
+        "sha256": "364d17441408e6b38a8f978ae24cb64945dbc9975f6aa0253db9cfea2e5b1917",
+        "version": "5.5.1",
+        "start_line": 1,
+        "end_line": 21,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "Writer would emit if nonempty, but this business path does not populate it",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "MAX event_id -> Google placement_req_id",
+    "field_source": "MAX adapter serverParameters event_id",
+    "provider": "GoogleMediationAdapter",
+    "read_conditions": "selected adapter ad request path; not game-event identity",
+    "consumer_sdk": "MAX Google adapter25.4.0.0",
+    "serialization": "Google network extras placement_req_id",
+    "transport_module": "Google Mobile Ads request builder",
+    "known_receiver": "Google ad request component",
+    "proven_use": "Ad-request correlation",
+    "unproven_use": "No equivalence to userID/IAP ImpressionId/EventUuid or model join",
+    "source_ids": [
+      "XS30"
+    ],
+    "scope": "advertising request, not persistent user",
+    "evidence_records": [
+      {
+        "id": "XS30",
+        "path": "cross-sdk/java/max-google-254/com/applovin/mediation/adapters/GoogleMediationAdapter.java",
+        "sha256": "1c92c2355638352e7ca74f0349b9860be3d8928259b4a46ada2e01b5918e42de",
+        "version": "25.4.0.0",
+        "start_line": 494,
+        "end_line": 516,
+        "official_package": {
+          "path": "ThirdPartySDKs/AppLovin/Adapter-google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+          "sha256": "5b540214c1121410d72e8e1f757ad83a265f092f16850aec1507af255bac953b",
+          "url": "https://repo.maven.apache.org/maven2/com/applovin/mediation/google-adapter/25.4.0.0/google-adapter-25.4.0.0.aar",
+          "http_last_modified": "Wed, 17 Jun 2026 19:06:07 GMT",
+          "bytes": 37441
+        }
+      }
+    ],
+    "package_provenance": [],
+    "privacy_conditions": "selected adapter ad request path; not game-event identity",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Product metadata PriceMicro",
+    "field_source": "selected catalog listing metadata localizedPrice * 1,000,000; long cast",
+    "provider": "PurchaseEventEmitter.BuildSku",
+    "read_conditions": "cart product/listing and metadata available; stages may include nonpurchase",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "Order[16].Sku[1].PriceMicro[6]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Catalog/localized listed price in currency microunits",
+    "unproven_use": "Not proved final paid/net/refund-adjusted revenue or prediction; not Vector label proof",
+    "source_ids": [
+      "C53S24",
+      "C53S25",
+      "C53S49"
+    ],
+    "scope": "one SKU listing price; quantity independent",
+    "evidence_records": [
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S49",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/Models/OrderData.cs",
+        "sha256": "7ef440861bfed28c8cd73c0bd1d887f4301018b57b52e730b180db2164451138",
+        "version": "5.5.1",
+        "start_line": 1,
+        "end_line": 44,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "cart product/listing and metadata available; stages may include nonpurchase",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Currency and quantity",
+    "field_source": "metadata.isoCurrencyCode; cartItem.Quantity",
+    "provider": "PurchaseEventEmitter.BuildSku",
+    "read_conditions": "same catalog/cart conditions",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "Order.Sku.IsoCurrencyCode[7],Quantity[8]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Currency code and units for purchase context",
+    "unproven_use": "No normalization/exchange-rate/tax pipeline recovered",
+    "source_ids": [
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "native currency, integer quantity; not dollars by default",
+    "evidence_records": [
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "same catalog/cart conditions",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Store transaction identity",
+    "field_source": "order.Info.TransactionID",
+    "provider": "PendingOrder / ConfirmedOrder",
+    "read_conditions": "paid or fulfilled path; may be same order across stages",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "Order[16].StoreTransactionId[2]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Transaction-level reporting context",
+    "unproven_use": "Cross-stage dedup/refunds/net revenue correctness unknown",
+    "source_ids": [
+      "C53S22",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "store/order scope; not user or event",
+    "evidence_records": [
+      {
+        "id": "C53S22",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 44,
+        "end_line": 162,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "paid or fulfilled path; may be same order across stages",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Store verification payload",
+    "field_source": "Google OriginalJson/signature or Apple receipt/JWS/original transaction/appAccountToken",
+    "provider": "Store payload mapper",
+    "read_conditions": "store callback/payload exists; one active store variant",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "paid[18] or fulfilled[20] StorePayload submessages",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Forward store-supplied transaction evidence",
+    "unproven_use": "Server verification success and final revenue not proven",
+    "source_ids": [
+      "C53S22",
+      "C53S25",
+      "C53S50"
+    ],
+    "scope": "transaction/store account context, not automated cross-app join",
+    "evidence_records": [
+      {
+        "id": "C53S22",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 44,
+        "end_line": 162,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S50",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/Models/StorePayload.cs",
+        "sha256": "26f4f7a0d722d5d5694cea36762f34ceb4c897d81c2ec8532771d2ddcaa3e069",
+        "version": "5.5.1",
+        "start_line": 1,
+        "end_line": 30,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "store callback/payload exists; one active store variant",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Event timestamp",
+    "field_source": "DateTime.UtcNow after await player identity",
+    "provider": "Purchase/Session BuildEnvelope",
+    "read_conditions": "emitter reaches envelope construction",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "Timestamp[1] seconds/nanos",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "SDK envelope creation time",
+    "unproven_use": "Not guaranteed exact click/payment time, server ingest time or settled revenue time",
+    "source_ids": [
+      "C53S22",
+      "C53S24",
+      "C53S25",
+      "C53S30"
+    ],
+    "scope": "UTC wall-clock; encoding precision != clock accuracy",
+    "evidence_records": [
+      {
+        "id": "C53S22",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 44,
+        "end_line": 162,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S30",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/SessionEventEmitter.cs",
+        "sha256": "cb767cbd16c677edc31b6c3cf961cf71fb9cf40442955ae1389a2a82e18d007f",
+        "version": "5.5.1",
+        "start_line": 18,
+        "end_line": 80,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "emitter reaches envelope construction",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Installation timestamp",
+    "field_source": "Android PackageInfo.firstInstallTime ms; iOS directory creation UTC",
+    "provider": "AppInstallInfo lazy cache",
+    "read_conditions": "platform source available; null elsewhere",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "InstallationTimestamp[14]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Install-age context with platform limitations",
+    "unproven_use": "Server maturity windows or historical exactness not proven",
+    "source_ids": [
+      "C53S45",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "app install, not account creation",
+    "evidence_records": [
+      {
+        "id": "C53S45",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/AppInstallInfo.cs",
+        "sha256": "3a48f3b9a678a42251c9764340d8089551191edce7cbc4d75c1115e542e53f4b",
+        "version": "5.5.1",
+        "start_line": 24,
+        "end_line": 75,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "platform source available; null elsewhere",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Ads and Analytics consent states",
+    "field_source": "EndUserConsent state -> ParseConsent",
+    "provider": "Unity Consent API and emitter explicit enum mapping",
+    "read_conditions": "compile support; unspecified if unavailable",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "UnityConsentStateAdsIntent[9],AnalyticsIntent[10]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Declared consent context; IDs separately gated",
+    "unproven_use": "Receiving enum is not proof all downstream training/privacy policies executed",
+    "source_ids": [
+      "C53S21",
+      "C53S24",
+      "C53S25",
+      "C53S47"
+    ],
+    "scope": "per-purpose state; not one global opt-in",
+    "evidence_records": [
+      {
+        "id": "C53S21",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/PlayerData.cs",
+        "sha256": "13233ab6ea00e470aaba64f2c3d5bb966a71d5d2ed117c0aacc3c3dc52619528",
+        "version": "5.5.1",
+        "start_line": 90,
+        "end_line": 215,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S47",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/Models/Consent.cs",
+        "sha256": "c4a3555fe3d15c5a9318db03af4b065f57600bb10fe478673e6a07b9ebe495fa",
+        "version": "5.5.1",
+        "start_line": 1,
+        "end_line": 19,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "compile support; unspecified if unavailable",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "Project/environment",
+    "field_source": "Core ICloudProjectId/IEnvironmentId",
+    "provider": "CoreRegistryHelper",
+    "read_conditions": "components available; empty permitted in envelope",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "ProjectId[5],EnvironmentId[6]",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Namespace/reporting context",
+    "unproven_use": "No proof organization-wide join or model inclusion",
+    "source_ids": [
+      "C53S20",
+      "C53S24",
+      "C53S25"
+    ],
+    "scope": "UGS project/environment; not user",
+    "evidence_records": [
+      {
+        "id": "C53S20",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/ServicesCore/CoreRegistryHelper.cs",
+        "sha256": "212bfdbd42cc46be3de42704ef19e6739aa66563e331df6d685902ea5e3bf7c0",
+        "version": "5.5.1",
+        "start_line": 27,
+        "end_line": 56,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S24",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2",
+        "version": "5.5.1",
+        "start_line": 243,
+        "end_line": 423,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "components available; empty permitted in envelope",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  },
+  {
+    "field": "AuthenticationComplete variant",
+    "field_source": "AuthenticationService.SignedIn callback",
+    "provider": "IapCoreInitializeCallback -> SessionEventEmitter",
+    "read_conditions": "IAP_UNITY_AUTH_ENABLED; subscription initialization; success callback",
+    "consumer_sdk": "IAP5.5.1",
+    "serialization": "oneof tag22 empty message with identity/session context",
+    "transport_module": "IAP Forward: compile-time gateway protobuf POST or base64 native LogEvent(1000)",
+    "known_receiver": "Unity Insights gateway address or native EngineDiagnostics API; production receipt unobserved",
+    "proven_use": "Login lifecycle event; no Store/Order",
+    "unproven_use": "Not purchase or positive-revenue label; target-game delivery/training unknown",
+    "source_ids": [
+      "C53S30",
+      "C53S31",
+      "C53S25"
+    ],
+    "scope": "session/account action, no payment evidence",
+    "evidence_records": [
+      {
+        "id": "C53S30",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/SessionEventEmitter.cs",
+        "sha256": "cb767cbd16c677edc31b6c3cf961cf71fb9cf40442955ae1389a2a82e18d007f",
+        "version": "5.5.1",
+        "start_line": 18,
+        "end_line": 80,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S31",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/ServicesCore/IapCoreInitializeCallback.cs",
+        "sha256": "8c89d3499dd2abcf2c309fdca651b2ae948d5d80900514323c8475d2b2951636",
+        "version": "5.5.1",
+        "start_line": 24,
+        "end_line": 113,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      },
+      {
+        "id": "C53S25",
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventProtobufWriter.cs",
+        "sha256": "4ba0c2a596d7b8218ec45034b4c6d75aec20da89fb9e1157e964c355c9e656cd",
+        "version": "5.5.1",
+        "start_line": 14,
+        "end_line": 333,
+        "official_package": {
+          "sdk": "com.unity.purchasing",
+          "version": "5.5.1",
+          "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+          "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+          "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+          "registry_time": "2026-11-16T18:18:08.510Z",
+          "dependencies": {
+            "com.unity.ugui": "1.0.0",
+            "com.unity.modules.unitywebrequest": "1.0.0",
+            "com.unity.modules.jsonserialize": "1.0.0",
+            "com.unity.modules.androidjni": "1.0.0",
+            "com.unity.services.core": "1.19.0",
+            "com.unity.services.deployment": "1.7.2"
+          },
+          "license": "Unity Companion Package License v1.0",
+          "scope": "official standalone SDK; not proof of target-game integration"
+        }
+      }
+    ],
+    "package_provenance": [
+      {
+        "sdk": "com.unity.purchasing",
+        "version": "5.5.1",
+        "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+        "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+        "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+        "registry_time": "2026-11-16T18:18:08.510Z",
+        "dependencies": {
+          "com.unity.ugui": "1.0.0",
+          "com.unity.modules.unitywebrequest": "1.0.0",
+          "com.unity.modules.jsonserialize": "1.0.0",
+          "com.unity.modules.androidjni": "1.0.0",
+          "com.unity.services.core": "1.19.0",
+          "com.unity.services.deployment": "1.7.2"
+        },
+        "license": "Unity Companion Package License v1.0",
+        "scope": "official standalone SDK; not proof of target-game integration"
+      }
+    ],
+    "privacy_conditions": "IAP_UNITY_AUTH_ENABLED; subscription initialization; success callback",
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": true,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "evidence_level": "【SDK代码证实】",
+    "production_status": "not observed; false means unproven, not proven absence"
+  }
+]

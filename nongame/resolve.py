@@ -1,0 +1,19 @@
+from collect import batch
+batch('resolved',{
+ 'content-reelshort-policy':'https://www.reelshort.com/web-privacy.html',
+ 'content-reelshort-app-policy':'https://www.reelshort.com/privacy.html',
+ 'life-weward-policy':'https://www.wewardapp.com/privacy-policy-en',
+ 'utility-flashlight-play':'https://play.google.com/store/apps/details?id=com.rvappstudios.flashlight',
+ 'content-dramabox-sdk':'https://www.dramabox.com/sdk',
+ 'site-gruns-loader':'https://c.albss.com/p/l/loader.iife.js',
+ 'site-obvi-home':'https://myobvi.com/',
+ 'site-resparked':'https://resparked.com/policies/privacy-policy',
+ 'site-resparked-home':'https://resparked.com/',
+ 'site-gruns-home':'https://gruns.co/',
+ 'unity-exchange-bid-fields':'https://docs.unity.com/en-us/grow/programmatic/unity-exchange/bid-requests.md',
+ 'unity-exchange-ext-fields':'https://docs.unity.com/en-us/grow/programmatic/unity-exchange/bid-requests-request-ext.md',
+ 'unity-analytics-events':'https://docs.unity.com/en-us/ugs/manual/analytics/manual/record-user-actions.md',
+ 'unity-policy-partners':'https://unity.com/legal/privacy-policy',
+ 'applovin-policy-direct':'https://legal.applovin.com/privacy/',
+ 'applovin-axon-about':'https://legal.applovin.com/about-applovins-axon-ai/',
+})

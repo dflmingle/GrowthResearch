@@ -1,0 +1,25 @@
+{
+  "label": "SYNTHETIC scenario only; no measured Unity or AppLovin performance",
+  "country": "same hypothetical country",
+  "creative": "same hypothetical creative set",
+  "horizon_day": 28,
+  "report_lag_days": 2,
+  "daily_budget_usd": 500,
+  "cohort_budget_usd": 3000,
+  "active_day_probability_anchors": {"0": 1.0, "1": 0.35, "3": 0.23, "7": 0.15, "14": 0.09, "28": 0.05},
+  "net_ad_revenue_per_active_day_usd": 0.18,
+  "payer_probability_d7": 0.02,
+  "arms": [
+    {"name": "Unity_Vector", "cpi_usd": 0.65, "quality_multiplier": 1.0},
+    {"name": "AppLovin_Axon", "cpi_usd": 0.65, "quality_multiplier": 1.0}
+  ],
+  "supply_segments": [
+    {"installs": 1000, "cpi_usd": 0.45, "ltv_multiplier": 1.08},
+    {"installs": 2000, "cpi_usd": 0.60, "ltv_multiplier": 1.0},
+    {"installs": 3000, "cpi_usd": 0.80, "ltv_multiplier": 0.90},
+    {"installs": 4000, "cpi_usd": 1.05, "ltv_multiplier": 0.80}
+  ],
+  "prediction_bias_scenarios": [-0.20, 0.0, 0.20, 0.40],
+  "target_roas": 1.0,
+  "daily_actual_csv_columns": ["arm", "day", "net_ad_revenue_per_install_usd"]
+}

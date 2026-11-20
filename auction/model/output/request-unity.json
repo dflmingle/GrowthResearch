@@ -1,0 +1,42 @@
+{
+  "id": "synthetic-request",
+  "at": 1,
+  "tmax": 200,
+  "app": {
+    "id": "synthetic-app",
+    "bundle": "example.synthetic.publisher",
+    "publisher": {
+      "id": "synthetic-publisher"
+    }
+  },
+  "imp": [
+    {
+      "id": "1",
+      "bidfloor": 1.0,
+      "instl": 1,
+      "tagid": "synthetic-placement",
+      "banner": {
+        "w": 320,
+        "h": 480
+      }
+    }
+  ],
+  "device": {
+    "os": "android",
+    "model": "SYNTHETIC",
+    "lmt": 0,
+    "ifa": "SYNTHETIC-NOT-A-REAL-AD-ID",
+    "ip": "192.0.2.10"
+  },
+  "user": {
+    "ext": {
+      "consent": "1"
+    }
+  },
+  "source": {
+    "ext": {
+      "header_bidding": 1,
+      "fd": 1
+    }
+  }
+}

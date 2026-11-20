@@ -1,0 +1,452 @@
+{
+  "scope": "SYNTHETIC scenario only; no measured Unity or AppLovin performance",
+  "input": {
+    "label": "SYNTHETIC scenario only; no measured Unity or AppLovin performance",
+    "country": "same hypothetical country",
+    "creative": "same hypothetical creative set",
+    "horizon_day": 28,
+    "report_lag_days": 2,
+    "daily_budget_usd": 500,
+    "cohort_budget_usd": 3000,
+    "active_day_probability_anchors": {
+      "0": 1.0,
+      "1": 0.35,
+      "3": 0.23,
+      "7": 0.15,
+      "14": 0.09,
+      "28": 0.05
+    },
+    "net_ad_revenue_per_active_day_usd": 0.18,
+    "payer_probability_d7": 0.02,
+    "arms": [
+      {
+        "name": "Unity_Vector",
+        "cpi_usd": 0.65,
+        "quality_multiplier": 1.0
+      },
+      {
+        "name": "AppLovin_Axon",
+        "cpi_usd": 0.65,
+        "quality_multiplier": 1.0
+      }
+    ],
+    "supply_segments": [
+      {
+        "installs": 1000,
+        "cpi_usd": 0.45,
+        "ltv_multiplier": 1.08
+      },
+      {
+        "installs": 2000,
+        "cpi_usd": 0.6,
+        "ltv_multiplier": 1.0
+      },
+      {
+        "installs": 3000,
+        "cpi_usd": 0.8,
+        "ltv_multiplier": 0.9
+      },
+      {
+        "installs": 4000,
+        "cpi_usd": 1.05,
+        "ltv_multiplier": 0.8
+      }
+    ],
+    "prediction_bias_scenarios": [
+      -0.2,
+      0.0,
+      0.2,
+      0.4
+    ],
+    "target_roas": 1.0,
+    "daily_actual_csv_columns": [
+      "arm",
+      "day",
+      "net_ad_revenue_per_install_usd"
+    ]
+  },
+  "arms": [
+    {
+      "arm": "Unity_Vector",
+      "cpi_usd": 0.65,
+      "expected_installs": 4615.384615384615,
+      "spend_usd": 3000,
+      "daily_net_ad_revenue_per_install": [
+        0.18,
+        0.063,
+        0.052199999999999996,
+        0.0414,
+        0.0378,
+        0.0342,
+        0.030599999999999995,
+        0.027,
+        0.025457142857142855,
+        0.02391428571428571,
+        0.02237142857142857,
+        0.02082857142857143,
+        0.019285714285714285,
+        0.01774285714285714,
+        0.0162,
+        0.015685714285714282,
+        0.01517142857142857,
+        0.014657142857142858,
+        0.014142857142857143,
+        0.013628571428571429,
+        0.013114285714285714,
+        0.0126,
+        0.012085714285714285,
+        0.01157142857142857,
+        0.011057142857142857,
+        0.010542857142857142,
+        0.010028571428571428,
+        0.009514285714285715,
+        0.009
+      ],
+      "cumulative_ltv": [
+        0.18,
+        0.243,
+        0.2952,
+        0.3366,
+        0.3744,
+        0.4086,
+        0.43920000000000003,
+        0.46620000000000006,
+        0.4916571428571429,
+        0.5155714285714286,
+        0.5379428571428572,
+        0.5587714285714286,
+        0.5780571428571428,
+        0.5958,
+        0.612,
+        0.6276857142857143,
+        0.6428571428571429,
+        0.6575142857142857,
+        0.6716571428571428,
+        0.6852857142857143,
+        0.6984,
+        0.7110000000000001,
+        0.7230857142857143,
+        0.7346571428571429,
+        0.7457142857142858,
+        0.756257142857143,
+        0.7662857142857143,
+        0.7758,
+        0.7848
+      ],
+      "ltv_d0": 0.18,
+      "ltv_d7": 0.46620000000000006,
+      "ltv_d28": 0.7848,
+      "roas_d0": 0.2769230769230769,
+      "roas_d7": 0.7172307692307693,
+      "roas_d28": 1.2073846153846155,
+      "cohort_revenue_d28_usd": 3622.153846153846,
+      "cohort_profit_d28_usd": 622.1538461538465,
+      "cohort_payback_day": 17,
+      "payback_censored": false,
+      "data_origin": "SYNTHETIC, no platform advantage assumed"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "cpi_usd": 0.65,
+      "expected_installs": 4615.384615384615,
+      "spend_usd": 3000,
+      "daily_net_ad_revenue_per_install": [
+        0.18,
+        0.063,
+        0.052199999999999996,
+        0.0414,
+        0.0378,
+        0.0342,
+        0.030599999999999995,
+        0.027,
+        0.025457142857142855,
+        0.02391428571428571,
+        0.02237142857142857,
+        0.02082857142857143,
+        0.019285714285714285,
+        0.01774285714285714,
+        0.0162,
+        0.015685714285714282,
+        0.01517142857142857,
+        0.014657142857142858,
+        0.014142857142857143,
+        0.013628571428571429,
+        0.013114285714285714,
+        0.0126,
+        0.012085714285714285,
+        0.01157142857142857,
+        0.011057142857142857,
+        0.010542857142857142,
+        0.010028571428571428,
+        0.009514285714285715,
+        0.009
+      ],
+      "cumulative_ltv": [
+        0.18,
+        0.243,
+        0.2952,
+        0.3366,
+        0.3744,
+        0.4086,
+        0.43920000000000003,
+        0.46620000000000006,
+        0.4916571428571429,
+        0.5155714285714286,
+        0.5379428571428572,
+        0.5587714285714286,
+        0.5780571428571428,
+        0.5958,
+        0.612,
+        0.6276857142857143,
+        0.6428571428571429,
+        0.6575142857142857,
+        0.6716571428571428,
+        0.6852857142857143,
+        0.6984,
+        0.7110000000000001,
+        0.7230857142857143,
+        0.7346571428571429,
+        0.7457142857142858,
+        0.756257142857143,
+        0.7662857142857143,
+        0.7758,
+        0.7848
+      ],
+      "ltv_d0": 0.18,
+      "ltv_d7": 0.46620000000000006,
+      "ltv_d28": 0.7848,
+      "roas_d0": 0.2769230769230769,
+      "roas_d7": 0.7172307692307693,
+      "roas_d28": 1.2073846153846155,
+      "cohort_revenue_d28_usd": 3622.153846153846,
+      "cohort_profit_d28_usd": 622.1538461538465,
+      "cohort_payback_day": 17,
+      "payback_censored": false,
+      "data_origin": "SYNTHETIC, no platform advantage assumed"
+    }
+  ],
+  "supply_segments": [
+    {
+      "incremental_installs": 1000.0,
+      "marginal_cpi_usd": 0.45,
+      "marginal_ltv_d28_usd": 0.847584,
+      "marginal_roas_d28": 1.8835199999999999,
+      "cumulative_installs": 1000.0,
+      "cumulative_spend_usd": 450.0,
+      "cumulative_revenue_usd": 847.5840000000001,
+      "average_cpi_usd": 0.45,
+      "average_roas_d28": 1.88352,
+      "cumulative_profit_usd": 397.58400000000006
+    },
+    {
+      "incremental_installs": 2000.0,
+      "marginal_cpi_usd": 0.6,
+      "marginal_ltv_d28_usd": 0.7847999999999999,
+      "marginal_roas_d28": 1.308,
+      "cumulative_installs": 3000.0,
+      "cumulative_spend_usd": 1650.0,
+      "cumulative_revenue_usd": 2417.184,
+      "average_cpi_usd": 0.55,
+      "average_roas_d28": 1.46496,
+      "cumulative_profit_usd": 767.1840000000002
+    },
+    {
+      "incremental_installs": 3000.0,
+      "marginal_cpi_usd": 0.8,
+      "marginal_ltv_d28_usd": 0.70632,
+      "marginal_roas_d28": 0.8828999999999999,
+      "cumulative_installs": 6000.0,
+      "cumulative_spend_usd": 4050.0,
+      "cumulative_revenue_usd": 4536.144,
+      "average_cpi_usd": 0.675,
+      "average_roas_d28": 1.1200355555555557,
+      "cumulative_profit_usd": 486.14400000000023
+    },
+    {
+      "incremental_installs": 4000.0,
+      "marginal_cpi_usd": 1.05,
+      "marginal_ltv_d28_usd": 0.62784,
+      "marginal_roas_d28": 0.5979428571428571,
+      "cumulative_installs": 10000.0,
+      "cumulative_spend_usd": 8250.0,
+      "cumulative_revenue_usd": 7047.504,
+      "average_cpi_usd": 0.825,
+      "average_roas_d28": 0.854242909090909,
+      "cumulative_profit_usd": -1202.496
+    }
+  ],
+  "prediction_bias_sensitivity": [
+    {
+      "assumed_relative_bias": -0.2,
+      "assumed_actual_ltv": 0.7847999999999999,
+      "predicted_ltv": 0.62784,
+      "illustrative_cpi_ceiling": 0.62784,
+      "realized_roas_if_price_equals_ceiling": 1.25,
+      "profit_per_install_if_price_equals_ceiling": 0.15696,
+      "limitation": "a value-to-price sensitivity identity, not an auction simulation or measured platform calibration"
+    },
+    {
+      "assumed_relative_bias": 0.0,
+      "assumed_actual_ltv": 0.7847999999999999,
+      "predicted_ltv": 0.7847999999999999,
+      "illustrative_cpi_ceiling": 0.7847999999999999,
+      "realized_roas_if_price_equals_ceiling": 1.0,
+      "profit_per_install_if_price_equals_ceiling": 0.0,
+      "limitation": "a value-to-price sensitivity identity, not an auction simulation or measured platform calibration"
+    },
+    {
+      "assumed_relative_bias": 0.2,
+      "assumed_actual_ltv": 0.7847999999999999,
+      "predicted_ltv": 0.9417599999999999,
+      "illustrative_cpi_ceiling": 0.9417599999999999,
+      "realized_roas_if_price_equals_ceiling": 0.8333333333333334,
+      "profit_per_install_if_price_equals_ceiling": -0.15696,
+      "limitation": "a value-to-price sensitivity identity, not an auction simulation or measured platform calibration"
+    },
+    {
+      "assumed_relative_bias": 0.4,
+      "assumed_actual_ltv": 0.7847999999999999,
+      "predicted_ltv": 1.09872,
+      "illustrative_cpi_ceiling": 1.09872,
+      "realized_roas_if_price_equals_ceiling": 0.7142857142857143,
+      "profit_per_install_if_price_equals_ceiling": -0.31392,
+      "limitation": "a value-to-price sensitivity identity, not an auction simulation or measured platform calibration"
+    }
+  ],
+  "learning_planning": [
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 0,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 4,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 11,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 11,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAP",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 5,
+      "conservative_maturity_plus_reporting_days": 14,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAP",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 5,
+      "conservative_maturity_plus_reporting_days": 14,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "Hybrid",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 3,
+      "conservative_maturity_plus_reporting_days": 12,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "Unity_Vector",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "Hybrid",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 3,
+      "conservative_maturity_plus_reporting_days": 12,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 0,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 4,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 11,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAA",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 2,
+      "conservative_maturity_plus_reporting_days": 11,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAP",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 5,
+      "conservative_maturity_plus_reporting_days": 14,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "IAP",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 5,
+      "conservative_maturity_plus_reporting_days": 14,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "Hybrid",
+      "window": 7,
+      "expected_acquisition_days_to_threshold": 3,
+      "conservative_maturity_plus_reporting_days": 12,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    },
+    {
+      "arm": "AppLovin_Axon",
+      "unity_documented_threshold_scenario_only": true,
+      "type": "Hybrid",
+      "window": 28,
+      "expected_acquisition_days_to_threshold": 3,
+      "conservative_maturity_plus_reporting_days": 12,
+      "assumptions": "constant CPI, fixed eligible payer rate, positive matured IAA; no guarantee of platform learning; not Axon threshold"
+    }
+  ],
+  "definitions": {
+    "day0": "install calendar day; days0..7 and0..28 inclusive",
+    "ltv": "net ad revenue per originally installed user, not per survivor",
+    "active_probability": "unconditional probability of activity on that day; may include returners, not survival",
+    "payback": "cohort cumulative revenue >= CPI, not cash settlement or portfolio cash-flow payback",
+    "installs": "expected fractional count for analytical budget comparison",
+    "no_head_to_head_claim": true
+  }
+}

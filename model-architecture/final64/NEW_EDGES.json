@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "F64E01A",
+    "source": "F64G1_input",
+    "target": "F64G1_sdk",
+    "claim": "ILRD→Adjust/Firebase/TikTok；国家阈值只到Firebase；关卡/激励里程碑",
+    "source_ids": [
+      "F64C01",
+      "F64C02",
+      "F64C03",
+      "F64C17"
+    ],
+    "status": "proven_scoped_static",
+    "evidence_level": "【游戏代码证实】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "solid",
+    "data_provider": "F64G1_input",
+    "data_receiver": "F64G1_sdk",
+    "explicit_call_chain": "ILRD→Adjust/Firebase/TikTok；国家阈值只到Firebase；关卡/激励里程碑",
+    "class_method_lines": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "class_method_or_location": "IAAController.OnAdRevenuePaidEvent; RVA 0x24401f8",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "class_method_or_location": "AdMeticaDefault.OnShowRevenuePaid; RVA 0x32deaf0",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "class_method_or_location": "AdRevenueTracking.ImpressionSuccessEvent; RVA 0x32c2988",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      }
+    ],
+    "sha256": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "sha256": "bf266496658413d368f2a46bab606c166793b015a5490327857b326dddfc468f"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "sha256": "22b2d95afc3f5ddf000049f104eaf282a2a6f695e420fd552c86bf23e19ee51b"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "sha256": "78a6f8f5b4611db9378bd500e2aa46eb96996a85acf7dda0542f6d611ca5718e"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": true,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Existing sample/static path only",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E01B",
+    "source": "F64G1_sdk",
+    "target": "F64G1_network",
+    "claim": "MMP partner sharing is configurable; this game activation/delivery is unknown",
+    "source_ids": [
+      "F64C01",
+      "F64C02",
+      "F64C03",
+      "F64C17",
+      "CT62S08",
+      "RV61S03"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G1_sdk",
+    "data_receiver": "F64G1_network",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "class_method_or_location": "IAAController.OnAdRevenuePaidEvent; RVA 0x24401f8",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "class_method_or_location": "AdMeticaDefault.OnShowRevenuePaid; RVA 0x32deaf0",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "class_method_or_location": "AdRevenueTracking.ImpressionSuccessEvent; RVA 0x32c2988",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "class_method_or_location": null,
+        "start_line": 113,
+        "end_line": 127
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "class_method_or_location": null,
+        "start_line": 60,
+        "end_line": 88
+      }
+    ],
+    "sha256": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "sha256": "bf266496658413d368f2a46bab606c166793b015a5490327857b326dddfc468f"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "sha256": "22b2d95afc3f5ddf000049f104eaf282a2a6f695e420fd552c86bf23e19ee51b"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "sha256": "78a6f8f5b4611db9378bd500e2aa46eb96996a85acf7dda0542f6d611ca5718e"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E01C",
+    "source": "F64G1_network",
+    "target": "F64G1_training",
+    "claim": "Receiving an event does not prove canonical labels or model consumption",
+    "source_ids": [
+      "F64C01",
+      "F64C02",
+      "F64C03",
+      "F64C17",
+      "MA60S02",
+      "MA60S14"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G1_network",
+    "data_receiver": "F64G1_training",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "class_method_or_location": "IAAController.OnAdRevenuePaidEvent; RVA 0x24401f8",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "class_method_or_location": "AdMeticaDefault.OnShowRevenuePaid; RVA 0x32deaf0",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "class_method_or_location": "AdRevenueTracking.ImpressionSuccessEvent; RVA 0x32c2988",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "class_method_or_location": null,
+        "start_line": 36,
+        "end_line": 70
+      }
+    ],
+    "sha256": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "sha256": "bf266496658413d368f2a46bab606c166793b015a5490327857b326dddfc468f"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "sha256": "22b2d95afc3f5ddf000049f104eaf282a2a6f695e420fd552c86bf23e19ee51b"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "sha256": "78a6f8f5b4611db9378bd500e2aa46eb96996a85acf7dda0542f6d611ca5718e"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E01D",
+    "source": "F64G1_training",
+    "target": "F64G1_profit",
+    "claim": "Even model consumption does not prove incrementality, profitability or sustainable marginal scale",
+    "source_ids": [
+      "F64C01",
+      "F64C02",
+      "F64C03",
+      "F64C17",
+      "MA60S27"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G1_training",
+    "data_receiver": "F64G1_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "class_method_or_location": "IAAController.OnAdRevenuePaidEvent; RVA 0x24401f8",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "class_method_or_location": "AdMeticaDefault.OnShowRevenuePaid; RVA 0x32deaf0",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "class_method_or_location": "AdRevenueTracking.ImpressionSuccessEvent; RVA 0x32c2988",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 41
+      }
+    ],
+    "sha256": [
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/InAppAdvertising__InAppAdvertising.IAAController.OnAdRevenuePaidEvent-24401f8.asm",
+        "sha256": "bf266496658413d368f2a46bab606c166793b015a5490327857b326dddfc468f"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Metica__Zego.Advertisement.Metica.AdMeticaDefault.OnShowRevenuePaid-32deaf0.asm",
+        "sha256": "22b2d95afc3f5ddf000049f104eaf282a2a6f695e420fd552c86bf23e19ee51b"
+      },
+      {
+        "path": "car-race/reused-evidence/monetization-20261117/native/Zego.Advertisement.Max__Zego.Advertisement.Max.AdRevenueTracking.ImpressionSuccessEvent-32c2988.asm",
+        "sha256": "78a6f8f5b4611db9378bd500e2aa46eb96996a85acf7dda0542f6d611ca5718e"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "sha256": "134bf914b13efdb6623177df32d4dad90bdd76618e05f8103f341cd1a01fea3f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E02A",
+    "source": "F64G2_input",
+    "target": "F64G2_sdk",
+    "claim": "Tracker/GRT时间窗与实际收入→配置选择AF/Meta等；线上GRT表未知",
+    "source_ids": [
+      "F64C04",
+      "F64C05",
+      "F64C06",
+      "F64C07",
+      "F64C08",
+      "F64C17"
+    ],
+    "status": "proven_scoped_static",
+    "evidence_level": "【游戏代码证实】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "solid",
+    "data_provider": "F64G2_input",
+    "data_receiver": "F64G2_sdk",
+    "explicit_call_chain": "Tracker/GRT时间窗与实际收入→配置选择AF/Meta等；线上GRT表未知",
+    "class_method_lines": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "class_method_or_location": "LTVManager.getLTV/increaseLTV/mergeData; L50-L81",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "class_method_or_location": "BaseGrtEvent.sendEvent; L66-L94",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "class_method_or_location": "IaaFbRoasEvent.onAdImpression",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "class_method_or_location": "ConfigManager; configuration load/version/update",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "class_method_or_location": "Tracker; game_start/game_end/ad/guide/subscription events",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      }
+    ],
+    "sha256": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "sha256": "161bbd9f22f5b521ea2769ae1c32add65cdcd7f7065c122bd41fe10f1c3193a8"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "sha256": "3c177cf9efb516a75634d0c929a224cbfff6638a6a221ab8afb5469497d77818"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "sha256": "7d5bfced2a0ea0d8b04ee084a852a9873fbebb37383d09acfc5d00f32684eb0b"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "sha256": "d76a4ba8453ab7690bb2d2e47ad9d3e7eabd5fcde649d7d0b645588283531e98"
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "sha256": "db9296a002f8abe109ddf5a97901a8a2c0434458439a0cd6ce543beed09a48ca"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": true,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Existing sample/static path only",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E02B",
+    "source": "F64G2_sdk",
+    "target": "F64G2_network",
+    "claim": "MMP partner sharing is configurable; this game activation/delivery is unknown",
+    "source_ids": [
+      "F64C04",
+      "F64C05",
+      "F64C06",
+      "F64C07",
+      "F64C08",
+      "F64C17",
+      "CT62S08",
+      "RV61S03"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G2_sdk",
+    "data_receiver": "F64G2_network",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "class_method_or_location": "LTVManager.getLTV/increaseLTV/mergeData; L50-L81",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "class_method_or_location": "BaseGrtEvent.sendEvent; L66-L94",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "class_method_or_location": "IaaFbRoasEvent.onAdImpression",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "class_method_or_location": "ConfigManager; configuration load/version/update",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "class_method_or_location": "Tracker; game_start/game_end/ad/guide/subscription events",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "class_method_or_location": null,
+        "start_line": 113,
+        "end_line": 127
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "class_method_or_location": null,
+        "start_line": 60,
+        "end_line": 88
+      }
+    ],
+    "sha256": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "sha256": "161bbd9f22f5b521ea2769ae1c32add65cdcd7f7065c122bd41fe10f1c3193a8"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "sha256": "3c177cf9efb516a75634d0c929a224cbfff6638a6a221ab8afb5469497d77818"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "sha256": "7d5bfced2a0ea0d8b04ee084a852a9873fbebb37383d09acfc5d00f32684eb0b"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "sha256": "d76a4ba8453ab7690bb2d2e47ad9d3e7eabd5fcde649d7d0b645588283531e98"
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "sha256": "db9296a002f8abe109ddf5a97901a8a2c0434458439a0cd6ce543beed09a48ca"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E02C",
+    "source": "F64G2_network",
+    "target": "F64G2_training",
+    "claim": "Receiving an event does not prove canonical labels or model consumption",
+    "source_ids": [
+      "F64C04",
+      "F64C05",
+      "F64C06",
+      "F64C07",
+      "F64C08",
+      "F64C17",
+      "MA60S02",
+      "MA60S14"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G2_network",
+    "data_receiver": "F64G2_training",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "class_method_or_location": "LTVManager.getLTV/increaseLTV/mergeData; L50-L81",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "class_method_or_location": "BaseGrtEvent.sendEvent; L66-L94",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "class_method_or_location": "IaaFbRoasEvent.onAdImpression",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "class_method_or_location": "ConfigManager; configuration load/version/update",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "class_method_or_location": "Tracker; game_start/game_end/ad/guide/subscription events",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "class_method_or_location": null,
+        "start_line": 36,
+        "end_line": 70
+      }
+    ],
+    "sha256": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "sha256": "161bbd9f22f5b521ea2769ae1c32add65cdcd7f7065c122bd41fe10f1c3193a8"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "sha256": "3c177cf9efb516a75634d0c929a224cbfff6638a6a221ab8afb5469497d77818"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "sha256": "7d5bfced2a0ea0d8b04ee084a852a9873fbebb37383d09acfc5d00f32684eb0b"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "sha256": "d76a4ba8453ab7690bb2d2e47ad9d3e7eabd5fcde649d7d0b645588283531e98"
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "sha256": "db9296a002f8abe109ddf5a97901a8a2c0434458439a0cd6ce543beed09a48ca"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E02D",
+    "source": "F64G2_training",
+    "target": "F64G2_profit",
+    "claim": "Even model consumption does not prove incrementality, profitability or sustainable marginal scale",
+    "source_ids": [
+      "F64C04",
+      "F64C05",
+      "F64C06",
+      "F64C07",
+      "F64C08",
+      "F64C17",
+      "MA60S27"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G2_training",
+    "data_receiver": "F64G2_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "class_method_or_location": "LTVManager.getLTV/increaseLTV/mergeData; L50-L81",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "class_method_or_location": "BaseGrtEvent.sendEvent; L66-L94",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "class_method_or_location": "IaaFbRoasEvent.onAdImpression",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "class_method_or_location": "ConfigManager; configuration load/version/update",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "class_method_or_location": "Tracker; game_start/game_end/ad/guide/subscription events",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 41
+      }
+    ],
+    "sha256": [
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/LTVManager.java",
+        "sha256": "161bbd9f22f5b521ea2769ae1c32add65cdcd7f7065c122bd41fe10f1c3193a8"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/BaseGrtEvent.java",
+        "sha256": "3c177cf9efb516a75634d0c929a224cbfff6638a6a221ab8afb5469497d77818"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/event/processor/IaaFbRoasEvent.java",
+        "sha256": "7d5bfced2a0ea0d8b04ee084a852a9873fbebb37383d09acfc5d00f32684eb0b"
+      },
+      {
+        "path": "meowdoku/static/java/classes4.dex/com/learnings/grt/config/ConfigManager.java",
+        "sha256": "d76a4ba8453ab7690bb2d2e47ad9d3e7eabd5fcde649d7d0b645588283531e98"
+      },
+      {
+        "path": "meowdoku/static/godot-source/tracker.gd",
+        "sha256": "db9296a002f8abe109ddf5a97901a8a2c0434458439a0cd6ce543beed09a48ca"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "sha256": "134bf914b13efdb6623177df32d4dad90bdd76618e05f8103f341cd1a01fea3f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E03A",
+    "source": "F64G3_input",
+    "target": "F64G3_sdk",
+    "claim": "MAX callback→AF标准logAdRevenue＋ad_revenue2/4；国家安装日/时长规则",
+    "source_ids": [
+      "F64C09",
+      "F64C10",
+      "F64C11",
+      "F64C12",
+      "F64C17"
+    ],
+    "status": "proven_scoped_static",
+    "evidence_level": "【游戏代码证实】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "solid",
+    "data_provider": "F64G3_input",
+    "data_receiver": "F64G3_sdk",
+    "explicit_call_chain": "MAX callback→AF标准logAdRevenue＋ad_revenue2/4；国家安装日/时长规则",
+    "class_method_lines": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "class_method_or_location": "g8.a.adRevenue; L100-L123",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "class_method_or_location": "SDKManager.handleAdRevenue; L386; async upload L802",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "class_method_or_location": "upload_revenue / upload_pltv7_byday_bycountry; L1013/L1048",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "class_method_or_location": "ta.d.j(String,int); L4405",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      }
+    ],
+    "sha256": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "sha256": "7c2c6b011ec46caed6c287ad292aa85aa51c16ed81fd81dcabc29ecc355c6c5a"
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "sha256": "25e108286d650247410744d20698e56f3a74606b5275beb287efbb3943cf9098"
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "sha256": "7b1c69c3a3135bd393e9037b29c816aaa415dddcd505017051d53061e4e30ab2"
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "sha256": "7f6d569462e26a7ca5726d3655c7494fdd281dd4bf3e67858a029fe421cad6aa"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": true,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Existing sample/static path only",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E03B",
+    "source": "F64G3_sdk",
+    "target": "F64G3_network",
+    "claim": "MMP partner sharing is configurable; this game activation/delivery is unknown",
+    "source_ids": [
+      "F64C09",
+      "F64C10",
+      "F64C11",
+      "F64C12",
+      "F64C17",
+      "CT62S08",
+      "RV61S03"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G3_sdk",
+    "data_receiver": "F64G3_network",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "class_method_or_location": "g8.a.adRevenue; L100-L123",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "class_method_or_location": "SDKManager.handleAdRevenue; L386; async upload L802",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "class_method_or_location": "upload_revenue / upload_pltv7_byday_bycountry; L1013/L1048",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "class_method_or_location": "ta.d.j(String,int); L4405",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "class_method_or_location": null,
+        "start_line": 113,
+        "end_line": 127
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "class_method_or_location": null,
+        "start_line": 60,
+        "end_line": 88
+      }
+    ],
+    "sha256": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "sha256": "7c2c6b011ec46caed6c287ad292aa85aa51c16ed81fd81dcabc29ecc355c6c5a"
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "sha256": "25e108286d650247410744d20698e56f3a74606b5275beb287efbb3943cf9098"
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "sha256": "7b1c69c3a3135bd393e9037b29c816aaa415dddcd505017051d53061e4e30ab2"
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "sha256": "7f6d569462e26a7ca5726d3655c7494fdd281dd4bf3e67858a029fe421cad6aa"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E03C",
+    "source": "F64G3_network",
+    "target": "F64G3_training",
+    "claim": "Receiving an event does not prove canonical labels or model consumption",
+    "source_ids": [
+      "F64C09",
+      "F64C10",
+      "F64C11",
+      "F64C12",
+      "F64C17",
+      "MA60S02",
+      "MA60S14"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G3_network",
+    "data_receiver": "F64G3_training",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "class_method_or_location": "g8.a.adRevenue; L100-L123",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "class_method_or_location": "SDKManager.handleAdRevenue; L386; async upload L802",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "class_method_or_location": "upload_revenue / upload_pltv7_byday_bycountry; L1013/L1048",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "class_method_or_location": "ta.d.j(String,int); L4405",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "class_method_or_location": null,
+        "start_line": 36,
+        "end_line": 70
+      }
+    ],
+    "sha256": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "sha256": "7c2c6b011ec46caed6c287ad292aa85aa51c16ed81fd81dcabc29ecc355c6c5a"
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "sha256": "25e108286d650247410744d20698e56f3a74606b5275beb287efbb3943cf9098"
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "sha256": "7b1c69c3a3135bd393e9037b29c816aaa415dddcd505017051d53061e4e30ab2"
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "sha256": "7f6d569462e26a7ca5726d3655c7494fdd281dd4bf3e67858a029fe421cad6aa"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E03D",
+    "source": "F64G3_training",
+    "target": "F64G3_profit",
+    "claim": "Even model consumption does not prove incrementality, profitability or sustainable marginal scale",
+    "source_ids": [
+      "F64C09",
+      "F64C10",
+      "F64C11",
+      "F64C12",
+      "F64C17",
+      "MA60S27"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G3_training",
+    "data_receiver": "F64G3_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "class_method_or_location": "g8.a.adRevenue; L100-L123",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "class_method_or_location": "SDKManager.handleAdRevenue; L386; async upload L802",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "class_method_or_location": "upload_revenue / upload_pltv7_byday_bycountry; L1013/L1048",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "class_method_or_location": "ta.d.j(String,int); L4405",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 41
+      }
+    ],
+    "sha256": [
+      {
+        "path": "rotate-rings/static/java/classes2.dex/g8/a.java",
+        "sha256": "7c2c6b011ec46caed6c287ad292aa85aa51c16ed81fd81dcabc29ecc355c6c5a"
+      },
+      {
+        "path": "rotate-rings/static/java/classes6.dex/com/unity3d/player/SDKManager.java",
+        "sha256": "25e108286d650247410744d20698e56f3a74606b5275beb287efbb3943cf9098"
+      },
+      {
+        "path": "rotate-rings/static/java/classes8.dex/com/unity3d/player/SDKKeybehaviors$evenue.java",
+        "sha256": "7b1c69c3a3135bd393e9037b29c816aaa415dddcd505017051d53061e4e30ab2"
+      },
+      {
+        "path": "rotate-rings/static/java/classes9.dex/ta/d.java",
+        "sha256": "7f6d569462e26a7ca5726d3655c7494fdd281dd4bf3e67858a029fe421cad6aa"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "sha256": "134bf914b13efdb6623177df32d4dad90bdd76618e05f8103f341cd1a01fea3f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E04A",
+    "source": "F64G4_input",
+    "target": "F64G4_sdk",
+    "claim": "AdWorth账本/行为系数→Firebase/Meta/Adjust；默认90规则；purchase含代理",
+    "source_ids": [
+      "F64C13",
+      "F64C14",
+      "F64C15",
+      "F64C16",
+      "F64C17"
+    ],
+    "status": "proven_scoped_static",
+    "evidence_level": "【游戏代码证实】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "solid",
+    "data_provider": "F64G4_input",
+    "data_receiver": "F64G4_sdk",
+    "explicit_call_chain": "AdWorth账本/行为系数→Firebase/Meta/Adjust；默认90规则；purchase含代理",
+    "class_method_lines": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "class_method_or_location": "ad_worth_event.json; extras/events; 90 rules / 31 tables",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "class_method_or_location": "AWESendPlatform::sendMsgToPlatform; RVA 0x1a44350",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "class_method_or_location": "AWEWorthUpdate::getBeSentWorth; RVA 0x1a3dc50",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "class_method_or_location": "raw entry / decoded SHA256 / split / logical resource mapping",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      }
+    ],
+    "sha256": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "sha256": "990577a343081611b3b46d460964ce3963404045281fd03c1ae402b3b4665c01"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "sha256": "f8bb8a56bb671d691b7ac32a64881366fb15085448efc9de4a207db31ca2e839"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "sha256": "5769f3bca001626d1a67ff6dabd789ccb941d1ba784dcd06d48cc2214271a219"
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "sha256": "4a1a1814bfb9a4be85f0345b3366d435fa15f3acc681781a9d33a4d1d988f65d"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": true,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Existing sample/static path only",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E04B",
+    "source": "F64G4_sdk",
+    "target": "F64G4_network",
+    "claim": "MMP partner sharing is configurable; this game activation/delivery is unknown",
+    "source_ids": [
+      "F64C13",
+      "F64C14",
+      "F64C15",
+      "F64C16",
+      "F64C17",
+      "CT62S08",
+      "RV61S03"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G4_sdk",
+    "data_receiver": "F64G4_network",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "class_method_or_location": "ad_worth_event.json; extras/events; 90 rules / 31 tables",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "class_method_or_location": "AWESendPlatform::sendMsgToPlatform; RVA 0x1a44350",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "class_method_or_location": "AWEWorthUpdate::getBeSentWorth; RVA 0x1a3dc50",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "class_method_or_location": "raw entry / decoded SHA256 / split / logical resource mapping",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "class_method_or_location": null,
+        "start_line": 113,
+        "end_line": 127
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "class_method_or_location": null,
+        "start_line": 60,
+        "end_line": 88
+      }
+    ],
+    "sha256": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "sha256": "990577a343081611b3b46d460964ce3963404045281fd03c1ae402b3b4665c01"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "sha256": "f8bb8a56bb671d691b7ac32a64881366fb15085448efc9de4a207db31ca2e839"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "sha256": "5769f3bca001626d1a67ff6dabd789ccb941d1ba784dcd06d48cc2214271a219"
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "sha256": "4a1a1814bfb9a4be85f0345b3366d435fa15f3acc681781a9d33a4d1d988f65d"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E04C",
+    "source": "F64G4_network",
+    "target": "F64G4_training",
+    "claim": "Receiving an event does not prove canonical labels or model consumption",
+    "source_ids": [
+      "F64C13",
+      "F64C14",
+      "F64C15",
+      "F64C16",
+      "F64C17",
+      "MA60S02",
+      "MA60S14"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G4_network",
+    "data_receiver": "F64G4_training",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "class_method_or_location": "ad_worth_event.json; extras/events; 90 rules / 31 tables",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "class_method_or_location": "AWESendPlatform::sendMsgToPlatform; RVA 0x1a44350",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "class_method_or_location": "AWEWorthUpdate::getBeSentWorth; RVA 0x1a3dc50",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "class_method_or_location": "raw entry / decoded SHA256 / split / logical resource mapping",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "class_method_or_location": null,
+        "start_line": 36,
+        "end_line": 70
+      }
+    ],
+    "sha256": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "sha256": "990577a343081611b3b46d460964ce3963404045281fd03c1ae402b3b4665c01"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "sha256": "f8bb8a56bb671d691b7ac32a64881366fb15085448efc9de4a207db31ca2e839"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "sha256": "5769f3bca001626d1a67ff6dabd789ccb941d1ba784dcd06d48cc2214271a219"
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "sha256": "4a1a1814bfb9a4be85f0345b3366d435fa15f3acc681781a9d33a4d1d988f65d"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E04D",
+    "source": "F64G4_training",
+    "target": "F64G4_profit",
+    "claim": "Even model consumption does not prove incrementality, profitability or sustainable marginal scale",
+    "source_ids": [
+      "F64C13",
+      "F64C14",
+      "F64C15",
+      "F64C16",
+      "F64C17",
+      "MA60S27"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64G4_training",
+    "data_receiver": "F64G4_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "class_method_or_location": "ad_worth_event.json; extras/events; 90 rules / 31 tables",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "class_method_or_location": "AWESendPlatform::sendMsgToPlatform; RVA 0x1a44350",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "class_method_or_location": "AWEWorthUpdate::getBeSentWorth; RVA 0x1a3dc50",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "class_method_or_location": "raw entry / decoded SHA256 / split / logical resource mapping",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "class_method_or_location": "DEX class/method/descriptor/invoke offsets",
+        "start_line": null,
+        "end_line": null
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 41
+      }
+    ],
+    "sha256": [
+      {
+        "path": "jewel-coloring/deep/resources/ad_worth_event.json.redacted.json",
+        "sha256": "990577a343081611b3b46d460964ce3963404045281fd03c1ae402b3b4665c01"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWESendPlatform__sendMsgToPlatform__-1a44350.asm",
+        "sha256": "f8bb8a56bb671d691b7ac32a64881366fb15085448efc9de4a207db31ca2e839"
+      },
+      {
+        "path": "jewel-coloring/deep/asm/ad__event__AWEWorthUpdate__getBeSentWorth_ad__event__AWEWorthSendType__float_-1a3dc50.asm",
+        "sha256": "5769f3bca001626d1a67ff6dabd789ccb941d1ba784dcd06d48cc2214271a219"
+      },
+      {
+        "path": "jewel-coloring/deep/resources/decoded-config-provenance.json",
+        "sha256": "4a1a1814bfb9a4be85f0345b3366d435fa15f3acc681781a9d33a4d1d988f65d"
+      },
+      {
+        "path": "axon/deep/event-callsite-catalog.json",
+        "sha256": "1e439919ec9986495cb0e4a137ed5e6af4a00fb8ed69b09d6f9e4004ff023b92"
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "sha256": "134bf914b13efdb6623177df32d4dad90bdd76618e05f8103f341cd1a01fea3f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "Target partner activation, delivery, receipt, training lineage and controlled net profit",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E_M1",
+    "source": "F64_M1",
+    "target": "F64_profit",
+    "claim": "玩家价值排序改善 may change unit economics, but no target-game causal effect is established",
+    "source_ids": [
+      "MA60S01",
+      "MA60S02",
+      "MA60S04",
+      "MA60S13"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64_M1",
+    "data_receiver": "F64_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "class_method_or_location": null,
+        "start_line": 31,
+        "end_line": 34
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "class_method_or_location": null,
+        "start_line": 27,
+        "end_line": 50
+      },
+      {
+        "path": "vector/d28-blog.txt",
+        "class_method_or_location": null,
+        "start_line": 15,
+        "end_line": 43
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "sha256": "b38323d5cd83d75adf8f803c86c39bcc45878ec21df56fabe9dc28282020c72b"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "sha256": "da5e38340c85e2fa6b6f17a08fbe11514c7b4b0f512c375006a1e8fafe8df87b"
+      },
+      {
+        "path": "vector/d28-blog.txt",
+        "sha256": "3fb6008feba929fde7ab919c45e9bae687457b219545a4289e6a57c90e983e68"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "真实特征join、校准、训练样本与价值排序增量; 固定库存/素材/预算/广告策略，价值目标/排序holdout并核对成熟净贡献",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E_M2",
+    "source": "F64_M2",
+    "target": "F64_profit",
+    "claim": "同App自然量/跨渠道历史冷启动 may change unit economics, but no target-game causal effect is established",
+    "source_ids": [
+      "MA60S14",
+      "CT62S08",
+      "MA60S02"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64_M2",
+    "data_receiver": "F64_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "class_method_or_location": null,
+        "start_line": 36,
+        "end_line": 70
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "class_method_or_location": null,
+        "start_line": 113,
+        "end_line": 127
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "四款生效开关、实际历史样本/权重与冷启动增益; 合法历史共享holdout，保持目标/预算/素材固定，记录可用时间与成熟结果",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E_M3",
+    "source": "F64_M3",
+    "target": "F64_profit",
+    "claim": "跨游戏聚合知识或模型迁移 may change unit economics, but no target-game causal effect is established",
+    "source_ids": [
+      "MA60S17",
+      "MA60S02",
+      "MA60S23"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64_M3",
+    "data_receiver": "F64_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "class_method_or_location": null,
+        "start_line": 208,
+        "end_line": 223
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "class_method_or_location": null,
+        "start_line": 54,
+        "end_line": 73
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "class_method_or_location": null,
+        "start_line": 14,
+        "end_line": 38
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "sha256": "ea304dbc17e8077ee3baf00e01c0294d6bde940a3616d7fb0abc2c1df98b2d31"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "实际共享参数、统计与个人历史贡献及四款生产使用; 同数据/机会预算下分别禁用聚合统计、共享参数和合法个人历史",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E_M4",
+    "source": "F64_M4",
+    "target": "F64_profit",
+    "claim": "MAX或LevelPlay变现收益改善 may change unit economics, but no target-game causal effect is established",
+    "source_ids": [
+      "RV61S15",
+      "RV61S16"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64_M4",
+    "data_receiver": "F64_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "auction/al-dynamics.txt",
+        "class_method_or_location": null,
+        "start_line": 13,
+        "end_line": 40
+      },
+      {
+        "path": "auction/unity-get-started.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 34
+      }
+    ],
+    "sha256": [
+      {
+        "path": "auction/al-dynamics.txt",
+        "sha256": "43dfae6b9630d9468767e8383d2d3f8796d3b97a9cf0345175979c9c14e430ba"
+      },
+      {
+        "path": "auction/unity-get-started.txt",
+        "sha256": "7e8f03b72a2a3bbd9005f2e542907cc630d06b5855b26ac8a28839c157ace009"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "同类玩家真实填充/eCPM/净LTV增量及留存抵消; UA固定下mediation/广告策略随机组，再做UA目标×变现因子实验",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  },
+  {
+    "id": "F64E_M5",
+    "source": "F64_M5",
+    "target": "F64_profit",
+    "claim": "素材国家预算目标归因变化 may change unit economics, but no target-game causal effect is established",
+    "source_ids": [
+      "RV61S05",
+      "RV61S06",
+      "MA60S27"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "edge_type": "final_causal_synthesis",
+    "diagram_style": "dashed",
+    "data_provider": "F64_M5",
+    "data_receiver": "F64_profit",
+    "explicit_call_chain": "No production call chain asserted",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 61
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "class_method_or_location": null,
+        "start_line": 63,
+        "end_line": 86
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "class_method_or_location": null,
+        "start_line": 20,
+        "end_line": 41
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "sha256": "a1d66a7f7e97bad3473058ee8af40fa74f12864c559d2d17ca5d0c71bece5447"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "sha256": "a1d66a7f7e97bad3473058ee8af40fa74f12864c559d2d17ca5d0c71bece5447"
+      },
+      {
+        "path": "model-architecture/public/al-measurement.txt",
+        "sha256": "134bf914b13efdb6623177df32d4dad90bdd76618e05f8103f341cd1a01fea3f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "permission_conditions": "Static existing authorized samples only; live sharing would need advertiser authorization, consent and scoped join; available_at <= bid_time for features",
+    "applies_to": "Unproven production or causal connection; not a deployment assertion",
+    "missing_evidence": "四款真实变更日志、成本收益和控制条件; 固定口径与成熟cohort，素材/目标/国家分层随机或地域holdout",
+    "reviewed_utc": "2026-11-19T11:04:11.637358+00:00",
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "new_production_evidence": false
+  }
+]

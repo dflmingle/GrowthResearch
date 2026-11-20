@@ -1,0 +1,71 @@
+{
+  "splits": {
+    "train": {
+      "rows": 38724,
+      "unique_customers": 1840,
+      "landmarks": [
+        "2011-01-03",
+        "2011-01-10",
+        "2011-01-17",
+        "2011-01-24",
+        "2011-01-31",
+        "2011-02-07",
+        "2011-02-14",
+        "2011-02-21",
+        "2011-02-28",
+        "2011-03-07",
+        "2011-03-14",
+        "2011-03-21",
+        "2011-03-28",
+        "2011-04-04",
+        "2011-04-11",
+        "2011-04-18",
+        "2011-04-25",
+        "2011-05-02",
+        "2011-05-09",
+        "2011-05-16",
+        "2011-05-23",
+        "2011-05-30",
+        "2011-06-06",
+        "2011-06-13",
+        "2011-06-20",
+        "2011-06-27",
+        "2011-07-04",
+        "2011-07-11",
+        "2011-07-18",
+        "2011-07-25"
+      ]
+    },
+    "validation": {
+      "rows": 1308,
+      "unique_customers": 657,
+      "landmarks": [
+        "2011-08-29",
+        "2011-09-05"
+      ]
+    },
+    "test": {
+      "rows": 4037,
+      "unique_customers": 839,
+      "landmarks": [
+        "2011-10-10",
+        "2011-10-17",
+        "2011-10-24",
+        "2011-10-31",
+        "2011-11-07"
+      ]
+    }
+  },
+  "pairwise_customer_overlap": 0,
+  "new_test_customers_not_in_round66_test": 149,
+  "test_customer_overlap_with_round66": 690,
+  "test_new_customer_rows": 587,
+  "feature_time": "InvoiceDate < t",
+  "label_time": "t <= InvoiceDate < t+28d",
+  "all_labels_mature": true,
+  "train_label_end": "2011-08-22",
+  "validation_label_end": "2011-10-03",
+  "first_test": "2011-10-10",
+  "last_test_label_end": "2011-12-05",
+  "separate_time_not_separate_retailer": true
+}

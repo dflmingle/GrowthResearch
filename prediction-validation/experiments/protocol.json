@@ -1,0 +1,25 @@
+{
+  "version": "round56-design-v1",
+  "status": "DESIGN_ONLY_NOT_EXECUTED",
+  "real_training_gate": "STOP_NO_VERIFIED_AUTHORIZED_DATA",
+  "current_execution": "schema, accounting, privacy and temporal-gate synthetic smoke only",
+  "model_groups": {
+    "M0": ["context"],
+    "M1": ["context", "history_ads"],
+    "M2": ["context", "history_ads", "cross_app_history"],
+    "M3": ["context", "d0_behavior"],
+    "M4": ["context", "d0_behavior", "d0_revenue"],
+    "M5": ["context", "d0_behavior", "d0_revenue", "proxy"]
+  },
+  "prediction_cutoffs": {"M0_M2":"bid_at", "M3_M5":"install_at + 24 hours; as-known at that time"},
+  "tasks": ["P(install|served impression); all served negatives required", "E(D28 LTV|install,bid-time features)", "expected impression value = P(install)*conditional LTV", "D28 total LTV from D0 snapshot", "D1-D28 remaining LTV from D0 snapshot"],
+  "split_policy": "Chronological training, calibration and test cohorts; freeze training labels before calibration/test starts; account for 28-day maturity plus reporting grace. No random split. No recycled export keys across independent exports.",
+  "fairness": "Same eligible rows, app/version/policy/country/platform cohorts, labels, seed list and model capacity; nested feature ablations. Compare both full cohort and common lawful coverage subset; report coverage selection separately.",
+  "initial_model_plan": {"install":"regularized logistic regression", "ltv":"mean baseline and regularized linear baseline with train-only transforms", "tree_optional":"fixed small gradient-boosted tree budget after simple baseline", "hyperparameter_budget":"identical pre-registered search count; never tune on test"},
+  "metrics_plan": ["MAE", "RMSE", "revenue-weighted decile calibration error", "predicted/actual total", "Top10% high-value recall with tie rule", "top-decile revenue capture", "Brier/AUC for installation where identified", "sample counts and missingness", "country/platform/install-cohort/coverage strata"],
+  "uncertainty_plan": "Paired block bootstrap by independent install-date/ad-policy cohorts; fixed seeds and confidence level. Repeated people/clusters stay in same block at owner side. Report number of blocks; do not manufacture individual IID confidence with few cohorts.",
+  "stress_tests_plan": ["missing historical features", "privacy gating", "cross-app coverage dependence", "no-signal cross-app negative control", "D0 proxy redundant with income/counts", "ad-policy and version drift", "prediction over/underestimation", "feature availability delay"],
+  "auction_plan": "Reuse auction/model first-price engine without modifying it; identical opportunities, outcome draws, budget, competitor prices, floor, tmax and pacing protocol. Any generated prices/counterfactual outcomes imply conditional simulation only.",
+  "causal_limit": "Without true opportunity/price logs, known selection probabilities and overlap, do not report real policy ROAS or causal incrementality. Even logged propensity alone does not guarantee valid causal estimates.",
+  "no_vendor_claim": "Neither observed synthetic benefit nor lack of benefit ranks Axon or Vector or identifies their production features/models."
+}

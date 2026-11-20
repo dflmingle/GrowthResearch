@@ -1,0 +1,28 @@
+{
+  "original_rows": 541909,
+  "exact_duplicates_removed": 5268,
+  "dedup_rows": 536641,
+  "dedup_missing_customer_rows": 135037,
+  "positive_eligible_rows": 392692,
+  "eligible_unique_customers": 4338,
+  "event_min": "2010-12-01 08:26:00",
+  "event_max": "2011-12-09 12:50:00",
+  "final_test_label_end_exclusive": "2011-12-05",
+  "dedup_audit": {
+    "rows": 536641,
+    "missing_customer_rows": 135037,
+    "cancel_prefix_rows": 9251,
+    "negative_quantity_rows": 10587,
+    "negative_unit_price_rows": 2,
+    "nonpositive_unit_price_rows": 2512,
+    "negative_amount_rows": 9253,
+    "cancel_and_nonnegative_amount_rows": 0,
+    "negative_amount_without_cancel_prefix_rows": 2,
+    "cancel_signed_amount_gbp": -893979.7300000001,
+    "negative_amount_sum_gbp": -916103.85,
+    "nonpositive_unit_price_signed_amount_gbp": -22124.12
+  },
+  "amount_unit": "recorded positive invoice sales GBP, not cash/net income",
+  "available_at": "absent; event-time offline assumption only",
+  "zero_semantics": "No recorded positive invoice in horizon, not true zero consumption or permanent churn"
+}

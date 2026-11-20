@@ -1,0 +1,1355 @@
+[
+  {
+    "path": "00_总览与结论.md",
+    "headings": [
+      "# 五款游戏买量与商业化逆向研究",
+      "## 已取得什么",
+      "## 到底拿什么信号寻找更有价值的玩家",
+      "## 归因和变现怎样连接",
+      "## 商业化如何影响前几局",
+      "## 能证实哪些真实买量行为",
+      "## 横向判断与可借鉴机制"
+    ],
+    "key_lines": [
+      {
+        "line": 14,
+        "text": "| Amaze GO!™ / Oakever Games | **未取得安装包** | 未知 | 核验商店身份和公开素材；不提供虚构 SDK 结论 |"
+      },
+      {
+        "line": 15,
+        "text": "| Jewel Coloring / TaTa Game Technology Limited | 1.24.1，24 | Cocos2d-x / 原生 C++，ARM64 | Java 桥接 + `libMyGame.so` 原始 ARM64；关键价值规则配置未取得明文 |"
+      },
+      {
+        "line": 24,
+        "text": "| Meowdoku | 【代码证实】`grt_level*_d0/d2/d3/d7`、`grt_time*_d0/d2/d3/d7`，明确指定 Facebook、AppsFlyer、Learnings、Firebase；GRT 支持收入阈值、国家/来源/安装天数筛选 | 【合理推断】在收入尚少时，用首日关卡深度、活跃分钟识别投入程度；GRT 的线上规则与平台目标未取得。[M01–M05](EVIDENCE_INDEX.md#m01) |"
+      },
+      {
+        "line": 26,
+        "text": "| Jewel Coloring | 【代码证实】AdWorth 层读取规则，检查行为/时间条件，支持来源权重、国家价值条件，向 Adjust token、Google 分析包装器与 Meta 状态接口分发 | 【无法确认】具体规则表、事件名称/token 映射与生产启用集合不完整；不能给出实际投放阈值或声称已启用预测 LTV。[J01–J05](EVIDENCE_INDEX.md#j01) |"
+      },
+      {
+        "line": 27,
+        "text": "| Amaze GO! | 【无法确认】无安装包，不能从同属 Oakever 推定复用 Meowdoku 框架 | 仅可研究其商店“清箭头、舒适视觉、放松”定位。[P01–P02](EVIDENCE_INDEX.md#p01) |"
+      }
+    ]
+  },
+  {
+    "path": "01_五款游戏SDK对照.md",
+    "headings": [
+      "# SDK 实际接入与实现边界",
+      "## 主矩阵",
+      "## 初始化、归因字段和事件入口",
+      "### Car Race",
+      "### Meowdoku",
+      "### Rotate Rings",
+      "### Jewel Coloring",
+      "## 缓存、去重、失败、隐私边界"
+    ],
+    "key_lines": [
+      {
+        "line": 18,
+        "text": "| AppMetrica | 打包，独立业务 activate 未证实 | 7.14.2，2173 类；独立业务 activate 未证实 | 本轮标准包未检出 | 无样本 | 8.3.0，2243 类；独立业务 activate 未证实 |"
+      },
+      {
+        "line": 30,
+        "text": "【代码证实】加载场景挂有启用的 `ZegoAdjust` 和 `ZegoAd_Metica`；`Start → InitAdjust`、归因回调获取 Campaign 并缓存，超时/重试配置 30 秒/1 秒。Adjust 数据结构支持 network/adgroup/creative/cost，但不能把结构字段全部当成业务分层输入。`GetCampaignType` 有名称子串分类，已发现 caller 是调试器，未证明它决定玩法或广告。[C01–C02](EVIDENCE_INDEX.md#c01)"
+      },
+      {
+        "line": 52,
+        "text": "【代码证实】`sendAdjustAdRevenue` 传金额/币种/广告网络/unit/placement；`sendFacebookIAAEvent` 使用 Meta ad impression value；RedFirebase 包装器可发送事件和 purchase。包含 `sendEventUserAdWorthTest11111...55555` 测试方法，**未证明生产调用，不把其中 DONATE/CONTACT 算作真实增长事件**。[J02](EVIDENCE_INDEX.md#j02)"
+      }
+    ]
+  },
+  {
+    "path": "02_归因与买量事件映射.md",
+    "headings": [
+      "# 从安装到用户价值的事件映射",
+      "## Car Race：进度、广告意愿、实际收入",
+      "## Meowdoku：显式跨平台的时间窗行为信号",
+      "## Rotate Rings：游戏深度 × 广告收益 × 地区/年龄",
+      "## Jewel Coloring：配置驱动的 AdWorth 管道",
+      "## Amaze GO!：明确的空白",
+      "## 整条信号链的证据断点"
+    ],
+    "key_lines": [
+      {
+        "line": 11,
+        "text": "| 教程 | tutorial_begin/complete 常量，GameTutorialManager 玩法方法 | 【无法确认】未形成充分的专用事件调用链 | 不把常量列为已激活教程优化 |"
+      },
+      {
+        "line": 29,
+        "text": "| 游戏开始/结束/道具 | game_start/game_end/prop_get/prop_use；带 game_id 及各事件 schema 参数 | 【代码证实】Tracker 与 gameplay 接入；schema 允许值不等于每次都发送。[M01](EVIDENCE_INDEX.md#m01) |"
+      },
+      {
+        "line": 34,
+        "text": "| 收入/阈值 | impressionLevelAdRevenue → TikTok；IaaFbRoas/Ltv/UacLtvRepeat 等处理器 | 【代码证实】框架实现；【无法确认】生产规则名/接收平台/金额列表及是否全部启用。[M03–M05](EVIDENCE_INDEX.md#m03) |"
+      },
+      {
+        "line": 50,
+        "text": "| Meta/Google S2S | uploadOnlyMetaS2S/uploadDataAllS2S 生成平台元数据再打 ThinkingData `o_def_key_event_start` | 【代码证实】客户端意图；【无法确认】后端是否实际发给 Meta/Google、是否成功接收。[R07](EVIDENCE_INDEX.md#r07) |"
+      },
+      {
+        "line": 59,
+        "text": "| 普通行为 | 原生有 max level、完成数、登录/活跃天、时间、广告次数等条件类 | 【代码证实】条件实现/符号；【无法确认】缺规则配置时不能给出每个教程/首局事件名及使用集合。[J03–J04](EVIDENCE_INDEX.md#j03) |"
+      }
+    ]
+  },
+  {
+    "path": "03_广告收入与价值优化.md",
+    "headings": [
+      "# 广告收入、价值门槛与预测边界",
+      "## Car Race：按设备国家分桶的实际收入增量",
+      "## Meowdoku：GRT 区分累计值、增量值和平台字段",
+      "## Rotate Rings：标准 ILRD 之外，还有复合资格筛选",
+      "### 早期高价值组合",
+      "### 首插屏收入作为准入条件",
+      "### 国家×安装日：本轮历史差分中的新增机制",
+      "## Jewel Coloring：AdWorth 配置层很丰富，实际表仍是关键缺口",
+      "## 这能证明 ROAS 或 LTV 优化了吗"
+    ],
+    "key_lines": [
+      {
+        "line": 14,
+        "text": "【代码证实】国家读取有 network/SIM/Locale 回退；`taichi_*` 由 Firebase Remote Config 覆盖。默认值不等于所有线上用户值。这里是设备侧国家标签，不等同广告平台投放国家，也不是经核验的税务/居住国家。[C04](EVIDENCE_INDEX.md#c04)"
+      },
+      {
+        "line": 31,
+        "text": "| AdvancedTaiChi | 模型/处理器在配置工厂中注册 | 【无法确认】不能据类名证明预测 LTV 模型、系数或生产启用 |"
+      },
+      {
+        "line": 75,
+        "text": "【无法确认】XGBoost 符号存在，但未建立模型文件→输入特征→实际预测→价值事件的完整调用链。不把它列为已启用机器学习 LTV。"
+      },
+      {
+        "line": 81,
+        "text": "可确认的是【代码证实】四款有样本游戏均具备至少部分收入/价值事件客户端路径；【合理推断】开发者在用更早、更密集的价值代理信号缩短识别高价值用户的等待。实际训练目标、事件优先级、平台学习量、预测准确率、付费/广告混合 ROAS、成本与回本天数均【无法确认】。"
+      }
+    ]
+  },
+  {
+    "path": "04_真实广告素材与投放证据.md",
+    "headings": [
+      "# 真实广告记录与公开素材：已取得和未取得",
+      "## 证据分层",
+      "## 实际查过哪些入口",
+      "## 已查看的商店卖点：只能用于创意假设",
+      "## 若要补齐“真实投放”证据，最低需要什么"
+    ],
+    "key_lines": [
+      {
+        "line": 1,
+        "text": "# 真实广告记录与公开素材：已取得和未取得"
+      },
+      {
+        "line": 9,
+        "text": "| Car Race | iKame Games - Zego Studio；官网 ikameglobal.com，支持地址属 zegostudio.com | 已取得 | **未取得证据** |"
+      },
+      {
+        "line": 10,
+        "text": "| Meowdoku: Brain Puzzle Games | Oakever Games；oakevergames.com | 已取得 | **未取得证据** |"
+      },
+      {
+        "line": 11,
+        "text": "| Rotate Rings | Nebula Studio；hurelax.com | 已取得 | **未取得证据** |"
+      },
+      {
+        "line": 12,
+        "text": "| Amaze GO!™ | Oakever Games；oakevergames.com | 已取得 | **未取得证据** |"
+      }
+    ]
+  },
+  {
+    "path": "05_历史版本策略演进.md",
+    "headings": [
+      "# 历史版本：只描述可重复验证的差异",
+      "## 样本覆盖",
+      "## Rotate Rings 1.2.2 与 1.2.4",
+      "### 可确认的业务变化",
+      "## 其余产品的有限线索"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "| Car Race | 仅原版1.348.2 | 【无法确认】不能把复刻Android0.10等版本当作原版历史 |"
+      },
+      {
+        "line": 8,
+        "text": "| Meowdoku | 仅1.25.1 | 【无法确认】旧缓存迁移代码能说明兼容意图，不能推导何时上线策略 |"
+      },
+      {
+        "line": 10,
+        "text": "| Amaze GO! | 无安装包 | 【无法确认】 |"
+      },
+      {
+        "line": 11,
+        "text": "| Jewel Coloring | 仅1.24.1 | 【无法确认】 |"
+      },
+      {
+        "line": 33,
+        "text": "| `upload_af_single_ad_revenue_once` 移除，新增 `upload_single_ad_revenue_once(...,boolean)` | descriptor枚举和新版分发不同事件入参 | 【代码证实】候选单展示价值路径调整；不等于所有事件线上已改投 |"
+      }
+    ]
+  },
+  {
+    "path": "06_五款游戏增长策略对比.md",
+    "headings": [
+      "# 五款游戏横向比较",
+      "## 1. 哪款价值优化事件设计最成熟",
+      "## 2. 哪款偏安装量，哪款有收入价值优化能力",
+      "## 3. Oakever两款是否共用框架",
+      "## 4. Car Race国家阈值是否也存在于其他游戏",
+      "## 5. 早期行为如何变成广告优化信号",
+      "## 6. 默认SDK能力与自定义实现",
+      "## 7. 哪些投放策略有真实广告记录支持",
+      "## 8. 最值得借鉴什么"
+    ],
+    "key_lines": [
+      {
+        "line": 10,
+        "text": "| 广告/经济分层证据 | 首激励标记相关经济分层，默认关闭 | 关卡/会话/设备内存/低活跃/概率分组控制插屏 | 收入事件准入分层明确；玩法频控不完整 | 未知 | 价值系数分层明确；改玩法经济未证实 |"
+      },
+      {
+        "line": 11,
+        "text": "| 真实付费广告记录 | 未取得 | 未取得 | 未取得 | 未取得 | 未取得 |"
+      },
+      {
+        "line": 14,
+        "text": "上述具体实现为【代码证实】；未取得项均为【无法确认】，不得按“没有该能力”处理。证据入口：[C01–C09](EVIDENCE_INDEX.md#c01)、[M01–M07](EVIDENCE_INDEX.md#m01)、[R01–R08](EVIDENCE_INDEX.md#r01)、[J01–J05](EVIDENCE_INDEX.md#j01)。"
+      },
+      {
+        "line": 23,
+        "text": "- Car Race国家收入桶机制简单、可解释；简单不等于效果差，更多事件也不等于更高ROAS。"
+      },
+      {
+        "line": 29,
+        "text": "【无法确认】无法凭包体判断哪款主要投CPI、CPA、tROAS或价值优化。优化目标是广告系列配置；同一游戏也可能并行多个目标。Amaze缺包，更不能因SDK证据为空判断它只追安装。"
+      }
+    ]
+  },
+  {
+    "path": "07_可复用的买量技术方案.md",
+    "headings": [
+      "# 可复用的买量技术方案",
+      "## 先建立三本互不混淆的账",
+      "## 可落地的信号链",
+      "## 最小事件设计",
+      "## 配置与实验如何设计",
+      "## 队列、去重与故障处理",
+      "## 怎样证明方案有效"
+    ],
+    "key_lines": [
+      {
+        "line": 10,
+        "text": "| 行为事实 | 教程完成、关卡胜负、活跃秒数、激励earned、升级等业务事件 | 分析漏斗与留存；点击观看不等于广告已展示，已展示不等于earned |"
+      }
+    ]
+  },
+  {
+    "path": "08_身份图谱与跨应用买量策略.md",
+    "headings": [
+      "# 身份标识、跨应用关联与受众：代码证据边界",
+      "## 1. 判定标准",
+      "## 2. 四款证据矩阵",
+      "## 3. Car Race：Adjust Adid不是GAID，也不是跨应用账户",
+      "## 4. Meowdoku：几套ID各自有作用",
+      "### UUID与Learnings ID",
+      "### 账户绑定不是假设",
+      "### UID2：有桥，无已启用证明",
+      "### 公开政策确实提到受众运营",
+      "## 5. Rotate Rings：同应用ID联结与Meta受众能力",
+      "## 6. Jewel：确有跨应用共享介质，但受条件限制",
+      "### 设备ID真实调用链",
+      "### ID最终到哪里",
+      "## 7. 容易误报的“图谱供应商”线索",
+      "## 8. 价值分层需要跨应用身份吗"
+    ],
+    "key_lines": [
+      {
+        "line": 22,
+        "text": "| Car Race | 【代码证实】Adjust取Adid存入业务字段，campaign缓存；游戏属性与ILRD；广告/归因SDK有GAID能力 | **未证实**商业图谱、externalDeviceId业务设置或跨应用受众同步；不排除平台/服务端处理 |"
+      },
+      {
+        "line": 23,
+        "text": "| Meowdoku | 【代码证实】本地随机UUID作AppsFlyer CUID；Learnings ID关联UserTag；真实AuthManager→登录/账户链；learnings_account_id写分析属性 | **单应用账户/分析关联已证实**；同发行商跨应用账户命名空间未证实；UID2桥有但插件缺失/无游戏调用 |"
+      },
+      {
+        "line": 24,
+        "text": "| Rotate Rings | 【代码证实】AppsFlyer CUID与ta_distinct_id同源；conversion中取得AppsFlyerUID；同应用MMP/分析关联 | **跨应用未证实**；Meta PA有SDK内部事件入口，开关/设备/生产触发未知 |"
+      },
+      {
+        "line": 47,
+        "text": "【代码证实】UniKit还提供`setAccountId → AnalyzeManager/AbTestManager`；AB可按accountId重置group。**本轮没有找到游戏脚本调用该set_account_id wrapper的额外实参链，不能声称账户ID替换了AppsFlyer CUID。**`LxAuth.syncAccountId`实际写的是user property，不等于setCustomerUserId。[I04](EVIDENCE_INDEX.md#i04)"
+      },
+      {
+        "line": 49,
+        "text": "【无法确认】账号服务是否对Oakever所有游戏使用统一用户ID空间、是否允许账号跨游戏关联、是否用来同步受众；Amaze GO!仍无包，不能补出第二应用证据。"
+      }
+    ]
+  },
+  {
+    "path": "09_AdWorth深度逆向.md",
+    "headings": [
+      "# Jewel Coloring：AdWorth 深度逆向",
+      "## 1. 本轮解决了此前缺失的配置",
+      "## 2. 它是谁的模块",
+      "## 3. 已追踪的类与调用链",
+      "## 4. 计算公式：价格、加权value和真实收入不能混为一谈",
+      "### 来源权重：能算，但当前默认事件没用它",
+      "### 行为权重：默认确有引用",
+      "### 国家与用户分层",
+      "## 5. 默认规则中最有意义的实际例子",
+      "## 6. 输出到底去哪里、是否改变游戏",
+      "## 7. 输入来源、默认/热更/生产的边界",
+      "## 8. 历史演进与验证上限"
+    ],
+    "key_lines": [
+      {
+        "line": 28,
+        "text": "| 是TaTa自研还是外购第三方SDK | **【无法确认】法律/商业所有者未证实。**Bulldog/Red命名说明技术组件关系，不证明谁开发、授权或维护；公开搜索仅取得空壳/重定向，没有可信供应商合同或官方产品说明。不得把它强行认作Metica、AppMetrica、Adjust或某个身份图谱商。 |"
+      },
+      {
+        "line": 75,
+        "text": "【代码证实】输入来自广告展示价格记录链；`dynamic_ad/ad_worth.json`包含198个广告位价格和国家bidder默认值，并有保存服务器数据/请求价格路径。**因此AdWorth的worth不是天然等于已结算、精确实收ILRD：在不同广告路径可能使用价格/估值。**尤其加权后的worth是开发者代理价值，不是广告网络额外支付的钱。当前未取得每条广告provider在生产中使用实值或回退值的完整运行trace。[D03](EVIDENCE_INDEX.md#d03)"
+      },
+      {
+        "line": 107,
+        "text": "| 1 | init appType=iaa；尚未发；插屏展示≥5 | Firebase ANA_kRedGeneralEvent_LV、Meta idx1、Adjust RedGeneralEvent_LV；customInt[21]=1。注意eventName残留“Day020T150Inter20”不等于真实条件 |"
+      },
+      {
+        "line": 128,
+        "text": "【代码证实】customInt进入GTUser；来源priority也会进入GTUser。广告规则/预加载层另有读取GTUser group的路径。**【无法确认】本轮未建立“AdWorth某个输出标签→实际改变奖励数量/广告频率”的完整读写链。**原包`ad_rule.json`可以按单应用游玩时长控制StopPreload，这是独立广告策略，不等于AdWorth value本身决定奖励。没有证据证明源权重20导致给用户多播20倍广告。[D06](EVIDENCE_INDEX.md#d06)"
+      },
+      {
+        "line": 137,
+        "text": "| AppsFlyer | 【无法确认】本样本未发现标准SDK或其输入业务链，不把Adjust字段改称AppsFlyer字段 |"
+      }
+    ]
+  },
+  {
+    "path": "10_买量优化机制最终对比.md",
+    "headings": [
+      "# 四款游戏：哪些优化机制已被证实，哪些值得实现",
+      "## 1. 用什么信号识别高价值玩家",
+      "## 2. 本轮最重要的新增判断",
+      "## 3. 我们最值得实现的机制",
+      "## 4. 仍必须从授权后台才能知道的事情"
+    ],
+    "key_lines": [
+      {
+        "line": 10,
+        "text": "| 已证明预测未来LTV吗 | 未证明 | 未证明；GRT的LTVManager是累计已实现收益 | 未证明；pltv命名的可见输入/输出仍是累计收益与静态门槛 | 未证明；当前AdWorth是规则与系数模型，XGBoost广告策略不能直接当用户LTV模型 |"
+      },
+      {
+        "line": 13,
+        "text": "| 来源权重 | campaign分类能力，未证明用于价值倍率 | GRT可按media source筛选，不能等同收入乘权 | 有media source上下文和远程价值资格策略 | 【代码证实】regex来源权重表1/5/10/20；**默认90条无引用，实际启用未知** |"
+      },
+      {
+        "line": 15,
+        "text": "| 跨应用/图谱 | 业务端未证实 | 单应用账户/分析联结；UID2桥无实现/业务触发证明 | 单应用多SDK ID联结；Meta PA为条件化SDK能力 | 共享文件设备ID分支确实存在，现代系统能否成功及跨应用合并未知 |"
+      },
+      {
+        "line": 17,
+        "text": "代码定位：[C03–C06](EVIDENCE_INDEX.md#c03)、[M01–M05](EVIDENCE_INDEX.md#m01)、[R02–R06](EVIDENCE_INDEX.md#r02)、[D01–D07](EVIDENCE_INDEX.md#d01)、[I01–I08](EVIDENCE_INDEX.md#i01)。表中“未知”均为【无法确认】，不是“没有”。"
+      },
+      {
+        "line": 25,
+        "text": "**【公开资料证实】Oakever政策直接披露custom/lookalike audiences与集团共享目的；【无法确认】这不是Meowdoku/Amaze跨应用统一ID已运行的证明。**Jewel公共文件路径提供更具体的客户端共享机制线索，但没有第二应用或运行成功证据。没有可靠证据表明任何一款AdWorth/GRT必须依赖跨应用图谱才能工作。[I03–I08](EVIDENCE_INDEX.md#i03) [P06](EVIDENCE_INDEX.md#p06)"
+      }
+    ]
+  },
+  {
+    "path": "11_AppLovin导量机制专项.md",
+    "headings": [
+      "# AppLovin / Axon 实际导量机制专项",
+      "## 结论",
+      "## 三件必须分开的事",
+      "## 官方可以还原的闭环",
+      "## 最小补证"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "**【无法确认】尚未取得五款目标游戏通过 AppLovin 实际获客的可靠记录。**没有可核验的目标包名×AppLovin 媒体×广告主×展示日期/地区记录，也没有授权的 MMP partner 配置、归因导出或 postback 送达日志。这不等于它们没有投放。[AX04](EVIDENCE_INDEX.md#ax04)"
+      },
+      {
+        "line": 11,
+        "text": "| Car Race | 【游戏代码证实】Adjust campaign 回调、事件和广告收入；Metica 管理 MAX；有通用 AppLovin trackEvent 桥 | campaign 分类的 `mx` 不是已证实的 AppLovin 来源；通用桥未证明关卡/国家阈值进入 AppLovin |"
+      },
+      {
+        "line": 15,
+        "text": "| Amaze GO! | 【无法确认】无可验证包体 | 不从同发行商另一产品推定集成、投放或事件 |"
+      },
+      {
+        "line": 32,
+        "text": "| 展示/点击→安装 | 【AppLovin官方资料证实】tracking macros 含 campaign、创意集、展示应用、国家、event ID、placement | 游戏包内 MAX key 不等于其获客 campaign |"
+      },
+      {
+        "line": 42,
+        "text": "【无法确认】要把某款从“具备链路”提升为“实际投放”，至少需要授权导出的 AppLovin campaign/素材记录或 MMP 的明确 AppLovin attribution；要证明闭环，还需要 partner 启用、事件映射、sharing 范围与送达日志。无需交付 API 密钥。没有这些资料，不报告预算、CPI、ROAS 或国家投放结论。"
+      }
+    ]
+  },
+  {
+    "path": "12_Axon身份与价值优化信号.md",
+    "headings": [
+      "# Axon 身份与价值信号：能力、游戏调用、生产启用分层",
+      "## 哪些信息公开可证",
+      "## 不同意义的“身份关联”",
+      "## 五款价值输入矩阵",
+      "## 两个不能混淆的收入路径"
+    ],
+    "key_lines": [
+      {
+        "line": 19,
+        "text": "| 确定性身份匹配 | 【官方 SDK 代码证实】提供者输入的 user_data 规范化/哈希能力；【无法确认】五款启用、匹配率、跨应用合并 |"
+      },
+      {
+        "line": 21,
+        "text": "| 商业身份图谱/受众同步 | 【无法确认】未取得五款到某图谱供应商/受众后台的实际闭环 |"
+      },
+      {
+        "line": 31,
+        "text": "| Car 关卡里程碑、前5次激励等 | 【游戏代码证实】Adjust 等业务链 | 行为代理 | 【无法确认】需 partner 事件映射 |"
+      },
+      {
+        "line": 32,
+        "text": "| Car `taichi_us/t1/t2/t3` | 【游戏代码证实】Firebase | 实际展示收入缓存跨阈值，发送缓存金额；默认$0.50/.30/.20/.03 | 【无法确认】未证实 Adjust/AF 或 AppLovin 路由；不能假定 Firebase 自动转发 |"
+      },
+      {
+        "line": 33,
+        "text": "| Car 展示收入 | 【游戏代码证实】Adjust/Firebase/TikTok | 实际 provider 收入回调，精度取决上游 | 【无法确认】IAA 收入利用是产品能力，具体 app 开启未知 |"
+      }
+    ]
+  },
+  {
+    "path": "13_AppLovin真实投放证据.md",
+    "headings": [
+      "# 五款游戏 AppLovin 真实投放证据登记",
+      "## 核验标准与结果",
+      "## 实际查过的公开来源",
+      "## 后续只需什么证据"
+    ],
+    "key_lines": [
+      {
+        "line": 3,
+        "text": "2026-11-18。**【无法确认】本轮未取得任何一款目标游戏经 AppLovin 付费获客的可核验记录。**这是一项公开证据缺口，不是“未投放”结论。[AX04](EVIDENCE_INDEX.md#ax04)"
+      },
+      {
+        "line": 11,
+        "text": "| com.dino.race.master | 【无法确认】未取得 | 未取得 |"
+      },
+      {
+        "line": 12,
+        "text": "| com.oakever.meowdoku | 【无法确认】未取得 | 未取得 |"
+      },
+      {
+        "line": 13,
+        "text": "| com.nebula.rotaterings | 【无法确认】未取得 | 未取得 |"
+      },
+      {
+        "line": 14,
+        "text": "| color.number.paint.pixle.art.sort.jigsaw | 【无法确认】未取得 | 未取得 |"
+      }
+    ]
+  },
+  {
+    "path": "14_第三方SDK全量清单.md",
+    "headings": [
+      "# 第三方 SDK 收集清单与来源验证",
+      "## 来源、版本和许可如何核验",
+      "## 与游戏匹配的关键版本",
+      "## 全部版本目录",
+      "## 独立发行包缺口与嵌入组件",
+      "## 验证结果与分析深度"
+    ],
+    "key_lines": [
+      {
+        "line": 5,
+        "text": "**已收集 103 个 AAR、67 个 Maven/JitPack sources JAR，覆盖 124 个有 provenance 的版本目录；另有 TikTok 两个准确标签的官方 GitHub 源码 ZIP。**原始已登记发行材料约 106.4 MiB（不含提取副本/GitHub ZIP）。其中20个目录未取得二进制，不算成功收集SDK。完整结果包括失败尝试，不是目录数量等于SDK数量。"
+      },
+      {
+        "line": 9,
+        "text": "原包已有BuildConfig证据覆盖的**45个MAX适配器版本现均已取得AAR**（含Bigo坐标纠正）；见[ADAPTER_COVERAGE](ThirdPartySDKs/ADAPTER_COVERAGE.json)。未取得的是部分网络的独立核心或其他传递依赖，不是把适配器当作网络完整SDK。"
+      },
+      {
+        "line": 17,
+        "text": "- 【无法确认】未取得AppsFlyer sources JAR；已下载的AAR可反编译。AppLovin sources JAR主要公开API，内部实现来自官方AAR反编译，不称完整源码。"
+      },
+      {
+        "line": 23,
+        "text": "| Car Race | 13.6.4 | Adjust5.5.0 | Firebase22.4.0；Metica核心准确版本本轮未证实 |"
+      },
+      {
+        "line": 45,
+        "text": "| AppLovin / Adapter-bigo-adapter | 5.9.0.0 | 无AAR / 无sources | POM未取得/未声明 | [provenance](ThirdPartySDKs/AppLovin/Adapter-bigo-adapter/5.9.0.0/provenance.json) |"
+      }
+    ]
+  },
+  {
+    "path": "15_AppLovin_MAX与Axon技术分析.md",
+    "headings": [
+      "# AppLovin MAX 与 Axon：独立发行包技术分析",
+      "## 1. 本轮新增的实证",
+      "## 2. MAX 请求、竞价和收入",
+      "## 3. AppDiscovery / Axon 公开闭环",
+      "## 4. 广告质量数据不是自动的模型输入"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "**【实际游戏代码证实】四款内置核心版本已从 `AppLovinSdk.getVersion()` 原始 DEX 读取：Car13.6.4、Meow13.2.0、Rotate13.6.2、Jewel13.6.3。**已下载 Maven Central 对应 AAR，另保留13.7.0作为新版对照。版本匹配不等于全字节一致；Android R8 会重命名、内联和裁剪。[TP01](EVIDENCE_INDEX.md#tp01) [TP02](EVIDENCE_INDEX.md#tp02)"
+      },
+      {
+        "line": 45,
+        "text": " B -.->|无法确认：后台 partner 及送达| A[AppLovin 获客优化]"
+      },
+      {
+        "line": 64,
+        "text": " T[五款具体 AppLovin 活动] -.->|无法确认：没有投放 / 后台导出| C"
+      },
+      {
+        "line": 67,
+        "text": "【无法确认】具体 bid 算法、训练数据采样、预测时间窗、价值校准、跨应用 join、模型参数均不在已取得客户端包内。不是下载 SDK 就恢复了 Axon 模型。"
+      },
+      {
+        "line": 73,
+        "text": "【无法确认】这份声明不是对四款实际网络流量的独立审计；本轮没有运行生产SDK。真实投放仍见[13](13_AppLovin真实投放证据.md)。"
+      }
+    ]
+  },
+  {
+    "path": "16_Adjust_AppsFlyer归因与Postback.md",
+    "headings": [
+      "# Adjust / AppsFlyer：客户端归因与服务端回传的分界",
+      "## 1. 实际客户端做了什么",
+      "## 2. 缓存、重试、去重边界",
+      "## 3. AppLovin partner postback 发生在哪里",
+      "## 4. 不能把代理价值当 checkout",
+      "## 5. 身份关联不是默认跨应用"
+    ],
+    "key_lines": [
+      {
+        "line": 16,
+        "text": "**【官方 SDK 代码证实】**Adjust `PackageBuilder.getAdRevenueParameters`保留 revenue/currency/source、impressions_count、network/unit/placement；`buildEventPackage` 与广告收入不是同一种包。`partner_params` 不等于客户端直接向所有伙伴发 HTTP。[TP04](EVIDENCE_INDEX.md#tp04)"
+      },
+      {
+        "line": 39,
+        "text": " P -.->|无法确认：五款实际送达与活动配置| X[五款的 Axon 优化]"
+      },
+      {
+        "line": 49,
+        "text": "- 【无法确认】Car Firebase-only国家阈值事件到AppLovin没有已建立路由。"
+      },
+      {
+        "line": 50,
+        "text": "- 【无法确认】Rotate AF收入/自定义价值到AppLovin的具体共享配置未知；不能把广告收入purchase别名自动当合法IAP优化金额。"
+      },
+      {
+        "line": 57,
+        "text": "【无法确认】服务器归因匹配算法、反作弊、跨应用join、AppLovin实际postback开关和训练目标均未取得；未访问任何后台或提交伪造事件。"
+      }
+    ]
+  },
+  {
+    "path": "17_第三方身份图谱技术调查.md",
+    "headings": [
+      "# SDK 身份标识、匹配与受众能力",
+      "## 1. 最重要的新证据与边界",
+      "## 2. 各类SDK能力分层",
+      "## 3. 数据关联关系图",
+      "## 4. 政策能证到哪里"
+    ],
+    "key_lines": [
+      {
+        "line": 9,
+        "text": "**【无法确认】这不是目标游戏向AppLovin提供邮箱/电话的证明。**本轮主DEX相关调用扫描未建立目标游戏业务→`AppLovinUserData/setUserData`链；没有以SDK能力替代业务证据，也不据此排除native、远程或服务端集成。[TP02](EVIDENCE_INDEX.md#tp02) [TP08](EVIDENCE_INDEX.md#tp08)"
+      },
+      {
+        "line": 15,
+        "text": "| Car Race | Metica `ApplovinInitializer.initializeSdkInternal(key,userId)`→MAX `setUserIdentifier(str2)` | 包装器能向MAX提供自定义ID；参数最终值与跨app命名空间未证明 |"
+      },
+      {
+        "line": 21,
+        "text": "来源：[TP08](EVIDENCE_INDEX.md#tp08)、[I02–I07](EVIDENCE_INDEX.md#i02)。`setUserIdentifier`单独不等于商业身份图谱。"
+      },
+      {
+        "line": 27,
+        "text": "| AppLovin | 【官方 SDK 代码证实】collector有广告ID、dnt/dnt_code、条件化AppSet/`idfv_scope`、country、cuid等；user_data另有用户提供字段 | 四款MAX存在；三款ID桥可定位；联系方式匹配未证实 |"
+      },
+      {
+        "line": 28,
+        "text": "| Adjust5.5/5.7 | 【官方 SDK 代码证实】GAID/tracking_enabled/AppSet、可选external_device_id、广告ID缺失时fallback；partner_params序列化 | Car Adid/campaign、Jewel归因业务已证；externalDeviceId业务链未证 |"
+      }
+    ]
+  },
+  {
+    "path": "18_游戏与SDK差分分析.md",
+    "headings": [
+      "# 游戏集成与独立SDK差分：原生能力和开发商逻辑",
+      "## 1. 核心版本与API核对",
+      "## 2. 四款实际增加了什么",
+      "## 3. 新追出的桥接证据",
+      "## 4. 历史与归因含义",
+      "## 5. 已证实的数据回传图"
+    ],
+    "key_lines": [
+      {
+        "line": 17,
+        "text": "【无法确认】游戏内被裁剪、内联、混淆的私有函数未做全量语义比对；SDK核心的行为差别也可能来自服务器配置。未发现证据支持宣称开发商修改了AppLovin/Adjust/AF官方内部算法。"
+      },
+      {
+        "line": 23,
+        "text": "| Car | MAX广告、Adjust归因/队列/收入API | Zego生命周期；关卡/激励次数；Firebase国家收入缓存阈值；Metica广告编排 | 【无法确认】Adjust partner及国家事件路由；Metica有generic trackEvent桥，不证明具体价值事件 |"
+      },
+      {
+        "line": 24,
+        "text": "| Meow | MAX、AF、Firebase/Meta/TikTok API | UniKit/Godot桥、Learnings分析/隐私门控、GRT时间窗+关卡/分钟、规则接收端 | 【实际游戏代码证实】`MediaSourceTag.APPLOVIN_INT`识别枚举；【无法确认】真实归因/partner映射 |"
+      },
+      {
+        "line": 25,
+        "text": "| Rotate | MAX收入、AF广告收入接口 | Hurelax wrapper、国家×安装年龄、活跃+收入资格、关闭名单、循环档位 | 【无法确认】AF到AppLovin实际postback；`APPLOVIN_MAX`不算获客证据 |"
+      },
+      {
+        "line": 26,
+        "text": "| Jewel | Adjust归因/收入、Firebase/Meta API | Bulldog AdSource/AdWorth条件树、账本、权重、平台分发和本地状态 | 【无法确认】Adjust7默认规则到AppLovin映射；Meta/Firebase不自动转发 |"
+      }
+    ]
+  },
+  {
+    "path": "19_AppLovin导量证据与技术闭环.md",
+    "headings": [
+      "# AppLovin 导量证据与技术闭环：本轮结论",
+      "## 1. 实际给五款导量了吗",
+      "## 2. 流量可能来自哪里",
+      "## 3. 哪些信号能进入，哪些已证明进入",
+      "## 4. 身份如何关联",
+      "## 5. 谁提供了什么",
+      "## 6. 最值得我们实现的部分",
+      "## 7. 本轮验证范围"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "**【无法确认】目前没有产品级可靠证据。**既未取得可核验的目标游戏×AppLovin广告记录，也未取得授权MMP归因/partner配置/postback日志。Meow的`applovin_int`枚举、四款MAX/适配器、其他产品Oakever/iKame素材资源路径，都不能完成这个证明。Amaze没有样本。[13](13_AppLovin真实投放证据.md) [AX04](EVIDENCE_INDEX.md#ax04)"
+      },
+      {
+        "line": 15,
+        "text": "**【无法确认】**五款具体广告在哪个应用、哪个国家、哪天展示；不可由本游戏适配器清单认定流量来自对应网络，也不可由MAX收入倒推AppLovin预算。"
+      },
+      {
+        "line": 21,
+        "text": "| 安装、打开、归因媒体/campaign | 【官方文档证实】MMP tracking与partner共享 | 【实际游戏代码证实】四款MMP入口/结果消费；【无法确认】实际AppLovin安装或送达 |"
+      },
+      {
+        "line": 22,
+        "text": "| 关卡、教程、参与时长 | 【官方文档证实】CPE、postinstall映射；【官方 SDK 代码证实】13.6.4事件表 | 【实际游戏代码证实】部分规则→Adjust/AF；【无法确认】被AppLovin接收或选为目标 |"
+      },
+      {
+        "line": 23,
+        "text": "| 广告展示价值 | 【官方文档证实】MAX与IAA/Blended产品关联；【官方 SDK 代码证实】ILRD及precision | 【实际游戏代码证实】Car/Jewel→Adjust、Rotate→AF等；【无法确认】目标游戏AppLovin侧的IAA配置 |"
+      }
+    ]
+  },
+  {
+    "path": "20_Axon实际事件调用链.md",
+    "headings": [
+      "# Axon 实际事件调用链：直接发送与 MMP 回传分开证明",
+      "## 结论先行",
+      "## 1. 本轮检查范围与原始位置",
+      "## 2. 事件分类及触发条件",
+      "## 3. 四款显式业务调用逐一核实",
+      "### Car Race：桥存在，但具体游戏触发仍未证明",
+      "### Meowdoku：所查业务仍走 Learnings/GRT/MMP",
+      "### Rotate Rings：有结构化入口，未发现游戏事件走它",
+      "### Jewel Coloring：AdWorth输出没有新增MAX平台",
+      "## 4. 每款能够闭合的静态发送链",
+      "## 5. MMP路径另画，不连接成MAX直发",
+      "## 6. 真实投放记录"
+    ],
+    "key_lines": [
+      {
+        "line": 9,
+        "text": "**【无法确认】目前仍没有建立任何一款“具体游戏关卡/活跃价值/广告收入规则 → MAX EventService → 结构化 Axon `v1/app`”的完整显式业务链。**Car 有两套可用的通用 Unity 桥，但未证明游戏调用它们发送特定事件；Meow/Rotate/Jewel 的所查 DEX 没有 SDK 外部对 EventService 的显式业务调用。不能把该扫描结论扩大成“绝无 native、反射或服务端路径”。[XD01](EVIDENCE_INDEX.md#xd01) [XD02](EVIDENCE_INDEX.md#xd02)"
+      },
+      {
+        "line": 11,
+        "text": "**【官方 SDK 代码证实】结构化协议在 Rotate13.6.2、Jewel13.6.3、Car13.6.4 都存在；Meow13.2.0没有该分支。**但默认 `landing/paused/resumed` 走旧式 `4.0/pix`；默认表里有 `level_complete/purchase` 不等于 SDK 自动观察到游戏行为。[XD03](EVIDENCE_INDEX.md#xd03)"
+      },
+      {
+        "line": 32,
+        "text": "| 崩溃前 `paused` | `AppLovinExceptionHandler.uncaughtException` → `trackEventSynchronously` | 直接构建旧式包并交postback manager | 同步入口不等于服务端送达；不把它叫新的结构化行为事件 |"
+      },
+      {
+        "line": 39,
+        "text": "默认配置可被更新，故“默认走旧协议”不等于永远如此。SDK生命周期事件也不能证明 AppLovin 为该游戏付费导量。"
+      },
+      {
+        "line": 43,
+        "text": "### Car Race：桥存在，但具体游戏触发仍未证明"
+      }
+    ]
+  },
+  {
+    "path": "21_MAX用户ID与身份数据流.md",
+    "headings": [
+      "# MAX 用户ID进入哪里：cuid、持久缓存、事件与user_data",
+      "## 1. 核心结论",
+      "## 2. 三款上游ID来源",
+      "### Meow：补齐上一轮尚未证明的同源关系",
+      "### Car：正常GUID、测试覆盖与中间转发",
+      "### Jewel的边界",
+      "## 3. MAX内的保存与读取",
+      "## 4. 具体进入哪些载荷",
+      "## 5. 能否据此证明身份图谱"
+    ],
+    "key_lines": [
+      {
+        "line": 16,
+        "text": "| Rotate | `w6.e.i(Activity,WAdConfig,listener)`→`GlDataManager$thinking.distinctId()`→`AppLovinSdk.getSettings().setUserIdentifier`→MAX初始化 | distinctId非null才设置；是同应用ThinkingData/MAX的联结，不等于跨应用账户 |"
+      },
+      {
+        "line": 21,
+        "text": "### Meow：补齐上一轮尚未证明的同源关系"
+      },
+      {
+        "line": 39,
+        "text": "**【无法确认】**本轮全DEX未发现业务向MAX设置用户ID或AppLovinUserData的调用；已有Bulldog共享ID→GTUser不能直接画到MAX。MAX仍可能使用其自身广告标识、随机token与环境信息；它们不是已证明的Bulldog ID转交。[XD01](EVIDENCE_INDEX.md#xd01) [I07](EVIDENCE_INDEX.md#i07)"
+      },
+      {
+        "line": 52,
+        "text": "四版包内默认均true。未attach core时Settings先放暂存字段`f`，attach时转交管理器；管理器写内存`b`，`pui`允许时写`com.applovin.sdk.user_id`。下次构造可恢复；若pui关闭会清旧持久项。**这些是默认与实现，不是生产有效配置实测。**附带的SDK随机token有独立字段，不等于传入用户ID。[XD05](EVIDENCE_INDEX.md#xd05)"
+      },
+      {
+        "line": 61,
+        "text": "| 待发/持久队列 | EventService构建map→`network.d`→`network.b`→`network.c`JSON保存 | 封装时已加入的ID可随包缓存；不是只保留一个ID指针，修改当前ID不等于改写所有旧待发包 |"
+      }
+    ]
+  },
+  {
+    "path": "22_AppLovin事件协议版本差分.md",
+    "headings": [
+      "# MAX 13.2.0 / 13.6.2 / 13.6.3 / 13.6.4 事件协议差分",
+      "## 1. 比较结果",
+      "## 2. 进入新分支需要什么",
+      "## 3. 载荷与去重",
+      "## 4. visitInfo与用户ID不是同一回事",
+      "## 5. 队列、磁盘与网络",
+      "## 6. 结构化分支在目标游戏中“可达”到什么程度",
+      "## 7. 仍不能从客户端恢复的部分"
+    ],
+    "key_lines": [
+      {
+        "line": 36,
+        "text": "**【官方 SDK 代码证实】**`core.c(config)`从SettingsManager读取当前配置，`SettingsManager.a(JSONObject)`可按已注册key更新并保存，列表由逗号拆分。包内表不是生产快照；远端设置可能改分流和字段开关。**【无法确认】**本轮未请求或读取任何用户的在线SDK配置，不能断言实际表仍为默认。[XD07](EVIDENCE_INDEX.md#xd07)"
+      },
+      {
+        "line": 49,
+        "text": "**【无法确认】**字段`dedupe_id`、调试缓存或本地once都不能证明服务端去重、账户匹配成功、事件金额被用作训练标签。客户端能构建某字段不等于广告主后台已授权使用。"
+      },
+      {
+        "line": 53,
+        "text": "**【官方 SDK 代码证实】**`firstVisitTs←ia_v2`、`lastVisitTs←last_launch_ms`、`visitCount←app_launch_count`、`currentVisitStartTs←alts_ms`，表示SDK应用访问上下文，不是游戏关卡时长、玩家实际有效操作分钟或未来LTV。未证明SDK以此生成特定游戏的高价值分层。[XD03](EVIDENCE_INDEX.md#xd03)"
+      },
+      {
+        "line": 69,
+        "text": "| Car | 是 | 通用MaxUnity与Metica桥；SDK自动事件 | 【无法确认】可从桥传匹配名称，但没有具体游戏行为的已证实调用 |"
+      },
+      {
+        "line": 70,
+        "text": "| Rotate | 是 | SDK自身生命周期/隐私等 | 【无法确认】没有游戏显式名称匹配链 |"
+      }
+    ]
+  },
+  {
+    "path": "23_Unity_Vector增长机制.md",
+    "headings": [
+      "# Unity Vector：2025—2026 增长机制与证据边界",
+      "## 1. 财报核对：四个不能混用的口径",
+      "## 2. 实际增加了什么",
+      "## 3. D28 的证据有多强",
+      "## 4. 对休闲游戏 ROAS 的实际含义"
+    ],
+    "key_lines": [
+      {
+        "line": 13,
+        "text": "| 2025Q1 | 435 | 285 | -4% | 186.934 | 未取得 | 1,158.974 | +71% |"
+      },
+      {
+        "line": 14,
+        "text": "| 2025Q2 | 440.944 | 287 | -4% | 201.334 | 未取得 | 1,259 | +77% |"
+      },
+      {
+        "line": 15,
+        "text": "| 2025Q3 | 470.615 | 318 | +6% | 226.770 | 未取得 | 1,405 | +68% |"
+      },
+      {
+        "line": 16,
+        "text": "| 2025Q4 | 503 | 338 | +11% | 未取得 | 未取得 | 1,658 | +66% |"
+      },
+      {
+        "line": 27,
+        "text": "- 【官方公开证实】AppLovin 2025Q1 总收入还含 Apps；本表只用其广告收入。Apps 于 2025-06-30 出售，后续作为终止经营呈列。AppLovin 持续经营广告收入也不等于纯手游 IAA 或单独 Axon 的收入。"
+      }
+    ]
+  },
+  {
+    "path": "24_Unity与AppLovin技术对比.md",
+    "headings": [
+      "# Unity Vector 与 AppLovin Axon：机制、SDK 和游戏信号",
+      "## 1. 十项机制比较",
+      "## 2. Unity SDK：实际追到了哪里",
+      "## 3. 两条闭环，不混接",
+      "## 4. 四款游戏：哪些可以成为输入",
+      "## 5. 学习与选择"
+    ],
+    "key_lines": [
+      {
+        "line": 9,
+        "text": "| 展示价值预测 | 【官方公开证实】按预测收入、ROAS 目标动态出价 | 【官方公开证实】自动竞价、定向、ROAS 优化 | 【无法确认】双方单次预测公式、精度及误差谁更小 |"
+      },
+      {
+        "line": 10,
+        "text": "| 玩家与游戏匹配 | 【官方公开证实】Game DNA、玩家行为、生态数据的产品声明 | 【官方公开证实】广告互动、应用/MMP 数据及 AI 个性化声明 | 【无法确认】共同基准下的模型优势；不能把产品宣传当模型审计 |"
+      },
+      {
+        "line": 11,
+        "text": "| D0/D7/D28 IAA | 【官方公开证实】三窗口，D28 文档标 beta | 【官方公开证实】IAA ROAS 产品；已取文档未证同样三窗口的逐项可用性 | 【无法确认】不可据文档缺项宣称 Axon 无长期预测 |"
+      },
+      {
+        "line": 13,
+        "text": "| 学习数据量 | 【官方公开证实】IAA 1000 归因安装及正成熟收入等门槛，见下文 | 【无法确认】未取得等口径硬门槛 | Unity 门槛不能套在 Axon 上，也不等于预测模型训练集总量 |"
+      },
+      {
+        "line": 15,
+        "text": "| MMP 回传 | 【官方公开证实】Adjust/AF partner、Game ID、共享范围、事件映射 | 【官方公开证实】Adjust/AF partner 激活/映射；本地 MAX 事件另一路 | 【无法确认】四款实际后台共享、送达、优化选用 |"
+      }
+    ]
+  },
+  {
+    "path": "25_Unity_Runtime数据优势调查.md",
+    "headings": [
+      "# Unity Runtime 数据优势：可证实的接口、授权与尚缺的链路",
+      "## 1. 三种“数据优势”不能合并成一句话",
+      "## 2. 官方默认值与控制",
+      "## 3. 公开代码核对",
+      "## 4. Unity Exchange 与身份：新增的明确公开证据",
+      "## 5. 是否增加了 Axon 没有的能力"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "| 层级 | 取得的证据 | 尚未取得 |"
+      },
+      {
+        "line": 9,
+        "text": "| 平台宣称 | 【官方公开证实】Vector 产品页称利用游戏 DNA、玩家行为、生态数据及新架构；2026 D7/D28 博客称 first-party gameplay data | 【无法确认】具体特征 schema、Runtime 来源占比、独立模型评估、与 Axon 的同基准实验 |"
+      },
+      {
+        "line": 10,
+        "text": "| 数据收集与使用框架 | 【官方公开证实】Developer Data Framework 分开控制 Collection、Usage、终端用户 consent；可由 Runtime、连接服务/外部分析等输入 | 【无法确认】某游戏组织的后台配置、每项字段实际上线情况 |"
+      },
+      {
+        "line": 11,
+        "text": "| 引擎接口 | 【SDK代码证实】Unity 6000.3 官方参考源码有 ConsentState、Get/SetConsentState 与变更回调 | 【无法确认】native collector 到 Vector 训练流水线实现、每场游戏的生产送达 |"
+      },
+      {
+        "line": 12,
+        "text": "| 研究游戏 | 【游戏代码证实】Car/Rotate 为 Unity 6.3；Meow 为 Godot、Jewel 为 Cocos | 【无法确认】Car/Rotate 对框架的具体授权；非 Unity 引擎游戏仍能接 Unity Ads/MMP，但不能认定具有 Unity 引擎 Runtime 数据 |"
+      }
+    ]
+  },
+  {
+    "path": "26_IAA_ROAS买量经济模型.md",
+    "headings": [
+      "# IAA ROAS 离线经济模型与公平比较方法",
+      "## 1. 可执行产物",
+      "## 2. 公式与口径",
+      "## 3. 同条件示例：不预设胜者",
+      "## 4. 扩量看边际，而不是只看总平均",
+      "## 5. 预测偏差如何损害回报",
+      "## 6. 学习阶段规划",
+      "## 7. 用真实实验选择平台"
+    ],
+    "key_lines": [
+      {
+        "line": 72,
+        "text": "【无法确认】Unity/Axon 的实际偏差、方差、分国家校准、置信区间没有公开共同数据，不能给两者填不同“测得精度”。"
+      }
+    ]
+  },
+  {
+    "path": "27_非游戏数据来源总览.md",
+    "headings": [
+      "# 非游戏数据来源总览：Unity 与 AppLovin",
+      "## 1. 数据入口与去向",
+      "## 2. 实际样本：3×4 类别，明确保留缺口",
+      "## 3. 防止“找到字符串就是集成”",
+      "## 4. 什么可能提升价值预测"
+    ],
+    "key_lines": [
+      {
+        "line": 7,
+        "text": "证据等级：本轮使用【官方公开证实】【公开资料证实】【公开网页代码证实】【SDK代码证实】【合理推断】【无法确认】。政策证明的是主体披露，公开脚本证明的是静态嵌入/实现；两者都不自动证明某用户的生产传输或训练用途。"
+      },
+      {
+        "line": 14,
+        "text": "| 商家服务器 | Conversion API、订单历史上传 | event_time/source_url、data/user_data、dedupe_id、点击参数、归因份额；历史订单金额/用户匹配字段 | 【官方公开证实】AppLovin；历史客户建模、prospecting 寻找新客户 | CAPI key/商家授权；公开接口不等于可匿名使用。未调用 [NG02](EVIDENCE_INDEX.md#ng02) |"
+      },
+      {
+        "line": 21,
+        "text": "| 数据合作伙伴 | Unity Exchange + LiveRamp RampID；Wurl 情境伙伴；MMP | 授权标识、受众/情境段、转化/归因信息 | 【官方公开证实】指定产品/合作场景 | 商业能力不等于目标 App 开启身份图谱；RampID 公告限定美加及双方支持 [VG07](EVIDENCE_INDEX.md#vg07) |"
+      },
+      {
+        "line": 27,
+        "text": "已调查 **9 款 App + 3 个主网站**，另有网站对照样本。不是取得了 12 个 SDK 二进制：App 中 **6 款有明确具名披露、1 款仅发行商共享政策、2 款未证实目标平台接入**；3 主网站均有公开 AppLovin Shopify 嵌入证据。准确 SDK 版本和 App 内实际调用均未从 APK 核验，不凑成“9 款全部已验证”。"
+      },
+      {
+        "line": 35,
+        "text": "| U03 工具：RV Flashlight | [Play](nongame/utility-flashlight-play.txt)指向[成人 Apps & Games 政策](https://www.rvappstudios.com/privacypolicy.html)，[原文](nongame/utility-flashlight-correct.txt) | 共享政策列 AppLovin、Supersonic/IronSource；总体设备/广告标识和广告用途 | 【公开资料证实】共享政策范围；【无法确认】单个手电筒 APK 接入及字段，不能照抄发行商全部 SDK |"
+      }
+    ]
+  },
+  {
+    "path": "28_AppLovin电商与网站数据链.md",
+    "headings": [
+      "# AppLovin 电商、网站与非游戏转化数据链",
+      "## 1. 来源与本轮实际分析",
+      "## 2. 官方事件语义，不混入游戏代理收入",
+      "## 3. 三条技术路径",
+      "### 浏览器：Pixel / GTM",
+      "### 商家服务器：Conversions API",
+      "### Shopify / 订单历史",
+      "## 4. 独立 Axon App SDK，不能只研究 MAX",
+      "## 5. 是否用于 Axon、是否用于游戏"
+    ],
+    "key_lines": [
+      {
+        "line": 29,
+        "text": "| `generate_lead` | 合格线索 | value/currency；明确不发送重复/低质量线索；value是业务线索价值，不等于已收款 |"
+      },
+      {
+        "line": 62,
+        "text": "| 其他匹配 | 可选ifa、idfv、sid、country_code、zip等 | 能用于匹配不等于任意网站拥有或允许发送这些字段 |"
+      },
+      {
+        "line": 63,
+        "text": "| 衡量伙伴 | accounting_mode、attribution_model、attribution_share、is_claimable；可选campaign/creative_set及新老客时间信息 | 第三方衡量结果可告知该事件给AppLovin多少归因信用，不等于服务端训练特征已公开 |"
+      },
+      {
+        "line": 98,
+        "text": "【官方公开证实】[Axon AI官方说明](https://legal.applovin.com/about-applovins-axon-ai/)明确模型使用设备/网络、应用/广告/其他数字属性互动、广告主选择分享的数据、MAX win/loss通知；[转化衡量文档](nongame/doc-attribution.txt)说明关联广告互动与购买以报告及优化。网站目前支持D0/D7优化，展示更长报告窗口不等于对应优化窗口已启用。"
+      },
+      {
+        "line": 102,
+        "text": "但【无法确认】没有官方证据将某商家购物车/订单逐字段映射为某款游戏IAA预测特征；没有数据字典、训练边界、消融结果或目标游戏生产日志。**“授权数据可用于总体AI服务”不等于“所有电商数据默认训练游戏模型”。**商业身份匹配能力也不等于已重建个人身份或有证实的跨设备图谱。"
+      }
+    ]
+  },
+  {
+    "path": "29_Unity非游戏数据与Runtime.md",
+    "headings": [
+      "# Unity 非游戏 App、Runtime 与广告交易数据",
+      "## 1. 实际非游戏接入证据",
+      "## 2. Unity Ads / LevelPlay 可以脱离引擎运行",
+      "## 3. Runtime 与更广义 Developer Data",
+      "### 授权默认值复核",
+      "## 4. Exchange：实际公开的交易字段",
+      "## 5. Unity 与 AppLovin：政策中的具体合作角色",
+      "## 6. 另一个明确但不同的跨应用入口"
+    ],
+    "key_lines": [
+      {
+        "line": 15,
+        "text": "来源：[NG04](EVIDENCE_INDEX.md#ng04)。未取得上述 App 的 APK，没有准确 SDK 版本/实际调用和生产请求证明。不是“已验证3款当前二进制全部正常发送”的结论。"
+      },
+      {
+        "line": 49,
+        "text": "【无法确认】本轮非游戏样本中，没有取得 Unity 引擎版本与 Developer Data授权配置、Runtime接收日志、Vector训练使用的可核验配对。**已证明非游戏广告伙伴，尚未证明非游戏 Runtime→Vector 实例。**"
+      },
+      {
+        "line": 60,
+        "text": "【官方公开证实】先前[Exchange流程](vector/doc-get-started.html)为广告请求→DSP bid request→第一价格拍卖→缓存→展示通知/trackers。**bid request参与者可见的上下文，不等于所有其他网络用户数据库或完整业务内容。**也不能由协议能力断言任一目标广告主实际参与某次交易。"
+      },
+      {
+        "line": 76,
+        "text": "| 某次Unity请求实际发送给AppLovin、并产生win/loss | 【无法确认】没有授权bid log/流量记录；不能从名单证明当前逐笔交易 |"
+      },
+      {
+        "line": 77,
+        "text": "| Unity向AppLovin同步完整电商订单/Runtime、供Axon训练 | 【无法确认】声明未给出这条逐字段业务链 |"
+      }
+    ]
+  },
+  {
+    "path": "30_Unity_AppLovin数据生态对比.md",
+    "headings": [
+      "# Unity 与 AppLovin 非游戏数据生态：结论与未知",
+      "## 1. 两家从游戏以外能知道什么",
+      "## 2. 真实可解释的数据闭环",
+      "## 3. 哪些跨场景关联已有官方证据",
+      "## 4. CTV不是“读取用户正在看的所有内容”",
+      "## 5. 这些信号为什么可能有价值",
+      "## 6. 可借鉴的实现，及还需什么证据",
+      "## 7. 本轮实际交付与限制"
+    ],
+    "key_lines": [
+      {
+        "line": 10,
+        "text": "| 非游戏App转化 | 【官方公开证实】【SDK代码证实】独立Axon1.3.4接口、MMP、广告主事件 | 【官方公开证实】MMP postback、Analytics/IAP对应服务 | SDK/API默认能力不证明样本业务调用；自定义事件不等于真实收入 |"
+      },
+      {
+        "line": 11,
+        "text": "| 电商网站浏览→订单 | 【官方公开证实】【公开网页代码证实】Pixel、CAPI、Shopify、历史订单；3站主题嵌入 | 【官方公开证实】引擎/服务内IAP/D2C及可授权外部数据；本轮未取得可对等验证的通用商家Pixel样本 | AppLovin这条可观察链更完整；不能据本轮未取到证据宣称Unity没有其他网站产品 |"
+      },
+      {
+        "line": 12,
+        "text": "| CTV/视频内容 | 【官方公开证实】Wurl节目场景标签、受众/观看行为产品声明与DSP供给 | 【无法确认】本轮没有取得同等Unity CTV观众数据链 | Wurl属于本轮研究的关联公开入口；其数据自动流到Axon尚未证实 |"
+      },
+      {
+        "line": 13,
+        "text": "| 引擎运行/游戏世界上下文 | 【无法确认】没有对应Unity引擎原生采集链；仍有广告/转化数据 | 【官方公开证实】【SDK代码证实】Unity Runtime/DDF/Consent接口，可用于非游戏Unity产品 | 是不同的技术入口，不是已量化的ROAS优势 |"
+      },
+      {
+        "line": 28,
+        "text": " E -.->|无法确认：具体跨业务特征/训练边界| G[某游戏IAA预测]"
+      }
+    ]
+  },
+  {
+    "path": "31_AppLovin设备身份图谱.md",
+    "headings": [
+      "# AppLovin 设备标识、网站身份与 Axon 关联链",
+      "## 结论与证明边界",
+      "## 1. Android：字段名不等于平台标识类型",
+      "## 2. 哪些是确定性，哪些只是可能的概率匹配",
+      "## 3. Pixel 身份链：逐个标识与调用条件",
+      "## 4. CAPI、哈希及价值数据如何连接",
+      "## 5. 目标游戏实际到了哪一层",
+      "## 6. 是否有证据用于 Axon"
+    ],
+    "key_lines": [
+      {
+        "line": 9,
+        "text": "**【无法确认】没有恢复一张把全部 GAID、IDFA、IDFV、浏览器和账户统一到自然人的服务端图；也没有目标游戏的跨设备匹配结果或由该匹配产生的投放日志。** “客户端能共封装”“官方披露会结合”“某用户已被匹配”“匹配用于某游戏获客”“电商数据训练游戏模型”是五种不同结论。"
+      },
+      {
+        "line": 11,
+        "text": "## 1. Android：字段名不等于平台标识类型"
+      },
+      {
+        "line": 21,
+        "text": "| 可选客户资料 | `AppLovinSdk.setUserData`、`AppLovinUserData`→`r7.a` | 【SDK代码证实】与`setUserIdentifier/cuid`独立；非空对象、`send_user_data`等条件满足才可进入广告请求/事件`user_data`。目标游戏的业务设置未证实 |"
+      },
+      {
+        "line": 35,
+        "text": "| 规范化邮箱/电话的无盐SHA-256 | 【SDK代码证实】可形成可比对的键；【合理推断】相同规范化输入可做确定性键相等匹配 | 哈希相等不等于已验证本人；共享联系方式、格式差异、账号转让均会影响身份语义 |"
+      },
+      {
+        "line": 37,
+        "text": "| MMP的probabilistic attribution | 【官方公开证实】相关Adjust/AppLovin文档支持归因窗口；见既有AX证据 | 概率归因一次安装不等于持久跨设备身份图谱 |"
+      }
+    ]
+  },
+  {
+    "path": "32_Unity身份互通与RampID.md",
+    "headings": [
+      "# Unity 账号身份、广告组件标识与 RampID",
+      "## 1. 三套身份体系分别有何证据",
+      "## 2. 原始源码：从登录到项目玩家",
+      "## 3. 账号数据不能因同属Unity就直接送入广告模型",
+      "## 4. Unity Ads身份封装：比“只看GAID”更具体",
+      "## 5. RampID：正式受众激活能力，尚未恢复具体映射入口",
+      "## 6. 竞价身份字段：公开到哪一步",
+      "## 7. 对目标游戏与买量优化的最终判断"
+    ],
+    "key_lines": [
+      {
+        "line": 9,
+        "text": "| Unity Player Accounts / Authentication | 官方Authentication3.9.0源包、OAuth调用、链接API及产品文档 | 用户登录后跨设备/平台；组织级玩家池及跨游戏标识；项目上下文内的玩家与外部身份映射 | 账号不等于设备；不能把所有项目的PlayerId设为同值；没有默认进入Ads/Vector的证明 |"
+      },
+      {
+        "line": 11,
+        "text": "| LiveRamp RampID / Unity Exchange | Unity2026-04-02官方公告、LiveRamp产品说明 | 美加Exchange库存、接收伙伴支持下激活RampID受众，面向品牌/代理商 | 不是Unity自研LiveRamp图谱；未证某目标游戏/每个请求携带RampID，未证Vector消费RampID |"
+      },
+      {
+        "line": 42,
+        "text": "- 【官方公开证实】Player Accounts默认收集账号邮箱并生成UPA ID；Unity与开发者为独立Controller；用户选择创建/使用账号，不等于所有下游广告用途均获授权。文档明示跨多个应用，并分别处理账号删除与集成App数据删除。"
+      },
+      {
+        "line": 43,
+        "text": "- 【无法确认】没有找到UPA ID/邮箱→RampID或UPA→Vector的直接业务调用、服务端join文档、目标游戏启用记录。总隐私政策允许的广泛处理范围不能替代产品用途/授权证据，也不能反过来证明绝对隔离。"
+      },
+      {
+        "line": 52,
+        "text": "| `analyticsUserId` | `AndroidAnalyticsDataSource.kt:6–8`→`AndroidStaticDeviceInfoDataSource.kt:232–233` | 读取`<AppName>.v2.playerprefs`中的`unity.cloud_userid`，非空才进入初始化payload；本轮未证它等于Authentication PlayerId |"
+      }
+    ]
+  },
+  {
+    "path": "33_两家身份图谱技术对比.md",
+    "headings": [
+      "# AppLovin 与 Unity：身份关联技术的可证比较",
+      "## 1. 同一口径比较",
+      "## 2. 五层证据矩阵：没有一行可以自动向右升级",
+      "## 3. 对四款游戏价值优化结论的影响",
+      "## 4. 哪些机制可借鉴",
+      "## 5. 是否“建设了图谱”的准确回答"
+    ],
+    "key_lines": [
+      {
+        "line": 16,
+        "text": "| 联系方式匹配 | Pixel、MAX13.6.4、独立Axon1.3.4对规范化邮箱/电话SHA-256处理；CAPI/订单历史接受相应字段 | UPA使用登录邮箱；LiveRamp产品处理认证身份，Unity专用输入映射未公开 | AppLovin客户端键处理已证；Unity账号邮箱到RampID/广告模型**未证**。IG01/IG02/IG04/IG08/IG09 |"
+      },
+      {
+        "line": 18,
+        "text": "| 概率匹配/设备图 | 收集到的上下文、MMP概率归因文档支持可能的概率处理；未恢复设备图生成规则 | 广告上下文/预测存在，未恢复账号/设备概率图或Unity-LiveRamp具体匹配配方 | 【合理推断】概率输入能力；【无法确认】图谱阈值、边权、household归并及人级正确率 |"
+      },
+      {
+        "line": 20,
+        "text": "| 跨业务联合训练 | 政策允许跨App/网站结合；Axon披露多类训练输入 | 总政策披露数据结合及广告用途，Runtime/外部数据文档另见25/29 | 【无法确认】订单/邮箱或UPA/RampID逐字段进入特定游戏模型的实际训练，更没有消融收益证据 |"
+      },
+      {
+        "line": 28,
+        "text": "| MAX业务ID→广告请求/事件 | 【SDK代码证实】 | 【实际游戏代码证实】Car/Meow/Rotate；Jewel未建证据 | 【无法确认】 | 【无法确认】这些ID在目标游戏获客中的具体用途；官方仅有总体用途声明 | 【无法确认】 |"
+      },
+      {
+        "line": 29,
+        "text": "| Pixel→CAPI客户/点击/订单 | 【代码/官方公开证实】 | 五款游戏不适用；既有3网站只证嵌入 | 【无法确认】 | 【官方公开证实】转化优化/寻找高价值客户产品用途；具体商家结果未知 | 【无法确认】电商→游戏 |"
+      }
+    ]
+  },
+  {
+    "path": "34_跨设备身份关联证据链.md",
+    "headings": [
+      "# 跨设备、跨应用、跨网站身份关联：逐边证据与断点",
+      "## 1. 证据编号及原始材料",
+      "## 2. 链A：Android MAX设备与发布者标识",
+      "## 3. 链B：网站访客、广告点击、联系方式与订单",
+      "## 4. 链C：Google cookie matching",
+      "## 5. 链D：Unity用户登录及外部身份图",
+      "## 6. 链E：Unity广告组件间的可选ID桥接",
+      "## 7. 链F：LiveRamp与Unity Exchange",
+      "## 8. 链G/H：MMP与跨业务训练的两个断点",
+      "## 9. 尚缺证据与停止边界"
+    ],
+    "key_lines": [
+      {
+        "line": 3,
+        "text": "2026-11-19。所有图都区分静态封装、官方产品能力与未证服务端连接。**没有执行任何账号关联或生产身份请求。**"
+      },
+      {
+        "line": 22,
+        "text": "完整源URL、文件哈希、抓取时间及代码摘录见 [EVIDENCE_INDEX](EVIDENCE_INDEX.md#ig01)、[EVIDENCE_MANIFEST](EVIDENCE_MANIFEST.json)、[代码原段](identity-graph/IDENTITY_CODE_EXCERPTS.json)、[Pixel原段](identity-graph/PIXEL_IDENTITY_EXCERPTS.json)。公开GET成功不等于该页每句营销表述经独立测量；404/403不支持结论。"
+      },
+      {
+        "line": 35,
+        "text": " R -.->|无法确认 本轮无生产送达记录| S[AppLovin接收并完成身份匹配]"
+      },
+      {
+        "line": 36,
+        "text": " S -.->|无法确认 目标游戏具体匹配用途| O[该游戏Axon获客优化]"
+      },
+      {
+        "line": 55,
+        "text": " T -.->|无法确认 某笔生产事件匹配| J[访客与设备 / 客户关联]"
+      }
+    ]
+  },
+  {
+    "path": "35_竞价平台整体架构.md",
+    "headings": [
+      "# Unity vs AppLovin：竞价平台架构与证据边界",
+      "## 1. 最重要的区别是角色，不能先把产品混在一起",
+      "## 2. 本轮实证：值得更新已有认识的发现",
+      "## 3. 拍卖与服务器实现：可证明到哪层",
+      "## 4. 谁掌握更多信息、谁更依赖LTV",
+      "## 5. 交付与实际执行"
+    ],
+    "key_lines": [
+      {
+        "line": 10,
+        "text": "| 交易所/供给 | AppLovin Exchange：DSP与SDK bidders，统一第一价格机制及合并非竞价需求的公开描述 | Unity Exchange：向DSP端点POST报价请求、验证响应、第一价格拍卖、预缓存/展示 | 【官方协议证实】接口和产品规则，不等于恢复全部服务器调度 |"
+      },
+      {
+        "line": 38,
+        "text": "2. **【官方协议证实】赢标不等于展示或计费，通知时机确有差异。** AppLovin区分load/send阶段`nurl`和render阶段`burl`；Unity描述`nurl`在render/delivery时触发并可作计费计数，`burl/imptrackers`也有要求。不把两路回调各累计一笔支出。[36](36_AppLovin_OpenRTB与竞价协议.md) [37](37_Unity_OpenRTB与竞价协议.md)"
+      },
+      {
+        "line": 47,
+        "text": "| 第一价格 | 文档明确最高有效CPM胜出、按报价付费 | Exchange文档明确first-price，`at=1` | 不是第二价格；广告主CPI/ROAS计费界面不等于ExchangeCPM结算 |"
+      },
+      {
+        "line": 52,
+        "text": "| 缓存 | 某些广告同session最多4小时，`imp.exp=14400`提示 | 赢标后pre-cache，体验时计数；过期loss code | Unity具体TTL未取得；MAX每广告expiration配置也不能统一硬编码4小时 |"
+      },
+      {
+        "line": 57,
+        "text": "**【无法确认】没有共同库存、同意状态与授权条件下的生产字段/覆盖率，因此不能给“谁数据更多”排名。** MAX可见它负责的中介响应与加载统计；LevelPlay也可见自己的中介数据；Exchange能见到发给自己的报价；DSP通常只见自己的请求与通知。AppLovin公告明确Axon不摄入其他bidder用户数据/出价信息，不能把中介操作可见性写成训练可用性。"
+      }
+    ]
+  },
+  {
+    "path": "36_AppLovin_OpenRTB与竞价协议.md",
+    "headings": [
+      "# AppLovin Exchange / MAX 协议与竞价路径",
+      "## 1. 实际取得的官方材料",
+      "## 2. 全字段覆盖和主要对象",
+      "## 3. 响应和无效报价",
+      "## 4. 赢标、输标、计费及点击：三个时点",
+      "## 5. 缓存、timeout及版本细节",
+      "## 6. 实际SDK追踪，不能把OpenRTB当移动端原始协议",
+      "## 7. 与Axon的边界"
+    ],
+    "key_lines": [
+      {
+        "line": 13,
+        "text": "【无法确认】旧`/partners/ad-exchange/...`地址跳首页、部分best-practices返回HTTP200的404页面；都记录为无效候选，未用它们证明协议。"
+      },
+      {
+        "line": 41,
+        "text": "【官方协议证实】Auction dynamics明确最高CPM有效来源胜出、与发布者非竞价waterfall需求合并。**非竞价来源的估计/配置CPM不等于新一轮DSP真实报价**；SDK再加载可能失败，故后续failover、无展示与账务需单列。"
+      },
+      {
+        "line": 72,
+        "text": "| 调用链 | 原始位置 | 已证/未证 |"
+      },
+      {
+        "line": 85,
+        "text": "【无法确认】MAX服务器私有完整请求→所有DSP字段映射、各bidder实际资格、throttling、tie-break、净收入/服务费处理、预算和模型更新均没有被本轮恢复；报告不以离线自编代码代替这些未知。"
+      }
+    ]
+  },
+  {
+    "path": "37_Unity_OpenRTB与竞价协议.md",
+    "headings": [
+      "# Unity Exchange / LevelPlay / Unity Ads 协议与竞价路径",
+      "## 1. 原始规范与版本边界",
+      "## 2. 请求对象和字段",
+      "## 3. timeout：不能把所有场景写死200ms",
+      "## 4. 响应、币种和创意要求",
+      "## 5. 赢输标、计费、缓存与点击",
+      "## 6. 设备、身份与隐私过滤",
+      "## 7. Unity Ads客户端：实际数据流",
+      "## 8. LevelPlay私有竞价路径",
+      "## 9. 与Vector的边界"
+    ],
+    "key_lines": [
+      {
+        "line": 40,
+        "text": "【官方协议证实】seatbid段写可返回多个seat，但只用一个，并写选择`bid.id`与`impression.id`相等的seat，多个则随机；与此同时bid表把`impid`明确为impression关联键。**这里有潜在文字/选择规则歧义，不能暗自改成标准再宣称恢复服务器实现。** 本地模拟仅使用一个seat/一个bid，不模拟未证多seat规则。[BP02](EVIDENCE_INDEX.md#bp02)"
+      },
+      {
+        "line": 49,
+        "text": "| `burl` | winning bid变成billable时触发，具体依exchange policy；可替换价格宏 | 与nurl同时存在不等于付两笔钱 |"
+      },
+      {
+        "line": 52,
+        "text": "| 预缓存 | 赢标后拉取HTML/trackers到客户端，用户体验广告时才计展示与其他tracker | 仅获胜/预加载不构成收入；公开loss2说明可能过期，通用TTL未取得 |"
+      },
+      {
+        "line": 53,
+        "text": "| 展示价格宏 | `${AUCTION_PRICE}`及可选`${AUCTION_PRICE:BF}`混淆 | BF为公开说明的Blowfish ECB/PKCS5+URL-safe Base64，并非接口要求用加密价格出价；未取得/使用生产key |"
+      },
+      {
+        "line": 82,
+        "text": "- **【无法确认】**未恢复LevelPlay完整服务器路由、实时排序、floor优化和最终净收益决策；也没有证明LevelPlay每个第三方bid进入Vector训练。"
+      }
+    ]
+  },
+  {
+    "path": "38_双方竞价字段差分.md",
+    "headings": [
+      "# AppLovin与Unity竞价字段及语义差分",
+      "## 1. 决策和财务字段：同名不等义",
+      "## 2. 广告对象、格式与扩展",
+      "## 3. 身份字段：客户端有不代表DSP有",
+      "## 4. 同意与过滤的实质差异",
+      "## 5. 完整性审查与不能自动修正的文档问题"
+    ],
+    "key_lines": [
+      {
+        "line": 17,
+        "text": "| `price` | CPM，单展示交易 | CPM，正数、非加密、最多3位小数 | 第一价格不等于第二高价；每次计费量为CPM/1000再按币种处理 |"
+      },
+      {
+        "line": 26,
+        "text": "| clearing反馈 | 文档明确nurl/lurl可带最终AUCTION_PRICE；winner另有second-highest宏 | 已取页有AUCTION_PRICE、loss reason与可选BF；未证同等second-highest宏 | 通知的可观察信息不同，不证明完整对手bid向量可见 |"
+      },
+      {
+        "line": 42,
+        "text": "**【官方协议证实】“本轮文档独有披露”不等于“平台独有能力”。** 示例字段、标准默认、规范正文和表格的证明力不同；自动diff只做结构对照，没有按字段数量判信息量。"
+      },
+      {
+        "line": 51,
+        "text": "| MAX CUID | 业务setUserIdentifier→app_info.cuid/旧事件 | **未证自动等同公开user.id** | AppLovin的user.id文档为每App设备ID；两者不能因都是user ID就合并 |"
+      },
+      {
+        "line": 53,
+        "text": "| Unity AUID / Analytics ID | 可选LevelPlay AUID、unity.cloud_userid→Unity Ads初始化 | 未证映射为Exchange user.id或RampID | 组件桥接不等于UPA跨设备账号或统一图谱 |"
+      }
+    ]
+  },
+  {
+    "path": "39_Axon_Vector预测与出价机制.md",
+    "headings": [
+      "# Axon / Vector：预测如何影响广告出价",
+      "## 1. 四个不同的“价格”",
+      "## 2. 官方明确说了什么",
+      "## 3. 逐项判定",
+      "## 4. 可解释出价方向的经济近似，不是真实算法",
+      "## 5. 反馈如何闭环，以及哪些不能跳接",
+      "## 6. 四款游戏哪些信号可进入价值优化",
+      "## 7. 谁更依赖长期价值，财报能否回答"
+    ],
+    "key_lines": [
+      {
+        "line": 26,
+        "text": "【无法确认】双方每次出价的pCTR/pCVR/留存/IAP/IAA分头结构、预测误差、校准、预算pacing、bid shading、在线训练延迟和特征权重均未恢复；没有名叫Vector的客户端类也不意味着未使用服务端Vector。"
+      },
+      {
+        "line": 32,
+        "text": "| 安装概率/玩家匹配 | 官方“users most likely to download or engage” | 官方用户匹配/动态收入竞价说明 | 【官方公开证实】预测用途；【无法确认】是否显式独立pInstall head |"
+      },
+      {
+        "line": 39,
+        "text": "| 反馈与更新 | 官网持续学习及MAX/MMP等输入类别 | 文档ROAS数据回传/学习及产品改进 | 未知每条loss/广告收入何时加入何模型；未证逐展示在线学习 |"
+      },
+      {
+        "line": 83,
+        "text": "**【无法确认】没有新的独立投放记录或授权后台数据证明这些游戏通过Axon/Vector实际获客，因而不能报告“某事件已经提高其竞价/ROAS”。**"
+      },
+      {
+        "line": 87,
+        "text": "不能。两家的收入/财报增速及Vector产品增长已在23号核对；它们反映业务表现，不能区分模型改进、预算迁移、流量结构、产品整合或单用户LTV特征贡献。**【无法确认】没有同国同素材同预算同成熟窗口的对投，亦无模型消融或统一误差指标。**"
+      }
+    ]
+  },
+  {
+    "path": "40_竞价经济模型与离线模拟.md",
+    "headings": [
+      "# 竞价经济模型及本地实验结果",
+      "## 1. 实现了什么，哪些是人为假设",
+      "## 2. 可重跑方式",
+      "## 3. 实际检查覆盖",
+      "## 4. 合成cohort设定",
+      "## 5. 已运行结果",
+      "## 6. 去除超时混淆的控制实验",
+      "## 7. 反馈示例",
+      "## 8. 仍无法模拟为真实平台的内容"
+    ],
+    "key_lines": [
+      {
+        "line": 14,
+        "text": "| floor | AppLovin严格大于；Unity采用大于等于 | 前者【官方协议证实】；后者**未证明的边界假设**，显式可替换 |"
+      },
+      {
+        "line": 19,
+        "text": "| 去重/预算 | 账本按request/bidder/creative仅收费一次；用Decimal，每次支出CPM/1000；有限预算过滤 | 【模型假设】教学账本不等于供应商财务实现；实际预算pacing未知 |"
+      },
+      {
+        "line": 68,
+        "text": "这只说明本模拟器中的两组差异来自明确设置的规则/时限，不是偷偷给某家更准确的模型。**不能升级为两家真实系统等价。** 真实库存、bid shading、隐私、FX、审核、费用与预测可能不同，本实验未取得相应生产数据。"
+      }
+    ]
+  }
+]

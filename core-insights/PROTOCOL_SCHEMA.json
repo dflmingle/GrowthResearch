@@ -1,0 +1,629 @@
+{
+  "scope": "Analyst reconstruction of all fields emitted by IAP5.5.1 public serializer; original Schemas~ .proto not present in tarball",
+  "package": {
+    "sdk": "com.unity.purchasing",
+    "version": "5.5.1",
+    "path": "cross-sdk/packages/purchasing/5.5.1/purchasing-5.5.1.tgz",
+    "sha256": "cf382958920ef886c51998988153ac55d6682fbd79d79cfb34362d7973ca9403",
+    "url": "https://download.packages.unity.com/com.unity.purchasing/-/com.unity.purchasing-5.5.1.tgz",
+    "registry_time": "2026-11-16T18:18:08.510Z",
+    "dependencies": {
+      "com.unity.ugui": "1.0.0",
+      "com.unity.modules.unitywebrequest": "1.0.0",
+      "com.unity.modules.jsonserialize": "1.0.0",
+      "com.unity.modules.androidjni": "1.0.0",
+      "com.unity.services.core": "1.19.0",
+      "com.unity.services.deployment": "1.7.2"
+    },
+    "license": "Unity Companion Package License v1.0",
+    "scope": "official standalone SDK; not proof of target-game integration"
+  },
+  "schema_name": "insights.producers.iapsdk.v1alpha1.IAPSDKEvent",
+  "schema_version": "1",
+  "proto_sdk_version": "1",
+  "primitive_rules": "proto3 default omission, varint0 and LEN2; timestamp seconds/nanos; one active event variant",
+  "writer_methods": {
+    "SerializeIaps": {
+      "signature": "Stream s, IAPSDKEvent e",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "TimestampField",
+          "expression": "e.Timestamp)",
+          "source_line": 41
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.EventUuid)",
+          "source_line": 42
+        },
+        {
+          "number": 3,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.SessionId)",
+          "source_line": 43
+        },
+        {
+          "number": 4,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.FirebaseSessionId)",
+          "source_line": 44
+        },
+        {
+          "number": 5,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.ProjectId)",
+          "source_line": 45
+        },
+        {
+          "number": 6,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.EnvironmentId)",
+          "source_line": 46
+        },
+        {
+          "number": 7,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.IapSdkVersion)",
+          "source_line": 47
+        },
+        {
+          "number": 8,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.EngineVersion)",
+          "source_line": 48
+        },
+        {
+          "number": 9,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)e.UnityConsentStateAdsIntent)",
+          "source_line": 52
+        },
+        {
+          "number": 10,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)e.UnityConsentStateAnalyticsIntent)",
+          "source_line": 56
+        },
+        {
+          "number": 11,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WritePlayerIdentity(sub, e.UnityIdentities!))",
+          "source_line": 61
+        },
+        {
+          "number": 12,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteDeviceInfo(sub, e.DeviceInfo!))",
+          "source_line": 65
+        },
+        {
+          "number": 13,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteReporting(sub, e.Reporting!))",
+          "source_line": 69
+        },
+        {
+          "number": 14,
+          "wire_type": 2,
+          "writer": "TimestampField",
+          "expression": "e.InstallationTimestamp.Value)",
+          "source_line": 74
+        },
+        {
+          "number": 15,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)e.Store)",
+          "source_line": 79
+        },
+        {
+          "number": 16,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteOrder(sub, e.Order!))",
+          "source_line": 84
+        },
+        {
+          "number": 21,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.ApplicationVersion)",
+          "source_line": 89
+        },
+        {
+          "number": 24,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.ImpressionId)",
+          "source_line": 90
+        },
+        {
+          "number": 100,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.FirebaseAppId)",
+          "source_line": 91
+        },
+        {
+          "number": 101,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.InstallMode)",
+          "source_line": 92
+        }
+      ]
+    },
+    "WriteEventVariant": {
+      "signature": "Stream s, IEventVariant? variant",
+      "fields": [
+        {
+          "number": 17,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "_ => { })",
+          "source_line": 100
+        },
+        {
+          "number": 18,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteStorePayload(sub, paid.Payload))",
+          "source_line": 103
+        },
+        {
+          "number": 19,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WritePurchaseFailed(sub, failed))",
+          "source_line": 106
+        },
+        {
+          "number": 20,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteStorePayload(sub, fulfilled.Payload))",
+          "source_line": 109
+        },
+        {
+          "number": 22,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "_ => { })",
+          "source_line": 112
+        },
+        {
+          "number": 23,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WritePaymentOptionsShown(sub, shown))",
+          "source_line": 115
+        }
+      ]
+    },
+    "WritePaymentOptionsShown": {
+      "signature": "Stream s, PaymentOptionsShownEvent e",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)option)",
+          "source_line": 130
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.OptionsDefaultProvider)",
+          "source_line": 133
+        }
+      ]
+    },
+    "WritePurchaseFailed": {
+      "signature": "Stream s, PurchaseFailedEvent e",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)e.FailureReason)",
+          "source_line": 140
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "e.FailureMessage)",
+          "source_line": 142
+        }
+      ]
+    },
+    "WriteStorePayload": {
+      "signature": "Stream s, IStorePayload? payload",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteAppStorePayload(sub, apple))",
+          "source_line": 153
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteGooglePlayPayload(sub, google))",
+          "source_line": 156
+        }
+      ]
+    },
+    "WriteAppStorePayload": {
+      "signature": "Stream s, AppStorePayload p",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.AppReceipt)",
+          "source_line": 163
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.JwsRepresentation)",
+          "source_line": 164
+        },
+        {
+          "number": 3,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.OriginalTransactionId)",
+          "source_line": 165
+        },
+        {
+          "number": 4,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.AppAccountToken)",
+          "source_line": 166
+        },
+        {
+          "number": 5,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)p.OwnershipType)",
+          "source_line": 169
+        }
+      ]
+    },
+    "WriteGooglePlayPayload": {
+      "signature": "Stream s, GooglePlayPayload p",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.OriginalJson)",
+          "source_line": 175
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.Signature)",
+          "source_line": 176
+        }
+      ]
+    },
+    "WriteOrder": {
+      "signature": "Stream s, InsightsOrderData o",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "MessageField",
+          "expression": "sub => WriteSku(sub, o.Sku))",
+          "source_line": 183
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "o.StoreTransactionId)",
+          "source_line": 185
+        }
+      ]
+    },
+    "WriteSku": {
+      "signature": "Stream s, Sku sku",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.SkuId)",
+          "source_line": 190
+        },
+        {
+          "number": 2,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "(long)sku.ProductType)",
+          "source_line": 193
+        },
+        {
+          "number": 3,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.LocalizedTitle)",
+          "source_line": 195
+        },
+        {
+          "number": 4,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.LocalizedDescription)",
+          "source_line": 196
+        },
+        {
+          "number": 5,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.LocalizedPriceString)",
+          "source_line": 197
+        },
+        {
+          "number": 6,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "sku.PriceMicro.Value)",
+          "source_line": 200
+        },
+        {
+          "number": 7,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.IsoCurrencyCode)",
+          "source_line": 202
+        },
+        {
+          "number": 8,
+          "wire_type": 0,
+          "writer": "VarintField",
+          "expression": "sku.Quantity)",
+          "source_line": 205
+        },
+        {
+          "number": 9,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.CatalogListingId)",
+          "source_line": 207
+        },
+        {
+          "number": 10,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "sku.UnitySku)",
+          "source_line": 208
+        }
+      ]
+    },
+    "WriteReporting": {
+      "signature": "Stream s, Reporting r",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "r.Platform)",
+          "source_line": 213
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "r.AppBundleId)",
+          "source_line": 214
+        }
+      ]
+    },
+    "WriteDeviceInfo": {
+      "signature": "Stream s, InsightsDeviceInfo d",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "d.SystemLanguage)",
+          "source_line": 219
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "String",
+          "expression": "locale ?? \"\")",
+          "source_line": 224
+        },
+        {
+          "number": 3,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "d.Model)",
+          "source_line": 227
+        },
+        {
+          "number": 4,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "d.SystemBootTime)",
+          "source_line": 228
+        },
+        {
+          "number": 5,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "d.OsVersion)",
+          "source_line": 229
+        },
+        {
+          "number": 6,
+          "wire_type": 0,
+          "writer": "UInt64Field",
+          "expression": "d.TotalSpace)",
+          "source_line": 232
+        }
+      ]
+    },
+    "WritePlayerIdentity": {
+      "signature": "Stream s, PlayerIdentity p",
+      "fields": [
+        {
+          "number": 1,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.UnityInstallationId)",
+          "source_line": 238
+        },
+        {
+          "number": 2,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.PlayerId)",
+          "source_line": 239
+        },
+        {
+          "number": 3,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.UserId)",
+          "source_line": 240
+        },
+        {
+          "number": 4,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.AnalyticsId)",
+          "source_line": 241
+        },
+        {
+          "number": 5,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.Idfa)",
+          "source_line": 242
+        },
+        {
+          "number": 6,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.Gaid)",
+          "source_line": 243
+        },
+        {
+          "number": 7,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.Idfv)",
+          "source_line": 244
+        },
+        {
+          "number": 8,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.UnityAdsIdfi)",
+          "source_line": 245
+        },
+        {
+          "number": 9,
+          "wire_type": 2,
+          "writer": "OptionalString",
+          "expression": "p.AppInstanceId)",
+          "source_line": 246
+        }
+      ]
+    }
+  },
+  "enums": {
+    "ConsentState": {
+      "Unspecified": 0,
+      "Unset": 1,
+      "Granted": 2,
+      "Denied": 3
+    },
+    "DataCollectionMode": {
+      "Unspecified": 0,
+      "Basic": 1,
+      "Recommended": 2
+    },
+    "EventType": {
+      "Unspecified": 0,
+      "IapSdk": 1000
+    },
+    "FailureReason": {
+      "Unspecified": 0,
+      "PurchasingUnavailable": 1,
+      "ExistingPurchasePending": 2,
+      "ProductUnavailable": 3,
+      "SignatureInvalid": 4,
+      "UserCancelled": 5,
+      "PaymentDeclined": 6,
+      "DuplicateTransaction": 7,
+      "ValidationFailure": 8,
+      "StoreNotConnected": 9,
+      "PurchaseMissing": 10,
+      "Unknown": 11,
+      "UserNotAuthenticated": 12,
+      "NotSupported": 13,
+      "OrderCancelled": 14,
+      "OrderStateChanged": 15
+    },
+    "Store": {
+      "Unspecified": 0,
+      "AppStore": 1,
+      "GooglePlay": 2,
+      "PaymentProvider": 3,
+      "Webshop": 4
+    },
+    "ProductType": {
+      "Unspecified": 0,
+      "Consumable": 1,
+      "NonConsumable": 2,
+      "Subscription": 3,
+      "Unknown": 4
+    },
+    "OwnershipType": {
+      "Unspecified": 0,
+      "Purchased": 1,
+      "FamilyShared": 2
+    },
+    "PaymentOption": {
+      "Unspecified": 0,
+      "Native": 1,
+      "Stripe": 2,
+      "Codapay": 3,
+      "Webshop": 4
+    }
+  },
+  "timestamp": {
+    "1": "int64 seconds since Unix epoch",
+    "2": "int32 nanos; .NET ticks * 100; precision is not native nanosecond clock precision"
+  },
+  "unknown": "Canonical proto reserved fields/options and server validation/normalization are not recovered"
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "ID01",
+    "source": "Authentication IPlayerId.PlayerId",
+    "target": "Analytics IdentityManager.PlayerId -> unityPlayerID",
+    "kind": "明确组件读取与序列化",
+    "refs": [
+      "XS18",
+      "XS19",
+      "XS20"
+    ],
+    "scope": "UGS项目玩家，不等于Analytics UserId"
+  },
+  {
+    "id": "ID02",
+    "source": "Core IExternalUserId.UserId",
+    "target": "Analytics UserId; fallback InstallId",
+    "kind": "明确赋值/优先级",
+    "refs": [
+      "XS18",
+      "XS19"
+    ],
+    "scope": "开发者控制的命名空间；不是自动跨发行商ID"
+  },
+  {
+    "id": "ID03",
+    "source": "FirebaseAnalytics.getAppInstanceId()",
+    "target": "IAP pps.UnityAppInstanceId -> Insights.PlayerIdentity.AppInstanceId",
+    "kind": "JNI getter + 逐级赋值",
+    "refs": [
+      "XS01",
+      "XS02",
+      "XS03",
+      "XS11"
+    ],
+    "scope": "5.5.1; ads consent +远程允许 +Firebase可用"
+  },
+  {
+    "id": "ID04",
+    "source": "FirebaseAnalytics.getSessionId()",
+    "target": "IAP FirebaseSessionId -> protobuf tag4",
+    "kind": "明确读取和序列化",
+    "refs": [
+      "XS03",
+      "XS10",
+      "XS13"
+    ],
+    "scope": "会话标识；5.4.0不能据字段存在声称已发送"
+  },
+  {
+    "id": "ID05",
+    "source": "FirebaseApp.getOptions().getApplicationId()",
+    "target": "IAP FirebaseAppId -> protobuf tag100",
+    "kind": "明确应用上下文映射",
+    "refs": [
+      "XS41",
+      "XS13"
+    ],
+    "scope": "项目/App标识，不是用户身份"
+  },
+  {
+    "id": "ID06",
+    "source": "IAP CoreRegistry IPlayerId / IExternalUserId / AnalyticsService.GetAnalyticsUserID",
+    "target": "Insights PlayerId / UserId / AnalyticsId",
+    "kind": "明确各自赋值，保持分字段",
+    "refs": [
+      "XS06",
+      "XS01",
+      "XS11"
+    ],
+    "scope": "可同包出现，不代表这些字符串彼此相等"
+  },
+  {
+    "id": "ID07",
+    "source": "MAX adapter serverParameters.event_id",
+    "target": "Google networkExtras.placement_req_id",
+    "kind": "明确字段改名赋值",
+    "refs": [
+      "XS30"
+    ],
+    "scope": "广告请求关联，不是人或跨App用户"
+  },
+  {
+    "id": "ID08",
+    "source": "MAX consent / doNotSell",
+    "target": "Unity gdpr.consent / privacy.consent",
+    "kind": "明确Boolean转换",
+    "refs": [
+      "XS28",
+      "XS29"
+    ],
+    "scope": "配置缺失不自动当已同意；不证明实际初始化"
+  },
+  {
+    "id": "ID09",
+    "source": "official Facebook app signed AttributionIdProvider.aid",
+    "target": "Adjust DeviceInfo.fbAttributionId -> PackageBuilder.fb_id",
+    "kind": "签名检查、provider读取及包字段",
+    "refs": [
+      "XS34",
+      "XS44"
+    ],
+    "scope": "不是Facebook账号ID，也不是Meta AppEvents匿名ID"
+  },
+  {
+    "id": "ID10",
+    "source": "Developer Singular customUserId",
+    "target": "SingularInstance.saveCustomUserId",
+    "kind": "显式setter",
+    "refs": [
+      "XS39"
+    ],
+    "scope": "未证明任何目标游戏或其他MMP设置同值"
+  }
+]

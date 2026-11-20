@@ -1,0 +1,160 @@
+"""Client-side evidence synthesis; no SDK execution or production requests."""
+from pathlib import Path
+
+R = Path(__file__).resolve().parent.parent
+
+report58 = '''# Axon / Vector完整买量反馈闭环
+
+2026-11-19。本报告区分**可见代码路径、官方产品契约、目标游戏实际启用、生产送达和模型训练**。实线仅代表所标范围有证据，不代表观察到线上成功。原始位置、版本、文件/原包SHA256见[CGS目录](client-growth/SOURCE_CATALOG.md)；逐字段见[安装前血缘](client-growth/PREBID_FIELD_LINEAGE.json)。历史图的未知边全部保留。
+
+## 1. Axon：三种传输路径不能合并
+
+```mermaid
+flowchart TD
+ O[媒体App广告机会] -->|SDK代码证实 CGE01-CGE06| T[MAX收集各网络signal并构造请求]
+ T -.->|无法确认 CGE17 SDK到具体DSP字段映射| X[Exchange或获客网络]
+ X -->|官方公开证实 原35-38协议| C[展示与点击及胜负通知]
+ C -->|官方公开证实 CGE13 总体用途| P[Axon展示价值预测与出价]
+ C -->|官方公开证实 CGE14-CGE15 归因契约| M[MMP安装与后续事件]
+ G[目标游戏真实收入或行为] -->|SDK及游戏代码 见49号| M
+ M -->|官方公开证实 CGE14-CGE15 需后台授权映射| A[AppLovin partner接收契约]
+ A -.->|无法确认 CGE19 逐字段join及标签| P
+ L[MAX变现收入] -->|官方公开证实 原A09 IAA或Blended产品关联| P
+ E[MAX自动事件或显式trackEvent] -->|SDK代码证实 20-22号| Q[本地事件封装及postback队列]
+ Q -.->|无法确认 生产送达及训练| P
+ B[目标游戏关卡或AdWorth] -.->|无法确认 CGE22 无已建立显式业务链| E
+```
+
+- 【SDK代码证实】MAX `MediationServiceImpl.collectSignal`先查可配置TTL缓存；Unity适配器调用`UnityAds.getToken(TokenConfiguration(format))`；Google适配器调用`QueryInfo.generate`。MAX `a6.g/i/run`将`signal_data`写入POST构造并调度。**媒体变现请求不等于Axon需求侧最终报价**。[CGS23–CGS34](client-growth/SOURCE_CATALOG.md#cgs23)
+- 【官方公开证实】Axon声明使用设备/网络、应用/广告等互动、自己收到的MAX胜负通知和广告主选择共享的数据，按对特定广告主的展示价值出价；排除竞争者报价、竞争者用户数据和敏感/受保护数据。[CGS51](client-growth/SOURCE_CATALOG.md#cgs51)
+- 【官方公开证实】MMP可分享同一目标App的全部来源含自然量；AppLovin `landing/checkout/postinstall`是partner映射契约，**不是客户端MAX trackEvent自动路由**。`checkout`只允许真实用户支付，不能放IAA或预测LTV。[CGS49–CGS52](client-growth/SOURCE_CATALOG.md#cgs49)
+- 【SDK代码证实】20—22号已恢复SDK自动`landing/paused/resumed`、条件化`axon_events`与旧`4.0/pix`/新`v1/app`。Meow13.2无结构化分支；其他三款包含它，但尚无具体游戏价值事件→该分支的已建立链。自动事件、原始广告收入、MMP事件各自独立。[20](20_Axon实际事件调用链.md)、[22](22_AppLovin事件协议版本差分.md)
+
+【无法确认】MMP里的真实IAA到AppLovin必须有正确专用通道/产品配置；不能拿`checkout`映射补出这条边。MAX与IAA/Blended的产品关联已证，不等于恢复了AppLovin内部收入训练表。静态构包也不是成功HTTP、服务端入库或训练证明。
+
+## 2. Vector：广告SDK、MMP和Insights是不同入口
+
+```mermaid
+flowchart TD
+ O[媒体广告机会] -->|SDK代码证实 CGE01| T[Unity Token外层会话和广告状态]
+ T -->|SDK代码证实 CGE04-CGE05| R[中介signal或Unity私有请求]
+ R -.->|无法确认 CGE17 私有协议到OpenRTB映射| D[需求评估与竞价]
+ D -->|官方公开证实 原协议| I[展示 点击 安装]
+ I -->|官方公开证实 CGE12 合法标识和归因契约| M[MMP归因服务]
+ G[同一目标App自然量及跨渠道收入] -->|官方公开证实 CGE09-CGE10 后台共享需授权| M
+ M -->|官方公开证实 CGE09-CGE12| U[Unity postback接收契约]
+ U -->|官方公开证实 CGE08-CGE11 产品级学习| V[ROAS与Vector学习]
+ U -.->|无法确认 CGE20 字段级样本和join| V
+ A[UGS Analytics] -->|SDK代码证实 53-55号| C[UGS collect]
+ C -.->|无法确认 原XU边| V
+ P[IAP5.5.1身份及购买阶段] -->|SDK代码证实 原C53E11-C53E12| N[Insights gateway或native边界]
+ N -.->|无法确认 原C53E13| V
+```
+
+【SDK代码证实】Unity4.17/4.18的Token有当前会话计数、HB seq/wins/starts、已加载/展示campaign状态；可选PII受AllowedPii控制。`fid`在所查Android桥中实际取**Firebase Analytics App Instance ID**，不是FID安装ID。计数/状态是明确历史线索；没有恢复内层`campaign.data/sessionToken`语义，也没有证明可跨App持久合并。[CGS01–CGS22](client-growth/SOURCE_CATALOG.md#cgs01)
+
+【官方公开证实】Unity明确支持安装/会话/购买/广告收入的attributed与unattributed postback，后者包括其他网络与自然量。预启动至少两周的SDK数据及对应未归因事件有助训练，但不计入退出学习阈值。D28产品使用D7成熟门槛不表示D28收入已观测完整。[CGS42–CGS48](client-growth/SOURCE_CATALOG.md#cgs42)、[CGS53](client-growth/SOURCE_CATALOG.md#cgs53)
+
+【无法确认】“Unity SDK data”没有给出本轮每个Token字段→Vector训练feature的映射；IAP Insights接收→具体训练标签也仍未知。UGS Analytics已经构包不能证明自动成为Vector输入。官方产品级训练用途与具体字段生产血缘分别保存，不互相替代。
+
+## 3. 身份join：找到契约，仍未得到成功匹配事实
+
+| 连接 | 已证内容 | 条件及断点 |
+|---|---|---|
+| Unity私有Token上下文 | tokenId/tokenNumber、sessionToken、受限广告ID/AppSet/App Instance ID与会话状态同包 | 【SDK代码证实】同包不等于后台统一身份；tokenId是机会相关ID，不是玩家ID |
+| Unity MMP→postback | gamer_id/aid/ifa、campaign_id、advertiser game_id、install_ts、事件时间、归因标记与金额 | 【官方公开证实】字段契约；实际受隐私/可用性限制。不能把publisher Game ID当advertiser Game ID；未得匹配ACK |
+| MAX用户ID | Meow AdUuid、Rotate分析ID、Car Metica用户ID可入MAX既有路径 | 【SDK代码证实/既有游戏代码】单应用链；不是GAID等价关系，也不是跨发行商自然人身份；可选user_data另受对象/开关控制 |
+| IAP与Analytics | Core安装提供者、Authentication PlayerId、外部ID及可选Firebase getter已追踪 | 【SDK代码证实】提供者和读取条件；相同接口≠相同跨应用ID；不证明Vector join |
+| 两平台训练样本join | 需要广告机会、点击、安装、后续收入和可用时间/同意的关联表 | 【无法确认】没有脱敏生产匹配率、错误率、键作用域、受限流量fallback或数据集版本 |
+
+原始依据：[21](21_MAX用户ID与身份数据流.md)、[48](48_跨SDK身份关联与字段映射.md)、[55](55_跨SDK身份价值血缘最终核验.md)、CGS10–CGS16/CGS34/CGS48。App Set、App Instance、安装/玩家/会话ID不能凭同名互换。
+
+## 4. 时间与金额必须保持隔离
+
+1. **安装前**仅用当前机会Token生成前已存在的媒体App状态，以及有合法关联契约且此前已可用的历史。预加载Token时间≠最终bid_time；SDK计数也可能被服务器更新或重置。未经服务器快照证据，不声称已经验证严格as-of。
+2. **安装后**目标App的收入是反馈/标签候选，不得倒灌到同次安装前特征；D0行为只能用于安装后更新或后续可用历史。自然量共享能改善训练，不让新用户未来收入提前可见。
+3. `was_conversion_attributed=0`是未归因给Unity，不等于无来源，也不计作Unity付费安装。ALL-source扩大样本，不能扩大付费ROAS分子而不改分母。
+4. IAA按经济展示去重，保留币种、时间、收入precision和估值版本；不同SDK收到同回调不重复计收。IAP验单/退款及paid/fulfilled去重；商品metadata价格不是必然成交额。
+5. GRT/AdWorth/国家阈值属于代理或达标事件，不能与实际IAA/IAP相加，也不能伪装checkout。端上once、event UUID和去重参数不证明服务端幂等或已训练。
+
+1–3依据CGS01/CGS16/CGS28–CGS31/CGS43/CGS48；4–5依据[49](49_行为价值事件端到端调用链.md)、[54](54_Unity_Insights事件协议与接收边界.md)、CGS52。具体会计要求为独立验证规范，不冒充平台已公开实现。
+
+## 5. 四款游戏现在真正能接到哪里
+
+| 游戏 | 【游戏代码证实】的末端 | 到Axon/Vector尚缺什么 |
+|---|---|---|
+| Car Race | ILRD到Adjust/Firebase/TikTok；关卡/会话到Adjust；国家累计阈值已定位路径为Firebase-only | MAX generic桥无已证特定价值触发；Firebase-only阈值不能直接画到两平台；需partner开启/事件映射/送达 |
+| Meowdoku | tracker的安装时间窗、活跃/深度→UniKit/GRT→指定AF/Meta/Firebase/Learnings端 | GRT线上规则、收入通道、partner共享和选用未知；MAX13.2自动事件不是GRT直发Axon |
+| Rotate Rings | MAX收入callback→业务分发→AFAdRevenueData(APPLOVIN_MAX,USD,double)；另有ad_revenue2/4和国家/安装年龄门槛 | 多路是否重复、MMP入库及partner专用收入共享需授权核对；不把三路相加 |
+| Jewel Coloring | AdWorth默认90规则/31权重表及账本/系数→Firebase/Meta/Adjust | 默认来源权重表未被90规则引用；线上覆盖未知；Meta代理purchase不是实际IAP，更不是AppLovin收到 |
+
+原始位置复用[C03](EVIDENCE_INDEX.md#c03)、[M01](EVIDENCE_INDEX.md#m01)、[R02](EVIDENCE_INDEX.md#r02)、[D01–D07](EVIDENCE_INDEX.md#d01)、[XS43](EVIDENCE_INDEX.md#xs43)、[XD01–XD02](EVIDENCE_INDEX.md#xd01)。**四款没有一项特定价值事件取得“Axon/Vector实际接收并训练”的证明。Amaze无可核验样本。**
+
+## 6. 已补齐与仍未知
+
+本轮补齐：客户端广告历史写入→Token外层→适配器→MAX构包；Firebase Analytics getter到Unity PII的明确赋值；自然/跨渠道postback的来源范围、学习用途和授权条件。没有补齐：不透明Token内层、私有请求→DSP字段映射、目标游戏后台启用、生产送达、身份join结果、去重/延迟/退款处理、字段级训练数据集、预测值→CPM函数。
+
+机器图新增CGE边对旧A/U边作**补充而非替换**，所有生产送达/训练观察标记保持false。[关系图](prediction-system/EVIDENCE_GRAPH.json) / [本轮边目录](client-growth/EDGE_CATALOG.md)。
+'''
+
+report59 = '''# 普通游戏盈利跃迁机制与反证
+
+2026-11-19。**接入SDK不是盈利跃迁的充分条件。**公开证据支持“更合适的获客用户、真实价值反馈、同一广告主更多来源的学习样本、变现收益与投放策略”共同改变单位经济；目前不能把四款游戏的增长归因于某一模型，也未取得其实际Axon/Vector campaign/ROAS记录。本报告不新增合成实验，不把旧自定义模拟当平台效果。
+
+## 1. 五种解释的竞争性证据
+
+| 假设 | 必要技术条件 | 已找到的代码/官方证据 | 关键缺口与可能反证 | 能区分的实验或授权数据 |
+|---|---|---|---|---|
+| H1 流量侧识别高价值玩家更准确 | bid前可用上下文/合法历史；可匹配标签；校准后的价值预测能改变排序 | 【SDK代码证实】Unity Token会话/HB/loaded-shown历史；MAX前次请求/网络和可选请求计数。 【官方公开证实】Axon广告互动及广告主价值出价；Vector玩家/游戏匹配 | 字段进模型和独立增益未知；本地短历史未必预测LTV；Token不等于玩家embedding；隐私缺失、ID作用域或selection bias可能使增益消失 | 固定库存/素材/预算/标签成熟期的合法历史特征消融，覆盖全机会和未安装者；同意与覆盖分层，平台授权holdout |
+| H2 自然量/跨渠道样本改善冷启动 | 同一目标App历史事件真实完整、可用、授权共享；后台来源范围/窗口正确 | 【官方公开证实】Unity预启动至少两周SDK+未归因postback用于训练；AF/Adjust全来源开关；AppLovin同样有all-source/organic共享契约及广告主自愿数据 | 四款实际开关/训练权重/历史回填未知；不是跨广告主个人历史无限共享；自然/付费分布差异可能导致负迁移 | 授权广告主相同活动条件随机保留合法来源数据对照；记录开始共享时点、cohort/国家/覆盖和学习退出；不以开关前后单曲线作因果证据 |
+| H3 真实IAA/IAP反馈优于只优化安装 | 正确收入/时间/币种/precision、去重、归因窗口和收入目标；有足够成熟标签 | 【游戏/SDK代码证实】四款实际收入接口与MMP业务分发；【官方公开证实】Unity IAA/IAP/Hybrid窗口和阈值；AppLovin IAA/Blended及MAX产品条件 | MMP收到≠网络收到；网络收到≠每条均训练；价值目标买到较贵用户也可能不回本；代理purchase/重复金额会误导 | 同素材/国家/库存/预算的install目标与真实收入目标随机对照；核对支出、D7/D28去重收入、增量留存、毛净口径及置信区间 |
+| H4 变现系统提高同类玩家收益 | 有效需求/竞价竞争、填充、展示率/价格/成本变化；留存无抵消 | 【SDK代码证实】MAX/LP多网络signal、竞价/超时/缓存和收入回调；【官方公开证实】中介产品与ILRD | 未有四款接入前后同类玩家ARPDAU/eCPM/留存；多适配器不等于高填充；更多广告可损害长期LTV；媒体收益不等于广告主ROAS | 媒体端随机mediation/广告策略分组，固定UA cohort，记录机会→请求→填充→展示→ILRD和D28留存；与UA目标分开做因子实验 |
+| H5 素材/国家/预算/归因策略是主要原因 | 实际素材/地域/出价/目标/窗口发生变化；有同口径成本和收益 | 【游戏代码证实】国家/安装年龄/早期行为规则；【官方公开证实】Unity学习期不宜频繁调整、国家/预算/ROAS设置影响量；素材与库存协议既有 | 没有目标游戏实际变更日志/投放记录；国家规则不是该国真实购买量证据；归因窗口变化可只改善报表而非现金利润 | 取得创意/地区/版本/预算/目标及MMP窗口变更日志，匹配成熟cohort；素材×目标×变现策略因子或分地域holdout；对账独立净收入 |
+
+H1依据CGS01–CGS08/CGS32–CGS38/CGS51/CGS53；H2依据CGS42–CGS50；H3依据[49](49_行为价值事件端到端调用链.md)、CGS47/CGS52及[AX02](EVIDENCE_INDEX.md#ax02)；H4依据CGS23–CGS41/[15](15_AppLovin_MAX与Axon技术分析.md)/[37](37_Unity_OpenRTB与竞价协议.md)；H5依据CGS42和[10](10_买量优化机制最终对比.md)。表内实验为【合理推断/研究设计】，不是平台已执行实验。
+
+## 2. 什么机制在经济上足以跨过盈亏线
+
+【合理推断；会计示例，不是平台结果】按相同用户窗口和净额口径，`获客贡献 = 成熟每安装LTV − CPI − 其他每安装可变成本`。ROAS大于100%只说明该口径收入超过广告支出，不保证净利润或回本已完成。
+
+例如合成数值：CPI为0.60、D28净LTV为0.54、其他成本暂设0，贡献为-0.06。只要LTV提高至0.66且CPI保持0.60，就变为+0.06；若LTV仍0.54但CPI降至0.48，也变为+0.06。若二者同时变化更难辨因。**这只说明接近盈亏边界时有限改善就能改变符号，不证明Axon/Vector带来12分钱。**
+
+H1/H2/H3主要可能改变买到的用户及收入分布；H4主要改变同类用户的变现结果；H5可改变成本、分布和报表。它们可以相互作用：更高LTV支持更高可承受出价，但扩量买到的边际库存也可能更贵或更差。单一“接SDK前后流水”不能分离这些原因，短期ROAS提升也不保证长期规模。
+
+公开价值→出价的方向由[Axon官方说明CGS51](client-growth/SOURCE_CATALOG.md#cgs51)及[39号Unity revenue bids](39_Axon_Vector预测与出价机制.md)支持；**没有恢复任何真实平台公式、模型精度、预算pacing或因果增量**。
+
+## 3. 四款游戏最有辨识力的现有痕迹
+
+| 游戏 | 能说明的开发者意图/技术机制 | 不能据此说明的结果 |
+|---|---|---|
+| Car Race | 国家组累计收入阈值US/T1/T2/T3默认0.50/0.30/0.20/0.03，关卡/激励次数等信号；阈值已定位链为Firebase-only | 不是Axon训练标签已接收，不证明国家投放预算或这些阈值造成盈利 |
+| Meowdoku | 安装后时间窗×关卡/活跃分钟，GRT可选平台/累计或增量规则，提供较早参与度代理 | GRT LTV命名不证明预测未来；线上配置与价值优化选用未知 |
+| Rotate Rings | 国家×安装day0–6收入门槛与时长；真实ILRD经AFAdRevenueData；另有自定义事件副本 | 代理值不加到实际收入；不能证明多路回传已正确去重、哪一条给了Axon/Vector |
+| Jewel Coloring | AdWorth账本/行为系数/条件树及90条默认分发规则；31权重表含来源能力，但默认90规则未引用来源表 | 不证明来源加权已在线启用；Meta purchase代理不是真实付费；无AdWorth→MAX显式业务链 |
+
+依据[10](10_买量优化机制最终对比.md)、[20](20_Axon实际事件调用链.md)、[49](49_行为价值事件端到端调用链.md)及其原始方法/资源。Amaze无包体不填推测。
+
+【合理推断】早期代理有机会提高信号密度，帮助稀疏真实价值目标学习；也可能只重复编码广告次数/已有收入，甚至鼓励短期广告挤压。必须用成熟真实收入验证增量；不能靠事件名或规则复杂度判断谁更先进。普通游戏未必需要先建身份图谱，正确收入账本和授权回传通常更值得优先实现。
+
+## 4. 对核心问题的明确回答
+
+1. **展示前已证输入：**设备/应用/广告位/会话、受限标识/隐私状态、此前已存在的广告请求/加载/展示及HB计数；可选开发者输入和不透明网络signal。它们证明存在行为上下文，不证明目标App未来价值、跨App完整轨迹或实际训练权重。[56](56_安装前竞价信号与Token血缘.md)
+2. **历史自然量如何帮学习：**同一广告主App可授权MMP分享全部来源的安装/会话/真实收入；Unity明确披露预启动数据训练用途，AppLovin也支持全来源共享并披露使用广告主自愿提供数据。扩大的真实样本可能改善冷启动，不代表自动补发所有历史，也不证明相同增益。[57](57_自然量与跨渠道价值学习信号.md)
+3. **最有资格成为真实价值标签：**去重且保留精度/币种/时间的IAA收入，以及经过验证、扣除重复/按口径处理退款的真实IAP；按成熟cohort累计。关卡/时长/GRT/AdWorth是独立代理，既非已实现收入，也非已证预测LTV。广告完成和奖励到账都不等于收入已发生。
+4. **盈利跃迁可能原因：**价值排序、历史样本冷启动、收入目标、变现收益或素材/市场/预算策略，单项或组合均可能越过盈亏线。当前证据更直接支持“确有这些机制和接口”，没有证据分配四款增长的因果贡献，更不能比较两家谁更准。
+5. **客户端验证上限：**不透明Token/native接口、服务器OpenRTB映射、实际partner配置/送达/入库、身份join、样本去重成熟和训练、出价约束、增量效果均仍有断点。[58](58_Axon_Vector完整买量反馈闭环.md)
+
+## 5. 下一份最有价值的授权材料
+
+优先取得**一款自有/授权App的MMP partner配置快照＋脱敏postback投递/响应导出＋相同安装cohort的去重IAA/IAP收入与支出/素材/国家/窗口日志**。使用只在该项目有效的研究键，不要GAID或个人账号原值。至少包含来源分类、事件/available_at/接收时间、币种/precision、归因标记与事件幂等键；D28成熟后核对。
+
+这能先回答“收入是否真的送给指定网络、何种来源、金额有没有重复、报表变化是否仅因窗口”，比继续扫描SDK字符串更能补齐断点。仍不能直接证明模型使用或H1因果；后者还需平台授权训练血缘/实验分组或合法全机会日志、选择概率和固定预算holdout。当前没有这些数据，**停止在未知边，不冒充已验证盈利原因**。
+'''
+
+for name, body in [('58_Axon_Vector完整买量反馈闭环.md', report58),
+                   ('59_普通游戏盈利跃迁机制与反证.md', report59)]:
+    path = R / name
+    if path.exists():
+        raise FileExistsError(path)
+    path.write_text(body, encoding='utf-8')
+print('New reports 58/59 written; no prior report changed.')

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-11-20T02:52:52.534632+00:00",
+  "tests": {
+    "auction_boundaries": 17,
+    "synthetic_feature_lab": 9,
+    "income_contract_and_privacy_gates": 31,
+    "total": 57
+  },
+  "portable_retail67_reproduction": {
+    "new_sandbox_outside_repository": true,
+    "raw_data_expected_sha256_verified": true,
+    "result_comparisons": [
+      {
+        "file": "MODEL_RESULTS.csv",
+        "rows": 18,
+        "match": true
+      },
+      {
+        "file": "PAIRED_COMPARISONS.csv",
+        "rows": 54,
+        "match": true
+      },
+      {
+        "file": "CALIBRATION_ANALYSIS.csv",
+        "rows": 121,
+        "match": true
+      },
+      {
+        "file": "STRATIFIED_ERRORS.csv",
+        "rows": 135,
+        "match": true
+      }
+    ],
+    "no_archived_results_overwritten": true,
+    "not_a_new_independent_test": true
+  },
+  "original_workspace_file_hashes_verified": 865,
+  "network_or_production_ad_events_sent_by_tests": 0
+}

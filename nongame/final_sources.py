@@ -1,0 +1,23 @@
+from collect import batch
+batch('final-sources',{
+ 'pixel-source':'https://s.axon.ai/pixel.js',
+ 'wurl-media-correct':'https://www.wurl.com/advertising-and-media-services-privacy-notice/',
+ 'wurl-content-discovery':'https://www.wurl.com/solutions/content-discovery/',
+ 'unity-ddf-external':'https://docs.unity.com/en-us/cloud/developer-data-framework/external-data-integration.md',
+ 'unity-analytics-custom':'https://docs.unity.com/en-us/ugs/manual/analytics/manual/record-custom-events.md',
+ 'unity-exchange-policy':'https://unity.com/legal/unity-advertising-services-policy',
+ 'site-trueclassic':'https://www.trueclassictees.com/policies/privacy-policy',
+ 'site-comfrt':'https://comfrt.com/policies/privacy-policy',
+ 'site-rulala':'https://www.rue21.com/store/privacy',
+ 'site-drinkolipop':'https://drinkolipop.com/policies/privacy-policy',
+ 'utility-inshot-play':'https://play.google.com/store/apps/details?id=com.camerasideas.instashot',
+ 'utility-zedge-play':'https://play.google.com/store/apps/details?id=net.zedge.android',
+ 'life-winwalk-play':'https://play.google.com/store/apps/details?id=com.winwalk.android',
+ 'content-dramabox-play':'https://play.google.com/store/apps/details?id=com.storymatrix.drama',
+ 'content-reelshort-play':'https://play.google.com/store/apps/details?id=com.newleaf.app.android.victor',
+ 'life-cashwalk-play':'https://play.google.com/store/apps/details?id=com.cashwalklabs.cashwalk',
+ 'life-sweatcoin-play':'https://play.google.com/store/apps/details?id=in.sweatco.app',
+ 'content-audiomack-play':'https://play.google.com/store/apps/details?id=com.audiomack',
+ 'content-dailyhunt-sdk':'https://m.dailyhunt.in/privacy',
+ 'content-audiomack-partners':'https://audiomack.com/privacy-policy/partners',
+})

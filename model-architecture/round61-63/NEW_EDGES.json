@@ -1,0 +1,848 @@
+[
+  {
+    "id": "RV61E01",
+    "source": "U_revenue",
+    "target": "CG_U_receiver",
+    "claim": "Unity formal post-install contract separately defines purchase, ad_revenue, session and level_complete and describes their model/goal uses",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S01"
+    ],
+    "data_provider": "U_revenue",
+    "data_receiver": "CG_U_receiver",
+    "applies_to": "Unity Ads UA MMP contract; raw behavior is not real revenue",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Actual delivery, canonical label generation and field-specific feature/label consumption unknown",
+    "supplements_original_edges": [
+      "U05",
+      "U07"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-appdata-direct.txt",
+        "start_line": 10,
+        "end_line": 28,
+        "url": "https://docs.unity.com/en-us/grow/acquire/partner-integration/app-data/post-install-event-data.md",
+        "method": "Post-install event data"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-appdata-direct.txt",
+        "sha256": "4736a5f5569acd229cfe310d84e689f0d7d7a52be38210b343d0403834929a5f",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E02",
+    "source": "M_af",
+    "target": "CG_U_receiver",
+    "claim": "Unity explicitly requires dedicated IAA mapping except the documented Singular combined-event configuration; wrong purchase mapping can break optimization",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S03",
+      "RV61S04"
+    ],
+    "data_provider": "M_af",
+    "data_receiver": "CG_U_receiver",
+    "applies_to": "Partner-specific mapping; Singular exception not generalized",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Target-game switches and server label schema still unknown",
+    "supplements_original_edges": [
+      "CGE09",
+      "CGE10"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "start_line": 60,
+        "end_line": 88,
+        "url": "https://docs.unity.com/en-us/grow/acquire/partner-integration/integration-best-practices.md",
+        "method": "Revenue event mapping"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "start_line": 107,
+        "end_line": 124,
+        "url": "https://docs.unity.com/en-us/grow/acquire/partner-integration/integration-best-practices.md",
+        "method": "Singular mapping exception"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-integration-best.txt",
+        "sha256": "dd07456e6a4f607a3bbcaa70aadd1eb0f5c78f570cc7786c3ac5085d6727a3ba",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E03",
+    "source": "CG_U_receiver",
+    "target": "U_labels",
+    "claim": "Public data-loss/no-retroactive-send warning constrains backfill claims, but zero labels/refunds/dedup/late-watermark construction remains undisclosed",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "RV61S02",
+      "MA60S15"
+    ],
+    "data_provider": "CG_U_receiver",
+    "data_receiver": "U_labels",
+    "applies_to": "Missing-event limitation is not a training-data or maturity implementation",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Canonical install universe, complete/zero versus missing, revenue revision/FX/refund/watermarks and sampled negatives",
+    "supplements_original_edges": [
+      "CGE20",
+      "U07"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-appdata-direct.txt",
+        "start_line": 38,
+        "end_line": 59,
+        "url": "https://docs.unity.com/en-us/grow/acquire/partner-integration/app-data/post-install-event-data.md",
+        "method": "Post-install data loss"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "start_line": 79,
+        "end_line": 116,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/intro-to-roas-campaigns.md",
+        "method": "Unity Ads ROAS cohorts"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-appdata-direct.txt",
+        "sha256": "4736a5f5569acd229cfe310d84e689f0d7d7a52be38210b343d0403834929a5f",
+        "official_packages": []
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E04",
+    "source": "RV_U_budget",
+    "target": "U_bid",
+    "claim": "Official Unity docs state CPI-billed ROAS campaigns automatically use Automated bidding with day adjustments and week-level budget control",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S07",
+      "RV61S09"
+    ],
+    "data_provider": "RV_U_budget",
+    "data_receiver": "U_bid",
+    "applies_to": "Unity ROAS+CPI billing; not an independently observed Vector model implementation",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Per-bid pacing factors/controller coefficients and all other billing-mode behavior unknown",
+    "supplements_original_edges": [
+      "MA60E12",
+      "U10",
+      "U11"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "start_line": 14,
+        "end_line": 32,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/best-practices.md",
+        "method": "ROAS automated bidding"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "start_line": 73,
+        "end_line": 83,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/best-practices.md",
+        "method": "Seven-day pacing"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "sha256": "62b99d6cfe8c443333cdd4c530a023a62a08ec4358886da132f5f8ea2ec27c75",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "sha256": "62b99d6cfe8c443333cdd4c530a023a62a08ec4358886da132f5f8ea2ec27c75",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E05",
+    "source": "RV_U_budget",
+    "target": "U_exchange",
+    "claim": "Unity budget contract exposes real-time spend allocation within country groups and Daily/Geo Capped delivery states",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S05",
+      "RV61S06",
+      "RV61S09"
+    ],
+    "data_provider": "RV_U_budget",
+    "data_receiver": "U_exchange",
+    "applies_to": "UA delivery/budget product behavior, not server exchange prediction source",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Exact eligibility gating, per-opportunity prices and marginal allocation algorithm unknown",
+    "supplements_original_edges": [
+      "MA60E12"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "start_line": 20,
+        "end_line": 61,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/introduction.md",
+        "method": "Budget hierarchy/throttling"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "start_line": 63,
+        "end_line": 86,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/introduction.md",
+        "method": "Multi-country allocation"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "start_line": 73,
+        "end_line": 83,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/best-practices.md",
+        "method": "Seven-day pacing"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "sha256": "a1d66a7f7e97bad3473058ee8af40fa74f12864c559d2d17ca5d0c71bece5447",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-intro.txt",
+        "sha256": "a1d66a7f7e97bad3473058ee8af40fa74f12864c559d2d17ca5d0c71bece5447",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "sha256": "62b99d6cfe8c443333cdd4c530a023a62a08ec4358886da132f5f8ea2ec27c75",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E06",
+    "source": "RV_U_budget",
+    "target": "U_bid",
+    "claim": "Unity publicly acknowledges campaign/creative exploration and recommends exploration funding; ROAS goals configured by country",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S08",
+      "RV61S10"
+    ],
+    "data_provider": "RV_U_budget",
+    "data_receiver": "U_bid",
+    "applies_to": "Operating recommendations/setup; 5x budget not a training threshold",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Exploration algorithm/rate, uncertainty use, new-game/no-ID fallback unknown",
+    "supplements_original_edges": [
+      "MA60E09",
+      "MA60E12"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "start_line": 34,
+        "end_line": 40,
+        "url": "https://docs.unity.com/en-us/grow/acquire/budgets/best-practices.md",
+        "method": "Exploration budget"
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-create-roas.txt",
+        "start_line": 16,
+        "end_line": 42,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/create-a-roas-campaign.md",
+        "method": "Country ROAS and budget setup"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-budget-best.txt",
+        "sha256": "62b99d6cfe8c443333cdd4c530a023a62a08ec4358886da132f5f8ea2ec27c75",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/u-create-roas.txt",
+        "sha256": "b8557346f75195e7bd023602cdf5e640526c6dd611cfd7eb79092f9a9a66810f",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E07",
+    "source": "RV_A_budget_guidance",
+    "target": "A_bid",
+    "claim": "AppLovin recommends meaningful conversion volume (15-20 daily), realistic profitability goals and single global budget across countries",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S12"
+    ],
+    "data_provider": "RV_A_budget_guidance",
+    "data_receiver": "A_bid",
+    "applies_to": "Operational recommendation, not disclosed Axon pacing or training minimum",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Actual pacing/constraint implementation, risk adjustment and target-game settings unknown",
+    "supplements_original_edges": [
+      "MA60E02",
+      "A17"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented operating recommendation",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/al-scale-right.txt",
+        "start_line": 47,
+        "end_line": 66,
+        "url": "https://support.applovin.com/en/growth/promoting-your-apps/track-and-optimize/scale-your-campaign",
+        "method": "Scale and budget recommendations"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/al-scale-right.txt",
+        "sha256": "3905f03b9eba9061d9cc9a0cb7719064e1f52d937a6d5e5e1679dfae8212bfda",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E08",
+    "source": "A_web",
+    "target": "RV_A_site_dedup",
+    "claim": "AppLovin website cross-Pixel/site-to-site/SDK same-event dedupe_id contract merges within30s and drops later duplicate after5min",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S13"
+    ],
+    "data_provider": "A_web",
+    "data_receiver": "RV_A_site_dedup",
+    "applies_to": "Website multi-route conversion contract only; not generalized to IAA or MMP",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "30sec-5min behavior, event-time versus arrival-time nuance, refunds and model training dedup remain unknown",
+    "supplements_original_edges": [
+      "A15",
+      "A16"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/al-website-dedup.txt",
+        "start_line": 13,
+        "end_line": 50,
+        "url": "https://support.applovin.com/en/growth/promoting-your-websites/track-and-optimize/deduplicating-events",
+        "method": "Pixel/SDK/S2S deduplication"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/al-website-dedup.txt",
+        "sha256": "dba9b76e7b6372390bff441e8337954c17ff8141354d0a8bb67fe6850f5c6e33",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E09",
+    "source": "M_adjust",
+    "target": "RV_Adjust_amount_guard",
+    "claim": "Adjust5.8.1 checkRevenue rejects assignment of negative revenue and requires currency; zero is not rejected by this comparison",
+    "status": "sdk",
+    "evidence_level": "【SDK代码证实】",
+    "source_ids": [
+      "RV61S14"
+    ],
+    "data_provider": "M_adjust",
+    "data_receiver": "RV_Adjust_amount_guard",
+    "applies_to": "Official standalone API; no assertion target games use5.8.1",
+    "explicit_call_chain": "AdjustEvent.setRevenue -> checkRevenue -> if false return without revenue/currency assignment",
+    "permission_conditions": "Developer must invoke API; local validation only; official source archive hash/member verified, never SDK executed",
+    "missing_evidence": "Not proof whole event dropped, refund unsupported globally, zero-revenue labels ingested, or receipt/training",
+    "supplements_original_edges": [
+      "CGE19",
+      "CGE20"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "SDK-local validation",
+    "class_method_lines": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustEvent.java",
+        "start_line": 142,
+        "end_line": 164,
+        "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1-sources.jar",
+        "method": "AdjustEvent.checkRevenue/setRevenue"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "ThirdPartySDKs/Adjust/Android/5.8.1/sources/com/adjust/sdk/AdjustEvent.java",
+        "sha256": "cc5a91b32787a9a966a44df8f1b379b45bcb2eb4443b322af7ee32960f0fd187",
+        "official_packages": [
+          {
+            "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1.aar",
+            "sha256": "98caabf85f07a6859767465c90394ee1e097c5da12f7bb967ea8f01f2272b84e",
+            "bytes": 294242,
+            "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1.aar",
+            "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT"
+          },
+          {
+            "path": "ThirdPartySDKs/Adjust/Android/5.8.1/adjust-android-5.8.1-sources.jar",
+            "sha256": "dfee5dda1f80d86b1e0af56af77e04568f7929462a5fe09ffd6b75254180030b",
+            "bytes": 139471,
+            "url": "https://repo.maven.apache.org/maven2/com/adjust/sdk/adjust-android/5.8.1/adjust-android-5.8.1-sources.jar",
+            "http_last_modified": "Fri, 23 Oct 2026 12:42:12 GMT"
+          }
+        ]
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": true,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E10",
+    "source": "MA_A_value_distribution",
+    "target": "A_bid",
+    "claim": "Axon multi-day value distribution wording does not establish per-user conditional distribution/quantile or variance/risk-sensitive bid consumption",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "MA60S01",
+      "MA60S02",
+      "RV61S12"
+    ],
+    "data_provider": "MA_A_value_distribution",
+    "data_receiver": "A_bid",
+    "applies_to": "Scalar/multistage/distribution/risk hypotheses may coexist",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Serving output random-variable/condition/window schema, loss/calibration and policy consumption/ablation",
+    "supplements_original_edges": [
+      "MA60E01",
+      "MA60E02"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "start_line": 31,
+        "end_line": 34,
+        "url": "https://www.applovin.com/en/blog/applovin-business-model",
+        "method": "Axon 2"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 54,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/",
+        "method": "Axon"
+      },
+      {
+        "path": "model-architecture/round61-63/public/al-scale-right.txt",
+        "start_line": 47,
+        "end_line": 66,
+        "url": "https://support.applovin.com/en/growth/promoting-your-apps/track-and-optimize/scale-your-campaign",
+        "method": "Scale and budget recommendations"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "sha256": "b38323d5cd83d75adf8f803c86c39bcc45878ec21df56fabe9dc28282020c72b",
+        "official_packages": []
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/round61-63/public/al-scale-right.txt",
+        "sha256": "3905f03b9eba9061d9cc9a0cb7719064e1f52d937a6d5e5e1679dfae8212bfda",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E11",
+    "source": "U_predict",
+    "target": "U_bid",
+    "claim": "Official CVR-CPI-eCPM relation and revenue dynamic bidding do not establish separate pInstall and conditional-LTV heads or actual bid formula",
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "source_ids": [
+      "RV61S11",
+      "MA60S13",
+      "MA60S16"
+    ],
+    "data_provider": "U_predict",
+    "data_receiver": "U_bid",
+    "applies_to": "Public decision relationship versus internal parameterization kept separate",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Per-opportunity score schema, conversion conditions, uncertainty, fees, policy and production latency mapping",
+    "supplements_original_edges": [
+      "MA60E08",
+      "MA60E11"
+    ],
+    "diagram_style": "dashed",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round61-63/public/u-bid-intro.txt",
+        "start_line": 20,
+        "end_line": 36,
+        "url": "https://docs.unity.com/en-us/grow/acquire/bids/introduction.md",
+        "method": "CVR/CPI/eCPM exposure"
+      },
+      {
+        "path": "vector/d28-blog.txt",
+        "start_line": 15,
+        "end_line": 43,
+        "url": "https://unity.com/blog/d28-roas",
+        "method": "Vector D28 IAA / Hybrid"
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 145,
+        "end_line": 176,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns",
+        "method": "Vector IAP D7 / D28"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round61-63/public/u-bid-intro.txt",
+        "sha256": "4b6955ea89691ef8ea899db0e1c0b866fc334883f5de006134b1479112768a07",
+        "official_packages": []
+      },
+      {
+        "path": "vector/d28-blog.txt",
+        "sha256": "3fb6008feba929fde7ab919c45e9bae687457b219545a4289e6a57c90e983e68",
+        "official_packages": []
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E12",
+    "source": "A_bid",
+    "target": "A_exchange",
+    "claim": "MAX public unified first-price auction consumes valid bids, merges waterfall and bills after render; this is not Axon valuation/shading implementation",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S15"
+    ],
+    "data_provider": "A_bid",
+    "data_receiver": "A_exchange",
+    "applies_to": "Supply-side protocol only; not all Axon traffic guaranteed same route",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Axon private value-to-quote function, shading/pacing, fee/net adjustments and risk use unknown",
+    "supplements_original_edges": [
+      "A17"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "auction/al-dynamics.txt",
+        "start_line": 13,
+        "end_line": 40,
+        "url": "https://support.applovin.com/en/max/demand-partners/auction-dynamics",
+        "method": "MAX unified first-price auction"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "auction/al-dynamics.txt",
+        "sha256": "43dfae6b9630d9468767e8383d2d3f8796d3b97a9cf0345175979c9c14e430ba",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  },
+  {
+    "id": "RV61E13",
+    "source": "U_bid",
+    "target": "U_exchange",
+    "claim": "Unity Exchange public tmax depends on waterfall seat or mediation with processing deduction; no derived Vector model serving SLA",
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "source_ids": [
+      "RV61S16",
+      "MA60S18",
+      "MA60S20"
+    ],
+    "data_provider": "U_bid",
+    "data_receiver": "U_exchange",
+    "applies_to": "Exchange deadline actual contract, model-engineering links remain indirect",
+    "explicit_call_chain": "Public product/integration contract only; no production server call chain recovered",
+    "permission_conditions": "Applicable partner setup, consent, identity availability and product/billing scope; no production test",
+    "missing_evidence": "Vector feature-fetch/inference P99, per-stage timeout/fallback and deployed shading algorithm unknown",
+    "supplements_original_edges": [
+      "MA60E11",
+      "MA60E12"
+    ],
+    "diagram_style": "solid",
+    "reviewed_utc": "2026-11-19T10:42:11.518134+00:00",
+    "modality": "documented contract or stated unknown",
+    "class_method_lines": [
+      {
+        "path": "auction/unity-get-started.txt",
+        "start_line": 20,
+        "end_line": 34,
+        "url": "https://docs.unity.com/en-us/grow/programmatic/unity-exchange/get-started.md",
+        "method": "Exchange deadline/first-price"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2615964-clean.txt",
+        "start_line": 1,
+        "end_line": 24,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Staff-Backend-Engineer--ML-Inference-Systems_JOBREQ-2615964",
+        "method": "Vector Gamer AI inference"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616286-clean.txt",
+        "start_line": 1,
+        "end_line": 23,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Senior-Machine-Learning-Engineer--Vector-Bidding-Science_JOBREQ-2616286",
+        "method": "Vector Bidding Science"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "auction/unity-get-started.txt",
+        "sha256": "7e8f03b72a2a3bbd9005f2e542907cc630d06b5855b26ac8a28839c157ace009",
+        "official_packages": []
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2615964-clean.txt",
+        "sha256": "66b4c09347df96257c660a8bf25c993545d35ae647a3164e29c070eff41a2214",
+        "official_packages": []
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616286-clean.txt",
+        "sha256": "6daea74617f8dccd5978cd9917685cc8deb93c5801049e26d25df2e2efab0554",
+        "official_packages": []
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No production requests/events or real identifiers; source statement not independent delivery/training observation"
+  }
+]

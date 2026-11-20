@@ -1,0 +1,798 @@
+[
+  {
+    "id": "MA60E01",
+    "source": "A_predict",
+    "target": "MA_A_value_distribution",
+    "claim": "Axon2 official CEO article states current models predict expected value distributions many days into the future",
+    "source_ids": [
+      "MA60S01"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Axon2; paragraph emphasizes valuation of non-game offers shown to game players",
+    "modality": "vendor present-tense deployment assertion",
+    "data_provider": "A_predict",
+    "data_receiver": "MA_A_value_distribution",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Distribution family, model heads/loss, window, calibration and per-game implementation unknown",
+    "supplements_original_edges": [
+      "A04",
+      "A13"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "start_line": 31,
+        "end_line": 34,
+        "url": "https://www.applovin.com/en/blog/applovin-business-model"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "sha256": "b38323d5cd83d75adf8f803c86c39bcc45878ec21df56fabe9dc28282020c72b"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E02",
+    "source": "MA_A_value_distribution",
+    "target": "A_bid",
+    "claim": "Official multi-day value prediction described as supporting real-time capital allocation; each impression bidding uses advertiser return goals",
+    "source_ids": [
+      "MA60S01",
+      "MA60S04"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Axon/AppLovin Ads product-level prediction-to-bidding purpose",
+    "modality": "vendor present-tense product assertion",
+    "data_provider": "MA_A_value_distribution",
+    "data_receiver": "A_bid",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "No recovered pInstall/LTV decomposition, price equation, pacing, shading or uncertainty policy",
+    "supplements_original_edges": [
+      "A13",
+      "A17"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "start_line": 31,
+        "end_line": 34,
+        "url": "https://www.applovin.com/en/blog/applovin-business-model"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "start_line": 27,
+        "end_line": 50,
+        "url": "https://www.applovin.com/en/blog/introducing-applovin-ads"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-business.txt",
+        "sha256": "b38323d5cd83d75adf8f803c86c39bcc45878ec21df56fabe9dc28282020c72b"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "sha256": "da5e38340c85e2fa6b6f17a08fbe11514c7b4b0f512c375006a1e8fafe8df87b"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E03",
+    "source": "A_context",
+    "target": "A_predict",
+    "claim": "Axon official disclosure explicitly connects permitted device/network/engagement, own win-loss and advertiser-shared data to continual model training",
+    "source_ids": [
+      "MA60S02"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Data categories only, excludes competitor bid/user data and sensitive/protected/children data",
+    "modality": "vendor present-tense data-use assertion",
+    "data_provider": "A_context",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Per-feature lineage, joins, data cutoffs, training jobs and target-game implementation unknown",
+    "supplements_original_edges": [
+      "A01",
+      "A06"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 54,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E04",
+    "source": "A_web",
+    "target": "A_predict",
+    "claim": "Discovery product explicitly uses same historical purchase data as Prospecting to pursue new-visitor purchaser goal",
+    "source_ids": [
+      "MA60S05"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Ecommerce Discovery/Prospecting ONLY; not a target-game IAA training connection",
+    "modality": "official product launch/setup assertion",
+    "data_provider": "A_web",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Whether input is exclusion/feature/label or combination, matching details and gaming reuse unknown",
+    "supplements_original_edges": [
+      "A15",
+      "A16"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-discovery.txt",
+        "start_line": 21,
+        "end_line": 36,
+        "url": "https://www.applovin.com/en/blog/discovery-campaigns"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-discovery.txt",
+        "sha256": "ad681c6d28df9f79efa11fdfb1c479c221537d9dc44954d2ab997c6829a819aa"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E05",
+    "source": "MA_A_advertiser_diversity",
+    "target": "A_predict",
+    "claim": "CEO says incremental data from broader advertiser set will improve outcomes for gaming partners",
+    "source_ids": [
+      "MA60S04"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Cross-category benefit direction, NOT deployed per-row ecommerce-to-gaming training",
+    "modality": "forward-looking",
+    "data_provider": "MA_A_advertiser_diversity",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "dashed",
+    "missing_evidence": "Actual cross-business dataset use, consent/purpose, shared weights, label schema and measured effect not established",
+    "supplements_original_edges": [
+      "A16"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "start_line": 27,
+        "end_line": 50,
+        "url": "https://www.applovin.com/en/blog/introducing-applovin-ads"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "sha256": "da5e38340c85e2fa6b6f17a08fbe11514c7b4b0f512c375006a1e8fafe8df87b"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E06",
+    "source": "A_features",
+    "target": "A_predict",
+    "claim": "AppLovin ML job duties discuss user representations, ranking/retrieval and multitask research; data engineering job discusses training and feature serving",
+    "source_ids": [
+      "MA60S06",
+      "MA60S07"
+    ],
+    "status": "indirect",
+    "evidence_level": "【间接技术线索】",
+    "applies_to": "AppLovin advertising-platform research/infrastructure; not identified Axon model/version",
+    "modality": "job research duties and skill requirements",
+    "data_provider": "A_features",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "dashed",
+    "missing_evidence": "No named architecture, production graph, feature store implementation or target-game linkage",
+    "supplements_original_edges": [
+      "A03",
+      "A04"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "prediction-system/applovin-job-4712559006-clean.txt",
+        "start_line": 8,
+        "end_line": 21,
+        "url": "https://boards.greenhouse.io/applovin/jobs/4712559006?gh_jid=4712559006"
+      },
+      {
+        "path": "prediction-system/applovin-job-4716524006-clean.txt",
+        "start_line": 8,
+        "end_line": 21,
+        "url": "https://boards.greenhouse.io/applovin/jobs/4716524006?gh_jid=4716524006"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "prediction-system/applovin-job-4712559006-clean.txt",
+        "sha256": "8e343eb570d116a28cd6f5b73780858b9d27e1c54ac47f2a4b4e4e9fc792794d"
+      },
+      {
+        "path": "prediction-system/applovin-job-4716524006-clean.txt",
+        "sha256": "f2459b7bc84a91b24a6d66fdefcc35b22d097b82bd4aac3dfb475cc5f957a688"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E07",
+    "source": "MA_U_crossgame_patterns",
+    "target": "U_bid",
+    "claim": "Unity official IAP product article explicitly says cross-game behavioral patterns and aggregate cohort insights distinguish player types at moment of bid decision",
+    "source_ids": [
+      "MA60S17"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Vector D7/D28 IAP product disclosure; not an individual identity-graph or embedding architecture claim",
+    "modality": "vendor present-tense data-use assertion",
+    "data_provider": "MA_U_crossgame_patterns",
+    "data_receiver": "U_bid",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Exact features/time windows, aggregation, consent and identity dependency, model structure and incremental gain unknown",
+    "supplements_original_edges": [
+      "U04",
+      "U13"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E08",
+    "source": "U_labels",
+    "target": "U_predict",
+    "claim": "Unity official D28 release describes per-user 28-day ad revenue prediction and combined 28-day Hybrid revenue objective",
+    "source_ids": [
+      "MA60S13",
+      "MA60S16"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "IAA/IAP/Hybrid product targets/windows; label assembly remains unknown",
+    "modality": "official product launch and present-tense prediction purpose",
+    "data_provider": "U_labels",
+    "data_receiver": "U_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Canonical labels, zero/negative cases, loss function, refunds, delay handling and target-game delivery unknown",
+    "supplements_original_edges": [
+      "U07"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "vector/d28-blog.txt",
+        "start_line": 15,
+        "end_line": 43,
+        "url": "https://unity.com/blog/d28-roas"
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 145,
+        "end_line": 176,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/d28-blog.txt",
+        "sha256": "3fb6008feba929fde7ab919c45e9bae687457b219545a4289e6a57c90e983e68"
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E09",
+    "source": "CG_Allsource",
+    "target": "U_predict",
+    "claim": "Unity best practices explicitly say prelaunch SDK data and corresponding unattributed postbacks help train models, outside learning exit thresholds",
+    "source_ids": [
+      "MA60S14",
+      "MA60S15"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Same advertiser app all-source data contract; not arbitrary cross-advertiser personal sharing",
+    "modality": "explicit official training-purpose contract",
+    "data_provider": "CG_Allsource",
+    "data_receiver": "U_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Actual game activation, history backfill, sampling weights, row-level label/feature use and ablation unknown",
+    "supplements_original_edges": [
+      "CGE08",
+      "CGE11"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "start_line": 36,
+        "end_line": 70,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/roas-campaign-best-practices.md"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "start_line": 79,
+        "end_line": 116,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/intro-to-roas-campaigns.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E10",
+    "source": "U_context",
+    "target": "MA_U_crossgame_patterns",
+    "claim": "Vector product publicly claims holistic player/game intelligence and IAP/ad-behavior correlations; mechanism producing cross-game patterns is undisclosed",
+    "source_ids": [
+      "MA60S17",
+      "MA60S21"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "applies_to": "Public purposes cannot recover raw-data-to-representation mapping",
+    "modality": "implementation breakpoint",
+    "data_provider": "U_context",
+    "data_receiver": "MA_U_crossgame_patterns",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "dashed",
+    "missing_evidence": "Shared parameters versus aggregate statistics versus person-level history and their actual upstream data sources",
+    "supplements_original_edges": [
+      "U04"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "start_line": 10,
+        "end_line": 15,
+        "url": "https://unity.com/products/unity-ads/vector"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "sha256": "7c38a287f3cd15624083e4c6d4720e49de626cbc7f85e7a5483018ac2e704a61"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E11",
+    "source": "U_predict",
+    "target": "U_bid",
+    "claim": "Vector Gamer AI job describes online model inference powering ranking/bidding; model details not disclosed",
+    "source_ids": [
+      "MA60S18",
+      "MA60S19"
+    ],
+    "status": "indirect",
+    "evidence_level": "【间接技术线索】",
+    "applies_to": "Named Vector team duties; not independently verified system deployment",
+    "modality": "job statement about engineering/production responsibility",
+    "data_provider": "U_predict",
+    "data_receiver": "U_bid",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "dashed",
+    "missing_evidence": "Actual deployed serving/model stack, feature joins, latency budget and SLA unknown; Triton only optional experience",
+    "supplements_original_edges": [
+      "U10",
+      "U11"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2615964-clean.txt",
+        "start_line": 1,
+        "end_line": 24,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Staff-Backend-Engineer--ML-Inference-Systems_JOBREQ-2615964"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616596-clean.txt",
+        "start_line": 1,
+        "end_line": 13,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Principal-Machine-Learning-Engineer--Ads-Modeling_JOBREQ-2616596"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2615964-clean.txt",
+        "sha256": "66b4c09347df96257c660a8bf25c993545d35ae647a3164e29c070eff41a2214"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616596-clean.txt",
+        "sha256": "882af4b6a9b94a208a6769636b8d0bd70e03cf781ffc69777dfc7c3e836400a2"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E12",
+    "source": "U_bid",
+    "target": "U_exchange",
+    "claim": "Vector Bidding Science job duties concern bidding/pacing and bid-landscape forecasting with offline and online experiments",
+    "source_ids": [
+      "MA60S20"
+    ],
+    "status": "indirect",
+    "evidence_level": "【间接技术线索】",
+    "applies_to": "Research/next-generation engineering scope, not proof RL or survival model is deployed",
+    "modality": "job research duties and skills",
+    "data_provider": "U_bid",
+    "data_receiver": "U_exchange",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "dashed",
+    "missing_evidence": "Production pacing, shading, exploration, market-price/uncertainty logic and economic experiments unknown",
+    "supplements_original_edges": [
+      "U10",
+      "U11"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616286-clean.txt",
+        "start_line": 1,
+        "end_line": 23,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Senior-Machine-Learning-Engineer--Vector-Bidding-Science_JOBREQ-2616286"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616286-clean.txt",
+        "sha256": "6daea74617f8dccd5978cd9917685cc8deb93c5801049e26d25df2e2efab0554"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E13",
+    "source": "U_purchase",
+    "target": "U_predict",
+    "claim": "Official keynote says IAP/D2C purchase data can enrich Vector; visible IAP gateway/native forwarding does not establish per-row training lineage",
+    "source_ids": [
+      "MA60S22",
+      "MA60S23",
+      "MA60S24"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Product-purpose possibility bounded by consent and closed native/server interface",
+    "modality": "can-help-enrich product statement, not per-event deployment",
+    "data_provider": "U_purchase",
+    "data_receiver": "U_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "Insights rows to training features/labels, runtime transport ACK, joins and purpose control remain unproven",
+    "supplements_original_edges": [
+      "U09",
+      "C53E13"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "vector/unity-2026-keynote.txt",
+        "start_line": 120,
+        "end_line": 121,
+        "url": "https://unity.com/blog/unite-seoul-keynote-2026-recap"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "start_line": 14,
+        "end_line": 38,
+        "url": "https://docs.unity.com/en-us/cloud/developer-data-framework/end-user-consent.md"
+      },
+      {
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "start_line": 188,
+        "end_line": 239,
+        "url": null
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/unity-2026-keynote.txt",
+        "sha256": "99513962bd48ea9813178414f0ee9cd4c24d345ac536b49c43a36a7dcb530a95"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "sha256": "ea304dbc17e8077ee3baf00e01c0294d6bde940a3616d7fb0abc2c1df98b2d31"
+      },
+      {
+        "path": "cross-sdk/packages/purchasing/5.5.1/extracted/package/Runtime/Stores/Data/Insights/PurchaseEventEmitter.cs",
+        "sha256": "dd21045ac9c2cf64abdaf45b3f38253866383f64c40dc1ff7534d1b296dc48e2"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  },
+  {
+    "id": "MA60E14",
+    "source": "A_review",
+    "target": "A_predict",
+    "claim": "Official Ad Review statement excludes using Ad Review outputs to build profiles or feed Axon/other models",
+    "source_ids": [
+      "MA60S08",
+      "MA60S02"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "applies_to": "Explicit negative boundary; does not exclude authorized advertiser own revenue feedback",
+    "modality": "official explicit data-use exclusion",
+    "data_provider": "A_review",
+    "data_receiver": "A_predict",
+    "explicit_call_chain": "Official disclosure/engineering clue only; no recovered production server call chain",
+    "permission_conditions": "Applicable consent, advertiser sharing permission, identifier availability and product scope; no expanded authorization inferred",
+    "diagram_style": "solid",
+    "missing_evidence": "No license to infer other bidder data from mediation visibility; no target-game production audit",
+    "supplements_original_edges": [
+      "A18",
+      "A19"
+    ],
+    "reviewed_utc": "2026-11-19T10:29:51.386500+00:00",
+    "class_method_lines": [
+      {
+        "path": "prediction-system/applovin-excluded-rival-data.txt",
+        "start_line": 14,
+        "end_line": 17,
+        "url": "https://www.applovin.com/en/blog/catch-bad-ads-not-data"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 54,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "prediction-system/applovin-excluded-rival-data.txt",
+        "sha256": "fd07f9c935dad89f911dd2544760d3c69a50d5b826a13c53a89dd2858ef4b534"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "Vendor assertion or indirect public clue, NOT independently observed target-game delivery/training"
+  }
+]

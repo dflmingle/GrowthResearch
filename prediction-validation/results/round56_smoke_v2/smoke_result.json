@@ -1,0 +1,107 @@
+{
+  "conclusion_level": "【合成实验支持】",
+  "scope": "Accounting and time-gate smoke checks only; no fitted model or vendor performance evidence",
+  "provenance": "synthetic",
+  "real_training_performed": false,
+  "model_training_performed": false,
+  "actual_platform_roas_measured": false,
+  "causal_incrementality_identified": false,
+  "utc": "2026-11-19T09:52:38.958535+00:00",
+  "python": "3.12.7",
+  "jsonschema_version": "4.23.0",
+  "input_sha256": "822cb950a01cbaf8bec0aca61b6ea214fe42970963de9034ae2d3ee135690082",
+  "quality": {
+    "passed": true,
+    "errors": [],
+    "counts": {
+      "installs": 3,
+      "opportunities": 4,
+      "revenue_reports": 20,
+      "canonical_revenue_events": 14,
+      "duplicate_economic_reports": 4
+    },
+    "excluded": {
+      "non_revenue_value": 2
+    },
+    "provenance": "synthetic",
+    "real_training_allowed": false,
+    "real_gate_reason": "No real training entry point: separate owner-reviewed authorization, maturity and leakage audit required",
+    "install_probability_scope": "observed served opportunities only; unserved outcomes must be unknown",
+    "causal_roas_identified": false
+  },
+  "labels": [
+    {
+      "sample_key": "SYNTHETIC_ROW_0",
+      "provenance": "synthetic",
+      "d0_iaa_usd": "0.10",
+      "d0_iap_usd": "3.00",
+      "d0_total_usd": "3.10",
+      "d7_iaa_usd": "0.30",
+      "d7_iap_usd": "3.00",
+      "d7_total_usd": "3.30",
+      "d28_iaa_usd": "1.00",
+      "d28_iap_usd": "3.00",
+      "d28_total_usd": "4.00",
+      "d1_d28_remaining_usd": "0.90"
+    },
+    {
+      "sample_key": "SYNTHETIC_ROW_1",
+      "provenance": "synthetic",
+      "d0_iaa_usd": "0.10",
+      "d0_iap_usd": "3.00",
+      "d0_total_usd": "3.10",
+      "d7_iaa_usd": "0.30",
+      "d7_iap_usd": "3.00",
+      "d7_total_usd": "3.30",
+      "d28_iaa_usd": "1.00",
+      "d28_iap_usd": "3.00",
+      "d28_total_usd": "4.00",
+      "d1_d28_remaining_usd": "0.90"
+    },
+    {
+      "sample_key": "SYNTHETIC_ROW_2",
+      "provenance": "synthetic",
+      "d0_iaa_usd": "0",
+      "d0_iap_usd": "0",
+      "d0_total_usd": "0",
+      "d7_iaa_usd": "0",
+      "d7_iap_usd": "0",
+      "d7_total_usd": "0",
+      "d28_iaa_usd": "0",
+      "d28_iap_usd": "0",
+      "d28_total_usd": "0",
+      "d1_d28_remaining_usd": "0"
+    }
+  ],
+  "feature_coverage": {
+    "M0": {
+      "eligible": 3,
+      "excluded": 6,
+      "GROUP_NOT_IN_MODEL": 6
+    },
+    "M1": {
+      "eligible": 6,
+      "excluded": 3,
+      "GROUP_NOT_IN_MODEL": 3
+    },
+    "M2": {
+      "eligible": 9
+    },
+    "M3": {
+      "eligible": 6,
+      "excluded": 6,
+      "GROUP_NOT_IN_MODEL": 6
+    },
+    "M4": {
+      "eligible": 9,
+      "excluded": 3,
+      "GROUP_NOT_IN_MODEL": 3
+    },
+    "M5": {
+      "eligible": 12
+    }
+  },
+  "stopped_real_work_reason": "No independently verified authorized real data in local audit",
+  "prediction_metrics": null,
+  "auction_roas": null
+}

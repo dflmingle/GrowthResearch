@@ -1,0 +1,75 @@
+{
+  "started_utc": "2026-11-20T02:18:44.394847+00:00",
+  "protocol_sha256": "300f8996d9308c450111f78b156c7c60ec6fa9a8c5559ea16cdd6a35df011226",
+  "script_sha256": "cebbc47ee8ecad1a4d6800e7a3eafe33c63c39686c725a0023dbd1fa4c69d7bf",
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "sklearn": "1.5.1",
+  "models": {},
+  "no_network": true,
+  "customer_ids_not_model_features": true,
+  "finished_utc": "2026-11-20T02:19:29.775807+00:00",
+  "raw_unchanged": true,
+  "arms": [
+    "dedup_positive_sales",
+    "dedup_signed_invoice_net",
+    "duplicates_retained_positive_sensitivity"
+  ],
+  "horizons": [
+    7,
+    28
+  ],
+  "trained_models": 18,
+  "hyperparameter_searches": 0,
+  "result_rows": 72,
+  "no_customer_keys_or_individual_predictions_saved": true,
+  "feature_names": {
+    "M0": [
+      "hist_amount",
+      "hist_orders"
+    ],
+    "M1": [
+      "hist_amount",
+      "hist_orders",
+      "amount_7",
+      "orders_7",
+      "amount_28",
+      "orders_28",
+      "amount_90",
+      "orders_90"
+    ],
+    "M2": [
+      "hist_amount",
+      "hist_orders",
+      "amount_7",
+      "orders_7",
+      "amount_28",
+      "orders_28",
+      "amount_90",
+      "orders_90",
+      "gap_mean",
+      "gap_std",
+      "recency_days",
+      "hist_units",
+      "units_7",
+      "units_28",
+      "units_90",
+      "amount_trend_7_vs_previous21",
+      "amount_trend_28_vs_previous62",
+      "orders_trend_7_vs_previous21"
+    ]
+  },
+  "checks": {
+    "customer_overlap": 0,
+    "label_maturity": true,
+    "temporal_embargo": true,
+    "feature_and_target_times_separated": true,
+    "source_hash_matches": true
+  },
+  "limitations": [
+    "event_time only, no available_at",
+    "conditional on observed retailer buyers, future non-observation is not true zero global consumption",
+    "customer cluster CI fixed-date/fixed-model only",
+    "no gaming or bidding inference"
+  ]
+}

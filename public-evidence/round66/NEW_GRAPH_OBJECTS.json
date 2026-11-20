@@ -1,0 +1,455 @@
+{
+  "nodes": [
+    {
+      "id": "EXT66_rotate",
+      "label": "Rotate version metadata, no continuous growth curve",
+      "stage": "external_history",
+      "company": "public independent research"
+    },
+    {
+      "id": "EXT66_meow_old",
+      "label": "Meow Oct3 estimated recent downloads 5.7M",
+      "stage": "third_party_historical_estimate",
+      "company": "public independent research"
+    },
+    {
+      "id": "EXT66_meow_current",
+      "label": "Meow Nov19/20 estimated recent downloads 9.3M",
+      "stage": "third_party_current_estimate",
+      "company": "public independent research"
+    },
+    {
+      "id": "EXT66_paid",
+      "label": "AppLovin/Unity actual acquisition UNKNOWN",
+      "stage": "unknown_paid_channel",
+      "company": "public independent research"
+    },
+    {
+      "id": "RE66_data",
+      "label": "Authorized public retail invoice records",
+      "stage": "public_dataset",
+      "company": "public independent research"
+    },
+    {
+      "id": "RE66_predictions",
+      "label": "Customer/time-disjoint 7/28-day invoice predictions",
+      "stage": "independent_retail_experiment",
+      "company": "public independent research"
+    },
+    {
+      "id": "RE66_mae28",
+      "label": "M1/M2 28-day MAE gain versus history-rate, scoped statistical support",
+      "stage": "retail_statistical_result",
+      "company": "public independent research"
+    },
+    {
+      "id": "RE66_gameprofit",
+      "label": "Game/Axon/Vector profitability inference unavailable",
+      "stage": "unknown_cross_domain",
+      "company": "public independent research"
+    }
+  ],
+  "edges": [
+    {
+      "id": "EXT66E1",
+      "source": "EXT66_meow_old",
+      "target": "EXT66_meow_current",
+      "claim": "Two rounded AppBrain snapshots show estimated last30 total 5.7M to 9.3M, not continuous growth or paid-attributed installs",
+      "source_ids": [
+        "EXT66-meow-archive-20261003",
+        "EXT66-meow-appbrain"
+      ],
+      "status": "observed_scoped",
+      "evidence_level": "【第三方估算】",
+      "diagram_style": "solid",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "EXT66_meow_old",
+      "data_receiver": "EXT66_meow_current",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "Daily/weekly history, stable estimate methodology, actual attribution and cost",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "EXT66E2",
+      "source": "EXT66_meow_current",
+      "target": "EXT66_paid",
+      "claim": "Estimate difference cannot identify actual AppLovin/Unity acquisition",
+      "source_ids": [
+        "EXT66-meow-appbrain"
+      ],
+      "status": "unknown",
+      "evidence_level": "【无法确认】",
+      "diagram_style": "dashed",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "EXT66_meow_current",
+      "data_receiver": "EXT66_paid",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "Advertiser/creative/campaign/date evidence with exact landing app; paid-channel records",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "EXT66E3",
+      "source": "EXT66_rotate",
+      "target": "EXT66_paid",
+      "claim": "Version directory and MAX/Unity capabilities do not prove paid acquisition",
+      "source_ids": [
+        "EXT66-rotate-apkpure-history"
+      ],
+      "status": "unknown",
+      "evidence_level": "【无法确认】",
+      "diagram_style": "dashed",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "EXT66_rotate",
+      "data_receiver": "EXT66_paid",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "Continuous history, paid creatives, exact channel/campaign and spend",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "RE66E1",
+      "source": "RE66_data",
+      "target": "RE66_predictions",
+      "claim": "Actual public invoices used for fixed time-and-customer-disjoint forecasting; no game data",
+      "source_ids": [
+        "RE66S_data",
+        "RE66S_protocol",
+        "RE66S_run",
+        "RE66S_fix"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "RE66_data",
+      "data_receiver": "RE66_predictions",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "available_at absent; no real-time availability or cash-net label verification",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "RE66E2",
+      "source": "RE66_predictions",
+      "target": "RE66_mae28",
+      "claim": "M1/M2 28-day MAE versus history-rate improves with paired cluster familywise interval; RMSE not improved and zero-baseline MAE lower",
+      "source_ids": [
+        "RE66S_results",
+        "RE66S_protocol"
+      ],
+      "status": "experiment_scoped",
+      "evidence_level": "【真实公开零售数据实验】",
+      "diagram_style": "solid",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "RE66_predictions",
+      "data_receiver": "RE66_mae28",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "Independent future seasons, refit uncertainty, tail robustness, stronger decision-aligned baselines",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    },
+    {
+      "id": "RE66E3",
+      "source": "RE66_mae28",
+      "target": "RE66_gameprofit",
+      "claim": "Retail prediction results cannot explain target games or Axon/Vector acquisition profit",
+      "source_ids": [
+        "RE66S_results",
+        "RE66S_data"
+      ],
+      "status": "unknown",
+      "evidence_level": "【无法确认】",
+      "diagram_style": "dashed",
+      "edge_type": "external_history_or_independent_retail_experiment",
+      "data_provider": "RE66_mae28",
+      "data_receiver": "RE66_gameprofit",
+      "permission_conditions": "Public metadata or UCI CC BY4; source-scoped anonymized keys, no production calls",
+      "missing_evidence": "Game-specific mature true revenue, ad opportunities/cost, platform consumer lineage and causal experiment",
+      "reviewed_utc": "2026-11-20T02:23:14.797945+00:00",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "independent_production_audit": false,
+      "six_layers": {
+        "sdk_capability": false,
+        "actual_game_business_callsite": false,
+        "request_construction_code": false,
+        "production_successful_send": false,
+        "server_received": false,
+        "server_model_training": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "EXT66-meow-apkpure-history",
+      "url": "https://apkpure.com/meowdoku-brain-puzzle-games/com.oakever.meowdoku/versions",
+      "path": "public-evidence/round66/sources/meow-apkpure-history.response",
+      "sha256": "aa87d48e65be141575f42cd8811e5596c4318e209c5013456f257e75cf9a51ad",
+      "source_date": "2026-11-20T02:14:43.639811+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "aa87d48e65be141575f42cd8811e5596c4318e209c5013456f257e75cf9a51ad",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-meow-appbrain",
+      "url": "https://www.appbrain.com/app/meowdoku-brain-puzzle-games/com.oakever.meowdoku",
+      "path": "public-evidence/round66/sources/meow-appbrain.metadata.json",
+      "sha256": "0532b51f118f7ed6bb01cbee7c87a86c69fb73bc8624a58a12add8980d35cd91",
+      "source_date": "2026-11-20T02:14:44.314911+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "44f40478809ede7bc5f15677ba437680a4285a5f659b3b7ad2ce66f793628bb6",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-meow-appmagic",
+      "url": "https://appmagic.rocks/google-play/meowdoku-brain-puzzle-games/com.oakever.meowdoku",
+      "path": "public-evidence/round66/sources/meow-appmagic.response",
+      "sha256": "d5d5926087a443ce6ec9d540412481037af6acb41a0141d457026261abca6f8e",
+      "source_date": "2026-11-20T02:14:44.326908+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "d5d5926087a443ce6ec9d540412481037af6acb41a0141d457026261abca6f8e",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-meow-archive-20261003",
+      "url": "https://web.archive.org/web/20261003145311id_/https://www.appbrain.com/app/meowdoku-brain-puzzle-games/com.oakever.meowdoku",
+      "path": "public-evidence/round66/sources/meow-archive-20261003.metadata.json",
+      "sha256": "80cfcce37f90028179235214c2270f03a8b37d72e1fc47438f953bbf4dfe48a3",
+      "source_date": "2026-11-20T02:15:21.621791+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "cfebe9bdb7b329ea20895bdea0b81dc780be47a8a9fab0f0b38bc188c46f63ea",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-meow-cdx",
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.appbrain.com/app/meowdoku-brain-puzzle-games/com.oakever.meowdoku&output=json&filter=statuscode:200&filter=mimetype:text/html&collapse=timestamp:6&from=2026&to=2026&limit=12",
+      "path": "public-evidence/round66/sources/meow-cdx.response",
+      "sha256": "d24b92fd4ff7e384cb50afdf9dd896788ee2395dfc69710dfdf614c0ad8eb5f6",
+      "source_date": "2026-11-20T02:14:43.639811+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "d24b92fd4ff7e384cb50afdf9dd896788ee2395dfc69710dfdf614c0ad8eb5f6",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-meow-developer",
+      "url": "https://oakevergames.com/",
+      "path": "public-evidence/round66/sources/meow-developer.response",
+      "sha256": "3bcd208d6d6d1267be99b1858b557362ec8e449ffe338ab460be933f36eb54c8",
+      "source_date": "2026-11-20T02:14:44.948841+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "3bcd208d6d6d1267be99b1858b557362ec8e449ffe338ab460be933f36eb54c8",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-rotate-apkpure-history",
+      "url": "https://apkpure.com/rotate-rings/com.nebula.rotaterings/versions",
+      "path": "public-evidence/round66/sources/rotate-apkpure-history.response",
+      "sha256": "caad1679a0752664aaca00e7fde3e9ae929a858d2aa93da9b72211d7fbd645c5",
+      "source_date": "2026-11-20T02:14:43.639811+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "caad1679a0752664aaca00e7fde3e9ae929a858d2aa93da9b72211d7fbd645c5",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-rotate-appbrain",
+      "url": "https://www.appbrain.com/app/rotate-rings/com.nebula.rotaterings",
+      "path": "public-evidence/round66/sources/rotate-appbrain.metadata.json",
+      "sha256": "078764cc356bfb47251a1305540665a80fcab1b396c6d7256a7778fa964a8e9c",
+      "source_date": "2026-11-20T02:14:43.639811+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "362cfbc0dff7614554b6275bd62d6ac055a471164658310991f3b9557ba6abcf",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-rotate-appmagic",
+      "url": "https://appmagic.rocks/google-play/rotate-rings/com.nebula.rotaterings",
+      "path": "public-evidence/round66/sources/rotate-appmagic.response",
+      "sha256": "5a0fcd36b19d3f13dc70ee531eff342f8556db237713e039ce2b305ac6e44460",
+      "source_date": "2026-11-20T02:14:44.319913+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "5a0fcd36b19d3f13dc70ee531eff342f8556db237713e039ce2b305ac6e44460",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-rotate-cdx",
+      "url": "https://web.archive.org/cdx/search/cdx?url=www.appbrain.com/app/rotate-rings/com.nebula.rotaterings&output=json&filter=statuscode:200&filter=mimetype:text/html&collapse=timestamp:6&from=2026&to=2026&limit=12",
+      "path": "public-evidence/round66/sources/rotate-cdx.response",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_date": "2026-11-20T02:14:43.639811+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "EXT66-rotate-developer",
+      "url": "https://www.hurelax.com/",
+      "path": "public-evidence/round66/sources/rotate-developer.response",
+      "sha256": "86bbdaf291881305818c71b2949a10406741bfed62cfb8d99067c4291ff644d2",
+      "source_date": "2026-11-20T02:14:44.943874+00:00",
+      "evidence_kind": "bounded public history observation",
+      "evidence_level": "【直接观察】 response; underlying estimate/catalog is third-party",
+      "original_response_sha256": "86bbdaf291881305818c71b2949a10406741bfed62cfb8d99067c4291ff644d2",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Public product/history only; no actual advertiser spend, paid attribution or platform training proof"
+    },
+    {
+      "id": "RE66S_data",
+      "path": "public-experiments/audit/retail352.download",
+      "sha256": "f5385cbb54bbebf7196389109c6b0621faab0c304e3702548165e71c84aede8b",
+      "source_date": "2026-11-20T02:23:14.797945+00:00",
+      "evidence_kind": "UCI public original data",
+      "evidence_level": "【真实公开零售数据实验】",
+      "url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Retail invoices only; no game-model, ad-delivery or profit inference"
+    },
+    {
+      "id": "RE66S_protocol",
+      "path": "public-experiments/round66/PREREGISTERED_PROTOCOL.md",
+      "sha256": "300f8996d9308c450111f78b156c7c60ec6fa9a8c5559ea16cdd6a35df011226",
+      "source_date": "2026-11-20T02:23:14.797945+00:00",
+      "evidence_kind": "independent actual public-retail experiment",
+      "evidence_level": "【真实公开零售数据实验】",
+      "url": null,
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Retail invoices only; no game-model, ad-delivery or profit inference"
+    },
+    {
+      "id": "RE66S_results",
+      "path": "public-experiments/round66/MODEL_RESULTS.csv",
+      "sha256": "7cadad95cdb2961b09cd9ea7e01c856a1310ac97efc2e48449538c742709d673",
+      "source_date": "2026-11-20T02:23:14.797945+00:00",
+      "evidence_kind": "independent actual public-retail experiment",
+      "evidence_level": "【真实公开零售数据实验】",
+      "url": null,
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Retail invoices only; no game-model, ad-delivery or profit inference"
+    },
+    {
+      "id": "RE66S_run",
+      "path": "public-experiments/round66/RUN_MANIFEST.json",
+      "sha256": "929484f3930a7991a48ccfe32180fc7d16a7792897abd9f0d7ae1bc82fe1af7f",
+      "source_date": "2026-11-20T02:23:14.797945+00:00",
+      "evidence_kind": "independent actual public-retail experiment",
+      "evidence_level": "【真实公开零售数据实验】",
+      "url": null,
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Retail invoices only; no game-model, ad-delivery or profit inference"
+    },
+    {
+      "id": "RE66S_fix",
+      "path": "public-experiments/round66/EVALUATION_CORRECTION.md",
+      "sha256": "ee6b082a95764a7d4c66da8b8d968d21fb5ef1c0b49999487a164cf28f23c9cf",
+      "source_date": "2026-11-20T02:23:14.797945+00:00",
+      "evidence_kind": "independent actual public-retail experiment",
+      "evidence_level": "【真实公开零售数据实验】",
+      "url": null,
+      "production_actual_proven": false,
+      "observed_target_game_delivery": false,
+      "server_model_training": false,
+      "scope": "Retail invoices only; no game-model, ad-delivery or profit inference"
+    }
+  ]
+}

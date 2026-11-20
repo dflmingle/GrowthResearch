@@ -1,0 +1,1009 @@
+[
+  {
+    "id": "CT62E01",
+    "source": "A_mmp",
+    "target": "CT_A_A",
+    "claim": "Axon partner all-source option admits same advertiser-app data from other attribution sources; does not imply cross-game identity",
+    "source_ids": [
+      "CT62S08",
+      "MA60S03"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "A",
+    "training_or_bidding_stage": "authorized data supply",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "A_mmp",
+    "data_receiver": "CT_A_A",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Actual advertiser switches/mapping, delivery, canonical samples and learning gain unknown",
+    "supplements_original_edges": [
+      "CGE14",
+      "CGE15"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "axon/adjust-applovin.txt",
+        "start_line": 113,
+        "end_line": 127,
+        "url": "https://help.adjust.com/en/partner-setup/applovin"
+      },
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "start_line": 183,
+        "end_line": 241,
+        "url": "https://support.applovin.com/en/growth/promoting-your-apps/track-and-optimize/appsflyer"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      },
+      {
+        "path": "axon/doc-appsflyer.txt",
+        "sha256": "dc1dfd019060e41b50e9570dcdce70452500ecba72a358d7f01dca2b2cf70b30"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E02",
+    "source": "CT_A_A",
+    "target": "A_predict",
+    "claim": "Axon data categories permit voluntary advertiser data, but target-app sample-to-training consumption and cold-start effect remain unproven",
+    "source_ids": [
+      "CT62S07",
+      "CT62S08"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "A",
+    "training_or_bidding_stage": "training sample consumption",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_A_A",
+    "data_receiver": "A_predict",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need authorized source-to-dataset/label lineage and new-campaign experiment",
+    "supplements_original_edges": [
+      "CGE19",
+      "A10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 60,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "start_line": 113,
+        "end_line": 127,
+        "url": "https://help.adjust.com/en/partner-setup/applovin"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "axon/adjust-applovin.txt",
+        "sha256": "95962bafc284b1d3abf4e0db17095e205504d1c737529b85e109ac0c05d72984"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E03",
+    "source": "U_mmp",
+    "target": "CT_U_A",
+    "claim": "Unity unattributed includes other-network and organic installs for the same target app",
+    "source_ids": [
+      "CT62S06",
+      "CT62S04"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "A",
+    "training_or_bidding_stage": "data source scope",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "U_mmp",
+    "data_receiver": "CT_U_A",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Do not equate the MMP source category with cross-game personal history; real switches and delivery unknown",
+    "supplements_original_edges": [
+      "CGE09",
+      "CGE10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round62/public/unity-acquire-attribution.txt",
+        "start_line": 26,
+        "end_line": 36,
+        "url": "https://docs.unity.com/en-us/grow/acquire/partner-integration/attribution/introduction.md"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "start_line": 36,
+        "end_line": 70,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/roas-campaign-best-practices.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round62/public/unity-acquire-attribution.txt",
+        "sha256": "07b36ec7e2a866122e265c0308c3861682468b0da1df9e0cb27cafb8341c6083"
+      },
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E04",
+    "source": "CT_U_A",
+    "target": "U_predict",
+    "claim": "Unity explicitly recommends prelaunch SDK/corresponding unattributed data for training, distinct from exit learning thresholds",
+    "source_ids": [
+      "CT62S04",
+      "CT62S05"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "A",
+    "training_or_bidding_stage": "training purpose",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_A",
+    "data_receiver": "U_predict",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Per-field dataset, source weights, deployed model and incremental effect unknown; not zero-data guarantee",
+    "supplements_original_edges": [
+      "MA60E09",
+      "CGE08"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "start_line": 36,
+        "end_line": 70,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/roas-campaign-best-practices.md"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "start_line": 91,
+        "end_line": 95,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/intro-to-roas-campaigns.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/doc-roas-campaign-best-practices.txt",
+        "sha256": "181a6cffe4f8921bda559c2a0cc0571e8d61bf352dc8e400c05b5553ad63955f"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E05",
+    "source": "CT_U_B",
+    "target": "U_bid",
+    "claim": "Vector product article explicitly claims cross-game patterns and aggregate cohort insights distinguish player types at bid decision",
+    "source_ids": [
+      "CT62S02"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "B",
+    "training_or_bidding_stage": "bid-time aggregate purpose",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_B",
+    "data_receiver": "U_bid",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Formation/aggregation/similar-game schema, time freshness, parameter-sharing or personal-history contributions unknown",
+    "supplements_original_edges": [
+      "MA60E07",
+      "MA60E10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E06",
+    "source": "U_context",
+    "target": "CT_U_B",
+    "claim": "No production mapping recovered from source-game data to exact cohort/prior tables or features",
+    "source_ids": [
+      "CT62S01",
+      "CT62S02"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "B",
+    "training_or_bidding_stage": "training/aggregation",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "U_context",
+    "data_receiver": "CT_U_B",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need official aggregation schema, provenance, access/purpose and temporal versioning",
+    "supplements_original_edges": [
+      "U04",
+      "MA60E10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 123,
+        "end_line": 130,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E07",
+    "source": "CT_U_C",
+    "target": "U_predict",
+    "claim": "Vector shared non-personal parameters/transfer learning remain a viable but unproven implementation",
+    "source_ids": [
+      "CT62S02",
+      "MA60S19",
+      "MA60S21"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "C",
+    "training_or_bidding_stage": "training parameter sharing and deployment",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_C",
+    "data_receiver": "U_predict",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need production model shared layers/conditions and leave-game-out ablation; recruitment not deployment proof",
+    "supplements_original_edges": [
+      "MA60E10",
+      "U04"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616596-clean.txt",
+        "start_line": 1,
+        "end_line": 13,
+        "url": "https://unitytech.wd1.myworkdayjobs.com/wday/cxs/unitytech/Unity/job/Mountain-View-CA-USA/Principal-Machine-Learning-Engineer--Ads-Modeling_JOBREQ-2616596"
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "start_line": 10,
+        "end_line": 15,
+        "url": "https://unity.com/products/unity-ads/vector"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "prediction-system/unity-job-JOBREQ-2616596-clean.txt",
+        "sha256": "882af4b6a9b94a208a6769636b8d0bd70e03cf781ffc69777dfc7c3e836400a2"
+      },
+      {
+        "path": "vector/unity-vector-correct.txt",
+        "sha256": "7c38a287f3cd15624083e4c6d4720e49de626cbc7f85e7a5483018ac2e704a61"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E08",
+    "source": "CT_U_D",
+    "target": "U_bid",
+    "claim": "Vector legal personal cross-game history consumption at bid time is not established by co-packaged IDs or broad cross-game claims",
+    "source_ids": [
+      "CT62S02",
+      "CT62S10"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "D",
+    "training_or_bidding_stage": "bid-time personal feature join",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_D",
+    "data_receiver": "U_bid",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need authorized identity scope/join/time/feature-consumption and gated fallback, not raw personal IDs",
+    "supplements_original_edges": [
+      "U04",
+      "U17"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "start_line": 20,
+        "end_line": 38,
+        "url": "https://docs.unity.com/en-us/cloud/developer-data-framework/end-user-consent.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "sha256": "ea304dbc17e8077ee3baf00e01c0294d6bde940a3616d7fb0abc2c1df98b2d31"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E09",
+    "source": "CT_A_B",
+    "target": "A_predict",
+    "claim": "Axon system-level additional advertiser data/improvement statement does not identify cross-game aggregate-prior implementation",
+    "source_ids": [
+      "CT62S07",
+      "CT62S09"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "B",
+    "training_or_bidding_stage": "aggregate transfer",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_A_B",
+    "data_receiver": "A_predict",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need exact cohort/prior production contract, source scope and cold-start ablation",
+    "supplements_original_edges": [
+      "MA60E05",
+      "A03"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 60,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "start_line": 47,
+        "end_line": 50,
+        "url": "https://www.applovin.com/en/blog/introducing-applovin-ads"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "sha256": "da5e38340c85e2fa6b6f17a08fbe11514c7b4b0f512c375006a1e8fafe8df87b"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E10",
+    "source": "CT_A_C",
+    "target": "A_predict",
+    "claim": "Axon cross-game parameter sharing is not proven by continuous learning, user-representation jobs or future cross-category benefit",
+    "source_ids": [
+      "CT62S07",
+      "CT62S09",
+      "MA60S06",
+      "MA60S07"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "C",
+    "training_or_bidding_stage": "training parameter sharing and deployment",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_A_C",
+    "data_receiver": "A_predict",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need named production shared model/layers and source-target mapping or controlled transfer experiment",
+    "supplements_original_edges": [
+      "MA60E06",
+      "A04"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 60,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "start_line": 47,
+        "end_line": 50,
+        "url": "https://www.applovin.com/en/blog/introducing-applovin-ads"
+      },
+      {
+        "path": "prediction-system/applovin-job-4712559006-clean.txt",
+        "start_line": 8,
+        "end_line": 21,
+        "url": "https://boards.greenhouse.io/applovin/jobs/4712559006?gh_jid=4712559006"
+      },
+      {
+        "path": "prediction-system/applovin-job-4716524006-clean.txt",
+        "start_line": 8,
+        "end_line": 21,
+        "url": "https://boards.greenhouse.io/applovin/jobs/4716524006?gh_jid=4716524006"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "model-architecture/public/al-introducing.txt",
+        "sha256": "da5e38340c85e2fa6b6f17a08fbe11514c7b4b0f512c375006a1e8fafe8df87b"
+      },
+      {
+        "path": "prediction-system/applovin-job-4712559006-clean.txt",
+        "sha256": "8e343eb570d116a28cd6f5b73780858b9d27e1c54ac47f2a4b4e4e9fc792794d"
+      },
+      {
+        "path": "prediction-system/applovin-job-4716524006-clean.txt",
+        "sha256": "f2459b7bc84a91b24a6d66fdefcc35b22d097b82bd4aac3dfb475cc5f957a688"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E11",
+    "source": "CT_A_D",
+    "target": "A_bid",
+    "claim": "Axon personal cross-game history as a specific bid-time feature remains unknown despite allowed general engagement-data descriptions",
+    "source_ids": [
+      "CT62S07",
+      "MA60S02"
+    ],
+    "status": "unknown",
+    "evidence_level": "【无法确认】",
+    "mechanism": "D",
+    "training_or_bidding_stage": "bid-time personal feature join",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_A_D",
+    "data_receiver": "A_bid",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Need authorized field-level join, valid purpose and as-of snapshot, actual consumption and no-ID policy",
+    "supplements_original_edges": [
+      "A03",
+      "A10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 60,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 54,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E12",
+    "source": "CT_U_A",
+    "target": "U_predict",
+    "claim": "Direct ROAS onboarding removes prerequisite Install campaign, not data readiness or Learning requirements",
+    "source_ids": [
+      "CT62S03",
+      "CT62S05"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "A",
+    "training_or_bidding_stage": "onboarding/learning boundary",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_A",
+    "data_receiver": "U_predict",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Cannot infer zero-history new app receives accurate LTV model immediately; initial model and B/C/D contributions unknown",
+    "supplements_original_edges": [
+      "MA60E09",
+      "RV61E06"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/round62/public/unity-march-linked.txt",
+        "start_line": 123,
+        "end_line": 150,
+        "url": "https://unity.com/blog/uads-march-updates"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "start_line": 91,
+        "end_line": 95,
+        "url": "https://docs.unity.com/en-us/grow/acquire/campaigns/roas/intro-to-roas-campaigns.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/round62/public/unity-march-linked.txt",
+        "sha256": "43db735b820a14c9a06186969b01330c26b99c2adcd745d48ace01406820e188"
+      },
+      {
+        "path": "vector/doc-intro-to-roas-campaigns.txt",
+        "sha256": "dbf6ca7e80360e22e49243ab7ab487dc1d4ce433a15310a1dc8b8160d3b1aa61"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E13",
+    "source": "A_context",
+    "target": "A_predict",
+    "claim": "Cached Axon official statement describes allowed engagement/voluntary data and improvement with additional advertiser data; exact transfer type unspecified",
+    "source_ids": [
+      "CT62S07"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "A/B/C/D not uniquely identified",
+    "training_or_bidding_stage": "general training purpose",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "A_context",
+    "data_receiver": "A_predict",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Fresh public GET403; cached statement does not distinguish aggregate statistics, shared parameters, personal history or independent models",
+    "supplements_original_edges": [
+      "MA60E03",
+      "MA60E05"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 60,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E14",
+    "source": "A_review",
+    "target": "CT_A_D",
+    "claim": "Official Ad Review exclusion rules out treating its other-network user outputs as Axon personal-history training source",
+    "source_ids": [
+      "CT62S11",
+      "MA60S02"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "D source exclusion",
+    "training_or_bidding_stage": "source/purpose exclusion",
+    "edge_type": "exclusion_or_gating",
+    "data_provider": "A_review",
+    "data_receiver": "CT_A_D",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Excludes this source/path only, not every permitted B/C/D implementation",
+    "supplements_original_edges": [
+      "MA60E14",
+      "A18"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "prediction-system/applovin-excluded-rival-data.txt",
+        "start_line": 14,
+        "end_line": 17,
+        "url": "https://www.applovin.com/en/blog/catch-bad-ads-not-data"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "start_line": 54,
+        "end_line": 73,
+        "url": "https://legal.applovin.com/about-applovins-axon-ai/"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "prediction-system/applovin-excluded-rival-data.txt",
+        "sha256": "fd07f9c935dad89f911dd2544760d3c69a50d5b826a13c53a89dd2858ef4b534"
+      },
+      {
+        "path": "nongame/applovin-axon-about.txt",
+        "sha256": "450c55b0b8ef263c41d312af1399433984762753c0f70ed5f94722eba5946cd7"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E15",
+    "source": "U_runtime",
+    "target": "CT_U_D",
+    "claim": "Unity Developer Data ads intent gating prevents assuming unrestricted default use of personal advertising histories",
+    "source_ids": [
+      "CT62S10"
+    ],
+    "status": "official",
+    "evidence_level": "【官方公开证实】",
+    "mechanism": "D gating",
+    "training_or_bidding_stage": "data use authorization",
+    "edge_type": "exclusion_or_gating",
+    "data_provider": "U_runtime",
+    "data_receiver": "CT_U_D",
+    "diagram_style": "solid",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "Framework-specific gate; not proof all SDKs share same collection gate, no alternate legal linkage, or all D absent",
+    "supplements_original_edges": [
+      "XU07",
+      "C53E13"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "start_line": 20,
+        "end_line": 38,
+        "url": "https://docs.unity.com/en-us/cloud/developer-data-framework/end-user-consent.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "sha256": "ea304dbc17e8077ee3baf00e01c0294d6bde940a3616d7fb0abc2c1df98b2d31"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  },
+  {
+    "id": "CT62E16",
+    "source": "CT_U_B",
+    "target": "CT_U_C",
+    "claim": "Aggregate statistics and non-personal parameter transfer need not use cross-app individual lookup; theoretical independence, not deployed Unity path",
+    "source_ids": [
+      "CT62S02",
+      "CT62S10"
+    ],
+    "status": "inference",
+    "evidence_level": "【合理推断】",
+    "mechanism": "B/C without D",
+    "training_or_bidding_stage": "conceptual independence only",
+    "edge_type": "scoped_data_or_purpose",
+    "data_provider": "CT_U_B",
+    "data_receiver": "CT_U_C",
+    "diagram_style": "dashed",
+    "explicit_call_chain": "Public disclosure or documented interface scope only; no recovered production train/serve call chain",
+    "permission_conditions": "Valid source/purpose authorization and platform privacy gating; event/available/aggregate/model deployment must predate bid",
+    "applies_to": "standalone public product/data-use contract or explicitly bounded hypothesis; not target-game enablement",
+    "missing_evidence": "No implementation edge asserted; both may work without D but actual production weights/benefit unknown",
+    "supplements_original_edges": [
+      "MA60E10"
+    ],
+    "reviewed_utc": "2026-11-19T10:52:31.029327+00:00",
+    "class_method_lines": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "start_line": 208,
+        "end_line": 223,
+        "url": "https://unity.com/blog/d7-vs-d28-iap-roas-campaigns"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "start_line": 20,
+        "end_line": 38,
+        "url": "https://docs.unity.com/en-us/cloud/developer-data-framework/end-user-consent.md"
+      }
+    ],
+    "sha256": [
+      {
+        "path": "model-architecture/public/unity-d7-d28.txt",
+        "sha256": "9aca03187f001a9cdfcbb4e4386d8e81b66791007dd571e55f90cb68d271688a"
+      },
+      {
+        "path": "vector/ddf-end-user-consent.txt",
+        "sha256": "ea304dbc17e8077ee3baf00e01c0294d6bde940a3616d7fb0abc2c1df98b2d31"
+      }
+    ],
+    "six_layers": {
+      "sdk_capability": false,
+      "actual_game_business_callsite": false,
+      "request_construction_code": false,
+      "production_successful_send": false,
+      "server_received": false,
+      "server_model_training": false
+    },
+    "production_actual_proven": false,
+    "observed_target_game_delivery": false,
+    "independent_production_audit": false,
+    "production_evidence": "No identifiers/SDK execution/production advertising requests; official assertions separated from independently observed implementation"
+  }
+]

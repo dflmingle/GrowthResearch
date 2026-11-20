@@ -1,0 +1,21 @@
+from collect import batch
+batch('samples-next',{
+ 'content-reelshort':'https://www.reelshort.com/privacy-policy',
+ 'content-dramabox':'https://www.dramabox.com/privacy',
+ 'content-audiomack':'https://audiomack.com/privacy-policy',
+ 'life-weward':'https://www.wewardapp.com/privacy-policy',
+ 'life-sweatcoin':'https://sweatco.in/privacy',
+ 'life-cashwalk':'https://cashwalklabs.io/privacy-policy',
+ 'life-winwalk':'https://www.winwalk.app/privacy-policy',
+ 'utility-truecaller-ads':'https://www.truecaller.com/advertising-partners',
+ 'utility-turbovpn-policy':'https://turbovpn.com/privacy',
+ 'content-reelshort-sdk':'https://www.reelshort.com/third-party-sdk',
+ 'doc-integration':'https://support.applovin.com/en/growth/promoting-your-websites/track-and-optimize/pixel-integration',
+ 'doc-web-integration':'https://support.applovin.com/en/growth/promoting-your-websites/track-and-optimize/website-integration',
+ 'site-ridge-cookies':'https://ridge.com/policies/privacy-policy',
+ 'site-hexclad-embed':'https://cdn.shopify.com/extensions/01a1d715-90ff-762d-a244-f5fd2461e624/applovin-shop-integration-103/assets/app-embed.js',
+ 'wurl-ctv-campaign':'https://www.wurl.com/solutions/contentdiscovery/',
+ 'wurl-media-legal':'https://www.wurl.com/wurl-advertising-and-media-services-privacy-notice',
+ 'search-bing-content':'https://www.bing.com/search?q=%22AppLovin%22+%22ReelShort%22&format=rss',
+ 'search-bing-life':'https://www.bing.com/search?q=%22Unity%22+%22WeWard%22+privacy&format=rss',
+})

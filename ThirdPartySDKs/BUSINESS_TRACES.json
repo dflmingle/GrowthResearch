@@ -1,0 +1,213 @@
+[
+  {
+    "slug": "car-race",
+    "dex": "classes10.dex",
+    "class": "Lcom/metica/unity_bridge/UnityBridge;",
+    "method": "trackEvent",
+    "descriptor": "(Ljava/lang/String; Ljava/lang/String;)V",
+    "matches": [
+      "invoke-interface v3, v10, v11, Lcom/metica/ads/mediation/MeticaApplovinFunctions;->trackEvent(Ljava/lang/String; Ljava/util/Map;)V"
+    ],
+    "file": "Embedded/car-race/business-trace/classes10.dex/Lcom_metica_unity_bridge_UnityBridge___trackEvent-aba02382c5.txt"
+  },
+  {
+    "slug": "car-race",
+    "dex": "classes8.dex",
+    "class": "Lcom/metica/ads/internal/adapter/applovin/ApplovinInitializer$initializeSdk$1;",
+    "method": "invokeSuspend",
+    "descriptor": "(Ljava/lang/Object;)Ljava/lang/Object;",
+    "matches": [
+      "invoke-virtual v3, v0, v0, v1, Lcom/metica/ads/internal/adapter/applovin/ApplovinInitializer;->initializeSdk-0E7RQCE(Ljava/lang/String; Ljava/lang/String; Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"
+    ],
+    "file": "Embedded/car-race/business-trace/classes8.dex/Lcom_metica_ads_internal_adapter_applovin_ApplovinInitializer_initializeSdk_1___invokeSuspend-262c527aaf.txt"
+  },
+  {
+    "slug": "car-race",
+    "dex": "classes8.dex",
+    "class": "Lcom/metica/ads/internal/adapter/applovin/ApplovinInitializer;",
+    "method": "initializeSdk-0E7RQCE",
+    "descriptor": "(Ljava/lang/String; Ljava/lang/String; Lkotlin/coroutines/Continuation;)Ljava/lang/Object;",
+    "matches": [
+      "invoke-virtual v4, v5, v6, v0, Lcom/metica/ads/internal/adapter/applovin/ApplovinInitializer;->initializeSdkInternal(Ljava/lang/String; Ljava/lang/String; Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"
+    ],
+    "file": "Embedded/car-race/business-trace/classes8.dex/Lcom_metica_ads_internal_adapter_applovin_ApplovinInitializer___initializeSdk-0E7RQCE-db27e2bc51.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes.dex",
+    "class": "Lcom/learnings/usertag/data/MediaSourceData;",
+    "method": "generate",
+    "descriptor": "(Ljava/lang/String;)Lcom/learnings/usertag/data/MediaSourceData;",
+    "matches": [
+      "invoke-static Lcom/learnings/usertag/data/tag/MediaSourceTag;->values()[Lcom/learnings/usertag/data/tag/MediaSourceTag;",
+      "invoke-virtual v3, Lcom/learnings/usertag/data/tag/MediaSourceTag;->getName()Ljava/lang/String;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes.dex/Lcom_learnings_usertag_data_MediaSourceData___generate-23b739d947.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes.dex",
+    "class": "Lcom/learnings/usertag/data/tag/MediaSourceTag;",
+    "method": "$values",
+    "descriptor": "()[Lcom/learnings/usertag/data/tag/MediaSourceTag;",
+    "matches": [
+      "sget-object v2, Lcom/learnings/usertag/data/tag/MediaSourceTag;->APPLOVIN_INT Lcom/learnings/usertag/data/tag/MediaSourceTag;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes.dex/Lcom_learnings_usertag_data_tag_MediaSourceTag____values-5da97cceed.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes.dex",
+    "class": "Lcom/learnings/usertag/data/tag/MediaSourceTag;",
+    "method": "<clinit>",
+    "descriptor": "()V",
+    "matches": [
+      "sput-object v0, Lcom/learnings/usertag/data/tag/MediaSourceTag;->APPLOVIN_INT Lcom/learnings/usertag/data/tag/MediaSourceTag;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes.dex/Lcom_learnings_usertag_data_tag_MediaSourceTag____clinit_-da8c82d5d4.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes4.dex",
+    "class": "Lcom/helpshift/user/BaseUser;",
+    "method": "setUserDataValues",
+    "descriptor": "(Ljava/lang/String; Ljava/lang/Object;)V",
+    "matches": [
+      "invoke-virtual v1, v0, Lcom/helpshift/user/BaseUser;->setUserData(Lorg/json/JSONObject;)V"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes4.dex/Lcom_helpshift_user_BaseUser___setUserDataValues-f9ec2aebab.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/AdInitParameter$Builder;",
+    "method": "build",
+    "descriptor": "()Lcom/meevii/adsdk/AdInitParameter;",
+    "matches": [
+      "invoke-static Lcom/meevii/adsdk/common/AdUuid;->get()Lcom/meevii/adsdk/common/AdUuid;",
+      "invoke-virtual v0, v1, v2, Lcom/meevii/adsdk/common/AdUuid;->setUuid(Landroid/content/Context; Ljava/lang/String;)V"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_AdInitParameter_Builder___build-7217dd553a.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid$Holder;",
+    "method": "<clinit>",
+    "descriptor": "()V",
+    "matches": [
+      "invoke-direct v0, v1, Lcom/meevii/adsdk/common/AdUuid;-><init>(I)V"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid_Holder____clinit_-da8c82d5d4.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid;",
+    "method": "<init>",
+    "descriptor": "()V",
+    "matches": [],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid____init_-da8c82d5d4.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid;",
+    "method": "<init>",
+    "descriptor": "(I)V",
+    "matches": [
+      "invoke-direct v0, Lcom/meevii/adsdk/common/AdUuid;-><init>()V"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid____init_-d00df7729d.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid;",
+    "method": "get",
+    "descriptor": "()Lcom/meevii/adsdk/common/AdUuid;",
+    "matches": [],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid___get-6007a24b08.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid;",
+    "method": "getUuid",
+    "descriptor": "(Landroid/content/Context;)Ljava/lang/String;",
+    "matches": [
+      "iget-object v0, v2, Lcom/meevii/adsdk/common/AdUuid;->mUuid Ljava/lang/String;",
+      "iget-object v3, v2, Lcom/meevii/adsdk/common/AdUuid;->mUuid Ljava/lang/String;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid___getUuid-0b0e68073b.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/common/AdUuid;",
+    "method": "setUuid",
+    "descriptor": "(Landroid/content/Context; Ljava/lang/String;)V",
+    "matches": [
+      "iput-object v3, v1, Lcom/meevii/adsdk/common/AdUuid;->mUuid Ljava/lang/String;",
+      "iget-object v0, v1, Lcom/meevii/adsdk/common/AdUuid;->mUuid Ljava/lang/String;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_common_AdUuid___setUuid-0c3181f2db.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/core/config/remote/AdConfigLoader;",
+    "method": "getUserAdInfo",
+    "descriptor": "(Ljava/lang/String; Lcom/meevii/adsdk/core/config/remote/AdConfigLoader$ConfigType; Landroid/content/Context;)Lorg/json/JSONObject;",
+    "matches": [
+      "invoke-static Lcom/meevii/adsdk/common/AdUuid;->get()Lcom/meevii/adsdk/common/AdUuid;",
+      "invoke-virtual v1, v8, Lcom/meevii/adsdk/common/AdUuid;->getUuid(Landroid/content/Context;)Ljava/lang/String;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_core_config_remote_AdConfigLoader___getUserAdInfo-e55f0136eb.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lcom/meevii/adsdk/mediation/applovinmax/MaxInitHelper$MaxInit;",
+    "method": "userJourney",
+    "descriptor": "()Lcom/meevii/adsdk/mediation/applovinmax/MaxInitHelper$MaxInit;",
+    "matches": [
+      "invoke-static Lcom/meevii/adsdk/common/AdUuid;->get()Lcom/meevii/adsdk/common/AdUuid;",
+      "invoke-virtual v0, v1, Lcom/meevii/adsdk/common/AdUuid;->getUuid(Landroid/content/Context;)Ljava/lang/String;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lcom_meevii_adsdk_mediation_applovinmax_MaxInitHelper_MaxInit___userJourney-d78f27face.txt"
+  },
+  {
+    "slug": "meowdoku",
+    "dex": "classes5.dex",
+    "class": "Lio/bidmachine/BidMachine;",
+    "method": "getBidToken",
+    "descriptor": "(Landroid/content/Context; Lio/bidmachine/AdPlacementConfig;)Ljava/lang/String;",
+    "matches": [
+      "invoke-virtual v6, v7, Lio/bidmachine/protobuf/RequestTokenPayload$Builder;->setUserData(Lio/bidmachine/protobuf/sdk/User$Builder;)Lio/bidmachine/protobuf/RequestTokenPayload$Builder;"
+    ],
+    "file": "Embedded/meowdoku/business-trace/classes5.dex/Lio_bidmachine_BidMachine___getBidToken-b8d84e3265.txt"
+  },
+  {
+    "slug": "rotate-rings",
+    "dex": "classes13.dex",
+    "class": "Lcom/bytedance/sdk/openadsdk/api/init/PAGMConfig$Builder;",
+    "method": "setUserData",
+    "descriptor": "(Ljava/lang/String;)Lcom/bytedance/sdk/openadsdk/api/init/PAGConfig$Builder;",
+    "matches": [
+      "invoke-virtual v0, v1, Lcom/bytedance/sdk/openadsdk/api/init/PAGMConfig$Builder;->setUserData(Ljava/lang/String;)Lcom/bytedance/sdk/openadsdk/api/init/PAGMConfig$Builder;"
+    ],
+    "file": "Embedded/rotate-rings/business-trace/classes13.dex/Lcom_bytedance_sdk_openadsdk_api_init_PAGMConfig_Builder___setUserData-cfc5c1344e.txt"
+  },
+  {
+    "slug": "rotate-rings",
+    "dex": "classes13.dex",
+    "class": "Lcom/bytedance/sdk/openadsdk/api/init/PAGMConfig$Builder;",
+    "method": "setUserData",
+    "descriptor": "(Ljava/lang/String;)Lcom/bytedance/sdk/openadsdk/api/init/PAGMConfig$Builder;",
+    "matches": [
+      "invoke-super v0, v1, Lcom/bytedance/sdk/openadsdk/api/init/PAGConfig$Builder;->setUserData(Ljava/lang/String;)Lcom/bytedance/sdk/openadsdk/api/init/PAGConfig$Builder;"
+    ],
+    "file": "Embedded/rotate-rings/business-trace/classes13.dex/Lcom_bytedance_sdk_openadsdk_api_init_PAGMConfig_Builder___setUserData-d20068ff4e.txt"
+  }
+]
